@@ -8,7 +8,7 @@
 			border-collapse: collapse;
 			}
 			.list_invoice_table td {
-			border-top : thin solid #E3E4EA;
+			border-top : thin solid #EEEEEE;
 			text-align:left;
 			font-size:12;
 			padding-right:3px
@@ -16,9 +16,31 @@
 			padding-top:3px
 			padding-bottom:3px
 			}
+
+			.list_bank_table {
+			text-align:center;
+			border-collapse: collapse;
+			}
+			.list_bank_table td {
+			text-align:left;
+			font-size:12;
+			padding-right:3px
+			padding-left:3px
+			padding-top:3px
+			padding-bottom:3px
+			}
+
+			.list_bank_table th {
+			background-color: #EEEEEE;
+			text-align:left;
+			font-size:12;
+			font-weight:bold;
+			padding-right:3px
+			padding-left:3px
+			}
 			
 			.list_invoice_table th {
-			background-color: #E3E4EA;
+			background-color: #EEEEEE;
 			border: thin solid #000000;
 			text-align:center;
 			font-size:12;
@@ -62,7 +84,7 @@
 
 			
 			.list_total_table th {
-				background-color: #E3E4EA;
+				background-color: #F7F7F7;
 				border-collapse: collapse;
 			}
 
@@ -93,6 +115,8 @@
             %if inv.address_invoice_id.country_id:
             <tr><td>${inv.address_invoice_id.country_id.name or ''} </td></tr>
             %endif
+	        <tr></tr>
+	        <tr><td style="font-weight:bold;">${_("Your informations")}</td></tr> 
             %if inv.address_invoice_id.phone:
             <tr><td>${_("Tel")}: ${inv.address_invoice_id.phone}</td></tr>
             %endif
@@ -107,7 +131,9 @@
             %endif
         </table>
     </div>
-
+    %if inv.note1 :
+    	${inv.note1 | carriage_returns}
+    %endif
     <h1 style="clear: both; padding-top: 20px;">
         %if inv.type == 'out_invoice' and inv.state == 'proforma2':
             ${_("PRO-FORMA")}
@@ -125,7 +151,6 @@
             ${_("Supplier Refund")} ${inv.number or ''}
         %endif
     </h1>
-    
     <h3 style="clear: both; padding-top: 20px;">
     	${_("Subject : ")} ${inv.name or ''}
     </h3>
@@ -177,7 +202,7 @@
             	<td></td>
             	<td></td>
             	<td ></td>
-                <td>
+                <td style="text-align:right;">
                     <b>${_("Net Total:")}</b>
                 </td>
                 <td class="amount" style="text-align:right;border-right: thin solid  #ffffff ;">${formatLang(inv.amount_untaxed, digits=get_digits(dp='Account'))} ${inv.currency_id.symbol}</td>
@@ -187,7 +212,7 @@
             	<td style="border-top: thin solid  #ffffff ;"></td>
             	<td style="border-top: thin solid  #ffffff ;"></td>
             	<td style="border-top: thin solid  #ffffff ;"></td>
-            	<td style="border-top: thin solid  #ffffff ;">
+            	<td style="text-align:right; border-top: thin solid  #ffffff ;">
                     <b>${_("Taxes:")}</b>
                 </td>
                 <td class="amount" style="border-top: thin solid  #ffffff ;border-right: thin solid  #ffffff ;text-align:right;">
@@ -199,7 +224,7 @@
             	<td style="border-top: thin solid  #ffffff ; border-bottom: thin solid  #ffffff ;"></td>
             	<td style="border-top: thin solid  #ffffff ; border-bottom: thin solid  #ffffff ;"></td>
             	<td style="border-top: thin solid  #ffffff ; border-bottom: thin solid  #ffffff ;"></td>
-            	<td style="border-top: thin solid  #ffffff ; border-bottom: thin solid  #ffffff ;">
+            	<td style="text-align:right; border-top: thin solid  #ffffff ; border-bottom: thin solid  #ffffff ;">
                     <b>${_("Total:")}</b>
                 </td>
                 <td class="amount" style="border-top: thin solid  #ffffff ; border-bottom: thin solid  #ffffff ;border-right: thin solid  #ffffff ;text-align:right;">
@@ -211,7 +236,7 @@
 	<br/>
     <table class="list_total_table" width="40%" >
         <tr>
-            <th>${_("Tax Name")}</th>
+            <th></th>
             <th>${_("Net")}</th>
             <th>${_("Tax")}</th>
         </tr>
@@ -225,6 +250,32 @@
         %endfor
         %endif
     </table>
+	<br/>
+	<h4>
+		${_("With our many thanks")}
+	</h4>
+	<br/>
+    <table class="list_bank_table" width="50%" >
+        <tr>
+            <th>${_("Bank Account")}</th>
+            <td style="text-align:left;">${ inv.partner_bank_id and inv.partner_bank_id.acc_number or '-' } </td>
+        </tr>
+        <tr>
+            <th>${_("IBAN")}</th>
+            <td>${ inv.partner_bank_id and inv.partner_bank_id.iban or '-' }</td>
+        </tr>
+        <tr>
+            <th>${_("BIC")}</th>
+            <td>${ inv.partner_bank_id and inv.partner_bank_id.bank and inv.partner_bank_id.bank.bic or '-' }</td>
+        </tr>
+    </table>
+    <br/>
+    %if inv.comment :
+    	${inv.comment | carriage_returns}
+    %endif
+    %if inv.note2 :
+    	${inv.note2 | carriage_returns}
+    %endif
     <p style="page-break-after:always"></p>
     %endfor
 </body>

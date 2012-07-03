@@ -10,9 +10,9 @@ import pooler
 
 
 
-class invoice_condition_text_webkit(osv.osv):
+class invoice_condition_text(osv.osv):
 	"""add info condition in the invoice"""
-	_name = "account.condition_text_webkit"
+	_name = "account.condition_text"
 	_description = "Invoice condition text"
 	
 		
@@ -26,7 +26,7 @@ class invoice_condition_text_webkit(osv.osv):
 	}
 
 		
-invoice_condition_text_webkit()
+invoice_condition_text()
 
 
 
@@ -38,7 +38,7 @@ class account_invoice(osv.osv):
 	_description = 'Invoice'
 	
 	
-	def get_trans_webkit(self, cr, uid, name, res_id, lang) :
+	def get_trans(self, cr, uid, name, res_id, lang) :
 		sql = " SELECT value     from ir_translation where name = '%s' \
 		and res_id = %s and lang ='%s';" %(name, str(res_id), lang)
 		cr.execute(sql)
@@ -48,10 +48,10 @@ class account_invoice(osv.osv):
 		else :
 			return toreturn
 		
-	def set_comment_webkit(self, cr,uid,id,commentid):
+	def set_comment(self, cr,uid,id,commentid):
 		if not commentid :
 			return {}
-		cond = self.pool.get('account.condition_text_webkit').browse(
+		cond = self.pool.get('account.condition_text').browse(
 			cr,uid,commentid,{})
 		translation_obj = self.pool.get('ir.translation')
 		
@@ -63,19 +63,19 @@ class account_invoice(osv.osv):
 				lang = self.browse(cr, uid, id)[0].partner_id.lang
 			except :
 				lang = 'en_EN'
-			res_trans = self.get_trans_webkit(cr, uid, 'account.condition_text_webkit,text', commentid, lang )
+			res_trans = self.get_trans(cr, uid, 'account.condition_text,text', commentid, lang )
 			if not res_trans :
 				res_trans = text
 		
 		return {'value': {
-				'note1_webkit': res_trans,
+				'note1': res_trans,
 				}}
 				
 				
-	def set_note_webkit(self, cr,uid,id,commentid):
+	def set_note(self, cr,uid,id,commentid):
 		if not commentid :
 			return {}
-		cond = self.pool.get('account.condition_text_webkit').browse(
+		cond = self.pool.get('account.condition_text').browse(
 			cr,uid,commentid,{})
 		translation_obj = self.pool.get('ir.translation')
 		
@@ -87,13 +87,13 @@ class account_invoice(osv.osv):
 				lang = self.browse(cr, uid, id)[0].partner_id.lang
 			except :
 				lang = 'en_EN'
-			res_trans = self.get_trans_webkit(cr, uid, 
-				'account.condition_text_webkit,text', commentid, lang )
+			res_trans = self.get_trans(cr, uid, 
+				'account.condition_text,text', commentid, lang )
 			if not res_trans :
 				res_trans = text
 		
 		return {'value': {
-				'note2_webkit': res_trans,
+				'note2': res_trans,
 				}}
 
 
@@ -105,17 +105,10 @@ class account_invoice(osv.osv):
 #		return tmp_id
 		
 	_columns = {
-		'text_condition1_webkit': fields.many2one('account.condition_text_webkit', 'Header'),
-		'text_condition2_webkit': fields.many2one('account.condition_text_webkit', 'Footer'),
-		'note1_webkit' : fields.text('Header'),
-		'note2_webkit' : fields.text('Footer'),
-		'project_webkit': fields.many2one(
-									'account.analytic.account', 
-									'Project',
-									 select=1
-									),
+		'text_condition1': fields.many2one('account.condition_text', 'Invoice information Top'),
+		'text_condition2': fields.many2one('account.condition_text', 'Invoice information Bottom'),
+		'note1' : fields.text('Header'),
+		'note2' : fields.text('Footer'),
 		}
 
 account_invoice()
-
-	
