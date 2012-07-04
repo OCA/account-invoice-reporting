@@ -121,9 +121,6 @@
             %endif
         </table>
     </div>
-    %if inv.note1 :
-    	<p class="std_text"> ${inv.note1 | carriage_returns} </p>
-    %endif
     <h1 style="clear: both; padding-top: 20px;">
         %if inv.type == 'out_invoice' and inv.state == 'proforma2':
             ${_("PRO-FORMA")}
@@ -269,9 +266,6 @@
     <br/>
     %if inv.comment :
     	<p class="std_text">${inv.comment | carriage_returns}</p>
-    %endif
-    %if inv.note2 :
-    	<p class="std_text">${inv.note2 | carriage_returns}</p>
     %endif
     <p style="page-break-after:always"></p>
     %endfor
