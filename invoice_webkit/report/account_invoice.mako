@@ -93,6 +93,10 @@
 			right: 4cm;
 			width:"100%";
 			}
+			
+			.std_text {
+				font-size:12;
+				}
 
     </style>
 </head>
@@ -115,24 +119,10 @@
             %if inv.address_invoice_id.country_id:
             <tr><td>${inv.address_invoice_id.country_id.name or ''} </td></tr>
             %endif
-	        <tr></tr>
-	        <tr><td style="font-weight:bold;">${_("Your informations")}</td></tr> 
-            %if inv.address_invoice_id.phone:
-            <tr><td>${_("Tel")}: ${inv.address_invoice_id.phone}</td></tr>
-            %endif
-            %if inv.address_invoice_id.fax:
-            <tr><td>${_("Fax")}: ${inv.address_invoice_id.fax}</td></tr>
-            %endif
-            %if inv.address_invoice_id.email:
-            <tr><td>${_("E-mail")}: ${inv.address_invoice_id.email}</td></tr>
-            %endif
-            %if inv.partner_id.vat:
-            <tr><td>${_("VAT")}: ${inv.partner_id.vat}</td></tr>
-            %endif
         </table>
     </div>
     %if inv.note1 :
-    	${inv.note1 | carriage_returns}
+    	<p class="std_text"> ${inv.note1 | carriage_returns} </p>
     %endif
     <h1 style="clear: both; padding-top: 20px;">
         %if inv.type == 'out_invoice' and inv.state == 'proforma2':
@@ -151,20 +141,26 @@
             ${_("Supplier Refund")} ${inv.number or ''}
         %endif
     </h1>
-    <h3 style="clear: both; padding-top: 20px;">
+    <h3  style="clear: both; padding-top: 20px;">
     	${_("Subject : ")} ${inv.name or ''}
     </h3>
-
+	
     <table class="basic_table" width="100%">
         <tr>
             <td>${_("Invoice Date")}</td>
             <td>${_("Due Date")}</td>
             <td>${_("Your Ref.")}</td>
+            <td>${_("Our Ref.")}</td>
+            <td>${_("Customer VAT No")}</td>
+            <td>${_("Our VAT No")}</td>
         </tr>
         <tr>
             <td>${inv.date_invoice or ''}</td>
             <td>${formatLang(inv.date_due, date=True)}</td>
-            <td>${inv.address_invoice_id and inv.address_invoice_id.partner_id and inv.address_invoice_id.partner_id.ref or ''}</td>
+            <td>${inv.reference or ''}</td>
+            <td width="20%">${inv.origin or ''}</td>
+            <td>${inv.address_invoice_id and inv.address_invoice_id.partner_id and inv.address_invoice_id.partner_id.vat or ''}</td>
+            <td>${company_vat()}</td>
         </tr>
     </table>
 
@@ -183,7 +179,7 @@
         %for line in inv.invoice_line :
             <tr >
                 <td>${line.name}</td>
-                <td>${ ', '.join([ tax.tax_code_id.name or '' for tax in line.invoice_line_tax_id ])}</td>
+                <td>${ ', '.join([ tax.name or '' for tax in line.invoice_line_tax_id ])}</td>
                 <td style="text-align:right;" class="amount">${line.quantity} ${line.uos_id and line.uos_id.name or ''}</td>
                 <td style="text-align:right;" class="amount">${formatLang(line.price_unit)}</td>
                 <td style="text-align:right;" class="amount">${formatLang(line.discount or 0.00, digits=get_digits(dp='Account'))}</td>
@@ -203,7 +199,7 @@
             	<td></td>
             	<td ></td>
                 <td style="text-align:right;">
-                    <b>${_("Net Total:")}</b>
+                    <b>${_("Net :")}</b>
                 </td>
                 <td class="amount" style="text-align:right;border-right: thin solid  #ffffff ;">${formatLang(inv.amount_untaxed, digits=get_digits(dp='Account'))} ${inv.currency_id.symbol}</td>
             </tr>
@@ -251,8 +247,9 @@
         %endif
     </table>
 	<br/>
+	<br/>
 	<h4>
-		${_("With our many thanks")}
+		${_("Thank you for your prompt payment")}
 	</h4>
 	<br/>
     <table class="list_bank_table" width="50%" >
@@ -271,10 +268,10 @@
     </table>
     <br/>
     %if inv.comment :
-    	${inv.comment | carriage_returns}
+    	<p class="std_text">${inv.comment | carriage_returns}</p>
     %endif
     %if inv.note2 :
-    	${inv.note2 | carriage_returns}
+    	<p class="std_text">${inv.note2 | carriage_returns}</p>
     %endif
     <p style="page-break-after:always"></p>
     %endfor
