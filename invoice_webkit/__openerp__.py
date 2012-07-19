@@ -36,9 +36,10 @@ Replaces the legacy rml Invoice report by a brand new webkit report.
     """,
     'author': 'Camptocamp',
     'website': 'http://www.openerp.com',
-    'depends': ['base', 'report_webkit', 'base_headers_webkit', 'account',],
+    'depends': ['base', 'report_webkit', 'base_headers_webkit', 'account','invoice_sequence'],
     'init_xml': [],
     'update_xml': ['invoice_report.xml',
+                   'view/invoice_view.xml'
                    ],
     'demo_xml': [],
     'test': [],

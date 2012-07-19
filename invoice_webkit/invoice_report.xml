@@ -12,7 +12,7 @@
             attachment="(object.state in ('open','paid')) and ('INV'+(object.number or '').replace('/',''))"
             attachment_use="1"
             multi="True"
-            webkit_header="report_webkit.ir_header_webkit_basesample0"
+            webkit_header="base_headers_webkit.base_reports_portrait_header"
             report_type="webkit"/>
     </data>
 </openerp>

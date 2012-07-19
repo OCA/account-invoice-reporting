@@ -121,6 +121,12 @@
             %endif
         </table>
     </div>
+    <div>
+    	
+    %if inv.note1_webkit :
+    	<p class="std_text"> ${inv.note1_webkit | carriage_returns} </p>
+    %endif
+    </div>
     <h1 style="clear: both; padding-top: 20px;">
         %if inv.type == 'out_invoice' and inv.state == 'proforma2':
             ${_("PRO-FORMA")}
@@ -157,13 +163,14 @@
             <td>${inv.reference or ''}</td>
             <td width="20%">${inv.origin or ''}</td>
             <td>${inv.address_invoice_id and inv.address_invoice_id.partner_id and inv.address_invoice_id.partner_id.vat or ''}</td>
-            <td>${company_vat()}</td>
+            <td></td>
         </tr>
     </table>
 
     <table class="list_invoice_table" width="100%" style="margin-top: 20px;">
         <thead>
             <tr>
+                <th>${_("Position")}</th>
                 <th>${_("Description")}</th>
                 <th>${_("Taxes")}</th>
                 <th class="amount">${_("Qty")}</th>
@@ -175,6 +182,7 @@
         <tbody>
         %for line in inv.invoice_line :
             <tr >
+                <td>${line.sequence}</td>
                 <td>${line.name}</td>
                 <td>${ ', '.join([ tax.name or '' for tax in line.invoice_line_tax_id ])}</td>
                 <td style="text-align:right;" class="amount">${line.quantity} ${line.uos_id and line.uos_id.name or ''}</td>
@@ -184,43 +192,31 @@
             </tr>
             %if line.note :
                 <tr>
-                    <td colspan="6" class="note" style="font-style:italic; font-size: 10; border-top: thin solid  #ffffff ; padding:20;">${line.note | carriage_returns}</td>
+                    <td colspan="7" class="note" style="font-style:italic; font-size: 10; border-top: thin solid  #ffffff ; padding:20;">${line.note | carriage_returns}</td>
                 </tr>
             %endif
         %endfor
         </tbody>
     <tfoot >
             <tr>
-            	<td style="border-left: thin solid  #ffffff ;"></td>
-            	<td></td>
-            	<td></td>
-            	<td ></td>
-                <td style="text-align:right;">
+                <td colspan="6" style="text-align:right;border-right: thin solid  #ffffff ;border-left: thin solid  #ffffff ;">
                     <b>${_("Net :")}</b>
                 </td>
-                <td class="amount" style="text-align:right;border-right: thin solid  #ffffff ;">${formatLang(inv.amount_untaxed, digits=get_digits(dp='Account'))} ${inv.currency_id.symbol}</td>
+                <td class="amount" style="text-align:right;border-right: thin solid  #ffffff ;border-left: thin solid  #ffffff ;">${formatLang(inv.amount_untaxed, digits=get_digits(dp='Account'))} ${inv.currency_id.symbol}</td>
             </tr>
             <tr class="no_bloc">
-            	<td style="border-top: thin solid  #ffffff ; border-bottom: thin solid  #ffffff ;border-left: thin solid  #ffffff ;"></td>
-            	<td style="border-top: thin solid  #ffffff ;"></td>
-            	<td style="border-top: thin solid  #ffffff ;"></td>
-            	<td style="border-top: thin solid  #ffffff ;"></td>
-            	<td style="text-align:right; border-top: thin solid  #ffffff ;">
+            	<td colspan="6" style="text-align:right; border-top: thin solid  #ffffff ; border-right: thin solid  #ffffff ;border-left: thin solid  #ffffff ;">
                     <b>${_("Taxes:")}</b>
                 </td>
-                <td class="amount" style="border-top: thin solid  #ffffff ;border-right: thin solid  #ffffff ;text-align:right;">
+                <td class="amount" style="border-right: thin solid  #ffffff ;border-top: thin solid  #ffffff ;border-left: thin solid  #ffffff ;text-align:right;">
 	                ${formatLang(inv.amount_tax, digits=get_digits(dp='Account'))} ${inv.currency_id.symbol}
 	       		</td>
             </tr>
             <tr>
-            	<td style="border-top: thin solid  #ffffff ; border-bottom: thin solid  #ffffff ;border-left: thin solid  #ffffff ;"></td>
-            	<td style="border-top: thin solid  #ffffff ; border-bottom: thin solid  #ffffff ;"></td>
-            	<td style="border-top: thin solid  #ffffff ; border-bottom: thin solid  #ffffff ;"></td>
-            	<td style="border-top: thin solid  #ffffff ; border-bottom: thin solid  #ffffff ;"></td>
-            	<td style="text-align:right; border-top: thin solid  #ffffff ; border-bottom: thin solid  #ffffff ;">
+            	<td colspan="6" style="border-right: thin solid  #ffffff ;border-top: thin solid  #ffffff ;border-left: thin solid  #ffffff ;;border-bottom: thin solid  #ffffff ;text-align:right;">
                     <b>${_("Total:")}</b>
                 </td>
-                <td class="amount" style="border-top: thin solid  #ffffff ; border-bottom: thin solid  #ffffff ;border-right: thin solid  #ffffff ;text-align:right;">
+                <td class="amount" style="border-right: thin solid  #ffffff ;border-top: thin solid  #ffffff ;border-left: thin solid  #ffffff ;text-align:right;;border-bottom: thin solid  #ffffff ;">
 					${formatLang(inv.amount_total, digits=get_digits(dp='Account'))} ${inv.currency_id.symbol}
 				</td>
             </tr>
@@ -251,21 +247,24 @@
 	<br/>
     <table class="list_bank_table" width="50%" >
         <tr>
-            <th>${_("Bank Account")}</th>
+            <th width="25%">${_("Bank Account")}</th>
             <td style="text-align:left;">${ inv.partner_bank_id and inv.partner_bank_id.acc_number or '-' } </td>
         </tr>
         <tr>
-            <th>${_("IBAN")}</th>
+            <th width="25%">${_("IBAN")}</th>
             <td>${ inv.partner_bank_id and inv.partner_bank_id.iban or '-' }</td>
         </tr>
         <tr>
-            <th>${_("BIC")}</th>
+            <th width="25%">${_("BIC")}</th>
             <td>${ inv.partner_bank_id and inv.partner_bank_id.bank and inv.partner_bank_id.bank.bic or '-' }</td>
         </tr>
     </table>
     <br/>
     %if inv.comment :
     	<p class="std_text">${inv.comment | carriage_returns}</p>
+    %endif
+    %if inv.note2_webkit :
+    	<p class="std_text">${inv.note2_webkit | carriage_returns}</p>
     %endif
     <p style="page-break-after:always"></p>
     %endfor

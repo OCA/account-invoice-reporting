@@ -41,6 +41,7 @@ class account_invoice_report(report_sxw.rml_parse):
             'company_vat' : self._get_company_vat,
         })
     
+    
     def _get_company_vat(self):
         res_users_obj=pooler.get_pool(self.cr.dbname).get('res.users')
         company_vat = res_users_obj.browse(self.cr, self.uid,self.uid).company_id.partner_id.vat
