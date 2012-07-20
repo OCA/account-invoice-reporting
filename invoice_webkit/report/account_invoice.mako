@@ -163,7 +163,7 @@
             <td>${inv.reference or ''}</td>
             <td width="20%">${inv.origin or ''}</td>
             <td>${inv.address_invoice_id and inv.address_invoice_id.partner_id and inv.address_invoice_id.partner_id.vat or ''}</td>
-            <td></td>
+            <td>${company_vat() or '-'}</td>
         </tr>
     </table>
 

@@ -52,7 +52,7 @@
             <field name="type">form</field>
             <field name="inherit_id" ref="account.invoice_form"/>
             <field name="arch" type="xml">
-                <field name="period_id" domain="[('state', '=', 'draft')]" groups="account.group_account_user" widget="selection" position="after">
+                <xpath expr="//field[@name='move_id']" position="after">
                     <separator string="Header and footer" colspan="6"/>
 					<newline />
                     <field name="text_condition1_webkit" domain="[('type','=','header')]"
@@ -62,7 +62,7 @@
                         on_change="set_note_webkit(text_condition2_webkit)" colspan="2"/>
 					<separator string="" colspan="6"/>
                     <newline />
-                </field>
+                </xpath>
             </field>
         </record>
         <record model="ir.ui.view" id="invoice_form_add_note2_webkit">
@@ -71,10 +71,10 @@
             <field name="type">form</field>
             <field name="inherit_id" ref="account.invoice_form"/>
             <field name="arch" type="xml">
-                <field  colspan="4" name="comment" nolabel="1" position="after">
+                <xpath expr="//field[@name='comment']" position="after">
                     <field name="note1_webkit" colspan="4"/>
                     <field name="note2_webkit" colspan="4"/>
-                </field>
+                </xpath>
             </field>
         </record>
     </data>

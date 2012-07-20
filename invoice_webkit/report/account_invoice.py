@@ -38,7 +38,7 @@ class account_invoice_report(report_sxw.rml_parse):
             'time': time,
             'cr':cr,
             'uid': uid,
-            'company_vat' : self._get_company_vat,
+            'company_vat': self._get_company_vat,
         })
     
     
