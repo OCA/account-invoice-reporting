@@ -170,7 +170,6 @@
     <table class="list_invoice_table" width="100%" style="margin-top: 20px;">
         <thead>
             <tr>
-                <th>${_("Position")}</th>
                 <th>${_("Description")}</th>
                 <th>${_("Taxes")}</th>
                 <th class="amount">${_("Qty")}</th>
@@ -182,7 +181,6 @@
         <tbody>
         %for line in inv.invoice_line :
             <tr >
-                <td>${line.sequence}</td>
                 <td>${line.name}</td>
                 <td>${ ', '.join([ tax.name or '' for tax in line.invoice_line_tax_id ])}</td>
                 <td style="text-align:right;" class="amount">${line.quantity} ${line.uos_id and line.uos_id.name or ''}</td>
@@ -192,20 +190,20 @@
             </tr>
             %if line.note :
                 <tr>
-                    <td colspan="7" class="note" style="font-style:italic; font-size: 10; border-top: thin solid  #ffffff ; padding:20;">${line.note | carriage_returns}</td>
+                    <td colspan="6" class="note" style="font-style:italic; font-size: 10; border-top: thin solid  #ffffff ; padding:20;">${line.note | carriage_returns}</td>
                 </tr>
             %endif
         %endfor
         </tbody>
     <tfoot >
             <tr>
-                <td colspan="6" style="text-align:right;border-right: thin solid  #ffffff ;border-left: thin solid  #ffffff ;">
+                <td colspan="5" style="text-align:right;border-right: thin solid  #ffffff ;border-left: thin solid  #ffffff ;">
                     <b>${_("Net :")}</b>
                 </td>
                 <td class="amount" style="text-align:right;border-right: thin solid  #ffffff ;border-left: thin solid  #ffffff ;">${formatLang(inv.amount_untaxed, digits=get_digits(dp='Account'))} ${inv.currency_id.symbol}</td>
             </tr>
             <tr class="no_bloc">
-            	<td colspan="6" style="text-align:right; border-top: thin solid  #ffffff ; border-right: thin solid  #ffffff ;border-left: thin solid  #ffffff ;">
+            	<td colspan="5" style="text-align:right; border-top: thin solid  #ffffff ; border-right: thin solid  #ffffff ;border-left: thin solid  #ffffff ;">
                     <b>${_("Taxes:")}</b>
                 </td>
                 <td class="amount" style="border-right: thin solid  #ffffff ;border-top: thin solid  #ffffff ;border-left: thin solid  #ffffff ;text-align:right;">
@@ -213,7 +211,7 @@
 	       		</td>
             </tr>
             <tr>
-            	<td colspan="6" style="border-right: thin solid  #ffffff ;border-top: thin solid  #ffffff ;border-left: thin solid  #ffffff ;;border-bottom: thin solid  #ffffff ;text-align:right;">
+            	<td colspan="5" style="border-right: thin solid  #ffffff ;border-top: thin solid  #ffffff ;border-left: thin solid  #ffffff ;;border-bottom: thin solid  #ffffff ;text-align:right;">
                     <b>${_("Total:")}</b>
                 </td>
                 <td class="amount" style="border-right: thin solid  #ffffff ;border-top: thin solid  #ffffff ;border-left: thin solid  #ffffff ;text-align:right;;border-bottom: thin solid  #ffffff ;">
