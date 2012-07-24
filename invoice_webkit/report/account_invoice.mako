@@ -179,7 +179,7 @@
             <th>${_("Our VAT No")}</td>
         </tr>
         <tr>
-            <td class="date">${inv.date_invoice or ''}</td>
+            <td class="date">${formatLang(inv.date_invoice, date=True)}</td>
             <td class="date">${formatLang(inv.date_due, date=True)}</td>
             <td>${inv.reference or ''}</td>
             <td width="20%">${inv.origin or ''}</td>
