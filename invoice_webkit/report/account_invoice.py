@@ -29,6 +29,7 @@
 
 import time
 from report import report_sxw
+import pooler
 
 class account_invoice_report(report_sxw.rml_parse):
     def __init__(self, cr, uid, name, context):
@@ -37,7 +38,17 @@ class account_invoice_report(report_sxw.rml_parse):
             'time': time,
             'cr':cr,
             'uid': uid,
+            'company_vat': self._get_company_vat,
         })
+    
+    
+    def _get_company_vat(self):
+        res_users_obj=pooler.get_pool(self.cr.dbname).get('res.users')
+        company_vat = res_users_obj.browse(self.cr, self.uid,self.uid).company_id.partner_id.vat
+        if company_vat:
+            return company_vat
+        else:
+            return False
 
 report_sxw.report_sxw('report.account.invoice.webkit',
                        'account.invoice',
