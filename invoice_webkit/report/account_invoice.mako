@@ -171,12 +171,12 @@
 
     <table class="basic_table" width="100%">
         <tr>
-            <td class="date">${_("Invoice Date")}</td>
-            <td class="date">${_("Due Date")}</td>
-            <td>${_("Your Ref.")}</td>
-            <td>${_("Our Ref.")}</td>
-            <td>${_("Customer VAT No")}</td>
-            <td>${_("Our VAT No")}</td>
+            <th class="date">${_("Invoice Date")}</td>
+            <th class="date">${_("Due Date")}</td>
+            <th>${_("Your Ref.")}</td>
+            <th>${_("Our Ref.")}</td>
+            <th>${_("Customer VAT No")}</td>
+            <th>${_("Our VAT No")}</td>
         </tr>
         <tr>
             <td class="date">${inv.date_invoice or ''}</td>
