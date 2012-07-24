@@ -247,7 +247,7 @@
     <table class="list_total_table" width="40%" >
         <tr>
             <th style="text-align:left;">${_("Rate")}</th>
-            <th>${_("Net")}</th>
+            <th>${_("Base")}</th>
             <th>${_("Tax")}</th>
         </tr>
         %if inv.tax_line :
