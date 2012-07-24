@@ -162,20 +162,20 @@
 
     <table class="basic_table" width="100%">
         <tr>
-            <td>${_("Invoice Date")}</td>
-            <td>${_("Due Date")}</td>
+            <td class="date">${_("Invoice Date")}</td>
+            <td class="date">${_("Due Date")}</td>
             <td>${_("Your Ref.")}</td>
             <td>${_("Our Ref.")}</td>
             <td>${_("Customer VAT No")}</td>
             <td>${_("Our VAT No")}</td>
         </tr>
         <tr>
-            <td>${inv.date_invoice or ''}</td>
-            <td>${formatLang(inv.date_due, date=True)}</td>
+            <td class="date">${inv.date_invoice or ''}</td>
+            <td class="date">${formatLang(inv.date_due, date=True)}</td>
             <td>${inv.reference or ''}</td>
             <td width="20%">${inv.origin or ''}</td>
             <td>${inv.address_invoice_id and inv.address_invoice_id.partner_id and inv.address_invoice_id.partner_id.vat or ''}</td>
-            <td>${company_vat() or '-'}</td>
+            <td class="vat">${company_vat() or '-'}</td>
         </tr>
     </table>
 
