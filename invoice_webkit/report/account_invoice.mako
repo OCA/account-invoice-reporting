@@ -98,6 +98,10 @@
                         font-size:12;
                     }
 
+                    tfoot.totals tr:first-child td{
+                        padding-top: 15px;
+                    }
+
                     th.date {
                         width: 90px;
                     }
@@ -207,7 +211,7 @@
             %endif
         %endfor
         </tbody>
-    <tfoot >
+        <tfoot class="totals">
             <tr>
                 <td colspan="5" style="text-align:right;border-right: thin solid  #ffffff ;border-left: thin solid  #ffffff ;">
                     <b>${_("Net :")}</b>
