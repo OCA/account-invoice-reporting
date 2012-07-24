@@ -175,16 +175,12 @@
             <th class="date">${_("Due Date")}</td>
             <th>${_("Your Ref.")}</td>
             <th>${_("Our Ref.")}</td>
-            <th>${_("Customer VAT No")}</td>
-            <th>${_("Our VAT No")}</td>
         </tr>
         <tr>
             <td class="date">${formatLang(inv.date_invoice, date=True)}</td>
             <td class="date">${formatLang(inv.date_due, date=True)}</td>
             <td>${inv.reference or ''}</td>
             <td width="20%">${inv.origin or ''}</td>
-            <td>${inv.address_invoice_id and inv.address_invoice_id.partner_id and inv.address_invoice_id.partner_id.vat or ''}</td>
-            <td class="vat">${company_vat() or '-'}</td>
         </tr>
     </table>
 
@@ -266,18 +262,22 @@
                 ${_("Thank you for your prompt payment")}
         </h4>
         <br/>
-    <table class="list_bank_table" width="50%" >
+    <table class="list_bank_table" width="100%" >
         <tr>
-            <th width="25%">${_("Bank Account")}</th>
-            <td style="text-align:left;">${ inv.partner_bank_id and inv.partner_bank_id.acc_number or '-' } </td>
+            <th style="width:20%;">${_("Bank Account")}</th>
+            <td style="width:30%;text-align:left;">${ inv.partner_bank_id and inv.partner_bank_id.acc_number or '-' } </td>
+            <th style="width:20%;">${_("Customer VAT No")}</td>
+            <td style="width:30%;">${inv.address_invoice_id and inv.address_invoice_id.partner_id and inv.address_invoice_id.partner_id.vat or '-'}</td>
         </tr>
         <tr>
-            <th width="25%">${_("IBAN")}</th>
-            <td>${ inv.partner_bank_id and inv.partner_bank_id.iban or '-' }</td>
+            <th style="width:20%;">${_("IBAN")}</th>
+            <td style="width:30%;text-align:left;">${ inv.partner_bank_id and inv.partner_bank_id.iban or '-' }</td>
+            <th style="width:20%;">${_("Our VAT No")}</td>
+            <td style="width:30%;" class="vat">${company_vat() or '-'}</td>
         </tr>
         <tr>
-            <th width="25%">${_("BIC")}</th>
-            <td>${ inv.partner_bank_id and inv.partner_bank_id.bank and inv.partner_bank_id.bank.bic or '-' }</td>
+            <th width="20%">${_("BIC")}</th>
+            <td style="width:30%;">${ inv.partner_bank_id and inv.partner_bank_id.bank and inv.partner_bank_id.bank.bic or '-' }</td>
         </tr>
     </table>
     <br/>
