@@ -254,7 +254,7 @@
         %for t in inv.tax_line :
             <tr>
                 <td style="text-align:left;">${ t.name } </td>
-                <td class="amount">${ formatLang(t.base, digits=get_digits(dp='Account') }</td>
+                <td class="amount">${ formatLang(t.base, digits=get_digits(dp='Account')) }</td>
                 <td class="amount">${ formatLang(t.amount, digits=get_digits(dp='Account')) }</td>
             </tr>
         %endfor
