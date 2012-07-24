@@ -49,7 +49,7 @@
                         padding-left:3px
                     }
 
-                    .list_table thead {
+                    .list_invoice_table thead {
                         display:table-header-group;
                     }
 
@@ -65,7 +65,7 @@
                     }
 
 
-                    .list_table thead {
+                    .list_tax_table thead {
                         display:table-header-group;
                     }
 
@@ -118,6 +118,7 @@
                     td.vat {
                         white-space: nowrap;
                     }
+
     </style>
 </head>
 <body>
