@@ -71,7 +71,7 @@
 
 
                     .list_total_table {
-                            border-collapse: collapse;
+                        border-collapse: collapse;
                     }
                     .list_total_table td {
                         text-align:right;
@@ -96,6 +96,10 @@
 
                     .std_text {
                         font-size:12;
+                    }
+
+                    td.amount {
+                        text-align: right;
                     }
 
                     tfoot.totals tr:first-child td{
@@ -188,21 +192,21 @@
             <tr>
                 <th>${_("Description")}</th>
                 <th>${_("Taxes")}</th>
-                <th class="amount">${_("Qty")}</th>
-                <th class="amount">${_("Unit Price")}</th>
-                <th class="amount">${_("Disc.(%)")}</th>
-                <th class="amount">${_("Net Sub Total")}</th>
+                <th>${_("Qty")}</th>
+                <th>${_("Unit Price")}</th>
+                <th>${_("Disc.(%)")}</th>
+                <th>${_("Net Sub Total")}</th>
             </tr>
         </thead>
         <tbody>
         %for line in inv.invoice_line :
             <tr >
                 <td>${line.name}</td>
-                <td>${ ', '.join([ tax.name or '' for tax in line.invoice_line_tax_id ])}</td>
-                <td style="text-align:right;" class="amount">${line.quantity} ${line.uos_id and line.uos_id.name or ''}</td>
-                <td style="text-align:right;" class="amount">${formatLang(line.price_unit)}</td>
-                <td style="text-align:right;" class="amount">${formatLang(line.discount or 0.00, digits=get_digits(dp='Account'))}</td>
-                <td style="text-align:right;" class="amount">${formatLang(line.price_subtotal, digits=get_digits(dp='Account'))} ${inv.currency_id.symbol}</td>
+                <td style="text-align:center;">${ ', '.join([ tax.name or '' for tax in line.invoice_line_tax_id ])}</td>
+                <td class="amount">${line.quantity} ${line.uos_id and line.uos_id.name or ''}</td>
+                <td class="amount">${formatLang(line.price_unit)}</td>
+                <td class="amount">${formatLang(line.discount or 0.00, digits=get_digits(dp='Account'))}</td>
+                <td class="amount">${formatLang(line.price_subtotal, digits=get_digits(dp='Account'))} ${inv.currency_id.symbol}</td>
             </tr>
             %if line.note :
                 <tr>
@@ -216,12 +220,12 @@
                 <td colspan="5" style="text-align:right;border-right: thin solid  #ffffff ;border-left: thin solid  #ffffff ;">
                     <b>${_("Net :")}</b>
                 </td>
-                <td class="amount" style="text-align:right;border-right: thin solid  #ffffff ;border-left: thin solid  #ffffff ;">
+                <td class="amount" style="border-right: thin solid  #ffffff ;border-left: thin solid  #ffffff ;">
                     ${formatLang(inv.amount_untaxed, digits=get_digits(dp='Account'))} ${inv.currency_id.symbol}
                 </td>
             </tr>
             <tr class="no_bloc">
-                <td colspan="5" style="text-align:right; border-top: thin solid  #ffffff ; border-right: thin solid  #ffffff ;border-left: thin solid  #ffffff ;">
+                <td colspan="5" style="border-top: thin solid  #ffffff ; border-right: thin solid  #ffffff ;border-left: thin solid  #ffffff ;">
                     <b>${_("Taxes:")}</b>
                 </td>
                 <td class="amount" style="border-right: thin solid  #ffffff ;border-top: thin solid  #ffffff ;border-left: thin solid  #ffffff ;text-align:right;">
@@ -229,10 +233,10 @@
                 </td>
             </tr>
             <tr>
-                <td colspan="5" style="border-right: thin solid  #ffffff ;border-top: thin solid  #ffffff ;border-left: thin solid  #ffffff ;;border-bottom: thin solid  #ffffff ;text-align:right;">
+                <td colspan="5" style="border-right: thin solid  #ffffff ;border-top: thin solid  #ffffff ;border-left: thin solid  #ffffff ;border-bottom: thin solid  #ffffff ;">
                     <b>${_("Total:")}</b>
                 </td>
-                <td class="amount" style="border-right: thin solid  #ffffff ;border-top: thin solid  #ffffff ;border-left: thin solid  #ffffff ;text-align:right;;border-bottom: thin solid  #ffffff ;">
+                <td class="amount" style="border-right: thin solid  #ffffff ;border-top: thin solid  #ffffff ;border-left: thin solid  #ffffff ;border-bottom: thin solid  #ffffff ;">
                         <b>${formatLang(inv.amount_total, digits=get_digits(dp='Account'))} ${inv.currency_id.symbol}</b>
                 </td>
             </tr>
