@@ -2,102 +2,114 @@
 <head>
     <style type="text/css">
         ${css}
-			.list_invoice_table {
-			border:thin solid #E3E4EA;
-			text-align:center;
-			border-collapse: collapse;
-			}
-			.list_invoice_table td {
-			border-top : thin solid #EEEEEE;
-			text-align:left;
-			font-size:12;
-			padding-right:3px
-			padding-left:3px
-			padding-top:3px
-			padding-bottom:3px
-			}
+                    .list_invoice_table {
+                        border:thin solid #E3E4EA;
+                        text-align:center;
+                        border-collapse: collapse;
+                    }
+                    .list_invoice_table td {
+                        border-top : thin solid #EEEEEE;
+                        text-align:left;
+                        font-size:12;
+                        padding-right:3px
+                        padding-left:3px
+                        padding-top:3px
+                        padding-bottom:3px
+                    }
 
-			.list_bank_table {
-			text-align:center;
-			border-collapse: collapse;
-			}
-			.list_bank_table td {
-			text-align:left;
-			font-size:12;
-			padding-right:3px
-			padding-left:3px
-			padding-top:3px
-			padding-bottom:3px
-			}
+                    .list_bank_table {
+                        text-align:center;
+                        border-collapse: collapse;
+                    }
+                    .list_bank_table td {
+                        text-align:left;
+                        font-size:12;
+                        padding-right:3px
+                        padding-left:3px
+                        padding-top:3px
+                        padding-bottom:3px
+                    }
 
-			.list_bank_table th {
-			background-color: #EEEEEE;
-			text-align:left;
-			font-size:12;
-			font-weight:bold;
-			padding-right:3px
-			padding-left:3px
-			}
-			
-			.list_invoice_table th {
-			background-color: #EEEEEE;
-			border: thin solid #000000;
-			text-align:center;
-			font-size:12;
-			font-weight:bold;
-			padding-right:3px
-			padding-left:3px
-			}
-			
-			.list_table thead {
-			    display:table-header-group;
-			}
+                    .list_bank_table th {
+                        background-color: #EEEEEE;
+                        text-align:left;
+                        font-size:12;
+                        font-weight:bold;
+                        padding-right:3px
+                        padding-left:3px
+                    }
 
+                    .list_invoice_table th {
+                        background-color: #EEEEEE;
+                        border: thin solid #000000;
+                        text-align:center;
+                        font-size:12;
+                        font-weight:bold;
+                        padding-right:3px
+                        padding-left:3px
+                    }
 
-			.list_tax_table {
-			}
-			.list_tax_table td {
-			text-align:left;
-			font-size:12;
-			}
-			
-			.list_tax_table th {
-			}
+                    .list_table thead {
+                        display:table-header-group;
+                    }
 
 
-			.list_table thead {
-			    display:table-header-group;
-			}
+                    .list_tax_table {
+                    }
+                    .list_tax_table td {
+                        text-align:left;
+                        font-size:12;
+                    }
+
+                    .list_tax_table th {
+                    }
 
 
-			.list_total_table {
-				border-collapse: collapse;
-			}
-			.list_total_table td {
-			text-align:right;
-			font-size:12;
-			}
-
-			.no_bloc {
-				border-top: thin solid  #ffffff ;
-			}
-
-			
-			.list_total_table th {
-				background-color: #F7F7F7;
-				border-collapse: collapse;
-			}
+                    .list_table thead {
+                        display:table-header-group;
+                    }
 
 
-			.right_table {
-			right: 4cm;
-			width:"100%";
-			}
-			
-			.std_text {
-				font-size:12;
-				}
+                    .list_total_table {
+                            border-collapse: collapse;
+                    }
+                    .list_total_table td {
+                        text-align:right;
+                        font-size:12;
+                    }
 
+                    .no_bloc {
+                        border-top: thin solid  #ffffff ;
+                    }
+
+
+                    .list_total_table th {
+                        background-color: #F7F7F7;
+                        border-collapse: collapse;
+                    }
+
+
+                    .right_table {
+                        right: 4cm;
+                        width:"100%";
+                    }
+
+                    .std_text {
+                        font-size:12;
+                    }
+
+                    th.date {
+                        width: 90px;
+                    }
+
+                    td.date {
+                        white-space: nowrap;
+                        width: 90px;
+                    }
+
+                    td.vat {
+                        white-space: nowrap;
+                    }
     </style>
 </head>
 <body>
@@ -122,9 +134,9 @@
         </table>
     </div>
     <div>
-    	
+
     %if inv.note1_webkit :
-    	<p class="std_text"> ${inv.note1_webkit | carriage_returns} </p>
+        <p class="std_text"> ${inv.note1_webkit | carriage_returns} </p>
     %endif
     </div>
     <h1 style="clear: both; padding-top: 20px;">
@@ -145,9 +157,9 @@
         %endif
     </h1>
     <h3  style="clear: both; padding-top: 20px;">
-    	${_("Subject : ")} ${inv.name or ''}
+        ${_("Subject : ")} ${inv.name or ''}
     </h3>
-	
+
     <table class="basic_table" width="100%">
         <tr>
             <td>${_("Invoice Date")}</td>
@@ -203,24 +215,24 @@
                 <td class="amount" style="text-align:right;border-right: thin solid  #ffffff ;border-left: thin solid  #ffffff ;">${formatLang(inv.amount_untaxed, digits=get_digits(dp='Account'))} ${inv.currency_id.symbol}</td>
             </tr>
             <tr class="no_bloc">
-            	<td colspan="5" style="text-align:right; border-top: thin solid  #ffffff ; border-right: thin solid  #ffffff ;border-left: thin solid  #ffffff ;">
+                <td colspan="5" style="text-align:right; border-top: thin solid  #ffffff ; border-right: thin solid  #ffffff ;border-left: thin solid  #ffffff ;">
                     <b>${_("Taxes:")}</b>
                 </td>
                 <td class="amount" style="border-right: thin solid  #ffffff ;border-top: thin solid  #ffffff ;border-left: thin solid  #ffffff ;text-align:right;">
-	                ${formatLang(inv.amount_tax, digits=get_digits(dp='Account'))} ${inv.currency_id.symbol}
-	       		</td>
+                        ${formatLang(inv.amount_tax, digits=get_digits(dp='Account'))} ${inv.currency_id.symbol}
+                        </td>
             </tr>
             <tr>
-            	<td colspan="5" style="border-right: thin solid  #ffffff ;border-top: thin solid  #ffffff ;border-left: thin solid  #ffffff ;;border-bottom: thin solid  #ffffff ;text-align:right;">
+                <td colspan="5" style="border-right: thin solid  #ffffff ;border-top: thin solid  #ffffff ;border-left: thin solid  #ffffff ;;border-bottom: thin solid  #ffffff ;text-align:right;">
                     <b>${_("Total:")}</b>
                 </td>
                 <td class="amount" style="border-right: thin solid  #ffffff ;border-top: thin solid  #ffffff ;border-left: thin solid  #ffffff ;text-align:right;;border-bottom: thin solid  #ffffff ;">
-					${formatLang(inv.amount_total, digits=get_digits(dp='Account'))} ${inv.currency_id.symbol}
-				</td>
+                                        ${formatLang(inv.amount_total, digits=get_digits(dp='Account'))} ${inv.currency_id.symbol}
+                                </td>
             </tr>
-	</tfoot>
+        </tfoot>
     </table>
-	<br/>
+        <br/>
     <table class="list_total_table" width="40%" >
         <tr>
             <th></th>
@@ -237,12 +249,12 @@
         %endfor
         %endif
     </table>
-	<br/>
-	<br/>
-	<h4>
-		${_("Thank you for your prompt payment")}
-	</h4>
-	<br/>
+        <br/>
+        <br/>
+        <h4>
+                ${_("Thank you for your prompt payment")}
+        </h4>
+        <br/>
     <table class="list_bank_table" width="50%" >
         <tr>
             <th width="25%">${_("Bank Account")}</th>
@@ -259,10 +271,10 @@
     </table>
     <br/>
     %if inv.comment :
-    	<p class="std_text">${inv.comment | carriage_returns}</p>
+        <p class="std_text">${inv.comment | carriage_returns}</p>
     %endif
     %if inv.note2_webkit :
-    	<p class="std_text">${inv.note2_webkit | carriage_returns}</p>
+        <p class="std_text">${inv.note2_webkit | carriage_returns}</p>
     %endif
     <p style="page-break-after:always"></p>
     %endfor
