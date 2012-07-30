@@ -266,8 +266,10 @@
         <tr>
             <th style="width:20%;">${_("Bank Account")}</th>
             <td style="width:30%;text-align:left;">${ inv.partner_bank_id and inv.partner_bank_id.acc_number or '-' } </td>
+            %if inv.address_invoice_id and inv.address_invoice_id.partner_id and inv.address_invoice_id.partner_id.vat :
             <th style="width:20%;">${_("Customer VAT No")}</td>
-            <td style="width:30%;">${inv.address_invoice_id and inv.address_invoice_id.partner_id and inv.address_invoice_id.partner_id.vat or '-'}</td>
+            <td style="width:30%;">${inv.address_invoice_id.partner_id.vat or '-'}</td>
+            %endif
         </tr>
         <tr>
             <th style="width:20%;">${_("IBAN")}</th>
