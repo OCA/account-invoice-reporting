@@ -276,19 +276,27 @@
                 ${_("Thank you for your prompt payment")}
         </h4>
         <br/>
+    <%
+      inv_bank = inv.partner_bank_id
+      bank_institution = inv_bank and inv_bank.bank
+    %>
     <table class="list_bank_table" width="100%" >
         <tr>
-            <th style="width:20%;">${_("Bank Account")}</th>
-            <td style="width:30%;text-align:left;">${ inv.partner_bank_id and inv.partner_bank_id.acc_number or '-' } </td>
+            <th style="width:20%;">${_("Bank")}</th>
+            <td style="width:30%;text-align:left;">${ bank_institution and bank_institution.name or '-' } </td>
             %if inv.address_invoice_id and inv.address_invoice_id.partner_id and inv.address_invoice_id.partner_id.vat :
             <th style="width:20%;">${_("Customer VAT No")}</th>
             <td style="width:30%;">${inv.address_invoice_id.partner_id.vat or '-'}</td>
+            %else:
+            <!-- conserve table's cells widths -->
+            <td style="width:20%;"></td>
+            <td style="width:30%;"></td>
             %endif
         </tr>
         <tr>
             <th style="width:20%;">${_("IBAN")}</th>
-            <td style="width:30%;text-align:left;">${ inv.partner_bank_id and inv.partner_bank_id.iban or '-' }</td>
-            <th style="width:20%;">${_("Our VAT No")}</td>
+            <td style="width:30%;text-align:left;">${ inv_bank and inv_bank.iban or '-' }</td>
+            <th style="width:20%;">${_("Our VAT No")}</th>
             <td style="width:30%;" class="vat">${company_vat() or '-'}</td>
         </tr>
         <tr>
