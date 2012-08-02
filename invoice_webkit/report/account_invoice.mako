@@ -69,25 +69,39 @@
                         display:table-header-group;
                     }
 
-
                     .list_total_table {
+                        border:thin solid #E3E4EA;
+                        text-align:center;
                         border-collapse: collapse;
                     }
                     .list_total_table td {
-                        text-align:right;
+                        border-top : thin solid #EEEEEE;
+                        text-align:left;
                         font-size:12;
+                        padding-right:3px
+                        padding-left:3px
+                        padding-top:3px
+                        padding-bottom:3px
+                    }
+
+                    .list_total_table th {
+                        background-color: #EEEEEE;
+                        border: thin solid #000000;
+                        text-align:center;
+                        font-size:12;
+                        font-weight:bold;
+                        padding-right:3px
+                        padding-left:3px
+                    }
+
+
+                    .list_total_table thead {
+                        display:table-header-group;
                     }
 
                     .no_bloc {
                         border-top: thin solid  #ffffff ;
                     }
-
-
-                    .list_total_table th {
-                        background-color: #F7F7F7;
-                        border-collapse: collapse;
-                    }
-
 
                     .right_table {
                         right: 4cm;
@@ -267,7 +281,7 @@
             <th style="width:20%;">${_("Bank Account")}</th>
             <td style="width:30%;text-align:left;">${ inv.partner_bank_id and inv.partner_bank_id.acc_number or '-' } </td>
             %if inv.address_invoice_id and inv.address_invoice_id.partner_id and inv.address_invoice_id.partner_id.vat :
-            <th style="width:20%;">${_("Customer VAT No")}</td>
+            <th style="width:20%;">${_("Customer VAT No")}</th>
             <td style="width:30%;">${inv.address_invoice_id.partner_id.vat or '-'}</td>
             %endif
         </tr>
