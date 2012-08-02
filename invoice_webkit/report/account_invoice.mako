@@ -2,136 +2,131 @@
 <head>
     <style type="text/css">
         ${css}
-                    .list_invoice_table {
-                        border:thin solid #E3E4EA;
-                        text-align:center;
-                        border-collapse: collapse;
-                    }
-                    .list_invoice_table td {
-                        border-top : thin solid #EEEEEE;
-                        text-align:left;
-                        font-size:12;
-                        padding-right:3px
-                        padding-left:3px
-                        padding-top:3px
-                        padding-bottom:3px
-                    }
 
-                    .list_bank_table {
-                        text-align:center;
-                        border-collapse: collapse;
-                    }
-                    .list_bank_table td {
-                        text-align:left;
-                        font-size:12;
-                        padding-right:3px
-                        padding-left:3px
-                        padding-top:3px
-                        padding-bottom:3px
-                    }
-
-                    .list_bank_table th {
-                        background-color: #EEEEEE;
-                        text-align:left;
-                        font-size:12;
-                        font-weight:bold;
-                        padding-right:3px
-                        padding-left:3px
-                    }
-
-                    .list_invoice_table th {
-                        background-color: #EEEEEE;
-                        border: thin solid #000000;
-                        text-align:center;
-                        font-size:12;
-                        font-weight:bold;
-                        padding-right:3px
-                        padding-left:3px
-                    }
-
-                    .list_invoice_table thead {
-                        display:table-header-group;
-                    }
+.list_invoice_table {
+    border:thin solid #E3E4EA;
+    text-align:center;
+    border-collapse: collapse;
+}
+.list_invoice_table th {
+    background-color: #EEEEEE;
+    border: thin solid #000000;
+    text-align:center;
+    font-size:12;
+    font-weight:bold;
+    padding-right:3px;
+    padding-left:3px;
+}
+.list_invoice_table td {
+    border-top : thin solid #EEEEEE;
+    text-align:left;
+    font-size:12;
+    padding-right:3px;
+    padding-left:3px;
+    padding-top:3px;
+    padding-bottom:3px;
+}
+.list_invoice_table thead {
+    display:table-header-group;
+}
 
 
-                    .list_tax_table {
-                    }
-                    .list_tax_table td {
-                        text-align:left;
-                        font-size:12;
-                    }
-
-                    .list_tax_table th {
-                    }
-
-
-                    .list_tax_table thead {
-                        display:table-header-group;
-                    }
-
-                    .list_total_table {
-                        border:thin solid #E3E4EA;
-                        text-align:center;
-                        border-collapse: collapse;
-                    }
-                    .list_total_table td {
-                        border-top : thin solid #EEEEEE;
-                        text-align:left;
-                        font-size:12;
-                        padding-right:3px
-                        padding-left:3px
-                        padding-top:3px
-                        padding-bottom:3px
-                    }
-
-                    .list_total_table th {
-                        background-color: #EEEEEE;
-                        border: thin solid #000000;
-                        text-align:center;
-                        font-size:12;
-                        font-weight:bold;
-                        padding-right:3px
-                        padding-left:3px
-                    }
+.list_bank_table {
+    text-align:center;
+    border-collapse: collapse;
+}
+.list_bank_table th {
+    background-color: #EEEEEE;
+    text-align:left;
+    font-size:12;
+    font-weight:bold;
+    padding-right:3px;
+    padding-left:3px;
+}
+.list_bank_table td {
+    text-align:left;
+    font-size:12;
+    padding-right:3px;
+    padding-left:3px;
+    padding-top:3px;
+    padding-bottom:3px;
+}
 
 
-                    .list_total_table thead {
-                        display:table-header-group;
-                    }
+.list_tax_table {
+}
+.list_tax_table td {
+    text-align:left;
+    font-size:12;
+}
+.list_tax_table th {
+}
+.list_tax_table thead {
+    display:table-header-group;
+}
 
-                    .no_bloc {
-                        border-top: thin solid  #ffffff ;
-                    }
 
-                    .right_table {
-                        right: 4cm;
-                        width:"100%";
-                    }
+.list_total_table {
+    border:thin solid #E3E4EA;
+    text-align:center;
+    border-collapse: collapse;
+}
+.list_total_table td {
+    border-top : thin solid #EEEEEE;
+    text-align:left;
+    font-size:12;
+    padding-right:3px;
+    padding-left:3px;
+    padding-top:3px;
+    padding-bottom:3px;
+}
+.list_total_table th {
+    background-color: #EEEEEE;
+    border: thin solid #000000;
+    text-align:center;
+    font-size:12;
+    font-weight:bold;
+    padding-right:3px
+    padding-left:3px
+}
+.list_total_table thead {
+    display:table-header-group;
+}
 
-                    .std_text {
-                        font-size:12;
-                    }
 
-                    td.amount {
-                        text-align: right;
-                    }
+.no_bloc {
+    border-top: thin solid  #ffffff ;
+}
 
-                    tfoot.totals tr:first-child td{
-                        padding-top: 15px;
-                    }
+.right_table {
+    right: 4cm;
+    width:"100%";
+}
 
-                    th.date {
-                        width: 90px;
-                    }
+.std_text {
+    font-size:12;
+}
 
-                    td.date {
-                        white-space: nowrap;
-                        width: 90px;
-                    }
+td.amount {
+    text-align: right;
+}
 
-                    td.vat {
-                        white-space: nowrap;
-                    }
+tfoot.totals tr:first-child td{
+    padding-top: 15px;
+}
+
+th.date {
+    width: 90px;
+}
+
+td.date {
+    white-space: nowrap;
+    width: 90px;
+}
+
+td.vat {
+    white-space: nowrap;
+}
 
     </style>
 </head>
@@ -202,9 +197,9 @@
         <thead>
             <tr>
                 <th>${_("Description")}</th>
-                <th>${_("Taxes")}</th>
                 <th>${_("Qty")}</th>
                 <th>${_("Unit Price")}</th>
+                <th>${_("Taxes")}</th>
                 <th>${_("Disc.(%)")}</th>
                 <th>${_("Net Sub Total")}</th>
             </tr>
@@ -213,9 +208,9 @@
         %for line in inv.invoice_line :
             <tr >
                 <td>${line.name}</td>
-                <td style="text-align:center;">${ ', '.join([ tax.name or '' for tax in line.invoice_line_tax_id ])}</td>
-                <td class="amount">${line.quantity} ${line.uos_id and line.uos_id.name or ''}</td>
+                <td class="amount">${formatLang(line.quantity or 0.0,digits=get_digits(dp='Account'))} ${line.uos_id and line.uos_id.name or ''}</td>
                 <td class="amount">${formatLang(line.price_unit)}</td>
+                <td style="text-align:center;">${ ', '.join([ tax.name or '' for tax in line.invoice_line_tax_id ])}</td>
                 <td class="amount">${formatLang(line.discount or 0.00, digits=get_digits(dp='Account'))}</td>
                 <td class="amount">${formatLang(line.price_subtotal, digits=get_digits(dp='Account'))} ${inv.currency_id.symbol}</td>
             </tr>
