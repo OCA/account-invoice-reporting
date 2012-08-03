@@ -18,7 +18,7 @@ msgstr ""
 #. module: invoice_webkit
 #: report:addons/invoice_webkit/report/account_invoice.mako:155
 msgid "Our VAT No"
-msgstr "Notre N° TVA"
+msgstr "Notre No TVA"
 
 #. module: invoice_webkit
 #: report:addons/invoice_webkit/report/account_invoice.mako:133
@@ -28,7 +28,7 @@ msgstr "Facture annulée"
 #. module: invoice_webkit
 #: report:addons/invoice_webkit/report/account_invoice.mako:241
 msgid "Thank you for your prompt payment"
-msgstr "Avec nos remerciements"
+msgstr "Thank you for your prompt payment"
 
 #. module: invoice_webkit
 #: report:addons/invoice_webkit/report/account_invoice.mako:154
@@ -212,7 +212,3 @@ msgstr "Sous total"
 msgid "Net :"
 msgstr "Net :"
 
-#. module: invoice_webkit
-#: report:addons/invoice_webkit/report/account_invoice.mako:0
-msgid "Bank"
-msgstr "Banque"

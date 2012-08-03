@@ -2,131 +2,122 @@
 <head>
     <style type="text/css">
         ${css}
+                    .list_invoice_table {
+                        border:thin solid #E3E4EA;
+                        text-align:center;
+                        border-collapse: collapse;
+                    }
+                    .list_invoice_table td {
+                        border-top : thin solid #EEEEEE;
+                        text-align:left;
+                        font-size:12;
+                        padding-right:3px
+                        padding-left:3px
+                        padding-top:3px
+                        padding-bottom:3px
+                    }
 
-.list_invoice_table {
-    border:thin solid #E3E4EA;
-    text-align:center;
-    border-collapse: collapse;
-}
-.list_invoice_table th {
-    background-color: #EEEEEE;
-    border: thin solid #000000;
-    text-align:center;
-    font-size:12;
-    font-weight:bold;
-    padding-right:3px;
-    padding-left:3px;
-}
-.list_invoice_table td {
-    border-top : thin solid #EEEEEE;
-    text-align:left;
-    font-size:12;
-    padding-right:3px;
-    padding-left:3px;
-    padding-top:3px;
-    padding-bottom:3px;
-}
-.list_invoice_table thead {
-    display:table-header-group;
-}
+                    .list_bank_table {
+                        text-align:center;
+                        border-collapse: collapse;
+                    }
+                    .list_bank_table td {
+                        text-align:left;
+                        font-size:12;
+                        padding-right:3px
+                        padding-left:3px
+                        padding-top:3px
+                        padding-bottom:3px
+                    }
 
+                    .list_bank_table th {
+                        background-color: #EEEEEE;
+                        text-align:left;
+                        font-size:12;
+                        font-weight:bold;
+                        padding-right:3px
+                        padding-left:3px
+                    }
 
-.list_bank_table {
-    text-align:center;
-    border-collapse: collapse;
-}
-.list_bank_table th {
-    background-color: #EEEEEE;
-    text-align:left;
-    font-size:12;
-    font-weight:bold;
-    padding-right:3px;
-    padding-left:3px;
-}
-.list_bank_table td {
-    text-align:left;
-    font-size:12;
-    padding-right:3px;
-    padding-left:3px;
-    padding-top:3px;
-    padding-bottom:3px;
-}
+                    .list_invoice_table th {
+                        background-color: #EEEEEE;
+                        border: thin solid #000000;
+                        text-align:center;
+                        font-size:12;
+                        font-weight:bold;
+                        padding-right:3px
+                        padding-left:3px
+                    }
 
-
-.list_tax_table {
-}
-.list_tax_table td {
-    text-align:left;
-    font-size:12;
-}
-.list_tax_table th {
-}
-.list_tax_table thead {
-    display:table-header-group;
-}
+                    .list_invoice_table thead {
+                        display:table-header-group;
+                    }
 
 
-.list_total_table {
-    border:thin solid #E3E4EA;
-    text-align:center;
-    border-collapse: collapse;
-}
-.list_total_table td {
-    border-top : thin solid #EEEEEE;
-    text-align:left;
-    font-size:12;
-    padding-right:3px;
-    padding-left:3px;
-    padding-top:3px;
-    padding-bottom:3px;
-}
-.list_total_table th {
-    background-color: #EEEEEE;
-    border: thin solid #000000;
-    text-align:center;
-    font-size:12;
-    font-weight:bold;
-    padding-right:3px
-    padding-left:3px
-}
-.list_total_table thead {
-    display:table-header-group;
-}
+                    .list_tax_table {
+                    }
+                    .list_tax_table td {
+                        text-align:left;
+                        font-size:12;
+                    }
+
+                    .list_tax_table th {
+                    }
 
 
-.no_bloc {
-    border-top: thin solid  #ffffff ;
-}
+                    .list_tax_table thead {
+                        display:table-header-group;
+                    }
 
-.right_table {
-    right: 4cm;
-    width:"100%";
-}
 
-.std_text {
-    font-size:12;
-}
+                    .list_total_table {
+                        border-collapse: collapse;
+                    }
+                    .list_total_table td {
+                        text-align:right;
+                        font-size:12;
+                    }
 
-td.amount {
-    text-align: right;
-}
+                    .no_bloc {
+                        border-top: thin solid  #ffffff ;
+                    }
 
-tfoot.totals tr:first-child td{
-    padding-top: 15px;
-}
 
-th.date {
-    width: 90px;
-}
+                    .list_total_table th {
+                        background-color: #F7F7F7;
+                        border-collapse: collapse;
+                    }
 
-td.date {
-    white-space: nowrap;
-    width: 90px;
-}
 
-td.vat {
-    white-space: nowrap;
-}
+                    .right_table {
+                        right: 4cm;
+                        width:"100%";
+                    }
+
+                    .std_text {
+                        font-size:12;
+                    }
+
+                    td.amount {
+                        text-align: right;
+                    }
+
+                    tfoot.totals tr:first-child td{
+                        padding-top: 15px;
+                    }
+
+                    th.date {
+                        width: 90px;
+                    }
+
+                    td.date {
+                        white-space: nowrap;
+                        width: 90px;
+                    }
+
+                    td.vat {
+                        white-space: nowrap;
+                    }
 
     </style>
 </head>
@@ -142,7 +133,7 @@ td.vat {
     <div class="address">
         <table class="recipient">
             <tr><td class="name">${inv.partner_id.title and inv.partner_id.title.name or ''} ${inv.partner_id.name }</td></tr>
-            <tr><td>${inv.address_invoice_id.title and inv.address_invoice_id.title.name or ''}  ${inv.address_invoice_id and inv.address_invoice_id.name or '' }</td></tr>
+            <tr><td>${inv.address_invoice_id.title and inv.address_invoice_id.title.name or ''}  ${inv.address_invoice_id.name }</td></tr>
             <tr><td>${inv.address_invoice_id.street or ''}</td></tr>
             <tr><td>${inv.address_invoice_id.street2 or ''}</td></tr>
             <tr><td>${inv.address_invoice_id.zip or ''} ${inv.address_invoice_id.city or ''}</td></tr>
@@ -197,10 +188,9 @@ td.vat {
         <thead>
             <tr>
                 <th>${_("Description")}</th>
-                <th>${_("Qty")}</th>
-                <th>${_("UoM")}</th>
-                <th>${_("Unit Price")}</th>
                 <th>${_("Taxes")}</th>
+                <th>${_("Qty")}</th>
+                <th>${_("Unit Price")}</th>
                 <th>${_("Disc.(%)")}</th>
                 <th>${_("Net Sub Total")}</th>
             </tr>
@@ -209,12 +199,11 @@ td.vat {
         %for line in inv.invoice_line :
             <tr >
                 <td>${line.name}</td>
-                <td class="amount">${formatLang(line.quantity or 0.0,digits=get_digits(dp='Account'))}</td>
-                <td class="amount">${line.uos_id and line.uos_id.name or ''}</td>
+                <td style="text-align:center;">${ ', '.join([ tax.name or '' for tax in line.invoice_line_tax_id ])}</td>
+                <td class="amount">${line.quantity} ${line.uos_id and line.uos_id.name or ''}</td>
                 <td class="amount">${formatLang(line.price_unit)}</td>
-                <td style="font-style:italic; font-size: 10;text-align:center;" >${ ', '.join([ tax.name or '' for tax in line.invoice_line_tax_id ])}</td>
-                <td class="amount" width="10%">${line.discount and formatLang(line.discount, digits=get_digits(dp='Account')) or ''} ${line.discount and '%' or ''}</td>
-                <td class="amount" width="13%">${formatLang(line.price_subtotal, digits=get_digits(dp='Account'))} ${inv.currency_id.symbol}</td>
+                <td class="amount">${formatLang(line.discount or 0.00, digits=get_digits(dp='Account'))}</td>
+                <td class="amount">${formatLang(line.price_subtotal, digits=get_digits(dp='Account'))} ${inv.currency_id.symbol}</td>
             </tr>
             %if line.note :
                 <tr>
@@ -225,7 +214,7 @@ td.vat {
         </tbody>
         <tfoot class="totals">
             <tr>
-                <td colspan="6" style="text-align:right;border-right: thin solid  #ffffff ;border-left: thin solid  #ffffff ;">
+                <td colspan="5" style="text-align:right;border-right: thin solid  #ffffff ;border-left: thin solid  #ffffff ;">
                     <b>${_("Net :")}</b>
                 </td>
                 <td class="amount" style="border-right: thin solid  #ffffff ;border-left: thin solid  #ffffff ;">
@@ -233,7 +222,7 @@ td.vat {
                 </td>
             </tr>
             <tr class="no_bloc">
-                <td colspan="6" style="text-align:right; border-top: thin solid  #ffffff ; border-right: thin solid  #ffffff ;border-left: thin solid  #ffffff ;">
+                <td colspan="5" style="text-align:right; border-top: thin solid  #ffffff ; border-right: thin solid  #ffffff ;border-left: thin solid  #ffffff ;">
                     <b>${_("Taxes:")}</b>
                 </td>
                 <td class="amount" style="border-right: thin solid  #ffffff ;border-top: thin solid  #ffffff ;border-left: thin solid  #ffffff ;">
@@ -241,7 +230,7 @@ td.vat {
                 </td>
             </tr>
             <tr>
-                <td colspan="6" style="border-right: thin solid  #ffffff ;border-top: thin solid  #ffffff ;border-left: thin solid  #ffffff ;border-bottom: thin solid  #ffffff ;text-align:right;">
+                <td colspan="5" style="border-right: thin solid  #ffffff ;border-top: thin solid  #ffffff ;border-left: thin solid  #ffffff ;border-bottom: thin solid  #ffffff ;text-align:right;">
                     <b>${_("Total:")}</b>
                 </td>
                 <td class="amount" style="border-right: thin solid  #ffffff ;border-top: thin solid  #ffffff ;border-left: thin solid  #ffffff ;border-bottom: thin solid  #ffffff ;">
@@ -273,27 +262,17 @@ td.vat {
                 ${_("Thank you for your prompt payment")}
         </h4>
         <br/>
-    <%
-      inv_bank = inv.partner_bank_id
-      bank_institution = inv_bank and inv_bank.bank
-    %>
     <table class="list_bank_table" width="100%" >
         <tr>
-            <th style="width:20%;">${_("Bank")}</th>
-            <td style="width:30%;text-align:left;">${ bank_institution and bank_institution.name or '-' } </td>
-            %if inv.address_invoice_id and inv.address_invoice_id.partner_id and inv.address_invoice_id.partner_id.vat :
-            <th style="width:20%;">${_("Customer VAT No")}</th>
-            <td style="width:30%;">${inv.address_invoice_id.partner_id.vat or '-'}</td>
-            %else:
-            <!-- conserve table's cells widths -->
-            <td style="width:20%;"></td>
-            <td style="width:30%;"></td>
-            %endif
+            <th style="width:20%;">${_("Bank Account")}</th>
+            <td style="width:30%;text-align:left;">${ inv.partner_bank_id and inv.partner_bank_id.acc_number or '-' } </td>
+            <th style="width:20%;">${_("Customer VAT No")}</td>
+            <td style="width:30%;">${inv.address_invoice_id and inv.address_invoice_id.partner_id and inv.address_invoice_id.partner_id.vat or '-'}</td>
         </tr>
         <tr>
             <th style="width:20%;">${_("IBAN")}</th>
-            <td style="width:30%;text-align:left;">${ inv_bank and inv_bank.iban or '-' }</td>
-            <th style="width:20%;">${_("Our VAT No")}</th>
+            <td style="width:30%;text-align:left;">${ inv.partner_bank_id and inv.partner_bank_id.iban or '-' }</td>
+            <th style="width:20%;">${_("Our VAT No")}</td>
             <td style="width:30%;" class="vat">${company_vat() or '-'}</td>
         </tr>
         <tr>
