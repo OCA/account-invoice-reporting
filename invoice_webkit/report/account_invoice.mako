@@ -132,8 +132,8 @@
     <% setLang(inv.partner_id.lang) %>
     <div class="address">
         <table class="recipient">
-            <tr><td class="name">${inv.partner_id.title.name or ''}  ${inv.partner_id.name }</td></tr>
-            <tr><td>${inv.address_invoice_id.title.name or ''}  ${inv.address_invoice_id.name }</td></tr>
+            <tr><td class="name">${inv.partner_id.title and inv.partner_id.title.name or ''} ${inv.partner_id.name }</td></tr>
+            <tr><td>${inv.address_invoice_id.title and inv.address_invoice_id.title.name or ''}  ${inv.address_invoice_id.name }</td></tr>
             <tr><td>${inv.address_invoice_id.street or ''}</td></tr>
             <tr><td>${inv.address_invoice_id.street2 or ''}</td></tr>
             <tr><td>${inv.address_invoice_id.zip or ''} ${inv.address_invoice_id.city or ''}</td></tr>
