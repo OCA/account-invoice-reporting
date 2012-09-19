@@ -142,7 +142,7 @@ td.vat {
     <div class="address">
         <table class="recipient">
             <tr><td class="name">${inv.partner_id.title and inv.partner_id.title.name or ''} ${inv.partner_id.name }</td></tr>
-            <tr><td>${inv.address_invoice_id.title and inv.address_invoice_id.title.name or ''}  ${inv.address_invoice_id.name }</td></tr>
+            <tr><td>${inv.address_invoice_id.title and inv.address_invoice_id.title.name or ''}  ${inv.address_invoice_id and inv.address_invoice_id.name or '' }</td></tr>
             <tr><td>${inv.address_invoice_id.street or ''}</td></tr>
             <tr><td>${inv.address_invoice_id.street2 or ''}</td></tr>
             <tr><td>${inv.address_invoice_id.zip or ''} ${inv.address_invoice_id.city or ''}</td></tr>
@@ -198,6 +198,7 @@ td.vat {
             <tr>
                 <th>${_("Description")}</th>
                 <th>${_("Qty")}</th>
+                <th>${_("UoM")}</th>
                 <th>${_("Unit Price")}</th>
                 <th>${_("Taxes")}</th>
                 <th>${_("Disc.(%)")}</th>
@@ -208,11 +209,12 @@ td.vat {
         %for line in inv.invoice_line :
             <tr >
                 <td>${line.name}</td>
-                <td class="amount">${formatLang(line.quantity or 0.0,digits=get_digits(dp='Account'))} ${line.uos_id and line.uos_id.name or ''}</td>
+                <td class="amount">${formatLang(line.quantity or 0.0,digits=get_digits(dp='Account'))}</td>
+                <td class="amount">${line.uos_id and line.uos_id.name or ''}</td>
                 <td class="amount">${formatLang(line.price_unit)}</td>
-                <td style="text-align:center;">${ ', '.join([ tax.name or '' for tax in line.invoice_line_tax_id ])}</td>
-                <td class="amount">${formatLang(line.discount or 0.00, digits=get_digits(dp='Account'))}</td>
-                <td class="amount">${formatLang(line.price_subtotal, digits=get_digits(dp='Account'))} ${inv.currency_id.symbol}</td>
+                <td style="font-style:italic; font-size: 10;text-align:center;" >${ ', '.join([ tax.name or '' for tax in line.invoice_line_tax_id ])}</td>
+                <td class="amount" width="10%">${line.discount and formatLang(line.discount, digits=get_digits(dp='Account')) or ''} ${line.discount and '%' or ''}</td>
+                <td class="amount" width="13%">${formatLang(line.price_subtotal, digits=get_digits(dp='Account'))} ${inv.currency_id.symbol}</td>
             </tr>
             %if line.note :
                 <tr>
@@ -223,7 +225,7 @@ td.vat {
         </tbody>
         <tfoot class="totals">
             <tr>
-                <td colspan="5" style="text-align:right;border-right: thin solid  #ffffff ;border-left: thin solid  #ffffff ;">
+                <td colspan="6" style="text-align:right;border-right: thin solid  #ffffff ;border-left: thin solid  #ffffff ;">
                     <b>${_("Net :")}</b>
                 </td>
                 <td class="amount" style="border-right: thin solid  #ffffff ;border-left: thin solid  #ffffff ;">
@@ -231,7 +233,7 @@ td.vat {
                 </td>
             </tr>
             <tr class="no_bloc">
-                <td colspan="5" style="text-align:right; border-top: thin solid  #ffffff ; border-right: thin solid  #ffffff ;border-left: thin solid  #ffffff ;">
+                <td colspan="6" style="text-align:right; border-top: thin solid  #ffffff ; border-right: thin solid  #ffffff ;border-left: thin solid  #ffffff ;">
                     <b>${_("Taxes:")}</b>
                 </td>
                 <td class="amount" style="border-right: thin solid  #ffffff ;border-top: thin solid  #ffffff ;border-left: thin solid  #ffffff ;">
@@ -239,7 +241,7 @@ td.vat {
                 </td>
             </tr>
             <tr>
-                <td colspan="5" style="border-right: thin solid  #ffffff ;border-top: thin solid  #ffffff ;border-left: thin solid  #ffffff ;border-bottom: thin solid  #ffffff ;text-align:right;">
+                <td colspan="6" style="border-right: thin solid  #ffffff ;border-top: thin solid  #ffffff ;border-left: thin solid  #ffffff ;border-bottom: thin solid  #ffffff ;text-align:right;">
                     <b>${_("Total:")}</b>
                 </td>
                 <td class="amount" style="border-right: thin solid  #ffffff ;border-top: thin solid  #ffffff ;border-left: thin solid  #ffffff ;border-bottom: thin solid  #ffffff ;">
