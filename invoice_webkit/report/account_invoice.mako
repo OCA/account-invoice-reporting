@@ -142,12 +142,12 @@ td.vat {
     <div class="address">
         <table class="recipient">
             <tr><td class="name">${inv.partner_id.title and inv.partner_id.title.name or ''} ${inv.partner_id.name }</td></tr>
-            <tr><td>${inv.address_invoice_id.title and inv.address_invoice_id.title.name or ''}  ${inv.address_invoice_id and inv.address_invoice_id.name or '' }</td></tr>
-            <tr><td>${inv.address_invoice_id.street or ''}</td></tr>
-            <tr><td>${inv.address_invoice_id.street2 or ''}</td></tr>
-            <tr><td>${inv.address_invoice_id.zip or ''} ${inv.address_invoice_id.city or ''}</td></tr>
-            %if inv.address_invoice_id.country_id:
-            <tr><td>${inv.address_invoice_id.country_id.name or ''} </td></tr>
+            <tr><td>${inv.name or '' }</td></tr>
+            <tr><td>${inv.partner_id.street or ''}</td></tr>
+            <tr><td>${inv.partner_id.street2 or ''}</td></tr>
+            <tr><td>${inv.partner_id.zip or ''} ${inv.partner_id.city or ''}</td></tr>
+            %if inv.partner_id.country_id:
+            <tr><td>${inv.partner_id.country_id.name or ''} </td></tr>
             %endif
         </table>
     </div>
@@ -216,9 +216,9 @@ td.vat {
                 <td class="amount" width="10%">${line.discount and formatLang(line.discount, digits=get_digits(dp='Account')) or ''} ${line.discount and '%' or ''}</td>
                 <td class="amount" width="13%">${formatLang(line.price_subtotal, digits=get_digits(dp='Account'))} ${inv.currency_id.symbol}</td>
             </tr>
-            %if line.note :
+            %if line :
                 <tr>
-                    <td colspan="6" class="note" style="font-style:italic; font-size: 10; border-top: thin solid  #ffffff ; padding:20;">${line.note | carriage_returns}</td>
+                    <td colspan="6" class="note" style="font-style:italic; font-size: 10; border-top: thin solid  #ffffff ; padding:20;">${' ' | carriage_returns}</td>
                 </tr>
             %endif
         %endfor
@@ -281,9 +281,9 @@ td.vat {
         <tr>
             <th style="width:20%;">${_("Bank")}</th>
             <td style="width:30%;text-align:left;">${ bank_institution and bank_institution.name or '-' } </td>
-            %if inv.address_invoice_id and inv.address_invoice_id.partner_id and inv.address_invoice_id.partner_id.vat :
+            %if inv.partner_id and inv.partner_id.vat :
             <th style="width:20%;">${_("Customer VAT No")}</th>
-            <td style="width:30%;">${inv.address_invoice_id.partner_id.vat or '-'}</td>
+            <td style="width:30%;">${inv.partner_id.vat or '-'}</td>
             %else:
             <!-- conserve table's cells widths -->
             <td style="width:20%;"></td>
@@ -294,7 +294,7 @@ td.vat {
             <th style="width:20%;">${_("IBAN")}</th>
             <td style="width:30%;text-align:left;">${ inv_bank and inv_bank.iban or '-' }</td>
             <th style="width:20%;">${_("Our VAT No")}</th>
-            <td style="width:30%;" class="vat">${company_vat() or '-'}</td>
+            <td style="width:30%;" class="vat">''</td>
         </tr>
         <tr>
             <th width="20%">${_("BIC")}</th>
