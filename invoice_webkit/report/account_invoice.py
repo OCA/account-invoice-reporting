@@ -52,5 +52,5 @@ class account_invoice_report(report_sxw.rml_parse):
 
 report_sxw.report_sxw('report.account.invoice.webkit',
                        'account.invoice',
-                       'addons/invoice_webkit/report/account_invoice.mako',
+                       'invoice_webkit/report/account_invoice.mako',
                        parser=account_invoice_report)
