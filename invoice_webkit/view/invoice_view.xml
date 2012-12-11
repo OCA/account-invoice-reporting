@@ -56,7 +56,7 @@
                     <separator string="Header and footer" colspan="6"/>
 					<newline />
                     <field name="text_condition1_webkit" domain="[('type','=','header')]"
-                        on_change="set_comment(text_condition1_webkit)" colspan="2"/>
+                        on_change="set_comment_webkit(text_condition1_webkit)" colspan="2"/>
 
                     <field name="text_condition2_webkit" domain="[('type','=','footer')]"
                         on_change="set_note_webkit(text_condition2_webkit)" colspan="2"/>
@@ -72,8 +72,8 @@
             <field name="inherit_id" ref="account.invoice_form"/>
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='comment']" position="after">
-                    <field name="note1_webkit" colspan="4"/>
-                    <field name="note2_webkit" colspan="4"/>
+                    <field name="note1_webkit" colspan="2" placeholder="Additional top header ..." />
+                    <field name="note2_webkit" colspan="2" placeholder="Additional bottom footer ..."/>
                 </xpath>
             </field>
         </record>
