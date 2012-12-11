@@ -226,7 +226,7 @@ td.vat {
         <tbody>
         %for line in inv.invoice_line :
             <tr >
-                <td>${line.product_id and line.product_id.code + ' ' + line.product_id.name or ''}</td>
+                <td>${line.product_id and line.product_id.code or ''} ${line.product_id and line.product_id.name or ''}</td>
                 <td class="amount">${formatLang(line.quantity or 0.0,digits=get_digits(dp='Account'))}</td>
                 <td class="amount">${line.uos_id and line.uos_id.name or ''}</td>
                 <td class="amount">${formatLang(line.price_unit)}</td>
