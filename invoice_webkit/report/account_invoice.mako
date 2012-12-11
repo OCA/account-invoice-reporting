@@ -120,6 +120,23 @@ th.date {
     width: 90px;
 }
 
+td.amount, th.amount {
+    text-align: right;
+}
+.header_table {
+    text-align: center;
+    border: 1px solid lightGrey;
+    border-collapse: collapse;
+}
+.header_table th {
+    font-size: 12px;
+    border: 1px solid lightGrey;
+}
+.header_table td {
+    font-size: 12px;
+    border: 1px solid lightGrey;
+}
+
 td.date {
     white-space: nowrap;
     width: 90px;
@@ -219,7 +236,7 @@ td.vat {
             </tr>
             %if line.name :
                 <tr>
-                    <td colspan="6" class="note" style="font-style:italic; font-size: 10; border-top: thin solid  #ffffff ; padding:20;">${line.name | carriage_returns}</td>
+                    <td colspan="7" class="note" style="font-style:italic; font-size: 10; border-top: thin solid  #ffffff ; border-right:  thin solid #E3E4EA;  padding:20;">${line.name | carriage_returns}</td>
                 </tr>
             %endif
         %endfor
