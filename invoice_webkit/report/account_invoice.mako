@@ -200,14 +200,12 @@ td.vat {
         <tr>
             <th class="date">${_("Invoice Date")}</td>
             <th class="date">${_("Due Date")}</td>
-            <th>${_("Your Ref.")}</td>
             <th>${_("Our Ref.")}</td>
         </tr>
         <tr>
             <td class="date">${formatLang(inv.date_invoice, date=True)}</td>
             <td class="date">${formatLang(inv.date_due, date=True)}</td>
-            <td>${inv.reference or ''}</td>
-            <td width="20%">${inv.origin or ''}</td>
+            <td>${inv.origin or ''}</td>
         </tr>
     </table>
 
