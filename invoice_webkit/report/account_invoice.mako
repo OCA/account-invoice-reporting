@@ -122,6 +122,7 @@ th.date {
 
 td.amount, th.amount {
     text-align: right;
+    white-space: nowrap;
 }
 .header_table {
     text-align: center;
