@@ -160,7 +160,6 @@ td.vat {
     <div class="address">
         <table class="recipient">
             <tr><td class="name">${inv.partner_id.title and inv.partner_id.title.name or ''} ${inv.partner_id.name }</td></tr>
-            <tr><td>${inv.name or '' }</td></tr>
             <tr><td>${inv.partner_id.street or ''}</td></tr>
             <tr><td>${inv.partner_id.street2 or ''}</td></tr>
             <tr><td>${inv.partner_id.zip or ''} ${inv.partner_id.city or ''}</td></tr>
@@ -200,12 +199,12 @@ td.vat {
         <tr>
             <th class="date">${_("Invoice Date")}</td>
             <th class="date">${_("Due Date")}</td>
-            <th>${_("Our Ref.")}</td>
+            <th style="text-align:left;">${_("Our Ref.")}</td>
         </tr>
         <tr>
             <td class="date">${formatLang(inv.date_invoice, date=True)}</td>
             <td class="date">${formatLang(inv.date_due, date=True)}</td>
-            <td>${inv.origin or ''}</td>
+            <td style="text-align:left;">${inv.origin or ''}</td>
         </tr>
     </table>
 
