@@ -2,7 +2,7 @@
 ##############################################################################
 #
 #   Copyright (c) 2011 Camptocamp SA (http://www.camptocamp.com)
-#   @author Guewen Baconnier
+#   @author Guewen Baconnier, Bessi Nicolas, Vicent Renaville
 #
 # WARNING: This program as such is intended to be used by professional
 # programmers who take the whole responsability of assessing all potential
@@ -26,6 +26,6 @@
 # Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 #
 ##############################################################################
-
-import report
-import view
+from . import invoice
+from . import report
+from . import view

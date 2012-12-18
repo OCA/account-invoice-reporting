@@ -2,7 +2,7 @@
 ##############################################################################
 #
 #   Copyright (c) 2011 Camptocamp SA (http://www.camptocamp.com)
-#   @author Guewen Baconnier
+#   @author Guewen Baconnier, Vincent Renaville, Nicolas Bessi
 #
 # WARNING: This program as such is intended to be used by professional
 # programmers who take the whole responsability of assessing all potential
@@ -26,25 +26,25 @@
 # Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 #
 ##############################################################################
-
 import time
-from report import report_sxw
-import pooler
 
-class account_invoice_report(report_sxw.rml_parse):
+from openerp.report import report_sxw
+from openerp import pooler
+
+class AccountInvoice_Report(report_sxw.rml_parse):
     def __init__(self, cr, uid, name, context):
-        super(account_invoice_report, self).__init__(cr, uid, name, context=context)
+        super(AccountInvoice_Report, self).__init__(cr, uid, name, context=context)
         self.localcontext.update({
             'time': time,
-            'cr':cr,
+            'cr': cr,
             'uid': uid,
             'company_vat': self._get_company_vat,
         })
-    
-    
+
+
     def _get_company_vat(self):
-        res_users_obj=pooler.get_pool(self.cr.dbname).get('res.users')
-        company_vat = res_users_obj.browse(self.cr, self.uid,self.uid).company_id.partner_id.vat
+        res_users_obj = pooler.get_pool(self.cr.dbname).get('res.users')
+        company_vat = res_users_obj.browse(self.cr, self.uid, self.uid).company_id.partner_id.vat
         if company_vat:
             return company_vat
         else:

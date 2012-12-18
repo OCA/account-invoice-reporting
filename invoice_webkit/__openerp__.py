@@ -2,7 +2,7 @@
 ##############################################################################
 #
 #   Copyright (c) 2011 Camptocamp SA (http://www.camptocamp.com)
-#   @author Guewen Baconnier
+#   @author Guewen Baconnier, Bessi Nicolas, Vicent Renaville
 #
 # WARNING: This program as such is intended to be used by professional
 # programmers who take the whole responsability of assessing all potential
@@ -27,15 +27,14 @@
 #
 ##############################################################################
 
-{
-    'name': 'Invoice Report using Webkit Library',
+{   'name': 'Invoice Report using Webkit Library',
     'version': '1.0',
     'category': 'Reports/Webkit',
     'description': """
-Replaces the legacy rml Invoice report by a brand new webkit report.
+        Replaces the legacy rml Invoice report by a brand new webkit report.
     """,
     'author': 'Camptocamp',
-    'website': 'http://www.openerp.com',
+    'website': 'http://www.camptocamp.com',
     'depends': ['base', 'report_webkit', 'base_headers_webkit', 'account'],
     'init_xml': [],
     'update_xml': ['invoice_report.xml',

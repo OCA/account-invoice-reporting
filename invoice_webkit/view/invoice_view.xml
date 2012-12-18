@@ -1,12 +1,9 @@
 <?xml version="1.0"?>
 <openerp>
     <data>
-        #---------------------------------------------------------------------------------------------------------
-        # account.condition_text
-        #---------------------------------------------------------------------------------------------------------
-            <record model="ir.ui.view" id="view_invoice_condition_webkit">
+        <record model="ir.ui.view" id="view_invoice_condition_webkit">
             <field name="name">account.condition_text.form</field>
-            <field name="model">account.condition_text_webkit</field>
+            <field name="model">account.condition_text</field>
             <field name="type">form</field>
             <field name="arch" type="xml">
                 <form string="Invoice condition text">
@@ -18,7 +15,7 @@
         </record>
         <record model="ir.ui.view" id="view_invoice_condition_list_webkit">
             <field name="name">account.condition_text.list</field>
-            <field name="model">account.condition_text_webkit</field>
+            <field name="model">account.condition_text</field>
             <field name="type">tree</field>
             <field name="priority" eval="6"/>
             <field name="arch" type="xml">
@@ -29,10 +26,11 @@
                 </tree>
             </field>
         </record>
+        
         <record model="ir.actions.act_window" id="action_invoice_condition_webkit">
             <field name="name">account.condition_text</field>
             <field name="type">ir.actions.act_window</field>
-            <field name="res_model">account.condition_text_webkit</field>
+            <field name="res_model">account.condition_text</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
             <field name="view_id" ref="view_invoice_condition_list_webkit"/>
@@ -40,12 +38,10 @@
         <record model="ir.actions.act_window" id="action_invoice_condition_form_webkit">
             <field name="name">account.condition_text</field>
             <field name="type">ir.actions.act_window</field>
-            <field name="res_model">account.condition_text_webkit</field>
+            <field name="res_model">account.condition_text</field>
             <field name="view_type">form</field>
             <field name="view_id" ref="view_invoice_condition_webkit"/>
         </record>
-
-
         <record model="ir.ui.view" id="invoice_form_add_date_sent_methode_webkit">
             <field name="name">account.invoice.form.date_sent_webkit</field>
             <field name="model">account.invoice</field>
@@ -54,13 +50,12 @@
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='move_id']" position="after">
                     <separator string="Header and footer" colspan="6"/>
-					<newline />
-                    <field name="text_condition1_webkit" domain="[('type','=','header')]"
-                        on_change="set_comment_webkit(text_condition1_webkit)" colspan="2"/>
-
-                    <field name="text_condition2_webkit" domain="[('type','=','footer')]"
-                        on_change="set_note_webkit(text_condition2_webkit)" colspan="2"/>
-					<separator string="" colspan="6"/>
+                    <newline />
+                    <field name="text_condition1" domain="[('type','=','header')]"
+                        on_change="set_header(text_condition1)" colspan="2"/>
+                    <field name="set_footer" domain="[('type','=','footer')]"
+                        on_change="set_note(text_condition2)" colspan="2"/>
+                    <separator string="" colspan="6"/>
                     <newline />
                 </xpath>
             </field>
@@ -72,8 +67,8 @@
             <field name="inherit_id" ref="account.invoice_form"/>
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='comment']" position="after">
-                    <field name="note1_webkit" colspan="2" placeholder="Additional top header ..." />
-                    <field name="note2_webkit" colspan="2" placeholder="Additional bottom footer ..."/>
+                    <field name="note1" colspan="2" placeholder="Additional top header ..." />
+                    <field name="note2" colspan="2" placeholder="Additional bottom footer ..."/>
                 </xpath>
             </field>
         </record>
