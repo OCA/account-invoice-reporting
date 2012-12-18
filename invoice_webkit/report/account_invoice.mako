@@ -107,7 +107,7 @@
     font-size:12;
 }
 
-td.amount 
+td.amount
     white-space: nowrap;
     text-align: right;
 }
@@ -171,8 +171,8 @@ td.vat {
     </div>
     <div>
 
-    %if inv.note1_webkit :
-        <p class="std_text"> ${inv.note1_webkit | carriage_returns} </p>
+    %if inv.note1 :
+        <p class="std_text"> ${inv.note1 | carriage_returns} </p>
     %endif
     </div>
     <h1 style="clear: both; padding-top: 20px;">
@@ -321,8 +321,8 @@ td.vat {
     %if inv.comment :
         <p class="std_text">${inv.comment | carriage_returns}</p>
     %endif
-    %if inv.note2_webkit :
-        <p class="std_text">${inv.note2_webkit | carriage_returns}</p>
+    %if inv.note2 :
+        <p class="std_text">${inv.note2 | carriage_returns}</p>
     %endif
     <p style="page-break-after:always"></p>
     %endfor
