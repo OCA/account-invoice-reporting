@@ -38,8 +38,7 @@
     'depends': ['base', 'report_webkit', 'base_headers_webkit', 'account'],
     'init_xml': [],
     'update_xml': ['invoice_report.xml',
-                   'view/invoice_view.xml'
-                   ],
+                   'view/invoice_view.xml'],
     'demo_xml': [],
     'test': [],
     'installable': True,
