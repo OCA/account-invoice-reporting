@@ -30,6 +30,12 @@
     display:table-header-group;
 }
 
+.formatted_note {
+        border-right:thin solid #EEEEEE;
+        left:10px;
+        font-size:smaller:border
+}
+
 
 .list_bank_table {
     text-align:center;
@@ -232,10 +238,12 @@ td.vat {
                 <td class="amount" width="10%">${line.discount and formatLang(line.discount, digits=get_digits(dp='Account')) or ''} ${line.discount and '%' or ''}</td>
                 <td class="amount" width="13%">${formatLang(line.price_subtotal, digits=get_digits(dp='Account'))} ${inv.currency_id.symbol}</td>
             </tr>
-            %if line.name :
-                <tr>
-                    <td colspan="7" class="note" style="font-style:italic; font-size: 10; border-top: thin solid  #ffffff ; border-right:  thin solid #E3E4EA;  padding:20;"></td>
-                </tr>
+            %if line.formatted_note:
+            <tr>
+              <td class="formated_note">
+                ${line.formatted_note| n}
+              </td>
+            <tr>
             %endif
         %endfor
         </tbody>

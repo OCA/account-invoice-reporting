@@ -67,3 +67,9 @@ class AccountInvoice(Model):
                 'text_condition2': fields.many2one('account.condition_text', 'Footer condition'),
                 'note1' : fields.text('Header'),
                 'note2' : fields.text('Footer'),}
+
+class AccountInvoiceLine(Model):
+
+    _inherit = 'account.invoice.line'
+
+    _columns = {'formatted_note': fields.html('Note formatée')}
