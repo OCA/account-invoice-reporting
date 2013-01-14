@@ -64,5 +64,29 @@
       </field>
     </record>
 
+    <record model="ir.ui.view" id="invoice_form_add_notes_in_invoice_line_1">
+      <field name="name">account.invoice.form.add.notes</field>
+      <field name="model">account.invoice</field>
+      <field name="inherit_id" ref="account.invoice_form"/>
+      <field name="arch" type="xml">
+        <xpath expr="//tree[@string='Invoice Lines']" position="attributes" >
+          <attribute name="editable" eval="False"/>
+        </xpath>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="invoice_form_add_notes_in_invoice_line_2">
+      <field name="name">account.invoice.form.add.notes</field>
+      <field name="model">account.invoice.line</field>
+      <field name="inherit_id" ref="account.view_invoice_line_form"/>
+      <field name="arch" type="xml">
+        <field name="name" position="after">
+          <group>
+          <field name="formatted_note" colspan="4"/>
+          </group>
+        </field>
+      </field>
+    </record>
+
   </data>
 </openerp>
