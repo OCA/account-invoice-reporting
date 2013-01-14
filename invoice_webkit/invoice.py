@@ -28,15 +28,16 @@
 ##############################################################################
 from openerp.osv.orm import Model, fields
 
+
 class InvoiceConditionText(Model):
     """add info condition in the invoice"""
     _name = "account.condition_text"
     _description = "Invoices conditions"
 
     _columns = {
-        'name' : fields.char('Condition summary', required=True, size=128),
-        'type' : fields.selection([('header','Top condition'),
-                                   ('footer','Bottom condition')],
+        'name': fields.char('Condition summary', required=True, size=128),
+        'type': fields.selection([('header','Top condition'),
+                                   ('footer', 'Bottom condition')],
                                     'type', required=True),
 
         'text': fields.text('Condition', translate=True, required=True)}
@@ -48,7 +49,7 @@ class AccountInvoice(Model):
 
     def _set_condition(self, cr, uid, inv_id, commentid, key):
         """Set the text of the notes in invoices"""
-        if not commentid :
+        if not commentid:
             return {}
         try :
             lang = self.browse(cr, uid, inv_id)[0].partner_id.lang
@@ -65,8 +66,9 @@ class AccountInvoice(Model):
 
     _columns = {'text_condition1': fields.many2one('account.condition_text', 'Header condition'),
                 'text_condition2': fields.many2one('account.condition_text', 'Footer condition'),
-                'note1' : fields.text('Header'),
-                'note2' : fields.text('Footer'),}
+                'note1': fields.text('Header'),
+                'note2': fields.text('Footer'),}
+
 
 class AccountInvoiceLine(Model):
 
