@@ -234,7 +234,7 @@ td.vat {
             </tr>
             %if line.name :
                 <tr>
-                    <td colspan="7" class="note" style="font-style:italic; font-size: 10; border-top: thin solid  #ffffff ; border-right:  thin solid #E3E4EA;  padding:20;">${line.name | carriage_returns}</td>
+                    <td colspan="7" class="note" style="font-style:italic; font-size: 10; border-top: thin solid  #ffffff ; border-right:  thin solid #E3E4EA;  padding:20;"></td>
                 </tr>
             %endif
         %endfor
@@ -291,12 +291,11 @@ td.vat {
         <br/>
     <%
       inv_bank = inv.partner_bank_id
-      bank_institution = inv_bank and inv_bank.bank
     %>
     <table class="list_bank_table" width="100%" >
         <tr>
             <th style="width:20%;">${_("Bank")}</th>
-            <td style="width:30%;text-align:left;">${ bank_institution and bank_institution.name or '-' } </td>
+            <td style="width:30%;text-align:left;">${inv_bank and inv_bank.bank_name or '-' } </td>
             %if inv.partner_id and inv.partner_id.vat :
             <th style="width:20%;">${_("Customer VAT No")}</th>
             <td style="width:30%;">${inv.partner_id.vat or '-'}</td>
@@ -307,14 +306,14 @@ td.vat {
             %endif
         </tr>
         <tr>
-            <th style="width:20%;">${_("IBAN")}</th>
-            <td style="width:30%;text-align:left;">${ inv_bank and inv_bank.iban or '-' }</td>
+            <th style="width:20%;">${_("Bank account")}</th>
+            <td style="width:30%;text-align:left;">${ inv_bank and inv_bank.acc_number or '-' }</td>
             <th style="width:20%;">${_("Our VAT No")}</th>
-            <td style="width:30%;" class="vat">''</td>
+            <td style="width:30%;" class="vat">${inv.company_id.partner_id.vat or '-'}</td>
         </tr>
         <tr>
             <th width="20%">${_("BIC")}</th>
-            <td style="width:30%;">${ inv.partner_bank_id and inv.partner_bank_id.bank and inv.partner_bank_id.bank.bic or '-' }</td>
+            <td style="width:30%;">${inv_bank and inv_bank.bank_bic or '-' }</td>
         </tr>
     </table>
     <br/>
