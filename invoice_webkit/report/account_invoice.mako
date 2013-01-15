@@ -33,7 +33,7 @@
 .formatted_note {
         border-right:thin solid #EEEEEE;
         left:10px;
-        font-size:smaller:border
+        font-size:smaller;
 }
 
 
@@ -240,7 +240,7 @@ td.vat {
             </tr>
             %if line.formatted_note:
             <tr>
-              <td class="formated_note">
+              <td class="formatted_note">
                 ${line.formatted_note| n}
               </td>
             <tr>

@@ -74,4 +74,4 @@ class AccountInvoiceLine(Model):
 
     _inherit = 'account.invoice.line'
 
-    _columns = {'formatted_note': fields.html('Note formatée')}
+    _columns = {'formatted_note': fields.html('Formatted Note')}
