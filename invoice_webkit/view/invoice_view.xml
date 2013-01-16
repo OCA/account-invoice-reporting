@@ -69,7 +69,7 @@
       <field name="model">account.invoice</field>
       <field name="inherit_id" ref="account.invoice_form"/>
       <field name="arch" type="xml">
-        <xpath expr="//tree[@string='Invoice Lines']" position="attributes" >
+        <xpath expr="//tree[@name='invoice_line']" position="attributes" >
           <attribute name="editable" eval="False"/>
         </xpath>
       </field>
