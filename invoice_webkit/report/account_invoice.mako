@@ -32,6 +32,8 @@
 
 .formatted_note {
         border-right:thin solid #EEEEEE;
+        border-left:thin solid #EEEEEE;
+        border-top:thin solid #EEEEEE;
         left:10px;
         font-size:smaller;
 }
@@ -178,7 +180,7 @@ td.vat {
     <div>
 
     %if inv.note1 :
-        <p class="std_text"> ${inv.note1 | carriage_returns} </p>
+        <p class="std_text"> ${inv.note1 | n} </p>
     %endif
     </div>
     <h1 style="clear: both; padding-top: 20px;">
@@ -240,7 +242,7 @@ td.vat {
             </tr>
             %if line.formatted_note:
             <tr>
-              <td class="formatted_note">
+              <td class="formatted_note" colspan="7">
                 ${line.formatted_note| n}
               </td>
             <tr>
@@ -329,7 +331,7 @@ td.vat {
         <p class="std_text">${inv.comment | carriage_returns}</p>
     %endif
     %if inv.note2 :
-        <p class="std_text">${inv.note2 | carriage_returns}</p>
+        <p class="std_text">${inv.note2 | n}</p>
     %endif
     <p style="page-break-after:always"></p>
     %endfor
