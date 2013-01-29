@@ -40,7 +40,7 @@ class InvoiceConditionText(Model):
                                    ('footer', 'Bottom condition')],
                                     'type', required=True),
 
-        'text': fields.text('Condition', translate=True, required=True)}
+        'text': fields.html('Condition', translate=True, required=True)}
 
 class AccountInvoice(Model):
     """ Add account.condition_text to invoice"""
@@ -66,8 +66,8 @@ class AccountInvoice(Model):
 
     _columns = {'text_condition1': fields.many2one('account.condition_text', 'Header condition'),
                 'text_condition2': fields.many2one('account.condition_text', 'Footer condition'),
-                'note1': fields.text('Header'),
-                'note2': fields.text('Footer'),}
+                'note1': fields.html('Header'),
+                'note2': fields.html('Footer'),}
 
 
 class AccountInvoiceLine(Model):
