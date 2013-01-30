@@ -169,6 +169,12 @@ msgid "Qty"
 msgstr "Menge"
 
 #. module: invoice_webkit
+#: report:addons/invoice_webkit/report/account_invoice.mako:173
+msgid "UoM"
+msgstr "Maßeinheit"
+
+
+#. module: invoice_webkit
 #: selection:account.condition_text_webkit,type:0
 #: field:account.invoice,note1_webkit:0
 #: field:account.invoice,text_condition1_webkit:0
@@ -211,4 +217,15 @@ msgstr "Net Sub Total"
 #: report:addons/invoice_webkit/report/account_invoice.mako:199
 msgid "Net :"
 msgstr "Net :"
+
+#. module: invoice_webkit
+#: report:addons/invoice_webkit/report/account_invoice.mako:0
+msgid "Bank"
+msgstr "Bank"
+
+#. module: invoice_webkit
+#: report:addons/invoice_webkit/report/account_invoice.mako:0
+msgid "Bank account"
+msgstr "Bankkonto"
+
 
