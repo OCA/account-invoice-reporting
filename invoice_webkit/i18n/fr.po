@@ -51,6 +51,12 @@ msgid "Unit Price"
 msgstr "Prix unitaire"
 
 #. module: invoice_webkit
+#: report:addons/invoice_webkit/report/account_invoice.mako:173
+msgid "UoM"
+msgstr "UdM"
+
+
+#. module: invoice_webkit
 #: report:addons/invoice_webkit/report/account_invoice.mako:175
 msgid "Disc.(%)"
 msgstr "Esc.(%)"
@@ -216,3 +222,11 @@ msgstr "Net :"
 #: report:addons/invoice_webkit/report/account_invoice.mako:0
 msgid "Bank"
 msgstr "Banque"
+
+#. module: invoice_webkit
+#: report:addons/invoice_webkit/report/account_invoice.mako:0
+msgid "Bank account"
+msgstr "Compte bancaire"
+
+
+
