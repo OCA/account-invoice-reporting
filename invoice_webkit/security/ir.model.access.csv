@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+account_condition_text_account_user,"account.condition_text.account_user","invoice_webkit.model_account_condition_text","account.group_account_user",1,1,1,0
+account_condition_text_account_manager,"account.condition_text.account_manager","invoice_webkit.model_account_condition_text","account.group_account_manager",1,1,1,1
