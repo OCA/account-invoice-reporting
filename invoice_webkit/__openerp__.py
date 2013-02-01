@@ -20,7 +20,7 @@
 ##############################################################################
 
 {   'name': 'Invoice Report using Webkit Library',
-    'version': '1.0',
+    'version': '1.1.0',
     'category': 'Reports/Webkit',
     'description': """
         Replaces the legacy rml Invoice report by a brand new webkit report.
