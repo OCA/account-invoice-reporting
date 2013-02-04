@@ -1,141 +1,73 @@
 # Translation of OpenERP Server.
 # This file contains the translation of the following modules:
-#	* invoice_webkit
+# 	* invoice_webkit
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenERP Server 6.0.3\n"
-"Report-Msgid-Bugs-To: support@openerp.com\n"
-"POT-Creation-Date: 2012-07-23 13:36+0000\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-02-04 10:58+0000\n"
 "PO-Revision-Date: 2012-07-23 13:36+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
 
 #. module: invoice_webkit
-#: report:addons/invoice_webkit/report/account_invoice.mako:155
-msgid "Our VAT No"
-msgstr "Our VAT No"
+#: field:account.condition_text,name:0
+msgid "Condition summary"
+msgstr "Condition summary"
 
 #. module: invoice_webkit
-#: report:addons/invoice_webkit/report/account_invoice.mako:133
-msgid "Cancelled Invoice"
-msgstr "Cancelled Invoice"
+#: help:product.template,purchase_ok:0
+msgid "Specify if the product can be selected in a purchase order line."
+msgstr "Specify if the product can be selected in a purchase order line."
 
 #. module: invoice_webkit
-#: report:addons/invoice_webkit/report/account_invoice.mako:241
-msgid "Thank you for your prompt payment"
-msgstr "Thank you for your prompt payment"
+#: model:ir.model,name:invoice_webkit.model_account_condition_text
+#, fuzzy
+msgid "Invoices conditions"
+msgstr "Invoice condition text"
 
 #. module: invoice_webkit
-#: report:addons/invoice_webkit/report/account_invoice.mako:154
-msgid "Customer VAT No"
-msgstr "Customer VAT No"
-
-#. module: invoice_webkit
-#: report:addons/invoice_webkit/report/account_invoice.mako:145
-msgid "Subject : "
-msgstr "Subject : "
-
-#. module: invoice_webkit
-#: report:addons/invoice_webkit/report/account_invoice.mako:137
-msgid "Supplier Invoice"
-msgstr "Supplier Invoice"
-
-#. module: invoice_webkit
-#: report:addons/invoice_webkit/report/account_invoice.mako:174
-msgid "Unit Price"
-msgstr "Unit Price"
-
-#. module: invoice_webkit
-#: report:addons/invoice_webkit/report/account_invoice.mako:175
-msgid "Disc.(%)"
-msgstr "Disc.(%)"
-
-#. module: invoice_webkit
-#: report:addons/invoice_webkit/report/account_invoice.mako:129
-msgid "PRO-FORMA"
-msgstr "PRO-FORMA"
-
-#. module: invoice_webkit
-#: report:addons/invoice_webkit/report/account_invoice.mako:205
-msgid "Taxes:"
-msgstr "Taxes:"
-
-#. module: invoice_webkit
-#: report:addons/invoice_webkit/report/account_invoice.mako:153
-msgid "Our Ref."
-msgstr "Our Ref."
-
-#. module: invoice_webkit
-#: constraint:account.invoice:0
-msgid "Error: Invalid Bvr Number (wrong checksum)."
-msgstr "Error: Invalid Bvr Number (wrong checksum)."
-
-#. module: invoice_webkit
-#: report:addons/invoice_webkit/report/account_invoice.mako:150
-msgid "Invoice Date"
-msgstr "Invoice Date"
-
-#. module: invoice_webkit
-#: report:addons/invoice_webkit/report/account_invoice.mako:225
-msgid "Base"
-msgstr "Base"
-
-#. module: invoice_webkit
-#: field:account.condition_text_webkit,text:0
-msgid "text"
-msgstr "text"
-
-#. module: invoice_webkit
-#: field:account.condition_text_webkit,type:0
-msgid "type"
-msgstr "type"
-
-#. module: invoice_webkit
-#: report:addons/invoice_webkit/report/account_invoice.mako:151
-msgid "Due Date"
-msgstr "Due Date"
-
-#. module: invoice_webkit
-#: selection:account.condition_text_webkit,type:0
-#: field:account.invoice,note2_webkit:0
-#: field:account.invoice,text_condition2_webkit:0
+#: field:account.invoice,note2:0
 msgid "Footer"
 msgstr "Footer"
 
 #. module: invoice_webkit
-#: report:addons/invoice_webkit/report/account_invoice.mako:172
-msgid "Taxes"
-msgstr "Taxes"
+#: field:account.invoice.line,formatted_note:0
+msgid "Formatted Note"
+msgstr "Formatted Note"
 
 #. module: invoice_webkit
-#: field:account.invoice,project_webkit:0
-msgid "Project"
-msgstr "Project"
+#: view:account.condition_text:0
+msgid "Invoice condition text"
+msgstr "Invoice condition text"
 
 #. module: invoice_webkit
-#: report:addons/invoice_webkit/report/account_invoice.mako:152
-msgid "Your Ref."
-msgstr "Your Ref."
+#: field:product.template,purchase_ok:0
+msgid "Can be Purchased"
+msgstr "Can be Purchased"
 
 #. module: invoice_webkit
-#: report:addons/invoice_webkit/report/account_invoice.mako:131
-msgid "Draft Invoice"
-msgstr "Draft Invoice"
+#: field:account.invoice,text_condition2:0
+#, fuzzy
+msgid "Footer condition"
+msgstr "Invoice condition text"
 
 #. module: invoice_webkit
-#: report:addons/invoice_webkit/report/account_invoice.mako:171
-msgid "Description"
-msgstr "Description"
+#: model:ir.model,name:invoice_webkit.model_product_template
+msgid "Product Template"
+msgstr "Product Template"
 
 #. module: invoice_webkit
-#: report:addons/invoice_webkit/report/account_invoice.mako:139
-msgid "Refund"
-msgstr "Refund"
+#: model:ir.model,name:invoice_webkit.model_account_invoice_line
+#, fuzzy
+msgid "Invoice Line"
+msgstr "Invoice Date"
 
 #. module: invoice_webkit
 #: model:ir.actions.act_window,name:invoice_webkit.action_invoice_condition_form_webkit
@@ -144,88 +76,142 @@ msgid "account.condition_text"
 msgstr "account.condition_text"
 
 #. module: invoice_webkit
-#: report:addons/invoice_webkit/report/account_invoice.mako:213
-msgid "Total:"
-msgstr "Total:"
-
-#. module: invoice_webkit
-#: view:account.invoice:0
-msgid "Header and footer"
-msgstr "Header and footer"
-
-#. module: invoice_webkit
-#: constraint:account.invoice:0
-msgid "Error: BVR reference is required."
-msgstr "Error: BVR reference is required."
-
-#. module: invoice_webkit
-#: report:addons/invoice_webkit/report/account_invoice.mako:226
-msgid "Tax"
-msgstr "Tax"
-
-#. module: invoice_webkit
-#: report:addons/invoice_webkit/report/account_invoice.mako:173
-msgid "Qty"
-msgstr "Qty"
-
-#. module: invoice_webkit
-#: report:addons/invoice_webkit/report/account_invoice.mako:173
-msgid "UoM"
-msgstr "UoM"
-
-
-#. module: invoice_webkit
-#: selection:account.condition_text_webkit,type:0
-#: field:account.invoice,note1_webkit:0
-#: field:account.invoice,text_condition1_webkit:0
+#: field:account.invoice,note1:0
 msgid "Header"
 msgstr "Header"
 
 #. module: invoice_webkit
-#: report:addons/invoice_webkit/report/account_invoice.mako:224
-msgid "Rate"
-msgstr "Rate"
+#: selection:account.condition_text,type:0
+msgid "Bottom condition"
+msgstr "Bottom condition"
 
 #. module: invoice_webkit
-#: field:account.condition_text_webkit,name:0
-msgid "Methode"
-msgstr "Methode"
-
-#. module: invoice_webkit
-#: report:addons/invoice_webkit/report/account_invoice.mako:135
 #: model:ir.model,name:invoice_webkit.model_account_invoice
 msgid "Invoice"
 msgstr "Invoice"
 
 #. module: invoice_webkit
-#: view:account.condition_text_webkit:0
-#: model:ir.model,name:invoice_webkit.model_account_condition_text_webkit
-msgid "Invoice condition text"
+#: field:account.condition_text,type:0
+msgid "type"
+msgstr "type"
+
+#. module: invoice_webkit
+#: field:account.invoice,text_condition1:0
+#, fuzzy
+msgid "Header condition"
+msgstr "Header and footer"
+
+#. module: invoice_webkit
+#: selection:account.condition_text,type:0
+#, fuzzy
+msgid "Top condition"
 msgstr "Invoice condition text"
 
 #. module: invoice_webkit
-#: report:addons/invoice_webkit/report/account_invoice.mako:141
-msgid "Supplier Refund"
-msgstr "Supplier Refund"
+#: view:account.invoice:0
+msgid "Conditions"
+msgstr "Conditions"
 
 #. module: invoice_webkit
-#: report:addons/invoice_webkit/report/account_invoice.mako:176
-msgid "Net Sub Total"
-msgstr "Net Sub Total"
+#: field:account.condition_text,text:0
+msgid "Condition"
+msgstr "Condition"
 
-#. module: invoice_webkit
-#: report:addons/invoice_webkit/report/account_invoice.mako:199
-msgid "Net :"
-msgstr "Net :"
+#~ msgid "Our VAT No"
+#~ msgstr "Our VAT No"
 
-#. module: invoice_webkit
-#: report:addons/invoice_webkit/report/account_invoice.mako:0
-msgid "Bank"
-msgstr "Bank"
+#~ msgid "Cancelled Invoice"
+#~ msgstr "Cancelled Invoice"
 
-#. module: invoice_webkit
-#: report:addons/invoice_webkit/report/account_invoice.mako:0
-msgid "Bank account"
-msgstr "Bank account"
+#~ msgid "Thank you for your prompt payment"
+#~ msgstr "Thank you for your prompt payment"
 
+#~ msgid "Customer VAT No"
+#~ msgstr "Customer VAT No"
 
+#~ msgid "Subject : "
+#~ msgstr "Subject : "
+
+#~ msgid "Supplier Invoice"
+#~ msgstr "Supplier Invoice"
+
+#~ msgid "Unit Price"
+#~ msgstr "Unit Price"
+
+#~ msgid "Disc.(%)"
+#~ msgstr "Disc.(%)"
+
+#~ msgid "PRO-FORMA"
+#~ msgstr "PRO-FORMA"
+
+#~ msgid "Taxes:"
+#~ msgstr "Taxes:"
+
+#~ msgid "Our Ref."
+#~ msgstr "Our Ref."
+
+#~ msgid "Error: Invalid Bvr Number (wrong checksum)."
+#~ msgstr "Error: Invalid Bvr Number (wrong checksum)."
+
+#~ msgid "Base"
+#~ msgstr "Base"
+
+#~ msgid "text"
+#~ msgstr "text"
+
+#~ msgid "Due Date"
+#~ msgstr "Due Date"
+
+#~ msgid "Taxes"
+#~ msgstr "Taxes"
+
+#~ msgid "Project"
+#~ msgstr "Project"
+
+#~ msgid "Your Ref."
+#~ msgstr "Your Ref."
+
+#~ msgid "Draft Invoice"
+#~ msgstr "Draft Invoice"
+
+#~ msgid "Description"
+#~ msgstr "Description"
+
+#~ msgid "Refund"
+#~ msgstr "Refund"
+
+#~ msgid "Total:"
+#~ msgstr "Total:"
+
+#~ msgid "Error: BVR reference is required."
+#~ msgstr "Error: BVR reference is required."
+
+#~ msgid "Tax"
+#~ msgstr "Tax"
+
+#~ msgid "Qty"
+#~ msgstr "Qty"
+
+#~ msgid "UoM"
+#~ msgstr "UoM"
+
+#~ msgid "Rate"
+#~ msgstr "Rate"
+
+#~ msgid "Methode"
+#~ msgstr "Methode"
+
+#~ msgid "Supplier Refund"
+#~ msgstr "Supplier Refund"
+
+#~ msgid "Net Sub Total"
+#~ msgstr "Net Sub Total"
+
+#~ msgid "Net :"
+#~ msgstr "Net :"
+
+#~ msgid "Bank"
+#~ msgstr "Bank"
+
+#~ msgid "Bank account"
+#~ msgstr "Bank account"
