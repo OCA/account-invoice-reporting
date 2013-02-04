@@ -186,7 +186,7 @@ msgstr "Zahlbar bis"
 #: field:account.invoice,note2_webkit:0
 #: field:account.invoice,text_condition2_webkit:0
 msgid "Footer"
-msgstr "Fusszielen"
+msgstr "Fusszeilen"
 
 #. module: invoice_webkit
 #: report:addons/invoice_webkit/report/account_invoice.mako:172
