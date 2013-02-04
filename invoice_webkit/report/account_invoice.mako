@@ -34,7 +34,7 @@
         border-right:thin solid #EEEEEE;
         border-left:thin solid #EEEEEE;
         border-top:thin solid #EEEEEE;
-        left:10px;
+        padding-left:10px;
         font-size:smaller;
 }
 
@@ -242,7 +242,7 @@ td.vat {
             </tr>
             %if line.formatted_note:
             <tr>
-              <td class="formatted_note" colspan="7">
+              <td class="formatted_note" style="padding-left:10px" colspan="7">
                 ${line.formatted_note| n}
               </td>
             <tr>
