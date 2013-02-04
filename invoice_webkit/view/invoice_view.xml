@@ -75,6 +75,17 @@
       </field>
     </record>
 
+    <record model="ir.ui.view" id="invoice_form_add_notes_in_invoice_line_1b">
+      <field name="name">account.invoice.form.add.supplier.notes</field>
+      <field name="model">account.invoice</field>
+      <field name="inherit_id" ref="account.invoice_supplier_form"/>
+      <field name="arch" type="xml">
+        <xpath expr="//field[@name='invoice_line']/tree" position="attributes" >
+          <attribute name="editable" eval="False"/>
+        </xpath>
+      </field>
+    </record>
+
     <record model="ir.ui.view" id="invoice_form_add_notes_in_invoice_line_2">
       <field name="name">account.invoice.form.add.notes</field>
       <field name="model">account.invoice.line</field>
