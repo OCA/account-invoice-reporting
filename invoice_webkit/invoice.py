@@ -55,8 +55,10 @@ class AccountInvoice(Model):
     def set_footer(self, cr, uid, inv_id, commentid):
         return self._set_condition(cr, uid, inv_id, commentid, 'note2')
 
-    _columns = {'text_condition1': fields.many2one('account.condition_text', 'Header condition'),
-                'text_condition2': fields.many2one('account.condition_text', 'Footer condition'),
+    _columns = {'text_condition1': fields.many2one('account.condition_text', 'Header condition',
+                                                   domain=[('type', '=', 'header')]),
+                'text_condition2': fields.many2one('account.condition_text', 'Footer condition',
+                                                   domain=[('type', '=', 'footer')]),
                 'note1': fields.html('Header'),
                 'note2': fields.html('Footer'),}
 
