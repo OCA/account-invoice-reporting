@@ -95,7 +95,7 @@ msgstr "Commentaire début et fin de page"
 #. module: invoice_webkit
 #: selection:account.condition_text,type:0
 msgid "Top condition"
-msgstr "Commentaire imprimable"
+msgstr "Commentaire haut de page"
 
 #. module: invoice_webkit
 #: view:account.invoice:0
