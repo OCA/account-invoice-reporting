@@ -59,7 +59,7 @@ msgstr "Modèle d'article"
 #. module: invoice_webkit
 #: model:ir.model,name:invoice_webkit.model_account_invoice_line
 msgid "Invoice Line"
-msgstr "Date de Facturation"
+msgstr "Ligne de Facturation"
 
 #. module: invoice_webkit
 #: model:ir.actions.act_window,name:invoice_webkit.action_invoice_condition_form_webkit

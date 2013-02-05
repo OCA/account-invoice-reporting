@@ -54,17 +54,17 @@ msgstr "Produktvorlage"
 #. module: invoice_webkit
 #: model:ir.model,name:invoice_webkit.model_account_invoice_line
 msgid "Invoice Line"
-msgstr "Rechnungsdatum"
+msgstr "Rechnungspositionen"
 
 #. module: invoice_webkit
 #: field:account.invoice,note1:0
 msgid "Header"
-msgstr "Header"
+msgstr "Kopfzeilen-Bemerkung"
 
 #. module: invoice_webkit
 #: selection:account.condition_text,type:0
 msgid "Bottom condition"
-msgstr "Bottom condition"
+msgstr "Fusszeilen-Bemerkung"
 
 #. module: invoice_webkit
 #: model:ir.model,name:invoice_webkit.model_account_invoice
@@ -79,7 +79,7 @@ msgstr "type"
 #. module: invoice_webkit
 #: field:account.invoice,text_condition1:0
 msgid "Header condition"
-msgstr "Fuss/Kopfzeilen"
+msgstr "Kopfzeilen Bemerkung"
 
 #. module: invoice_webkit
 #: selection:account.condition_text,type:0
@@ -94,7 +94,7 @@ msgstr "Conditions"
 #. module: invoice_webkit
 #: field:account.condition_text,text:0
 msgid "Condition"
-msgstr "Bemerkung"
+msgstr "Kondition"
 
 #. module: invoice_webkit
 #: report:addons/invoice_webkit/report/account_invoice.mako:155
@@ -211,8 +211,7 @@ msgstr "Beschreibung"
 #. module: invoice_webkit
 #: report:addons/invoice_webkit/report/account_invoice.mako:139
 msgid "Refund"
-msgstr "Refund"
-
+msgstr "Rückerstattung"
 
 #. module: invoice_webkit
 #: report:addons/invoice_webkit/report/account_invoice.mako:213
@@ -222,7 +221,7 @@ msgstr "Total:"
 #. module: invoice_webkit
 #: view:account.invoice:0
 msgid "Header and footer"
-msgstr "Header and footer"
+msgstr "Fuss/Kopfzeilen"
 
 #. module: invoice_webkit
 #: constraint:account.invoice:0
