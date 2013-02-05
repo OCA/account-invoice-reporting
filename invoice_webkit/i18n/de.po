@@ -23,7 +23,6 @@ msgstr "Bemerkung"
 
 #. module: invoice_webkit
 #: model:ir.model,name:invoice_webkit.model_account_condition_text
-#, fuzzy
 msgid "Invoices conditions"
 msgstr "Rechnung Bemerkung"
 
@@ -44,7 +43,6 @@ msgstr "Rechnung Bemerkung"
 
 #. module: invoice_webkit
 #: field:account.invoice,text_condition2:0
-#, fuzzy
 msgid "Footer condition"
 msgstr "Fusszeilen-Bemerkung"
 
@@ -55,7 +53,6 @@ msgstr "Produktvorlage"
 
 #. module: invoice_webkit
 #: model:ir.model,name:invoice_webkit.model_account_invoice_line
-#, fuzzy
 msgid "Invoice Line"
 msgstr "Rechnungsdatum"
 
@@ -81,13 +78,11 @@ msgstr "type"
 
 #. module: invoice_webkit
 #: field:account.invoice,text_condition1:0
-#, fuzzy
 msgid "Header condition"
 msgstr "Fuss/Kopfzeilen"
 
 #. module: invoice_webkit
 #: selection:account.condition_text,type:0
-#, fuzzy
 msgid "Top condition"
 msgstr "Kopfzeilen Bemerkung"
 

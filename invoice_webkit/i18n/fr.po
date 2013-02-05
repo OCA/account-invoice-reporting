@@ -23,7 +23,6 @@ msgstr "Commentaire imprimable"
 
 #. module: invoice_webkit
 #: model:ir.model,name:invoice_webkit.model_account_condition_text
-#, fuzzy
 msgid "Invoices conditions"
 msgstr "Commentaire imprimable"
 
@@ -49,9 +48,8 @@ msgstr "Peux être acheté"
 
 #. module: invoice_webkit
 #: field:account.invoice,text_condition2:0
-#, fuzzy
 msgid "Footer condition"
-msgstr "Commentaire imprimable"
+msgstr "Commentaire imprimable de fin de pages"
 
 #. module: invoice_webkit
 #: model:ir.model,name:invoice_webkit.model_product_template
@@ -60,7 +58,6 @@ msgstr "Modèle d'article"
 
 #. module: invoice_webkit
 #: model:ir.model,name:invoice_webkit.model_account_invoice_line
-#, fuzzy
 msgid "Invoice Line"
 msgstr "Date de Facturation"
 
@@ -92,13 +89,11 @@ msgstr "type"
 
 #. module: invoice_webkit
 #: field:account.invoice,text_condition1:0
-#, fuzzy
 msgid "Header condition"
 msgstr "Commentaire début et fin de page"
 
 #. module: invoice_webkit
 #: selection:account.condition_text,type:0
-#, fuzzy
 msgid "Top condition"
 msgstr "Commentaire imprimable"
 
