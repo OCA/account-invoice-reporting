@@ -44,7 +44,7 @@ msgstr "Commentaire imprimable"
 #. module: invoice_webkit
 #: field:product.template,purchase_ok:0
 msgid "Can be Purchased"
-msgstr "Peux être acheté"
+msgstr "Peut être acheté"
 
 #. module: invoice_webkit
 #: field:account.invoice,text_condition2:0
