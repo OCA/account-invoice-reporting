@@ -35,7 +35,7 @@
         border-left:thin solid #EEEEEE;
         border-top:thin solid #EEEEEE;
         padding-left:10px;
-        font-size:smaller;
+        font-size:11;
 }
 
 
@@ -153,6 +153,9 @@ td.date {
 
 td.vat {
     white-space: nowrap;
+}
+.address .recipient {
+    font-size: 12px;
 }
 
     </style>
