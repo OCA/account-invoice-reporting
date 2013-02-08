@@ -211,11 +211,13 @@ td.vat {
         <tr>
             <th class="date">${_("Invoice Date")}</td>
             <th class="date">${_("Due Date")}</td>
+            <th style="text-align:left; width: 120px;">${_("Responsible")}</td>
             <th style="text-align:left;">${_("Our Ref.")}</td>
         </tr>
         <tr>
             <td class="date">${formatLang(inv.date_invoice, date=True)}</td>
             <td class="date">${formatLang(inv.date_due, date=True)}</td>
+            <td style="text-align:left; width: 120px;">${inv.user_id and inv.user_id.name or ''}</td>
             <td style="text-align:left;">${inv.origin or ''}</td>
         </tr>
     </table>
