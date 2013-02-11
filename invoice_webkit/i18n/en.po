@@ -235,6 +235,12 @@ msgid "Refund"
 msgstr "Refund"
 
 #. module: invoice_webkit
+#: report:addons/invoice_webkit/report/account_invoice.mako:211
+msgid "Responsible"
+msgstr "Responsible"
+
+
+#. module: invoice_webkit
 #: model:ir.actions.act_window,name:invoice_webkit.action_invoice_condition_form_webkit
 #: model:ir.actions.act_window,name:invoice_webkit.action_invoice_condition_webkit
 msgid "account.condition_text"
