@@ -171,13 +171,17 @@ td.vat {
     <% setLang(inv.partner_id.lang) %>
     <div class="address">
         <table class="recipient">
+            %if inv.partner_id.parent_id:
+            <tr><td class="name">${inv.partner_id.parent_id.name or ''}</td></tr>
+            <tr><td>${inv.partner_id.title and inv.partner_id.title.name or ''} ${inv.partner_id.name }</td></tr>
+            %else:
             <tr><td class="name">${inv.partner_id.title and inv.partner_id.title.name or ''} ${inv.partner_id.name }</td></tr>
-            <tr><td>${inv.partner_id.street or ''}</td></tr>
-            <tr><td>${inv.partner_id.street2 or ''}</td></tr>
-            <tr><td>${inv.partner_id.zip or ''} ${inv.partner_id.city or ''}</td></tr>
-            %if inv.partner_id.country_id:
-            <tr><td>${inv.partner_id.country_id.name or ''} </td></tr>
             %endif
+            %for part in inv.partner_id.contact_address.split("\n")[1:]:
+                %if part:
+                <tr><td>${part}</td></tr>
+                %endif
+            %endfor
         </table>
     </div>
     <div>
