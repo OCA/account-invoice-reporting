@@ -99,7 +99,7 @@ msgstr "Kondition"
 #. module: invoice_webkit
 #: report:addons/invoice_webkit/report/account_invoice.mako:155
 msgid "Our VAT No"
-msgstr "Unsere MvSt."
+msgstr "Unsere USt-IdNr."
 
 #. module: invoice_webkit
 #: report:addons/invoice_webkit/report/account_invoice.mako:241
@@ -139,12 +139,12 @@ msgstr "PRO-FORMA"
 #. module: invoice_webkit
 #: report:addons/invoice_webkit/report/account_invoice.mako:205
 msgid "Taxes:"
-msgstr "Steuern:"
+msgstr "Mwst:"
 
 #. module: invoice_webkit
 #: report:addons/invoice_webkit/report/account_invoice.mako:153
-msgid "Our Ref."
-msgstr "Unsere Ref."
+msgid "Our Reference"
+msgstr "Unsere Referenz"
 
 #. module: invoice_webkit
 #: constraint:account.invoice:0
@@ -159,7 +159,7 @@ msgstr "Rechnungsdatum"
 #. module: invoice_webkit
 #: report:addons/invoice_webkit/report/account_invoice.mako:225
 msgid "Base"
-msgstr "Basis"
+msgstr "Steuergrundbetrag"
 
 #. module: invoice_webkit
 #: field:account.condition_text_webkit,text:0
@@ -259,7 +259,7 @@ msgstr "Kopfzeilen"
 #. module: invoice_webkit
 #: report:addons/invoice_webkit/report/account_invoice.mako:224
 msgid "Rate"
-msgstr "Rate"
+msgstr "Mwst. %"
 
 #. module: invoice_webkit
 #: field:account.condition_text_webkit,name:0
@@ -286,12 +286,12 @@ msgstr "Lieferer"
 #. module: invoice_webkit
 #: report:addons/invoice_webkit/report/account_invoice.mako:176
 msgid "Net Sub Total"
-msgstr "Net Sub Total"
+msgstr "Netto"
 
 #. module: invoice_webkit
 #: report:addons/invoice_webkit/report/account_invoice.mako:199
 msgid "Net :"
-msgstr "Net :"
+msgstr "Netto :"
 
 #. module: invoice_webkit
 #: report:addons/invoice_webkit/report/account_invoice.mako:0
