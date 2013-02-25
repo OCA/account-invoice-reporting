@@ -168,12 +168,12 @@ msgstr "PRO-FORMA"
 #. module: invoice_webkit
 #: report:addons/invoice_webkit/report/account_invoice.mako:205
 msgid "Taxes:"
-msgstr "Taxes:"
+msgstr "TVA:"
 
 #. module: invoice_webkit
 #: report:addons/invoice_webkit/report/account_invoice.mako:153
-msgid "Our Ref."
-msgstr "Notre Ref."
+msgid "Our Reference"
+msgstr "Notre Référence"
 
 #. module: invoice_webkit
 #: constraint:account.invoice:0
@@ -188,7 +188,7 @@ msgstr "Date de Facturation"
 #. module: invoice_webkit
 #: report:addons/invoice_webkit/report/account_invoice.mako:225
 msgid "Base"
-msgstr "Base"
+msgstr "HT"
 
 #. module: invoice_webkit
 #: field:account.condition_text_webkit,text:0
@@ -266,7 +266,7 @@ msgstr "Error: Une référence BVR est requise."
 #. module: invoice_webkit
 #: report:addons/invoice_webkit/report/account_invoice.mako:226
 msgid "Tax"
-msgstr "Taxe"
+msgstr "TVA"
 
 #. module: invoice_webkit
 #: report:addons/invoice_webkit/report/account_invoice.mako:173
@@ -315,7 +315,7 @@ msgstr "Sous total"
 #. module: invoice_webkit
 #: report:addons/invoice_webkit/report/account_invoice.mako:199
 msgid "Net :"
-msgstr "Net :"
+msgstr "HT :"
 
 #. module: invoice_webkit
 #: report:addons/invoice_webkit/report/account_invoice.mako:0

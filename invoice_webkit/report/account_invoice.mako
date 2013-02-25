@@ -215,13 +215,13 @@ td.vat {
         <tr>
             <th class="date">${_("Invoice Date")}</td>
             <th class="date">${_("Due Date")}</td>
-            <th style="text-align:left; width: 120px;">${_("Responsible")}</td>
-            <th style="text-align:left;">${_("Our Ref.")}</td>
+            <th style="text-align:center; width: 120px;">${_("Responsible")}</td>
+            <th style="text-align:left;">${_("Our Reference")}</td>
         </tr>
         <tr>
             <td class="date">${formatLang(inv.date_invoice, date=True)}</td>
             <td class="date">${formatLang(inv.date_due, date=True)}</td>
-            <td style="text-align:left; width: 120px;">${inv.user_id and inv.user_id.name or ''}</td>
+            <td style="text-align:center; width: 120px;">${inv.user_id and inv.user_id.name or ''}</td>
             <td style="text-align:left;">${inv.origin or ''}</td>
         </tr>
     </table>
@@ -286,7 +286,7 @@ td.vat {
         </tfoot>
     </table>
         <br/>
-    <table class="list_total_table" width="40%" >
+    <table class="list_total_table" width="60%" >
         <tr>
             <th style="text-align:left;">${_("Rate")}</th>
             <th>${_("Base")}</th>
@@ -326,7 +326,7 @@ td.vat {
         </tr>
         <tr>
             <th style="width:20%;">${_("Bank account")}</th>
-            <td style="width:30%;text-align:left;">${ inv_bank and inv_bank.acc_number or '-' }</td>
+            <td style="width:50%;text-align:left;">${ inv_bank and inv_bank.acc_number or '-' }</td>
             <th style="width:20%;">${_("Our VAT No")}</th>
             <td style="width:30%;" class="vat">${inv.company_id.partner_id.vat or '-'}</td>
         </tr>
