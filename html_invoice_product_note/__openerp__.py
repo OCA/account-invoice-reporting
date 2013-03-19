@@ -26,16 +26,15 @@
 Sale product note
 =================
 
-Replaces invoice description in product by a HTML field.
+This module replaces the invoice description field of product.product
+with a HTML field.
 
-Then it adds this description into the html note field
-of the invoice line when product is changed""",
+It takes care of adding this description into the HTML `note` field
+of the invoice line when the product is set.""",
  'author': 'Camptocamp',
  'website': 'http://www.camptocamp.com',
  'depends': ['product', 'account', 'invoice_webkit'],
- 'init_xml': [],
- 'update_xml': [],
- 'demo_xml': [],
+ 'data': [],
  'test': [],
  'installable': True,
  'active': False,
