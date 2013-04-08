@@ -143,8 +143,8 @@ msgstr "Mwst:"
 
 #. module: invoice_webkit
 #: report:addons/invoice_webkit/report/account_invoice.mako:153
-msgid "Our Reference"
-msgstr "Unsere Referenz"
+msgid "Our reference"
+msgstr "Unsere referenz"
 
 #. module: invoice_webkit
 #: constraint:account.invoice:0
