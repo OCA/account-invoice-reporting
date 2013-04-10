@@ -217,7 +217,7 @@ td.vat {
             <th class="date">${_("Due Date")}</td>
             <th style="text-align:center;width:120px;">${_("Responsible")}</td>
             <th style="text-align:center">${_("Payment Term")}</td>
-            <th style="text-align:center">${_("Our Reference")}</td>
+            <th style="text-align:center">${_("Our reference")}</td>
         </tr>
         <tr>
             <td class="date">${formatLang(inv.date_invoice, date=True)}</td>
