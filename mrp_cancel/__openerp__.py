@@ -24,11 +24,23 @@ Ursa Dev Team: RC
 
 Contact: contact@ursainfosystems.com
         """,
-    'author': 'Ursa Information Systems',
     'maintainer': 'Ursa Information Systems',
     'website': 'http://www.ursainfosystems.com',
     "category" : "Manufacturing",
+    "images" : [],
     "depends" : ["base", "mrp", "stock"],
+    "init_xml" : [],
+
+    "demo_xml" : [],
+
+    "update_xml" : [
+        'account_view.xml',
+    ],
+    "test" : [
+    ],
+    "auto_install": False,
+    "application": False,
     "installable": True,
-    "active": True
 }
+
+# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

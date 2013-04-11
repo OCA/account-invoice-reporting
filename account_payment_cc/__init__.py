@@ -2,9 +2,11 @@
 
 ######################################################################
 #
-#  mrp_cancel - CANCEL MANUFACTURING ORDERS for OpenERP 
+#  account_payment_cc - CREDIT CARD PAYMENTS for OpenERP 
 #  Copyright (C) 2012 - TODAY, Ursa Information Systems (<http://ursainfosystems.com>)
+#  Copyright (C) 2004-2010 Tiny SPRL (<http://tiny.be>)
 #  contact@ursainfosystems.com
+#
 #
 #  Ursa is willing to revoke copyright claims in the future if OpenERP wishes to certify this module.
 #
@@ -30,7 +32,7 @@
 # import <file_dependency>
 # import <class_dependency>
 
-import mrp
+import account 
+import account_voucher
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
-
