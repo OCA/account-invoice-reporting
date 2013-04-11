@@ -2,8 +2,11 @@
 
 ######################################################################
 #
-#  MRP Cancel in a single step for OpenERP Copyright (C) 2012 - TODAY, Ursa Information Systems http://ursainfosystems.com 
+#  mrp_cancel - CANCEL MANUFACTURING ORDERS for OpenERP 
+#  Copyright (C) 2012 - TODAY, Ursa Information Systems (<http://ursainfosystems.com>)
 #  contact@ursainfosystems.com
+#
+#  Ursa is willing to revoke copyright claims in the future if OpenERP wishes to certify this module.
 #
 ######################################################################
 #
