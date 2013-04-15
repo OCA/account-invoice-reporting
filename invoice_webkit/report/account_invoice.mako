@@ -345,7 +345,6 @@ td.vat {
     %if inv.fiscal_position :
         <br/>
         <p class="std_text">
-        <b>Fiscal Position Remark :</b> <br/>
         ${inv.fiscal_position.note | n}
         </p>
     %endif
