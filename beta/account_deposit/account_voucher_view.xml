@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record model="ir.ui.view" id="view_account_voucher_form_inherit">
+            <field name="name">view.account.voucher.form.inherit</field>
+            <field name="model">account.voucher</field>
+            <field name="inherit_id" ref="account_voucher.view_vendor_receipt_form"/>
+            <field name="arch" type="xml">
+                <field name="name" position="after">
+                    <field name="deferred_revenue"  on_change="onchange_deferred_revenue(deferred_revenue, partner_id,context)"/>
+                    <field name="unearned_revenue_id"  attrs="{'readonly': ['!',('deferred_revenue', '!=', True),('state','!=','draft')]}" required="True" domain="[('type','=','receivable')]"/>
+                </field>
+            </field>
+        </record>
+
+    </data>
+</openerp>

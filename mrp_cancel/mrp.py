@@ -33,6 +33,4 @@ class mrp_production(osv.osv):
         
         return super(mrp_production, self).action_cancel(cr, uid, ids, context=context)
 
-mrp_production()
-
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
