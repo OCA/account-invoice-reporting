@@ -29,11 +29,7 @@ Contact: contact@ursainfosystems.com
     "category": 'Accounting & Finance',
     "images" : [],
     "depends" : ["account_voucher"],
-    "init_xml" : [],
-
-    "demo_xml" : [],
-
-    "update_xml" : [
+    "data" : [
         'account_view.xml',
     ],
     "test" : [
