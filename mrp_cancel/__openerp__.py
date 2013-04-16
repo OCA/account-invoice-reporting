@@ -33,7 +33,7 @@ Contact: contact@ursainfosystems.com
 
     "demo_xml" : [],
 
-    "update_xml" : [
+    "data" : [
         'account_view.xml',
     ],
     "test" : [
