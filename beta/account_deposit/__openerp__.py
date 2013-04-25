@@ -12,7 +12,7 @@
     'name' : 'Customer Deposits',
     'version' : '1.7',
     "author" : 'Ursa & OpenERP SA',
-    'summary': 'Add support for payments as liabilities',
+    'summary': 'Add support for payments as liabilities (Ursa)',
     'description': """
 This module supports the recording of advanced customer deposits.  These occur when a vendor receives money from their customer before a service is provided or shipment of goods is made.  These funds are liabilities due to the fact that if the performance of the sale is not completed the customer would want a refund of their deposit because they have received nothing.  
 
