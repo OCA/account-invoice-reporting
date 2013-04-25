@@ -12,7 +12,7 @@
     "name" : "Credit Card Payments",
     "version" : "1.7",
     "author" : 'Ursa & OpenERP SA',
-    "summary": "Adds support for Credit Card AP movements.",
+    "summary": "Adds support for Credit Card AP movements. (Ursa)",
     "description": """
 This module supports the entry of credit card transactions as Supplier Invoices, with payments moving the AP from the vendor to the credit card company.  A single Supplier Payment can then be made when a credit card statement needs to be paid.  New options on the Journal allow for this.  The workflows for recording and paying vendor purchases remain the same, so that credit card purchases can be recorded just be using a different Journal.  Multiple Credit Card companies are supported.
 
