@@ -12,7 +12,7 @@
     "name" : "Cancel Manufacturing Orders",
     "version" : "1.7",
     "author" : "Ursa Information Systems",
-    "summary": "Cancel MO's in a single step (if picking has not been completed)",
+    "summary": "Cancel MO's in a single step (if picking has not been completed) (Ursa)",
     'description':
         """
 By default, an MO cannot be cancelled unless the associated picking is also cancelled.  This module cancels the picking (if it has not been processed) and the MO in a single step.  All MO related stock moves are cancelled and Stock levels are as you would expect them to be if the MO never existed.  
