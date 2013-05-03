@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+    <openerp> 
+       <data> 
+
+    <record model="ir.ui.view" id="view_partner_account_history_tree">
+    <field name="name">partner.account.history.view.tree</field>
+    <field name="model">partner.account.history</field>
+    <field name="type">tree</field>
+    <field name="arch" type="xml">
+             <tree  colors="blue:s in ('Draft','Unposted');black:s in ('Proforma','Proforma2','Posted');red:s == 'Open');gray:s == 'Cancelled'" string="Partner Financial History">
+                <field name="p"/>
+                <field name="pn" invisible="1"/>
+                <field name="e"/>
+                <field name="d"/>
+                <field name="t"/>
+<button name="allopen" type="object" icon="STOCK_INDEX" />
+                <field name="r"/>
+                <field name="doc"/>
+                <field name="s"/>
+                <field name="oa"/>
+                <field name="b"/>
+             </tree>
+    </field>
+    </record> 
+
+    <record model="ir.ui.view"  id="view_partner_account_history_search">
+    <field name="name">partner.account.history.view.search</field>
+    <field name="model">partner.account.history</field>
+    <field name="type">search</field>
+    <field name="arch" type="xml">
+             <search string="Partner Financial History">
+                        <filter string="Customer" name="customer" icon="terp-personal" domain="[('ic','=','1')]"/>
+                        <filter string="Supplier" name="supplier" icon="terp-personal" domain="[('iss','=','1')]"/>
+ <separator/>
+    <filter icon="gtk-home" string="Exclude Internal" name="LS" help="Remove Logic Supply companies" domain=" [('pn', 'not ilike', 'logic supply')]"/>
+                <field name="p"/>
+                <field name="e"/>
+                <field name="d"/>
+                <field name="doc"/>
+                <field name="r"/>
+                <field name="t"/>
+                <field name="s"/>
+                <field name="oa"/>
+                <field name="b"/>
+                    <group expand="0" string="Group By..." >
+                        <filter string="Partner" icon="terp-personal" domain="[]" context="{'group_by':'p'}"/>
+                        <filter string="Type" icon="gtk-dnd" domain="[]" context="{'group_by':'t'}"/>
+                        <filter string="Entered" icon="terp-go-today" domain="[]" context="{'group_by':'e'}"/>
+                        <filter string="Due" icon="terp-go-week" domain="[]" context="{'group_by':'d'}"/>
+                    </group>
+             </search>
+    </field>
+    </record>
+
+    <record id='act_partner_history_action_s' model = 'ir.actions.act_window'>
+           <field name ='name'>Financial History</field>
+           <field name ='res_model'>partner.account.history</field>
+           <field name='view_type'>form</field>
+           <field name='view_mode'>tree</field>
+           <field name='context'>{'search_default_supplier':1}</field>
+    </record>
+
+    <record id='act_partner_history_action_c' model = 'ir.actions.act_window'>
+           <field name ='name'>Financial History</field>
+           <field name ='res_model'>partner.account.history</field>
+           <field name='view_type'>form</field>
+           <field name='view_mode'>tree</field>
+           <field name='context'>{'search_default_customer':1}</field>
+    </record>
+
+    <menuitem id="menu_customer_history" name="Financial History" parent="account.menu_finance_receivables" action="act_partner_history_action_c" />
+    <menuitem id="menu_supplier_history" name="Financial History" parent="account.menu_finance_payables" action="act_partner_history_action_s" />
+
+      </data> 
+
+    </openerp>

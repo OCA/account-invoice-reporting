@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+
+		<record model="ir.ui.view" id="view_customer_aging_search">
+			<field name="name">customer.aging.search</field>
+			<field name="model">partner.aging.customer</field>
+			<field name="type">search</field>
+			<field name="arch" type="xml">
+				<search string="Customer Aging">
+					<filter string="Overdue" name="overdue" help="Overdue" domain="[('max_days_overdue','>',0)]" />
+					<field name="partner_id" string="Customer" />
+                                 <field name="invoice_id"/>
+                    <field name="invoice_ref"/>
+                    <field name="total" sum="Total"/>
+                    <group expand="0" string="Group By...">
+                        <filter string="Partner" domain="[]" context="{'group_by':'partner_id'}"/>
+                    </group>
+
+				</search>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="view_customer_aging_tree">
+			<field name="name">customer.aging.tree</field>
+			<field name="model">partner.aging.customer</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree create="false" delete="false" string="Customer Aging" colors="red:current == 0;">
+					<field name="total" invisible="1" />
+					<field name="partner_id" string="Customer" />
+					<field name="salesman" />
+					<field name="max_days_overdue" />
+					<field name="oldest_invoice_date" />
+					<field name="invoice_id" />
+					<button name="invopen" type="object" icon="STOCK_INDEX" attrs="{'invisible':[('invoice_id','=',False)]}"/>
+					<field name="invoice_ref" />
+					<field name="total" sum="Total" />
+					<field name="current" string="Current" sum="Current" />
+					<field name="days_due_01to30" sum="Total" />
+					<field name="days_due_31to60" sum="Total" />
+					<field name="days_due_61to90" sum="Total" />
+					<field name="days_due_91to120" sum="Total" />
+					<field name="days_due_121togr" sum="Total" />
+					<field name="comment" />
+				</tree>
+			</field>
+		</record>
+
+
+
+		<record id="action_customer_aging" model="ir.actions.act_window">
+			<field name="name">Customer Aging</field>
+			<field name="res_model">partner.aging.customer</field>
+			<field name="view_type">form</field>
+			<field name="view_id" ref="view_customer_aging_tree" />
+			<field name="view_mode">tree</field>
+			<field name="limit">99999999</field>
+			<field name="help"></field>
+                        <field name="context">{'search_default_overdue':1}</field>
+		</record>
+
+
+
+		<menuitem action="action_customer_aging" id="menu_customer_aging" parent="account.menu_finance_receivables"
+			sequence="20" />
+
+
+
+	</data>
+</openerp>
