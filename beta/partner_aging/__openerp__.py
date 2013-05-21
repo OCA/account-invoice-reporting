@@ -22,6 +22,7 @@ OpenERP Version:  7.0
 Ursa Dev Team: RC
 
 Contact: contact@ursainfosystems.com
+""",
     'maintainer': 'Ursa Information Systems',
     'website': 'http://www.ursainfosystems.com',
     "category": 'Accounting & Finance',

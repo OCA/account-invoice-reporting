@@ -29,6 +29,7 @@ Contact: contact@ursainfosystems.com
     "images" : [],
     'depends': ['base','account'],
     'data' : [
+        'res_partner_view.xml',
     ],
     "test" : [
     ],
