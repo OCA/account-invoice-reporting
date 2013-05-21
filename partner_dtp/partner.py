@@ -148,8 +148,8 @@ class res_partner(osv.osv):
     _columns={
         'd2p_life': fields.function(_dtp_life, string='AVG Days to Pay (lifetime)', type='float', store=False),
         'd2r_life': fields.function(_dtr_life, string='AVG Days to Pay (lifetime)', type='float', store=False),
-        'd2p_ytd': fields.function(_dtp_ytd, string='AVG Days to Pay (ytd)', type='float', store=False),
-        'd2r_ytd': fields.function(_dtr_ytd, string='AVG Days to Pay (ytd)', type='float', store=False),
+        'd2p_ytd': fields.function(_dtp_ytd, string='AVG Days to Pay (YTD)', type='float', store=False),
+        'd2r_ytd': fields.function(_dtr_ytd, string='AVG Days to Pay (YTD)', type='float', store=False),
     }
 
 res_partner()
