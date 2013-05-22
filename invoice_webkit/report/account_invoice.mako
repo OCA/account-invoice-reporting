@@ -170,6 +170,21 @@ td.vat {
     %for inv in objects:
     <% setLang(inv.partner_id.lang) %>
     <div class="address">
+      %if hasattr(inv, 'commercial_partner_id'):
+        <table class="recipient">
+            %if inv.partner_id.id != inv.commercial_partner_id.id:
+            <tr><td class="name">${inv.commercial_partner_id.name or ''}</td></tr>
+            <tr><td>${inv.partner_id.title and inv.partner_id.title.name or ''} ${inv.partner_id.name }</td></tr>
+            %else:
+            <tr><td class="name">${inv.partner_id.title and inv.partner_id.title.name or ''} ${inv.partner_id.name }</td></tr>
+            %endif
+            %for part in inv.partner_id.contact_address.split("\n")[1:]:
+                %if part:
+                <tr><td>${part}</td></tr>
+                %endif
+            %endfor
+        </table>
+      %else:
         <table class="recipient">
             %if inv.partner_id.parent_id:
             <tr><td class="name">${inv.partner_id.parent_id.name or ''}</td></tr>
@@ -183,6 +198,7 @@ td.vat {
                 %endif
             %endfor
         </table>
+      %endif
     </div>
     <div>
 
@@ -314,6 +330,7 @@ td.vat {
       inv_bank = inv.partner_bank_id
     %>
     <table class="list_bank_table" width="100%" >
+      <!-- vat value are taken back from commercial id -->
         <tr>
             <th style="width:20%;">${_("Bank")}</th>
             <td style="width:30%;text-align:left;">${inv_bank and inv_bank.bank_name or '-' } </td>
