@@ -115,7 +115,7 @@
     font-size:12;
 }
 
-td.amount
+td.amount {
     white-space: nowrap;
     text-align: right;
 }
