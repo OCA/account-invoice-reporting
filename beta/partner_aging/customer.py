@@ -97,7 +97,7 @@ class lgx_account_aging_hot(osv.osv):
                    ON account_account.company_id = res_company.id
                 INNER JOIN account_move
                    ON account_move.id = l.move_id
-                INNER JOIN account_invoice as ai
+                LEFT JOIN account_invoice as ai
                    ON ai.move_id = l.move_id
                 INNER JOIN res_partner
                    ON res_partner.id = l.partner_id
