@@ -34,7 +34,6 @@ Contact: contact@ursainfosystems.com
     "demo_xml" : [],
 
     "data" : [
-        'account_view.xml',
     ],
     "test" : [
     ],
