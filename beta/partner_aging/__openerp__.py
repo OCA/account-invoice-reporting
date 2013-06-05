@@ -31,7 +31,8 @@ Contact: contact@ursainfosystems.com
     "data" : [
               'partner_aging_supplier.xml',
               'partner_aging_customer.xml',
-    ],
+              'security/ir.model.access.csv',
+			  ],
     "test" : [
     ],
     "auto_install": False,
