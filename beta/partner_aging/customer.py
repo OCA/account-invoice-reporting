@@ -104,6 +104,7 @@ class lgx_account_aging_hot(osv.osv):
                 WHERE account_account.active
                   AND (account_account.type IN ('receivable'))
                   AND (l.reconcile_id IS NULL)
+                  AND (l.reconcile_partial_id IS NULL)
                   AND account_move.state = 'posted'
 
                 ) sq

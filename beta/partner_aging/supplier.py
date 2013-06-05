@@ -105,6 +105,7 @@ class partner_aging_supplier(osv.osv):
                 WHERE account_account.active
                   AND (account_account.type IN ('payable'))
                   AND (l.reconcile_id IS NULL)
+                  AND (l.reconcile_partial_id IS NULL)
                   AND account_move.state = 'posted'
                
                 ) sq
