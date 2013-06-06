@@ -178,7 +178,12 @@ td.vat {
             %else:
             <tr><td class="name">${inv.partner_id.title and inv.partner_id.title.name or ''} ${inv.partner_id.name }</td></tr>
             %endif
-            %for part in inv.partner_id.contact_address.split("\n")[1:]:
+            %if inv.partner_id.parent_id:
+            <% address_lines = inv.partner_id.contact_address.split("\n")[1:] %>
+            %else:
+            <% address_lines = inv.partner_id.contact_address.split("\n") %>
+            %endif
+            %for part in address_lines:
                 %if part:
                 <tr><td>${part}</td></tr>
                 %endif
@@ -189,10 +194,12 @@ td.vat {
             %if inv.partner_id.parent_id:
             <tr><td class="name">${inv.partner_id.parent_id.name or ''}</td></tr>
             <tr><td>${inv.partner_id.title and inv.partner_id.title.name or ''} ${inv.partner_id.name }</td></tr>
+            <% address_lines = inv.partner_id.contact_address.split("\n")[1:] %>
             %else:
             <tr><td class="name">${inv.partner_id.title and inv.partner_id.title.name or ''} ${inv.partner_id.name }</td></tr>
+            <% address_lines = inv.partner_id.contact_address.split("\n") %>
             %endif
-            %for part in inv.partner_id.contact_address.split("\n")[1:]:
+            %for part in address_lines:
                 %if part:
                 <tr><td>${part}</td></tr>
                 %endif
