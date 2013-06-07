@@ -265,10 +265,10 @@ td.vat {
             </tr>
             %if line.formatted_note:
             <tr>
-              <td class="formatted_note" style="padding-left:10px" colspan="7">
+              <td class="formatted_note" colspan="7">
                 ${line.formatted_note| n}
               </td>
-            <tr>
+            </tr>
             %endif
         %endfor
         </tbody>
