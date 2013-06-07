@@ -196,12 +196,6 @@ td.vat {
         </table>
       %endif
     </div>
-    <div>
-
-    %if inv.note1 :
-        <p class="std_text"> ${inv.note1 | n} </p>
-    %endif
-    </div>
     <h1 style="clear: both; padding-top: 20px;">
         %if inv.type == 'out_invoice' and inv.state == 'proforma2':
             ${_("PRO-FORMA")}
@@ -239,6 +233,12 @@ td.vat {
             <td style="text-align:center">${inv.origin or ''}</td>
         </tr>
     </table>
+
+    <div>
+    %if inv.note1 :
+        <p class="std_text"> ${inv.note1 | n} </p>
+    %endif
+    </div>
 
     <table class="list_invoice_table" width="100%" style="margin-top: 20px;">
         <thead>
