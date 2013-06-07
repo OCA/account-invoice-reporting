@@ -30,12 +30,13 @@
     display:table-header-group;
 }
 
-.formatted_note {
-        border-right:thin solid #EEEEEE;
-        border-left:thin solid #EEEEEE;
-        border-top:thin solid #EEEEEE;
-        padding-left:10px;
-        font-size:11;
+td.formatted_note {
+    text-align:left;
+    border-right:thin solid #EEEEEE;
+    border-left:thin solid #EEEEEE;
+    border-top:thin solid #EEEEEE;
+    padding-left:10px;
+    font-size:11;
 }
 
 
@@ -113,11 +114,6 @@
 
 .std_text {
     font-size:12;
-}
-
-td.amount {
-    white-space: nowrap;
-    text-align: right;
 }
 
 tfoot.totals tr:first-child td{
