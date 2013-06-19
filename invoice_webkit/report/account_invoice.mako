@@ -30,12 +30,13 @@
     display:table-header-group;
 }
 
-.formatted_note {
-        border-right:thin solid #EEEEEE;
-        border-left:thin solid #EEEEEE;
-        border-top:thin solid #EEEEEE;
-        padding-left:10px;
-        font-size:11;
+td.formatted_note {
+    text-align:left;
+    border-right:thin solid #EEEEEE;
+    border-left:thin solid #EEEEEE;
+    border-top:thin solid #EEEEEE;
+    padding-left:10px;
+    font-size:11;
 }
 
 
@@ -113,11 +114,6 @@
 
 .std_text {
     font-size:12;
-}
-
-td.amount {
-    white-space: nowrap;
-    text-align: right;
 }
 
 tfoot.totals tr:first-child td{
@@ -200,12 +196,6 @@ td.vat {
         </table>
       %endif
     </div>
-    <div>
-
-    %if inv.note1 :
-        <p class="std_text"> ${inv.note1 | n} </p>
-    %endif
-    </div>
     <h1 style="clear: both; padding-top: 20px;">
         %if inv.type == 'out_invoice' and inv.state == 'proforma2':
             ${_("PRO-FORMA")}
@@ -244,6 +234,12 @@ td.vat {
         </tr>
     </table>
 
+    <div>
+    %if inv.note1 :
+        <p class="std_text"> ${inv.note1 | n} </p>
+    %endif
+    </div>
+
     <table class="list_invoice_table" width="100%" style="margin-top: 20px;">
         <thead>
             <tr>
@@ -269,10 +265,10 @@ td.vat {
             </tr>
             %if line.formatted_note:
             <tr>
-              <td class="formatted_note" style="padding-left:10px" colspan="7">
+              <td class="formatted_note" colspan="7">
                 ${line.formatted_note| n}
               </td>
-            <tr>
+            </tr>
             %endif
         %endfor
         </tbody>
