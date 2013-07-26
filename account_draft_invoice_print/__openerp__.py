@@ -21,15 +21,12 @@
 
 {'name': 'Account Draft Invoice Print',
  'version': '1.0.0',
- 'category': 'other',
+ 'category': 'Accounting & Finance',
  'description': """Allows to print invoices in draft state""",
  'author': 'Camptocamp',
  'website': 'http://www.camptocamp.com',
  'depends': ['account'],
- 'data': ['invoice_view.xml'
-          ],
- 'demo_xml': [],
- 'test': [],
+ 'data': ['invoice_view.xml'],
  'installable': True,
  'active': False,
  }
