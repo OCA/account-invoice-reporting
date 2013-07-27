@@ -364,7 +364,7 @@ td.vat {
     %if inv.note2 :
         <p class="std_text">${inv.note2 | n}</p>
     %endif
-    %if inv.fiscal_position :
+    %if inv.fiscal_position and inv.fiscal_position.note :
         <br/>
         <p class="std_text">
         ${inv.fiscal_position.note | n}
