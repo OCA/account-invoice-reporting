@@ -43,22 +43,33 @@ td.formatted_note {
 .list_bank_table {
     text-align:center;
     border-collapse: collapse;
+    page-break-inside: avoid;
+    display:table;
 }
-.list_bank_table th {
+
+.act_as_row {
+   display:table-row;
+}
+.list_bank_table .act_as_thead {
     background-color: #EEEEEE;
     text-align:left;
     font-size:12;
     font-weight:bold;
     padding-right:3px;
     padding-left:3px;
+    white-space:nowrap;
+    background-clip:border-box;
+    display:table-cell;
 }
-.list_bank_table td {
+.list_bank_table .act_as_cell {
     text-align:left;
     font-size:12;
     padding-right:3px;
     padding-left:3px;
     padding-top:3px;
     padding-bottom:3px;
+    white-space:nowrap;
+    display:table-cell;
 }
 
 
@@ -332,31 +343,31 @@ td.vat {
     <%
       inv_bank = inv.partner_bank_id
     %>
-    <table class="list_bank_table" width="100%" >
+    <div class="list_bank_table act_as_table" style="width:100%;" >
       <!-- vat value are taken back from commercial id -->
-        <tr>
-            <th style="width:20%;">${_("Bank")}</th>
-            <td style="width:30%;text-align:left;">${inv_bank and inv_bank.bank_name or '-' } </td>
+        <div class="act_as_row">
+            <div class="act_as_thead" style="width:20%;">${_("Bank")}</div>
+            <div class="act_as_cell" style="width:40%;text-align:left;">${inv_bank and inv_bank.bank_name or '-' } </div>
             %if inv.partner_id and inv.partner_id.vat :
-            <th style="width:20%;">${_("Customer VAT No")}</th>
-            <td style="width:30%;">${inv.partner_id.vat or '-'}</td>
+            <div class="act_as_thead" style="width:20%;">${_("Customer VAT No")}</div>
+            <div class="act_as_cell" style="width:20%;">${inv.partner_id.vat or '-'}</div>
             %else:
             <!-- conserve table's cells widths -->
-            <td style="width:20%;"></td>
-            <td style="width:30%;"></td>
+            <div class="act_as_cell" style="width:20%;"></div>
+            <div class="act_as_cell" style="width:20%;"></div>
             %endif
-        </tr>
-        <tr>
-            <th style="width:20%;">${_("Bank account")}</th>
-            <td style="width:50%;text-align:left;">${ inv_bank and inv_bank.acc_number or '-' }</td>
-            <th style="width:20%;">${_("Our VAT No")}</th>
-            <td style="width:30%;" class="vat">${inv.company_id.partner_id.vat or '-'}</td>
-        </tr>
-        <tr>
-            <th width="20%">${_("BIC")}</th>
-            <td style="width:30%;">${inv_bank and inv_bank.bank_bic or '-' }</td>
-        </tr>
-    </table>
+        </div>
+        <div class="act_as_row">
+            <div class="act_as_thead" style="width:20%;">${_("Bank account")}</div>
+            <div class="act_as_cell" style="width:40%;text-align:left;">${ inv_bank and inv_bank.acc_number or '-' }</div>
+            <div class="act_as_thead" style="width:20%;">${_("Our VAT No")}</div>
+            <div class="act_as_cell" style="width:20%;" class="vat">${inv.company_id.partner_id.vat or '-'}</div>
+        </div>
+        <div class="act_as_row">
+            <div class="act_as_thead" style="width:20%;">${_("BIC")}</div>
+            <div class="act_as_cell"  style="width:40%;">${inv_bank and inv_bank.bank_bic or '-' }</div>
+        </div>
+    </div>
     <br/>
     %if inv.comment :
         <p class="std_text">${inv.comment | carriage_returns}</p>
