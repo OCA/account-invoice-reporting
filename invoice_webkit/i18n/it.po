@@ -244,7 +244,7 @@ msgstr "Imposte"
 #. module: invoice_webkit
 #: report:addons/invoice_webkit/report/account_invoice.mako:338
 msgid "Bank"
-msgstr "Banca\n"
+msgstr "Banca"
 
 #. module: invoice_webkit
 #: report:addons/invoice_webkit/report/account_invoice.mako:214
