@@ -28,7 +28,7 @@ msgstr "IBAN"
 #. module: invoice_webkit
 #: report:addons/invoice_webkit/report/account_invoice.mako:212
 msgid "Cancelled Invoice"
-msgstr "Fattura cancellata"
+msgstr "Fattura annullata"
 
 #. module: invoice_webkit
 #: report:addons/invoice_webkit/report/account_invoice.mako:329
