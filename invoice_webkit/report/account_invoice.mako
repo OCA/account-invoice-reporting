@@ -3,42 +3,97 @@
     <style type="text/css">
         ${css}
 
-.list_invoice_table {
+.list_main_table {
     border:thin solid #E3E4EA;
     text-align:center;
     border-collapse: collapse;
 }
-.list_invoice_table th {
-    background-color: #EEEEEE;
+table.list_main_table {
+    margin-top: 20px;
+}
+.list_main_headers {
+    padding: 0;
+}
+.list_main_headers th {
     border: thin solid #000000;
+    padding-right:3px;
+    padding-left:3px;
+    background-color: #EEEEEE;
     text-align:center;
     font-size:12;
     font-weight:bold;
-    padding-right:3px;
-    padding-left:3px;
 }
-.list_invoice_table td {
-    border-top : thin solid #EEEEEE;
-    text-align:left;
-    font-size:12;
+.list_main_table td {
     padding-right:3px;
     padding-left:3px;
     padding-top:3px;
     padding-bottom:3px;
 }
-.list_invoice_table thead {
-    display:table-header-group;
+.list_main_lines,
+.list_main_footers {
+    padding: 0;
+}
+.list_main_footers {
+    padding-top: 15px;
+}
+.list_main_lines td,
+.list_main_footers td,
+.list_main_footers th {
+    border-style: none;
+    text-align:left;
+    font-size:12;
+    padding:0;
+}
+.list_main_footers th {
+    text-align:right;
 }
 
-td.formatted_note {
+td .total_empty_cell {
+    width: 77%;
+}
+td .total_sum_cell {
+    width: 13%;
+}
+
+.nobreak {
+    page-break-inside: avoid;
+}
+caption.formatted_note {
     text-align:left;
     border-right:thin solid #EEEEEE;
     border-left:thin solid #EEEEEE;
     border-top:thin solid #EEEEEE;
     padding-left:10px;
     font-size:11;
+    caption-side: bottom;
+}
+caption.formatted_note p {
+    margin: 0;
 }
 
+.main_col1 {
+    width: 40%;
+}
+td.main_col1 {
+    text-align:left;
+}
+.main_col2,
+.main_col3,
+.main_col4,
+.main_col6 {
+    width: 10%;
+}
+.main_col5 {
+    width: 7%;
+}
+td.main_col5 {
+    text-align: center;
+    font-style:italic;
+    font-size: 10;
+}
+.main_col7 {
+    width: 13%;
+}
 
 .list_bank_table {
     text-align:center;
@@ -113,11 +168,6 @@ td.formatted_note {
     display:table-header-group;
 }
 
-
-.no_bloc {
-    border-top: thin solid  #ffffff ;
-}
-
 .right_table {
     right: 4cm;
     width:"100%";
@@ -127,10 +177,6 @@ td.formatted_note {
     font-size:12;
 }
 
-tfoot.totals tr:first-child td{
-    padding-top: 15px;
-}
-
 th.date {
     width: 90px;
 }
@@ -138,19 +184,6 @@ th.date {
 td.amount, th.amount {
     text-align: right;
     white-space: nowrap;
-}
-.header_table {
-    text-align: center;
-    border: 1px solid lightGrey;
-    border-collapse: collapse;
-}
-.header_table th {
-    font-size: 12px;
-    border: 1px solid lightGrey;
-}
-.header_table td {
-    font-size: 12px;
-    border: 1px solid lightGrey;
 }
 
 td.date {
@@ -163,6 +196,9 @@ td.vat {
 }
 .address .recipient {
     font-size: 12px;
+    margin-left: 350px;
+    margin-right: 120px;
+    float: right;
 }
 
     </style>
@@ -174,43 +210,43 @@ td.vat {
         return text.replace('\n', '<br />')
     %>
 
+    <%def name="address(partner, commercial_partner=None)">
+        <%doc>
+            XXX add a helper for address in report_webkit module as this won't be suported in v8.0
+        </%doc>
+        <% company_partner = False %>
+        %if commercial_partner:
+            %if commercial_partner.id != partner.id:
+                <% company_partner = commercial_partner %>
+            %endif
+        %elif partner.parent_id:
+            <% company_partner = partner.parent_id %>
+        %endif
+
+        %if company_partner:
+            <tr><td class="name">${company_partner.name or ''}</td></tr>
+            <tr><td>${partner.title and partner.title.name or ''} ${partner.name}</td></tr>
+            <% address_lines = partner.contact_address.split("\n")[1:] %>
+        %else:
+            <tr><td class="name">${partner.title and partner.title.name or ''} ${partner.name}</td></tr>
+            <% address_lines = partner.contact_address.split("\n") %>
+        %endif
+        %for part in address_lines:
+            % if part:
+                <tr><td>${part}</td></tr>
+            % endif
+        %endfor
+    </%def>
+
     %for inv in objects:
     <% setLang(inv.partner_id.lang) %>
     <div class="address">
-      %if hasattr(inv, 'commercial_partner_id'):
         <table class="recipient">
-            %if inv.partner_id.id != inv.commercial_partner_id.id:
-            <tr><td class="name">${inv.commercial_partner_id.name or ''}</td></tr>
-            <tr><td>${inv.partner_id.title and inv.partner_id.title.name or ''} ${inv.partner_id.name }</td></tr>
-            %else:
-            <tr><td class="name">${inv.partner_id.title and inv.partner_id.title.name or ''} ${inv.partner_id.name }</td></tr>
-            %endif
-            %if inv.partner_id.parent_id:
-            <% address_lines = inv.partner_id.contact_address.split("\n")[1:] %>
-            %else:
-            <% address_lines = inv.partner_id.contact_address.split("\n") %>
-            %endif
-            %for part in address_lines:
-                %if part:
-                <tr><td>${part}</td></tr>
-                %endif
-            %endfor
-        </table>
-      %else:
-        <table class="recipient">
-            %if inv.partner_id.parent_id:
-            <tr><td class="name">${inv.partner_id.parent_id.name or ''}</td></tr>
-            <tr><td>${inv.partner_id.title and inv.partner_id.title.name or ''} ${inv.partner_id.name }</td></tr>
-            <% address_lines = inv.partner_id.contact_address.split("\n")[1:] %>
-            %else:
-            <tr><td class="name">${inv.partner_id.title and inv.partner_id.title.name or ''} ${inv.partner_id.name }</td></tr>
-            <% address_lines = inv.partner_id.contact_address.split("\n") %>
-            %endif
-            %for part in address_lines:
-                %if part:
-                <tr><td>${part}</td></tr>
-                %endif
-            %endfor
+          %if hasattr(inv, 'commercial_partner_id'):
+          ${address(partner=inv.partner_id, commercial_partner=inv.commercial_partner_id)}
+          %else:
+          ${address(partner=inv.partner_id)}
+          %endif
         </table>
       %endif
     </div>
@@ -253,69 +289,92 @@ td.vat {
     </table>
 
     <div>
-    %if inv.note1 :
+    %if inv.note1:
         <p class="std_text"> ${inv.note1 | n} </p>
     %endif
     </div>
 
-    <table class="list_invoice_table" width="100%" style="margin-top: 20px;">
-        <thead>
-            <tr>
-                <th>${_("Description")}</th>
-                <th>${_("Qty")}</th>
-                <th>${_("UoM")}</th>
-                <th>${_("Unit Price")}</th>
-                <th>${_("Taxes")}</th>
-                <th>${_("Disc.(%)")}</th>
-                <th>${_("Net Sub Total")}</th>
-            </tr>
-        </thead>
-        <tbody>
-        %for line in inv.invoice_line :
-            <tr >
-                <td>${line.name or ''}</td>
-                <td class="amount">${formatLang(line.quantity or 0.0,digits=get_digits(dp='Account'))}</td>
-                <td class="amount">${line.uos_id and line.uos_id.name or ''}</td>
-                <td class="amount">${formatLang(line.price_unit)}</td>
-                <td style="font-style:italic; font-size: 10;text-align:center;" >${ ', '.join([ tax.description or tax.name for tax in line.invoice_line_tax_id ])}</td>
-                <td class="amount" width="10%">${line.discount and formatLang(line.discount, digits=get_digits(dp='Account')) or ''} ${line.discount and '%' or ''}</td>
-                <td class="amount" width="13%">${formatLang(line.price_subtotal, digits=get_digits(dp='Account'))} ${inv.currency_id.symbol}</td>
-            </tr>
-            %if line.formatted_note:
-            <tr>
-              <td class="formatted_note" colspan="7">
-                ${line.formatted_note| n}
-              </td>
-            </tr>
-            %endif
+    <table class="list_main_table" width="100%">
+      <thead>
+        <tr>
+          <th class="list_main_headers" style="width: 100%">
+            <table style="width:100%">
+              <tr>
+                <th class="main_col1">${_("Description")}</th>
+                <th class="amount main_col2">${_("Qty")}</th>
+                <th class="amount main_col3">${_("UoM")}</th>
+                <th class="amount main_col4">${_("Unit Price")}</th>
+                <th class="main_col5">${_("Taxes")}</th>
+                <th class="amount main_col6">${_("Disc.(%)")}</th>
+                <th class="amount main_col7">${_("Net Sub Total")}</th>
+              </tr>
+            </table>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        %for line in inv.invoice_line:
+          <tr>
+            <td class="list_main_lines" style="width: 100%">
+              <div class="nobreak">
+                <table style="width:100%">
+                  <tr>
+                    <td class="main_col1">${line.product_id and line.product_id.code or ''} ${line.product_id and line.product_id.name or ''}</td>
+                    <td class="amount main_col2">${formatLang(line.quantity or 0.0,digits=get_digits(dp='Account'))}</td>
+                    <td class="amount main_col3">${line.uos_id and line.uos_id.name or ''}</td>
+                    <td class="amount main_col4">${formatLang(line.price_unit)}</td>
+                    <td class="main_col5">${ ', '.join([tax.description or tax.name for tax in line.invoice_line_tax_id])}</td>
+                    <td class="amount main_col6">${line.discount and formatLang(line.discount, digits=get_digits(dp='Account')) or ''} ${line.discount and '%' or ''}</td>
+                    <td class="amount main_col7">${formatLang(line.price_subtotal, digits=get_digits(dp='Account'))} ${inv.currency_id.symbol}</td>
+                  </tr>
+                  %if line.formatted_note:
+                    <caption class="formatted_note">
+                      ${line.formatted_note| n}
+                    </caption>
+                  %endif
+                </table>
+              </div>
+            </td>
+          </tr>
         %endfor
-        </tbody>
-        <tfoot class="totals">
-            <tr>
-                <td colspan="6" style="text-align:right;border-right: thin solid  #ffffff ;border-left: thin solid  #ffffff ;">
-                    <b>${_("Net :")}</b>
-                </td>
-                <td class="amount" style="border-right: thin solid  #ffffff ;border-left: thin solid  #ffffff ;">
+      </tbody>
+      <tfoot class="totals">
+        <tr>
+          <td class="list_main_footers" style="width: 100%">
+            <div class="nobreak">
+              <table style="width:100%">
+                <tr>
+                  <td class="total_empty_cell"/>
+                  <th>
+                    ${_("Net :")}
+                  </th>
+                  <td class="amount total_sum_cell">
                     ${formatLang(inv.amount_untaxed, digits=get_digits(dp='Account'))} ${inv.currency_id.symbol}
-                </td>
-            </tr>
-            <tr class="no_bloc">
-                <td colspan="6" style="text-align:right; border-top: thin solid  #ffffff ; border-right: thin solid  #ffffff ;border-left: thin solid  #ffffff ;">
-                    <b>${_("Taxes:")}</b>
-                </td>
-                <td class="amount" style="border-right: thin solid  #ffffff ;border-top: thin solid  #ffffff ;border-left: thin solid  #ffffff ;">
-                        ${formatLang(inv.amount_tax, digits=get_digits(dp='Account'))} ${inv.currency_id.symbol}
-                </td>
-            </tr>
-            <tr>
-                <td colspan="6" style="border-right: thin solid  #ffffff ;border-top: thin solid  #ffffff ;border-left: thin solid  #ffffff ;border-bottom: thin solid  #ffffff ;text-align:right;">
-                    <b>${_("Total:")}</b>
-                </td>
-                <td class="amount" style="border-right: thin solid  #ffffff ;border-top: thin solid  #ffffff ;border-left: thin solid  #ffffff ;border-bottom: thin solid  #ffffff ;">
-                        <b>${formatLang(inv.amount_total, digits=get_digits(dp='Account'))} ${inv.currency_id.symbol}</b>
-                </td>
-            </tr>
-        </tfoot>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="total_empty_cell"/>
+                  <th>
+                    ${_("Taxes:")}
+                  </th>
+                  <td class="amount total_sum_cell">
+                    ${formatLang(inv.amount_tax, digits=get_digits(dp='Account'))} ${inv.currency_id.symbol}
+                  </td>
+                </tr>
+                <tr>
+                  <td class="total_empty_cell"/>
+                  <th>
+                    ${_("Total:")}
+                  </th>
+                  <td class="amount total_sum_cell">
+                    <b>${formatLang(inv.amount_total, digits=get_digits(dp='Account'))} ${inv.currency_id.symbol}</b>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </td>
+        </tr>
+      </tfoot>
     </table>
         <br/>
     <table class="list_total_table" width="60%" >
@@ -375,13 +434,13 @@ td.vat {
     %if inv.note2 :
         <p class="std_text">${inv.note2 | n}</p>
     %endif
-    %if inv.fiscal_position and inv.fiscal_position.note :
+    %if inv.fiscal_position and inv.fiscal_position.note:
         <br/>
         <p class="std_text">
         ${inv.fiscal_position.note | n}
         </p>
     %endif
-    <p style="page-break-after:always"></p>
+    <p style="page-break-after:always"/>
     %endfor
 </body>
 </html>
