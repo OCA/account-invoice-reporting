@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="view_invoice_line_form_prod_lots">
+            <field name="name">account.invoice.line.form.prod_lots</field>
+            <field name="model">account.invoice.line</field>
+            <field name="inherit_id" ref="account.view_invoice_line_form"/>
+            <field name="arch" type="xml">
+                 <field name="name" position="after">
+                    <separator colspan="4" string="Production Lots"/>
+                    <field colspan="4" name="prod_lot_ids" nolabel="1"/>
+                </field>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="invoice_form_load_button">
+            <field name="name">account.invoice.form.load_button</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_form"/>
+            <field name="arch" type="xml">
+                 <field name="invoice_line" position="after">
+                        <button name="load_lines_lots" type="object" string="Load Lines Lots" colspan="2" confirm="This will overwrite the formatted note. Continue?"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</openerp>
