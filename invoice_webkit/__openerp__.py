@@ -24,6 +24,11 @@
     'category': 'Reports/Webkit',
     'description': """
         Replaces the legacy rml Invoice report by a brand new webkit report.
+
+    **Warning:** If you are installing manually this module, it requires the 
+    module *base_headers_webkit*, available on:
+
+    https://launchpad.net/webkit-utils
     """,
     'author': 'Camptocamp',
     'website': 'http://www.camptocamp.com',
