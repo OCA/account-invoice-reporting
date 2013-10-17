@@ -30,7 +30,7 @@
         "invoice_webkit",
         ],
     "author": "Agile Business Group",
-    "summary": "Dislpay delivered serial numbers in invoice",
+    "summary": "Display delivered serial numbers in invoice",
     "description": """
 This module prints, for each (customer) invoice line, the delivered production
 lots. The serial numbers are displayed in the "formatted note" field,
