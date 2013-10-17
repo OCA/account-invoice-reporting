@@ -241,14 +241,13 @@ td.vat {
     %for inv in objects:
     <% setLang(inv.partner_id.lang) %>
     <div class="address">
-        <table class="recipient">
-          %if hasattr(inv, 'commercial_partner_id'):
-          ${address(partner=inv.partner_id, commercial_partner=inv.commercial_partner_id)}
-          %else:
-          ${address(partner=inv.partner_id)}
-          %endif
-        </table>
-      %endif
+      <table class="recipient">
+        %if hasattr(inv, 'commercial_partner_id'):
+        ${address(partner=inv.partner_id, commercial_partner=inv.commercial_partner_id)}
+        %else:
+        ${address(partner=inv.partner_id)}
+        %endif
+      </table>
     </div>
     <h1 style="clear: both; padding-top: 20px;">
         %if inv.type == 'out_invoice' and inv.state == 'proforma2':
