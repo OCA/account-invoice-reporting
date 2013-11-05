@@ -20,6 +20,7 @@
 ##############################################################################
 from openerp.osv import orm, fields
 
+
 class ResCompany(orm.Model):
     _inherit = 'res.company'
 

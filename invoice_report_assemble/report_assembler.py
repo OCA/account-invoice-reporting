@@ -39,5 +39,5 @@ class InvoicePDFReportAssembler(report_assembler.PDFReportAssembler):
         return report_ids
 
 InvoicePDFReportAssembler('report.invoice_report_assemblage',
-                      'account.invoice',
-                      None)
+                          'account.invoice',
+                          None)
