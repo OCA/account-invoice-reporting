@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+  <data>
+
+    <record id="view_account_config_settings" model="ir.ui.view">
+      <field name="name">account settings.add.invoice.assemble</field>
+      <field name="model">account.config.settings</field>
+      <field name="inherit_id" ref="account.view_account_config_settings"/>
+      <field name="arch" type="xml">
+        <xpath expr="//field[@name='module_account_followup']/ancestor::div[1]" position="after">
+          <div>
+            <label for="assemble_invoice_report_ids" string="Invoice report assemblage"/>
+            <field name="assemble_invoice_report_ids" context="{'default_model': 'account.invoice'}">
+              <tree editable="bottom">
+                <field name="report_id"/>
+                <field name="model" invisible="True"/>
+                <field name="sequence" invisible="True"/>
+                <field name="company_id" invisible="True"/>
+              </tree>
+            </field>
+          </div>
+        </xpath>
+      </field>
+    </record>
+
+  </data>
+</openerp>
