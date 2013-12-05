@@ -11,6 +11,7 @@
 {
     "name" : "Cancel Manufacturing Orders",
     "version" : "1.7",
+    "category" : "Manufacturing",
     "author" : "Ursa Information Systems",
     "summary": "Cancel MO's in a single step (if picking has not been completed) (Ursa)",
     'description':
@@ -26,7 +27,6 @@ Contact: contact@ursainfosystems.com
         """,
     'maintainer': 'Ursa Information Systems',
     'website': 'http://www.ursainfosystems.com',
-    "category" : "Manufacturing",
     "images" : [],
     "depends" : ["base", "mrp", "stock"],
     "init_xml" : [],
