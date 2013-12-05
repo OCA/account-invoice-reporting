@@ -27,7 +27,9 @@ Contact: contact@ursainfosystems.com
         """,
     'maintainer': 'Ursa Information Systems',
     'website': 'http://www.ursainfosystems.com',
-    "images" : [],
+    "images" : [
+        'images/one.png',
+        ],
     "depends" : ["base", "mrp", "stock"],
     "init_xml" : [],
 
