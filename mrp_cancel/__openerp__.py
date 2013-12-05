@@ -35,10 +35,7 @@ Contact
         """,
     'maintainer': 'Ursa Information Systems',
     'website': 'http://www.ursainfosystems.com',
-    "images" : [
-        'images/one.png',
-        'images/two.png',
-        ],
+
     "depends" : ["base", "mrp", "stock"],
     "init_xml" : [],
 
