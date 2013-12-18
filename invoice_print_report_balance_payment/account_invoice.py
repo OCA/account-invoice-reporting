@@ -19,11 +19,7 @@
 #
 ###############################################################################
 
-import logging
-
 from openerp.osv import orm, fields
-
-_logger = logging.getLogger(__name__)
 
 
 class account_invoice(orm.Model):

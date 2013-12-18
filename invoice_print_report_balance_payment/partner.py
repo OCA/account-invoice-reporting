@@ -20,11 +20,8 @@
 ###############################################################################
 
 import datetime
-import logging
 
 from openerp.osv import orm
-
-_logger = logging.getLogger(__name__)
 
 
 class res_partner(orm.Model):
