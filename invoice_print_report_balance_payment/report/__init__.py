@@ -19,4 +19,4 @@
 #
 ###############################################################################
 
-import invoice_print_report_balance_payment
+from . import invoice_print_report_balance_payment
