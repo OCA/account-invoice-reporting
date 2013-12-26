@@ -19,6 +19,6 @@
 #
 ###############################################################################
 
-import account_invoice
-import partner
-import report
+from . import account_invoice
+from . import partner
+from . import report
