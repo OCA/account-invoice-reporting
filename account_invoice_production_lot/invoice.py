@@ -2,6 +2,7 @@
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
+#    Author: Lorenzo Battistini <lorenzo.battistini@agilebg.com>
 #    Copyright (C) 2011 Domsense s.r.l. (<http://www.domsense.com>).
 #    Copyright (C) 2013 Agile Business Group sagl (<http://www.agilebg.com>)
 #
