@@ -326,3 +326,8 @@ msgstr "Banque"
 #: report:addons/invoice_webkit/report/account_invoice.mako:0
 msgid "Bank account"
 msgstr "Compte bancaire"
+
+#. module: invoice_webkit
+#: report:addons/invoice_webkit/report/account_invoice.mako:282
+msgid "Your reference"
+msgstr "Votre référence"
