@@ -18,16 +18,16 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-{'name' : 'Assemble invoice report',
- 'version' : '1.0',
- 'category': '',
+{'name': 'Assemble invoice report',
+ 'version': '1.0',
+ 'category': 'Accounting',
  'description': """Add a printing button to print an invoice report assembled
  like assembling invoice webkit with bvr payment slip in a single report.
  It can be either of the generated invoice report""",
- 'author' : 'Camptocamp',
+ 'author': 'Camptocamp',
  'maintainer': 'Camptocamp',
  'website': 'http://www.camptocamp.com/',
- 'depends' : [
+ 'depends': [
      'base_report_assembler',
      'account'],
  'data': [

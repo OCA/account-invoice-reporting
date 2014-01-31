@@ -32,7 +32,10 @@ class AccountConfigSettings(orm.TransientModel):
         }
 
     def onchange_company_id(self, cr, uid, ids, company_id, context=None):
-        res = super(AccountConfigSettings, self).onchange_company_id(cr, uid, ids, company_id, context=context)
-        company = self.pool.get('res.company').browse(cr, uid, company_id, context=context)
-        res['value']['assemble_invoice_report_ids'] = [r.id for r in company.assemble_invoice_report_ids]
+        res = super(AccountConfigSettings, self).onchange_company_id(
+            cr, uid, ids, company_id, context=context)
+        company = self.pool.get('res.company').browse(cr, uid, company_id,
+                                                      context=context)
+        r_ids = [r.id for r in company.assemble_invoice_report_ids]
+        res['value']['assemble_invoice_report_ids'] = r_ids
         return res

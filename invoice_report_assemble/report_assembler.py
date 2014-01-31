@@ -26,7 +26,8 @@ from openerp.addons.base_report_assembler import report_assembler
 
 
 class InvoicePDFReportAssembler(report_assembler.PDFReportAssembler):
-    """InvoicePDFReportAssembler allows to put multiple invoice reports in one single pdf"""
+    """InvoicePDFReportAssembler allows to merge multiple
+    invoice reports into one pdf"""
 
     def _get_report_ids(self, cr, uid, ids, context=None):
         pool = pooler.get_pool(cr.dbname)
