@@ -169,6 +169,10 @@ td.vat {
     float: right;
 }
 
+.nobreak {
+     page-break-inside: avoid;
+ }
+
     </style>
 </head>
 <body>
@@ -282,7 +286,7 @@ td.vat {
         <tbody>
         %for line in inv.invoice_line :
             <tr >
-                <td>${line.name or ''}</td>
+                <td><div class="nobreak">${line.name or ''}</div></td>
                 <td class="amount">${formatLang(line.quantity or 0.0,digits=get_digits(dp='Account'))}</td>
                 <td class="amount">${line.uos_id and line.uos_id.name or ''}</td>
                 <td class="amount">${formatLang(line.price_unit)}</td>
