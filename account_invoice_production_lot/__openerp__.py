@@ -29,6 +29,7 @@
     "depends": [
         "sale_stock",
         "invoice_webkit",
+        "stock_picking_invoice_link",
         ],
     "author": "Agile Business Group",
     "summary": "Display delivered serial numbers in invoice",
