@@ -30,10 +30,15 @@ class account_invoice_line(orm.Model):
         result = {}
         for line in self.browse(cr, uid, ids, context=context):
             result[line.id] = []
-            for order_line in line.order_lines:
-                for move in order_line.move_ids:
+            if line.move_line_ids:
+                for move in line.move_line_ids:
                     if move.prodlot_id:
                         result[line.id].append(move.prodlot_id.id)
+            else:
+                for order_line in line.order_lines:
+                    for move in order_line.move_ids:
+                        if move.prodlot_id:
+                            result[line.id].append(move.prodlot_id.id)
         return result
 
     _inherit = "account.invoice.line"
