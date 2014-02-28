@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <report
+            auto="False"
+            id="invoice_report_assemblage"
+            model="account.invoice"
+            name="invoice_report_assemblage"
+            string="Invoice Assemblage"
+            attachment="(object.state in ('open','paid')) and ('INV_BVR'+(object.number or '').replace('/',''))"
+            attachment_use="0"
+            multi="True"
+            report_type="assemblage"/>
+    </data>
+</openerp>
