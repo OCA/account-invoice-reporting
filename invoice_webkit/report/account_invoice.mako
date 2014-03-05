@@ -278,7 +278,7 @@ td.vat {
             <th style="text-align:center;width:120px;">${_("Responsible")}</td>
             <th style="text-align:center">${_("Payment Term")}</td>
             <th style="text-align:center">${_("Our reference")}</td>
-            %if inv.reference:
+            %if inv.reference and inv.reference != inv.name:
                 <th style="text-align:center">${_("Your reference")}</td>
             %endif
         </tr>
@@ -288,7 +288,7 @@ td.vat {
             <td style="text-align:center;width:120px;">${inv.user_id and inv.user_id.name or ''}</td>
             <td style="text-align:center">${inv.payment_term and inv.payment_term.note or ''}</td>
             <td style="text-align:center">${inv.origin or ''}</td>
-            %if inv.reference:
+            %if inv.reference and inv.reference != inv.name:
                 <td style="text-align:center">${inv.reference}</td>
             %endif
         </tr>
