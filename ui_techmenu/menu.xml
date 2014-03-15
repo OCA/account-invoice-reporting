@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <menuitem id="base.menu_custom" name="Technical" parent="" sequence="501" groups="base.group_no_one"/>
+
+        <menuitem id="base.menu_email" name="Email" parent="base.menu_custom" sequence="11"/>
+
+    </data>
+</openerp>
