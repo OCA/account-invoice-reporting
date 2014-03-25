@@ -383,10 +383,10 @@ td.vat {
     </div>
     <br/>
     %if inv.comment:
-        <p class="std_text">${inv.comment | carriage_returns}/>
+        <p class="std_text">${inv.comment | carriage_returns}</p>
     %endif
     %if inv.note2 :
-        <p class="std_text">${inv.note2 | n}/>
+        <p class="std_text">${inv.note2 | n}</>
     %endif
     %if inv.fiscal_position and inv.fiscal_position.note:
         <br/>
