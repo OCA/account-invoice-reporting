@@ -34,6 +34,7 @@
 # import <file_dependency>
 # import <class_dependency>
 
+import unapplied_payments
 import supplier
 import customer
 
