@@ -7,7 +7,7 @@
 
 {
     "name" : "Interactive Partner Aging",
-    "version" : "1.7",
+    "version" : "1.7.1",
     "author" : 'Ursa Information Systems',
     "summary": "Aging as a view - invoices and credits (Ursa)",
     "description" : """
