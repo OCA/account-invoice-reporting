@@ -108,7 +108,8 @@ class partner_aging_supplier(osv.osv):
                 INNER JOIN         
                   (     
                    SELECT lt.id, 
-                   CASE WHEN inv.id is not null THEN EXTRACT(DAY FROM (now() - inv.date_due)) 
+                   CASE WHEN inv.date_due is null then 0
+                   WHEN inv.id is not null THEN EXTRACT(DAY FROM (now() - inv.date_due)) 
                    ELSE EXTRACT(DAY FROM (now() - lt.date_maturity)) END AS days_due             
                    FROM account_move_line lt LEFT JOIN account_invoice inv on lt.move_id = inv.move_id   
                 ) DaysDue       
@@ -127,7 +128,6 @@ class partner_aging_supplier(osv.osv):
                 WHERE account_account.active         
                   AND (account_account.type IN ('payable'))          
                   AND (l.reconcile_id IS NULL)  
-                  AND (account_account.code NOT LIKE '21002-%') 
                   AND account_move.state = 'posted'  
                   AND days_due IS NOT NULL
                 ) sq
