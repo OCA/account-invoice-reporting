@@ -121,7 +121,7 @@ msgstr "BIC"
 #. module: invoice_webkit
 #: report:addons/invoice_webkit/report/account_invoice.mako:364
 msgid "Taxes:"
-msgstr "Taxes : "
+msgstr "Taxes :"
 
 #. module: invoice_webkit
 #: report:addons/invoice_webkit/report/account_invoice.mako:389
@@ -131,7 +131,7 @@ msgstr "Base d'imposition"
 #. module: invoice_webkit
 #: report:addons/invoice_webkit/report/account_invoice.mako:355
 msgid "Net :"
-msgstr "Net : "
+msgstr "Net :"
 
 #. module: invoice_webkit
 #: report:addons/invoice_webkit/report/account_invoice.mako:390
@@ -153,7 +153,7 @@ msgstr "Conditions"
 #. module: invoice_webkit
 #: view:account.invoice:0
 msgid "Your top conditions here"
-msgstr "Vos conditions de début ici "
+msgstr "Vos conditions de début ici"
 
 #. module: invoice_webkit
 #: report:addons/invoice_webkit/report/account_invoice.mako:278
@@ -216,7 +216,7 @@ msgstr "Note de crédit"
 #. module: invoice_webkit
 #: report:addons/invoice_webkit/report/account_invoice.mako:373
 msgid "Total:"
-msgstr "Total : "
+msgstr "Total :"
 
 #. module: invoice_webkit
 #: view:account.condition_text:0
