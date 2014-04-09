@@ -39,7 +39,7 @@ msgstr "Nous vous remercions d'avance pour votre payement"
 #. module: invoice_webkit
 #: report:addons/invoice_webkit/report/account_invoice.mako:417
 msgid "Customer VAT No"
-msgstr "N° de TVA client "
+msgstr "N° de TVA client"
 
 #. module: invoice_webkit
 #: field:account.invoice,text_condition2:0
@@ -50,7 +50,7 @@ msgstr "Conditions de fin"
 #. module: invoice_webkit
 #: report:addons/invoice_webkit/report/account_invoice.mako:271
 msgid "Subject : "
-msgstr "Sujet:"
+msgstr "Sujet : "
 
 #. module: invoice_webkit
 #: report:addons/invoice_webkit/report/account_invoice.mako:428
@@ -121,7 +121,7 @@ msgstr "BIC"
 #. module: invoice_webkit
 #: report:addons/invoice_webkit/report/account_invoice.mako:364
 msgid "Taxes:"
-msgstr "Taxes:"
+msgstr "Taxes : "
 
 #. module: invoice_webkit
 #: report:addons/invoice_webkit/report/account_invoice.mako:389
@@ -131,7 +131,7 @@ msgstr "Base d'imposition"
 #. module: invoice_webkit
 #: report:addons/invoice_webkit/report/account_invoice.mako:355
 msgid "Net :"
-msgstr "Net:"
+msgstr "Net : "
 
 #. module: invoice_webkit
 #: report:addons/invoice_webkit/report/account_invoice.mako:390
@@ -216,7 +216,7 @@ msgstr "Note de crédit"
 #. module: invoice_webkit
 #: report:addons/invoice_webkit/report/account_invoice.mako:373
 msgid "Total:"
-msgstr "Total:"
+msgstr "Total : "
 
 #. module: invoice_webkit
 #: view:account.condition_text:0
@@ -263,7 +263,7 @@ msgstr "Note de crédit Fournisseur"
 #. module: invoice_webkit
 #: report:addons/invoice_webkit/report/account_invoice.mako:315
 msgid "Net Sub Total"
-msgstr "Sous-total net "
+msgstr "Sous-total net"
 
 #. module: invoice_webkit
 #: selection:account.condition_text,type:0
