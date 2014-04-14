@@ -107,9 +107,9 @@
 -
   !record {model: stock.move.split, id: split_lot_incomming}:
     line_ids:
-        - name: incoming_lot10
+        - name: incoming_lot0
           quantity: 1
-        - name: incoming_lot11
+        - name: incoming_lot1
           quantity: 1
 
 -
@@ -122,13 +122,6 @@
     order = self.pool.get('sale.order').browse(cr, uid, ref("sale_order_2"))
     for pick in order.picking_ids:
         data = pick.force_assign()
-        if data == True:
-          partial_id = self.create(cr, uid, {}, context={'active_model': 'stock.picking','active_ids': [pick.id]})
-          partial = self.browse(cr, uid, partial_id)
-          partial.move_ids[0].write({
-              'prodlot_id': ref("lot_icecream_1"),
-              })
-          self.do_partial(cr, uid, [partial_id])
 -
   I create Invoice from Delivery Order.
 -
@@ -145,8 +138,12 @@
   !python {model: sale.order}: |
     order = self.browse(cr, uid, ref("sale_order"))
     assert order.invoice_ids, "Invoice is not created."
-    ac = order.partner_invoice_id.property_account_receivable.id
     for invoice in order.invoice_ids:
         invoice.load_lines_lots()
-        assert len(invoice.invoice_line) != 2 , "Load line lots doesn't works"
+        name = ''
+        for line in invoice.invoice_line:
+          if name != line.name:
+            name = line.name
+          else:
+            assert "Load line lots doesn't works"
 
