@@ -143,7 +143,6 @@
     assert order.invoice_ids, "Invoice is not created."
     for invoice in order.invoice_ids:
         invoice.load_lines_lots()
-        name = ''
         for line in invoice.invoice_line:
             assert len(line.prod_lot_ids) == 1,"there must be one lot only"
 
