@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+
+        <record id="res_partner_view_county" model="ir.ui.view">
+            <field name="name">res.partner.view.county</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form" />
+            <field name="arch" type="xml">
+                <field name="country_id" position="before">
+                    <field name="county_id" placeholder="County" options='{"no_open": True}' domain="[('state_id','=',state_id)]"/>
+                </field>  
+            </field>
+        </record>
+
+    </data>
+</openerp>
