@@ -1,0 +1,12 @@
+id,country_id/id,code,name
+base.state_us_52,base.us,AS,American Samoa
+base.state_us_53,base.us,FM,Federated States of Micronesia
+base.state_us_54,base.us,GU,Guam
+base.state_us_55,base.us,MH,Marshall Islands
+base.state_us_56,base.us,MP,Northern Mariana Islands
+base.state_us_57,base.us,PW,Palau
+base.state_us_58,base.us,PR,Puerto Rico
+base.state_us_59,base.us,VI,Virgin Islands
+base.state_us_60,base.us,AA,Armed Forces - Americas
+base.state_us_61,base.us,AE,Armed Forces - Europe
+base.state_us_62,base.us,AP,Armed Forces - Pacific
