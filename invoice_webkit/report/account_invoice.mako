@@ -325,7 +325,7 @@ td.vat {
               <div class="nobreak">
                 <table style="width:100%">
                   <tr>
-                    <td class="main_col1">${line.product_id and line.product_id.code or ''} ${line.product_id and line.product_id.name or ''}</td>
+                    <td class="main_col1">${line.name.replace('\n','<br/>') or '' | n}</td>
                     <td class="amount main_col2">${formatLang(line.quantity or 0.0,digits=get_digits(dp='Account'))}</td>
                     <td class="amount main_col3">${line.uos_id and line.uos_id.name or ''}</td>
                     <td class="amount main_col4">${formatLang(line.price_unit)}</td>
