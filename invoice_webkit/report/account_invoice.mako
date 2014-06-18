@@ -4,12 +4,12 @@
     <style type="text/css">
         ${css}
 
-.list_invoice_table {
+.list_main_table {
     border:thin solid #E3E4EA;
     text-align:center;
     border-collapse: collapse;
 }
-.list_invoice_table th {
+.list_main_table th {
     background-color: #EEEEEE;
     border: thin solid #000000;
     text-align:center;
@@ -18,7 +18,7 @@
     padding-right:3px;
     padding-left:3px;
 }
-.list_invoice_table td {
+.list_main_table td {
     border-top : thin solid #EEEEEE;
     text-align:left;
     font-size:12;
@@ -27,7 +27,7 @@
     padding-top:3px;
     padding-bottom:3px;
 }
-.list_invoice_table thead {
+.list_main_table thead {
     display:table-header-group;
 }
 
@@ -271,7 +271,7 @@ td.vat {
     %endif
     </div>
 
-    <table class="list_invoice_table" width="100%" style="margin-top: 20px;">
+    <table class="list_main_table" width="100%" style="margin-top: 20px;">
         <thead>
             <tr>
                 <th>${_("Description")}</th>
