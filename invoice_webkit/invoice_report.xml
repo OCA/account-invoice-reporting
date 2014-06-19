@@ -12,7 +12,11 @@
             attachment="(object.state in ('open','paid')) and ('INV'+(object.number or '').replace('/',''))"
             attachment_use="1"
             multi="True"
-            webkit_header="base_headers_webkit.base_reports_portrait_header"
             report_type="webkit"/>
+    </data>
+    <data noupdate="1">
+        <record id="account.account_invoices" model="ir.actions.report.xml">
+            <field name="webkit_header" ref="base_headers_webkit.base_reports_portrait_header"></field>
+        </record>
     </data>
 </openerp>
