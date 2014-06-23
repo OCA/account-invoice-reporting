@@ -18,6 +18,8 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ##############################################################################
 from openerp.osv.orm import Model, fields
+from openerp.osv import osv
+from openerp.tools.translate import _
 
 
 class InvoiceConditionText(Model):
@@ -38,22 +40,21 @@ class AccountInvoice(Model):
 
     _inherit = "account.invoice"
 
-    def _set_condition(self, cr, uid, inv_id, commentid, key):
+    def _set_condition(self, cr, uid, inv_id, commentid, key, partner_id=False):
         """Set the text of the notes in invoices"""
         if not commentid:
             return {}
-        try :
-            lang = self.browse(cr, uid, inv_id)[0].partner_id.lang
-        except :
-            lang = 'en_US'
+        if not partner_id:
+            raise osv.except_osv(_('No Customer Defined !'), _('Before choosing condition text select a customer.'))
+        lang = self.pool.get('res.partner').browse(cr, uid, partner_id).lang or 'en_US'
         cond = self.pool.get('account.condition_text').browse(cr, uid, commentid, {'lang': lang})
         return {'value': {key: cond.text}}
 
-    def set_header(self, cr, uid, inv_id, commentid):
-        return self._set_condition(cr, uid, inv_id, commentid, 'note1')
+    def set_header(self, cursor, uid, inv_id, commentid, partner_id=False):
+        return self._set_condition(cursor, uid, inv_id, commentid, 'note1', partner_id)
 
-    def set_footer(self, cr, uid, inv_id, commentid):
-        return self._set_condition(cr, uid, inv_id, commentid, 'note2')
+    def set_footer(self, cursor, uid, inv_id, commentid, partner_id=False):
+        return self._set_condition(cursor, uid, inv_id, commentid, 'note2', partner_id)
 
     _columns = {'text_condition1': fields.many2one('account.condition_text', 'Header condition',
                                                    domain=[('type', '=', 'header')]),
