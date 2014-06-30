@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 ##############################################################################
 #
-#   Copyright (c) 2011 Camptocamp SA (http://www.camptocamp.com)
-#   @author Guewen Baconnier, Bessi Nicolas, Vincent Renaville
+#    OpenERP, Open Source Management Solution
+#    This module copyright (C) 2014 Therp BV (<http://therp.nl>).
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -18,26 +18,31 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-
-{   'name': 'Invoice Report using Webkit Library',
-    'version': '1.1.4',
-    'category': 'Reports/Webkit',
-    'description': """
-        Replaces the legacy rml Invoice report by a brand new webkit report.
-
-    **Warning:** If you are installing manually this module, it requires the 
-    module *base_headers_webkit*, available on:
-
-    https://launchpad.net/webkit-utils
+{
+    "name" : "Account invoice delivery address",
+    "version" : "1.0",
+    "author" : "Therp BV",
+    "complexity": "normal",
+    "description": """
+Adds delivery address to the invoice. Also makes sure delivery address is
+filled from default delivery address, or taken from sales order. Delivery
+address might also be changed untill invoice is confirmed.
     """,
-    'author': 'Camptocamp',
-    'website': 'http://www.camptocamp.com',
-    'depends': ['base', 'report_webkit', 'base_headers_webkit', 'account'],
-    'data': ['security/ir.model.access.csv',
-             'invoice_report.xml',
-             'view/invoice_view.xml'],
-    'demo_xml': [],
-    'test': [],
-    'installable': True,
-    'active': False,
+    "category" : "",
+    "depends" : [
+        'account',
+        'sale_stock',
+    ],
+    "data" : [
+        'report/account_print_invoice.xml',
+        'view/account_invoice.xml',
+    ],
+    "js": [
+    ],
+    "css": [
+    ],
+    "qweb": [
+    ],
+    "auto_install": False,
+    "installable": True,
 }
