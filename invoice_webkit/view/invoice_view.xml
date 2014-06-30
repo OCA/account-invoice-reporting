@@ -53,9 +53,9 @@
           <page string="Conditions">
             <group>
             <field name="text_condition1" domain="[('type','=','header')]"
-                   on_change="set_header(text_condition1)" colspan="2"/>
+                   on_change="set_header(text_condition1, partner_id)" colspan="2"/>
             <field name="text_condition2" domain="[('type','=','footer')]"
-                   on_change="set_footer(text_condition2)" colspan="2"/>
+                   on_change="set_footer(text_condition2, partner_id)" colspan="2"/>
             <field name="note1" colspan="4" nolabel="1" placeholder="Your top conditions here"/>
             <field name="note2" colspan="4" nolabel="1" placeholder="Your bottom conditions here"/>
             </group>
