@@ -44,5 +44,5 @@ address might also be changed untill invoice is confirmed.
     "qweb": [
     ],
     "auto_install": False,
-    "installable": True,
+    'installable': False,
 }

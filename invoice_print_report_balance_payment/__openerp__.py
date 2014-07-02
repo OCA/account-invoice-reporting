@@ -58,6 +58,6 @@ Contributors:
     ],
     'demo': [],
     'test': [],
-    'installable': True,
+    'installable': False,
     'active': False,
 }

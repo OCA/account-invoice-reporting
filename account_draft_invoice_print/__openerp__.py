@@ -27,6 +27,6 @@
  'website': 'http://www.camptocamp.com',
  'depends': ['account'],
  'data': ['invoice_view.xml'],
- 'installable': True,
+ 'installable': False,
  'active': False,
  }

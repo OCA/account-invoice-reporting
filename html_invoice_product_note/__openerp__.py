@@ -36,6 +36,6 @@ of the invoice line when the product is set.""",
  'depends': ['product', 'account', 'invoice_webkit'],
  'data': [],
  'test': [],
- 'installable': True,
+ 'installable': False,
  'active': False,
  }
