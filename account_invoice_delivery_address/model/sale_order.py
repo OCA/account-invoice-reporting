@@ -38,4 +38,3 @@ address when present in sales order.
         if order.partner_shipping_id:
             invoice_vals['partner_shipping_id'] = order.partner_shipping_id.id
         return invoice_vals
-

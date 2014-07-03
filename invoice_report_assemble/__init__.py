@@ -21,4 +21,3 @@
 from . import report_assembler
 from . import company
 from . import res_config
-
