@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 ##############################################################################
 #
-#   Copyright (c) 2013 Camptocamp SA (http://www.camptocamp.com)
-#   @author Nicolas Bessi
+#    Author: Yannick Vaucher
+#    Copyright 2013 Camptocamp SA
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -18,24 +18,24 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-
-{'name': 'HTML note in product reported in invoice report',
- 'version': '1.0.0',
- 'category': 'other',
- 'description': """
-Sale product note
-=================
-
-This module replaces the invoice description field of product.product
-with a HTML field.
-
-It takes care of adding this description into the HTML `note` field
-of the invoice line when the product is set.""",
+{'name': 'Assemble invoice report',
+ 'version': '1.0',
+ 'category': 'Accounting',
+ 'description': """Add a printing button to print an invoice report assembled
+ like assembling invoice webkit with bvr payment slip in a single report.
+ It can be either of the generated invoice report""",
  'author': 'Camptocamp',
- 'website': 'http://www.camptocamp.com',
- 'depends': ['product', 'account', 'invoice_webkit'],
- 'data': [],
+ 'maintainer': 'Camptocamp',
+ 'website': 'http://www.camptocamp.com/',
+ 'depends': [
+     'base_report_assembler',
+     'account'],
+ 'data': [
+     'invoice_report.xml',
+     'res_config_view.xml',
+     ],
  'test': [],
- 'installable': True,
- 'active': False,
+ 'installable': False,
+ 'auto_install': False,
+ 'application': True,
  }

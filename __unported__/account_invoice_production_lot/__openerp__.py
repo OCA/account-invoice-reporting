@@ -45,6 +45,6 @@ introduced by invoice_webkit module""",
     'test': [
         'test/sale.yml',
         ],
-    'installable': True,
+    'installable': False,
     'active': False,
 }

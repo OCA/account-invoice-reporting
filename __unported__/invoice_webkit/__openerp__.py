@@ -38,6 +38,6 @@
              'view/invoice_view.xml'],
     'demo_xml': [],
     'test': [],
-    'installable': True,
+    'installable': False,
     'active': False,
 }

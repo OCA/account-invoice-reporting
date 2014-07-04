@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 ##############################################################################
 #
-#   Copyright (c) 2013 Camptocamp SA (http://www.camptocamp.com)
-#   @author Romain Deheele
+#    OpenERP, Open Source Management Solution
+#    This module copyright (C) 2014 Therp BV (<http://therp.nl>).
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -18,15 +18,31 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-
-{'name': 'Account Draft Invoice Print',
- 'version': '1.0.0',
- 'category': 'Accounting & Finance',
- 'description': """Allows to print invoices in draft state""",
- 'author': 'Camptocamp',
- 'website': 'http://www.camptocamp.com',
- 'depends': ['account'],
- 'data': ['invoice_view.xml'],
- 'installable': True,
- 'active': False,
- }
+{
+    "name" : "Account invoice delivery address",
+    "version" : "1.0",
+    "author" : "Therp BV",
+    "complexity": "normal",
+    "description": """
+Adds delivery address to the invoice. Also makes sure delivery address is
+filled from default delivery address, or taken from sales order. Delivery
+address might also be changed untill invoice is confirmed.
+    """,
+    "category" : "",
+    "depends" : [
+        'account',
+        'sale_stock',
+    ],
+    "data" : [
+        'report/account_print_invoice.xml',
+        'view/account_invoice.xml',
+    ],
+    "js": [
+    ],
+    "css": [
+    ],
+    "qweb": [
+    ],
+    "auto_install": False,
+    'installable': False,
+}
