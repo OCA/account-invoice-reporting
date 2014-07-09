@@ -27,8 +27,8 @@ class StockPicking(orm.Model):
     '''Modify stock picking to fill delivery address'''
     _inherit = 'stock.picking'
 
-    def _prepare_invoice(
-        self, cr, uid, picking, partner, inv_type, journal_id, context=None):
+    def _prepare_invoice(self, cr, uid, picking, partner,
+                         inv_type, journal_id, context=None):
         """\
 Inherit the original function of the 'stock' module in order to fill delivery
 address when present in sales order.
@@ -39,4 +39,3 @@ address when present in sales order.
             invoice_vals['partner_shipping_id'] = (
                 picking.sale_id.partner_shipping_id.id)
         return invoice_vals
-
