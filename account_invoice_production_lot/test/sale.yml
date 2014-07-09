@@ -74,7 +74,7 @@
     ac = order.partner_invoice_id.property_account_receivable.id
     for invoice in order.invoice_ids:
         invoice.load_lines_lots()
-        assert invoice.invoice_line[0].formatted_note == '<ul> <li>S/N Lot0 for Ice cream</li> </ul>', "Wrgong formatted note for '%s' line" % invoice.invoice_line[0].name
+        assert 'S/N Lot0 for Ice cream' in invoice.invoice_line[0].formatted_note, "Wrong formatted note for '%s' line: %s" % (invoice.invoice_line[0].name, invoice.invoice_line[0].formatted_note)
 -
   I create a new draft Sale Order
 -

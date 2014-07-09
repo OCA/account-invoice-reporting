@@ -19,25 +19,25 @@
 #
 ##############################################################################
 
-{   'name': 'Invoice Report using Webkit Library',
-    'version': '1.1.4',
-    'category': 'Reports/Webkit',
-    'description': """
-        Replaces the legacy rml Invoice report by a brand new webkit report.
+{'name': 'Invoice Report using Webkit Library',
+ 'version': '1.1.4',
+ 'category': 'Reports/Webkit',
+ 'description': """
+     Replaces the legacy rml Invoice report by a brand new webkit report.
 
-    **Warning:** If you are installing manually this module, it requires the 
-    module *base_headers_webkit*, available on:
+ **Warning:** If you are installing manually this module, it requires the
+ module *base_headers_webkit*, available on:
 
-    https://launchpad.net/webkit-utils
-    """,
-    'author': 'Camptocamp',
-    'website': 'http://www.camptocamp.com',
-    'depends': ['base', 'report_webkit', 'base_headers_webkit', 'account'],
-    'data': ['security/ir.model.access.csv',
-             'invoice_report.xml',
-             'view/invoice_view.xml'],
-    'demo_xml': [],
-    'test': [],
-    'installable': True,
-    'active': False,
-}
+ https://launchpad.net/webkit-utils
+ """,
+ 'author': 'Camptocamp',
+ 'website': 'http://www.camptocamp.com',
+ 'depends': ['base', 'report_webkit', 'base_headers_webkit', 'account'],
+ 'data': ['security/ir.model.access.csv',
+          'invoice_report.xml',
+          'view/invoice_view.xml'],
+ 'demo_xml': [],
+ 'test': [],
+ 'installable': True,
+ 'active': False,
+ }

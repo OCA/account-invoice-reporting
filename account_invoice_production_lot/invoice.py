@@ -72,6 +72,7 @@ class account_invoice_line(orm.Model):
             self.load_line_lots(cr, uid, [res], context)
         return res
 
+
 class account_invoice(orm.Model):
 
     def load_lines_lots(self, cr, uid, ids, context=None):

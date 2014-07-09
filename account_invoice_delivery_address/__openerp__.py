@@ -19,21 +19,21 @@
 #
 ##############################################################################
 {
-    "name" : "Account invoice delivery address",
-    "version" : "1.0",
-    "author" : "Therp BV",
+    "name": "Account invoice delivery address",
+    "version": "1.0",
+    "author": "Therp BV",
     "complexity": "normal",
     "description": """
 Adds delivery address to the invoice. Also makes sure delivery address is
 filled from default delivery address, or taken from sales order. Delivery
 address might also be changed untill invoice is confirmed.
     """,
-    "category" : "",
-    "depends" : [
+    "category": "",
+    "depends": [
         'account',
         'sale_stock',
     ],
-    "data" : [
+    "data": [
         'report/account_print_invoice.xml',
         'view/account_invoice.xml',
     ],
