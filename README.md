@@ -1,6 +1,5 @@
-[![Build Status](https://travis-ci.org/OCA/account-invoice-reporting.svg?branch=master)](https://travis-ci.org/OCA/account-invoice-reporting)
-[![Coverage Status](https://img.shields.io/coveralls/OCA/account-invoice-reporting.svg)](https://coveralls.io/r/OCA/account-invoice-reporting?branch=master)
-
+[![Build Status](https://travis-ci.org/OCA/account-invoice-reporting.svg?branch=8.0)](https://travis-ci.org/OCA/account-invoice-reporting)
+[![Coverage Status](https://coveralls.io/repos/OCA/account-invoice-reporting/badge.png?branch=8.0)](https://coveralls.io/r/OCA/account-invoice-reporting?branch=8.0)
 
 Account - Invoicing Reports
 ===========================

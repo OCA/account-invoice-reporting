@@ -37,7 +37,7 @@ class AccountInvoice(orm.Model):
             # Do nothing when invoice no longer in draft or sent state
             # or when shipping id already set:
             if (not browse_obj.state in ['draft', 'sent']
-            or browse_obj.partner_shipping_id):
+                    or browse_obj.partner_shipping_id):
                 return
             partner_id = (
                 browse_obj.partner_id and browse_obj.partner_id.id or False)
@@ -78,4 +78,3 @@ class AccountInvoice(orm.Model):
             },
             help="Delivery address for current invoice."),
     }
-
