@@ -79,7 +79,8 @@ class account_invoice(orm.Model):
         invoices = self.browse(cr, uid, ids, context)
         inv_line_obj = self.pool.get('account.invoice.line')
         for invoice in invoices:
-            inv_line_obj.load_line_lots(cr, uid, [l.id for l in invoice.invoice_line], context)
+            inv_line_obj.load_line_lots(
+                cr, uid, [l.id for l in invoice.invoice_line], context)
         return True
 
     _inherit = "account.invoice"
