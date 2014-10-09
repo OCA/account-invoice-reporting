@@ -9,92 +9,34 @@
     text-align:center;
     border-collapse: collapse;
 }
-table.list_main_table {
-    margin-top: 20px;
-}
-.list_main_headers {
-    padding: 0;
-}
-.list_main_headers th {
-    border: thin solid #000000;
-    padding-right:3px;
-    padding-left:3px;
+.list_main_table th {
     background-color: #EEEEEE;
+    border: thin solid #000000;
     text-align:center;
     font-size:12;
     font-weight:bold;
+    padding-right:3px;
+    padding-left:3px;
 }
 .list_main_table td {
+    border-top : thin solid #EEEEEE;
+    text-align:left;
+    font-size:12;
     padding-right:3px;
     padding-left:3px;
     padding-top:3px;
     padding-bottom:3px;
 }
-.list_main_lines,
-.list_main_footers {
-    padding: 0;
-}
-.list_main_footers {
-    padding-top: 15px;
-}
-.list_main_lines td,
-.list_main_footers td,
-.list_main_footers th {
-    border-style: none;
-    text-align:left;
-    font-size:12;
-    padding:0;
-}
-.list_main_footers th {
-    text-align:right;
+.list_main_table thead {
+    display:table-header-group;
 }
 
-td .total_empty_cell {
-    width: 77%;
-}
-td .total_sum_cell {
-    width: 13%;
-}
-
-.nobreak {
-    page-break-inside: avoid;
-}
-caption.formatted_note {
+div.formatted_note {
     text-align:left;
-    border-right:thin solid #EEEEEE;
-    border-left:thin solid #EEEEEE;
-    border-top:thin solid #EEEEEE;
     padding-left:10px;
     font-size:11;
-    caption-side: bottom;
-}
-caption.formatted_note p {
-    margin: 0;
 }
 
-.main_col1 {
-    width: 40%;
-}
-td.main_col1 {
-    text-align:left;
-}
-.main_col2,
-.main_col3,
-.main_col4,
-.main_col6 {
-    width: 10%;
-}
-.main_col5 {
-    width: 7%;
-}
-td.main_col5 {
-    text-align: center;
-    font-style:italic;
-    font-size: 10;
-}
-.main_col7 {
-    width: 13%;
-}
 
 .list_bank_table {
     text-align:center;
@@ -169,6 +111,11 @@ td.main_col5 {
     display:table-header-group;
 }
 
+
+.no_bloc {
+    border-top: thin solid  #ffffff ;
+}
+
 .right_table {
     right: 4cm;
     width:"100%";
@@ -178,6 +125,10 @@ td.main_col5 {
     font-size:12;
 }
 
+tfoot.totals tr:first-child td{
+    padding-top: 15px;
+}
+
 th.date {
     width: 90px;
 }
@@ -185,6 +136,19 @@ th.date {
 td.amount, th.amount {
     text-align: right;
     white-space: nowrap;
+}
+.header_table {
+    text-align: center;
+    border: 1px solid lightGrey;
+    border-collapse: collapse;
+}
+.header_table th {
+    font-size: 12px;
+    border: 1px solid lightGrey;
+}
+.header_table td {
+    font-size: 12px;
+    border: 1px solid lightGrey;
 }
 
 td.date {
@@ -201,6 +165,14 @@ td.vat {
     margin-right: 120px;
     float: right;
 }
+
+.nobreak {
+     page-break-inside: avoid;
+ }
+
+.align_top {
+     vertical-align:text-top;
+ }
 
     </style>
 </head>
@@ -300,87 +272,62 @@ td.vat {
     %endif
     </div>
 
-    <table class="list_main_table" width="100%">
-      <thead>
-        <tr>
-          <th class="list_main_headers" style="width: 100%">
-            <table style="width:100%">
-              <tr>
-                <th class="main_col1">${_("Description")}</th>
-                <th class="amount main_col2">${_("Qty")}</th>
-                <th class="amount main_col3">${_("UoM")}</th>
-                <th class="amount main_col4">${_("Unit Price")}</th>
-                <th class="main_col5">${_("Taxes")}</th>
-                <th class="amount main_col6">${_("Disc.(%)")}</th>
-                <th class="amount main_col7">${_("Net Sub Total")}</th>
-              </tr>
-            </table>
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        %for line in inv.invoice_line:
-          <tr>
-            <td class="list_main_lines" style="width: 100%">
-              <div class="nobreak">
-                <table style="width:100%">
-                  <tr>
-                    <td class="main_col1">${line.name.replace('\n','<br/>') or '' | n}</td>
-                    <td class="amount main_col2">${formatLang(line.quantity or 0.0,digits=get_digits(dp='Account'))}</td>
-                    <td class="amount main_col3">${line.uos_id and line.uos_id.name or ''}</td>
-                    <td class="amount main_col4">${formatLang(line.price_unit)}</td>
-                    <td class="main_col5">${ ', '.join([tax.description or tax.name for tax in line.invoice_line_tax_id])}</td>
-                    <td class="amount main_col6">${line.discount and formatLang(line.discount, digits=get_digits(dp='Account')) or ''} ${line.discount and '%' or ''}</td>
-                    <td class="amount main_col7">${formatLang(line.price_subtotal, digits=get_digits(dp='Account'))} ${inv.currency_id.symbol}</td>
-                  </tr>
-                  %if line.formatted_note:
-                    <caption class="formatted_note">
-                      ${line.formatted_note| n}
-                    </caption>
-                  %endif
-                </table>
-              </div>
-            </td>
-          </tr>
+    <table class="list_main_table" width="100%" style="margin-top: 20px;">
+        <thead>
+            <tr>
+                <th>${_("Description")}</th>
+                <th>${_("Qty")}</th>
+                <th>${_("UoM")}</th>
+                <th>${_("Unit Price")}</th>
+                <th>${_("Taxes")}</th>
+                <th>${_("Disc.(%)")}</th>
+                <th>${_("Net Sub Total")}</th>
+            </tr>
+        </thead>
+        <tbody>
+        %for line in inv.invoice_line :
+            <tr>
+                <td class="align_top"><div class="nobreak">${line.name.replace('\n','<br/>') or '' | n}
+                    %if line.formatted_note:
+                        <br />
+                        <div class="formatted_note">${line.formatted_note| n}</div>
+                    %endif
+                </div></td>
+                <td class="amount align_top">${formatLang(line.quantity or 0.0,digits=get_digits(dp='Account'))}</td>
+                <td class="amount align_top">${line.uos_id and line.uos_id.name or ''}</td>
+                <td class="amount align_top">${formatLang(line.price_unit)}</td>
+                <td class="align_top" style="font-style:italic; font-size: 10;text-align:center;" >${ ', '.join([ tax.description or tax.name for tax in line.invoice_line_tax_id ])}</td>
+                <td class="amount align_top" width="10%">${line.discount and formatLang(line.discount, digits=get_digits(dp='Account')) or ''} ${line.discount and '%' or ''}</td>
+                <td class="amount align_top" width="13%">${formatLang(line.price_subtotal, digits=get_digits(dp='Account'))} ${inv.currency_id.symbol}</td>
+            </tr>
         %endfor
-      </tbody>
-      <tfoot class="totals">
-        <tr>
-          <td class="list_main_footers" style="width: 100%">
-            <div class="nobreak">
-              <table style="width:100%">
-                <tr>
-                  <td class="total_empty_cell"/>
-                  <th>
-                    ${_("Net :")}
-                  </th>
-                  <td class="amount total_sum_cell">
+        </tbody>
+        <tfoot class="totals">
+            <tr>
+                <td colspan="6" style="text-align:right;border-right: thin solid  #ffffff ;border-left: thin solid  #ffffff ;">
+                    <b>${_("Net :")}</b>
+                </td>
+                <td class="amount" style="border-right: thin solid  #ffffff ;border-left: thin solid  #ffffff ;">
                     ${formatLang(inv.amount_untaxed, digits=get_digits(dp='Account'))} ${inv.currency_id.symbol}
-                  </td>
-                </tr>
-                <tr>
-                  <td class="total_empty_cell"/>
-                  <th>
-                    ${_("Taxes:")}
-                  </th>
-                  <td class="amount total_sum_cell">
-                    ${formatLang(inv.amount_tax, digits=get_digits(dp='Account'))} ${inv.currency_id.symbol}
-                  </td>
-                </tr>
-                <tr>
-                  <td class="total_empty_cell"/>
-                  <th>
-                    ${_("Total:")}
-                  </th>
-                  <td class="amount total_sum_cell">
-                    <b>${formatLang(inv.amount_total, digits=get_digits(dp='Account'))} ${inv.currency_id.symbol}</b>
-                  </td>
-                </tr>
-              </table>
-            </div>
-          </td>
-        </tr>
-      </tfoot>
+                </td>
+            </tr>
+            <tr class="no_bloc">
+                <td colspan="6" style="text-align:right; border-top: thin solid  #ffffff ; border-right: thin solid  #ffffff ;border-left: thin solid  #ffffff ;">
+                    <b>${_("Taxes:")}</b>
+                </td>
+                <td class="amount" style="border-right: thin solid  #ffffff ;border-top: thin solid  #ffffff ;border-left: thin solid  #ffffff ;">
+                        ${formatLang(inv.amount_tax, digits=get_digits(dp='Account'))} ${inv.currency_id.symbol}
+                </td>
+            </tr>
+            <tr>
+                <td colspan="6" style="border-right: thin solid  #ffffff ;border-top: thin solid  #ffffff ;border-left: thin solid  #ffffff ;border-bottom: thin solid  #ffffff ;text-align:right;">
+                    <b>${_("Total:")}</b>
+                </td>
+                <td class="amount" style="border-right: thin solid  #ffffff ;border-top: thin solid  #ffffff ;border-left: thin solid  #ffffff ;border-bottom: thin solid  #ffffff ;">
+                        <b>${formatLang(inv.amount_total, digits=get_digits(dp='Account'))} ${inv.currency_id.symbol}</b>
+                </td>
+            </tr>
+        </tfoot>
     </table>
         <br/>
     <table class="list_total_table" width="60%" >
@@ -434,7 +381,7 @@ td.vat {
         </div>
     </div>
     <br/>
-    %if inv.comment :
+    %if inv.comment:
         <p class="std_text">${inv.comment | carriage_returns}</p>
     %endif
     %if inv.note2 :
@@ -446,7 +393,7 @@ td.vat {
         ${inv.fiscal_position.note | n}
         </p>
     %endif
-    <p style="page-break-after:always"/>
+    <p style="page-break-after:always"></p>
     %endfor
 </body>
 </html>
