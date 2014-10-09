@@ -25,7 +25,9 @@ from openerp.osv import orm, fields
 class account_invoice(orm.Model):
     _inherit = 'account.invoice'
 
-    def _previous_invoice_get(self, cr, uid, ids, field_names, arg, context=None):
+    def _previous_invoice_get(
+        self, cr, uid, ids, field_names, arg, context=None
+    ):
         res = {}
         for invoice in self.browse(cr, uid, ids, context=context):
             domain = [
@@ -37,13 +39,16 @@ class account_invoice(orm.Model):
             res[invoice.id] = search_result[0] if search_result else False
         return res
 
-    def _previous_balance_get(self, cr, uid, ids, field_names, arg, context=None):
+    def _previous_balance_get(
+        self, cr, uid, ids, field_names, arg, context=None
+    ):
         res = {}
         partner_obj = self.pool.get('res.partner')
         for invoice in self.browse(cr, uid, ids, context=context):
             if invoice.previous_invoice_id:
                 res[invoice.id] = partner_obj.get_balance_at_date(
-                    cr, uid, invoice.partner_id.id, invoice.previous_invoice_id.date_invoice,
+                    cr, uid, invoice.partner_id.id,
+                    invoice.previous_invoice_id.date_invoice,
                     context=context
                 )
             else:
@@ -68,8 +73,11 @@ class account_invoice(orm.Model):
         return res
 
     _columns = {
-        'previous_invoice_id': fields.function(_previous_invoice_get, type='many2one', relation='account.invoice'),
-        'previous_balance': fields.function(_previous_balance_get, type='float'),
+        'previous_invoice_id': fields.function(
+            _previous_invoice_get, type='many2one',
+            relation='account.invoice'),
+        'previous_balance': fields.function(
+            _previous_balance_get, type='float'),
         'to_pay': fields.function(_to_pay_get, type='float'),
         'payment_total': fields.function(_payment_total_get, type='float'),
     }
