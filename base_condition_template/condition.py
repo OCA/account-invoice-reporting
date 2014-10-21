@@ -22,8 +22,6 @@ from openerp import models, fields, api
 
 
 class BaseConditionTemplate(models.Model):
-
-    """add info condition in the invoice"""
     _name = "base.condition_template"
     _description = "Base condition template text"
 
