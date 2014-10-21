@@ -28,7 +28,7 @@ class BaseConditionTemplate(models.Model):
     name = fields.Char('Condition summary', required=True)
     position = fields.Selection([('before_lines', 'Before lines'),
                                  ('after_lines', 'After lines')],
-                                'Postition',
+                                'Position',
                                 required=True,
                                 help="Position on document")
     text = fields.Html('Condition', translate=True, required=True)
