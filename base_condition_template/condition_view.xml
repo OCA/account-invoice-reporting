@@ -47,10 +47,5 @@
       <field name="view_id" ref="view_base_condition_template_tree"/>
     </record>
 
-    <menuitem name="Document Conditions"
-      id="menu_base_condition_template"
-      action="action_base_condition_template"
-      parent="account.menu_configuration_misc"/>
-
   </data>
 </openerp>
