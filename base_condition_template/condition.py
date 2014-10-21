@@ -36,8 +36,9 @@ class BaseConditionTemplate(models.Model):
     @api.multi
     def get_value(self, partner_id=False):
         self.ensure_one()
-        try:
+        lang = None
+        if partner_id:
             lang = self.env['res.partner'].browse(partner_id).lang
-        except:
+        if not lang:
             lang = 'en_US'
         return self.with_context({'lang': lang}).text
