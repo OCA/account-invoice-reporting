@@ -23,7 +23,9 @@
  "version": "1.0",
  "depends": ["base"],
  "author": "Camptocamp",
- "data": ["condition_view.xml"],
+ "data": ["condition_view.xml",
+          'security/ir.model.access.csv',
+          ],
  "category": "Sale",
  "installable": True,
  "active": False, }
