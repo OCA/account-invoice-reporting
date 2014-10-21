@@ -39,6 +39,4 @@ class BaseConditionTemplate(models.Model):
         lang = None
         if partner_id:
             lang = self.env['res.partner'].browse(partner_id).lang
-        if not lang:
-            lang = 'en_US'
         return self.with_context({'lang': lang}).text
