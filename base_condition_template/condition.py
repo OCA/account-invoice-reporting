@@ -22,10 +22,10 @@ from openerp import models, fields, api
 
 
 class BaseConditionTemplate(models.Model):
-    _name = "base.condition_template"
+    _name = "base.condition.template"
     _description = "Base condition template text"
 
-    name = fields.Char('Condition summary', required=True, size=128)
+    name = fields.Char('Condition summary', required=True)
     position = fields.Selection([('before_lines', 'Before lines'),
                                  ('after_lines', 'After lines')],
                                 'Postition',
