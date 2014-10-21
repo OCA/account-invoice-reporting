@@ -1,48 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <openerp>
-    <data>
-        <record model="ir.ui.view" id="view_invoice_condition">
-            <field name="name">base.condition_template.form</field>
-            <field name="model">base.condition_template</field>
-            <field name="arch" type="xml">
-                <form string="Invoice condition text">
-                    <field name="name" select="1"/>
-                    <field name="position" select="1" />
-                    <field name="text" colspan="4"/>
-                </form>
-            </field>
-        </record>
-        <record model="ir.ui.view" id="view_invoice_condition_list">
-            <field name="name">account.condition_template.list</field>
-            <field name="model">base.condition_template</field>
-            <field name="priority" eval="6"/>
-            <field name="arch" type="xml">
-                <tree string="Invoice condition text">
-                    <field name="name" select="1"/>
-                    <field name="position" select="1" />
-                    <field name="text" />
-                </tree>
-            </field>
-        </record>
-        <record model="ir.actions.act_window" id="action_invoice_condition">
-            <field name="name">account.condition_template</field>
-            <field name="type">ir.actions.act_window</field>
-            <field name="res_model">base.condition_template</field>
-            <field name="view_type">form</field>
-            <field name="view_mode">tree,form</field>
-            <field name="view_id" ref="view_invoice_condition_list"/>
-        </record>
-        <record model="ir.actions.act_window" id="action_invoice_condition_form">
-            <field name="name">account.condition_template</field>
-            <field name="type">ir.actions.act_window</field>
-            <field name="res_model">base.condition_template</field>
-            <field name="view_type">form</field>
-            <field name="view_id" ref="view_invoice_condition"/>
-        </record>
+  <data>
+    <record model="ir.ui.view" id="view_base_condition_template_search">
+      <field name="name">base.condition.template.search</field>
+      <field name="model">base.condition.template</field>
+      <field name="arch" type="xml">
+        <search string="Condition Templates">
+          <field name="name"/>
+          <field name="position"/>
+        </search>
+      </field>
+    </record>
 
-        <menuitem name="Manage Conditions" id="menu_invoice_condition_base" action="action_invoice_condition" parent="account.menu_finance"/>
-        <menuitem name="List Conditions" id="menu_invoice_condition_list" action="action_invoice_condition" parent="menu_invoice_condition_base"/>
+    <record model="ir.ui.view" id="view_base_condition_template_form">
+      <field name="name">base.condition.template.form</field>
+      <field name="model">base.condition.template</field>
+      <field name="arch" type="xml">
+        <form string="Condition Templates">
+          <group>
+            <field name="name"/>
+            <field name="position"/>
+            <field name="text" colspan="4"/>
+          </group>
+        </form>
+      </field>
+    </record>
 
-        <menuitem name="Edit Conditions" id="menu_invoice_condition" action="action_invoice_condition_form" parent="menu_invoice_condition_base"/>
+    <record model="ir.ui.view" id="view_base_condition_template_tree">
+      <field name="name">account.condition.template.list</field>
+      <field name="model">base.condition.template</field>
+      <field name="priority" eval="6"/>
+      <field name="arch" type="xml">
+        <tree string="Condition Templates">
+          <field name="name"/>
+          <field name="position"/>
+        </tree>
+      </field>
+    </record>
 
-    </data>
+    <record model="ir.actions.act_window" id="action_base_condition_template">
+      <field name="name">Condition Templates</field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="res_model">base.condition.template</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">tree,form</field>
+      <field name="view_id" ref="view_base_condition_template_tree"/>
+    </record>
+
+    <menuitem name="Document Conditions"
+      id="menu_base_condition_template"
+      action="action_base_condition_template"
+      parent="account.menu_configuration_misc"/>
+
+  </data>
 </openerp>
