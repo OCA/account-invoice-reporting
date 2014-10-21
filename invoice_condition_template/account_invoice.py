@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
-#
+##############################################################################
 #
 #    Author: Nicolas Bessi
+#            Guewen Baconnier
 #    Copyright 2013-2014 Camptocamp SA
 #
 #    This program is free software: you can redistribute it and/or modify
@@ -17,33 +18,28 @@
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
-#
-from openerp.osv import orm, fields
+##############################################################################
+from openerp import models, fields, api
 
 
-class AccountInvoice(orm.Model):
+class AccountInvoice(models.Model):
+    _inherit = 'account.invoice'
 
-    """Add text condition"""
+    condition_template1_id = fields.Many2one('base.condition_template',
+                                             string='Top conditions')
+    condition_template2_id = fields.Many2one('base.condition_template',
+                                             string='Bottom conditions')
+    note1 = fields.Html('Top conditions')
+    note2 = fields.Html('Bottom conditions')
 
-    _inherit = "account.invoice"
-    _columns = {
-        'condition_template1_id': fields.many2one('base.condition_template',
-                                                  'Top conditions'),
-        'condition_template2_id': fields.many2one('base.condition_template',
-                                                  'Bottom conditions'),
-        'note1': fields.html('Top conditions'),
-        'note2': fields.html('Bottom conditions'),
-    }
+    @api.onchange('condition_template1_id')
+    def _set_note1(self):
+        condition = self.condition_template1_id
+        if condition:
+            self.note1 = condition.get_value(self.partner_id.id)
 
-    def set_condition(self, cr, uid, cond_id, field_name, partner_id):
-        if not cond_id:
-            return {'value': {field_name: ''}}
-        cond_obj = self.pool['base.condition_template']
-        text = cond_obj.get_value(cr, uid, cond_id, partner_id)
-        return {'value': {field_name: text}}
-
-    def set_note1(self, cr, uid, inv_id, cond_id, partner_id):
-        return self.set_condition(cr, uid, cond_id, 'note1', partner_id)
-
-    def set_note2(self, cr, uid, inv_id, cond_id, partner_id):
-        return self.set_condition(cr, uid, cond_id, 'note2', partner_id)
+    @api.onchange('condition_template2_id')
+    def _set_note2(self):
+        condition = self.condition_template2_id
+        if condition:
+            self.note2 = condition.get_value(self.partner_id.id)

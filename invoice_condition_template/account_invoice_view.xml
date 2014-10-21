@@ -14,7 +14,7 @@
                             <field name="condition_template1_id"
                                 nolabel="1"
                                 class='oe_inline'
-                                domain="[('position','=','before_lines')]" on_change="set_note1(condition_template1_id, partner_id)"/>
+                                domain="[('position','=','before_lines')]"/>
                         </div>
                     </group>
                 </xpath>
@@ -28,7 +28,7 @@
                             <field name="condition_template2_id"
                                 nolabel="1"
                                 class='oe_inline'
-                                domain="[('position','=','after_lines')]" on_change="set_note2(condition_template2_id, partner_id)"/>
+                                domain="[('position','=','after_lines')]"/>
                         </div>
                     </group>
                 </xpath>
