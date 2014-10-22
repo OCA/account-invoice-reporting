@@ -25,9 +25,9 @@ from openerp import models, fields, api
 class AccountInvoice(models.Model):
     _inherit = 'account.invoice'
 
-    condition_template1_id = fields.Many2one('base.condition_template',
+    condition_template1_id = fields.Many2one('base.condition.template',
                                              string='Top conditions')
-    condition_template2_id = fields.Many2one('base.condition_template',
+    condition_template2_id = fields.Many2one('base.condition.template',
                                              string='Bottom conditions')
     note1 = fields.Html('Top conditions')
     note2 = fields.Html('Bottom conditions')
