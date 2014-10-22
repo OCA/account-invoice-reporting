@@ -29,6 +29,7 @@
  'data': ['account_invoice_view.xml',
           'base_condition_template_view.xml',
           'security/ir.model.access.csv',
+          'views/report_invoice.xml',
           ],
  'category': 'Sale',
  'installable': True,
