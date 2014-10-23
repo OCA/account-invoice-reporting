@@ -30,6 +30,7 @@ class BaseConditionTemplate(models.Model):
                                  ('after_lines', 'After lines')],
                                 'Position',
                                 required=True,
+                                default='before_lines',
                                 help="Position on document")
     text = fields.Html('Condition', translate=True, required=True)
 
