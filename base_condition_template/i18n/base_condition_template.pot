@@ -1,0 +1,85 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* base_condition_template
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-10-22 07:20+0000\n"
+"PO-Revision-Date: 2014-10-22 07:20+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: base_condition_template
+#: selection:base.condition.template,position:0
+msgid "After lines"
+msgstr ""
+
+#. module: base_condition_template
+#: model:ir.model,name:base_condition_template.model_base_condition_template
+msgid "Base condition template text"
+msgstr ""
+
+#. module: base_condition_template
+#: selection:base.condition.template,position:0
+msgid "Before lines"
+msgstr ""
+
+#. module: base_condition_template
+#: field:base.condition.template,text:0
+msgid "Condition"
+msgstr ""
+
+#. module: base_condition_template
+#: view:base.condition.template:base_condition_template.view_base_condition_template_form
+#: view:base.condition.template:base_condition_template.view_base_condition_template_search
+#: view:base.condition.template:base_condition_template.view_base_condition_template_tree
+#: model:ir.actions.act_window,name:base_condition_template.action_base_condition_template
+msgid "Condition Templates"
+msgstr ""
+
+#. module: base_condition_template
+#: field:base.condition.template,name:0
+msgid "Condition summary"
+msgstr ""
+
+#. module: base_condition_template
+#: field:base.condition.template,create_uid:0
+msgid "Created by"
+msgstr ""
+
+#. module: base_condition_template
+#: field:base.condition.template,create_date:0
+msgid "Created on"
+msgstr ""
+
+#. module: base_condition_template
+#: field:base.condition.template,id:0
+msgid "ID"
+msgstr ""
+
+#. module: base_condition_template
+#: field:base.condition.template,write_uid:0
+msgid "Last Updated by"
+msgstr ""
+
+#. module: base_condition_template
+#: field:base.condition.template,write_date:0
+msgid "Last Updated on"
+msgstr ""
+
+#. module: base_condition_template
+#: field:base.condition.template,position:0
+msgid "Position"
+msgstr ""
+
+#. module: base_condition_template
+#: help:base.condition.template,position:0
+msgid "Position on document"
+msgstr ""
+
