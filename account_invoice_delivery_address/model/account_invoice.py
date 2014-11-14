@@ -24,6 +24,7 @@ from openerp.osv import orm, fields
 
 
 class AccountInvoice(orm.Model):
+
     '''Modify account invoice to add delivery address'''
     _inherit = 'account.invoice'
 

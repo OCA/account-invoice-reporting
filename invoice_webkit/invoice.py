@@ -23,6 +23,7 @@ from openerp.tools.translate import _
 
 
 class InvoiceConditionText(Model):
+
     """add info condition in the invoice"""
     _name = "account.condition_text"
     _description = "Invoices conditions"
@@ -37,6 +38,7 @@ class InvoiceConditionText(Model):
 
 
 class AccountInvoice(Model):
+
     """ Add account.condition_text to invoice"""
 
     _inherit = "account.invoice"
@@ -74,7 +76,7 @@ class AccountInvoice(Model):
             domain=[('type', '=', 'footer')]),
         'note1': fields.html('Header'),
         'note2': fields.html('Footer'),
-        }
+    }
 
 
 class AccountInvoiceLine(Model):

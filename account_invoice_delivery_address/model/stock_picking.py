@@ -24,6 +24,7 @@ from openerp.osv import orm
 
 
 class StockPicking(orm.Model):
+
     '''Modify stock picking to fill delivery address'''
     _inherit = 'stock.picking'
 

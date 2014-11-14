@@ -26,6 +26,7 @@ from openerp.addons.base_report_assembler import report_assembler
 
 
 class InvoicePDFReportAssembler(report_assembler.PDFReportAssembler):
+
     """InvoicePDFReportAssembler allows to merge multiple
     invoice reports into one pdf"""
 
