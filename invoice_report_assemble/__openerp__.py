@@ -33,7 +33,7 @@
  'data': [
      'invoice_report.xml',
      'res_config_view.xml',
-     ],
+ ],
  'test': [],
  'installable': True,
  'auto_install': False,

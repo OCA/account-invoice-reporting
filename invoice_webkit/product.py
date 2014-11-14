@@ -22,6 +22,7 @@ from openerp.osv import orm, fields
 
 
 class ProductTemplate(orm.Model):
+
     """TMP fix of bug 1111430"""
     _inherit = 'product.template'
 

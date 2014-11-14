@@ -29,4 +29,4 @@ class ResCompany(orm.Model):
             'assembled.report', 'company_id',
             'Account Invoice Assemblage Report',
             domain=[('model', '=', 'account.invoice')]),
-        }
+    }

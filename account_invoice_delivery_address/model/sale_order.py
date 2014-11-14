@@ -24,6 +24,7 @@ from openerp.osv import orm
 
 
 class SaleOrder(orm.Model):
+
     '''Modify sale order to fill delivery address'''
     _inherit = 'sale.order'
 

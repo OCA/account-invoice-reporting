@@ -25,6 +25,7 @@ from openerp import pooler
 
 
 class AccountInvoice_Report(report_sxw.rml_parse):
+
     def __init__(self, cr, uid, name, context):
         super(AccountInvoice_Report, self
               ).__init__(cr, uid, name, context=context)

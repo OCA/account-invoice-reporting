@@ -30,7 +30,7 @@
         "sale_stock",
         "invoice_webkit",
         "stock_picking_invoice_link",
-        ],
+    ],
     "author": "Agile Business Group",
     "summary": "Display delivered serial numbers in invoice",
     "description": """
@@ -40,11 +40,11 @@ introduced by invoice_webkit module""",
     'website': 'http://www.agilebg.com',
     'data': [
         'invoice_view.xml',
-        ],
+    ],
     'demo': [],
     'test': [
         'test/sale.yml',
-        ],
+    ],
     'installable': True,
     'active': False,
 }
