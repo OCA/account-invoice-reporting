@@ -1,39 +1,32 @@
 <openerp>
-    <data>
-        <record model="ir.ui.view" id="invoice_form_add_condition">
-            <field name="name">account.invoice.form.condition</field>
-            <field name="model">account.invoice</field>
-            <field name="inherit_id" ref="account.invoice_form"/>
-            <field name="arch" type="xml">
+  <data>
+    <record model="ir.ui.view" id="invoice_form_add_condition">
+      <field name="name">account.invoice.form.condition</field>
+      <field name="model">account.invoice</field>
+      <field name="inherit_id" ref="account.invoice_form"/>
+      <field name="arch" type="xml">
 
-                <xpath expr="//field[@name='invoice_line']" position="before">
-                    <label for="note1"/>
-                    <field name="note1" colspan="4"/>
-                    <group>
-                        <div>Use template
-                            <field name="condition_template1_id"
-                                nolabel="1"
-                                class='oe_inline'
-                                domain="[('position','=','before_lines')]"/>
-                        </div>
-                    </group>
-                </xpath>
+        <xpath expr="/form/sheet/notebook/page[3]" position="after">
+          <page string="Comments" name="comments">
+            <label string="The comments will be displayed on the printed document. You can load a predefined template, write your own text or load a template and then modify it only for this document." colspan="2"/>
+            <group string="Top Comments">
+              <field name="condition_template1_id"
+                string="Load a template"
+                domain="[('position','=','before_lines')]"
+                context="{'default_position': 'before_lines'}"/>
+              <field name="note1" nolabel="1" colspan="2"/>
+            </group>
+            <group string="Bottom Comments">
+              <field name="condition_template2_id"
+                string="Load a template"
+                context="{'default_position': 'after_lines'}"
+                domain="[('position','=','after_lines')]"/>
+              <field name="note2" nolabel="1" colspan="2"/>
+            </group>
+          </page>
+        </xpath>
 
-                <xpath expr="//field[@name='comment']" position="replace">
-                    <field name="comment" colspan="4"/>
-                    <label for="note2"/>
-                    <field name="note2" colspan="4"/>
-                    <group>
-                        <div>Use template
-                            <field name="condition_template2_id"
-                                nolabel="1"
-                                class='oe_inline'
-                                domain="[('position','=','after_lines')]"/>
-                        </div>
-                    </group>
-                </xpath>
-
-            </field>
-        </record>
-    </data>
+      </field>
+    </record>
+  </data>
 </openerp>
