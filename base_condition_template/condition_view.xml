@@ -5,7 +5,7 @@
       <field name="name">base.condition.template.search</field>
       <field name="model">base.condition.template</field>
       <field name="arch" type="xml">
-        <search string="Condition Templates">
+        <search string="Comment Templates">
           <field name="name"/>
           <field name="position"/>
         </search>
@@ -16,7 +16,7 @@
       <field name="name">base.condition.template.form</field>
       <field name="model">base.condition.template</field>
       <field name="arch" type="xml">
-        <form string="Condition Templates">
+        <form string="Comment Templates">
           <group>
             <field name="name"/>
             <field name="position"/>
@@ -31,7 +31,7 @@
       <field name="model">base.condition.template</field>
       <field name="priority" eval="6"/>
       <field name="arch" type="xml">
-        <tree string="Condition Templates">
+        <tree string="Comment Templates">
           <field name="name"/>
           <field name="position"/>
         </tree>
@@ -39,7 +39,7 @@
     </record>
 
     <record model="ir.actions.act_window" id="action_base_condition_template">
-      <field name="name">Condition Templates</field>
+      <field name="name">Comment Templates</field>
       <field name="type">ir.actions.act_window</field>
       <field name="res_model">base.condition.template</field>
       <field name="view_type">form</field>

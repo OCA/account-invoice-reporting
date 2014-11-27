@@ -1,15 +1,13 @@
-Base condition template
+Base Comments Templates
 =======================
 
-Add a new model to define templates of condition text to print on
+Add a new model to define templates of comments to print on
 documents.
 
-Templates are categorized by their position on the document.
+Two positions are available for the comments:
 
-Two positions are available:
-
-- before document lines
-- after document lines
+- above document lines
+- below document lines
 
 This module is the base module for following modules:
 

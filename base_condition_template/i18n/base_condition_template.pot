@@ -22,7 +22,7 @@ msgstr ""
 
 #. module: base_condition_template
 #: model:ir.model,name:base_condition_template.model_base_condition_template
-msgid "Base condition template text"
+msgid "Base comment template text"
 msgstr ""
 
 #. module: base_condition_template
@@ -32,7 +32,7 @@ msgstr ""
 
 #. module: base_condition_template
 #: field:base.condition.template,text:0
-msgid "Condition"
+msgid "Comment"
 msgstr ""
 
 #. module: base_condition_template
@@ -40,12 +40,12 @@ msgstr ""
 #: view:base.condition.template:base_condition_template.view_base_condition_template_search
 #: view:base.condition.template:base_condition_template.view_base_condition_template_tree
 #: model:ir.actions.act_window,name:base_condition_template.action_base_condition_template
-msgid "Condition Templates"
+msgid "Comment Templates"
 msgstr ""
 
 #. module: base_condition_template
 #: field:base.condition.template,name:0
-msgid "Condition summary"
+msgid "Comment summary"
 msgstr ""
 
 #. module: base_condition_template
