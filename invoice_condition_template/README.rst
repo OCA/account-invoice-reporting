@@ -1,11 +1,11 @@
-Invoice Conditions
-==================
+Invoice Comments
+================
 
-Adds template condition text on invoices.
+Adds comments on invoices.
+The comments can be edited directly on the invoices or loaded from
+templates.
 
-Templates are categorized by their position on the document.
-
-Two positions are available:
+Two positions are available for the comments:
 
 - before invoice lines
 - after invoice lines

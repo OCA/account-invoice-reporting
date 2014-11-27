@@ -26,11 +26,11 @@ class AccountInvoice(models.Model):
     _inherit = 'account.invoice'
 
     condition_template1_id = fields.Many2one('base.condition.template',
-                                             string='Top conditions')
+                                             string='Top Comment Template')
     condition_template2_id = fields.Many2one('base.condition.template',
-                                             string='Bottom conditions')
-    note1 = fields.Html('Top conditions')
-    note2 = fields.Html('Bottom conditions')
+                                             string='Bottom Comment Template')
+    note1 = fields.Html('Top Comment')
+    note2 = fields.Html('Bottom Comment')
 
     @api.onchange('condition_template1_id')
     def _set_note1(self):
