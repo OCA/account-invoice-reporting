@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <openerp>
   <data>
-    <record model="ir.ui.view" id="view_base_condition_template_search">
+    <record model="ir.ui.view" id="view_base_comment_template_search">
       <field name="name">base.condition.template.search</field>
       <field name="model">base.condition.template</field>
       <field name="arch" type="xml">
@@ -12,7 +12,7 @@
       </field>
     </record>
 
-    <record model="ir.ui.view" id="view_base_condition_template_form">
+    <record model="ir.ui.view" id="view_base_comment_template_form">
       <field name="name">base.condition.template.form</field>
       <field name="model">base.condition.template</field>
       <field name="arch" type="xml">
@@ -26,7 +26,7 @@
       </field>
     </record>
 
-    <record model="ir.ui.view" id="view_base_condition_template_tree">
+    <record model="ir.ui.view" id="view_base_comment_template_tree">
       <field name="name">account.condition.template.list</field>
       <field name="model">base.condition.template</field>
       <field name="priority" eval="6"/>
@@ -38,13 +38,13 @@
       </field>
     </record>
 
-    <record model="ir.actions.act_window" id="action_base_condition_template">
+    <record model="ir.actions.act_window" id="action_base_comment_template">
       <field name="name">Comment Templates</field>
       <field name="type">ir.actions.act_window</field>
       <field name="res_model">base.condition.template</field>
       <field name="view_type">form</field>
       <field name="view_mode">tree,form</field>
-      <field name="view_id" ref="view_base_condition_template_tree"/>
+      <field name="view_id" ref="view_base_comment_template_tree"/>
     </record>
 
   </data>

@@ -36,7 +36,7 @@ msgid "Comments"
 msgstr ""
 
 #. module: invoice_condition_template
-#: model:ir.ui.menu,name:invoice_condition_template.menu_base_condition_template_invoice
+#: model:ir.ui.menu,name:invoice_condition_template.menu_base_comment_template_invoice
 msgid "Document Comments"
 msgstr ""
 
