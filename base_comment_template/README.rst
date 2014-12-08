@@ -13,7 +13,7 @@ This module is the base module for following modules:
 
 * sale_condition_template
 * purchase_condition_template
-* invoice_condition_template
+* invoice_comment_template
 
 Contributors
 ------------

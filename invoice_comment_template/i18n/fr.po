@@ -1,6 +1,6 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# 	* invoice_condition_template
+# 	* invoice_comment_template
 #
 msgid ""
 msgstr ""
@@ -16,43 +16,43 @@ msgstr ""
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
 
-#. module: invoice_condition_template
+#. module: invoice_comment_template
 #: field:account.invoice,note2:0
 msgid "Bottom Comment"
 msgstr "Commentaire du bas"
 
-#. module: invoice_condition_template
+#. module: invoice_comment_template
 #: field:account.invoice,condition_template2_id:0
 msgid "Bottom Comment Template"
 msgstr "Modèle de commentaire du bas"
 
-#. module: invoice_condition_template
-#: view:account.invoice:invoice_condition_template.invoice_form_add_condition
+#. module: invoice_comment_template
+#: view:account.invoice:invoice_comment_template.invoice_form_add_condition
 msgid "Bottom Comments"
 msgstr "Commentaires du bas"
 
-#. module: invoice_condition_template
-#: view:account.invoice:invoice_condition_template.invoice_form_add_condition
+#. module: invoice_comment_template
+#: view:account.invoice:invoice_comment_template.invoice_form_add_condition
 msgid "Comments"
 msgstr "Commentaires"
 
-#. module: invoice_condition_template
-#: model:ir.ui.menu,name:invoice_condition_template.menu_base_comment_template_invoice
+#. module: invoice_comment_template
+#: model:ir.ui.menu,name:invoice_comment_template.menu_base_comment_template_invoice
 msgid "Document Comments"
 msgstr "Commentaires de documents"
 
-#. module: invoice_condition_template
-#: model:ir.model,name:invoice_condition_template.model_account_invoice
+#. module: invoice_comment_template
+#: model:ir.model,name:invoice_comment_template.model_account_invoice
 msgid "Invoice"
 msgstr "Facture"
 
-#. module: invoice_condition_template
-#: view:account.invoice:invoice_condition_template.invoice_form_add_condition
+#. module: invoice_comment_template
+#: view:account.invoice:invoice_comment_template.invoice_form_add_condition
 msgid "Load a template"
 msgstr "Utiliser un modèle"
 
-#. module: invoice_condition_template
-#: view:account.invoice:invoice_condition_template.invoice_form_add_condition
+#. module: invoice_comment_template
+#: view:account.invoice:invoice_comment_template.invoice_form_add_condition
 msgid ""
 "The comments will be displayed on the printed document. You can load a "
 "predefined template, write your own text or load a template and then modify "
@@ -62,17 +62,17 @@ msgstr ""
 "charger un modèle prédéfini, écrire votre propre texte ou encore charger un modèle "
 "puis le modifier uniquement pour ce document."
 
-#. module: invoice_condition_template
+#. module: invoice_comment_template
 #: field:account.invoice,note1:0
 msgid "Top Comment"
 msgstr "Commentaire du haut"
 
-#. module: invoice_condition_template
+#. module: invoice_comment_template
 #: field:account.invoice,condition_template1_id:0
 msgid "Top Comment Template"
 msgstr "Modèle de commentaire du haut"
 
-#. module: invoice_condition_template
-#: view:account.invoice:invoice_condition_template.invoice_form_add_condition
+#. module: invoice_comment_template
+#: view:account.invoice:invoice_comment_template.invoice_form_add_condition
 msgid "Top Comments"
 msgstr "Commentaires du haut"
