@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+  <data>
+    <template id="report_invoice_document_comments"
+      inherit_id="account.report_invoice_document" >
+      <xpath expr="//div[contains(@class, 'page')]/table[1]" position="before">
+        <p t-if="o.note1">
+          <span t-field="o.note1"/>
+        </p>
+      </xpath>
+      <xpath expr="//p[@t-if='o.comment']" position="after">
+        <p t-if="o.note2">
+          <span t-field="o.note2"/>
+        </p>
+      </xpath>
+    </template>
+  </data>
+</openerp>
