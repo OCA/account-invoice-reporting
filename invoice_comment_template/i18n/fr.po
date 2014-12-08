@@ -22,17 +22,17 @@ msgid "Bottom Comment"
 msgstr "Commentaire du bas"
 
 #. module: invoice_comment_template
-#: field:account.invoice,condition_template2_id:0
+#: field:account.invoice,comment_template2_id:0
 msgid "Bottom Comment Template"
 msgstr "Modèle de commentaire du bas"
 
 #. module: invoice_comment_template
-#: view:account.invoice:invoice_comment_template.invoice_form_add_condition
+#: view:account.invoice:invoice_comment_template.invoice_form_add_comment
 msgid "Bottom Comments"
 msgstr "Commentaires du bas"
 
 #. module: invoice_comment_template
-#: view:account.invoice:invoice_comment_template.invoice_form_add_condition
+#: view:account.invoice:invoice_comment_template.invoice_form_add_comment
 msgid "Comments"
 msgstr "Commentaires"
 
@@ -47,12 +47,12 @@ msgid "Invoice"
 msgstr "Facture"
 
 #. module: invoice_comment_template
-#: view:account.invoice:invoice_comment_template.invoice_form_add_condition
+#: view:account.invoice:invoice_comment_template.invoice_form_add_comment
 msgid "Load a template"
 msgstr "Utiliser un modèle"
 
 #. module: invoice_comment_template
-#: view:account.invoice:invoice_comment_template.invoice_form_add_condition
+#: view:account.invoice:invoice_comment_template.invoice_form_add_comment
 msgid ""
 "The comments will be displayed on the printed document. You can load a "
 "predefined template, write your own text or load a template and then modify "
@@ -68,11 +68,11 @@ msgid "Top Comment"
 msgstr "Commentaire du haut"
 
 #. module: invoice_comment_template
-#: field:account.invoice,condition_template1_id:0
+#: field:account.invoice,comment_template1_id:0
 msgid "Top Comment Template"
 msgstr "Modèle de commentaire du haut"
 
 #. module: invoice_comment_template
-#: view:account.invoice:invoice_comment_template.invoice_form_add_condition
+#: view:account.invoice:invoice_comment_template.invoice_form_add_comment
 msgid "Top Comments"
 msgstr "Commentaires du haut"

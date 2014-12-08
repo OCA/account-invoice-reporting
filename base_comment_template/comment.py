@@ -21,9 +21,9 @@
 from openerp import models, fields, api
 
 
-class BaseConditionTemplate(models.Model):
-    _name = "base.condition.template"
-    _description = "Base comment template text"
+class BaseCommentTemplate(models.Model):
+    _name = "base.comment.template"
+    _description = "Base comment template"
 
     name = fields.Char('Comment summary', required=True)
     position = fields.Selection([('before_lines', 'Before lines'),

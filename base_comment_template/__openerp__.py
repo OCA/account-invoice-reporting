@@ -23,7 +23,7 @@
  "version": "1.0",
  "depends": ["base"],
  "author": "Camptocamp",
- "data": ["condition_view.xml",
+ "data": ["comment_view.xml",
           'security/ir.model.access.csv',
           ],
  "category": "Sale",

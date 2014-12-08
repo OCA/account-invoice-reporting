@@ -11,8 +11,8 @@ Two positions are available for the comments:
 
 This module is the base module for following modules:
 
-* sale_condition_template
-* purchase_condition_template
+* sale_comment_template
+* purchase_comment_template
 * invoice_comment_template
 
 Contributors

@@ -16,70 +16,70 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: base_comment_template
-#: selection:base.condition.template,position:0
+#: selection:base.comment.template,position:0
 msgid "After lines"
 msgstr ""
 
 #. module: base_comment_template
-#: model:ir.model,name:base_comment_template.model_base_condition_template
-msgid "Base comment template text"
+#: model:ir.model,name:base_comment_template.model_base_comment_template
+msgid "Base comment template"
 msgstr ""
 
 #. module: base_comment_template
-#: selection:base.condition.template,position:0
+#: selection:base.comment.template,position:0
 msgid "Before lines"
 msgstr ""
 
 #. module: base_comment_template
-#: field:base.condition.template,text:0
+#: field:base.comment.template,text:0
 msgid "Comment"
 msgstr ""
 
 #. module: base_comment_template
-#: view:base.condition.template:base_comment_template.view_base_condition_template_form
-#: view:base.condition.template:base_comment_template.view_base_condition_template_search
-#: view:base.condition.template:base_comment_template.view_base_condition_template_tree
-#: model:ir.actions.act_window,name:base_comment_template.action_base_condition_template
+#: view:base.comment.template:base_comment_template.view_base_comment_template_form
+#: view:base.comment.template:base_comment_template.view_base_comment_template_search
+#: view:base.comment.template:base_comment_template.view_base_comment_template_tree
+#: model:ir.actions.act_window,name:base_comment_template.action_base_comment_template
 msgid "Comment Templates"
 msgstr ""
 
 #. module: base_comment_template
-#: field:base.condition.template,name:0
+#: field:base.comment.template,name:0
 msgid "Comment summary"
 msgstr ""
 
 #. module: base_comment_template
-#: field:base.condition.template,create_uid:0
+#: field:base.comment.template,create_uid:0
 msgid "Created by"
 msgstr ""
 
 #. module: base_comment_template
-#: field:base.condition.template,create_date:0
+#: field:base.comment.template,create_date:0
 msgid "Created on"
 msgstr ""
 
 #. module: base_comment_template
-#: field:base.condition.template,id:0
+#: field:base.comment.template,id:0
 msgid "ID"
 msgstr ""
 
 #. module: base_comment_template
-#: field:base.condition.template,write_uid:0
+#: field:base.comment.template,write_uid:0
 msgid "Last Updated by"
 msgstr ""
 
 #. module: base_comment_template
-#: field:base.condition.template,write_date:0
+#: field:base.comment.template,write_date:0
 msgid "Last Updated on"
 msgstr ""
 
 #. module: base_comment_template
-#: field:base.condition.template,position:0
+#: field:base.comment.template,position:0
 msgid "Position"
 msgstr ""
 
 #. module: base_comment_template
-#: help:base.condition.template,position:0
+#: help:base.comment.template,position:0
 msgid "Position on document"
 msgstr ""
 
