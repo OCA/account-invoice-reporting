@@ -21,18 +21,18 @@
 from openerp import models, fields, api
 
 
-class BaseConditionTemplate(models.Model):
-    _name = "base.condition.template"
-    _description = "Base condition template text"
+class BaseCommentTemplate(models.Model):
+    _name = "base.comment.template"
+    _description = "Base comment template"
 
-    name = fields.Char('Condition summary', required=True)
+    name = fields.Char('Comment summary', required=True)
     position = fields.Selection([('before_lines', 'Before lines'),
                                  ('after_lines', 'After lines')],
                                 'Position',
                                 required=True,
                                 default='before_lines',
                                 help="Position on document")
-    text = fields.Html('Condition', translate=True, required=True)
+    text = fields.Html('Comment', translate=True, required=True)
 
     @api.multi
     def get_value(self, partner_id=False):

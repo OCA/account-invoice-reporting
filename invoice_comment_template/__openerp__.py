@@ -19,15 +19,15 @@
 #
 ##############################################################################
 
-{'name': 'Invoice Conditions',
- 'summary': 'Condition texts templates on invoice documents',
+{'name': 'Invoice Comments',
+ 'summary': 'Comments templates on invoice documents',
  'version': '1.0',
  'depends': ['account',
-             'base_condition_template',
+             'base_comment_template',
              ],
  'author': 'Camptocamp',
  'data': ['account_invoice_view.xml',
-          'base_condition_template_view.xml',
+          'base_comment_template_view.xml',
           'security/ir.model.access.csv',
           'views/report_invoice.xml',
           ],

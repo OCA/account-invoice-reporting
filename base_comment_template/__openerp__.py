@@ -18,12 +18,12 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 #
-{"name": "Base condition template",
- "summary": "Condition texts templates on documents",
+{"name": "Base Comments Templates",
+ "summary": "Comments templates on documents",
  "version": "1.0",
  "depends": ["base"],
  "author": "Camptocamp",
- "data": ["condition_view.xml",
+ "data": ["comment_view.xml",
           'security/ir.model.access.csv',
           ],
  "category": "Sale",

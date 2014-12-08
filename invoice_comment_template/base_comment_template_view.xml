@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+  <data noupdate="0">
+    <menuitem name="Document Comments"
+      id="menu_base_comment_template_invoice"
+      action="base_comment_template.action_base_comment_template"
+      parent="account.menu_configuration_misc"/>
+  </data>
+</openerp>

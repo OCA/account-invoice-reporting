@@ -1,2 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_base_condition_template,access_base_condition_template no one,model_base_condition_template,base.group_no_one,1,1,1,1
