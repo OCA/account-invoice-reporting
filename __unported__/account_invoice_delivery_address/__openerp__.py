@@ -22,6 +22,7 @@
     "name": "Account invoice delivery address",
     "version": "1.0",
     "author": "Therp BV",
+    "license": "AGPL-3",
     "complexity": "normal",
     "description": """
 Adds delivery address to the invoice. Also makes sure delivery address is
