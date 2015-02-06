@@ -32,6 +32,7 @@
  """,
  'author': 'Camptocamp',
  'website': 'http://www.camptocamp.com',
+ 'license': 'AGPL-3',
  'depends': ['base', 'report_webkit', 'base_headers_webkit', 'account'],
  'data': ['security/ir.model.access.csv',
           'invoice_report.xml',

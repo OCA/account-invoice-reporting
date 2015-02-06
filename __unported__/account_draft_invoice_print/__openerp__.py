@@ -25,6 +25,7 @@
  'description': """Allows to print invoices in draft state""",
  'author': 'Camptocamp',
  'website': 'http://www.camptocamp.com',
+ 'license': 'AGPL-3',
  'depends': ['account'],
  'data': ['invoice_view.xml'],
  'installable': False,

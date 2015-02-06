@@ -38,6 +38,7 @@ This module prints, for each (customer) invoice line, the delivered production
 lots. The serial numbers are displayed in the "formatted note" field,
 introduced by invoice_webkit module""",
     'website': 'http://www.agilebg.com',
+    'license': 'AGPL-3',
     'data': [
         'invoice_view.xml',
         ],
