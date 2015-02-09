@@ -6,20 +6,20 @@
 #
 ######################################################################
 
-from openerp.osv import fields, osv
-import tools
+from openerp import fields, tools, models, api
 
-class partner_aging_supplier(osv.osv):
-  
+class partner_aging_supplier(models.Model):
+
     _name = 'partner.aging.supplier'
     _auto = False
 
-    def invopen(self, cr, uid, ids, context=None):
+    @api.model
+    def invopen(self, context=None):
         """
         @author       Ursa Information Systems
         @description  Create link to view each listed invoice
         """
-        models = self.pool.get('ir.model.data')
+        #models = self.pool.get('ir.model.data')
         view = models.get_object_reference(cr, uid, 'account', 'invoice_form')
         view_id = view and view[1] or False
         
@@ -45,24 +45,22 @@ class partner_aging_supplier(osv.osv):
             'res_id': inv_id,
         }
 
-    _columns = {
-        'partner_id': fields.many2one('res.partner', u'Partner',readonly=True),
-        'partner_name': fields.text('Name',readonly=True),
-        'max_days_overdue': fields.integer(u'Days Overdue',readonly=True),
-        'avg_days_overdue': fields.integer(u'Avg Days Overdue',readonly=True),
-        'oldest_invoice_date': fields.date(u'Invoice Date',readonly=True),
-        'date_due': fields.date(u'Due Date',readonly=True),
-        'total': fields.float(u'Total',readonly=True),
-        'current': fields.float(u'Current',readonly=True),
-        'days_due_01to30': fields.float(u'01/30',readonly=True),
-        'days_due_31to60': fields.float(u'31/60',readonly=True),
-        'days_due_61to90': fields.float(u'61/90',readonly=True),
-        'days_due_91to120': fields.float(u'91/120',readonly=True),
-        'days_due_121togr': fields.float(u'+121',readonly=True),
-        'invoice_ref': fields.char('Their Invoice',size=25,readonly=True),
-        'invoice_id': fields.many2one('account.invoice', 'Invoice', readonly=True),
-        'comment': fields.text('Notes',readonly=True),
-     }
+    partner_id = fields.Many2one('res.partner', u'Partner',readonly=True)
+    partner_name = fields.Text('Name',readonly=True)
+    max_days_overdue = fields.Integer(u'Days Overdue',readonly=True)
+    avg_days_overdue = fields.Integer(u'Avg Days Overdue',readonly=True)
+    oldest_invoice_date = fields.Date(u'Invoice Date',readonly=True)
+    date_due = fields.Date(u'Due Date',readonly=True)
+    total = fields.Float(u'Total',readonly=True)
+    current = fields.Float(u'Current',readonly=True)
+    days_due_01to30 = fields.Float(u'01/30',readonly=True)
+    days_due_31to60 = fields.Float(u'31/60',readonly=True)
+    days_due_61to90 = fields.Float(u'61/90',readonly=True)
+    days_due_91to120 = fields.Float(u'91/120',readonly=True)
+    days_due_121togr = fields.Float(u'+121',readonly=True)
+    invoice_ref = fields.Char('Their Invoice',size=25,readonly=True)
+    invoice_id = fields.Many2one('account.invoice', 'Invoice', readonly=True)
+    comment = fields.Text('Notes',readonly=True)
 
     _order = 'date_due'
 

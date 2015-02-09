@@ -9,32 +9,29 @@
 #
 #######################################################################################
 
-from osv import osv, fields
-import tools
+from openerp import fields, tools, models
 
-class customer_unapplied(osv.osv):
+class customer_unapplied(models.Model):
   
     _name = 'account.voucher.customer.unapplied'
     _auto = False
 
-    _columns = {
-        'partner_id': fields.many2one('res.partner', u'Partner', readonly=True),
-        'partner_name': fields.text('Name', readonly=True),
-        'salesman': fields.many2one('res.users', u'Sales Rep', readonly=True),
-        'avg_days_overdue': fields.integer(u'Avg Days Overdue', readonly=True),
-        'oldest_invoice_date': fields.date(u'Invoice Date', readonly=True),
-        'total': fields.float(u'Total', readonly=True),
-        'days_due_01to30': fields.float(u'01/30', readonly=True),
-        'days_due_31to60': fields.float(u'31/60', readonly=True),
-        'days_due_61to90': fields.float(u'61/90', readonly=True),
-        'days_due_91to120': fields.float(u'91/120', readonly=True),
-        'days_due_121togr': fields.float(u'+121', readonly=True),
-        'max_days_overdue': fields.integer(u'Days Overdue', readonly=True),
-        'current': fields.float(u'Total', readonly=True),
-        'invoice_ref': fields.char('Reference',size=128),
-        'invoice_id': fields.many2one('account.invoice', 'Invoice', readonly=True), 
-        'comment': fields.text('Notes', readonly=True),
-   }
+    partner_id = fields.Many2one('res.partner', u'Partner', readonly=True)
+    partner_name = fields.Text('Name', readonly=True)
+    salesman = fields.Many2one('res.users', u'Sales Rep', readonly=True)
+    avg_days_overdue = fields.Integer(u'Avg Days Overdue', readonly=True)
+    oldest_invoice_date = fields.Date(u'Invoice Date', readonly=True)
+    total = fields.Float(u'Total', readonly=True)
+    days_due_01to30 = fields.Float(u'01/30', readonly=True)
+    days_due_31to60 = fields.Float(u'31/60', readonly=True)
+    days_due_61to90 = fields.Float(u'61/90', readonly=True)
+    days_due_91to120 = fields.Float(u'91/120', readonly=True)
+    days_due_121togr = fields.Float(u'+121', readonly=True)
+    max_days_overdue = fields.Integer(u'Days Overdue', readonly=True)
+    current = fields.Float(u'Total', readonly=True)
+    invoice_ref = fields.Char('Reference', size=128)
+    invoice_id = fields.Many2one('account.invoice', 'Invoice', readonly=True),
+    comment = fields.Text('Notes', readonly=True)
 
     _order = "partner_name"
 
