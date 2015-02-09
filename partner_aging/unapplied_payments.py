@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 ###############################################################################
 #
 #    OpenERP, Open Source Management Solution
@@ -22,8 +21,8 @@
 
 ###############################################################################
 #
-# Description:  Create sql views consisting of unreconciled customer/supplier 
-#               deposits. Unapplied customer deposits are used in customer 
+# Description:  Create sql views consisting of unreconciled customer/supplier
+#               deposits. Unapplied customer deposits are used in customer
 #               aging view
 #
 ###############################################################################
@@ -31,8 +30,9 @@
 
 from openerp import fields, tools, models
 
+
 class customer_unapplied(models.Model):
-  
+
     _name = 'account.voucher.customer.unapplied'
     _auto = False
 
@@ -57,13 +57,13 @@ class customer_unapplied(models.Model):
 
     def init(self, cr):
 
-        query="""
-               SELECT cast(100000000000 + av.id as bigint) as id,rp.id as partner_id, rp.name as partner_name, days_due as avg_days_overdue, 
+        query = """
+               SELECT cast(100000000000 + av.id as bigint) as id,rp.id as partner_id, rp.name as partner_name, days_due as avg_days_overdue,
                       av.date as oldest_invoice_date,
-                      CASE WHEN (select count(name) from account_move_line where name=av.number) >= 1 
-                           THEN (select -1 * (sum(credit) - sum(debit)) from account_move_line where name =av.number) 
+                      CASE WHEN (select count(name) from account_move_line where name=av.number) >= 1
+                           THEN (select -1 * (sum(credit) - sum(debit)) from account_move_line where name =av.number)
                            ELSE 0 END as total,
-                      CASE WHEN (days_due BETWEEN 01 AND  30) and (select count(name) from account_move_line where name=av.number) >= 1 
+                      CASE WHEN (days_due BETWEEN 01 AND  30) and (select count(name) from account_move_line where name=av.number) >= 1
                            THEN (select -1 * (sum(credit) - sum(debit)) from account_move_line where name =av.number)
                            ELSE 0 END  AS "days_due_01to30",
                       CASE WHEN (days_due BETWEEN 31 AND  60) and (select count(name) from account_move_line where name=av.number) >= 1
@@ -78,12 +78,12 @@ class customer_unapplied(models.Model):
                       CASE WHEN (days_due >= 121) and (select count(name) from account_move_line where name=av.number) >= 1
                            THEN (select -1 * (sum(credit) - sum(debit)) from account_move_line where name =av.number)
                            ELSE 0 END  AS "days_due_121togr",
-                      CASE when days_due < 0 
-                           THEN 0 
+                      CASE when days_due < 0
+                           THEN 0
                            ELSE days_due END as "max_days_overdue",
                       CASE WHEN days_due <=0 and (select count(name) from account_move_line where name=av.number) >= 1
-                           THEN (select -1 * (sum(credit) - sum(debit)) from account_move_line where name =av.number) 
-                           ELSE 0 END as "current", 
+                           THEN (select -1 * (sum(credit) - sum(debit)) from account_move_line where name =av.number)
+                           ELSE 0 END as "current",
                            av.number as invoice_ref, -999 as "invoice_id", null as comment, null as salesman
                FROM account_voucher av,res_partner rp, account_move_line aml
                INNER JOIN
@@ -97,10 +97,7 @@ class customer_unapplied(models.Model):
                        and av.state = 'posted'
                        and aml.credit > 0
         """
-        tools.drop_view_if_exists(cr, '%s'%(self._name.replace('.', '_')))
+        tools.drop_view_if_exists(cr, '%s' % (self._name.replace('.', '_')))
         cr.execute("""
-                      CREATE OR REPLACE VIEW %s AS ( %s) 
-        """%(self._name.replace('.', '_'), query) ) 
-
-
-
+                      CREATE OR REPLACE VIEW %s AS ( %s)
+        """ % (self._name.replace('.', '_'), query))
