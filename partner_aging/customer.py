@@ -20,14 +20,15 @@
 ###############################################################################
 
 
-from openerp import fields, tools, models
+from openerp import fields, tools, models, api
 
 
 class account_aging_customer(models.Model):
     _name = 'partner.aging.customer'
     _auto = False
 
-    def docopen(self, cr, uid, ids, context=None):
+    @api.multi
+    def docopen(self, context=None):
         """
         @description  Open document (invoice or payment) related to the
                       unapplied payment or outstanding balance on this line
@@ -38,21 +39,22 @@ class account_aging_customer(models.Model):
         active_id = context.get('active_id')
         models = self.pool.get('ir.model.data')
         # Get this line's invoice id
-        inv_id = self.browse(cr, uid, ids[0]).invoice_id.id
+        inv_id = self.invoice_id.id
 
         # if this is an unapplied payment(all unapplied payments hard-coded to
         # -999), get the referenced voucher
         if inv_id == -999:
-            ref = self.browse(cr, uid, ids[0]).invoice_ref
+            ref = self.invoice_ref
             payment_pool = self.pool.get('account.voucher')
             # Get referenced customer payment (invoice_ref field is actually a
             # payment for these)
             voucher_id = payment_pool.search(
-                cr,
-                uid,
                 [('number', '=', ref)]
             )[0]
-            view = models.get_object_reference(cr, uid, 'account_voucher', 'view_voucher_form')
+            view = models.get_object_reference(
+                'account_voucher',
+                'view_voucher_form'
+            )
             # Set values for form
             view_id = view and view[1] or False
             name = 'Customer Payments'
@@ -61,7 +63,7 @@ class account_aging_customer(models.Model):
             doc_id = voucher_id
         # otherwise get the invoice
         else:
-            view = models.get_object_reference(cr, uid, 'account', 'invoice_form')
+            view = models.get_object_reference('account', 'invoice_form')
             view_id = view and view[1] or False
             name = 'Customer Invoices'
             res_model = 'account.invoice'

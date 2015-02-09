@@ -28,7 +28,7 @@
 ###############################################################################
 
 
-from openerp import fields, tools, models
+from openerp import fields, tools, models, api
 
 
 class customer_unapplied(models.Model):
