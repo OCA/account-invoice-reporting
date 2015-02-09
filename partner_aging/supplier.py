@@ -1,10 +1,25 @@
 # -*- coding: utf-8 -*-
 
-######################################################################
+###############################################################################
 #
-#  Note: Program metadata is available in /__init__.py
+#    OpenERP, Open Source Management Solution
+#    Copyright (C) 2014 Ursa Informative Systems (<www.ursainfosystems.com>).
 #
-######################################################################
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU Affero General Public License as
+#    published by the Free Software Foundation, either version 3 of the
+#    License, or (at your option) any later version.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU Affero General Public License for more details.
+#
+#    You should have received a copy of the GNU Affero General Public License
+#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#
+###############################################################################
+
 
 from openerp import fields, tools, models, api
 
@@ -19,7 +34,7 @@ class partner_aging_supplier(models.Model):
         @author       Ursa Information Systems
         @description  Create link to view each listed invoice
         """
-        #models = self.pool.get('ir.model.data')
+        models = self.pool.get('ir.model.data')
         view = models.get_object_reference(cr, uid, 'account', 'invoice_form')
         view_id = view and view[1] or False
         
