@@ -24,6 +24,7 @@
 	  <field name="total" sum="Total"/>
 	  <group expand="0" string="Group By...">
 	    <filter string="Partner" domain="[]" context="{'group_by':'partner_id'}"/>
+	    <filter string="Currency" domain="[]" context="{'group_by':'currency_name'}"/>
 	  </group>
 	  
 	</search>
@@ -51,7 +52,8 @@
 	  <field name="days_due_31to60" sum="Total" />
 	  <field name="days_due_61to90" sum="Total" />
 	  <field name="days_due_91to120" sum="Total" />
-	  <field name="days_due_121togr" sum="Total" />
+      <field name="days_due_121togr" sum="Total" />
+      <field name="currency_name" />
 	  <field name="comment" />
 	</tree>
       </field>
