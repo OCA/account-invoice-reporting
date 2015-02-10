@@ -1,0 +1,253 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* partner_aging
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 7.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-02-10 15:28+0000\n"
+"PO-Revision-Date: 2015-02-10 15:28+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: partner_aging
+#: model:ir.model,name:partner_aging.model_partner_aging_supplier
+msgid "partner.aging.supplier"
+msgstr "partner.aging.supplier"
+
+#. module: partner_aging
+#: field:account.voucher.customer.unapplied,days_due_31to60:0
+#: field:partner.aging.customer,days_due_31to60:0
+#: field:partner.aging.supplier,days_due_31to60:0
+msgid "31/60"
+msgstr "31/60"
+
+#. module: partner_aging
+#: view:partner.aging.customer:0
+#: view:partner.aging.supplier:0
+#: field:partner.aging.supplier,current:0
+msgid "Current"
+msgstr "Courrant"
+
+#. module: partner_aging
+#: view:partner.aging.customer:0
+#: view:partner.aging.supplier:0
+msgid "Group By..."
+msgstr "Regrouper par..."
+
+#. module: partner_aging
+#: view:partner.aging.supplier:0
+msgid "Overdue Only"
+msgstr "Retard Seulement"
+
+#. module: partner_aging
+#: field:account.voucher.customer.unapplied,days_due_121togr:0
+#: field:partner.aging.customer,days_due_121togr:0
+#: field:partner.aging.supplier,days_due_121togr:0
+msgid "+121"
+msgstr "+121"
+
+#. module: partner_aging
+#: view:partner.aging.customer:0
+msgid "Payments with unapplied balances or open credits."
+msgstr "Paiements avec balances non appliquées ou crédits ouverts"
+
+#. module: partner_aging
+#: view:partner.aging.supplier:0
+msgid "Supplier"
+msgstr "Fournisseur"
+
+#. module: partner_aging
+#: model:ir.model,name:partner_aging.model_account_voucher_customer_unapplied
+msgid "account.voucher.customer.unapplied"
+msgstr "account.voucher.customer.unapplied"
+
+#. module: partner_aging
+#: view:partner.aging.supplier:0
+msgid "Show unapplied supplier credits"
+msgstr "Montrer les crédits de fournisseurs non-appliqués"
+
+#. module: partner_aging
+#: model:ir.actions.act_window,name:partner_aging.action_customer_aging
+#: model:ir.ui.menu,name:partner_aging.menu_customer_aging
+#: view:partner.aging.customer:0
+msgid "Customer Aging"
+msgstr "Vieillissement de client"
+
+#. module: partner_aging
+#: view:partner.aging.customer:0
+msgid "Deposits/Credits"
+msgstr "Dépôts/Crédits"
+
+#. module: partner_aging
+#: field:account.voucher.customer.unapplied,oldest_invoice_date:0
+#: field:partner.aging.supplier,oldest_invoice_date:0
+msgid "Invoice Date"
+msgstr "Date de la facture"
+
+#. module: partner_aging
+#: view:partner.aging.supplier:0
+msgid "Exclude Credits"
+msgstr "Exclure les crédits"
+
+#. module: partner_aging
+#: field:account.voucher.customer.unapplied,days_due_01to30:0
+#: field:partner.aging.customer,days_due_01to30:0
+#: field:partner.aging.supplier,days_due_01to30:0
+msgid "01/30"
+msgstr "01/30"
+
+#. module: partner_aging
+#: field:account.voucher.customer.unapplied,salesman:0
+#: field:partner.aging.customer,salesman:0
+msgid "Sales Rep"
+msgstr "Représentant aux ventes"
+
+#. module: partner_aging
+#: field:account.voucher.customer.unapplied,days_due_91to120:0
+#: field:partner.aging.customer,days_due_91to120:0
+#: field:partner.aging.supplier,days_due_91to120:0
+msgid "91/120"
+msgstr "91/120"
+
+#. module: partner_aging
+#: view:partner.aging.customer:0
+msgid "Customer"
+msgstr "Client"
+
+#. module: partner_aging
+#: view:partner.aging.supplier:0
+msgid "Remove unapplied credits"
+msgstr "Enlever les crédits non-appliqués"
+
+#. module: partner_aging
+#: view:partner.aging.customer:0
+msgid "Remove unapplied payments/credits"
+msgstr "Enlever les paiements/crédits non-appliqués"
+
+#. module: partner_aging
+#: field:account.voucher.customer.unapplied,days_due_61to90:0
+#: field:partner.aging.customer,days_due_61to90:0
+#: field:partner.aging.supplier,days_due_61to90:0
+msgid "61/90"
+msgstr "61/90"
+
+#. module: partner_aging
+#: field:account.voucher.customer.unapplied,partner_name:0
+#: field:partner.aging.customer,partner_name:0
+#: field:partner.aging.supplier,partner_name:0
+msgid "Name"
+msgstr "Nom"
+
+#. module: partner_aging
+#: field:partner.aging.customer,date:0
+#: field:partner.aging.supplier,date_due:0
+msgid "Due Date"
+msgstr "Date d'échéance"
+
+#. module: partner_aging
+#: field:partner.aging.supplier,invoice_ref:0
+msgid "Their Invoice"
+msgstr "Leur facture"
+
+#. module: partner_aging
+#: field:account.voucher.customer.unapplied,comment:0
+#: field:partner.aging.customer,comment:0
+#: field:partner.aging.supplier,comment:0
+msgid "Notes"
+msgstr "Notes"
+
+#. module: partner_aging
+#: view:partner.aging.supplier:0
+msgid "Aged Payables - Totals"
+msgstr "Payables en retard - Totaux"
+
+#. module: partner_aging
+#: view:partner.aging.customer:0
+msgid "Exclude Deposits/Credits"
+msgstr "Exclure Depôts/Crédits"
+
+#. module: partner_aging
+#: field:account.voucher.customer.unapplied,max_days_overdue:0
+#: field:partner.aging.customer,max_days_overdue:0
+#: field:partner.aging.supplier,max_days_overdue:0
+msgid "Days Overdue"
+msgstr "Jours de retard"
+
+#. module: partner_aging
+#: model:ir.actions.act_window,name:partner_aging.action_supplier_aging
+#: model:ir.ui.menu,name:partner_aging.menu_supplier_aging
+#: view:partner.aging.supplier:0
+msgid "Supplier Aging"
+msgstr "Vieillissement de fournisseur"
+
+#. module: partner_aging
+#: view:partner.aging.customer:0
+#: view:partner.aging.supplier:0
+msgid "Overdue"
+msgstr "Retard"
+
+#. module: partner_aging
+#: model:ir.model,name:partner_aging.model_partner_aging_customer
+msgid "partner.aging.customer"
+msgstr "partner.aging.customer"
+
+#. module: partner_aging
+#: field:account.voucher.customer.unapplied,invoice_ref:0
+#: field:partner.aging.customer,invoice_ref:0
+msgid "Reference"
+msgstr "Référence"
+
+#. module: partner_aging
+#: view:partner.aging.supplier:0
+msgid "Credits Only"
+msgstr "Crédits Seulement"
+
+#. module: partner_aging
+#: field:account.voucher.customer.unapplied,avg_days_overdue:0
+#: field:partner.aging.customer,avg_days_overdue:0
+#: field:partner.aging.supplier,avg_days_overdue:0
+msgid "Avg Days Overdue"
+msgstr "Moyenne de jours de retard"
+
+#. module: partner_aging
+#: field:account.voucher.customer.unapplied,currency_name:0
+#: view:partner.aging.customer:0
+#: field:partner.aging.customer,currency_name:0
+#: view:partner.aging.supplier:0
+#: field:partner.aging.supplier,currency_name:0
+msgid "Currency"
+msgstr "Devise"
+
+#. module: partner_aging
+#: field:account.voucher.customer.unapplied,invoice_id:0
+#: field:partner.aging.customer,invoice_id:0
+#: field:partner.aging.supplier,invoice_id:0
+msgid "Invoice"
+msgstr "Facture"
+
+#. module: partner_aging
+#: field:account.voucher.customer.unapplied,partner_id:0
+#: view:partner.aging.customer:0
+#: field:partner.aging.customer,partner_id:0
+#: view:partner.aging.supplier:0
+#: field:partner.aging.supplier,partner_id:0
+msgid "Partner"
+msgstr "Partnenaire"
+
+#. module: partner_aging
+#: field:account.voucher.customer.unapplied,current:0
+#: field:account.voucher.customer.unapplied,total:0
+#: view:partner.aging.customer:0
+#: field:partner.aging.customer,current:0
+#: field:partner.aging.customer,total:0
+#: view:partner.aging.supplier:0
+#: field:partner.aging.supplier,total:0
+msgid "Total"
+msgstr "Total"
+
