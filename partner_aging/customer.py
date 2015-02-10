@@ -52,7 +52,12 @@ class account_aging_customer(osv.osv):
                 uid,
                 [('number', '=', ref)]
             )[0]
-            view = models.get_object_reference(cr, uid, 'account_voucher', 'view_voucher_form')
+            view = models.get_object_reference(
+                cr,
+                uid,
+                'account_voucher',
+                'view_voucher_form'
+            )
             # Set values for form
             view_id = view and view[1] or False
             name = 'Customer Payments'
@@ -61,7 +66,12 @@ class account_aging_customer(osv.osv):
             doc_id = voucher_id
         # otherwise get the invoice
         else:
-            view = models.get_object_reference(cr, uid, 'account', 'invoice_form')
+            view = models.get_object_reference(
+                cr,
+                uid,
+                'account',
+                'invoice_form'
+            )
             view_id = view and view[1] or False
             name = 'Customer Invoices'
             res_model = 'account.invoice'
@@ -100,7 +110,11 @@ class account_aging_customer(osv.osv):
         'days_due_61to90': fields.float(u'61/90', readonly=True),
         'days_due_91to120': fields.float(u'91/120', readonly=True),
         'days_due_121togr': fields.float(u'+121', readonly=True),
-        'max_days_overdue': fields.integer(u'Days Overdue', readonly=True),
+        'max_days_overdue': fields.integer(
+            u'Days Overdue',
+            group_operator="max",
+            readonly=True
+        ),
         'current': fields.float(u'Total', readonly=True),
         'invoice_ref': fields.char('Reference', size=25, readonly=True),
         'invoice_id': fields.many2one(
