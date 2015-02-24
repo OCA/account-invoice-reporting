@@ -31,11 +31,17 @@ class account_invoice(orm.Model):
         res = {}
         for invoice in self.browse(cr, uid, ids, context=context):
             domain = [
+                # To have a consistent ordering in invoices, accept either
+                # invoices from before, or the same day with a smaller id
+                '|',
                 ('date_invoice', '<', invoice.date_invoice),
+                '&',
+                ('date_invoice', '=', invoice.date_invoice),
+                ('id', '<', invoice.id),
                 ('partner_id', '=', invoice.partner_id.id),
             ]
             search_result = self.search(
-                cr, uid, domain, limit=1, order='date_invoice desc')
+                cr, uid, domain, limit=1, order='date_invoice desc, id desc')
             res[invoice.id] = search_result[0] if search_result else False
         return res
 
