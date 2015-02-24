@@ -75,8 +75,8 @@ class account_invoice(orm.Model):
         res = {}
         for invoice in self.browse(cr, uid, ids, context=context):
             if (invoice.previous_invoice_id and
-                invoice.previous_invoice_id.date_invoice ==
-                invoice.date_invoice):
+                    invoice.previous_invoice_id.date_invoice ==
+                    invoice.date_invoice):
                 # We can't see any payments made on the same day, so any
                 # additional invoice during a day will see 0.0
                 res[invoice.id] = 0.0
