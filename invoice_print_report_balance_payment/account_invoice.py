@@ -65,10 +65,24 @@ class account_invoice(orm.Model):
         res = {}
         partner_obj = self.pool.get('res.partner')
         for invoice in self.browse(cr, uid, ids, context=context):
-            res[invoice.id] = partner_obj.get_balance_at_date(
+            balance = partner_obj.get_balance_at_date(
                 cr, uid, invoice.partner_id.id, invoice.date_invoice,
                 context=context
             )
+
+            # We need to subtract other invoices from later in the same day
+            domain = [
+                ('date_invoice', '=', invoice.date_invoice),
+                ('id', '>', invoice.id),
+                ('partner_id', '=', invoice.partner_id.id),
+            ]
+            same_day = self.search(cr, uid, domain)
+            if same_day:
+                balance -= sum(
+                    i["amount_total"]
+                    for i in self.read(cr, uid, same_day, ["amount_total"])
+                )
+            res[invoice.id] = balance
         return res
 
     def _payment_total_get(self, cr, uid, ids, field_names, arg, context=None):

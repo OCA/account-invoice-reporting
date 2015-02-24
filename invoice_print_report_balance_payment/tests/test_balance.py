@@ -190,13 +190,23 @@ class TestInvoiceBalance(TransactionCase):
         self._create_invoice(50, "{0}-01-07".format(YEAR))
         self._create_payment(40, "{0}-01-10".format(YEAR))
 
-        second = self._create_invoice(50, "{0}-02-07".format(YEAR))
+        second = self.inv_obj.browse(
+            cr, uid,
+            self._create_invoice(50, "{0}-02-07".format(YEAR)),
+        )
         new = self.inv_obj.browse(
             cr, uid,
             self._create_invoice(15, "{0}-02-07".format(YEAR)),
         )
 
-        self.assertEquals(new.previous_invoice_id.id, second,
+        self.assertEquals(second.previous_balance, 50,
+                          "50$ - 40$")
+        self.assertEquals(second.to_pay, 60,
+                          "10 $ + 50$")
+        self.assertEquals(second.payment_total, 40,
+                          "40$ payments")
+
+        self.assertEquals(new.previous_invoice_id.id, second.id,
                           "Previous should be second invoice")
 
         self.assertEquals(new.previous_balance, 75,
