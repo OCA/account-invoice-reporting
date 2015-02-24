@@ -74,8 +74,18 @@ class account_invoice(orm.Model):
     def _payment_total_get(self, cr, uid, ids, field_names, arg, context=None):
         res = {}
         for invoice in self.browse(cr, uid, ids, context=context):
-            res[invoice.id] = invoice.previous_balance - \
-                (invoice.to_pay - invoice.amount_total)
+            if (invoice.previous_invoice_id and
+                invoice.previous_invoice_id.date_invoice ==
+                invoice.date_invoice):
+                # We can't see any payments made on the same day, so any
+                # additional invoice during a day will see 0.0
+                res[invoice.id] = 0.0
+            else:
+                res[invoice.id] = sum((
+                    invoice.previous_balance,
+                    invoice.amount_total,
+                    -1 * invoice.to_pay,
+                ))
         return res
 
     _columns = {
