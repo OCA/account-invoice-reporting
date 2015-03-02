@@ -21,7 +21,7 @@
 {
     "name": "Account invoice delivery address",
     "version": "1.0",
-    "author": "Therp BV",
+    "author": "Therp BV,Odoo Community Association (OCA)",
     "complexity": "normal",
     "description": """
 Adds delivery address to the invoice. Also makes sure delivery address is

@@ -30,7 +30,7 @@
 
  https://launchpad.net/webkit-utils
  """,
- 'author': 'Camptocamp',
+ 'author': "Camptocamp,Odoo Community Association (OCA)",
  'website': 'http://www.camptocamp.com',
  'depends': ['base', 'report_webkit', 'base_headers_webkit', 'account'],
  'data': ['security/ir.model.access.csv',

@@ -24,7 +24,7 @@
  'description': """Add a printing button to print an invoice report assembled
  like assembling invoice webkit with bvr payment slip in a single report.
  It can be either of the generated invoice report""",
- 'author': 'Camptocamp',
+ 'author': "Camptocamp,Odoo Community Association (OCA)",
  'maintainer': 'Camptocamp',
  'website': 'http://www.camptocamp.com/',
  'depends': [
