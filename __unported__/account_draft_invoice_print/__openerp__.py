@@ -23,7 +23,7 @@
  'version': '1.0.0',
  'category': 'Accounting & Finance',
  'description': """Allows to print invoices in draft state""",
- 'author': 'Camptocamp',
+ 'author': "Camptocamp,Odoo Community Association (OCA)",
  'website': 'http://www.camptocamp.com',
  'license': 'AGPL-3',
  'depends': ['account'],

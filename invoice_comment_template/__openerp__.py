@@ -25,7 +25,7 @@
  'depends': ['account',
              'base_comment_template',
              ],
- 'author': 'Camptocamp',
+ 'author': "Camptocamp,Odoo Community Association (OCA)",
  'data': ['account_invoice_view.xml',
           'base_comment_template_view.xml',
           'security/ir.model.access.csv',

@@ -22,7 +22,7 @@
  "summary": "Comments templates on documents",
  "version": "1.0",
  "depends": ["base"],
- "author": "Camptocamp",
+ "author": "Camptocamp,Odoo Community Association (OCA)",
  "data": ["comment_view.xml",
           'security/ir.model.access.csv',
           ],

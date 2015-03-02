@@ -31,7 +31,7 @@
         "invoice_webkit",
         "stock_picking_invoice_link",
         ],
-    "author": "Agile Business Group",
+    "author": "Agile Business Group,Odoo Community Association (OCA)",
     "summary": "Display delivered serial numbers in invoice",
     "description": """
 This module prints, for each (customer) invoice line, the delivered production

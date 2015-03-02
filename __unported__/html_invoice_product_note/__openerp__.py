@@ -31,7 +31,7 @@ with a HTML field.
 
 It takes care of adding this description into the HTML `note` field
 of the invoice line when the product is set.""",
- 'author': 'Camptocamp',
+ 'author': "Camptocamp,Odoo Community Association (OCA)",
  'website': 'http://www.camptocamp.com',
  'license': 'AGPL-3',
  'depends': ['product', 'account', 'invoice_webkit'],
