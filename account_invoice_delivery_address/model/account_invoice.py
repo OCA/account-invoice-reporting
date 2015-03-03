@@ -36,8 +36,8 @@ class AccountInvoice(orm.Model):
         if browse_obj:
             # Do nothing when invoice no longer in draft or sent state
             # or when shipping id already set:
-            if (browse_obj.state not in ['draft', 'sent']
-                    or browse_obj.partner_shipping_id):
+            if (browse_obj.state not in ['draft', 'sent'] or
+                    browse_obj.partner_shipping_id):
                 return
             partner_id = (
                 browse_obj.partner_id and browse_obj.partner_id.id or False)
