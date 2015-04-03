@@ -41,6 +41,7 @@ class TestInvoiceBalance(TransactionCase):
 
     def _setup_partner(self):
         partner_obj = self.registry("res.partner")
+        # This partner must not have invoices
         self.partner_id = self.ref("base.res_partner_12")
         self.account_id = partner_obj.browse(
             self.cr, self.uid, self.partner_id,
@@ -49,8 +50,9 @@ class TestInvoiceBalance(TransactionCase):
     def _setup_product(self):
         self.product_id = self.ref("product.product_product_1")
 
-    def _create_invoice(self, amount, date):
+    def _create_invoice(self, amount, date, itype="out_invoice"):
         cr, uid = self.cr, self.uid
+        ctx = {"type": itype}
         invoice_obj = self.inv_obj
         invoice_line_obj = self.registry("account.invoice.line")
 
@@ -68,11 +70,13 @@ class TestInvoiceBalance(TransactionCase):
             "price_unit": amount,
             "quantity": 1,
         })
-        vals = invoice_obj.default_get(cr, uid, invoice_obj._all_columns)
+        vals = invoice_obj.default_get(cr, uid, invoice_obj._all_columns,
+                                       context=ctx)
         vals.update({
             "partner_id": self.partner_id,
             "account_id": self.account_id,
             "date_invoice": date,
+            "type": itype,
         })
         vals.update(
             invoice_obj.onchange_partner_id(cr, uid, [], "out_invoice",
@@ -186,6 +190,7 @@ class TestInvoiceBalance(TransactionCase):
                           "Previous payments should be 50")
 
     def test_same_day(self):
+        """ Create three invoices, the last two on the same day """
         cr, uid = self.cr, self.uid
         self._create_invoice(50, "{0}-01-07".format(YEAR))
         self._create_payment(40, "{0}-01-10".format(YEAR))
@@ -209,11 +214,60 @@ class TestInvoiceBalance(TransactionCase):
         self.assertEquals(new.previous_invoice_id.id, second.id,
                           "Previous should be second invoice")
 
-        self.assertEquals(new.previous_balance, 75,
-                          "Previous balance should be 75")
+        self.assertEquals(new.previous_balance, 60,
+                          "Previous balance should be 50 - 40 + 50 = 60")
 
         self.assertEquals(new.to_pay, 75,
                           "To Pay should be 75")
 
         self.assertEquals(new.payment_total, 0,
                           "Previous payments should be 0")
+
+    def test_same_day_payments(self):
+        """ Create an invoice with same day payment """
+        cr, uid, = self.cr, self.uid
+        self._create_invoice(50, "{0}-01-07".format(YEAR))
+        self._create_payment(40, "{0}-02-07".format(YEAR))
+        second = self.inv_obj.browse(
+            cr, uid,
+            self._create_invoice(50, "{0}-02-07".format(YEAR)),
+        )
+
+        self.assertEquals(second.previous_balance,
+                          50,
+                          "Previous balance: first 50$ invoice")
+
+        self.assertEquals(second.to_pay,
+                          60,
+                          "100$ - same day payments of 40$")
+
+        self.assertEquals(second.payment_total,
+                          40,
+                          "Count same day payments")
+
+    def test_same_day_credits(self):
+        """ Create an invoice with same day credit """
+        cr, uid = self.cr, self.uid
+        self._create_invoice(20, "{0}-02-07".format(YEAR))
+        credit = self._create_invoice(15, "{0}-03-10".format(YEAR),
+                                      itype="out_refund")
+
+        second = self.inv_obj.browse(
+            cr, uid,
+            self._create_invoice(30, "{0}-03-10".format(YEAR)),
+        )
+
+        self.assertEquals(second.previous_balance,
+                          5,
+                          "Previous balance: first 20$ invoice - 15$ credit")
+
+        self.assertEquals(second.previous_invoice_id.id, credit,
+                          "Previous invoice is credit")
+
+        self.assertEquals(second.to_pay,
+                          35,
+                          "5$ + 30$")
+
+
+
+
