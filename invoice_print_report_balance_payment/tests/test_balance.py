@@ -267,7 +267,3 @@ class TestInvoiceBalance(TransactionCase):
         self.assertEquals(second.to_pay,
                           35,
                           "5$ + 30$")
-
-
-
-
