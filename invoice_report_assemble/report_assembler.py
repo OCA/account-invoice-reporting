@@ -26,18 +26,27 @@ from openerp.addons.base_report_assembler import report_assembler
 
 
 class InvoicePDFReportAssembler(report_assembler.PDFReportAssembler):
-    """InvoicePDFReportAssembler allows to merge multiple
-    invoice reports into one pdf"""
+
+    """
+    Merge multiple invoice report into one.
+
+    InvoicePDFReportAssembler allows to merge multiple
+    invoice reports into one pdf.
+    """
 
     def _get_report_ids(self, cr, uid, ids, context=None):
         pool = pooler.get_pool(cr.dbname)
         user_obj = pool.get('res.users')
         company = user_obj.browse(cr, uid, uid, context=context).company_id
         report_ids = [
-            r.report_id.id for r in company.assemble_invoice_report_ids]
+            r.report_id.id
+            for r in company.assemble_invoice_report_ids
+        ]
         if not report_ids:
-            msg = _("No report defined in Configuration -> Accounting for "
-                    "model invoice.")
+            msg = _(
+                "No report defined in Configuration -> Accounting "
+                "for model invoice."
+            )
             raise orm.except_orm(_('Error'), msg)
         return report_ids
 

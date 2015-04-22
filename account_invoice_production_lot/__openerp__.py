@@ -25,7 +25,7 @@
 {
     "name": "Invoice Production Lots",
     "version": "1.1",
-    'category': 'Generic Modules/Accounting',
+    "category": 'Generic Modules/Accounting',
     "depends": [
         "sale_stock",
         "invoice_webkit",
@@ -37,14 +37,14 @@
 This module prints, for each (customer) invoice line, the delivered production
 lots. The serial numbers are displayed in the "formatted note" field,
 introduced by invoice_webkit module""",
-    'website': 'http://www.agilebg.com',
-    'data': [
+    "website": 'http://www.agilebg.com',
+    "data": [
         'invoice_view.xml',
-        ],
-    'demo': [],
-    'test': [
+    ],
+    "demo": [],
+    "test": [
         'test/sale.yml',
-        ],
-    'installable': True,
-    'active': False,
+    ],
+    "installable": True,
+    "active": False,
 }

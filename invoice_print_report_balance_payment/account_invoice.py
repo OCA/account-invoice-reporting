@@ -68,22 +68,35 @@ class account_invoice(orm.Model):
     def _payment_total_get(self, cr, uid, ids, field_names, arg, context=None):
         res = {}
         for invoice in self.browse(cr, uid, ids, context=context):
-            res[invoice.id] = invoice.previous_balance - \
+            res[invoice.id] = (
+                invoice.previous_balance -
                 (invoice.to_pay - invoice.amount_total)
+            )
         return res
 
     _columns = {
         'previous_invoice_id': fields.function(
-            _previous_invoice_get, type='many2one',
-            relation='account.invoice'),
+            _previous_invoice_get,
+            type='many2one',
+            relation='account.invoice'
+        ),
         'previous_balance': fields.function(
-            _previous_balance_get, type='float'),
-        'to_pay': fields.function(_to_pay_get, type='float'),
-        'payment_total': fields.function(_payment_total_get, type='float'),
+            _previous_balance_get,
+            type='float'
+        ),
+        'to_pay': fields.function(
+            _to_pay_get,
+            type='float'
+        ),
+        'payment_total': fields.function(
+            _payment_total_get,
+            type='float'
+        ),
     }
 
     def invoice_print(self, cr, uid, ids, context=None):
         result = super(account_invoice, self).invoice_print(
-            cr, uid, ids, context=context)
+            cr, uid, ids, context=context
+        )
         result['report_name'] = 'account.invoice.balance_payment'
         return result

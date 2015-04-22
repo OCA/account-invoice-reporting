@@ -24,6 +24,10 @@ from openerp.report import report_sxw
 report_sxw.report_sxw(
     'report.account.invoice.balance_payment',
     'account.invoice',
-    'addons/invoice_print_report_balance_payment/report/'
-    'invoice_print_report_balance_payment.rml',
+    (
+        'addons/'
+        'invoice_print_report_balance_payment'
+        '/report/'
+        'invoice_print_report_balance_payment.rml'
+    ),
 )

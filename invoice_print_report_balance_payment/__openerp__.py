@@ -35,9 +35,9 @@ Changes the default invoice layout to add a few things, the main of which is
 the balance payment fields. Under the Total field, 3 new lines appear:
 
 * Previous balance: The previous balance of the customer at the date of the
-previous invoice.
-* Payments: The amount of payments that have been made between the date of the
-last invoice and the date of the printed invoice.
+  previous invoice.
+* Payments: The amount of payments that have been made between the date of
+  the last invoice and the date of the printed invoice.
 * To Pay: The total amount owed by the customer at the date of this invoice.
 
 Also, it changes two minor and unrelated aspects:

@@ -18,24 +18,26 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-{'name': 'Assemble invoice report',
- 'version': '1.0',
- 'category': 'Accounting',
- 'description': """Add a printing button to print an invoice report assembled
+{
+    'name': 'Assemble invoice report',
+    'version': '1.0',
+    'category': 'Accounting',
+    'description': """Add a printing button to print an invoice report assembled
  like assembling invoice webkit with bvr payment slip in a single report.
  It can be either of the generated invoice report""",
- 'author': "Camptocamp,Odoo Community Association (OCA)",
- 'maintainer': 'Camptocamp',
- 'website': 'http://www.camptocamp.com/',
- 'depends': [
-     'base_report_assembler',
-     'account'],
- 'data': [
-     'invoice_report.xml',
-     'res_config_view.xml',
-     ],
- 'test': [],
- 'installable': True,
- 'auto_install': False,
- 'application': True,
- }
+    'author': "Camptocamp,Odoo Community Association (OCA)",
+    'maintainer': 'Camptocamp',
+    'website': 'http://www.camptocamp.com/',
+    'depends': [
+        'base_report_assembler',
+        'account'
+    ],
+    'data': [
+        'invoice_report.xml',
+        'res_config_view.xml',
+    ],
+    'test': [],
+    'installable': True,
+    'auto_install': False,
+    'application': True,
+}
