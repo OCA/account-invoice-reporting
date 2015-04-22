@@ -18,10 +18,13 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ###############################################################################
-
+import logging
 
 from openerp.osv import fields, orm
-import tools
+from openerp import tools
+
+
+_logger = logging.getLogger(__name__)
 
 
 class partner_aging_supplier(orm.Model):
@@ -41,8 +44,7 @@ class partner_aging_supplier(orm.Model):
         active_id = context.get('active_id')
         inv_id = self.browse(cr, uid, ids[0]).invoice_id.id
 
-        print active_id
-        print inv_id
+        _logger.debug('ActiveID: %d InvoiceID: %d' % (active_id, inv_id))
 
         return {
             'name': ('Supplier Invoices'),
