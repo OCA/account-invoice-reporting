@@ -34,5 +34,5 @@
 #  web at <http://www.gnu.org/licenses/>.
 #
 ######################################################################
-import account
-import account_voucher
+from . import account
+from . import account_voucher
