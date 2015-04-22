@@ -36,5 +36,5 @@
 #  at <http://www.gnu.org/licenses/>.
 #
 ######################################################################
-import res_partner
-import res_country
+from . import res_partner
+from . import res_country
