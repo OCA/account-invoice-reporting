@@ -28,8 +28,8 @@
 ###############################################################################
 
 
-from osv import osv, fields
-import tools
+from openerp.osv import osv, fields
+from openerp import tools
 
 
 class customer_unapplied(osv.osv):

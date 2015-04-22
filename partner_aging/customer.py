@@ -21,7 +21,7 @@
 
 
 from openerp.osv import fields, osv
-import tools
+from openerp import tools
 
 
 class account_aging_customer(osv.osv):
