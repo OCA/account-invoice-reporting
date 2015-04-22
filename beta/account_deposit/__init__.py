@@ -34,5 +34,5 @@
 #  <http://www.gnu.org/licenses/>.
 #
 ######################################################################
-import partner
-import account_voucher
+from . import partner
+from . import account_voucher
