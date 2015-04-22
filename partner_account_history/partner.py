@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from openerp.osv import fields, orm
-import tools
+from openerp import tools
 
 
 class partner_account_history(orm.Model):
