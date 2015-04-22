@@ -34,4 +34,4 @@
 #  web at <http://www.gnu.org/licenses/>.
 #
 ######################################################################
-import partner
+from . import partner
