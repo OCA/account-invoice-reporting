@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from openerp.osv import fields, orm
-from datetime import datetime 
+from datetime import datetime
 
 
 invoice_fields = [
