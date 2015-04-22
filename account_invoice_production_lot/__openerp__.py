@@ -30,7 +30,7 @@
         "sale_stock",
         "invoice_webkit",
         "stock_picking_invoice_link",
-        ],
+    ],
     "author": "Agile Business Group,Odoo Community Association (OCA)",
     "summary": "Display delivered serial numbers in invoice",
     "description": """
