@@ -170,7 +170,6 @@ class account_voucher(orm.Model):
                     'quantity': 1,
                     'credit': credit,
                     'debit': debit,
-                    'debit': 0.0,
                     'date': voucher.date
                 }
 
