@@ -1,17 +1,8 @@
 # -*- coding: utf-8 -*-
+from openerp.osv import fields, orm
 
 
-
-######################################################################
-#
-#  Note: Program metadata is available in /__init__.py
-#
-######################################################################
-
-from openerp.osv import osv
-from openerp.osv import fields
-
-class res_partner(osv.osv):
+class res_partner(orm.Model):
 
     _inherit = 'res.partner'
 
@@ -23,9 +14,10 @@ class res_partner(osv.osv):
             string="Deposit Account",
             view_load=True,
             domain="[('type', '=', 'receivable')]",
-            help="This account will be used instead of the default one as the receivable account for payments processed as deposits",
-            required=True),
+            help=(
+                "This account will be used instead of the default one as "
+                "the receivable account for payments processed as deposits"
+            ),
+            required=True
+        ),
     }
-
-
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
