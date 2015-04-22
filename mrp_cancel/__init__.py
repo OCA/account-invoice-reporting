@@ -32,4 +32,4 @@
 #  <http://www.gnu.org/licenses/>.
 #
 ######################################################################
-import mrp
+from . import mrp
