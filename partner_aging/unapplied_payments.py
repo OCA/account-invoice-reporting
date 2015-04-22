@@ -70,48 +70,163 @@ class customer_unapplied(osv.osv):
     def init(self, cr):
 
         query = """
-               SELECT cast(100000000000 + av.id as bigint) as id,rp.id as partner_id, rp.name as partner_name, days_due as avg_days_overdue,
-                      av.date as oldest_invoice_date, rc.name as currency_name,
-                      CASE WHEN (select count(name) from account_move_line where name=av.number) >= 1
-                           THEN (select -1 * (sum(credit) - sum(debit)) from account_move_line where name =av.number)
-                           ELSE 0 END as total,
-                      CASE WHEN (days_due BETWEEN 01 AND  30) and (select count(name) from account_move_line where name=av.number) >= 1
-                           THEN (select -1 * (sum(credit) - sum(debit)) from account_move_line where name =av.number)
-                           ELSE 0 END  AS "days_due_01to30",
-                      CASE WHEN (days_due BETWEEN 31 AND  60) and (select count(name) from account_move_line where name=av.number) >= 1
-                           THEN (select -1 * (sum(credit) - sum(debit)) from account_move_line where name =av.number)
-                           ELSE 0 END  AS "days_due_31to60",
-                      CASE WHEN (days_due BETWEEN 61 AND  90) and (select count(name) from account_move_line where name=av.number) >= 1
-                           THEN (select -1 * (sum(credit) - sum(debit)) from account_move_line where name =av.number)
-                           ELSE 0 END  AS "days_due_61to90",
-                      CASE WHEN (days_due BETWEEN 91 AND  120) and (select count(name) from account_move_line where name=av.number) >= 1
-                           THEN (select -1 * (sum(credit) - sum(debit)) from account_move_line where name =av.number)
-                           ELSE 0 END  AS "days_due_91to120",
-                      CASE WHEN (days_due >= 121) and (select count(name) from account_move_line where name=av.number) >= 1
-                           THEN (select -1 * (sum(credit) - sum(debit)) from account_move_line where name =av.number)
-                           ELSE 0 END  AS "days_due_121togr",
-                      CASE when days_due < 0
-                           THEN 0
-                           ELSE days_due END as "max_days_overdue",
-                      CASE WHEN days_due <=0 and (select count(name) from account_move_line where name=av.number) >= 1
-                           THEN (select -1 * (sum(credit) - sum(debit)) from account_move_line where name =av.number)
-                           ELSE 0 END as "current",
-                           av.number as invoice_ref, -999 as "invoice_id", null as comment, null as salesman
-               FROM account_voucher av,res_partner rp, res_currency rc, account_move_line aml
-               INNER JOIN
-                  ( SELECT id, EXTRACT(DAY FROM (now() - (aml2.date + INTERVAL '30 days'))) AS days_due  FROM account_move_line aml2 ) DaysDue
-                  ON DaysDue.id = aml.id
-               LEFT JOIN account_invoice as ai
-                  ON ai.move_id = aml.id
-               WHERE av.partner_id = rp.id
-                       and av.number = aml.name
-                       and ai.currency_id = rc.id
-                       and av.move_id in (select move_id from account_move_line where reconcile_id is null and
-                       account_id in (select id from account_account where type = 'receivable'))
-                       and av.state = 'posted'
-                       and aml.credit > 0
+SELECT cast(100000000000 + av.id AS BIGINT) AS id
+ ,rp.id AS partner_id
+ ,rp.NAME AS partner_name
+ ,days_due AS avg_days_overdue
+ ,av.DATE AS oldest_invoice_date
+ ,rc.NAME AS currency_name
+ ,CASE
+  WHEN (
+    SELECT count(NAME)
+    FROM account_move_line
+    WHERE NAME = av.number
+    ) >= 1
+   THEN (
+     SELECT - 1 * (sum(credit) - sum(debit))
+     FROM account_move_line
+     WHERE NAME = av.number
+     )
+  ELSE 0
+  END AS total
+ ,CASE
+  WHEN (
+    days_due BETWEEN 01
+     AND 30
+    )
+   AND (
+    SELECT count(NAME)
+    FROM account_move_line
+    WHERE NAME = av.number
+    ) >= 1
+   THEN (
+     SELECT - 1 * (sum(credit) - sum(debit))
+     FROM account_move_line
+     WHERE NAME = av.number
+     )
+  ELSE 0
+  END AS "days_due_01to30"
+ ,CASE
+  WHEN (
+    days_due BETWEEN 31
+     AND 60
+    )
+   AND (
+    SELECT count(NAME)
+    FROM account_move_line
+    WHERE NAME = av.number
+    ) >= 1
+   THEN (
+     SELECT - 1 * (sum(credit) - sum(debit))
+     FROM account_move_line
+     WHERE NAME = av.number
+     )
+  ELSE 0
+  END AS "days_due_31to60"
+ ,CASE
+  WHEN (
+    days_due BETWEEN 61
+     AND 90
+    )
+   AND (
+    SELECT count(NAME)
+    FROM account_move_line
+    WHERE NAME = av.number
+    ) >= 1
+   THEN (
+     SELECT - 1 * (sum(credit) - sum(debit))
+     FROM account_move_line
+     WHERE NAME = av.number
+     )
+  ELSE 0
+  END AS "days_due_61to90"
+ ,CASE
+  WHEN (
+    days_due BETWEEN 91
+     AND 120
+    )
+   AND (
+    SELECT count(NAME)
+    FROM account_move_line
+    WHERE NAME = av.number
+    ) >= 1
+   THEN (
+     SELECT - 1 * (sum(credit) - sum(debit))
+     FROM account_move_line
+     WHERE NAME = av.number
+     )
+  ELSE 0
+  END AS "days_due_91to120"
+ ,CASE
+  WHEN (days_due >= 121)
+   AND (
+    SELECT count(NAME)
+    FROM account_move_line
+    WHERE NAME = av.number
+    ) >= 1
+   THEN (
+     SELECT - 1 * (sum(credit) - sum(debit))
+     FROM account_move_line
+     WHERE NAME = av.number
+     )
+  ELSE 0
+  END AS "days_due_121togr"
+ ,CASE
+  WHEN days_due < 0
+   THEN 0
+  ELSE days_due
+  END AS "max_days_overdue"
+ ,CASE
+  WHEN days_due <= 0
+   AND (
+    SELECT count(NAME)
+    FROM account_move_line
+    WHERE NAME = av.number
+    ) >= 1
+   THEN (
+     SELECT - 1 * (sum(credit) - sum(debit))
+     FROM account_move_line
+     WHERE NAME = av.number
+     )
+  ELSE 0
+  END AS "current"
+ ,av.number AS invoice_ref
+ ,- 999 AS "invoice_id"
+ ,NULL AS comment
+ ,NULL AS salesman
+
+FROM account_voucher av
+ ,res_partner rp
+ ,res_currency rc
+ ,account_move_line aml
+
+INNER JOIN (
+ SELECT id
+  ,EXTRACT(DAY FROM (now() - (aml2.DATE + INTERVAL '30 days'))) AS days_due
+ FROM account_move_line aml2
+ ) DaysDue ON DaysDue.id = aml.id
+
+LEFT JOIN account_invoice AS ai ON ai.move_id = aml.id
+
+WHERE av.partner_id = rp.id
+ AND av.number = aml.NAME
+ AND ai.currency_id = rc.id
+ AND av.move_id IN (
+  SELECT move_id
+  FROM account_move_line
+  WHERE reconcile_id IS NULL
+   AND account_id IN (
+    SELECT id
+    FROM account_account
+    WHERE type = 'receivable'
+    )
+  )
+ AND av.STATE = 'posted'
+ AND aml.credit > 0
         """
+
         tools.drop_view_if_exists(cr, '%s' % (self._name.replace('.', '_')))
-        cr.execute("""
-                      CREATE OR REPLACE VIEW %s AS ( %s)
-        """ % (self._name.replace('.', '_'), query))
+        cr.execute(
+            "CREATE OR REPLACE VIEW %s AS ( %s)" %
+            (self._name.replace('.', '_'), query)
+        )
