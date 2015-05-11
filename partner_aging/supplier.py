@@ -79,64 +79,131 @@ class partner_aging_supplier(models.Model):
         """
 
         query = """
-                SELECT * from (
-                SELECT l.id as id, l.partner_id as partner_id, res_partner.name as "partner_name",
-                    CASE WHEN ai.id is not null THEN ai.date_due ElSE l.date_maturity END as "date_due",
-                    days_due as "avg_days_overdue",
-                    l.date as "oldest_invoice_date",
-                    CASE WHEN (l.credit - l.debit) > 0 and ai.id is not null THEN ai.residual
-                         WHEN (l.credit - l.debit) < 0 and ai.id is not null THEN -1*ai.residual
-                         ELSE l.credit - l.debit END as "total",
-                    CASE WHEN (l.credit - l.debit) > 0 and (days_due BETWEEN 01 AND  30) and ai.id is not null then ai.residual
-                         WHEN (l.credit - l.debit) < 0 and (days_due BETWEEN 01 AND  30) and ai.id is not null then -1*ai.residual
-                         WHEN (days_due BETWEEN 01 and 30) and ai.id is null THEN l.credit - l.debit ELSE 0 END  AS "days_due_01to30",
-                    CASE WHEN (l.credit - l.debit) > 0 and (days_due BETWEEN 31 AND  60) and ai.id is not null then ai.residual
-                         WHEN (l.credit - l.debit) < 0 and (days_due BETWEEN 31 AND  60) and ai.id is not null then -1*ai.residual
-                         WHEN (days_due BETWEEN 31 and 60) and ai.id is null THEN l.credit - l.debit ELSE 0 END  AS "days_due_31to60",
-                    CASE WHEN (l.credit - l.debit) > 0 and (days_due BETWEEN 61 AND  90) and ai.id is not null then ai.residual
-                         WHEN (l.credit - l.debit) < 0 and (days_due BETWEEN 61 AND  90) and ai.id is not null then -1*ai.residual
-                         WHEN (days_due BETWEEN 61 and 90) and ai.id is null THEN l.credit - l.debit ELSE 0 END  AS "days_due_61to90",
-                    CASE WHEN (l.credit - l.debit) > 0 and (days_due BETWEEN 91 AND 120) and ai.id is not null then ai.residual
-                         WHEN (l.credit - l.debit) < 0 and (days_due BETWEEN 91 AND 120) and ai.id is not null then -1*ai.residual
-                         WHEN (days_due BETWEEN 91 and 120) and ai.id is null THEN l.credit - l.debit ELSE 0 END  AS "days_due_91to120",
-                    CASE WHEN (l.credit - l.debit) > 0 and days_due >= 121 and ai.id is not null then ai.residual
-                         WHEN (l.credit - l.debit) < 0 and days_due >= 121 and ai.id is not null then -1*ai.residual
-                         WHEN days_due >= 121 and ai.id is null THEN l.credit - l.debit ELSE 0 END AS "days_due_121togr",
-                    CASE when (l.credit - l.debit) > 0 and days_due <= 0 and ai.id is not null then ai.residual
-                         WHEN (l.credit - l.debit) < 0 and days_due <= 0 and ai.id is not null then -1*ai.residual
-                         WHEN days_due <= 0 and ai.id is null THEN l.credit - l.debit ELSE 0 END as "current",
-                    CASE when days_due < 0 THEN 0 ELSE days_due END as "max_days_overdue",
-                    ai.supplier_invoice_number as "invoice_ref",
-                    ai.id as "invoice_id", ai.comment
+SELECT * from (
+SELECT l.id as id,
+       l.partner_id as partner_id,
+       res_partner.name as "partner_name",
+    CASE WHEN ai.id is not null
+      THEN ai.date_due
+    ElSE l.date_maturity
+    END as "date_due",
+    days_due as "avg_days_overdue",
+    l.date as "oldest_invoice_date",
+    CASE WHEN (l.credit - l.debit) > 0 and ai.id is not null THEN ai.residual
+         WHEN (l.credit - l.debit) < 0 and ai.id is not null
+           THEN -1*ai.residual
+           ELSE l.credit - l.debit END as "total",
+    CASE WHEN (l.credit - l.debit) > 0
+           and (days_due BETWEEN 01 AND  30)
+           and ai.id is not null
+           then ai.residual
+         WHEN (l.credit - l.debit) < 0
+           and (days_due BETWEEN 01 AND  30)
+           and ai.id is not null
+           then -1*ai.residual
+         WHEN (days_due BETWEEN 01 and 30)
+           and ai.id is null
+           THEN l.credit - l.debit
+    ELSE 0
+    END  AS "days_due_01to30",
+    CASE WHEN (l.credit - l.debit) > 0
+           and (days_due BETWEEN 31 AND  60)
+           and ai.id is not null
+           then ai.residual
+         WHEN (l.credit - l.debit) < 0
+           and (days_due BETWEEN 31 AND  60)
+           and ai.id is not null
+           then -1*ai.residual
+         WHEN (days_due BETWEEN 31 and 60)
+           and ai.id is null
+           THEN l.credit - l.debit
+    ELSE 0
+    END  AS "days_due_31to60",
+    CASE WHEN (l.credit - l.debit) > 0
+           and (days_due BETWEEN 61 AND  90)
+           and ai.id is not null
+           then ai.residual
+         WHEN (l.credit - l.debit) < 0
+           and (days_due BETWEEN 61 AND  90)
+           and ai.id is not null
+           then -1*ai.residual
+         WHEN (days_due BETWEEN 61 and 90)
+           and ai.id is null
+           THEN l.credit - l.debit
+    ELSE 0
+    END  AS "days_due_61to90",
+    CASE WHEN (l.credit - l.debit) > 0
+           and (days_due BETWEEN 91 AND 120)
+           and ai.id is not null
+           then ai.residual
+         WHEN (l.credit - l.debit) < 0
+           and (days_due BETWEEN 91 AND 120)
+           and ai.id is not null
+           then -1*ai.residual
+         WHEN (days_due BETWEEN 91 and 120)
+           and ai.id is null
+           THEN l.credit - l.debit
+    ELSE 0
+    END  AS "days_due_91to120",
+    CASE WHEN (l.credit - l.debit) > 0
+           and days_due >= 121
+           and ai.id is not null
+           then ai.residual
+         WHEN (l.credit - l.debit) < 0
+           and days_due >= 121
+           and ai.id is not null
+           then -1*ai.residual
+         WHEN days_due >= 121
+           and ai.id is null
+           THEN l.credit - l.debit
+    ELSE 0
+    END AS "days_due_121togr",
+    CASE when (l.credit - l.debit) > 0
+           and days_due <= 0
+           and ai.id is not null
+           then ai.residual
+         WHEN (l.credit - l.debit) < 0
+           and days_due <= 0
+           and ai.id is not null
+           then -1*ai.residual
+         WHEN days_due <= 0
+           and ai.id is null
+           THEN l.credit - l.debit
+    ELSE 0
+    END as "current",
+    CASE when days_due < 0 THEN 0 ELSE days_due END as "max_days_overdue",
+    ai.supplier_invoice_number as "invoice_ref",
+    ai.id as "invoice_id", ai.comment
 
-                    FROM account_move_line as l
-                INNER JOIN
-                  (
-                   SELECT lt.id,
-                   CASE WHEN inv.date_due is null then 0
-                   WHEN inv.id is not null THEN EXTRACT(DAY FROM (now() - inv.date_due))
-                   ELSE EXTRACT(DAY FROM (now() - lt.date_maturity)) END AS days_due
-                   FROM account_move_line lt LEFT JOIN account_invoice inv on lt.move_id = inv.move_id
-                ) DaysDue
-                ON DaysDue.id = l.id
+    FROM account_move_line as l
+INNER JOIN
+  (
+   SELECT lt.id,
+   CASE WHEN inv.date_due is null then 0
+   WHEN inv.id is not null THEN EXTRACT(DAY FROM (now() - inv.date_due))
+   ELSE EXTRACT(DAY FROM (now() - lt.date_maturity)) END AS days_due
+   FROM account_move_line lt
+     LEFT JOIN account_invoice inv on lt.move_id = inv.move_id
+) DaysDue
+ON DaysDue.id = l.id
 
-                INNER JOIN account_account
-                   ON account_account.id = l.account_id
-                INNER JOIN res_company
-                   ON account_account.company_id = res_company.id
-                INNER JOIN account_move
-                   ON account_move.id = l.move_id
-                LEFT JOIN account_invoice as ai
-                   ON ai.move_id = l.move_id
-                INNER JOIN res_partner
-                   ON res_partner.id = l.partner_id
-                WHERE account_account.active
-                  AND (account_account.type IN ('payable'))
-                  AND (l.reconcile_id IS NULL)
-                  AND account_move.state = 'posted'
-                  AND days_due IS NOT NULL
-                ) sq
-              """
+INNER JOIN account_account
+   ON account_account.id = l.account_id
+INNER JOIN res_company
+   ON account_account.company_id = res_company.id
+INNER JOIN account_move
+   ON account_move.id = l.move_id
+LEFT JOIN account_invoice as ai
+   ON ai.move_id = l.move_id
+INNER JOIN res_partner
+   ON res_partner.id = l.partner_id
+WHERE account_account.active
+  AND (account_account.type IN ('payable'))
+  AND (l.reconcile_id IS NULL)
+  AND account_move.state = 'posted'
+  AND days_due IS NOT NULL
+) sq
+"""
 
         tools.drop_view_if_exists(cr, '%s' % (self._name.replace('.', '_')))
         cr.execute("""
