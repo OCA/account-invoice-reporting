@@ -19,25 +19,33 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-'''Extend model account.invoice'''
+"""Extend model account.invoice"""
 from openerp.osv import orm, fields
 
 
 class AccountInvoice(orm.Model):
-    '''Modify account invoice to add delivery address'''
+
+    """Modify account invoice to add delivery address"""
+
     _inherit = 'account.invoice'
 
     def _modify_vals(self, cr, uid, vals, browse_obj=None, context=None):
-        '''Utility function called on create and write to deliver consistent
-        values. In this case fill delivery address when possible.'''
+        """
+        Fill delivery address when possible.
+
+        Utility function called on create and write to deliver consistent
+        values. In this case fill delivery address when possible.
+        """
         if 'partner_shipping_id' in vals:
             return  # do not overwrite when explicitly filled
         partner_id = False
         if browse_obj:
             # Do nothing when invoice no longer in draft or sent state
             # or when shipping id already set:
-            if (browse_obj.state not in ['draft', 'sent'] or
-                    browse_obj.partner_shipping_id):
+            if (
+                browse_obj.state not in ['draft', 'sent'] or
+                browse_obj.partner_shipping_id
+            ):
                 return
             partner_id = (
                 browse_obj.partner_id and browse_obj.partner_id.id or False)
@@ -52,13 +60,13 @@ class AccountInvoice(orm.Model):
         vals['partner_shipping_id'] = addr['delivery']
 
     def create(self, cr, uid, vals, context=None):
-        '''get delivery address, when not already in vals'''
+        """Get delivery address, when not already in vals."""
         self._modify_vals(cr, uid, vals, browse_obj=None, context=context)
         return super(AccountInvoice, self).create(
             cr, uid, vals, context)
 
     def write(self, cr, uid, ids, vals, context=None):
-        '''get delivery address, when not already in vals, or filled'''
+        """Get delivery address, when not already in vals, or filled."""
         for item_id in ids:
             browse_records = self.browse(cr, uid, [item_id], context=context)
             browse_obj = browse_records[0]
@@ -74,7 +82,8 @@ class AccountInvoice(orm.Model):
             readonly=True,
             states={
                 'draft': [('readonly', False)],
-                'sent':  [('readonly', False)]
+                'sent': [('readonly', False)],
             },
-            help="Delivery address for current invoice."),
+            help="Delivery address for current invoice."
+        ),
     }

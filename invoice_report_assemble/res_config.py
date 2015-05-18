@@ -28,8 +28,9 @@ class AccountConfigSettings(orm.TransientModel):
         'assemble_invoice_report_ids': fields.related(
             'company_id', 'assemble_invoice_report_ids',
             string='Account Invoice Report Assemblage',
-            type='one2many', relation='assembled.report'),
-        }
+            type='one2many', relation='assembled.report'
+        ),
+    }
 
     def onchange_company_id(self, cr, uid, ids, company_id, context=None):
         res = super(AccountConfigSettings, self).onchange_company_id(

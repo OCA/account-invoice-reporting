@@ -19,20 +19,25 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-'''Extend model sale.order'''
+"""Extend model sale.order"""
 from openerp.osv import orm
 
 
 class SaleOrder(orm.Model):
-    '''Modify sale order to fill delivery address'''
+
+    """Modify sale order to fill delivery address."""
+
     _inherit = 'sale.order'
 
     def _prepare_invoice(
-            self, cr, uid, order, lines, context=None):
-        """\
-Inherit the original function of the 'sale' module in order to fill delivery
-address when present in sales order.
-"""
+        self, cr, uid, order, lines, context=None
+    ):
+        """
+        Override the method from sale.order.
+
+        Inherit the original function of the 'sale' module in order to fill
+        delivery address when present in sales order.
+        """
         invoice_vals = super(SaleOrder, self)._prepare_invoice(
             cr, uid, order, lines, context=context)
         if order.partner_shipping_id:

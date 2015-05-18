@@ -22,12 +22,17 @@ from openerp.osv import orm, fields
 
 
 class ProductTemplate(orm.Model):
+
     """TMP fix of bug 1111430"""
+
     _inherit = 'product.template'
 
     _columns = {
         'purchase_ok': fields.boolean(
             'Can be Purchased',
-            help=("Specify if the product can be selected"
-                  " in a purchase order line."))
+            help=(
+                "Specify if the product can be selected"
+                " in a purchase order line."
+            )
+        ),
     }

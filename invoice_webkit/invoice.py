@@ -23,7 +23,9 @@ from openerp.tools.translate import _
 
 
 class InvoiceConditionText(Model):
+
     """add info condition in the invoice"""
+
     _name = "account.condition_text"
     _description = "Invoices conditions"
 
@@ -37,6 +39,7 @@ class InvoiceConditionText(Model):
 
 
 class AccountInvoice(Model):
+
     """ Add account.condition_text to invoice"""
 
     _inherit = "account.invoice"
@@ -47,38 +50,55 @@ class AccountInvoice(Model):
         """Set the text of the notes in invoices"""
         if not commentid:
             return {}
+
         if not partner_id:
             raise osv.except_osv(
                 _('No Customer Defined !'),
-                _('Before choosing condition text select a customer.'))
-        lang = self.pool.get('res.partner').browse(
-            cr, uid, partner_id).lang or 'en_US'
-        cond = self.pool.get('account.condition_text').browse(
-            cr, uid, commentid, {'lang': lang})
-        return {'value': {key: cond.text}}
+                _('Before choosing condition text select a customer.')
+            )
+
+        partner_model = self.pool['res.partner']
+        cond_model = self.pool['account.condition_text']
+
+        lang = partner_model.browse(cr, uid, partner_id).lang or 'en_US'
+        cond = cond_model.browse(cr, uid, commentid, {'lang': lang})
+
+        return {
+            'value': {
+                key: cond.text
+            }
+        }
 
     def set_header(self, cursor, uid, inv_id, commentid, partner_id=False):
         return self._set_condition(
-            cursor, uid, inv_id, commentid, 'note1', partner_id)
+            cursor, uid, inv_id, commentid, 'note1', partner_id
+        )
 
     def set_footer(self, cursor, uid, inv_id, commentid, partner_id=False):
         return self._set_condition(
-            cursor, uid, inv_id, commentid, 'note2', partner_id)
+            cursor, uid, inv_id, commentid, 'note2', partner_id
+        )
 
     _columns = {
         'text_condition1': fields.many2one(
-            'account.condition_text', 'Header condition',
-            domain=[('type', '=', 'header')]),
+            'account.condition_text',
+            'Header condition',
+            domain=[('type', '=', 'header')]
+        ),
         'text_condition2': fields.many2one(
-            'account.condition_text', 'Footer condition',
-            domain=[('type', '=', 'footer')]),
+            'account.condition_text',
+            'Footer condition',
+            domain=[('type', '=', 'footer')]
+        ),
         'note1': fields.html('Header'),
         'note2': fields.html('Footer'),
-        }
+    }
 
 
 class AccountInvoiceLine(Model):
 
     _inherit = 'account.invoice.line'
 
-    _columns = {'formatted_note': fields.html('Formatted Note')}
+    _columns = {
+        'formatted_note': fields.html('Formatted Note')
+    }

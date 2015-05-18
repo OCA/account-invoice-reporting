@@ -19,20 +19,25 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-'''Extend model stock.picking'''
+"""Extend model stock.picking"""
 from openerp.osv import orm
 
 
 class StockPicking(orm.Model):
-    '''Modify stock picking to fill delivery address'''
+
+    """Modify stock picking to fill delivery address"""
+
     _inherit = 'stock.picking'
 
-    def _prepare_invoice(self, cr, uid, picking, partner,
-                         inv_type, journal_id, context=None):
-        """\
-Inherit the original function of the 'stock' module in order to fill delivery
-address when present in sales order.
-"""
+    def _prepare_invoice(
+        self, cr, uid, picking, partner, inv_type, journal_id, context=None
+    ):
+        """
+        Override the method from stock.picking
+
+        Inherit the original function of the 'stock' module in order to fill
+        delivery address when present in sales order.
+        """
         invoice_vals = super(StockPicking, self)._prepare_invoice(
             cr, uid, picking, partner, inv_type, journal_id, context=context)
         if picking.sale_id and picking.sale_id.partner_shipping_id:

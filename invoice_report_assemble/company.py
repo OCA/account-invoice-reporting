@@ -28,5 +28,6 @@ class ResCompany(orm.Model):
         'assemble_invoice_report_ids': fields.one2many(
             'assembled.report', 'company_id',
             'Account Invoice Assemblage Report',
-            domain=[('model', '=', 'account.invoice')]),
-        }
+            domain=[('model', '=', 'account.invoice')]
+        ),
+    }

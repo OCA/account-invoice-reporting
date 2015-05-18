@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<openerp>
+    <data>
+
+        <record id="view_state_county_tree" model="ir.ui.view">
+            <field name="name">res.country.state.county.tree</field>
+            <field name="model">res.country.state.county</field>
+            <field name="arch" type="xml"> 
+                <tree string="County">
+                    <field name="state_id"/>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+    
+        <record id="view_state_county_form" model="ir.ui.view">
+            <field name="name">res.country.state.county.form</field>
+            <field name="model">res.country.state.county</field>
+            <field name="arch" type="xml">
+                <form string="State" version="7.0">
+                    <group>
+                        <field name="state_id"/>
+                        <field name="name"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_state_county" model="ir.actions.act_window">
+            <field name="name">USA Counties</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.country.state.county</field>
+            <field name="view_type">form</field>
+            <field name="view_id" ref="view_state_county_tree"/>
+        </record>
+
+        <menuitem action="action_state_county" id="menu_state_county_partner" parent="base.menu_localisation" sequence="3" groups="base.group_no_one"/>
+
+    </data>
+</openerp>

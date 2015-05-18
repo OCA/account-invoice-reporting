@@ -52,7 +52,7 @@ class account_invoice_line(orm.Model):
             _get_prod_lots, method=True, type='many2many',
             relation="stock.production.lot", string="Production Lots"),
         'displayed_lot_id': fields.many2one('stock.production.lot', 'Lot'),
-        }
+    }
 
     def load_line_lots(self, cr, uid, ids, context=None):
         for line in self.browse(cr, uid, ids, context):
@@ -80,7 +80,8 @@ class account_invoice(orm.Model):
         inv_line_obj = self.pool.get('account.invoice.line')
         for invoice in invoices:
             inv_line_obj.load_line_lots(
-                cr, uid, [l.id for l in invoice.invoice_line], context)
+                cr, uid, [l.id for l in invoice.invoice_line], context
+            )
         return True
 
     _inherit = "account.invoice"
