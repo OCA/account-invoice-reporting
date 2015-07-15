@@ -21,25 +21,24 @@
 
 
 {
-    "name": "Invoices Analysis by analytic account",
+    "name": "Invoices Analysis by invoice number",
     "version": "0.1",
-    "depends": ['account', 'analytic'],
+    "depends": ['account'],
     "author": "Eficent,Odoo Community Association (OCA)",
     "license": "AGPL-3",
     "category": "Accounting & Finance",
     'description': """
-Invoices Analysis by analytic account
-=====================================
+Invoices Analysis by invoice number
+===================================
 
 This module is meant to extend the report 'Invoices Analysis' adding the
-analytic account
-
+invoice internal number, the supplier invoice number and the journal entry.
+This is useful to allow the user to drill down.
 
 Usage
 =====
 
-Go to 'Reporting | Accounting | Invoices Analysis'. It is possible to
-group by or filter by analytic account.
+Go to 'Reporting | Accounting | Invoices Analysis'.
 
 
 Known issues / Roadmap
