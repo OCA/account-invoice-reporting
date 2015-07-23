@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+
+    <template id="account_invoice_production_lot_report" inherit_id="account.report_invoice_document">
+
+            <xpath expr="//t[@t-call='report.external_layout']/div[@class='page']//table[@class='table table-condensed']/tbody[@class='invoice_tbody']/tr/td" position="inside">
+                <t t-if="(l.lot_formatted_note is not False)">
+                    <div style="margin-left:25px;" t-field="l.lot_formatted_note" />
+                </t>
+            </xpath>
+
+    </template>
+
+</data>
+</openerp>

@@ -21,64 +21,41 @@
 #
 ##############################################################################
 
-from openerp.osv import fields, orm
+from openerp import models, fields, api
 
 
-class account_invoice_line(orm.Model):
-
-    def _get_prod_lots(self, cr, uid, ids, field_name, arg, context=None):
-        result = {}
-        for line in self.browse(cr, uid, ids, context=context):
-            result[line.id] = []
-            if line.move_line_ids:
-                for move in line.move_line_ids:
-                    if move.prodlot_id:
-                        result[line.id].append(move.prodlot_id.id)
-            else:
-                for order_line in line.order_lines:
-                    for move in order_line.move_ids:
-                        if move.prodlot_id:
-                            result[line.id].append(move.prodlot_id.id)
-        return result
-
+class AccountInvoiceLine(models.Model):
     _inherit = "account.invoice.line"
 
-    _columns = {
-        # order_lines is the reverse of invoice_lines field of sale module
-        'order_lines': fields.many2many(
-            'sale.order.line', 'sale_order_line_invoice_rel', 'invoice_id',
-            'order_line_id', 'Order Lines', readonly=True),
-        'prod_lot_ids': fields.function(
-            _get_prod_lots, method=True, type='many2many',
-            relation="stock.production.lot", string="Production Lots"),
-        'displayed_lot_id': fields.many2one('stock.production.lot', 'Lot'),
-        }
+    @api.one
+    def _get_prod_lots(self):
+        if not self.move_line_ids and not self.order_lines:
+            return
+        if self.move_line_ids:
+            self.prod_lot_ids = self.mapped(
+                'move_line_ids.lot_ids')
+        else:
+            self.prod_lot_ids = self.mapped(
+                'order_lines.procurement_ids.move_ids.lot_ids')
 
-    def load_line_lots(self, cr, uid, ids, context=None):
-        for line in self.browse(cr, uid, ids, context):
-            if line.prod_lot_ids:
-                note = u'<ul> '
-                note += u' '.join([
-                    u'<li>S/N {0}</li>'.format(lot.name)
-                    for lot in line.prod_lot_ids
-                ])
-                note += u' </ul>'
-                line.write({'formatted_note': note}, context=context)
-        return True
+    order_lines = fields.Many2many(
+        'sale.order.line', 'sale_order_line_invoice_rel', 'invoice_id',
+        'order_line_id', 'Order Lines', readonly=True)
 
-    def create(self, cr, uid, vals, context=None):
-        res = super(account_invoice_line, self).create(cr, uid, vals, context)
-        if not vals.get('formatted_note'):
-            self.load_line_lots(cr, uid, [res], context)
-        return res
+    prod_lot_ids = fields.Many2many(
+        'stock.production.lot',  'stock_prod_lot_invoice_rel', 'invoice_id',
+        compute='_get_prod_lots', string="Production Lots")
 
-class account_invoice(orm.Model):
+    lot_formatted_note = fields.Html(
+        'Formatted Note', compute='load_line_lots')
 
-    def load_lines_lots(self, cr, uid, ids, context=None):
-        invoices = self.browse(cr, uid, ids, context)
-        inv_line_obj = self.pool.get('account.invoice.line')
-        for invoice in invoices:
-            inv_line_obj.load_line_lots(cr, uid, [l.id for l in invoice.invoice_line], context)
-        return True
-
-    _inherit = "account.invoice"
+    @api.one
+    def load_line_lots(self):
+        if self.prod_lot_ids:
+            note = u'<ul>'
+            note += u' '.join([
+                u'<li>S/N {0}</li>'.format(lot.name)
+                for lot in self.prod_lot_ids
+            ])
+            note += u'</ul>'
+            self.lot_formatted_note = note
