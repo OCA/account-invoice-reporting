@@ -4,7 +4,7 @@
 #    OpenERP, Open Source Management Solution
 #    Author: Lorenzo Battistini <lorenzo.battistini@agilebg.com>
 #    Copyright (C) 2011 Domsense s.r.l. (<http://www.domsense.com>).
-#    Copyright (C) 2013 Agile Business Group sagl (<http://www.agilebg.com>)
+#    Copyright (C) 2013 Agile Business Group  (<http://www.agilebg.com>)
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -24,26 +24,23 @@
 
 {
     "name": "Invoice Production Lots",
-    "version": "1.1",
+    "version": "8.0.1.1.0",
     'category': 'Generic Modules/Accounting',
     "depends": [
+        "account_accountant",
         "sale_stock",
-        "invoice_webkit",
         "stock_picking_invoice_link",
         ],
-    "author": "Agile Business Group",
+    "author": "Agile Business Group,Odoo Community Association (OCA)",
     "summary": "Display delivered serial numbers in invoice",
-    "description": """
-This module prints, for each (customer) invoice line, the delivered production
-lots. The serial numbers are displayed in the "formatted note" field,
-introduced by invoice_webkit module""",
     'website': 'http://www.agilebg.com',
+    'license': 'AGPL-3',
     'data': [
         'invoice_view.xml',
+        'view/report_invoice.xml',
         ],
-    'demo': [],
-    'test': [
-        'test/sale.yml',
+    'demo': [
+        'demo/sale.yml',
         ],
     'installable': True,
     'active': False,

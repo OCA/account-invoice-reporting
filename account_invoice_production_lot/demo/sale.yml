@@ -1,0 +1,62 @@
+-
+ !record {model: stock.location, id: location_opening}:
+    name: opening
+    usage: inventory
+-
+ !record {model: product.product, id: product_icecream_b}:
+    default_code: 001
+    name: Ice Cream B
+    type: product
+    categ_id: product.product_category_1
+    list_price: 100.0
+    standard_price: 70.0
+    property_stock_inventory: location_opening
+    valuation: real_time
+    cost_method: average
+    property_stock_account_input: account.o_expense
+    property_stock_account_output: account.o_income
+    description: Ice cream can be mass-produced and thus is widely available in developed parts of the world. Ice cream can be purchased in large cartons (vats and squrounds) from supermarkets and grocery stores, in smaller quantities from ice cream shops, convenience stores, and milk bars, and in individual servings from small carts or vans at public events.
+-
+ !record {model: stock.production.lot, id: lot_icecream_0}:
+    name: Lot0 for Ice cream
+    product_id: product_icecream_b
+-
+ !record {model: stock.production.lot, id: lot_icecream_1}:
+    name: Lot1 for Ice cream
+    product_id: product_icecream_b
+-
+  I create a draft Sale Order
+-
+  !record {model: sale.order, id: sale_order_0}:
+    partner_id: base.res_partner_2
+    order_policy: picking
+    order_line:
+      - product_id: product_icecream_b
+        product_uom_qty: 1.0
+        price_unit: 100.0
+-
+  I create a new draft Sale Order
+-
+  !record {model: sale.order, id: sale_order_1}:
+    partner_id: base.res_partner_2
+    partner_invoice_id: base.res_partner_address_3
+    partner_shipping_id: base.res_partner_address_3
+    pricelist_id: 1
+    order_policy: picking
+    order_line:
+      - product_id: product_icecream_b
+        product_uom_qty: 2.0
+        price_unit: 100.0
+-
+  I create a new draft Sale Order
+-
+  !record {model: sale.order, id: sale_order_2}:
+    partner_id: base.res_partner_2
+    partner_invoice_id: base.res_partner_address_3
+    partner_shipping_id: base.res_partner_address_3
+    pricelist_id: 1
+    order_policy: manual
+    order_line:
+      - product_id: product_icecream_b
+        product_uom_qty: 1.0
+        price_unit: 100.0
