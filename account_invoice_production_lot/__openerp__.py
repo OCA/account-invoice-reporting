@@ -24,7 +24,7 @@
 
 {
     "name": "Invoice Production Lots",
-    "version": "2.1",
+    "version": "1.1",
     'category': 'Generic Modules/Accounting',
     "depends": [
         "sale_stock",
@@ -38,9 +38,9 @@
         'invoice_view.xml',
         ],
     'demo': [],
-    'test': [
-        'test/sale.yml',
-        ],
-    'installable': False,
+    # 'test': [
+        # 'test/sale.yml',
+        # ],
+    'installable': True,
     'active': False,
 }

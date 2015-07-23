@@ -27,21 +27,18 @@ from openerp import models, fields, api
 class account_invoice_line(models.Model):
 
     @api.one
-    @api.depends(
-        'move_id.prodlot_id'
-    )
     def _get_prod_lots(self):
-        if not self.move_id and not self.order_lines:
+        if not self.move_line_ids :
             return
-        if self.move_id:
-            for move in self.move_id:
+        if self.move_line_ids:
+            for move in self.move_line_ids:
                 if move.prodlot_id:
                     self.prod_lot_ids += move.prodlot_id
-        else:
-            for order_line in self.order_lines:
-                for move in order_line.move_ids:
-                    if move.prodlot_id:
-                        self.prod_lot_ids += move.prodlot_id
+        # else:
+            # for order_line in self.order_lines:
+                # for move in order_line.move_ids:
+                    # if move.prodlot_id:
+                        # self.prod_lot_ids += move.prodlot_id
 
     _inherit = "account.invoice.line"
 
@@ -50,8 +47,8 @@ class account_invoice_line(models.Model):
         'order_line_id', 'Order Lines', readonly=True)
 
     prod_lot_ids = fields.Many2many(
-        compute='_get_prod_lots', method=True,
-        relation="stock.production.lot", string="Production Lots")
+        'stock.production.lot',  'stock_prod_lot_invoice_rel', 'invoice_id',
+        compute='_get_prod_lots', string="Production Lots")
 
     displayed_lot_id = fields.Many2one('stock.production.lot', 'Lot')
     formatted_note = fields.Html('Formatted Note')
@@ -69,7 +66,7 @@ class account_invoice_line(models.Model):
                 line.write({'formatted_note': note})
         return True
 
-    @api.one
+    @api.model
     def create(self, vals):
         res = super(account_invoice_line, self).create(vals)
         if not vals.get('formatted_note'):
@@ -80,7 +77,7 @@ class account_invoice_line(models.Model):
 class account_invoice(models.Model):
 
     @api.multi
-    def load_lines_lots(self, cr, uid, ids, context=None):
+    def load_lines_lots(self):
         for invoice in self:
             invoice.invoice_line.load_line_lots()
         return True
