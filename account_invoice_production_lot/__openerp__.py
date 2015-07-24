@@ -27,6 +27,7 @@
     "version": "1.1",
     'category': 'Generic Modules/Accounting',
     "depends": [
+        "account_accountant",
         "sale_stock",
         "stock_picking_invoice_link",
         ],
@@ -36,11 +37,11 @@
     'license': 'AGPL-3',
     'data': [
         'invoice_view.xml',
+        'view/report_invoice.xml',
         ],
-    'demo': [],
-    # 'test': [
-        # 'test/sale.yml',
-        # ],
+    'demo': [
+        'demo/sale.yml',
+        ],
     'installable': True,
     'active': False,
 }

@@ -10,8 +10,11 @@ lots.
 Usage
 =====
 
-The serial numbers are displayed in the "formatted note" field,
-introduced by this module
+Create a Sale Order, in field  "Create Invoice" set "On Delivery Order".
+When the order is accepted and picked out , set pr production lot
+for each line of products in picking list.
+So Create invoice and  the serial numbers are displayed in the "formatted note" field,
+introduced by this module.
 
 
 Bug Tracker

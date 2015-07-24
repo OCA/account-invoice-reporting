@@ -12,6 +12,7 @@
                 </field>
             </field>
         </record>
+
         <record model="ir.ui.view" id="invoice_form_load_button">
             <field name="name">account.invoice.form.load_button</field>
             <field name="model">account.invoice</field>
