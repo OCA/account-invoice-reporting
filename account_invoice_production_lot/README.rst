@@ -33,7 +33,7 @@ Contributors
 ------------
 
 * Lorenzo Battistini <lorenzo.battistini@agilebg.com>
-* Alessio Gerace <alessio.gerace@gmail.com>
+* Alessio Gerace <alessio.gerace@agilebg.com>
 
 Maintainer
 ----------
