@@ -127,17 +127,17 @@ class TestProdLot(common.TransactionCase):
                     invoice = self.account_invoice.browse(invoice_id)
                     self.assertEqual(
                         invoice.invoice_line[0].prod_lot_ids[0].name,
-                        'Lot1 for Ice cream'
+                        'Lot0 for Ice cream'
                     )
                     self.assertEqual(
                         invoice.invoice_line[0].prod_lot_ids[1].name,
-                        'Lot0 for Ice cream'
+                        'Lot1 for Ice cream'
                     )
                     self.assertEqual(
                         invoice.invoice_line[0].formatted_note, False)
                     invoice.load_lines_lots()
                     self.assertEqual(
                         invoice.invoice_line[0].formatted_note,
-                        '<ul><li>S/N Lot1 for Ice cream</li> '
-                        '<li>S/N Lot0 for Ice cream</li></ul>'
+                        '<ul><li>S/N Lot0 for Ice cream</li> '
+                        '<li>S/N Lot1 for Ice cream</li></ul>'
                     )
