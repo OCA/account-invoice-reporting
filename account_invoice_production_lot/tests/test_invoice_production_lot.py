@@ -18,7 +18,6 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-
 from openerp.tests import common
 from datetime import date
 
@@ -34,7 +33,6 @@ class TestProdLot(common.TransactionCase):
         self.stock_transfer_details = self.registry("stock.transfer_details")
         self.stock_invoice = self.registry("stock.invoice.onshipping")
         self.model_data = self.env['ir.model.data']
-
 
     def getDemoObject(self, module, data_id):
         if module == '':
@@ -53,16 +51,18 @@ class TestProdLot(common.TransactionCase):
             {
                 'active_model': 'stock.picking',
                 'active_ids': [pick.id],
-                # 'active_id': len([pick.id]) and pick.id or False
+                'active_id': len([pick.id]) and pick.id or False
             }
         )
         pick_wizard_id = self.stock_transfer_details.create(
-            cr, uid, {}, context)
+            cr, uid, {'picking_id': pick.id}, context)
         pick_wizard = self.stock_transfer_details.browse(
             cr, uid, pick_wizard_id)
         if split:
             pick_wizard.item_ids[0].split_quantities()
-        pick_wizard.item_ids[0].write({'lot_id': lot_ids[0].id})
+            pick_wizard.refresh()
+        for count in range(len(lot_ids)):
+            pick_wizard.item_ids[count].write({'lot_id': lot_ids[count].id})
         return self.stock_transfer_details.do_detailed_transfer(
             cr, uid, [pick_wizard_id], context)
 
@@ -100,4 +100,44 @@ class TestProdLot(common.TransactionCase):
                     self.assertEqual(
                         invoice.invoice_line[0].prod_lot_ids[0].name,
                         'Lot0 for Ice cream'
+                    )
+                    self.assertEqual(
+                        invoice.invoice_line[0].formatted_note,
+                        '<ul><li>S/N Lot0 for Ice cream</li></ul>'
+                    )
+
+    def test_1_SaleOrder(self):
+        """
+        Test Sale Order 1 split quantity in picking
+        and set a  serial number Lot, for each item
+       """
+        lot_ids = []
+        lot_ids.append(self.getDemoObject('', 'lot_icecream_0'))
+        lot_ids.append(self.getDemoObject('', 'lot_icecream_1'))
+        order = self.getDemoObject('', 'sale_order_1')
+        order.signal_workflow('order_confirm')
+        for pick in order.picking_ids:
+            data = pick.force_assign()
+            self.assertEqual(pick.state, 'assigned')
+            if data:
+                trans = self.run_picking(pick, lot_ids, split=True)
+                if trans and pick.action_done():
+                    self.assertEqual(pick.state, 'done')
+                    invoice_id = self.run_create_invoice(pick)
+                    invoice = self.account_invoice.browse(invoice_id)
+                    self.assertEqual(
+                        invoice.invoice_line[0].prod_lot_ids[0].name,
+                        'Lot1 for Ice cream'
+                    )
+                    self.assertEqual(
+                        invoice.invoice_line[0].prod_lot_ids[1].name,
+                        'Lot0 for Ice cream'
+                    )
+                    self.assertEqual(
+                        invoice.invoice_line[0].formatted_note, False)
+                    invoice.load_lines_lots()
+                    self.assertEqual(
+                        invoice.invoice_line[0].formatted_note,
+                        '<ul><li>S/N Lot1 for Ice cream</li> '
+                        '<li>S/N Lot0 for Ice cream</li></ul>'
                     )

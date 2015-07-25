@@ -48,12 +48,12 @@ class account_invoice_line(models.Model):
     def load_line_lots(self):
         for line in self:
             if line.prod_lot_ids:
-                note = u'<ul> '
+                note = u'<ul>'
                 note += u' '.join([
                     u'<li>S/N {0}</li>'.format(lot.name)
                     for lot in line.prod_lot_ids
                 ])
-                note += u' </ul>'
+                note += u'</ul>'
                 line.write({'formatted_note': note})
         return True
 
