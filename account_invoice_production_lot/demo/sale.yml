@@ -47,3 +47,16 @@
       - product_id: product_icecream_b
         product_uom_qty: 2.0
         price_unit: 100.0
+-
+  I create a new draft Sale Order
+-
+  !record {model: sale.order, id: sale_order_2}:
+    partner_id: base.res_partner_2
+    partner_invoice_id: base.res_partner_address_3
+    partner_shipping_id: base.res_partner_address_3
+    pricelist_id: 1
+    order_policy: manual
+    order_line:
+      - product_id: product_icecream_b
+        product_uom_qty: 1.0
+        price_unit: 100.0

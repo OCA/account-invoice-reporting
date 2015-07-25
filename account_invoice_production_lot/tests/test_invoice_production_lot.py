@@ -32,6 +32,7 @@ class TestProdLot(common.TransactionCase):
         self.account_invoice = self.env["account.invoice"]
         self.stock_transfer_details = self.registry("stock.transfer_details")
         self.stock_invoice = self.registry("stock.invoice.onshipping")
+        self.order_invoice = self.registry("sale.advance.payment.inv")
         self.model_data = self.env['ir.model.data']
 
     def getDemoObject(self, module, data_id):
@@ -140,4 +141,31 @@ class TestProdLot(common.TransactionCase):
                         invoice.invoice_line[0].formatted_note,
                         '<ul><li>S/N Lot0 for Ice cream</li> '
                         '<li>S/N Lot1 for Ice cream</li></ul>'
+                    )
+
+    def test_2_SaleOrder(self):
+        """
+        Test Sale Order 2
+       """
+        lot_ids = []
+        lot_ids.append(self.getDemoObject('', 'lot_icecream_0'))
+        order = self.getDemoObject('', 'sale_order_2')
+        order.signal_workflow('order_confirm')
+        for pick in order.picking_ids:
+            data = pick.force_assign()
+            self.assertEqual(pick.state, 'assigned')
+            if data:
+                trans = self.run_picking(pick, lot_ids)
+                if trans and pick.action_done():
+                    self.assertEqual(pick.state, 'done')
+                    res = order.manual_invoice()
+                    invoice = self.account_invoice.browse(res['res_id'])
+                    invoice.load_lines_lots()
+                    self.assertEqual(
+                        invoice.invoice_line[0].prod_lot_ids[0].name,
+                        'Lot0 for Ice cream'
+                    )
+                    self.assertEqual(
+                        invoice.invoice_line[0].formatted_note,
+                        '<ul><li>S/N Lot0 for Ice cream</li></ul>'
                     )
