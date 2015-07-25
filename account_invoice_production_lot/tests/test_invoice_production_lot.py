@@ -35,6 +35,7 @@ class TestProdLot(common.TransactionCase):
         self.stock_invoice = self.registry("stock.invoice.onshipping")
         self.model_data = self.env['ir.model.data']
 
+
     def getDemoObject(self, module, data_id):
         if module == '':
             module = 'account_invoice_production_lot'
@@ -52,7 +53,7 @@ class TestProdLot(common.TransactionCase):
             {
                 'active_model': 'stock.picking',
                 'active_ids': [pick.id],
-                'active_id': len([pick.id]) and pick.id or False
+                # 'active_id': len([pick.id]) and pick.id or False
             }
         )
         pick_wizard_id = self.stock_transfer_details.create(
@@ -88,12 +89,15 @@ class TestProdLot(common.TransactionCase):
         order.signal_workflow('order_confirm')
         for pick in order.picking_ids:
             data = pick.force_assign()
+            self.assertEqual(pick.state, 'assigned')
             if data:
                 trans = self.run_picking(pick, lot_ids)
-                if trans:
+                if trans and pick.action_done():
+                    self.assertEqual(pick.state, 'done')
                     invoice_id = self.run_create_invoice(pick)
                     invoice = self.account_invoice.browse(invoice_id)
-                    # TODO solve test error
+                    invoice.load_lines_lots()
                     self.assertEqual(
-                        len(invoice.invoice_line[0].prod_lot_ids), 1
+                        invoice.invoice_line[0].prod_lot_ids[0].name,
+                        'Lot0 for Ice cream'
                     )
