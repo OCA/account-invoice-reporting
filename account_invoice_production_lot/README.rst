@@ -11,8 +11,8 @@ Usage
 =====
 
 Create a Sale Order.
-When the order is accepted and picked out , set production lot
-for each line of products in picking list.
+When the sale order is accepted and delivery order created,
+process picking list setting serial numbers on delivered lines
 Open or create invoice, click on "Load Lines Lots" and the serial numbers
 are displayed in the "Production Lots" on inovoice line
 and  in "formatted note" field on invoice report

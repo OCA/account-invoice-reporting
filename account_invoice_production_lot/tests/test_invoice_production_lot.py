@@ -93,7 +93,9 @@ class TestProdLot(common.TransactionCase):
             self.assertEqual(pick.state, 'assigned')
             if data:
                 trans = self.run_picking(pick, lot_ids)
-                if trans and pick.action_done():
+                done =pick.action_done()
+                self.assertTrue(done)
+                if trans and done:
                     self.assertEqual(pick.state, 'done')
                     invoice_id = self.run_create_invoice(pick)
                     invoice = self.account_invoice.browse(invoice_id)
@@ -103,7 +105,7 @@ class TestProdLot(common.TransactionCase):
                         'Lot0 for Ice cream'
                     )
                     self.assertEqual(
-                        invoice.invoice_line[0].formatted_note,
+                        invoice.invoice_line[0].lot_formatted_note,
                         '<ul><li>S/N Lot0 for Ice cream</li></ul>'
                     )
 
@@ -122,7 +124,9 @@ class TestProdLot(common.TransactionCase):
             self.assertEqual(pick.state, 'assigned')
             if data:
                 trans = self.run_picking(pick, lot_ids, split=True)
-                if trans and pick.action_done():
+                done =pick.action_done()
+                self.assertTrue(done)
+                if trans and done:
                     self.assertEqual(pick.state, 'done')
                     invoice_id = self.run_create_invoice(pick)
                     invoice = self.account_invoice.browse(invoice_id)
@@ -135,10 +139,10 @@ class TestProdLot(common.TransactionCase):
                         'Lot1 for Ice cream'
                     )
                     self.assertEqual(
-                        invoice.invoice_line[0].formatted_note, False)
+                        invoice.invoice_line[0].lot_formatted_note, False)
                     invoice.load_lines_lots()
                     self.assertEqual(
-                        invoice.invoice_line[0].formatted_note,
+                        invoice.invoice_line[0].lot_formatted_note,
                         '<ul><li>S/N Lot0 for Ice cream</li> '
                         '<li>S/N Lot1 for Ice cream</li></ul>'
                     )
@@ -156,7 +160,9 @@ class TestProdLot(common.TransactionCase):
             self.assertEqual(pick.state, 'assigned')
             if data:
                 trans = self.run_picking(pick, lot_ids)
-                if trans and pick.action_done():
+                done =pick.action_done()
+                self.assertTrue(done)
+                if trans and done:
                     self.assertEqual(pick.state, 'done')
                     res = order.manual_invoice()
                     invoice = self.account_invoice.browse(res['res_id'])
@@ -166,6 +172,6 @@ class TestProdLot(common.TransactionCase):
                         'Lot0 for Ice cream'
                     )
                     self.assertEqual(
-                        invoice.invoice_line[0].formatted_note,
+                        invoice.invoice_line[0].lot_formatted_note,
                         '<ul><li>S/N Lot0 for Ice cream</li></ul>'
                     )

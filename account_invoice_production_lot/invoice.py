@@ -52,7 +52,7 @@ class account_invoice_line(models.Model):
         compute='_get_prod_lots', string="Production Lots")
 
     displayed_lot_id = fields.Many2one('stock.production.lot', 'Lot')
-    formatted_note = fields.Html('Formatted Note')
+    lot_formatted_note = fields.Html('Formatted Note')
 
     @api.multi
     def load_line_lots(self):
@@ -64,13 +64,13 @@ class account_invoice_line(models.Model):
                     for lot in line.prod_lot_ids
                 ])
                 note += u'</ul>'
-                line.write({'formatted_note': note})
+                line.write({'lot_formatted_note': note})
         return True
 
     @api.model
     def create(self, vals):
         res = super(account_invoice_line, self).create(vals)
-        if not vals.get('formatted_note'):
+        if not vals.get('lot_formatted_note'):
             res.load_line_lots()
         return res
 
