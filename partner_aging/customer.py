@@ -28,7 +28,7 @@ class account_aging_customer(osv.osv):
     _name = 'partner.aging.customer'
     _auto = False
 
-    def docopen(self, cr, uid, ids, context=None):
+    def open_document(self, cr, uid, ids, context=None):
         """
         @description  Open document (invoice or payment) related to the
                       unapplied payment or outstanding balance on this line

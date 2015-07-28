@@ -32,7 +32,7 @@ class partner_aging_supplier(orm.Model):
     _name = 'partner.aging.supplier'
     _auto = False
 
-    def invopen(self, cr, uid, ids, context=None):
+    def open_invoice(self, cr, uid, ids, context=None):
         """Create link to view each listed invoice."""
         models = self.pool.get('ir.model.data')
         view = models.get_object_reference(cr, uid, 'account', 'invoice_form')

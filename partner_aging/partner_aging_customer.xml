@@ -44,7 +44,7 @@
           <field name="max_days_overdue" />
           <field name="date" />
           <field name="invoice_id" invisible="True" />
-          <button name="docopen" type="object" icon="STOCK_INDEX" attrs=""/>
+          <button name="open_document" type="object" icon="STOCK_INDEX" attrs=""/>
           <field name="invoice_ref" />
           <field name="total" sum="Total" />
           <field name="current" string="Current" sum="Current" />
