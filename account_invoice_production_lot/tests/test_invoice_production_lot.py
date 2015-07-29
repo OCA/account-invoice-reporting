@@ -93,7 +93,7 @@ class TestProdLot(common.TransactionCase):
             self.assertEqual(pick.state, 'assigned')
             if data:
                 trans = self.run_picking(pick, lot_ids)
-                done =pick.action_done()
+                done = pick.action_done()
                 self.assertTrue(done)
                 if trans and done:
                     self.assertEqual(pick.state, 'done')
@@ -124,7 +124,7 @@ class TestProdLot(common.TransactionCase):
             self.assertEqual(pick.state, 'assigned')
             if data:
                 trans = self.run_picking(pick, lot_ids, split=True)
-                done =pick.action_done()
+                done = pick.action_done()
                 self.assertTrue(done)
                 if trans and done:
                     self.assertEqual(pick.state, 'done')
@@ -160,7 +160,7 @@ class TestProdLot(common.TransactionCase):
             self.assertEqual(pick.state, 'assigned')
             if data:
                 trans = self.run_picking(pick, lot_ids)
-                done =pick.action_done()
+                done = pick.action_done()
                 self.assertTrue(done)
                 if trans and done:
                     self.assertEqual(pick.state, 'done')
