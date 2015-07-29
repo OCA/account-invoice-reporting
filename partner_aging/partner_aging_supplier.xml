@@ -6,7 +6,6 @@
     <record model="ir.ui.view" id="view_supplier_aging_search">
       <field name="name">supplier.aging.search</field>
       <field name="model">partner.aging.supplier</field>
-      <field name="type">search</field>
       <field name="arch" type="xml">
         <search string="Supplier Aging">
           <filter string="Overdue Only" name="overdue" help="Overdue" domain="[('max_days_overdue','&gt;',0),('total','&gt;',0)]"/>
@@ -28,7 +27,6 @@
     <record model="ir.ui.view" id="view_supplier_aging_tree">
       <field name="name">supplier.aging.tree</field>
       <field name="model">partner.aging.supplier</field>
-      <field name="type">tree</field>
       <field name="arch" type="xml">
         <tree create="false" delete ="false" string="Aged Payables - Totals"
               colors="red:max_days_overdue &gt; 0 and total &gt; 0;">

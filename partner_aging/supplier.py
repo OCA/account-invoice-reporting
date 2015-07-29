@@ -22,12 +22,13 @@ import logging
 
 from openerp.osv import fields, orm
 from openerp import tools
+from openerp.tools.translate import _
 
 
 _logger = logging.getLogger(__name__)
 
 
-class partner_aging_supplier(orm.Model):
+class PartnerAgingSupplier(orm.Model):
 
     _name = 'partner.aging.supplier'
     _auto = False
@@ -38,16 +39,19 @@ class partner_aging_supplier(orm.Model):
         view = models.get_object_reference(cr, uid, 'account', 'invoice_form')
         view_id = view and view[1] or False
 
-        if not context:
+        if context is None:
             context = {}
 
+        if isinstance(ids, (int, long)):
+            ids = [ids]
+
         active_id = context.get('active_id')
-        inv_id = self.browse(cr, uid, ids[0]).invoice_id.id
+        inv_id = self.browse(cr, uid, ids[0], context=context).invoice_id.id
 
         _logger.debug('ActiveID: %d InvoiceID: %d' % (active_id, inv_id))
 
         return {
-            'name': ('Supplier Invoices'),
+            'name': _('Supplier Invoices'),
             'view_type': 'form',
             'view_mode': 'form',
             'view_id': [view_id],

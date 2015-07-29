@@ -20,11 +20,11 @@
 ###############################################################################
 
 
-from openerp.osv import fields, osv
+from openerp.osv import fields, orm
 from openerp import tools
 
 
-class account_aging_customer(osv.osv):
+class PartnerAgingCustomer(orm.Model):
     _name = 'partner.aging.customer'
     _auto = False
 
@@ -37,19 +37,21 @@ class account_aging_customer(osv.osv):
             context = {}
         models = self.pool.get('ir.model.data')
         # Get this line's invoice id
-        inv_id = self.browse(cr, uid, ids[0]).invoice_id.id
+        inv_id = self.browse(cr, uid, ids[0], context=context).invoice_id.id
 
         # if this is an unapplied payment(all unapplied payments hard-coded to
         # -999), get the referenced voucher
         if inv_id == -999:
-            ref = self.browse(cr, uid, ids[0]).invoice_ref
-            payment_pool = self.pool.get('account.voucher')
+            ref = self.browse(cr, uid, ids[0], context=context).invoice_ref
+            voucher_pool = self.pool['account.voucher']
             # Get referenced customer payment (invoice_ref field is actually a
             # payment for these)
-            voucher_id = payment_pool.search(
+            voucher_id = voucher_pool.search(
                 cr,
                 uid,
-                [('number', '=', ref)]
+                [('number', '=', ref)],
+                limit=1,
+                context=context,
             )[0]
             view = models.get_object_reference(
                 cr,

@@ -6,7 +6,6 @@
     <record model="ir.ui.view" id="view_customer_aging_search">
       <field name="name">customer.aging.search</field>
       <field name="model">partner.aging.customer</field>
-      <field name="type">search</field>
       <field name="arch" type="xml">
         <search string="Customer Aging">
           <filter string="Overdue" name="overdue" help="Overdue" domain="['|','|','|','|',('days_due_01to30','&gt;',0),
@@ -35,7 +34,6 @@
     <record model="ir.ui.view" id="view_customer_aging_tree">
       <field name="name">customer.aging.tree</field>
       <field name="model">partner.aging.customer</field>
-      <field name="type">tree</field>
       <field name="arch" type="xml">
         <tree create="false" delete="false" string="Customer Aging" colors="red:current == 0 and max_days_overdue != 0 and total &gt; 0;">
           <field name="total" invisible="1" />
