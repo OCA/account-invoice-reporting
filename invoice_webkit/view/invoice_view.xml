@@ -4,7 +4,6 @@
     <record model="ir.ui.view" id="view_invoice_condition_webkit">
       <field name="name">account.condition_text.form</field>
       <field name="model">account.condition_text</field>
-      <field name="type">form</field>
       <field name="arch" type="xml">
         <form string="Invoice condition text">
           <field name="name" select="1"/>
@@ -16,7 +15,6 @@
     <record model="ir.ui.view" id="view_invoice_condition_list_webkit">
       <field name="name">account.condition_text.list</field>
       <field name="model">account.condition_text</field>
-      <field name="type">tree</field>
       <field name="priority" eval="6"/>
       <field name="arch" type="xml">
         <tree string="Invoice condition text">
