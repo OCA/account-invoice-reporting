@@ -4,14 +4,14 @@
 Invoice Production Lots
 ===========
 
-This module prints, for each (customer) invoice line, the delivered production
+This module shows, for each (customer) invoice line, the delivered production
 lots.
 
 Usage
 =====
 
-Create a Sale Order.
-When the sale order is accepted and delivery order created,
+* Create a Sale Order.
+* When the sale order is accepted and delivery order created,
 process picking list setting serial numbers on delivered lines
 Open or create invoice, click on "Load Lines Lots" and the serial numbers
 are displayed in the "Production Lots" on inovoice line

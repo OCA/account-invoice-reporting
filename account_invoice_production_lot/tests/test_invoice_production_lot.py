@@ -99,7 +99,6 @@ class TestProdLot(common.TransactionCase):
                     self.assertEqual(pick.state, 'done')
                     invoice_id = self.run_create_invoice(pick)
                     invoice = self.account_invoice.browse(invoice_id)
-                    invoice.load_lines_lots()
                     self.assertEqual(
                         invoice.invoice_line[0].prod_lot_ids[0].name,
                         'Lot0 for Ice cream'
@@ -139,9 +138,6 @@ class TestProdLot(common.TransactionCase):
                         'Lot1 for Ice cream'
                     )
                     self.assertEqual(
-                        invoice.invoice_line[0].lot_formatted_note, False)
-                    invoice.load_lines_lots()
-                    self.assertEqual(
                         invoice.invoice_line[0].lot_formatted_note,
                         '<ul><li>S/N Lot0 for Ice cream</li> '
                         '<li>S/N Lot1 for Ice cream</li></ul>'
@@ -166,7 +162,6 @@ class TestProdLot(common.TransactionCase):
                     self.assertEqual(pick.state, 'done')
                     res = order.manual_invoice()
                     invoice = self.account_invoice.browse(res['res_id'])
-                    invoice.load_lines_lots()
                     self.assertEqual(
                         invoice.invoice_line[0].prod_lot_ids[0].name,
                         'Lot0 for Ice cream'

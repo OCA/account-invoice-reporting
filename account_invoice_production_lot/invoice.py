@@ -24,24 +24,19 @@
 from openerp import models, fields, api
 
 
-class account_invoice_line(models.Model):
+class AccountInvoiceLine(models.Model):
+    _inherit = "account.invoice.line"
 
     @api.one
     def _get_prod_lots(self):
         if not self.move_line_ids and not self.order_lines:
             return
         if self.move_line_ids:
-            for move in self.move_line_ids:
-                if move.lot_ids:
-                    self.prod_lot_ids += move.lot_ids
+            self.prod_lot_ids = self.mapped(
+                'move_line_ids.lot_ids')
         else:
-            for order_line in self.order_lines:
-                for procurament in order_line.procurement_ids:
-                    for move in procurament.move_ids:
-                        if move.lot_ids:
-                            self.prod_lot_ids += move.lot_ids
-
-    _inherit = "account.invoice.line"
+            self.prod_lot_ids = self.mapped(
+                'order_lines.procurement_ids.move_ids.lot_ids')
 
     order_lines = fields.Many2many(
         'sale.order.line', 'sale_order_line_invoice_rel', 'invoice_id',
@@ -51,36 +46,16 @@ class account_invoice_line(models.Model):
         'stock.production.lot',  'stock_prod_lot_invoice_rel', 'invoice_id',
         compute='_get_prod_lots', string="Production Lots")
 
-    displayed_lot_id = fields.Many2one('stock.production.lot', 'Lot')
-    lot_formatted_note = fields.Html('Formatted Note')
+    lot_formatted_note = fields.Html(
+        'Formatted Note', compute='load_line_lots')
 
-    @api.multi
+    @api.one
     def load_line_lots(self):
-        for line in self:
-            if line.prod_lot_ids:
-                note = u'<ul>'
-                note += u' '.join([
-                    u'<li>S/N {0}</li>'.format(lot.name)
-                    for lot in line.prod_lot_ids
-                ])
-                note += u'</ul>'
-                line.write({'lot_formatted_note': note})
-        return True
-
-    @api.model
-    def create(self, vals):
-        res = super(account_invoice_line, self).create(vals)
-        if not vals.get('lot_formatted_note'):
-            res.load_line_lots()
-        return res
-
-
-class account_invoice(models.Model):
-
-    @api.multi
-    def load_lines_lots(self):
-        for invoice in self:
-            invoice.invoice_line.load_line_lots()
-        return True
-
-    _inherit = "account.invoice"
+        if self.prod_lot_ids:
+            note = u'<ul>'
+            note += u' '.join([
+                u'<li>S/N {0}</li>'.format(lot.name)
+                for lot in self.prod_lot_ids
+            ])
+            note += u'</ul>'
+            self.lot_formatted_note = note
