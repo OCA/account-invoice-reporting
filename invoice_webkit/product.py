@@ -26,5 +26,6 @@ class ProductTemplate(orm.Model):
     _inherit = 'product.template'
 
     _columns = {'purchase_ok': fields.boolean('Can be Purchased',
-                                              help=("Specify if the product can be selected"
-                                                    " in a purchase order line."))}
+                                              help=("Specify if the product "
+                                                    "can be selected in a "
+                                                    "purchase order line."))}
