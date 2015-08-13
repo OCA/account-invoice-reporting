@@ -19,7 +19,7 @@
 #
 #
 
-from openerp import fields, exceptions
+from openerp import exceptions
 from openerp.tests import common
 
 
