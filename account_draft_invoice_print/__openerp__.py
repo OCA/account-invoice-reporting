@@ -20,7 +20,7 @@
 ##############################################################################
 
 {'name': 'Account Draft Invoice Print',
- 'version': '1.0.0',
+ 'version': '8.0.1.0.0',
  'category': 'Accounting & Finance',
  'author': "Camptocamp,Odoo Community Association (OCA)",
  'website': 'http://www.camptocamp.com',
