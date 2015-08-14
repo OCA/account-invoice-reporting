@@ -4,9 +4,9 @@
 Account Draft Invoice Print
 ===========================
 
-This module add the button print when invoice's state is draft.
+This module adds the button print when customer invoice's state is draft.
 This make the user more comfortable because he doesn't have to click on dropdown menu "Print".
-If this module is not installed, you don't have the button in the form view when invoice's state is draft.
+If this module is not installed, you don't have the button in the form view when customer invoice's state is draft.
 
 Bug Tracker
 ===========
