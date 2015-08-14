@@ -91,22 +91,21 @@ class TestProdLot(common.TransactionCase):
         for pick in order.picking_ids:
             data = pick.force_assign()
             self.assertEqual(pick.state, 'assigned')
-            if data:
-                trans = self.run_picking(pick, lot_ids)
-                done = pick.action_done()
-                self.assertTrue(done)
-                if trans and done:
-                    self.assertEqual(pick.state, 'done')
-                    invoice_id = self.run_create_invoice(pick)
-                    invoice = self.account_invoice.browse(invoice_id)
-                    self.assertEqual(
-                        invoice.invoice_line[0].prod_lot_ids[0].name,
-                        'Lot0 for Ice cream'
-                    )
-                    self.assertEqual(
-                        invoice.invoice_line[0].lot_formatted_note,
-                        '<ul><li>S/N Lot0 for Ice cream</li></ul>'
-                    )
+            self.assertTrue(data)
+            trans = self.run_picking(pick, lot_ids)
+            done = pick.action_done()
+            self.assertTrue(done)
+            self.assertEqual(pick.state, 'done')
+            invoice_id = self.run_create_invoice(pick)
+            invoice = self.account_invoice.browse(invoice_id)
+            self.assertEqual(
+                invoice.invoice_line[0].prod_lot_ids[0].name,
+                'Lot0 for Ice cream'
+            )
+            self.assertEqual(
+                invoice.invoice_line[0].lot_formatted_note,
+                '<ul><li>S/N Lot0 for Ice cream</li></ul>'
+            )
 
     def test_1_SaleOrder(self):
         """
@@ -118,30 +117,30 @@ class TestProdLot(common.TransactionCase):
         lot_ids.append(self.getDemoObject('', 'lot_icecream_1'))
         order = self.getDemoObject('', 'sale_order_1')
         order.signal_workflow('order_confirm')
+        self.assertEqual(len(order.picking_ids), 1)
         for pick in order.picking_ids:
             data = pick.force_assign()
             self.assertEqual(pick.state, 'assigned')
-            if data:
-                trans = self.run_picking(pick, lot_ids, split=True)
-                done = pick.action_done()
-                self.assertTrue(done)
-                if trans and done:
-                    self.assertEqual(pick.state, 'done')
-                    invoice_id = self.run_create_invoice(pick)
-                    invoice = self.account_invoice.browse(invoice_id)
-                    self.assertEqual(
-                        invoice.invoice_line[0].prod_lot_ids[0].name,
-                        'Lot0 for Ice cream'
-                    )
-                    self.assertEqual(
-                        invoice.invoice_line[0].prod_lot_ids[1].name,
-                        'Lot1 for Ice cream'
-                    )
-                    self.assertEqual(
-                        invoice.invoice_line[0].lot_formatted_note,
-                        '<ul><li>S/N Lot0 for Ice cream</li> '
-                        '<li>S/N Lot1 for Ice cream</li></ul>'
-                    )
+            self.assertTrue(data)
+            trans = self.run_picking(pick, lot_ids, split=True)
+            done = pick.action_done()
+            self.assertTrue(done)
+            self.assertEqual(pick.state, 'done')
+            invoice_id = self.run_create_invoice(pick)
+            invoice = self.account_invoice.browse(invoice_id)
+            self.assertEqual(
+                invoice.invoice_line[0].prod_lot_ids[0].name,
+                'Lot0 for Ice cream'
+            )
+            self.assertEqual(
+                invoice.invoice_line[0].prod_lot_ids[1].name,
+                'Lot1 for Ice cream'
+            )
+            self.assertEqual(
+                invoice.invoice_line[0].lot_formatted_note,
+                '<ul><li>S/N Lot0 for Ice cream</li> '
+                '<li>S/N Lot1 for Ice cream</li></ul>'
+            )
 
     def test_2_SaleOrder(self):
         """
@@ -151,22 +150,23 @@ class TestProdLot(common.TransactionCase):
         lot_ids.append(self.getDemoObject('', 'lot_icecream_0'))
         order = self.getDemoObject('', 'sale_order_2')
         order.signal_workflow('order_confirm')
+        self.assertEqual(len(order.picking_ids), 1)
         for pick in order.picking_ids:
             data = pick.force_assign()
             self.assertEqual(pick.state, 'assigned')
-            if data:
-                trans = self.run_picking(pick, lot_ids)
-                done = pick.action_done()
-                self.assertTrue(done)
-                if trans and done:
-                    self.assertEqual(pick.state, 'done')
-                    res = order.manual_invoice()
-                    invoice = self.account_invoice.browse(res['res_id'])
-                    self.assertEqual(
-                        invoice.invoice_line[0].prod_lot_ids[0].name,
-                        'Lot0 for Ice cream'
-                    )
-                    self.assertEqual(
-                        invoice.invoice_line[0].lot_formatted_note,
-                        '<ul><li>S/N Lot0 for Ice cream</li></ul>'
-                    )
+            self.assertTrue(data)
+            trans = self.run_picking(pick, lot_ids)
+            done = pick.action_done()
+            self.assertTrue(done)
+            self.assertTrue(trans)
+            self.assertEqual(pick.state, 'done')
+            res = order.manual_invoice()
+            invoice = self.account_invoice.browse(res['res_id'])
+            self.assertEqual(
+                invoice.invoice_line[0].prod_lot_ids[0].name,
+                'Lot0 for Ice cream'
+            )
+            self.assertEqual(
+                invoice.invoice_line[0].lot_formatted_note,
+                '<ul><li>S/N Lot0 for Ice cream</li></ul>'
+            )
