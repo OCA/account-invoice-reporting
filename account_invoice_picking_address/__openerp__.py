@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 ##############################################################################
 #
-#    Copyright (C) 2015 Agile Business Group sagl (<http://www.agilebg.com>)
+#    Copyright (C) 2015 Agile Business Group <http://www.agilebg.com>
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as published
@@ -21,12 +21,14 @@
 {
     'name': "Invoice Report Picking Address",
     'summary': 'Add Picking Address on invoice template',
-    'version': '1.0',
-    'depends': ['stock_picking_invoice_link'],
-    'author': 'Agile Business Group',
-    'data': [
-            'views/report_invoice.xml'],
+    'version': '8.0.1.0.0',
+    "license": "AGPL-3",
+    'depends': [
+        'stock_picking_invoice_link',
+        'sale_stock',
+        ],
+    'author': 'Agile Business Group, Odoo Community Association (OCA)',
+    'data': ['views/report_invoice.xml'],
     'category': 'Sale',
     'installable': True,
-    'active': False,
 }
