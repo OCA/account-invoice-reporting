@@ -18,27 +18,14 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
+from openerp.osv import orm, fields
 
-{'name': 'Invoice Report using Webkit Library',
- 'version': '1.1.4',
- 'category': 'Reports/Webkit',
- 'description': """
-     Replaces the legacy rml Invoice report by a brand new webkit report.
 
- **Warning:** If you are installing manually this module, it requires the
- module *base_headers_webkit*, available on:
+class ProductTemplate(orm.Model):
+    """TMP fix of bug 1111430"""
+    _inherit = 'product.template'
 
- https://launchpad.net/webkit-utils
- """,
- 'author': "Camptocamp,Odoo Community Association (OCA)",
- 'website': 'http://www.camptocamp.com',
- 'license': 'AGPL-3',
- 'depends': ['base', 'report_webkit', 'base_headers_webkit', 'account'],
- 'data': ['security/ir.model.access.csv',
-          'invoice_report.xml',
-          'view/invoice_view.xml'],
- 'demo_xml': [],
- 'test': [],
- 'installable': False,
- 'active': False,
- }
+    _columns = {'purchase_ok': fields.boolean('Can be Purchased',
+                                              help=("Specify if the product "
+                                                    "can be selected in a "
+                                                    "purchase order line."))}
