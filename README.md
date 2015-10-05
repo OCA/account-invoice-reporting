@@ -11,6 +11,7 @@ Available addons
 ----------------
 addon | version | summary
 --- | --- | ---
+[account_draft_invoice_print](account_draft_invoice_print/) | 8.0.1.0.0 | Account Draft Invoice Print
 [account_invoice_production_lot](account_invoice_production_lot/) | 1.1 | Display delivered serial numbers in invoice
 [base_comment_template](base_comment_template/) | 1.0 | Comments templates on documents
 [invoice_comment_template](invoice_comment_template/) | 1.0 | Comments templates on invoice documents
@@ -19,7 +20,6 @@ Unported addons
 ---------------
 addon | version | summary
 --- | --- | ---
-[account_draft_invoice_print](__unported__/account_draft_invoice_print/) | 1.0.0 (unported) | Account Draft Invoice Print
 [account_invoice_delivery_address](__unported__/account_invoice_delivery_address/) | 1.0 (unported) | Account invoice delivery address
 [html_invoice_product_note](__unported__/html_invoice_product_note/) | 1.0.0 (unported) | HTML note in product reported in invoice report
 [invoice_print_report_balance_payment](__unported__/invoice_print_report_balance_payment/) | 1.0 (unported) | Prints invoices with balance payments (and other things)
