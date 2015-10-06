@@ -1,22 +1,34 @@
 .. image:: https://img.shields.io/badge/licence-AGPL--3-blue.svg
-    :alt: License: AGPL-3
+   :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
+   :alt: License: AGPL-3
 
+=======================
 Invoice Production Lots
-===========
+=======================
 
 This module shows, for each (customer) invoice line, the delivered production
 lots.
 
+Configuration
+=============
+
+Go to Settings -> Configuration -> Warehouse -> Traceability, and activate
+option "Track lots or serial numbers" in order to manage lots in your 
+instance.
+
 Usage
 =====
 
-* Create a Sale Order.
-* When the sale order is accepted and delivery order created,
-process picking list setting serial numbers on delivered lines
-Open or create invoice, click on "Load Lines Lots" and the serial numbers
-are displayed in the "Production Lots" on inovoice line
-and  in "formatted note" field on invoice report
+* Create a sales order.
+* When the sales order is accepted and delivery order created,
+  process picking list setting serial numbers on delivered lines.
+* Create the invoice from the picking, and the serial numbers are displayed in
+  the "Production Lots" on invoice line form (if visible) and in
+  "formatted note" field on invoice report.
 
+.. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
+   :alt: Try me on Runbot
+   :target: https://runbot.odoo-community.org/runbot/94/8.0
 
 Bug Tracker
 ===========
@@ -25,7 +37,6 @@ Bugs are tracked on `GitHub Issues <https://github.com/OCA/account-invoice-repor
 In case of trouble, please check there if your issue has already been reported.
 If you spotted it first, help us smashing it by providing a detailed and welcomed feedback
 `here <https://github.com/OCA/account-invoice-reporting/issues/new?body=module:%20account_invoice_production_lot%0Aversion:%208.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
-
 
 Credits
 =======
