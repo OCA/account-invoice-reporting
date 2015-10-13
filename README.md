@@ -20,10 +20,10 @@ Unported addons
 ---------------
 addon | version | summary
 --- | --- | ---
-[account_invoice_delivery_address](__unported__/account_invoice_delivery_address/) | 1.0 (unported) | Account invoice delivery address
-[html_invoice_product_note](__unported__/html_invoice_product_note/) | 1.0.0 (unported) | HTML note in product reported in invoice report
-[invoice_print_report_balance_payment](__unported__/invoice_print_report_balance_payment/) | 1.0 (unported) | Prints invoices with balance payments (and other things)
-[invoice_report_assemble](__unported__/invoice_report_assemble/) | 1.0 (unported) | Assemble invoice report
-[invoice_webkit](__unported__/invoice_webkit/) | 1.1.4 (unported) | Invoice Report using Webkit Library
+[account_invoice_delivery_address](account_invoice_delivery_address/) | 1.0 (unported) | Account invoice delivery address
+[html_invoice_product_note](html_invoice_product_note/) | 1.0.0 (unported) | HTML note in product reported in invoice report
+[invoice_print_report_balance_payment](invoice_print_report_balance_payment/) | 1.0 (unported) | Prints invoices with balance payments (and other things)
+[invoice_report_assemble](invoice_report_assemble/) | 1.0 (unported) | Assemble invoice report
+[invoice_webkit](invoice_webkit/) | 1.1.4 (unported) | Invoice Report using Webkit Library
 
 [//]: # (end addons)
