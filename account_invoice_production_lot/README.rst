@@ -2,9 +2,9 @@
    :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
    :alt: License: AGPL-3
 
-========================
+=======================
 Invoice Production Lots
-========================
+=======================
 
 This module shows, for each (customer) invoice line, the delivered production
 lots.
@@ -22,10 +22,9 @@ Usage
 * Create a sales order.
 * When the sales order is accepted and delivery order created,
   process picking list setting serial numbers on delivered lines.
-* Open or create invoice, click on "Load Lines Lots" and the serial numbers
-  are displayed in the "Production Lots" on invoice line
-  and  in "formatted note" field on invoice report
-
+* Create the invoice from the picking, and the serial numbers are displayed in
+  the "Production Lots" on invoice line form (if visible) and in
+  "formatted note" field on invoice report.
 
 .. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
    :alt: Try me on Runbot
