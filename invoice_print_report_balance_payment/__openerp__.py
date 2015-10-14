@@ -60,4 +60,5 @@ Contributors:
     'test': [],
     'installable': False,
     'active': False,
+    'installable': False,
 }

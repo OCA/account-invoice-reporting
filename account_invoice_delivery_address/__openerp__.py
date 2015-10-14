@@ -46,4 +46,5 @@ address might also be changed untill invoice is confirmed.
     ],
     "auto_install": False,
     'installable': False,
+    'installable': False,
 }

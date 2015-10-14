@@ -32,6 +32,6 @@
           'views/report_invoice.xml',
           ],
  'category': 'Sale',
- 'installable': True,
+ 'installable': False,
  'active': False,
  }

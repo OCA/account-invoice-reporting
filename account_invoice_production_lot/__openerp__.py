@@ -42,6 +42,6 @@
     'demo': [
         'demo/sale.yml',
         ],
-    'installable': True,
+    'installable': False,
     'active': False,
 }
