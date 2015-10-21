@@ -27,6 +27,6 @@
  'license': 'AGPL-3',
  'depends': ['account'],
  'data': ['invoice_view.xml'],
- 'installable': False,
+ 'installable': True,
  'active': False,
  }
