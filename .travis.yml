@@ -1,21 +1,39 @@
-sudo: false
-cache: pip
-
-addons:
-  apt:
-    packages:
-      - expect-dev  # provides unbuffer utility
-      - python-lxml # because pip installation is slow
-
 language: python
+sudo: false
+cache:
+  apt: true
+  directories:
+    - $HOME/.cache/pip
 
 python:
   - "2.7"
 
+addons:
+  apt:
+    sources:
+      - pov-wkhtmltopdf
+    packages:
+      - expect-dev  # provides unbuffer utility
+      - python-lxml # because pip installation is slow
+      - python-simplejson
+      - python-serial
+      - python-yaml
+      - wkhtmltopdf  # only add if needed and check the before_install section below
+
+before_install:
+  - "export DISPLAY=:99.0"
+  - "sh -e /etc/init.d/xvfb start"
+
 env:
-  - VERSION="9.0" LINT_CHECK="1"
-  - VERSION="9.0" ODOO_REPO="odoo/odoo" LINT_CHECK="0"
-  - VERSION="9.0" ODOO_REPO="OCA/OCB" LINT_CHECK="0"
+  global:
+  - VERSION="9.0" TESTS="0" LINT_CHECK="0" TRANSIFEX="0"
+  - TRANSIFEX_USER='transbot@odoo-community.org'
+  - secure: SQSGiBzLRPP4fG4mbrVkakWkbEx+qCJF9ehcUmdb+Lvc7pvxGuJHBR3lbvXD6C6xwSn4V5aqmn9GN62fI3J96lxHUluvTrVrrluLM+utYyduVx1y+ySEl6o5Bhn5Mygu2H19I93kk7eJJ7akM1568buyiaZyX+T3AxqZmh02G5Q=
+  matrix:
+  - LINT_CHECK="1"
+  - TRANSIFEX="1"
+  - TESTS="1" ODOO_REPO="odoo/odoo"
+  - TESTS="1" ODOO_REPO="OCA/OCB"
 
 virtualenv:
   system_site_packages: true
@@ -25,12 +43,9 @@ install:
  - export PATH=${HOME}/maintainer-quality-tools/travis:${PATH}
  - travis_install_nightly
  - pip install PyPDF2==1.18
- - git clone https://github.com/OCA/reporting-engine -b ${VERSION} ${HOME}/reporting-engine
- - git clone https://github.com/OCA/stock-logistics-workflow -b ${VERSION} ${HOME}/stock-logistics-workflow
- - git clone https://github.com/OCA/webkit-tools -b ${VERSION} ${HOME}/webkit-tools
 
 script:
     - travis_run_tests
 
 after_success:
-  coveralls
+  - travis_after_tests_success
