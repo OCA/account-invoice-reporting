@@ -10,51 +10,51 @@ msgstr ""
 "POT-Creation-Date: 2016-01-05 17:43+0000\n"
 "PO-Revision-Date: 2016-01-05 17:43+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
-"Language-Team: French (http://www.transifex.com/oca/OCA-account-invoice-reporting-7-0/language/fr/)\n"
+"Language-Team: English (http://www.transifex.com/oca/OCA-account-invoice-reporting-7-0/language/en/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: fr\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Language: en\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: invoice_report_assemble
 #: model:ir.model,name:invoice_report_assemble.model_account_config_settings
 msgid "account.config.settings"
-msgstr ""
+msgstr "account.config.settings"
 
 #. module: invoice_report_assemble
 #: field:account.config.settings,assemble_invoice_report_ids:0
 msgid "Account Invoice Report Assemblage"
-msgstr "Assemblage de rapport de facture"
+msgstr "Account Invoice Report Assemblage"
 
 #. module: invoice_report_assemble
 #: model:ir.model,name:invoice_report_assemble.model_res_company
 msgid "Companies"
-msgstr "Sociétés"
+msgstr "Companies"
 
 #. module: invoice_report_assemble
 #: model:ir.actions.report.xml,name:invoice_report_assemble.invoice_report_assemblage
 msgid "Invoice Assemblage"
-msgstr "Assemblage de facture"
+msgstr "Invoice Assemblage"
 
 #. module: invoice_report_assemble
 #: view:account.config.settings:0
 msgid "Invoice report assemblage"
-msgstr "Assemblage de rapport de facture"
+msgstr "Invoice report assemblage"
 
 #. module: invoice_report_assemble
 #: code:addons/invoice_report_assemble/report_assembler.py:39
 #, python-format
 msgid "No report defined in Configuration -> Accounting for model invoice."
-msgstr "Pas de rapport défini dans Configuration -> Finance pour les factures."
+msgstr "No report defined in Configuration -> Accounting for model invoice."
 
 #. module: invoice_report_assemble
 #: code:addons/invoice_report_assemble/report_assembler.py:41
 #, python-format
 msgid "Error"
-msgstr "Erreur"
+msgstr "Error"
 
 #. module: invoice_report_assemble
 #: field:res.company,assemble_invoice_report_ids:0
 msgid "Account Invoice Assemblage Report"
-msgstr "Assemblage de rapport de facture"
+msgstr "Account Invoice Assemblage Report"
