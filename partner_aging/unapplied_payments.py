@@ -31,7 +31,7 @@
 from openerp import fields, tools, models
 
 
-class customer_unapplied(models.Model):
+class CustomerUnapplied(models.Model):
 
     _name = 'account.voucher.customer.unapplied'
     _auto = False

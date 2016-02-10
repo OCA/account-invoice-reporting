@@ -23,7 +23,7 @@
 from openerp import fields, tools, models, api
 
 
-class account_aging_customer(models.Model):
+class AccountAgingCustomer(models.Model):
     _name = 'partner.aging.customer'
     _auto = False
 

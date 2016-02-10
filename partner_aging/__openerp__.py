@@ -21,8 +21,9 @@
 
 {
     "name": "Interactive Partner Aging",
-    "version": "1.8.0",
-    "author": 'Ursa Information Systems',
+    "version": "8.0.1.8.0",
+    "license": "AGPL-3",
+    "author": 'Ursa Information Systems, Odoo Community Association (OCA)',
     "summary": "Aging as a view - invoices and credits (Ursa)",
     'maintainer': 'Ursa Information Systems',
     'website': 'http://www.ursainfosystems.com',
