@@ -50,7 +50,7 @@ class CustomerUnapplied(models.Model):
     max_days_overdue = fields.Integer(u'Days Overdue', readonly=True)
     current = fields.Float(u'Total', readonly=True)
     invoice_ref = fields.Char('Reference', size=128)
-    invoice_id = fields.Many2one('account.invoice', 'Invoice', readonly=True),
+    invoice_id = fields.Many2one('account.invoice', 'Invoice', readonly=True)
     comment = fields.Text('Notes', readonly=True)
 
     _order = "partner_name"
