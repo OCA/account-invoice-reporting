@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: account-invoice-reporting (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-05 08:56+0000\n"
-"PO-Revision-Date: 2016-01-06 10:15+0000\n"
+"POT-Creation-Date: 2016-08-15 17:38+0000\n"
+"PO-Revision-Date: 2016-08-16 07:59+0000\n"
 "Last-Translator: Matjaž Mozetič <m.mozetic@matmoz.si>\n"
 "Language-Team: Slovenian (http://www.transifex.com/oca/OCA-account-invoice-reporting-8-0/language/sl/)\n"
 "MIME-Version: 1.0\n"
@@ -17,6 +17,11 @@ msgstr ""
 "Content-Transfer-Encoding: \n"
 "Language: sl\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3);\n"
+
+#. module: account_invoice_picking_address
+#: field:account.invoice,delivery_address_id:0
+msgid "Delivery Address"
+msgstr "Dostavni naslov"
 
 #. module: account_invoice_picking_address
 #: model:ir.model,name:account_invoice_picking_address.model_account_invoice

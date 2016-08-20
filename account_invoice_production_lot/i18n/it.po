@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: account-invoice-reporting (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-05 08:56+0000\n"
-"PO-Revision-Date: 2016-01-05 08:56+0000\n"
+"POT-Creation-Date: 2016-08-15 17:38+0000\n"
+"PO-Revision-Date: 2016-08-15 17:38+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
 "Language-Team: Italian (http://www.transifex.com/oca/OCA-account-invoice-reporting-8-0/language/it/)\n"
 "MIME-Version: 1.0\n"
@@ -16,6 +16,11 @@ msgstr ""
 "Content-Transfer-Encoding: \n"
 "Language: it\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: account_invoice_production_lot
+#: field:account.invoice.line,lot_formatted_note:0
+msgid "Formatted Note"
+msgstr ""
 
 #. module: account_invoice_production_lot
 #: model:product.template,name:account_invoice_production_lot.product_icecream_b_product_template
@@ -44,6 +49,7 @@ msgstr "Righe ordine"
 
 #. module: account_invoice_production_lot
 #: view:account.invoice.line:account_invoice_production_lot.view_invoice_line_form_prod_lots
+#: field:account.invoice.line,prod_lot_ids:0
 msgid "Production Lots"
 msgstr "Lotti di produzione"
 

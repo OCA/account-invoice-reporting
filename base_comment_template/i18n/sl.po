@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: account-invoice-reporting (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-05 08:56+0000\n"
-"PO-Revision-Date: 2016-01-06 10:24+0000\n"
+"POT-Creation-Date: 2016-08-15 17:38+0000\n"
+"PO-Revision-Date: 2016-08-16 07:59+0000\n"
 "Last-Translator: Matjaž Mozetič <m.mozetic@matmoz.si>\n"
 "Language-Team: Slovenian (http://www.transifex.com/oca/OCA-account-invoice-reporting-8-0/language/sl/)\n"
 "MIME-Version: 1.0\n"
@@ -62,9 +62,19 @@ msgid "Created on"
 msgstr "Ustvarjeno"
 
 #. module: base_comment_template
+#: field:base.comment.template,display_name:0
+msgid "Display Name"
+msgstr "Prikazni naziv"
+
+#. module: base_comment_template
 #: field:base.comment.template,id:0
 msgid "ID"
 msgstr "ID"
+
+#. module: base_comment_template
+#: field:base.comment.template,__last_update:0
+msgid "Last Modified on"
+msgstr "Zadnjič spremenjeno"
 
 #. module: base_comment_template
 #: field:base.comment.template,write_uid:0

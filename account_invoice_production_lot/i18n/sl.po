@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: account-invoice-reporting (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-05 08:56+0000\n"
-"PO-Revision-Date: 2016-01-06 10:20+0000\n"
+"POT-Creation-Date: 2016-08-15 17:38+0000\n"
+"PO-Revision-Date: 2016-08-16 07:59+0000\n"
 "Last-Translator: Matjaž Mozetič <m.mozetic@matmoz.si>\n"
 "Language-Team: Slovenian (http://www.transifex.com/oca/OCA-account-invoice-reporting-8-0/language/sl/)\n"
 "MIME-Version: 1.0\n"
@@ -17,6 +17,11 @@ msgstr ""
 "Content-Transfer-Encoding: \n"
 "Language: sl\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3);\n"
+
+#. module: account_invoice_production_lot
+#: field:account.invoice.line,lot_formatted_note:0
+msgid "Formatted Note"
+msgstr "Oblikovana beležka"
 
 #. module: account_invoice_production_lot
 #: model:product.template,name:account_invoice_production_lot.product_icecream_b_product_template
@@ -45,6 +50,7 @@ msgstr "Postavke naloga"
 
 #. module: account_invoice_production_lot
 #: view:account.invoice.line:account_invoice_production_lot.view_invoice_line_form_prod_lots
+#: field:account.invoice.line,prod_lot_ids:0
 msgid "Production Lots"
 msgstr "Proizvodni loti"
 
