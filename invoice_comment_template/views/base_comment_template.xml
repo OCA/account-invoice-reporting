@@ -4,6 +4,6 @@
     <menuitem name="Document Comments"
       id="menu_base_comment_template_invoice"
       action="base_comment_template.action_base_comment_template"
-      parent="account.menu_configuration_misc"/>
+      parent="account.menu_finance_configuration"/>
   </data>
 </openerp>
