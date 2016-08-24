@@ -20,12 +20,12 @@
 #
 {"name": "Base Comments Templates",
  "summary": "Comments templates on documents",
- "version": "8.0.1.0.0",
+ "version": "9.0.1.0.0",
  "depends": ["base"],
  "author": "Camptocamp,Odoo Community Association (OCA)",
- "data": ["comment_view.xml",
+ "data": ["data/comment_view.xml",
           'security/ir.model.access.csv',
           ],
  "category": "Sale",
- 'installable': False,
- "active": False, }
+ 'installable': True,
+ "active": True, }
