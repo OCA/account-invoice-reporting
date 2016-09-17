@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: account-invoice-reporting (7.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-05 17:43+0000\n"
+"POT-Creation-Date: 2016-08-15 17:30+0000\n"
 "PO-Revision-Date: 2016-01-05 17:43+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: Spanish (http://www.transifex.com/oca/OCA-account-invoice-reporting-7-0/language/es/)\n"
@@ -38,7 +38,7 @@ msgstr ""
 #. module: partner_aging
 #: view:partner.aging.customer:0 view:partner.aging.supplier:0
 msgid "Group By..."
-msgstr ""
+msgstr "Agrupar por..."
 
 #. module: partner_aging
 #: view:partner.aging.supplier:0
@@ -148,7 +148,7 @@ msgstr ""
 #: field:partner.aging.customer,partner_name:0
 #: field:partner.aging.supplier,partner_name:0
 msgid "Name"
-msgstr ""
+msgstr "Nombre"
 
 #. module: partner_aging
 #: field:partner.aging.customer,date:0 field:partner.aging.supplier,date_due:0
@@ -247,4 +247,4 @@ msgstr ""
 #: field:partner.aging.customer,total:0 view:partner.aging.supplier:0
 #: field:partner.aging.supplier,total:0
 msgid "Total"
-msgstr ""
+msgstr "Total"
