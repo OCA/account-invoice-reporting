@@ -7,4 +7,18 @@ Account - Invoicing Reports
 This project aim to deal with modules related to manage invoicing related report.
 
 [//]: # (addons)
+Unported addons
+---------------
+addon | version | summary
+--- | --- | ---
+[account_draft_invoice_print](account_draft_invoice_print/) | 9.0.1.0.0 (unported) | Account Draft Invoice Print
+[account_invoice_delivery_address](account_invoice_delivery_address/) | 1.0 (unported) | Account invoice delivery address
+[account_invoice_production_lot](account_invoice_production_lot/) | 8.0.1.1.0 (unported) | Display delivered serial numbers in invoice
+[base_comment_template](base_comment_template/) | 8.0.1.0.0 (unported) | Comments templates on documents
+[html_invoice_product_note](html_invoice_product_note/) | 1.0.0 (unported) | HTML note in product reported in invoice report
+[invoice_comment_template](invoice_comment_template/) | 8.0.1.0.0 (unported) | Comments templates on invoice documents
+[invoice_print_report_balance_payment](invoice_print_report_balance_payment/) | 1.0 (unported) | Prints invoices with balance payments (and other things)
+[invoice_report_assemble](invoice_report_assemble/) | 1.0 (unported) | Assemble invoice report
+[invoice_webkit](invoice_webkit/) | 1.1.4 (unported) | Invoice Report using Webkit Library
+
 [//]: # (end addons)
