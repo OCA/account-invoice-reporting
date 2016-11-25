@@ -65,7 +65,7 @@ msgstr ""
 #. module: invoice_print_report_balance_payment
 #: report:account.invoice.balance_payment:0
 msgid "Customer Code"
-msgstr ""
+msgstr "Koda kupca"
 
 #. module: invoice_print_report_balance_payment
 #: report:account.invoice.balance_payment:0
@@ -173,7 +173,7 @@ msgstr ""
 #: report:account.invoice.balance_payment:0
 #: model:ir.model,name:invoice_print_report_balance_payment.model_account_invoice
 msgid "Invoice"
-msgstr ""
+msgstr "Račun"
 
 #. module: invoice_print_report_balance_payment
 #: model:ir.model,name:invoice_print_report_balance_payment.model_res_partner

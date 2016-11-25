@@ -106,7 +106,7 @@ msgstr ""
 #. module: invoice_webkit
 #: report:addons/invoice_webkit/report/account_invoice.mako:278
 msgid "Description"
-msgstr ""
+msgstr "Opis"
 
 #. module: invoice_webkit
 #: report:addons/invoice_webkit/report/account_invoice.mako:252
@@ -252,7 +252,7 @@ msgstr ""
 #. module: invoice_webkit
 #: model:ir.model,name:invoice_webkit.model_account_invoice_line
 msgid "Invoice Line"
-msgstr ""
+msgstr "Stavka računa"
 
 #. module: invoice_webkit
 #: code:addons/invoice_webkit/invoice.py:53
@@ -279,7 +279,7 @@ msgstr ""
 #: report:addons/invoice_webkit/report/account_invoice.mako:233
 #: model:ir.model,name:invoice_webkit.model_account_invoice
 msgid "Invoice"
-msgstr ""
+msgstr "Račun"
 
 #. module: invoice_webkit
 #: report:addons/invoice_webkit/report/account_invoice.mako:239

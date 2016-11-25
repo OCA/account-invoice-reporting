@@ -60,7 +60,7 @@ msgstr ""
 #. module: partner_aging
 #: view:partner.aging.supplier:0
 msgid "Supplier"
-msgstr ""
+msgstr "Proveedor"
 
 #. module: partner_aging
 #: model:ir.model,name:partner_aging.model_account_voucher_customer_unapplied
@@ -124,7 +124,7 @@ msgstr ""
 #. module: partner_aging
 #: view:partner.aging.customer:0
 msgid "Customer"
-msgstr ""
+msgstr "Cliente"
 
 #. module: partner_aging
 #: view:partner.aging.supplier:0
@@ -165,7 +165,7 @@ msgstr ""
 #: field:partner.aging.customer,comment:0
 #: field:partner.aging.supplier,comment:0
 msgid "Notes"
-msgstr ""
+msgstr "Notas"
 
 #. module: partner_aging
 #: view:partner.aging.supplier:0
@@ -205,7 +205,7 @@ msgstr ""
 #: field:account.voucher.customer.unapplied,invoice_ref:0
 #: field:partner.aging.customer,invoice_ref:0
 msgid "Reference"
-msgstr ""
+msgstr "Referencia"
 
 #. module: partner_aging
 #: view:partner.aging.supplier:0
@@ -224,7 +224,7 @@ msgstr ""
 #: view:partner.aging.customer:0 field:partner.aging.customer,currency_name:0
 #: view:partner.aging.supplier:0 field:partner.aging.supplier,currency_name:0
 msgid "Currency"
-msgstr ""
+msgstr "Moneda"
 
 #. module: partner_aging
 #: field:account.voucher.customer.unapplied,invoice_id:0

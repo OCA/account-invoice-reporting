@@ -20,7 +20,7 @@ msgstr ""
 #. module: account_invoice_production_lot
 #: model:ir.model,name:account_invoice_production_lot.model_account_invoice
 msgid "Invoice"
-msgstr ""
+msgstr "Račun"
 
 #. module: account_invoice_production_lot
 #: view:account.invoice:0
@@ -30,7 +30,7 @@ msgstr ""
 #. module: account_invoice_production_lot
 #: model:ir.model,name:account_invoice_production_lot.model_account_invoice_line
 msgid "Invoice Line"
-msgstr ""
+msgstr "Stavka računa"
 
 #. module: account_invoice_production_lot
 #: field:account.invoice.line,displayed_lot_id:0

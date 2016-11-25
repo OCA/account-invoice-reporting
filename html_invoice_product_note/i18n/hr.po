@@ -25,4 +25,4 @@ msgstr "Predložak proizvoda"
 #. module: html_invoice_product_note
 #: model:ir.model,name:html_invoice_product_note.model_account_invoice_line
 msgid "Invoice Line"
-msgstr ""
+msgstr "Stavka računa"

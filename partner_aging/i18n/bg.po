@@ -60,7 +60,7 @@ msgstr ""
 #. module: partner_aging
 #: view:partner.aging.supplier:0
 msgid "Supplier"
-msgstr ""
+msgstr "Доставчик"
 
 #. module: partner_aging
 #: model:ir.model,name:partner_aging.model_account_voucher_customer_unapplied
@@ -124,7 +124,7 @@ msgstr ""
 #. module: partner_aging
 #: view:partner.aging.customer:0
 msgid "Customer"
-msgstr ""
+msgstr "Клиент"
 
 #. module: partner_aging
 #: view:partner.aging.supplier:0

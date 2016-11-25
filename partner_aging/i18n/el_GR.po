@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: account-invoice-reporting (7.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-15 17:30+0000\n"
+"POT-Creation-Date: 2016-09-17 01:37+0000\n"
 "PO-Revision-Date: 2016-01-05 17:43+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: Greek (Greece) (http://www.transifex.com/oca/OCA-account-invoice-reporting-7-0/language/el_GR/)\n"
@@ -60,7 +60,7 @@ msgstr ""
 #. module: partner_aging
 #: view:partner.aging.supplier:0
 msgid "Supplier"
-msgstr ""
+msgstr "Προμηθευτής"
 
 #. module: partner_aging
 #: model:ir.model,name:partner_aging.model_account_voucher_customer_unapplied
@@ -124,7 +124,7 @@ msgstr ""
 #. module: partner_aging
 #: view:partner.aging.customer:0
 msgid "Customer"
-msgstr ""
+msgstr "Πελάτης"
 
 #. module: partner_aging
 #: view:partner.aging.supplier:0
@@ -231,14 +231,14 @@ msgstr ""
 #: field:partner.aging.customer,invoice_id:0
 #: field:partner.aging.supplier,invoice_id:0
 msgid "Invoice"
-msgstr ""
+msgstr "Τιμολόγιο"
 
 #. module: partner_aging
 #: field:account.voucher.customer.unapplied,partner_id:0
 #: view:partner.aging.customer:0 field:partner.aging.customer,partner_id:0
 #: view:partner.aging.supplier:0 field:partner.aging.supplier,partner_id:0
 msgid "Partner"
-msgstr ""
+msgstr "Συνεργάτης"
 
 #. module: partner_aging
 #: field:account.voucher.customer.unapplied,current:0

@@ -40,4 +40,4 @@ msgstr ""
 #. module: account_invoice_delivery_address
 #: model:ir.model,name:account_invoice_delivery_address.model_stock_picking
 msgid "Picking List"
-msgstr ""
+msgstr "Lista Picking"

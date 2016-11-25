@@ -30,7 +30,7 @@ msgstr ""
 #. module: invoice_report_assemble
 #: model:ir.model,name:invoice_report_assemble.model_res_company
 msgid "Companies"
-msgstr ""
+msgstr "Compañías"
 
 #. module: invoice_report_assemble
 #: model:ir.actions.report.xml,name:invoice_report_assemble.invoice_report_assemblage

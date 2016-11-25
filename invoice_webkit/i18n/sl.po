@@ -176,7 +176,7 @@ msgstr ""
 #. module: invoice_webkit
 #: report:addons/invoice_webkit/report/account_invoice.mako:249
 msgid "Due Date"
-msgstr ""
+msgstr "Datum zapadlosti"
 
 #. module: invoice_webkit
 #: field:account.invoice,note2:0
@@ -191,7 +191,7 @@ msgstr ""
 #. module: invoice_webkit
 #: report:addons/invoice_webkit/report/account_invoice.mako:280
 msgid "UoM"
-msgstr ""
+msgstr "EM"
 
 #. module: invoice_webkit
 #: report:addons/invoice_webkit/report/account_invoice.mako:282
@@ -279,7 +279,7 @@ msgstr ""
 #: report:addons/invoice_webkit/report/account_invoice.mako:233
 #: model:ir.model,name:invoice_webkit.model_account_invoice
 msgid "Invoice"
-msgstr ""
+msgstr "Račun"
 
 #. module: invoice_webkit
 #: report:addons/invoice_webkit/report/account_invoice.mako:239

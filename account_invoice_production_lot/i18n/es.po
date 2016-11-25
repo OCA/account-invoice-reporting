@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: account-invoice-reporting (7.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-05 17:43+0000\n"
+"POT-Creation-Date: 2016-09-17 01:37+0000\n"
 "PO-Revision-Date: 2016-01-05 17:43+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: Spanish (http://www.transifex.com/oca/OCA-account-invoice-reporting-7-0/language/es/)\n"
@@ -35,7 +35,7 @@ msgstr "Línea de factura"
 #. module: account_invoice_production_lot
 #: field:account.invoice.line,displayed_lot_id:0
 msgid "Lot"
-msgstr ""
+msgstr "Lote"
 
 #. module: account_invoice_production_lot
 #: view:account.invoice.line:0 field:account.invoice.line,prod_lot_ids:0

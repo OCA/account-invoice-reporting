@@ -178,4 +178,4 @@ msgstr ""
 #. module: invoice_print_report_balance_payment
 #: model:ir.model,name:invoice_print_report_balance_payment.model_res_partner
 msgid "Partner"
-msgstr ""
+msgstr "Kumppani"

@@ -148,7 +148,7 @@ msgstr ""
 #: field:partner.aging.customer,partner_name:0
 #: field:partner.aging.supplier,partner_name:0
 msgid "Name"
-msgstr ""
+msgstr "Naziv"
 
 #. module: partner_aging
 #: field:partner.aging.customer,date:0 field:partner.aging.supplier,date_due:0
@@ -205,7 +205,7 @@ msgstr ""
 #: field:account.voucher.customer.unapplied,invoice_ref:0
 #: field:partner.aging.customer,invoice_ref:0
 msgid "Reference"
-msgstr ""
+msgstr "Veza"
 
 #. module: partner_aging
 #: view:partner.aging.supplier:0
@@ -231,7 +231,7 @@ msgstr ""
 #: field:partner.aging.customer,invoice_id:0
 #: field:partner.aging.supplier,invoice_id:0
 msgid "Invoice"
-msgstr ""
+msgstr "Račun"
 
 #. module: partner_aging
 #: field:account.voucher.customer.unapplied,partner_id:0
@@ -247,4 +247,4 @@ msgstr "Partner"
 #: field:partner.aging.customer,total:0 view:partner.aging.supplier:0
 #: field:partner.aging.supplier,total:0
 msgid "Total"
-msgstr ""
+msgstr "Ukupno"

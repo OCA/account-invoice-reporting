@@ -207,7 +207,7 @@ msgstr ""
 #. module: invoice_webkit
 #: model:ir.model,name:invoice_webkit.model_product_template
 msgid "Product Template"
-msgstr ""
+msgstr "Tuotteen malli"
 
 #. module: invoice_webkit
 #: report:addons/invoice_webkit/report/account_invoice.mako:229
