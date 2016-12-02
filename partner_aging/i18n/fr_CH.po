@@ -10,12 +10,12 @@ msgstr ""
 "POT-Creation-Date: 2016-11-25 22:29+0000\n"
 "PO-Revision-Date: 2016-01-05 17:43+0000\n"
 "Last-Translator: <>\n"
-"Language-Team: Norwegian Bokmål (http://www.transifex.com/oca/OCA-account-invoice-reporting-7-0/language/nb/)\n"
+"Language-Team: French (Switzerland) (http://www.transifex.com/oca/OCA-account-invoice-reporting-7-0/language/fr_CH/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: nb\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: fr_CH\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #. module: partner_aging
 #: model:ir.model,name:partner_aging.model_partner_aging_supplier
@@ -38,7 +38,7 @@ msgstr ""
 #. module: partner_aging
 #: view:partner.aging.customer:0 view:partner.aging.supplier:0
 msgid "Group By..."
-msgstr "Grupper etter ..."
+msgstr ""
 
 #. module: partner_aging
 #: view:partner.aging.supplier:0
@@ -148,7 +148,7 @@ msgstr ""
 #: field:partner.aging.customer,partner_name:0
 #: field:partner.aging.supplier,partner_name:0
 msgid "Name"
-msgstr "Navn"
+msgstr ""
 
 #. module: partner_aging
 #: field:partner.aging.customer,date:0 field:partner.aging.supplier,date_due:0
@@ -238,7 +238,7 @@ msgstr ""
 #: view:partner.aging.customer:0 field:partner.aging.customer,partner_id:0
 #: view:partner.aging.supplier:0 field:partner.aging.supplier,partner_id:0
 msgid "Partner"
-msgstr ""
+msgstr "Partenaire"
 
 #. module: partner_aging
 #: field:account.voucher.customer.unapplied,current:0
@@ -247,4 +247,4 @@ msgstr ""
 #: field:partner.aging.customer,total:0 view:partner.aging.supplier:0
 #: field:partner.aging.supplier,total:0
 msgid "Total"
-msgstr "Total"
+msgstr ""
