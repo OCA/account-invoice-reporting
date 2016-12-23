@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: account-invoice-reporting (7.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-17 01:37+0000\n"
+"POT-Creation-Date: 2016-11-25 22:29+0000\n"
 "PO-Revision-Date: 2016-01-05 17:43+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: Slovak (http://www.transifex.com/oca/OCA-account-invoice-reporting-7-0/language/sk/)\n"
@@ -60,7 +60,7 @@ msgstr ""
 #. module: partner_aging
 #: view:partner.aging.supplier:0
 msgid "Supplier"
-msgstr ""
+msgstr "Dodávateľ"
 
 #. module: partner_aging
 #: model:ir.model,name:partner_aging.model_account_voucher_customer_unapplied
@@ -124,7 +124,7 @@ msgstr ""
 #. module: partner_aging
 #: view:partner.aging.customer:0
 msgid "Customer"
-msgstr ""
+msgstr "Zákazník"
 
 #. module: partner_aging
 #: view:partner.aging.supplier:0
@@ -238,7 +238,7 @@ msgstr ""
 #: view:partner.aging.customer:0 field:partner.aging.customer,partner_id:0
 #: view:partner.aging.supplier:0 field:partner.aging.supplier,partner_id:0
 msgid "Partner"
-msgstr ""
+msgstr "Partner"
 
 #. module: partner_aging
 #: field:account.voucher.customer.unapplied,current:0

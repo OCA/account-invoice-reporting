@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: account-invoice-reporting (7.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-17 01:37+0000\n"
+"POT-Creation-Date: 2016-11-25 22:29+0000\n"
 "PO-Revision-Date: 2016-01-05 17:43+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: Spanish (http://www.transifex.com/oca/OCA-account-invoice-reporting-7-0/language/es/)\n"
@@ -20,7 +20,7 @@ msgstr ""
 #. module: invoice_report_assemble
 #: model:ir.model,name:invoice_report_assemble.model_account_config_settings
 msgid "account.config.settings"
-msgstr ""
+msgstr "account.config.settings"
 
 #. module: invoice_report_assemble
 #: field:account.config.settings,assemble_invoice_report_ids:0

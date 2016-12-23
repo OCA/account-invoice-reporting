@@ -142,7 +142,7 @@ msgstr ""
 #. module: invoice_print_report_balance_payment
 #: report:account.invoice.balance_payment:0
 msgid "Quantity"
-msgstr ""
+msgstr "Količina"
 
 #. module: invoice_print_report_balance_payment
 #: report:account.invoice.balance_payment:0
