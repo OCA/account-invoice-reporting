@@ -1,0 +1,181 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+# * invoice_print_report_balance_payment
+# 
+# Translators:
+msgid ""
+msgstr ""
+"Project-Id-Version: account-invoice-reporting (7.0)\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-12-23 23:34+0000\n"
+"PO-Revision-Date: 2016-01-05 17:43+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: Amharic (http://www.transifex.com/oca/OCA-account-invoice-reporting-7-0/language/am/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: am\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#. module: invoice_print_report_balance_payment
+#: report:account.invoice.balance_payment:0
+msgid "Cancelled Invoice"
+msgstr ""
+
+#. module: invoice_print_report_balance_payment
+#: report:account.invoice.balance_payment:0
+msgid "TIN :"
+msgstr ""
+
+#. module: invoice_print_report_balance_payment
+#: report:account.invoice.balance_payment:0
+msgid "Supplier Invoice"
+msgstr ""
+
+#. module: invoice_print_report_balance_payment
+#: report:account.invoice.balance_payment:0
+msgid "Unit Price"
+msgstr ""
+
+#. module: invoice_print_report_balance_payment
+#: report:account.invoice.balance_payment:0
+msgid "Previous Balance:"
+msgstr ""
+
+#. module: invoice_print_report_balance_payment
+#: report:account.invoice.balance_payment:0
+msgid "Disc.(%)"
+msgstr ""
+
+#. module: invoice_print_report_balance_payment
+#: report:account.invoice.balance_payment:0
+msgid "PRO-FORMA"
+msgstr ""
+
+#. module: invoice_print_report_balance_payment
+#: report:account.invoice.balance_payment:0
+msgid "Taxes:"
+msgstr ""
+
+#. module: invoice_print_report_balance_payment
+#: report:account.invoice.balance_payment:0
+msgid "Contract Number"
+msgstr ""
+
+#. module: invoice_print_report_balance_payment
+#: report:account.invoice.balance_payment:0
+msgid "Customer Code"
+msgstr ""
+
+#. module: invoice_print_report_balance_payment
+#: report:account.invoice.balance_payment:0
+msgid "Description"
+msgstr ""
+
+#. module: invoice_print_report_balance_payment
+#: field:account.invoice,payment_total:0
+#: field:account.invoice,previous_balance:0
+#: field:account.invoice,previous_invoice_id:0 field:account.invoice,to_pay:0
+msgid "unknown"
+msgstr ""
+
+#. module: invoice_print_report_balance_payment
+#: report:account.invoice.balance_payment:0
+msgid "Price"
+msgstr ""
+
+#. module: invoice_print_report_balance_payment
+#: report:account.invoice.balance_payment:0
+msgid "Invoice Date"
+msgstr ""
+
+#. module: invoice_print_report_balance_payment
+#: report:account.invoice.balance_payment:0
+msgid "Tel. :"
+msgstr ""
+
+#. module: invoice_print_report_balance_payment
+#: report:account.invoice.balance_payment:0
+msgid "Base"
+msgstr ""
+
+#. module: invoice_print_report_balance_payment
+#: model:ir.actions.report.xml,name:invoice_print_report_balance_payment.invoice_print_report_payment_balance
+msgid "Invoices (with balance payments)"
+msgstr ""
+
+#. module: invoice_print_report_balance_payment
+#: report:account.invoice.balance_payment:0
+msgid "To Pay:"
+msgstr ""
+
+#. module: invoice_print_report_balance_payment
+#: report:account.invoice.balance_payment:0
+msgid "Fax :"
+msgstr ""
+
+#. module: invoice_print_report_balance_payment
+#: report:account.invoice.balance_payment:0
+msgid "Total:"
+msgstr ""
+
+#. module: invoice_print_report_balance_payment
+#: report:account.invoice.balance_payment:0
+msgid "Taxes"
+msgstr ""
+
+#. module: invoice_print_report_balance_payment
+#: report:account.invoice.balance_payment:0
+msgid "Amount"
+msgstr ""
+
+#. module: invoice_print_report_balance_payment
+#: report:account.invoice.balance_payment:0
+msgid "Supplier Refund"
+msgstr ""
+
+#. module: invoice_print_report_balance_payment
+#: report:account.invoice.balance_payment:0
+msgid "Draft Invoice"
+msgstr ""
+
+#. module: invoice_print_report_balance_payment
+#: report:account.invoice.balance_payment:0
+msgid "Quantity"
+msgstr ""
+
+#. module: invoice_print_report_balance_payment
+#: report:account.invoice.balance_payment:0
+msgid "Refund"
+msgstr ""
+
+#. module: invoice_print_report_balance_payment
+#: report:account.invoice.balance_payment:0
+msgid "Fiscal Position Remark :"
+msgstr ""
+
+#. module: invoice_print_report_balance_payment
+#: report:account.invoice.balance_payment:0
+msgid "Payments:"
+msgstr ""
+
+#. module: invoice_print_report_balance_payment
+#: report:account.invoice.balance_payment:0
+msgid "Tax"
+msgstr ""
+
+#. module: invoice_print_report_balance_payment
+#: report:account.invoice.balance_payment:0
+msgid "Net Total:"
+msgstr ""
+
+#. module: invoice_print_report_balance_payment
+#: report:account.invoice.balance_payment:0
+#: model:ir.model,name:invoice_print_report_balance_payment.model_account_invoice
+msgid "Invoice"
+msgstr ""
+
+#. module: invoice_print_report_balance_payment
+#: model:ir.model,name:invoice_print_report_balance_payment.model_res_partner
+msgid "Partner"
+msgstr "ተባባሪ"
