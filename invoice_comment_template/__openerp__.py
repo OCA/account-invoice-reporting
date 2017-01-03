@@ -15,5 +15,4 @@
           ],
  'category': 'Sale',
  'installable': True,
- 'active': True,
  }
