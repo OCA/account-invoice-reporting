@@ -4,6 +4,7 @@
 {'name': 'Invoice Comments',
  'summary': 'Comments templates on invoice documents',
  'version': '9.0.1.0.0',
+ 'license': 'AGPL-3',
  'depends': ['account',
              'base_comment_template',
              ],
