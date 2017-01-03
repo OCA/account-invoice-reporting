@@ -5,7 +5,7 @@
  'summary': 'Comments templates on documents',
  'version': '9.0.1.0.0',
  'license': 'AGPL-3',
- 'depends': ["base"],
+ 'depends': ['base',],
  'author': 'Camptocamp,Odoo Community Association (OCA)',
  'data': ['data/comment_view.xml',
           'security/ir.model.access.csv',
