@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# © 2011-2014 Guewen Baconnier (Camptocamp SA)
+# © 2014 Guewen Baconnier (Camptocamp SA)
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 {'name': 'Invoice Comments',
  'summary': 'Comments templates on invoice documents',
