@@ -33,7 +33,6 @@ Contributors
 * Nicolas Bessi <nicolas.bessi@camptocamp.com>
 * Yannick Vaucher <yannick.vaucher@camptocamp.com>
 * Guewen Baconnier <guewen.baconnier@camptocamp.com>
-* Frédéric Siffert <frederic.siffert@treyvaud.ch>
 
 Maintainer
 ----------
