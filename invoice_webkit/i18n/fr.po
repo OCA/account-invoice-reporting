@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: account-invoice-reporting (7.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-17 01:37+0000\n"
-"PO-Revision-Date: 2016-11-02 09:51+0000\n"
+"POT-Creation-Date: 2017-01-07 00:07+0000\n"
+"PO-Revision-Date: 2017-01-12 15:37+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
 "Language-Team: French (http://www.transifex.com/oca/OCA-account-invoice-reporting-7-0/language/fr/)\n"
 "MIME-Version: 1.0\n"
@@ -252,7 +252,7 @@ msgstr "Conditions de payement"
 #. module: invoice_webkit
 #: model:ir.model,name:invoice_webkit.model_account_invoice_line
 msgid "Invoice Line"
-msgstr ""
+msgstr "Lignes de facture"
 
 #. module: invoice_webkit
 #: code:addons/invoice_webkit/invoice.py:53

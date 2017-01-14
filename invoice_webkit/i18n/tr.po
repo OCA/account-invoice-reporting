@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: account-invoice-reporting (7.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-31 00:17+0000\n"
+"POT-Creation-Date: 2017-01-07 00:07+0000\n"
 "PO-Revision-Date: 2016-01-05 17:43+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: Turkish (http://www.transifex.com/oca/OCA-account-invoice-reporting-7-0/language/tr/)\n"
@@ -25,7 +25,7 @@ msgstr ""
 #. module: invoice_webkit
 #: report:addons/invoice_webkit/report/account_invoice.mako:248
 msgid "Invoice Date"
-msgstr ""
+msgstr "Fatura Tarihi"
 
 #. module: invoice_webkit
 #: report:addons/invoice_webkit/report/account_invoice.mako:231
@@ -71,7 +71,7 @@ msgstr ""
 #. module: invoice_webkit
 #: report:addons/invoice_webkit/report/account_invoice.mako:281
 msgid "Unit Price"
-msgstr ""
+msgstr "Birim Fiyatı"
 
 #. module: invoice_webkit
 #: view:account.invoice:0
@@ -116,7 +116,7 @@ msgstr ""
 #. module: invoice_webkit
 #: report:addons/invoice_webkit/report/account_invoice.mako:227
 msgid "PRO-FORMA"
-msgstr ""
+msgstr "PRO-FORMA"
 
 #. module: invoice_webkit
 #: report:addons/invoice_webkit/report/account_invoice.mako:373
@@ -146,7 +146,7 @@ msgstr ""
 #. module: invoice_webkit
 #: report:addons/invoice_webkit/report/account_invoice.mako:337
 msgid "Tax"
-msgstr ""
+msgstr "Vergi"
 
 #. module: invoice_webkit
 #: field:account.condition_text,type:0
@@ -227,7 +227,7 @@ msgstr ""
 #. module: invoice_webkit
 #: report:addons/invoice_webkit/report/account_invoice.mako:237
 msgid "Refund"
-msgstr ""
+msgstr "Geri Ödeme"
 
 #. module: invoice_webkit
 #: report:addons/invoice_webkit/report/account_invoice.mako:279
