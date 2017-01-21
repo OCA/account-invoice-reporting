@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: account-invoice-reporting (7.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-23 23:34+0000\n"
+"POT-Creation-Date: 2017-01-14 00:08+0000\n"
 "PO-Revision-Date: 2016-01-05 17:43+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: Norwegian Bokmål (http://www.transifex.com/oca/OCA-account-invoice-reporting-7-0/language/nb/)\n"
@@ -166,7 +166,7 @@ msgstr ""
 #. module: invoice_webkit
 #: report:addons/invoice_webkit/report/account_invoice.mako:250
 msgid "Responsible"
-msgstr ""
+msgstr "Ansvarlig"
 
 #. module: invoice_webkit
 #: report:addons/invoice_webkit/report/account_invoice.mako:254

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: account-invoice-reporting (7.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-23 23:34+0000\n"
+"POT-Creation-Date: 2017-01-14 00:08+0000\n"
 "PO-Revision-Date: 2016-01-05 17:43+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: Finnish (http://www.transifex.com/oca/OCA-account-invoice-reporting-7-0/language/fi/)\n"
@@ -52,7 +52,7 @@ msgstr ""
 #: code:addons/invoice_report_assemble/report_assembler.py:41
 #, python-format
 msgid "Error"
-msgstr ""
+msgstr "Virhe"
 
 #. module: invoice_report_assemble
 #: field:res.company,assemble_invoice_report_ids:0

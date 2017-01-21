@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: account-invoice-reporting (7.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-23 23:34+0000\n"
+"POT-Creation-Date: 2017-01-14 00:08+0000\n"
 "PO-Revision-Date: 2016-01-05 17:43+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: Norwegian Bokmål (http://www.transifex.com/oca/OCA-account-invoice-reporting-7-0/language/nb/)\n"
@@ -33,7 +33,7 @@ msgstr ""
 #: view:partner.aging.customer:0 view:partner.aging.supplier:0
 #: field:partner.aging.supplier,current:0
 msgid "Current"
-msgstr ""
+msgstr "Gjeldende"
 
 #. module: partner_aging
 #: view:partner.aging.customer:0 view:partner.aging.supplier:0
@@ -205,7 +205,7 @@ msgstr ""
 #: field:account.voucher.customer.unapplied,invoice_ref:0
 #: field:partner.aging.customer,invoice_ref:0
 msgid "Reference"
-msgstr ""
+msgstr "Referanse"
 
 #. module: partner_aging
 #: view:partner.aging.supplier:0
