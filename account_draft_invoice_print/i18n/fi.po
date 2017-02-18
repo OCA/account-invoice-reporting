@@ -1,0 +1,41 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * account_draft_invoice_print
+# 
+# Translators:
+msgid ""
+msgstr ""
+"Project-Id-Version: account-invoice-reporting (8.0)\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-01-21 00:12+0000\n"
+"PO-Revision-Date: 2016-01-05 08:56+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: Finnish (http://www.transifex.com/oca/OCA-account-invoice-reporting-8-0/language/fi/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: fi\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: account_draft_invoice_print
+#: view:account.invoice:account_draft_invoice_print.invoice_form_print_cancel
+msgid "Print"
+msgstr "Tulosta"
+
+#. module: account_draft_invoice_print
+#: view:account.invoice:account_draft_invoice_print.invoice_form_print_cancel
+msgid "Print Invoice"
+msgstr "Tulosta lasku"
+
+#. module: account_draft_invoice_print
+#: view:account.invoice:account_draft_invoice_print.invoice_form_print_cancel
+msgid ""
+"{'invisible':['|',('sent','=',False), ('state', 'not in', "
+"['open','draft'])]}"
+msgstr ""
+
+#. module: account_draft_invoice_print
+#: view:account.invoice:account_draft_invoice_print.invoice_form_print_cancel
+msgid ""
+"{'invisible':['|',('sent','=',True), ('state', 'not in', ['open','draft'])]}"
+msgstr ""
