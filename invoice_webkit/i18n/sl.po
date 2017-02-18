@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: account-invoice-reporting (7.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-21 00:08+0000\n"
+"POT-Creation-Date: 2017-02-11 00:06+0000\n"
 "PO-Revision-Date: 2016-01-05 17:43+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: Slovenian (http://www.transifex.com/oca/OCA-account-invoice-reporting-7-0/language/sl/)\n"
@@ -146,7 +146,7 @@ msgstr ""
 #. module: invoice_webkit
 #: report:addons/invoice_webkit/report/account_invoice.mako:337
 msgid "Tax"
-msgstr ""
+msgstr "Davek"
 
 #. module: invoice_webkit
 #: field:account.condition_text,type:0
@@ -252,7 +252,7 @@ msgstr ""
 #. module: invoice_webkit
 #: model:ir.model,name:invoice_webkit.model_account_invoice_line
 msgid "Invoice Line"
-msgstr ""
+msgstr "Postavka računa"
 
 #. module: invoice_webkit
 #: code:addons/invoice_webkit/invoice.py:53
