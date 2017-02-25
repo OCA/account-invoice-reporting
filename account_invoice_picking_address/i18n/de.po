@@ -3,13 +3,13 @@
 # * account_invoice_picking_address
 # 
 # Translators:
-# Rudolf Schnapka <rs@techno-flex.de>, 2016
+# Rudolf Schnapka <rs@techno-flex.de>, 2016-2017
 msgid ""
 msgstr ""
 "Project-Id-Version: account-invoice-reporting (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-09 02:56+0000\n"
-"PO-Revision-Date: 2016-01-14 11:14+0000\n"
+"POT-Creation-Date: 2017-02-18 00:13+0000\n"
+"PO-Revision-Date: 2017-02-19 20:12+0000\n"
 "Last-Translator: Rudolf Schnapka <rs@techno-flex.de>\n"
 "Language-Team: German (http://www.transifex.com/oca/OCA-account-invoice-reporting-8-0/language/de/)\n"
 "MIME-Version: 1.0\n"
@@ -17,6 +17,11 @@ msgstr ""
 "Content-Transfer-Encoding: \n"
 "Language: de\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: account_invoice_picking_address
+#: field:account.invoice,delivery_address_id:0
+msgid "Delivery Address"
+msgstr "Lieferanschrift"
 
 #. module: account_invoice_picking_address
 #: model:ir.model,name:account_invoice_picking_address.model_account_invoice
