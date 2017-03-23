@@ -8,17 +8,12 @@ Account Invoice Line Report
 
 This module create a new view to manage invoice lines information.
 
-Installation
-============
-
-To install this module, just click the install button.
-
 Usage
 =====
 
 To use this module, you need to:
 
-#. Go to Account > Customers > Invoice Lines
+#. Go to Accounting > Reporting > Business Intelligence > Invoice Lines
 
 .. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
    :alt: Try me on Runbot
