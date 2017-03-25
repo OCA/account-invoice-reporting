@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: account-invoice-reporting (7.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-23 23:34+0000\n"
+"POT-Creation-Date: 2017-03-18 00:08+0000\n"
 "PO-Revision-Date: 2016-01-05 17:43+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: Czech (http://www.transifex.com/oca/OCA-account-invoice-reporting-7-0/language/cs/)\n"
@@ -94,7 +94,7 @@ msgstr ""
 #: field:account.voucher.customer.unapplied,oldest_invoice_date:0
 #: field:partner.aging.supplier,oldest_invoice_date:0
 msgid "Invoice Date"
-msgstr ""
+msgstr "Datum vystavení faktury"
 
 #. module: partner_aging
 #: view:partner.aging.supplier:0
@@ -153,7 +153,7 @@ msgstr "Název"
 #. module: partner_aging
 #: field:partner.aging.customer,date:0 field:partner.aging.supplier,date_due:0
 msgid "Due Date"
-msgstr ""
+msgstr "Splatnost"
 
 #. module: partner_aging
 #: field:partner.aging.supplier,invoice_ref:0

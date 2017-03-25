@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: account-invoice-reporting (7.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-23 23:34+0000\n"
+"POT-Creation-Date: 2017-03-18 00:08+0000\n"
 "PO-Revision-Date: 2016-01-05 17:43+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: Mongolian (http://www.transifex.com/oca/OCA-account-invoice-reporting-7-0/language/mn/)\n"
@@ -25,7 +25,7 @@ msgstr ""
 #. module: invoice_webkit
 #: report:addons/invoice_webkit/report/account_invoice.mako:248
 msgid "Invoice Date"
-msgstr ""
+msgstr "Нэхэмжлэх огноо"
 
 #. module: invoice_webkit
 #: report:addons/invoice_webkit/report/account_invoice.mako:231
@@ -176,7 +176,7 @@ msgstr ""
 #. module: invoice_webkit
 #: report:addons/invoice_webkit/report/account_invoice.mako:249
 msgid "Due Date"
-msgstr ""
+msgstr "Эцсийн огноо"
 
 #. module: invoice_webkit
 #: field:account.invoice,note2:0
