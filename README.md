@@ -16,6 +16,7 @@ addon | version | summary
 [base_comment_template](base_comment_template/) | 9.0.1.0.0 | Comments templates on documents
 [invoice_comment_template](invoice_comment_template/) | 9.0.1.0.0 | Comments templates on invoice documents
 
+
 Unported addons
 ---------------
 addon | version | summary
