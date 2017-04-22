@@ -6,7 +6,7 @@
 Account Invoice Line Report
 ===========================
 
-This module create a new view to manage invoice lines information.
+This module creates a new view to manage invoice lines information.
 
 Usage
 =====

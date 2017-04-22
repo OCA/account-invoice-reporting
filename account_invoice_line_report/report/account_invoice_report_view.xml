@@ -24,7 +24,7 @@
         <field name="inherit_id" ref="account.view_account_invoice_report_search"/>
         <field name="arch" type="xml">
             <field name="date" position="before">
-                <field name="uom_name" string="Partner Tags" filter_domain="[('partner_id.category_id', '=', self)]"/>
+                <field name="uom_name" string="Partner Tags" filter_domain="[('partner_id.commercial_partner_id.category_id', '=', self)]"/>
                 <field name="uom_name" string="Vendor contains" filter_domain="[('product_id.seller_ids.name', 'like', self)]"/>
                 <separator/>
             </field>
