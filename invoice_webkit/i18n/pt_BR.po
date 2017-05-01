@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: account-invoice-reporting (7.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-18 00:08+0000\n"
-"PO-Revision-Date: 2017-03-23 20:09+0000\n"
+"POT-Creation-Date: 2017-03-25 00:08+0000\n"
+"PO-Revision-Date: 2017-04-25 10:45+0000\n"
 "Last-Translator: Paulo Ricardo <ti@shoppingescritorio.com.br>\n"
 "Language-Team: Portuguese (Brazil) (http://www.transifex.com/oca/OCA-account-invoice-reporting-7-0/language/pt_BR/)\n"
 "MIME-Version: 1.0\n"
@@ -192,7 +192,7 @@ msgstr ""
 #. module: invoice_webkit
 #: report:addons/invoice_webkit/report/account_invoice.mako:280
 msgid "UoM"
-msgstr ""
+msgstr "UoM"
 
 #. module: invoice_webkit
 #: report:addons/invoice_webkit/report/account_invoice.mako:282
