@@ -19,14 +19,16 @@
 #
 ##############################################################################
 
-{'name': 'Account Draft Invoice Print',
- 'version': '9.0.1.0.0',
- 'category': 'Accounting & Finance',
- 'author': "Camptocamp,Odoo Community Association (OCA)",
- 'website': 'http://www.camptocamp.com',
- 'license': 'AGPL-3',
- 'depends': ['account'],
- 'data': ['invoice_view.xml'],
- 'installable': False,
- 'active': False,
- }
+{
+    'name': 'Account Draft Invoice Print',
+    'version': '10.0.1.0.0',
+    'category': 'Accounting & Finance',
+    'author': "Camptocamp,Odoo Community Association (OCA)",
+    'website': 'http://www.camptocamp.com',
+    'license': 'AGPL-3',
+    'depends': ['account'],
+    'data': [
+        'views/invoice_view.xml'
+    ],
+    'installable': True,
+}

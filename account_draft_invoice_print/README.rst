@@ -27,6 +27,7 @@ Contributors
 
 * Romain Deheele
 * Damien Crier <damien.crier@camptocamp.com>
+* Bhavesh Odedra <bhavesh.b.odedra@gmail.com>
 
 Maintainer
 ----------
