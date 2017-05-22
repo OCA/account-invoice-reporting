@@ -2,13 +2,21 @@
 # Copyright 2017 Ursa Information Systems <http://www.ursainfosystems.com>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-
 from datetime import datetime
 from odoo import api, fields, models
 
 
 class ResPartner(models.Model):
     _inherit = 'res.partner'
+
+    d2p_life = fields.Float(compute='_compute_dtp_life',
+                            string='AVG Days to Pay (lifetime)')
+    d2p_ytd = fields.Float(compute='_compute_dtp_ytd',
+                           string='AVG Days to Pay (YTD)')
+    d2r_life = fields.Float(compute='_compute_dtr_life',
+                            string='AVG Days to Pay (lifetime)')
+    d2r_ytd = fields.Float(compute='_compute_dtr_ytd',
+                           string='AVG Days to Pay (YTD)')
 
     @api.multi
     def _compute_dtp_life(self):
@@ -28,10 +36,9 @@ class ResPartner(models.Model):
 
                 for payment in invoice.payment_ids:
                     if payment.state == 'posted':
-                        days_for_this_payment = \
-                            (datetime.strptime(payment.payment_date,
-                                               '%Y-%m-%d') -
-                             datetime.strptime(date_due, '%Y-%m-%d')).days
+                        days_for_this_payment = (
+                            payment.payment_date.from_string('%Y-%m-%d') -
+                            date_due.from_string('%Y-%m-%d')).days
                         if days_for_this_payment < 0:
                             days_for_this_payment = 0
                         if days_for_this_payment > days_for_latest_payment:
@@ -56,7 +63,7 @@ class ResPartner(models.Model):
                               ('type', '=', 'out_invoice')]
             invoice_ids = partner.env['account.invoice'].search(invoice_domain)
             for invoice in invoice_ids:
-                if datetime.strptime(invoice.date_invoice, '%Y-%m-%d').year ==\
+                if invoice.date_invoice.from_string('%Y-%m-%d').year ==\
                         datetime.now().year:
                     total_number_of_invoices += 1
                     date_due = invoice.date_invoice
@@ -65,9 +72,8 @@ class ResPartner(models.Model):
                     for payment in invoice.payment_ids:
                         if payment.state == 'posted':
                             days_for_this_payment = (
-                                datetime.strptime(payment.payment_date,
-                                                  '%Y-%m-%d') -
-                                datetime.strptime(date_due, '%Y-%m-%d')).days
+                                payment.payment_date.from_string('%Y-%m-%d') -
+                                date_due.from_string('%Y-%m-%d')).days
                             if days_for_this_payment < 0:
                                 days_for_this_payment = 0
                             if days_for_this_payment > days_for_latest_payment:
@@ -98,9 +104,8 @@ class ResPartner(models.Model):
                 for payment in invoice.payment_ids:
                     if payment.state == 'posted':
                         days_for_this_payment = (
-                            datetime.strptime(payment.payment_date,
-                                              '%Y-%m-%d') -
-                            datetime.strptime(date_due, '%Y-%m-%d')).days
+                            payment.payment_date.from_string('%Y-%m-%d') -
+                            date_due.from_string('%Y-%m-%d')).days
                         if days_for_this_payment < 0:
                             days_for_this_payment = 0
                         if days_for_this_payment > days_for_latest_payment:
@@ -124,7 +129,7 @@ class ResPartner(models.Model):
                               ('type', '=', 'in_invoice')]
             invoice_ids = partner.env['account.invoice'].search(invoice_domain)
             for invoice in invoice_ids:
-                if datetime.strptime(invoice.date_invoice, '%Y-%m-%d').year ==\
+                if invoice.date_invoice.from_string('%Y-%m-%d').year ==\
                         datetime.now().year:
                     total_number_of_invoices += 1
                     date_due = invoice.date_invoice
@@ -133,9 +138,8 @@ class ResPartner(models.Model):
                     for payment in invoice.payment_ids:
                         if payment.state == 'posted':
                             days_for_this_payment = (
-                                datetime.strptime(payment.payment_date,
-                                                  '%Y-%m-%d') -
-                                datetime.strptime(date_due, '%Y-%m-%d')).days
+                                payment.payment_date.from_string('%Y-%m-%d') -
+                                date_due.from_string('%Y-%m-%d')).days
                             if days_for_this_payment < 0:
                                 days_for_this_payment = 0
                             if days_for_this_payment > days_for_latest_payment:
@@ -147,12 +151,3 @@ class ResPartner(models.Model):
                         total_number_of_invoices
 
             partner.d2r_ytd = average_days_to_pay
-
-    d2p_life = fields.Float(compute=_compute_dtp_life,
-                            string='AVG Days to Pay (lifetime)')
-    d2p_ytd = fields.Float(compute=_compute_dtp_ytd,
-                           string='AVG Days to Pay (YTD)')
-    d2r_life = fields.Float(compute=_compute_dtr_life,
-                            string='AVG Days to Pay (lifetime)')
-    d2r_ytd = fields.Float(compute=_compute_dtr_ytd,
-                           string='AVG Days to Pay (YTD)')
