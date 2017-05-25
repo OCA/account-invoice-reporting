@@ -1,22 +1,8 @@
-# encoding: utf-8
-##############################################################################
-#
-#    This program is free software: you can redistribute it and/or modify
-#    it under the terms of the GNU Affero General Public License as published
-#    by the Free Software Foundation, either version 3 of the License, or
-#    (at your option) any later version.
-#
-#    This program is distributed in the hope that it will be useful,
-#    but WITHOUT ANY WARRANTY; without even the implied warranty of
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU Affero General Public License for more details.
-#
-#    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-#
-##############################################################################
+# -*- coding: utf-8 -*-
+# Copyright 2014 Angel Moya <angel.moya@domatix.com>
+# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from openerp import models, api
+from odoo import api, models
 
 
 class AccountInvoice(models.Model):
@@ -25,9 +11,9 @@ class AccountInvoice(models.Model):
     @api.multi
     def invoice_print(self):
         self.ensure_one()
-        self.sent = True
-        invoice = self[0]
-        action_name = invoice.partner_id.invoice_report_id \
-            and invoice.partner_id.invoice_report_id.report_name \
-            or 'account.report_invoice'
+        action_name = self.partner_id.invoice_report_id \
+            and self.partner_id.invoice_report_id.report_name \
+            or False
+        if not action_name:
+            return super(AccountInvoice, self).invoice_print()
         return self.env['report'].get_action(self, action_name)

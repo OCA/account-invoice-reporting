@@ -1,43 +1,55 @@
 # -*- coding: utf-8 -*-
+# Copyright 2014 Angel Moya <angel.moya@domatix.com>
+# Copyright 2017 Tecnativa - Vicent Cubells
+# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-import openerp.tests.common as common
-from datetime import datetime
-from openerp.tools import DEFAULT_SERVER_DATE_FORMAT
+from odoo.tests.common import SavepointCase
+from odoo import fields
 
 
-class TestInvoiceReportByPartner(common.TransactionCase):
+class TestInvoiceReportByPartner(SavepointCase):
 
     def create_simple_invoice(self):
-        partner_id = self.ref('base.res_partner_2')
-        product_id = self.ref('product.product_product_4')
-        today = datetime.now()
-        journal_id = self.ref('account.sales_journal')
-        date = today.strftime(DEFAULT_SERVER_DATE_FORMAT)
-        return self.env['account.invoice']\
-            .create({'partner_id': partner_id,
-                     'account_id':
-                     self.ref('account.a_recv'),
-                     'journal_id':
-                     journal_id,
-                     'date_invoice': date,
-                     'invoice_line': [(0, 0, {'name': 'test',
-                                              'account_id':
-                                              self.ref('account.a_sale'),
-                                              'price_unit': 2000.00,
-                                              'quantity': 1,
-                                              'product_id': product_id,
-                                              }
-                                       )
-                                      ],
-                     })
+        date = fields.Date.today()
+        return self.env['account.invoice'].create({
+            'partner_id': self.partner_id.id,
+            'account_id': self.account_id.id,
+            'journal_id': self.journal_id,
+            'date_invoice': date,
+            'invoice_line_ids': [
+                (0, 0, {
+                    'name': 'test',
+                    'account_id': self.account_id.id,
+                    'price_unit': 2000.00,
+                    'quantity': 1,
+                    'product_id': self.product_id.id,
+                })],
+        })
 
-    def setUp(self):
-        super(TestInvoiceReportByPartner, self).setUp()
+    @classmethod
+    def setUpClass(cls):
+        super(TestInvoiceReportByPartner, cls).setUpClass()
+
+        cls.partner_id = cls.env['res.partner'].create({
+            'name': 'Test partner',
+        })
+        cls.product_id = cls.env['product.product'].create({
+            'name': 'Test product',
+        })
+        cls.journal_id = cls.env['account.journal'].search(
+            [('type', '=', 'sale')]).id
+        cls.account_type = cls.env['account.account.type'].create({
+            'name': 'Test account_type'
+        })
+        cls.account_id = cls.env['account.account'].create({
+            'name': 'Test account',
+            'code': '440000_demo',
+            'user_type_id': cls.account_type.id,
+            'reconcile': True})
 
     def test_report_by_partner(self):
         """Assign report to partner and print invoice"""
         report_obj = self.env['ir.actions.report.xml']
-        partner_obj = self.env['res.partner']
 
         invoice = self.create_simple_invoice()
 
@@ -51,11 +63,7 @@ class TestInvoiceReportByPartner(common.TransactionCase):
              'report_rml': action_name_copy,
              'report_name': action_name_copy})
 
-        partner_id = self.ref('base.res_partner_2')
-
-        partner = partner_obj.browse(partner_id)
-
-        partner.write(
+        self.partner_id.write(
             {'invoice_report_id': invoice_report_copy.id})
 
         invoice_print = invoice.invoice_print()
