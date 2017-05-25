@@ -27,31 +27,37 @@ class ResPartner(models.Model):
         ])
 
     @api.multi
-    def _get_avg_pay_days(self, invoice_ids):
+    def _get_invoice_payment(self, payment_ids, date_due):
+        days_for_latest_payment = 0
+        for payment in payment_ids:
+            if payment.state == 'posted':
+                days_for_this_payment = (
+                    fields.Date.from_string(payment.payment_date) -
+                    date_due).days
+                if days_for_this_payment < 0:
+                    days_for_this_payment = 0
+                if days_for_this_payment > days_for_latest_payment:
+                    days_for_latest_payment = days_for_this_payment
+        return days_for_latest_payment
+
+    @api.multi
+    def _get_avg_pay_days(self, invoice_ids, life=False):
         average_days_to_pay = 0
         total_days_to_pay = 0
         total_number_of_invoices = 0
         for invoice in invoice_ids:
-            if fields.Date.from_string(invoice.date_invoice).year ==\
-                    datetime.now().year:
-                total_number_of_invoices += 1
-                date_due = fields.Date.from_string(invoice.date_invoice)
-                days_for_latest_payment = 0
-
-                for payment in invoice.payment_ids:
-                    if payment.state == 'posted':
-                        days_for_this_payment = (
-                            fields.Date.from_string(payment.payment_date) -
-                            date_due).days
-                        if days_for_this_payment < 0:
-                            days_for_this_payment = 0
-                        if days_for_this_payment > days_for_latest_payment:
-                            days_for_latest_payment = days_for_this_payment
-
-                days_to_pay_invoice = days_for_latest_payment
-                total_days_to_pay = total_days_to_pay + days_to_pay_invoice
-                average_days_to_pay = total_days_to_pay / \
-                    total_number_of_invoices
+            total_number_of_invoices += 1
+            date_due = fields.Date.from_string(invoice.date_invoice)
+            days_to_pay_invoice = 0
+            if life:
+                days_to_pay_invoice = self._get_invoice_payment(invoice.payment_ids, date_due)
+            else:
+                if fields.Date.from_string(invoice.date_invoice).year ==\
+                        datetime.now().year:
+                    days_to_pay_invoice = self._get_invoice_payment(invoice.payment_ids, date_due)
+            total_days_to_pay = total_days_to_pay + days_to_pay_invoice
+            average_days_to_pay = total_days_to_pay / \
+                total_number_of_invoices
         return average_days_to_pay
 
     @api.multi
@@ -59,7 +65,7 @@ class ResPartner(models.Model):
 
         for partner in self:
             invoice_ids = self._get_invoice_ids(partner.id, 'out_invoice')
-            partner.d2p_life = self._get_avg_pay_days(invoice_ids)
+            partner.d2p_life = self._get_avg_pay_days(invoice_ids, True)
 
     @api.multi
     def _compute_dtp_ytd(self):
@@ -73,7 +79,7 @@ class ResPartner(models.Model):
 
         for partner in self:
             invoice_ids = self._get_invoice_ids(partner.id, 'in_invoice')
-            partner.d2r_life = self._get_avg_pay_days(invoice_ids)
+            partner.d2r_life = self._get_avg_pay_days(invoice_ids, True)
 
     @api.multi
     def _compute_dtr_ytd(self):
