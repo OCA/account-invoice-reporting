@@ -51,12 +51,13 @@ class ResPartner(models.Model):
             days_to_pay_invoice = 0
             if life:
                 days_to_pay_invoice =\
-                self._get_invoice_payment(invoice.payment_ids, date_due)
+                    self._get_invoice_payment(invoice.payment_ids, date_due)
             else:
                 if fields.Date.from_string(invoice.date_invoice).year ==\
                         datetime.now().year:
                     days_to_pay_invoice =\
-                    self._get_invoice_payment(invoice.payment_ids, date_due)
+                        self._get_invoice_payment(invoice.payment_ids, \
+                            date_due)
             total_days_to_pay = total_days_to_pay + days_to_pay_invoice
             average_days_to_pay = total_days_to_pay / \
                 total_number_of_invoices
