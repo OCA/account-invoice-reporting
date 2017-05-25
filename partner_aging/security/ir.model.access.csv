@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+partner_aging_customer,AR can READ,partner_aging.model_partner_aging_customer,account.group_account_invoice,1,0,0,0
+partner_aging_supplier,AR can READ,partner_aging.model_partner_aging_supplier,account.group_account_invoice,1,0,0,0
+access_account_voucher_customer_unapplied,access_account_voucher_customer_unapplied,model_account_voucher_customer_unapplied,account.group_account_invoice,1,0,0,0
