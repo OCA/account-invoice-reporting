@@ -19,26 +19,30 @@ class ResPartner(models.Model):
                            string='AVG Days to Pay (YTD)')
 
     @api.multi
-    def _compute_dtp_life(self):
+    def _get_invoice_ids(self, partner_id, type):
+        return self.env['account.invoice'].search([
+            ('partner_id', '=', partner_id),
+            ('state', '=', 'paid'),
+            ('type', '=', type)
+        ])
 
-        for partner in self:
-            average_days_to_pay = 0
-            total_days_to_pay = 0
-            total_number_of_invoices = 0
-            invoice_domain = [('partner_id', '=', partner.id),
-                              ('state', '=', 'paid'),
-                              ('type', '=', 'out_invoice')]
-            invoice_ids = partner.env['account.invoice'].search(invoice_domain)
-            for invoice in invoice_ids:
+    @api.multi
+    def _get_avg_pay_days(self, invoice_ids):
+        average_days_to_pay = 0
+        total_days_to_pay = 0
+        total_number_of_invoices = 0
+        for invoice in invoice_ids:
+            if fields.Date.from_string(invoice.date_invoice).year ==\
+                    datetime.now().year:
                 total_number_of_invoices += 1
-                date_due = invoice.date_invoice
+                date_due = fields.Date.from_string(invoice.date_invoice)
                 days_for_latest_payment = 0
 
                 for payment in invoice.payment_ids:
                     if payment.state == 'posted':
                         days_for_this_payment = (
-                            payment.payment_date.from_string('%Y-%m-%d') -
-                            date_due.from_string('%Y-%m-%d')).days
+                            fields.Date.from_string(payment.payment_date) -
+                            date_due).days
                         if days_for_this_payment < 0:
                             days_for_this_payment = 0
                         if days_for_this_payment > days_for_latest_payment:
@@ -48,106 +52,32 @@ class ResPartner(models.Model):
                 total_days_to_pay = total_days_to_pay + days_to_pay_invoice
                 average_days_to_pay = total_days_to_pay / \
                     total_number_of_invoices
+        return average_days_to_pay
 
-            partner.d2p_life = average_days_to_pay
+    @api.multi
+    def _compute_dtp_life(self):
+
+        for partner in self:
+            invoice_ids = self._get_invoice_ids(partner.id, 'out_invoice')
+            partner.d2p_life = self._get_avg_pay_days(invoice_ids)
 
     @api.multi
     def _compute_dtp_ytd(self):
 
         for partner in self:
-            average_days_to_pay = 0
-            total_days_to_pay = 0
-            total_number_of_invoices = 0
-            invoice_domain = [('partner_id', '=', partner.id),
-                              ('state', '=', 'paid'),
-                              ('type', '=', 'out_invoice')]
-            invoice_ids = partner.env['account.invoice'].search(invoice_domain)
-            for invoice in invoice_ids:
-                if invoice.date_invoice.from_string('%Y-%m-%d').year ==\
-                        datetime.now().year:
-                    total_number_of_invoices += 1
-                    date_due = invoice.date_invoice
-                    days_for_latest_payment = 0
-
-                    for payment in invoice.payment_ids:
-                        if payment.state == 'posted':
-                            days_for_this_payment = (
-                                payment.payment_date.from_string('%Y-%m-%d') -
-                                date_due.from_string('%Y-%m-%d')).days
-                            if days_for_this_payment < 0:
-                                days_for_this_payment = 0
-                            if days_for_this_payment > days_for_latest_payment:
-                                days_for_latest_payment = days_for_this_payment
-                    days_to_pay_invoice = days_for_latest_payment
-                    total_days_to_pay = total_days_to_pay + days_to_pay_invoice
-                    average_days_to_pay = total_days_to_pay / \
-                        total_number_of_invoices
-
-            partner.d2p_ytd = average_days_to_pay
+            invoice_ids = self._get_invoice_ids(partner.id, 'out_invoice')
+            partner.d2p_ytd = self._get_avg_pay_days(invoice_ids)
 
     @api.multi
     def _compute_dtr_life(self):
 
         for partner in self:
-            average_days_to_pay = 0
-            total_days_to_pay = 0
-            total_number_of_invoices = 0
-            invoice_domain = [('partner_id', '=', partner.id),
-                              ('state', '=', 'paid'),
-                              ('type', '=', 'in_invoice')]
-            invoice_ids = partner.env['account.invoice'].search(invoice_domain)
-            for invoice in invoice_ids:
-                total_number_of_invoices += 1
-                date_due = invoice.date_invoice
-                days_for_latest_payment = 0
-
-                for payment in invoice.payment_ids:
-                    if payment.state == 'posted':
-                        days_for_this_payment = (
-                            payment.payment_date.from_string('%Y-%m-%d') -
-                            date_due.from_string('%Y-%m-%d')).days
-                        if days_for_this_payment < 0:
-                            days_for_this_payment = 0
-                        if days_for_this_payment > days_for_latest_payment:
-                            days_for_latest_payment = days_for_this_payment
-                days_to_pay_invoice = days_for_latest_payment
-                total_days_to_pay = total_days_to_pay + days_to_pay_invoice
-                average_days_to_pay = total_days_to_pay / \
-                    total_number_of_invoices
-
-            partner.d2r_life = average_days_to_pay
+            invoice_ids = self._get_invoice_ids(partner.id, 'in_invoice')
+            partner.d2r_life = self._get_avg_pay_days(invoice_ids)
 
     @api.multi
     def _compute_dtr_ytd(self):
 
         for partner in self:
-            total_days_to_pay = 0
-            average_days_to_pay = 0
-            total_number_of_invoices = 0
-            invoice_domain = [('partner_id', '=', partner.id),
-                              ('state', '=', 'paid'),
-                              ('type', '=', 'in_invoice')]
-            invoice_ids = partner.env['account.invoice'].search(invoice_domain)
-            for invoice in invoice_ids:
-                if invoice.date_invoice.from_string('%Y-%m-%d').year ==\
-                        datetime.now().year:
-                    total_number_of_invoices += 1
-                    date_due = invoice.date_invoice
-                    days_for_latest_payment = 0
-
-                    for payment in invoice.payment_ids:
-                        if payment.state == 'posted':
-                            days_for_this_payment = (
-                                payment.payment_date.from_string('%Y-%m-%d') -
-                                date_due.from_string('%Y-%m-%d')).days
-                            if days_for_this_payment < 0:
-                                days_for_this_payment = 0
-                            if days_for_this_payment > days_for_latest_payment:
-                                days_for_latest_payment = days_for_this_payment
-
-                    days_to_pay_invoice = days_for_latest_payment
-                    total_days_to_pay = total_days_to_pay + days_to_pay_invoice
-                    average_days_to_pay = total_days_to_pay / \
-                        total_number_of_invoices
-
-            partner.d2r_ytd = average_days_to_pay
+            invoice_ids = self._get_invoice_ids(partner.id, 'in_invoice')
+            partner.d2r_ytd = self._get_avg_pay_days(invoice_ids)
