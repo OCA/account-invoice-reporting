@@ -17,7 +17,7 @@ class ResPartner(models.Model):
                             string='AVG Days to Pay (lifetime)')
     d2r_ytd = fields.Float(compute='_compute_d2x',
                            string='AVG Days to Pay (YTD)')
-    
+
     def _compute_d2x(self):
         for partner in self:
             partner.d2p_ytd, partner.d2p_life = \
@@ -28,35 +28,35 @@ class ResPartner(models.Model):
     def _compute_d2x_per_invoice_type(self, partner, invoice_type):
 
         this_year = datetime.now().year
-    
+
         total_number_of_invoices_life = 0
         total_number_of_invoices_ytd = 0
 
         total_days_to_pay_life = 0
         total_days_to_pay_ytd = 0
-        
+
         d2x_ytd = 0
         d2x_life = 0
 
         for invoice in self._get_invoice_ids(partner.id, invoice_type):
 
             invoice_year = fields.Date.from_string(invoice.date_invoice).year
- 
+
             date_due = fields.Date.from_string(invoice.date_invoice)
 
             days_to_pay_invoice = self._get_invoice_payment(
-                    invoice.payment_ids, date_due)
+                invoice.payment_ids, date_due)
 
             total_number_of_invoices_life += 1
             total_days_to_pay_life += days_to_pay_invoice
- 
+
             if invoice_year == this_year:
-                total_number_of_invoices_ytd += 1 
+                total_number_of_invoices_ytd += 1
                 total_days_to_pay_ytd += days_to_pay_invoice
                 d2x_ytd = total_days_to_pay_ytd / total_number_of_invoices_ytd
-            
+
             d2x_life = total_days_to_pay_life / total_number_of_invoices_life
-        
+
         return d2x_ytd, d2x_life
 
     @api.multi
