@@ -16,14 +16,6 @@
                     <field name="d2r_ytd"/>
                     <field name="d2r_life"/>
                 </field>
-
-                <field name="credit" position="replace">
-                    <field name="credit" modifiers="{'readonly': true}"/>
-                </field>
-
-                <field name="debit" position="replace">
-                    <field name="debit" modifiers="{'readonly': true}"/>
-                </field>
             </data>
         </field>
     </record>
