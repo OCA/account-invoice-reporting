@@ -41,6 +41,7 @@ Contributors
 * Ray Carnes <rcarnes@ursainfosystems.com>
 * Maxime Chambreuil <mchambreuil@ursainfosystems.com>
 * Bhavesh Odedra <bodedra@ursainfosystems.com>
+* Sandip Mangukiya <smangukiya@ursainfosystems.com>
 
 Funders
 -------
