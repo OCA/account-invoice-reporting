@@ -1,0 +1,3222 @@
+id,state_id/id,name
+base.county_us_1,base.state_us_41,Abbeville
+base.county_us_2,base.state_us_19,Acadia Parish
+base.county_us_3,base.state_us_47,Accomack
+base.county_us_4,base.state_us_13,Ada
+base.county_us_5,base.state_us_16,Adair
+base.county_us_6,base.state_us_18,Adair
+base.county_us_7,base.state_us_31,Adair
+base.county_us_8,base.state_us_38,Adair
+base.county_us_9,base.state_us_13,Adams
+base.county_us_10,base.state_us_14,Adams
+base.county_us_11,base.state_us_15,Adams
+base.county_us_12,base.state_us_16,Adams
+base.county_us_13,base.state_us_22,Adams
+base.county_us_14,base.state_us_29,Adams
+base.county_us_15,base.state_us_30,Adams
+base.county_us_16,base.state_us_37,Adams
+base.county_us_17,base.state_us_39,Adams
+base.county_us_18,base.state_us_48,Adams
+base.county_us_19,base.state_us_50,Adams
+base.county_us_20,base.state_us_6,Adams
+base.county_us_21,base.state_us_46,Addison
+base.county_us_22,base.state_us_39,Adjuntas Municipio
+base.county_us_23,base.state_us_39,Aguada Municipio
+base.county_us_24,base.state_us_39,Aguadilla Municipio
+base.county_us_25,base.state_us_39,Aguas Buenas Municipio
+base.county_us_26,base.state_us_39,Aibonito Municipio
+base.county_us_27,base.state_us_41,Aiken
+base.county_us_28,base.state_us_36,Aitkin
+base.county_us_29,base.state_us_10,Alachua
+base.county_us_30,base.state_us_28,Alamance
+base.county_us_31,base.state_us_5,Alameda
+base.county_us_32,base.state_us_6,Alamosa
+base.county_us_33,base.state_us_27,Albany
+base.county_us_34,base.state_us_51,Albany
+base.county_us_35,base.state_us_47,Albemarle
+base.county_us_36,base.state_us_35,Alcona
+base.county_us_37,base.state_us_37,Alcorn
+base.county_us_38,base.state_us_2,Aleutians East Borough
+base.county_us_39,base.state_us_2,Aleutians West
+base.county_us_40,base.state_us_14,Alexander
+base.county_us_41,base.state_us_28,Alexander
+base.county_us_42,base.state_us_47,Alexandria City
+base.county_us_43,base.state_us_31,Alfalfa
+base.county_us_44,base.state_us_35,Alger
+base.county_us_45,base.state_us_16,Allamakee
+base.county_us_46,base.state_us_35,Allegan
+base.county_us_47,base.state_us_27,Allegany
+base.county_us_48,base.state_us_33,Allegany
+base.county_us_49,base.state_us_28,Alleghany
+base.county_us_50,base.state_us_47,Alleghany
+base.county_us_51,base.state_us_39,Allegheny
+base.county_us_52,base.state_us_15,Allen
+base.county_us_53,base.state_us_17,Allen
+base.county_us_54,base.state_us_18,Allen
+base.county_us_55,base.state_us_30,Allen
+base.county_us_56,base.state_us_19,Allen Parish
+base.county_us_57,base.state_us_41,Allendale
+base.county_us_58,base.state_us_35,Alpena
+base.county_us_59,base.state_us_5,Alpine
+base.county_us_60,base.state_us_5,Amador
+base.county_us_61,base.state_us_47,Amelia
+base.county_us_62,base.state_us_47,Amherst
+base.county_us_63,base.state_us_37,Amite
+base.county_us_64,base.state_us_39,Añasco Municipio
+base.county_us_65,base.state_us_2,Anchorage Municipality
+base.county_us_66,base.state_us_17,Anderson
+base.county_us_67,base.state_us_18,Anderson
+base.county_us_68,base.state_us_41,Anderson
+base.county_us_69,base.state_us_43,Anderson
+base.county_us_70,base.state_us_44,Anderson
+base.county_us_71,base.state_us_38,Andrew
+base.county_us_72,base.state_us_44,Andrews
+base.county_us_73,base.state_us_20,Androscoggin
+base.county_us_74,base.state_us_44,Angelina
+base.county_us_75,base.state_us_33,Anne Arundel
+base.county_us_76,base.state_us_36,Anoka
+base.county_us_77,base.state_us_28,Anson
+base.county_us_78,base.state_us_22,Antelope
+base.county_us_79,base.state_us_35,Antrim
+base.county_us_80,base.state_us_3,Apache
+base.county_us_81,base.state_us_16,Appanoose
+base.county_us_82,base.state_us_11,Appling
+base.county_us_83,base.state_us_47,Appomattox
+base.county_us_84,base.state_us_44,Aransas
+base.county_us_85,base.state_us_6,Arapahoe
+base.county_us_86,base.state_us_44,Archer
+base.county_us_87,base.state_us_6,Archuleta
+base.county_us_88,base.state_us_39,Arecibo Municipio
+base.county_us_89,base.state_us_35,Arenac
+base.county_us_90,base.state_us_4,Arkansas
+base.county_us_91,base.state_us_47,Arlington
+base.county_us_92,base.state_us_39,Armstrong
+base.county_us_93,base.state_us_44,Armstrong
+base.county_us_94,base.state_us_20,Aroostook
+base.county_us_95,base.state_us_39,Arroyo Municipio
+base.county_us_96,base.state_us_22,Arthur
+base.county_us_97,base.state_us_19,Ascension Parish
+base.county_us_98,base.state_us_28,Ashe
+base.county_us_99,base.state_us_30,Ashland
+base.county_us_100,base.state_us_50,Ashland
+base.county_us_101,base.state_us_4,Ashley
+base.county_us_102,base.state_us_30,Ashtabula
+base.county_us_103,base.state_us_48,Asotin
+base.county_us_104,base.state_us_19,Assumption Parish
+base.county_us_105,base.state_us_44,Atascosa
+base.county_us_106,base.state_us_17,Atchison
+base.county_us_107,base.state_us_38,Atchison
+base.county_us_108,base.state_us_30,Athens
+base.county_us_109,base.state_us_11,Atkinson
+base.county_us_110,base.state_us_25,Atlantic
+base.county_us_111,base.state_us_31,Atoka
+base.county_us_112,base.state_us_37,Attala
+base.county_us_113,base.state_us_38,Audrain
+base.county_us_114,base.state_us_16,Audubon
+base.county_us_115,base.state_us_30,Auglaize
+base.county_us_116,base.state_us_47,Augusta
+base.county_us_117,base.state_us_42,Aurora
+base.county_us_118,base.state_us_44,Austin
+base.county_us_119,base.state_us_1,Autauga
+base.county_us_120,base.state_us_28,Avery
+base.county_us_121,base.state_us_19,Avoyelles Parish
+base.county_us_122,base.state_us_6,Baca
+base.county_us_123,base.state_us_11,Bacon
+base.county_us_124,base.state_us_44,Bailey
+base.county_us_125,base.state_us_10,Baker
+base.county_us_126,base.state_us_11,Baker
+base.county_us_127,base.state_us_32,Baker
+base.county_us_128,base.state_us_1,Baldwin
+base.county_us_129,base.state_us_11,Baldwin
+base.county_us_130,base.state_us_18,Ballard
+base.county_us_131,base.state_us_33,Baltimore
+base.county_us_132,base.state_us_33,Baltimore City
+base.county_us_133,base.state_us_41,Bamberg
+base.county_us_134,base.state_us_44,Bandera
+base.county_us_135,base.state_us_11,Banks
+base.county_us_136,base.state_us_22,Banner
+base.county_us_137,base.state_us_13,Bannock
+base.county_us_138,base.state_us_35,Baraga
+base.county_us_139,base.state_us_17,Barber
+base.county_us_140,base.state_us_1,Barbour
+base.county_us_141,base.state_us_49,Barbour
+base.county_us_142,base.state_us_39,Barceloneta Municipio
+base.county_us_143,base.state_us_29,Barnes
+base.county_us_144,base.state_us_34,Barnstable
+base.county_us_145,base.state_us_41,Barnwell
+base.county_us_146,base.state_us_39,Barranquitas Municipio
+base.county_us_147,base.state_us_18,Barren
+base.county_us_148,base.state_us_50,Barron
+base.county_us_149,base.state_us_11,Barrow
+base.county_us_150,base.state_us_35,Barry
+base.county_us_151,base.state_us_38,Barry
+base.county_us_152,base.state_us_15,Bartholomew
+base.county_us_153,base.state_us_17,Barton
+base.county_us_154,base.state_us_38,Barton
+base.county_us_155,base.state_us_11,Bartow
+base.county_us_156,base.state_us_44,Bastrop
+base.county_us_157,base.state_us_38,Bates
+base.county_us_158,base.state_us_18,Bath
+base.county_us_159,base.state_us_47,Bath
+base.county_us_160,base.state_us_4,Baxter
+base.county_us_161,base.state_us_10,Bay
+base.county_us_162,base.state_us_35,Bay
+base.county_us_163,base.state_us_39,Bayamón Municipio
+base.county_us_164,base.state_us_50,Bayfield
+base.county_us_165,base.state_us_44,Baylor
+base.county_us_166,base.state_us_42,Beadle
+base.county_us_167,base.state_us_13,Bear Lake
+base.county_us_168,base.state_us_28,Beaufort
+base.county_us_169,base.state_us_41,Beaufort
+base.county_us_170,base.state_us_19,Beauregard Parish
+base.county_us_171,base.state_us_31,Beaver
+base.county_us_172,base.state_us_39,Beaver
+base.county_us_173,base.state_us_45,Beaver
+base.county_us_174,base.state_us_21,Beaverhead
+base.county_us_175,base.state_us_36,Becker
+base.county_us_176,base.state_us_31,Beckham
+base.county_us_177,base.state_us_39,Bedford
+base.county_us_178,base.state_us_43,Bedford
+base.county_us_179,base.state_us_47,Bedford
+base.county_us_180,base.state_us_47,Bedford City
+base.county_us_181,base.state_us_44,Bee
+base.county_us_182,base.state_us_24,Belknap
+base.county_us_183,base.state_us_18,Bell
+base.county_us_184,base.state_us_44,Bell
+base.county_us_185,base.state_us_30,Belmont
+base.county_us_186,base.state_us_36,Beltrami
+base.county_us_187,base.state_us_11,Ben Hill
+base.county_us_188,base.state_us_13,Benewah
+base.county_us_189,base.state_us_42,Bennett
+base.county_us_190,base.state_us_46,Bennington
+base.county_us_191,base.state_us_29,Benson
+base.county_us_192,base.state_us_6,Bent
+base.county_us_193,base.state_us_15,Benton
+base.county_us_194,base.state_us_16,Benton
+base.county_us_195,base.state_us_32,Benton
+base.county_us_196,base.state_us_36,Benton
+base.county_us_197,base.state_us_37,Benton
+base.county_us_198,base.state_us_38,Benton
+base.county_us_199,base.state_us_4,Benton
+base.county_us_200,base.state_us_43,Benton
+base.county_us_201,base.state_us_48,Benton
+base.county_us_202,base.state_us_35,Benzie
+base.county_us_203,base.state_us_25,Bergen
+base.county_us_204,base.state_us_41,Berkeley
+base.county_us_205,base.state_us_49,Berkeley
+base.county_us_206,base.state_us_39,Berks
+base.county_us_207,base.state_us_34,Berkshire
+base.county_us_208,base.state_us_26,Bernalillo
+base.county_us_209,base.state_us_11,Berrien
+base.county_us_210,base.state_us_35,Berrien
+base.county_us_211,base.state_us_28,Bertie
+base.county_us_212,base.state_us_2,Bethel
+base.county_us_213,base.state_us_44,Bexar
+base.county_us_214,base.state_us_1,Bibb
+base.county_us_215,base.state_us_11,Bibb
+base.county_us_216,base.state_us_19,Bienville Parish
+base.county_us_217,base.state_us_21,Big Horn
+base.county_us_218,base.state_us_51,Big Horn
+base.county_us_219,base.state_us_36,Big Stone
+base.county_us_220,base.state_us_29,Billings
+base.county_us_221,base.state_us_13,Bingham
+base.county_us_222,base.state_us_16,Black Hawk
+base.county_us_223,base.state_us_15,Blackford
+base.county_us_224,base.state_us_28,Bladen
+base.county_us_225,base.state_us_13,Blaine
+base.county_us_226,base.state_us_21,Blaine
+base.county_us_227,base.state_us_22,Blaine
+base.county_us_228,base.state_us_31,Blaine
+base.county_us_229,base.state_us_39,Blair
+base.county_us_230,base.state_us_44,Blanco
+base.county_us_231,base.state_us_47,Bland
+base.county_us_232,base.state_us_11,Bleckley
+base.county_us_233,base.state_us_43,Bledsoe
+base.county_us_234,base.state_us_1,Blount
+base.county_us_235,base.state_us_43,Blount
+base.county_us_236,base.state_us_36,Blue Earth
+base.county_us_237,base.state_us_13,Boise
+base.county_us_238,base.state_us_37,Bolivar
+base.county_us_239,base.state_us_38,Bollinger
+base.county_us_240,base.state_us_42,Bon Homme
+base.county_us_241,base.state_us_14,Bond
+base.county_us_242,base.state_us_13,Bonner
+base.county_us_243,base.state_us_13,Bonneville
+base.county_us_244,base.state_us_14,Boone
+base.county_us_245,base.state_us_15,Boone
+base.county_us_246,base.state_us_16,Boone
+base.county_us_247,base.state_us_18,Boone
+base.county_us_248,base.state_us_22,Boone
+base.county_us_249,base.state_us_38,Boone
+base.county_us_250,base.state_us_4,Boone
+base.county_us_251,base.state_us_49,Boone
+base.county_us_252,base.state_us_44,Borden
+base.county_us_253,base.state_us_44,Bosque
+base.county_us_254,base.state_us_19,Bossier Parish
+base.county_us_255,base.state_us_47,Botetourt
+base.county_us_256,base.state_us_29,Bottineau
+base.county_us_257,base.state_us_6,Boulder
+base.county_us_258,base.state_us_13,Boundary
+base.county_us_259,base.state_us_17,Bourbon
+base.county_us_260,base.state_us_18,Bourbon
+base.county_us_261,base.state_us_44,Bowie
+base.county_us_262,base.state_us_29,Bowman
+base.county_us_263,base.state_us_22,Box Butte
+base.county_us_264,base.state_us_45,Box Elder
+base.county_us_265,base.state_us_18,Boyd
+base.county_us_266,base.state_us_22,Boyd
+base.county_us_267,base.state_us_18,Boyle
+base.county_us_268,base.state_us_18,Bracken
+base.county_us_269,base.state_us_10,Bradford
+base.county_us_270,base.state_us_39,Bradford
+base.county_us_271,base.state_us_4,Bradley
+base.county_us_272,base.state_us_43,Bradley
+base.county_us_273,base.state_us_35,Branch
+base.county_us_274,base.state_us_11,Brantley
+base.county_us_275,base.state_us_49,Braxton
+base.county_us_276,base.state_us_44,Brazoria
+base.county_us_277,base.state_us_44,Brazos
+base.county_us_278,base.state_us_18,Breathitt
+base.county_us_279,base.state_us_18,Breckinridge
+base.county_us_280,base.state_us_16,Bremer
+base.county_us_281,base.state_us_10,Brevard
+base.county_us_282,base.state_us_44,Brewster
+base.county_us_283,base.state_us_44,Briscoe
+base.county_us_284,base.state_us_34,Bristol
+base.county_us_285,base.state_us_40,Bristol
+base.county_us_286,base.state_us_2,Bristol Bay Borough
+base.county_us_287,base.state_us_47,Bristol City
+base.county_us_288,base.state_us_21,Broadwater
+base.county_us_289,base.state_us_27,Bronx
+base.county_us_290,base.state_us_49,Brooke
+base.county_us_291,base.state_us_42,Brookings
+base.county_us_292,base.state_us_11,Brooks
+base.county_us_293,base.state_us_44,Brooks
+base.county_us_294,base.state_us_27,Broome
+base.county_us_295,base.state_us_6,Broomfield
+base.county_us_296,base.state_us_10,Broward
+base.county_us_297,base.state_us_14,Brown
+base.county_us_298,base.state_us_15,Brown
+base.county_us_299,base.state_us_17,Brown
+base.county_us_300,base.state_us_22,Brown
+base.county_us_301,base.state_us_30,Brown
+base.county_us_302,base.state_us_36,Brown
+base.county_us_303,base.state_us_42,Brown
+base.county_us_304,base.state_us_44,Brown
+base.county_us_305,base.state_us_50,Brown
+base.county_us_306,base.state_us_42,Brule
+base.county_us_307,base.state_us_28,Brunswick
+base.county_us_308,base.state_us_47,Brunswick
+base.county_us_309,base.state_us_11,Bryan
+base.county_us_310,base.state_us_31,Bryan
+base.county_us_311,base.state_us_16,Buchanan
+base.county_us_312,base.state_us_38,Buchanan
+base.county_us_313,base.state_us_47,Buchanan
+base.county_us_314,base.state_us_47,Buckingham
+base.county_us_315,base.state_us_39,Bucks
+base.county_us_316,base.state_us_16,Buena Vista
+base.county_us_317,base.state_us_47,Buena Vista City
+base.county_us_318,base.state_us_22,Buffalo
+base.county_us_319,base.state_us_42,Buffalo
+base.county_us_320,base.state_us_50,Buffalo
+base.county_us_321,base.state_us_18,Bullitt
+base.county_us_322,base.state_us_11,Bulloch
+base.county_us_323,base.state_us_1,Bullock
+base.county_us_324,base.state_us_28,Buncombe
+base.county_us_325,base.state_us_14,Bureau
+base.county_us_326,base.state_us_11,Burke
+base.county_us_327,base.state_us_28,Burke
+base.county_us_328,base.state_us_29,Burke
+base.county_us_329,base.state_us_29,Burleigh
+base.county_us_330,base.state_us_44,Burleson
+base.county_us_331,base.state_us_25,Burlington
+base.county_us_332,base.state_us_44,Burnet
+base.county_us_333,base.state_us_50,Burnett
+base.county_us_334,base.state_us_22,Burt
+base.county_us_335,base.state_us_1,Butler
+base.county_us_336,base.state_us_16,Butler
+base.county_us_337,base.state_us_17,Butler
+base.county_us_338,base.state_us_18,Butler
+base.county_us_339,base.state_us_22,Butler
+base.county_us_340,base.state_us_30,Butler
+base.county_us_341,base.state_us_38,Butler
+base.county_us_342,base.state_us_39,Butler
+base.county_us_343,base.state_us_13,Butte
+base.county_us_344,base.state_us_42,Butte
+base.county_us_345,base.state_us_5,Butte
+base.county_us_346,base.state_us_11,Butts
+base.county_us_347,base.state_us_28,Cabarrus
+base.county_us_348,base.state_us_49,Cabell
+base.county_us_349,base.state_us_39,Cabo Rojo Municipio
+base.county_us_350,base.state_us_45,Cache
+base.county_us_351,base.state_us_31,Caddo
+base.county_us_352,base.state_us_19,Caddo Parish
+base.county_us_353,base.state_us_39,Caguas Municipio
+base.county_us_354,base.state_us_5,Calaveras
+base.county_us_355,base.state_us_19,Calcasieu Parish
+base.county_us_356,base.state_us_18,Caldwell
+base.county_us_357,base.state_us_28,Caldwell
+base.county_us_358,base.state_us_38,Caldwell
+base.county_us_359,base.state_us_44,Caldwell
+base.county_us_360,base.state_us_19,Caldwell Parish
+base.county_us_361,base.state_us_46,Caledonia
+base.county_us_362,base.state_us_1,Calhoun
+base.county_us_363,base.state_us_10,Calhoun
+base.county_us_364,base.state_us_11,Calhoun
+base.county_us_365,base.state_us_14,Calhoun
+base.county_us_366,base.state_us_16,Calhoun
+base.county_us_367,base.state_us_35,Calhoun
+base.county_us_368,base.state_us_37,Calhoun
+base.county_us_369,base.state_us_4,Calhoun
+base.county_us_370,base.state_us_41,Calhoun
+base.county_us_371,base.state_us_44,Calhoun
+base.county_us_372,base.state_us_49,Calhoun
+base.county_us_373,base.state_us_44,Callahan
+base.county_us_374,base.state_us_38,Callaway
+base.county_us_375,base.state_us_18,Calloway
+base.county_us_376,base.state_us_50,Calumet
+base.county_us_377,base.state_us_33,Calvert
+base.county_us_378,base.state_us_13,Camas
+base.county_us_379,base.state_us_39,Cambria
+base.county_us_380,base.state_us_11,Camden
+base.county_us_381,base.state_us_25,Camden
+base.county_us_382,base.state_us_28,Camden
+base.county_us_383,base.state_us_38,Camden
+base.county_us_384,base.state_us_39,Cameron
+base.county_us_385,base.state_us_44,Cameron
+base.county_us_386,base.state_us_19,Cameron Parish
+base.county_us_387,base.state_us_44,Camp
+base.county_us_388,base.state_us_18,Campbell
+base.county_us_389,base.state_us_42,Campbell
+base.county_us_390,base.state_us_43,Campbell
+base.county_us_391,base.state_us_47,Campbell
+base.county_us_392,base.state_us_51,Campbell
+base.county_us_393,base.state_us_39,Camuy Municipio
+base.county_us_394,base.state_us_31,Canadian
+base.county_us_395,base.state_us_11,Candler
+base.county_us_396,base.state_us_43,Cannon
+base.county_us_397,base.state_us_39,Canóvanas Municipio
+base.county_us_398,base.state_us_13,Canyon
+base.county_us_399,base.state_us_38,Cape Girardeau
+base.county_us_400,base.state_us_25,Cape May
+base.county_us_401,base.state_us_21,Carbon
+base.county_us_402,base.state_us_39,Carbon
+base.county_us_403,base.state_us_45,Carbon
+base.county_us_404,base.state_us_51,Carbon
+base.county_us_405,base.state_us_13,Caribou
+base.county_us_406,base.state_us_18,Carlisle
+base.county_us_407,base.state_us_36,Carlton
+base.county_us_408,base.state_us_39,Carolina Municipio
+base.county_us_409,base.state_us_33,Caroline
+base.county_us_410,base.state_us_47,Caroline
+base.county_us_411,base.state_us_11,Carroll
+base.county_us_412,base.state_us_14,Carroll
+base.county_us_413,base.state_us_15,Carroll
+base.county_us_414,base.state_us_16,Carroll
+base.county_us_415,base.state_us_18,Carroll
+base.county_us_416,base.state_us_24,Carroll
+base.county_us_417,base.state_us_30,Carroll
+base.county_us_418,base.state_us_33,Carroll
+base.county_us_419,base.state_us_37,Carroll
+base.county_us_420,base.state_us_38,Carroll
+base.county_us_421,base.state_us_4,Carroll
+base.county_us_422,base.state_us_43,Carroll
+base.county_us_423,base.state_us_47,Carroll
+base.county_us_424,base.state_us_44,Carson
+base.county_us_425,base.state_us_23,Carson City
+base.county_us_426,base.state_us_18,Carter
+base.county_us_427,base.state_us_21,Carter
+base.county_us_428,base.state_us_31,Carter
+base.county_us_429,base.state_us_38,Carter
+base.county_us_430,base.state_us_43,Carter
+base.county_us_431,base.state_us_28,Carteret
+base.county_us_432,base.state_us_36,Carver
+base.county_us_433,base.state_us_21,Cascade
+base.county_us_434,base.state_us_18,Casey
+base.county_us_435,base.state_us_14,Cass
+base.county_us_436,base.state_us_15,Cass
+base.county_us_437,base.state_us_16,Cass
+base.county_us_438,base.state_us_22,Cass
+base.county_us_439,base.state_us_29,Cass
+base.county_us_440,base.state_us_35,Cass
+base.county_us_441,base.state_us_36,Cass
+base.county_us_442,base.state_us_38,Cass
+base.county_us_443,base.state_us_44,Cass
+base.county_us_444,base.state_us_13,Cassia
+base.county_us_445,base.state_us_44,Castro
+base.county_us_446,base.state_us_28,Caswell
+base.county_us_447,base.state_us_19,Catahoula Parish
+base.county_us_448,base.state_us_39,Cataño Municipio
+base.county_us_449,base.state_us_28,Catawba
+base.county_us_450,base.state_us_11,Catoosa
+base.county_us_451,base.state_us_26,Catron
+base.county_us_452,base.state_us_27,Cattaraugus
+base.county_us_453,base.state_us_29,Cavalier
+base.county_us_454,base.state_us_39,Cayey Municipio
+base.county_us_455,base.state_us_27,Cayuga
+base.county_us_456,base.state_us_33,Cecil
+base.county_us_457,base.state_us_16,Cedar
+base.county_us_458,base.state_us_22,Cedar
+base.county_us_459,base.state_us_38,Cedar
+base.county_us_460,base.state_us_39,Ceiba Municipio
+base.county_us_461,base.state_us_39,Centre
+base.county_us_462,base.state_us_16,Cerro Gordo
+base.county_us_463,base.state_us_6,Chaffee
+base.county_us_464,base.state_us_1,Chambers
+base.county_us_465,base.state_us_44,Chambers
+base.county_us_466,base.state_us_14,Champaign
+base.county_us_467,base.state_us_30,Champaign
+base.county_us_468,base.state_us_38,Chariton
+base.county_us_469,base.state_us_33,Charles
+base.county_us_470,base.state_us_47,Charles City
+base.county_us_471,base.state_us_42,Charles Mix
+base.county_us_472,base.state_us_41,Charleston
+base.county_us_473,base.state_us_35,Charlevoix
+base.county_us_474,base.state_us_10,Charlotte
+base.county_us_475,base.state_us_47,Charlotte
+base.county_us_476,base.state_us_47,Charlottesville City
+base.county_us_477,base.state_us_11,Charlton
+base.county_us_478,base.state_us_17,Chase
+base.county_us_479,base.state_us_22,Chase
+base.county_us_480,base.state_us_11,Chatham
+base.county_us_481,base.state_us_28,Chatham
+base.county_us_482,base.state_us_11,Chattahoochee
+base.county_us_483,base.state_us_11,Chattooga
+base.county_us_484,base.state_us_17,Chautauqua
+base.county_us_485,base.state_us_27,Chautauqua
+base.county_us_486,base.state_us_26,Chaves
+base.county_us_487,base.state_us_43,Cheatham
+base.county_us_488,base.state_us_35,Cheboygan
+base.county_us_489,base.state_us_48,Chelan
+base.county_us_490,base.state_us_27,Chemung
+base.county_us_491,base.state_us_27,Chenango
+base.county_us_492,base.state_us_1,Cherokee
+base.county_us_493,base.state_us_11,Cherokee
+base.county_us_494,base.state_us_16,Cherokee
+base.county_us_495,base.state_us_17,Cherokee
+base.county_us_496,base.state_us_28,Cherokee
+base.county_us_497,base.state_us_31,Cherokee
+base.county_us_498,base.state_us_41,Cherokee
+base.county_us_499,base.state_us_44,Cherokee
+base.county_us_500,base.state_us_22,Cherry
+base.county_us_501,base.state_us_47,Chesapeake City
+base.county_us_502,base.state_us_24,Cheshire
+base.county_us_503,base.state_us_39,Chester
+base.county_us_504,base.state_us_41,Chester
+base.county_us_505,base.state_us_43,Chester
+base.county_us_506,base.state_us_41,Chesterfield
+base.county_us_507,base.state_us_47,Chesterfield
+base.county_us_508,base.state_us_17,Cheyenne
+base.county_us_509,base.state_us_22,Cheyenne
+base.county_us_510,base.state_us_6,Cheyenne
+base.county_us_511,base.state_us_16,Chickasaw
+base.county_us_512,base.state_us_37,Chickasaw
+base.county_us_513,base.state_us_4,Chicot
+base.county_us_514,base.state_us_44,Childress
+base.county_us_515,base.state_us_1,Chilton
+base.county_us_516,base.state_us_35,Chippewa
+base.county_us_517,base.state_us_36,Chippewa
+base.county_us_518,base.state_us_50,Chippewa
+base.county_us_519,base.state_us_36,Chisago
+base.county_us_520,base.state_us_46,Chittenden
+base.county_us_521,base.state_us_1,Choctaw
+base.county_us_522,base.state_us_31,Choctaw
+base.county_us_523,base.state_us_37,Choctaw
+base.county_us_524,base.state_us_21,Chouteau
+base.county_us_525,base.state_us_28,Chowan
+base.county_us_526,base.state_us_14,Christian
+base.county_us_527,base.state_us_18,Christian
+base.county_us_528,base.state_us_38,Christian
+base.county_us_529,base.state_us_23,Churchill
+base.county_us_530,base.state_us_39,Ciales Municipio
+base.county_us_531,base.state_us_26,Cibola
+base.county_us_532,base.state_us_39,Cidra Municipio
+base.county_us_533,base.state_us_31,Cimarron
+base.county_us_534,base.state_us_10,Citrus
+base.county_us_535,base.state_us_32,Clackamas
+base.county_us_536,base.state_us_37,Claiborne
+base.county_us_537,base.state_us_43,Claiborne
+base.county_us_538,base.state_us_19,Claiborne Parish
+base.county_us_539,base.state_us_48,Clallam
+base.county_us_540,base.state_us_35,Clare
+base.county_us_541,base.state_us_41,Clarendon
+base.county_us_542,base.state_us_39,Clarion
+base.county_us_543,base.state_us_13,Clark
+base.county_us_544,base.state_us_14,Clark
+base.county_us_545,base.state_us_15,Clark
+base.county_us_546,base.state_us_17,Clark
+base.county_us_547,base.state_us_18,Clark
+base.county_us_548,base.state_us_23,Clark
+base.county_us_549,base.state_us_30,Clark
+base.county_us_550,base.state_us_38,Clark
+base.county_us_551,base.state_us_4,Clark
+base.county_us_552,base.state_us_42,Clark
+base.county_us_553,base.state_us_48,Clark
+base.county_us_554,base.state_us_50,Clark
+base.county_us_555,base.state_us_1,Clarke
+base.county_us_556,base.state_us_11,Clarke
+base.county_us_557,base.state_us_16,Clarke
+base.county_us_558,base.state_us_37,Clarke
+base.county_us_559,base.state_us_47,Clarke
+base.county_us_560,base.state_us_32,Clatsop
+base.county_us_561,base.state_us_1,Clay
+base.county_us_562,base.state_us_10,Clay
+base.county_us_563,base.state_us_11,Clay
+base.county_us_564,base.state_us_14,Clay
+base.county_us_565,base.state_us_15,Clay
+base.county_us_566,base.state_us_16,Clay
+base.county_us_567,base.state_us_17,Clay
+base.county_us_568,base.state_us_18,Clay
+base.county_us_569,base.state_us_22,Clay
+base.county_us_570,base.state_us_28,Clay
+base.county_us_571,base.state_us_36,Clay
+base.county_us_572,base.state_us_37,Clay
+base.county_us_573,base.state_us_38,Clay
+base.county_us_574,base.state_us_4,Clay
+base.county_us_575,base.state_us_42,Clay
+base.county_us_576,base.state_us_43,Clay
+base.county_us_577,base.state_us_44,Clay
+base.county_us_578,base.state_us_49,Clay
+base.county_us_579,base.state_us_11,Clayton
+base.county_us_580,base.state_us_16,Clayton
+base.county_us_581,base.state_us_6,Clear Creek
+base.county_us_582,base.state_us_39,Clearfield
+base.county_us_583,base.state_us_13,Clearwater
+base.county_us_584,base.state_us_36,Clearwater
+base.county_us_585,base.state_us_1,Cleburne
+base.county_us_586,base.state_us_4,Cleburne
+base.county_us_587,base.state_us_30,Clermont
+base.county_us_588,base.state_us_28,Cleveland
+base.county_us_589,base.state_us_31,Cleveland
+base.county_us_590,base.state_us_4,Cleveland
+base.county_us_591,base.state_us_11,Clinch
+base.county_us_592,base.state_us_14,Clinton
+base.county_us_593,base.state_us_15,Clinton
+base.county_us_594,base.state_us_16,Clinton
+base.county_us_595,base.state_us_18,Clinton
+base.county_us_596,base.state_us_27,Clinton
+base.county_us_597,base.state_us_30,Clinton
+base.county_us_598,base.state_us_35,Clinton
+base.county_us_599,base.state_us_38,Clinton
+base.county_us_600,base.state_us_39,Clinton
+base.county_us_601,base.state_us_17,Cloud
+base.county_us_602,base.state_us_37,Coahoma
+base.county_us_603,base.state_us_31,Coal
+base.county_us_604,base.state_us_39,Coamo Municipio
+base.county_us_605,base.state_us_11,Cobb
+base.county_us_606,base.state_us_3,Cochise
+base.county_us_607,base.state_us_44,Cochran
+base.county_us_608,base.state_us_43,Cocke
+base.county_us_609,base.state_us_3,Coconino
+base.county_us_610,base.state_us_42,Codington
+base.county_us_611,base.state_us_1,Coffee
+base.county_us_612,base.state_us_11,Coffee
+base.county_us_613,base.state_us_43,Coffee
+base.county_us_614,base.state_us_17,Coffey
+base.county_us_615,base.state_us_44,Coke
+base.county_us_616,base.state_us_1,Colbert
+base.county_us_617,base.state_us_38,Cole
+base.county_us_618,base.state_us_44,Coleman
+base.county_us_619,base.state_us_14,Coles
+base.county_us_620,base.state_us_22,Colfax
+base.county_us_621,base.state_us_26,Colfax
+base.county_us_622,base.state_us_41,Colleton
+base.county_us_623,base.state_us_10,Collier
+base.county_us_624,base.state_us_44,Collin
+base.county_us_625,base.state_us_44,Collingsworth
+base.county_us_626,base.state_us_47,Colonial Heights City
+base.county_us_627,base.state_us_44,Colorado
+base.county_us_628,base.state_us_11,Colquitt
+base.county_us_629,base.state_us_10,Columbia
+base.county_us_630,base.state_us_11,Columbia
+base.county_us_631,base.state_us_27,Columbia
+base.county_us_632,base.state_us_32,Columbia
+base.county_us_633,base.state_us_39,Columbia
+base.county_us_634,base.state_us_4,Columbia
+base.county_us_635,base.state_us_48,Columbia
+base.county_us_636,base.state_us_50,Columbia
+base.county_us_637,base.state_us_30,Columbiana
+base.county_us_638,base.state_us_28,Columbus
+base.county_us_639,base.state_us_5,Colusa
+base.county_us_640,base.state_us_44,Comal
+base.county_us_641,base.state_us_17,Comanche
+base.county_us_642,base.state_us_31,Comanche
+base.county_us_643,base.state_us_44,Comanche
+base.county_us_644,base.state_us_39,Comerío Municipio
+base.county_us_645,base.state_us_44,Concho
+base.county_us_646,base.state_us_19,Concordia Parish
+base.county_us_647,base.state_us_1,Conecuh
+base.county_us_648,base.state_us_6,Conejos
+base.county_us_649,base.state_us_5,Contra Costa
+base.county_us_650,base.state_us_51,Converse
+base.county_us_651,base.state_us_4,Conway
+base.county_us_652,base.state_us_11,Cook
+base.county_us_653,base.state_us_14,Cook
+base.county_us_654,base.state_us_36,Cook
+base.county_us_655,base.state_us_44,Cooke
+base.county_us_656,base.state_us_38,Cooper
+base.county_us_657,base.state_us_24,Coos
+base.county_us_658,base.state_us_32,Coos
+base.county_us_659,base.state_us_1,Coosa
+base.county_us_660,base.state_us_37,Copiah
+base.county_us_661,base.state_us_39,Corozal Municipio
+base.county_us_662,base.state_us_42,Corson
+base.county_us_663,base.state_us_27,Cortland
+base.county_us_664,base.state_us_44,Coryell
+base.county_us_665,base.state_us_30,Coshocton
+base.county_us_666,base.state_us_6,Costilla
+base.county_us_667,base.state_us_44,Cottle
+base.county_us_668,base.state_us_31,Cotton
+base.county_us_669,base.state_us_36,Cottonwood
+base.county_us_670,base.state_us_1,Covington
+base.county_us_671,base.state_us_37,Covington
+base.county_us_672,base.state_us_47,Covington City
+base.county_us_673,base.state_us_11,Coweta
+base.county_us_674,base.state_us_17,Cowley
+base.county_us_675,base.state_us_48,Cowlitz
+base.county_us_676,base.state_us_31,Craig
+base.county_us_677,base.state_us_47,Craig
+base.county_us_678,base.state_us_4,Craighead
+base.county_us_679,base.state_us_44,Crane
+base.county_us_680,base.state_us_28,Craven
+base.county_us_681,base.state_us_11,Crawford
+base.county_us_682,base.state_us_14,Crawford
+base.county_us_683,base.state_us_15,Crawford
+base.county_us_684,base.state_us_16,Crawford
+base.county_us_685,base.state_us_17,Crawford
+base.county_us_686,base.state_us_30,Crawford
+base.county_us_687,base.state_us_35,Crawford
+base.county_us_688,base.state_us_38,Crawford
+base.county_us_689,base.state_us_39,Crawford
+base.county_us_690,base.state_us_4,Crawford
+base.county_us_691,base.state_us_50,Crawford
+base.county_us_692,base.state_us_31,Creek
+base.county_us_693,base.state_us_1,Crenshaw
+base.county_us_694,base.state_us_11,Crisp
+base.county_us_695,base.state_us_18,Crittenden
+base.county_us_696,base.state_us_4,Crittenden
+base.county_us_697,base.state_us_43,Crockett
+base.county_us_698,base.state_us_44,Crockett
+base.county_us_699,base.state_us_32,Crook
+base.county_us_700,base.state_us_51,Crook
+base.county_us_701,base.state_us_44,Crosby
+base.county_us_702,base.state_us_4,Cross
+base.county_us_703,base.state_us_36,Crow Wing
+base.county_us_704,base.state_us_6,Crowley
+base.county_us_705,base.state_us_44,Culberson
+base.county_us_706,base.state_us_39,Culebra Municipio
+base.county_us_707,base.state_us_1,Cullman
+base.county_us_708,base.state_us_47,Culpeper
+base.county_us_709,base.state_us_14,Cumberland
+base.county_us_710,base.state_us_18,Cumberland
+base.county_us_711,base.state_us_20,Cumberland
+base.county_us_712,base.state_us_25,Cumberland
+base.county_us_713,base.state_us_28,Cumberland
+base.county_us_714,base.state_us_39,Cumberland
+base.county_us_715,base.state_us_43,Cumberland
+base.county_us_716,base.state_us_47,Cumberland
+base.county_us_717,base.state_us_22,Cuming
+base.county_us_718,base.state_us_28,Currituck
+base.county_us_719,base.state_us_26,Curry
+base.county_us_720,base.state_us_32,Curry
+base.county_us_721,base.state_us_13,Custer
+base.county_us_722,base.state_us_21,Custer
+base.county_us_723,base.state_us_22,Custer
+base.county_us_724,base.state_us_31,Custer
+base.county_us_725,base.state_us_42,Custer
+base.county_us_726,base.state_us_6,Custer
+base.county_us_727,base.state_us_30,Cuyahoga
+base.county_us_728,base.state_us_11,Dade
+base.county_us_729,base.state_us_38,Dade
+base.county_us_730,base.state_us_45,Daggett
+base.county_us_731,base.state_us_22,Dakota
+base.county_us_732,base.state_us_36,Dakota
+base.county_us_733,base.state_us_1,Dale
+base.county_us_734,base.state_us_44,Dallam
+base.county_us_735,base.state_us_1,Dallas
+base.county_us_736,base.state_us_16,Dallas
+base.county_us_737,base.state_us_38,Dallas
+base.county_us_738,base.state_us_4,Dallas
+base.county_us_739,base.state_us_44,Dallas
+base.county_us_740,base.state_us_50,Dane
+base.county_us_741,base.state_us_21,Daniels
+base.county_us_742,base.state_us_47,Danville City
+base.county_us_743,base.state_us_28,Dare
+base.county_us_744,base.state_us_30,Darke
+base.county_us_745,base.state_us_41,Darlington
+base.county_us_746,base.state_us_39,Dauphin
+base.county_us_747,base.state_us_28,Davidson
+base.county_us_748,base.state_us_43,Davidson
+base.county_us_749,base.state_us_28,Davie
+base.county_us_750,base.state_us_15,Daviess
+base.county_us_751,base.state_us_18,Daviess
+base.county_us_752,base.state_us_38,Daviess
+base.county_us_753,base.state_us_16,Davis
+base.county_us_754,base.state_us_45,Davis
+base.county_us_755,base.state_us_42,Davison
+base.county_us_756,base.state_us_22,Dawes
+base.county_us_757,base.state_us_11,Dawson
+base.county_us_758,base.state_us_21,Dawson
+base.county_us_759,base.state_us_22,Dawson
+base.county_us_760,base.state_us_44,Dawson
+base.county_us_761,base.state_us_42,Day
+base.county_us_762,base.state_us_26,De Baca
+base.county_us_763,base.state_us_19,De Soto Parish
+base.county_us_764,base.state_us_14,De Witt
+base.county_us_765,base.state_us_44,Deaf Smith
+base.county_us_766,base.state_us_15,Dearborn
+base.county_us_767,base.state_us_11,Decatur
+base.county_us_768,base.state_us_15,Decatur
+base.county_us_769,base.state_us_16,Decatur
+base.county_us_770,base.state_us_17,Decatur
+base.county_us_771,base.state_us_43,Decatur
+base.county_us_772,base.state_us_21,Deer Lodge
+base.county_us_773,base.state_us_30,Defiance
+base.county_us_774,base.state_us_1,DeKalb
+base.county_us_775,base.state_us_11,DeKalb
+base.county_us_776,base.state_us_14,DeKalb
+base.county_us_777,base.state_us_15,DeKalb
+base.county_us_778,base.state_us_38,DeKalb
+base.county_us_779,base.state_us_43,DeKalb
+base.county_us_780,base.state_us_5,Del Norte
+base.county_us_781,base.state_us_15,Delaware
+base.county_us_782,base.state_us_16,Delaware
+base.county_us_783,base.state_us_27,Delaware
+base.county_us_784,base.state_us_30,Delaware
+base.county_us_785,base.state_us_31,Delaware
+base.county_us_786,base.state_us_39,Delaware
+base.county_us_787,base.state_us_35,Delta
+base.county_us_788,base.state_us_44,Delta
+base.county_us_789,base.state_us_6,Delta
+base.county_us_790,base.state_us_2,Denali Borough
+base.county_us_791,base.state_us_38,Dent
+base.county_us_792,base.state_us_44,Denton
+base.county_us_793,base.state_us_6,Denver
+base.county_us_794,base.state_us_16,Des Moines
+base.county_us_795,base.state_us_32,Deschutes
+base.county_us_796,base.state_us_4,Desha
+base.county_us_797,base.state_us_10,DeSoto
+base.county_us_798,base.state_us_37,DeSoto
+base.county_us_799,base.state_us_22,Deuel
+base.county_us_800,base.state_us_42,Deuel
+base.county_us_801,base.state_us_31,Dewey
+base.county_us_802,base.state_us_42,Dewey
+base.county_us_803,base.state_us_44,DeWitt
+base.county_us_804,base.state_us_44,Dickens
+base.county_us_805,base.state_us_47,Dickenson
+base.county_us_806,base.state_us_29,Dickey
+base.county_us_807,base.state_us_16,Dickinson
+base.county_us_808,base.state_us_17,Dickinson
+base.county_us_809,base.state_us_35,Dickinson
+base.county_us_810,base.state_us_43,Dickson
+base.county_us_811,base.state_us_2,Dillingham
+base.county_us_812,base.state_us_41,Dillon
+base.county_us_813,base.state_us_44,Dimmit
+base.county_us_814,base.state_us_47,Dinwiddie
+base.county_us_815,base.state_us_9,District of Columbia
+base.county_us_816,base.state_us_29,Divide
+base.county_us_817,base.state_us_10,Dixie
+base.county_us_818,base.state_us_22,Dixon
+base.county_us_819,base.state_us_49,Doddridge
+base.county_us_820,base.state_us_11,Dodge
+base.county_us_821,base.state_us_22,Dodge
+base.county_us_822,base.state_us_36,Dodge
+base.county_us_823,base.state_us_50,Dodge
+base.county_us_824,base.state_us_6,Dolores
+base.county_us_825,base.state_us_26,Doña Ana
+base.county_us_826,base.state_us_17,Doniphan
+base.county_us_827,base.state_us_44,Donley
+base.county_us_828,base.state_us_11,Dooly
+base.county_us_829,base.state_us_50,Door
+base.county_us_830,base.state_us_39,Dorado Municipio
+base.county_us_831,base.state_us_33,Dorchester
+base.county_us_832,base.state_us_41,Dorchester
+base.county_us_833,base.state_us_11,Dougherty
+base.county_us_834,base.state_us_11,Douglas
+base.county_us_835,base.state_us_14,Douglas
+base.county_us_836,base.state_us_17,Douglas
+base.county_us_837,base.state_us_22,Douglas
+base.county_us_838,base.state_us_23,Douglas
+base.county_us_839,base.state_us_32,Douglas
+base.county_us_840,base.state_us_36,Douglas
+base.county_us_841,base.state_us_38,Douglas
+base.county_us_842,base.state_us_42,Douglas
+base.county_us_843,base.state_us_48,Douglas
+base.county_us_844,base.state_us_50,Douglas
+base.county_us_845,base.state_us_6,Douglas
+base.county_us_846,base.state_us_4,Drew
+base.county_us_847,base.state_us_15,Dubois
+base.county_us_848,base.state_us_16,Dubuque
+base.county_us_849,base.state_us_45,Duchesne
+base.county_us_850,base.state_us_34,Dukes
+base.county_us_851,base.state_us_22,Dundy
+base.county_us_852,base.state_us_38,Dunklin
+base.county_us_853,base.state_us_29,Dunn
+base.county_us_854,base.state_us_50,Dunn
+base.county_us_855,base.state_us_14,DuPage
+base.county_us_856,base.state_us_28,Duplin
+base.county_us_857,base.state_us_28,Durham
+base.county_us_858,base.state_us_27,Dutchess
+base.county_us_859,base.state_us_10,Duval
+base.county_us_860,base.state_us_44,Duval
+base.county_us_861,base.state_us_43,Dyer
+base.county_us_862,base.state_us_6,Eagle
+base.county_us_863,base.state_us_11,Early
+base.county_us_864,base.state_us_19,East Baton Rouge Parish
+base.county_us_865,base.state_us_19,East Carroll Parish
+base.county_us_866,base.state_us_19,East Feliciana Parish
+base.county_us_867,base.state_us_44,Eastland
+base.county_us_868,base.state_us_35,Eaton
+base.county_us_869,base.state_us_50,Eau Claire
+base.county_us_870,base.state_us_11,Echols
+base.county_us_871,base.state_us_44,Ector
+base.county_us_872,base.state_us_26,Eddy
+base.county_us_873,base.state_us_29,Eddy
+base.county_us_874,base.state_us_14,Edgar
+base.county_us_875,base.state_us_28,Edgecombe
+base.county_us_876,base.state_us_41,Edgefield
+base.county_us_877,base.state_us_18,Edmonson
+base.county_us_878,base.state_us_42,Edmunds
+base.county_us_879,base.state_us_14,Edwards
+base.county_us_880,base.state_us_17,Edwards
+base.county_us_881,base.state_us_44,Edwards
+base.county_us_882,base.state_us_11,Effingham
+base.county_us_883,base.state_us_14,Effingham
+base.county_us_884,base.state_us_5,El Dorado
+base.county_us_885,base.state_us_44,El Paso
+base.county_us_886,base.state_us_6,El Paso
+base.county_us_887,base.state_us_11,Elbert
+base.county_us_888,base.state_us_6,Elbert
+base.county_us_889,base.state_us_17,Elk
+base.county_us_890,base.state_us_39,Elk
+base.county_us_891,base.state_us_15,Elkhart
+base.county_us_892,base.state_us_23,Elko
+base.county_us_893,base.state_us_18,Elliott
+base.county_us_894,base.state_us_17,Ellis
+base.county_us_895,base.state_us_31,Ellis
+base.county_us_896,base.state_us_44,Ellis
+base.county_us_897,base.state_us_17,Ellsworth
+base.county_us_898,base.state_us_1,Elmore
+base.county_us_899,base.state_us_13,Elmore
+base.county_us_900,base.state_us_11,Emanuel
+base.county_us_901,base.state_us_45,Emery
+base.county_us_902,base.state_us_16,Emmet
+base.county_us_903,base.state_us_35,Emmet
+base.county_us_904,base.state_us_29,Emmons
+base.county_us_905,base.state_us_47,Emporia City
+base.county_us_906,base.state_us_44,Erath
+base.county_us_907,base.state_us_27,Erie
+base.county_us_908,base.state_us_30,Erie
+base.county_us_909,base.state_us_39,Erie
+base.county_us_910,base.state_us_1,Escambia
+base.county_us_911,base.state_us_10,Escambia
+base.county_us_912,base.state_us_23,Esmeralda
+base.county_us_913,base.state_us_25,Essex
+base.county_us_914,base.state_us_27,Essex
+base.county_us_915,base.state_us_34,Essex
+base.county_us_916,base.state_us_46,Essex
+base.county_us_917,base.state_us_47,Essex
+base.county_us_918,base.state_us_18,Estill
+base.county_us_919,base.state_us_1,Etowah
+base.county_us_920,base.state_us_23,Eureka
+base.county_us_921,base.state_us_19,Evangeline Parish
+base.county_us_922,base.state_us_11,Evans
+base.county_us_923,base.state_us_2,Fairbanks North Star Borough
+base.county_us_924,base.state_us_47,Fairfax
+base.county_us_925,base.state_us_47,Fairfax City
+base.county_us_926,base.state_us_30,Fairfield
+base.county_us_927,base.state_us_41,Fairfield
+base.county_us_928,base.state_us_7,Fairfield
+base.county_us_929,base.state_us_39,Fajardo Municipio
+base.county_us_930,base.state_us_42,Fall River
+base.county_us_931,base.state_us_21,Fallon
+base.county_us_932,base.state_us_44,Falls
+base.county_us_933,base.state_us_47,Falls Church City
+base.county_us_934,base.state_us_11,Fannin
+base.county_us_935,base.state_us_44,Fannin
+base.county_us_936,base.state_us_36,Faribault
+base.county_us_937,base.state_us_42,Faulk
+base.county_us_938,base.state_us_4,Faulkner
+base.county_us_939,base.state_us_47,Fauquier
+base.county_us_940,base.state_us_1,Fayette
+base.county_us_941,base.state_us_11,Fayette
+base.county_us_942,base.state_us_14,Fayette
+base.county_us_943,base.state_us_15,Fayette
+base.county_us_944,base.state_us_16,Fayette
+base.county_us_945,base.state_us_18,Fayette
+base.county_us_946,base.state_us_30,Fayette
+base.county_us_947,base.state_us_39,Fayette
+base.county_us_948,base.state_us_43,Fayette
+base.county_us_949,base.state_us_44,Fayette
+base.county_us_950,base.state_us_49,Fayette
+base.county_us_951,base.state_us_43,Fentress
+base.county_us_952,base.state_us_21,Fergus
+base.county_us_953,base.state_us_48,Ferry
+base.county_us_954,base.state_us_22,Fillmore
+base.county_us_955,base.state_us_36,Fillmore
+base.county_us_956,base.state_us_17,Finney
+base.county_us_957,base.state_us_44,Fisher
+base.county_us_958,base.state_us_10,Flagler
+base.county_us_959,base.state_us_21,Flathead
+base.county_us_960,base.state_us_18,Fleming
+base.county_us_961,base.state_us_41,Florence
+base.county_us_962,base.state_us_50,Florence
+base.county_us_963,base.state_us_39,Florida Municipio
+base.county_us_964,base.state_us_11,Floyd
+base.county_us_965,base.state_us_15,Floyd
+base.county_us_966,base.state_us_16,Floyd
+base.county_us_967,base.state_us_18,Floyd
+base.county_us_968,base.state_us_44,Floyd
+base.county_us_969,base.state_us_47,Floyd
+base.county_us_970,base.state_us_47,Fluvanna
+base.county_us_971,base.state_us_44,Foard
+base.county_us_972,base.state_us_50,Fond du Lac
+base.county_us_973,base.state_us_14,Ford
+base.county_us_974,base.state_us_17,Ford
+base.county_us_975,base.state_us_39,Forest
+base.county_us_976,base.state_us_50,Forest
+base.county_us_977,base.state_us_37,Forrest
+base.county_us_978,base.state_us_11,Forsyth
+base.county_us_979,base.state_us_28,Forsyth
+base.county_us_980,base.state_us_44,Fort Bend
+base.county_us_981,base.state_us_29,Foster
+base.county_us_982,base.state_us_15,Fountain
+base.county_us_983,base.state_us_1,Franklin
+base.county_us_984,base.state_us_10,Franklin
+base.county_us_985,base.state_us_11,Franklin
+base.county_us_986,base.state_us_13,Franklin
+base.county_us_987,base.state_us_14,Franklin
+base.county_us_988,base.state_us_15,Franklin
+base.county_us_989,base.state_us_16,Franklin
+base.county_us_990,base.state_us_17,Franklin
+base.county_us_991,base.state_us_18,Franklin
+base.county_us_992,base.state_us_20,Franklin
+base.county_us_993,base.state_us_22,Franklin
+base.county_us_994,base.state_us_27,Franklin
+base.county_us_995,base.state_us_28,Franklin
+base.county_us_996,base.state_us_30,Franklin
+base.county_us_997,base.state_us_34,Franklin
+base.county_us_998,base.state_us_37,Franklin
+base.county_us_999,base.state_us_38,Franklin
+base.county_us_1000,base.state_us_39,Franklin
+base.county_us_1001,base.state_us_4,Franklin
+base.county_us_1002,base.state_us_43,Franklin
+base.county_us_1003,base.state_us_44,Franklin
+base.county_us_1004,base.state_us_46,Franklin
+base.county_us_1005,base.state_us_47,Franklin
+base.county_us_1006,base.state_us_48,Franklin
+base.county_us_1007,base.state_us_47,Franklin City
+base.county_us_1008,base.state_us_19,Franklin Parish
+base.county_us_1009,base.state_us_33,Frederick
+base.county_us_1010,base.state_us_47,Frederick
+base.county_us_1011,base.state_us_47,Fredericksburg City
+base.county_us_1012,base.state_us_36,Freeborn
+base.county_us_1013,base.state_us_44,Freestone
+base.county_us_1014,base.state_us_13,Fremont
+base.county_us_1015,base.state_us_16,Fremont
+base.county_us_1016,base.state_us_51,Fremont
+base.county_us_1017,base.state_us_6,Fremont
+base.county_us_1018,base.state_us_5,Fresno
+base.county_us_1019,base.state_us_44,Frio
+base.county_us_1020,base.state_us_22,Frontier
+base.county_us_1021,base.state_us_11,Fulton
+base.county_us_1022,base.state_us_14,Fulton
+base.county_us_1023,base.state_us_15,Fulton
+base.county_us_1024,base.state_us_18,Fulton
+base.county_us_1025,base.state_us_27,Fulton
+base.county_us_1026,base.state_us_30,Fulton
+base.county_us_1027,base.state_us_39,Fulton
+base.county_us_1028,base.state_us_4,Fulton
+base.county_us_1029,base.state_us_22,Furnas
+base.county_us_1030,base.state_us_10,Gadsden
+base.county_us_1031,base.state_us_22,Gage
+base.county_us_1032,base.state_us_44,Gaines
+base.county_us_1033,base.state_us_47,Galax City
+base.county_us_1034,base.state_us_14,Gallatin
+base.county_us_1035,base.state_us_18,Gallatin
+base.county_us_1036,base.state_us_21,Gallatin
+base.county_us_1037,base.state_us_30,Gallia
+base.county_us_1038,base.state_us_44,Galveston
+base.county_us_1039,base.state_us_22,Garden
+base.county_us_1040,base.state_us_21,Garfield
+base.county_us_1041,base.state_us_22,Garfield
+base.county_us_1042,base.state_us_31,Garfield
+base.county_us_1043,base.state_us_45,Garfield
+base.county_us_1044,base.state_us_48,Garfield
+base.county_us_1045,base.state_us_6,Garfield
+base.county_us_1046,base.state_us_4,Garland
+base.county_us_1047,base.state_us_18,Garrard
+base.county_us_1048,base.state_us_33,Garrett
+base.county_us_1049,base.state_us_31,Garvin
+base.county_us_1050,base.state_us_44,Garza
+base.county_us_1051,base.state_us_38,Gasconade
+base.county_us_1052,base.state_us_28,Gaston
+base.county_us_1053,base.state_us_28,Gates
+base.county_us_1054,base.state_us_17,Geary
+base.county_us_1055,base.state_us_30,Geauga
+base.county_us_1056,base.state_us_13,Gem
+base.county_us_1057,base.state_us_27,Genesee
+base.county_us_1058,base.state_us_35,Genesee
+base.county_us_1059,base.state_us_1,Geneva
+base.county_us_1060,base.state_us_38,Gentry
+base.county_us_1061,base.state_us_37,George
+base.county_us_1062,base.state_us_41,Georgetown
+base.county_us_1063,base.state_us_15,Gibson
+base.county_us_1064,base.state_us_43,Gibson
+base.county_us_1065,base.state_us_3,Gila
+base.county_us_1066,base.state_us_10,Gilchrist
+base.county_us_1067,base.state_us_43,Giles
+base.county_us_1068,base.state_us_47,Giles
+base.county_us_1069,base.state_us_44,Gillespie
+base.county_us_1070,base.state_us_32,Gilliam
+base.county_us_1071,base.state_us_11,Gilmer
+base.county_us_1072,base.state_us_49,Gilmer
+base.county_us_1073,base.state_us_6,Gilpin
+base.county_us_1074,base.state_us_21,Glacier
+base.county_us_1075,base.state_us_10,Glades
+base.county_us_1076,base.state_us_35,Gladwin
+base.county_us_1077,base.state_us_11,Glascock
+base.county_us_1078,base.state_us_44,Glasscock
+base.county_us_1079,base.state_us_5,Glenn
+base.county_us_1080,base.state_us_25,Gloucester
+base.county_us_1081,base.state_us_47,Gloucester
+base.county_us_1082,base.state_us_11,Glynn
+base.county_us_1083,base.state_us_35,Gogebic
+base.county_us_1084,base.state_us_21,Golden Valley
+base.county_us_1085,base.state_us_29,Golden Valley
+base.county_us_1086,base.state_us_44,Goliad
+base.county_us_1087,base.state_us_44,Gonzales
+base.county_us_1088,base.state_us_47,Goochland
+base.county_us_1089,base.state_us_36,Goodhue
+base.county_us_1090,base.state_us_13,Gooding
+base.county_us_1091,base.state_us_11,Gordon
+base.county_us_1092,base.state_us_51,Goshen
+base.county_us_1093,base.state_us_22,Gosper
+base.county_us_1094,base.state_us_17,Gove
+base.county_us_1095,base.state_us_11,Grady
+base.county_us_1096,base.state_us_31,Grady
+base.county_us_1097,base.state_us_24,Grafton
+base.county_us_1098,base.state_us_17,Graham
+base.county_us_1099,base.state_us_28,Graham
+base.county_us_1100,base.state_us_3,Graham
+base.county_us_1101,base.state_us_43,Grainger
+base.county_us_1102,base.state_us_45,Grand
+base.county_us_1103,base.state_us_6,Grand
+base.county_us_1104,base.state_us_29,Grand Forks
+base.county_us_1105,base.state_us_46,Grand Isle
+base.county_us_1106,base.state_us_35,Grand Traverse
+base.county_us_1107,base.state_us_21,Granite
+base.county_us_1108,base.state_us_15,Grant
+base.county_us_1109,base.state_us_17,Grant
+base.county_us_1110,base.state_us_18,Grant
+base.county_us_1111,base.state_us_22,Grant
+base.county_us_1112,base.state_us_26,Grant
+base.county_us_1113,base.state_us_29,Grant
+base.county_us_1114,base.state_us_31,Grant
+base.county_us_1115,base.state_us_32,Grant
+base.county_us_1116,base.state_us_36,Grant
+base.county_us_1117,base.state_us_4,Grant
+base.county_us_1118,base.state_us_42,Grant
+base.county_us_1119,base.state_us_48,Grant
+base.county_us_1120,base.state_us_49,Grant
+base.county_us_1121,base.state_us_50,Grant
+base.county_us_1122,base.state_us_19,Grant Parish
+base.county_us_1123,base.state_us_28,Granville
+base.county_us_1124,base.state_us_35,Gratiot
+base.county_us_1125,base.state_us_18,Graves
+base.county_us_1126,base.state_us_17,Gray
+base.county_us_1127,base.state_us_44,Gray
+base.county_us_1128,base.state_us_48,Grays Harbor
+base.county_us_1129,base.state_us_18,Grayson
+base.county_us_1130,base.state_us_44,Grayson
+base.county_us_1131,base.state_us_47,Grayson
+base.county_us_1132,base.state_us_17,Greeley
+base.county_us_1133,base.state_us_22,Greeley
+base.county_us_1134,base.state_us_18,Green
+base.county_us_1135,base.state_us_50,Green
+base.county_us_1136,base.state_us_50,Green Lake
+base.county_us_1137,base.state_us_49,Greenbrier
+base.county_us_1138,base.state_us_1,Greene
+base.county_us_1139,base.state_us_11,Greene
+base.county_us_1140,base.state_us_14,Greene
+base.county_us_1141,base.state_us_15,Greene
+base.county_us_1142,base.state_us_16,Greene
+base.county_us_1143,base.state_us_27,Greene
+base.county_us_1144,base.state_us_28,Greene
+base.county_us_1145,base.state_us_30,Greene
+base.county_us_1146,base.state_us_37,Greene
+base.county_us_1147,base.state_us_38,Greene
+base.county_us_1148,base.state_us_39,Greene
+base.county_us_1149,base.state_us_4,Greene
+base.county_us_1150,base.state_us_43,Greene
+base.county_us_1151,base.state_us_47,Greene
+base.county_us_1152,base.state_us_3,Greenlee
+base.county_us_1153,base.state_us_47,Greensville
+base.county_us_1154,base.state_us_18,Greenup
+base.county_us_1155,base.state_us_41,Greenville
+base.county_us_1156,base.state_us_17,Greenwood
+base.county_us_1157,base.state_us_41,Greenwood
+base.county_us_1158,base.state_us_31,Greer
+base.county_us_1159,base.state_us_44,Gregg
+base.county_us_1160,base.state_us_42,Gregory
+base.county_us_1161,base.state_us_37,Grenada
+base.county_us_1162,base.state_us_29,Griggs
+base.county_us_1163,base.state_us_44,Grimes
+base.county_us_1164,base.state_us_14,Grundy
+base.county_us_1165,base.state_us_16,Grundy
+base.county_us_1166,base.state_us_38,Grundy
+base.county_us_1167,base.state_us_43,Grundy
+base.county_us_1168,base.state_us_26,Guadalupe
+base.county_us_1169,base.state_us_44,Guadalupe
+base.county_us_1170,base.state_us_39,Guánica Municipio
+base.county_us_1171,base.state_us_39,Guayama Municipio
+base.county_us_1172,base.state_us_39,Guayanilla Municipio
+base.county_us_1173,base.state_us_39,Guaynabo Municipio
+base.county_us_1174,base.state_us_30,Guernsey
+base.county_us_1175,base.state_us_28,Guilford
+base.county_us_1176,base.state_us_10,Gulf
+base.county_us_1177,base.state_us_6,Gunnison
+base.county_us_1178,base.state_us_39,Gurabo Municipio
+base.county_us_1179,base.state_us_16,Guthrie
+base.county_us_1180,base.state_us_11,Gwinnett
+base.county_us_1181,base.state_us_42,Haakon
+base.county_us_1182,base.state_us_11,Habersham
+base.county_us_1183,base.state_us_2,Haines Borough
+base.county_us_1184,base.state_us_1,Hale
+base.county_us_1185,base.state_us_44,Hale
+base.county_us_1186,base.state_us_28,Halifax
+base.county_us_1187,base.state_us_47,Halifax
+base.county_us_1188,base.state_us_11,Hall
+base.county_us_1189,base.state_us_22,Hall
+base.county_us_1190,base.state_us_44,Hall
+base.county_us_1191,base.state_us_43,Hamblen
+base.county_us_1192,base.state_us_10,Hamilton
+base.county_us_1193,base.state_us_14,Hamilton
+base.county_us_1194,base.state_us_15,Hamilton
+base.county_us_1195,base.state_us_16,Hamilton
+base.county_us_1196,base.state_us_17,Hamilton
+base.county_us_1197,base.state_us_22,Hamilton
+base.county_us_1198,base.state_us_27,Hamilton
+base.county_us_1199,base.state_us_30,Hamilton
+base.county_us_1200,base.state_us_43,Hamilton
+base.county_us_1201,base.state_us_44,Hamilton
+base.county_us_1202,base.state_us_42,Hamlin
+base.county_us_1203,base.state_us_34,Hampden
+base.county_us_1204,base.state_us_34,Hampshire
+base.county_us_1205,base.state_us_49,Hampshire
+base.county_us_1206,base.state_us_41,Hampton
+base.county_us_1207,base.state_us_47,Hampton City
+base.county_us_1208,base.state_us_11,Hancock
+base.county_us_1209,base.state_us_14,Hancock
+base.county_us_1210,base.state_us_15,Hancock
+base.county_us_1211,base.state_us_16,Hancock
+base.county_us_1212,base.state_us_18,Hancock
+base.county_us_1213,base.state_us_20,Hancock
+base.county_us_1214,base.state_us_30,Hancock
+base.county_us_1215,base.state_us_37,Hancock
+base.county_us_1216,base.state_us_43,Hancock
+base.county_us_1217,base.state_us_49,Hancock
+base.county_us_1218,base.state_us_42,Hand
+base.county_us_1219,base.state_us_47,Hanover
+base.county_us_1220,base.state_us_44,Hansford
+base.county_us_1221,base.state_us_42,Hanson
+base.county_us_1222,base.state_us_11,Haralson
+base.county_us_1223,base.state_us_10,Hardee
+base.county_us_1224,base.state_us_43,Hardeman
+base.county_us_1225,base.state_us_44,Hardeman
+base.county_us_1226,base.state_us_14,Hardin
+base.county_us_1227,base.state_us_16,Hardin
+base.county_us_1228,base.state_us_18,Hardin
+base.county_us_1229,base.state_us_30,Hardin
+base.county_us_1230,base.state_us_43,Hardin
+base.county_us_1231,base.state_us_44,Hardin
+base.county_us_1232,base.state_us_26,Harding
+base.county_us_1233,base.state_us_42,Harding
+base.county_us_1234,base.state_us_49,Hardy
+base.county_us_1235,base.state_us_33,Harford
+base.county_us_1236,base.state_us_18,Harlan
+base.county_us_1237,base.state_us_22,Harlan
+base.county_us_1238,base.state_us_31,Harmon
+base.county_us_1239,base.state_us_28,Harnett
+base.county_us_1240,base.state_us_32,Harney
+base.county_us_1241,base.state_us_17,Harper
+base.county_us_1242,base.state_us_31,Harper
+base.county_us_1243,base.state_us_11,Harris
+base.county_us_1244,base.state_us_44,Harris
+base.county_us_1245,base.state_us_15,Harrison
+base.county_us_1246,base.state_us_16,Harrison
+base.county_us_1247,base.state_us_18,Harrison
+base.county_us_1248,base.state_us_30,Harrison
+base.county_us_1249,base.state_us_37,Harrison
+base.county_us_1250,base.state_us_38,Harrison
+base.county_us_1251,base.state_us_44,Harrison
+base.county_us_1252,base.state_us_49,Harrison
+base.county_us_1253,base.state_us_47,Harrisonburg City
+base.county_us_1254,base.state_us_11,Hart
+base.county_us_1255,base.state_us_18,Hart
+base.county_us_1256,base.state_us_7,Hartford
+base.county_us_1257,base.state_us_44,Hartley
+base.county_us_1258,base.state_us_17,Harvey
+base.county_us_1259,base.state_us_17,Haskell
+base.county_us_1260,base.state_us_31,Haskell
+base.county_us_1261,base.state_us_44,Haskell
+base.county_us_1262,base.state_us_39,Hatillo Municipio
+base.county_us_1263,base.state_us_12,Hawaii
+base.county_us_1264,base.state_us_43,Hawkins
+base.county_us_1265,base.state_us_22,Hayes
+base.county_us_1266,base.state_us_44,Hays
+base.county_us_1267,base.state_us_28,Haywood
+base.county_us_1268,base.state_us_43,Haywood
+base.county_us_1269,base.state_us_11,Heard
+base.county_us_1270,base.state_us_44,Hemphill
+base.county_us_1271,base.state_us_4,Hempstead
+base.county_us_1272,base.state_us_14,Henderson
+base.county_us_1273,base.state_us_18,Henderson
+base.county_us_1274,base.state_us_28,Henderson
+base.county_us_1275,base.state_us_43,Henderson
+base.county_us_1276,base.state_us_44,Henderson
+base.county_us_1277,base.state_us_15,Hendricks
+base.county_us_1278,base.state_us_10,Hendry
+base.county_us_1279,base.state_us_36,Hennepin
+base.county_us_1280,base.state_us_47,Henrico
+base.county_us_1281,base.state_us_1,Henry
+base.county_us_1282,base.state_us_11,Henry
+base.county_us_1283,base.state_us_14,Henry
+base.county_us_1284,base.state_us_15,Henry
+base.county_us_1285,base.state_us_16,Henry
+base.county_us_1286,base.state_us_18,Henry
+base.county_us_1287,base.state_us_30,Henry
+base.county_us_1288,base.state_us_38,Henry
+base.county_us_1289,base.state_us_43,Henry
+base.county_us_1290,base.state_us_47,Henry
+base.county_us_1291,base.state_us_27,Herkimer
+base.county_us_1292,base.state_us_10,Hernando
+base.county_us_1293,base.state_us_28,Hertford
+base.county_us_1294,base.state_us_29,Hettinger
+base.county_us_1295,base.state_us_18,Hickman
+base.county_us_1296,base.state_us_43,Hickman
+base.county_us_1297,base.state_us_38,Hickory
+base.county_us_1298,base.state_us_26,Hidalgo
+base.county_us_1299,base.state_us_44,Hidalgo
+base.county_us_1300,base.state_us_30,Highland
+base.county_us_1301,base.state_us_47,Highland
+base.county_us_1302,base.state_us_10,Highlands
+base.county_us_1303,base.state_us_21,Hill
+base.county_us_1304,base.state_us_44,Hill
+base.county_us_1305,base.state_us_10,Hillsborough
+base.county_us_1306,base.state_us_24,Hillsborough
+base.county_us_1307,base.state_us_35,Hillsdale
+base.county_us_1308,base.state_us_37,Hinds
+base.county_us_1309,base.state_us_6,Hinsdale
+base.county_us_1310,base.state_us_22,Hitchcock
+base.county_us_1311,base.state_us_30,Hocking
+base.county_us_1312,base.state_us_44,Hockley
+base.county_us_1313,base.state_us_17,Hodgeman
+base.county_us_1314,base.state_us_28,Hoke
+base.county_us_1315,base.state_us_10,Holmes
+base.county_us_1316,base.state_us_30,Holmes
+base.county_us_1317,base.state_us_37,Holmes
+base.county_us_1318,base.state_us_22,Holt
+base.county_us_1319,base.state_us_38,Holt
+base.county_us_1320,base.state_us_12,Honolulu
+base.county_us_1321,base.state_us_44,Hood
+base.county_us_1322,base.state_us_32,Hood River
+base.county_us_1323,base.state_us_22,Hooker
+base.county_us_1324,base.state_us_2,Hoonah-Angoon
+base.county_us_1325,base.state_us_47,Hopewell City
+base.county_us_1326,base.state_us_18,Hopkins
+base.county_us_1327,base.state_us_44,Hopkins
+base.county_us_1328,base.state_us_39,Hormigueros Municipio
+base.county_us_1329,base.state_us_41,Horry
+base.county_us_1330,base.state_us_4,Hot Spring
+base.county_us_1331,base.state_us_51,Hot Springs
+base.county_us_1332,base.state_us_35,Houghton
+base.county_us_1333,base.state_us_1,Houston
+base.county_us_1334,base.state_us_11,Houston
+base.county_us_1335,base.state_us_36,Houston
+base.county_us_1336,base.state_us_43,Houston
+base.county_us_1337,base.state_us_44,Houston
+base.county_us_1338,base.state_us_15,Howard
+base.county_us_1339,base.state_us_16,Howard
+base.county_us_1340,base.state_us_22,Howard
+base.county_us_1341,base.state_us_33,Howard
+base.county_us_1342,base.state_us_38,Howard
+base.county_us_1343,base.state_us_4,Howard
+base.county_us_1344,base.state_us_44,Howard
+base.county_us_1345,base.state_us_38,Howell
+base.county_us_1346,base.state_us_36,Hubbard
+base.county_us_1347,base.state_us_25,Hudson
+base.county_us_1348,base.state_us_44,Hudspeth
+base.county_us_1349,base.state_us_6,Huerfano
+base.county_us_1350,base.state_us_31,Hughes
+base.county_us_1351,base.state_us_42,Hughes
+base.county_us_1352,base.state_us_39,Humacao Municipio
+base.county_us_1353,base.state_us_16,Humboldt
+base.county_us_1354,base.state_us_23,Humboldt
+base.county_us_1355,base.state_us_5,Humboldt
+base.county_us_1356,base.state_us_37,Humphreys
+base.county_us_1357,base.state_us_43,Humphreys
+base.county_us_1358,base.state_us_44,Hunt
+base.county_us_1359,base.state_us_25,Hunterdon
+base.county_us_1360,base.state_us_39,Huntingdon
+base.county_us_1361,base.state_us_15,Huntington
+base.county_us_1362,base.state_us_30,Huron
+base.county_us_1363,base.state_us_35,Huron
+base.county_us_1364,base.state_us_42,Hutchinson
+base.county_us_1365,base.state_us_44,Hutchinson
+base.county_us_1366,base.state_us_28,Hyde
+base.county_us_1367,base.state_us_42,Hyde
+base.county_us_1368,base.state_us_19,Iberia Parish
+base.county_us_1369,base.state_us_19,Iberville Parish
+base.county_us_1370,base.state_us_16,Ida
+base.county_us_1371,base.state_us_13,Idaho
+base.county_us_1372,base.state_us_5,Imperial
+base.county_us_1373,base.state_us_4,Independence
+base.county_us_1374,base.state_us_10,Indian River
+base.county_us_1375,base.state_us_39,Indiana
+base.county_us_1376,base.state_us_35,Ingham
+base.county_us_1377,base.state_us_5,Inyo
+base.county_us_1378,base.state_us_35,Ionia
+base.county_us_1379,base.state_us_35,Iosco
+base.county_us_1380,base.state_us_16,Iowa
+base.county_us_1381,base.state_us_50,Iowa
+base.county_us_1382,base.state_us_28,Iredell
+base.county_us_1383,base.state_us_44,Irion
+base.county_us_1384,base.state_us_35,Iron
+base.county_us_1385,base.state_us_38,Iron
+base.county_us_1386,base.state_us_45,Iron
+base.county_us_1387,base.state_us_50,Iron
+base.county_us_1388,base.state_us_14,Iroquois
+base.county_us_1389,base.state_us_11,Irwin
+base.county_us_1390,base.state_us_39,Isabela Municipio
+base.county_us_1391,base.state_us_35,Isabella
+base.county_us_1392,base.state_us_36,Isanti
+base.county_us_1393,base.state_us_48,Island
+base.county_us_1394,base.state_us_47,Isle of Wight
+base.county_us_1395,base.state_us_37,Issaquena
+base.county_us_1396,base.state_us_36,Itasca
+base.county_us_1397,base.state_us_37,Itawamba
+base.county_us_1398,base.state_us_4,Izard
+base.county_us_1399,base.state_us_44,Jack
+base.county_us_1400,base.state_us_1,Jackson
+base.county_us_1401,base.state_us_10,Jackson
+base.county_us_1402,base.state_us_11,Jackson
+base.county_us_1403,base.state_us_14,Jackson
+base.county_us_1404,base.state_us_15,Jackson
+base.county_us_1405,base.state_us_16,Jackson
+base.county_us_1406,base.state_us_17,Jackson
+base.county_us_1407,base.state_us_18,Jackson
+base.county_us_1408,base.state_us_28,Jackson
+base.county_us_1409,base.state_us_30,Jackson
+base.county_us_1410,base.state_us_31,Jackson
+base.county_us_1411,base.state_us_32,Jackson
+base.county_us_1412,base.state_us_35,Jackson
+base.county_us_1413,base.state_us_36,Jackson
+base.county_us_1414,base.state_us_37,Jackson
+base.county_us_1415,base.state_us_38,Jackson
+base.county_us_1416,base.state_us_4,Jackson
+base.county_us_1417,base.state_us_42,Jackson
+base.county_us_1418,base.state_us_43,Jackson
+base.county_us_1419,base.state_us_44,Jackson
+base.county_us_1420,base.state_us_49,Jackson
+base.county_us_1421,base.state_us_50,Jackson
+base.county_us_1422,base.state_us_6,Jackson
+base.county_us_1423,base.state_us_19,Jackson Parish
+base.county_us_1424,base.state_us_47,James City
+base.county_us_1425,base.state_us_11,Jasper
+base.county_us_1426,base.state_us_14,Jasper
+base.county_us_1427,base.state_us_15,Jasper
+base.county_us_1428,base.state_us_16,Jasper
+base.county_us_1429,base.state_us_37,Jasper
+base.county_us_1430,base.state_us_38,Jasper
+base.county_us_1431,base.state_us_41,Jasper
+base.county_us_1432,base.state_us_44,Jasper
+base.county_us_1433,base.state_us_15,Jay
+base.county_us_1434,base.state_us_39,Jayuya Municipio
+base.county_us_1435,base.state_us_11,Jeff Davis
+base.county_us_1436,base.state_us_44,Jeff Davis
+base.county_us_1437,base.state_us_1,Jefferson
+base.county_us_1438,base.state_us_10,Jefferson
+base.county_us_1439,base.state_us_11,Jefferson
+base.county_us_1440,base.state_us_13,Jefferson
+base.county_us_1441,base.state_us_14,Jefferson
+base.county_us_1442,base.state_us_15,Jefferson
+base.county_us_1443,base.state_us_16,Jefferson
+base.county_us_1444,base.state_us_17,Jefferson
+base.county_us_1445,base.state_us_18,Jefferson
+base.county_us_1446,base.state_us_21,Jefferson
+base.county_us_1447,base.state_us_22,Jefferson
+base.county_us_1448,base.state_us_27,Jefferson
+base.county_us_1449,base.state_us_30,Jefferson
+base.county_us_1450,base.state_us_31,Jefferson
+base.county_us_1451,base.state_us_32,Jefferson
+base.county_us_1452,base.state_us_37,Jefferson
+base.county_us_1453,base.state_us_38,Jefferson
+base.county_us_1454,base.state_us_39,Jefferson
+base.county_us_1455,base.state_us_4,Jefferson
+base.county_us_1456,base.state_us_43,Jefferson
+base.county_us_1457,base.state_us_44,Jefferson
+base.county_us_1458,base.state_us_48,Jefferson
+base.county_us_1459,base.state_us_49,Jefferson
+base.county_us_1460,base.state_us_50,Jefferson
+base.county_us_1461,base.state_us_6,Jefferson
+base.county_us_1462,base.state_us_37,Jefferson Davis
+base.county_us_1463,base.state_us_19,Jefferson Davis Parish
+base.county_us_1464,base.state_us_19,Jefferson Parish
+base.county_us_1465,base.state_us_11,Jenkins
+base.county_us_1466,base.state_us_15,Jennings
+base.county_us_1467,base.state_us_42,Jerauld
+base.county_us_1468,base.state_us_13,Jerome
+base.county_us_1469,base.state_us_14,Jersey
+base.county_us_1470,base.state_us_18,Jessamine
+base.county_us_1471,base.state_us_17,Jewell
+base.county_us_1472,base.state_us_44,Jim Hogg
+base.county_us_1473,base.state_us_44,Jim Wells
+base.county_us_1474,base.state_us_14,Jo Daviess
+base.county_us_1475,base.state_us_11,Johnson
+base.county_us_1476,base.state_us_14,Johnson
+base.county_us_1477,base.state_us_15,Johnson
+base.county_us_1478,base.state_us_16,Johnson
+base.county_us_1479,base.state_us_17,Johnson
+base.county_us_1480,base.state_us_18,Johnson
+base.county_us_1481,base.state_us_22,Johnson
+base.county_us_1482,base.state_us_38,Johnson
+base.county_us_1483,base.state_us_4,Johnson
+base.county_us_1484,base.state_us_43,Johnson
+base.county_us_1485,base.state_us_44,Johnson
+base.county_us_1486,base.state_us_51,Johnson
+base.county_us_1487,base.state_us_28,Johnston
+base.county_us_1488,base.state_us_31,Johnston
+base.county_us_1489,base.state_us_11,Jones
+base.county_us_1490,base.state_us_16,Jones
+base.county_us_1491,base.state_us_28,Jones
+base.county_us_1492,base.state_us_37,Jones
+base.county_us_1493,base.state_us_42,Jones
+base.county_us_1494,base.state_us_44,Jones
+base.county_us_1495,base.state_us_32,Josephine
+base.county_us_1496,base.state_us_45,Juab
+base.county_us_1497,base.state_us_39,Juana Díaz Municipio
+base.county_us_1498,base.state_us_21,Judith Basin
+base.county_us_1499,base.state_us_39,Juncos Municipio
+base.county_us_1500,base.state_us_50,Juneau
+base.county_us_1501,base.state_us_2,Juneau City and Borough
+base.county_us_1502,base.state_us_39,Juniata
+base.county_us_1503,base.state_us_35,Kalamazoo
+base.county_us_1504,base.state_us_12,Kalawao
+base.county_us_1505,base.state_us_35,Kalkaska
+base.county_us_1506,base.state_us_36,Kanabec
+base.county_us_1507,base.state_us_49,Kanawha
+base.county_us_1508,base.state_us_36,Kandiyohi
+base.county_us_1509,base.state_us_14,Kane
+base.county_us_1510,base.state_us_45,Kane
+base.county_us_1511,base.state_us_14,Kankakee
+base.county_us_1512,base.state_us_44,Karnes
+base.county_us_1513,base.state_us_12,Kauai
+base.county_us_1514,base.state_us_44,Kaufman
+base.county_us_1515,base.state_us_31,Kay
+base.county_us_1516,base.state_us_22,Kearney
+base.county_us_1517,base.state_us_17,Kearny
+base.county_us_1518,base.state_us_22,Keith
+base.county_us_1519,base.state_us_37,Kemper
+base.county_us_1520,base.state_us_2,Kenai Peninsula Borough
+base.county_us_1521,base.state_us_14,Kendall
+base.county_us_1522,base.state_us_44,Kendall
+base.county_us_1523,base.state_us_44,Kenedy
+base.county_us_1524,base.state_us_20,Kennebec
+base.county_us_1525,base.state_us_50,Kenosha
+base.county_us_1526,base.state_us_33,Kent
+base.county_us_1527,base.state_us_35,Kent
+base.county_us_1528,base.state_us_40,Kent
+base.county_us_1529,base.state_us_44,Kent
+base.county_us_1530,base.state_us_8,Kent
+base.county_us_1531,base.state_us_18,Kenton
+base.county_us_1532,base.state_us_16,Keokuk
+base.county_us_1533,base.state_us_5,Kern
+base.county_us_1534,base.state_us_44,Kerr
+base.county_us_1535,base.state_us_41,Kershaw
+base.county_us_1536,base.state_us_2,Ketchikan Gateway Borough
+base.county_us_1537,base.state_us_50,Kewaunee
+base.county_us_1538,base.state_us_35,Keweenaw
+base.county_us_1539,base.state_us_22,Keya Paha
+base.county_us_1540,base.state_us_29,Kidder
+base.county_us_1541,base.state_us_22,Kimball
+base.county_us_1542,base.state_us_44,Kimble
+base.county_us_1543,base.state_us_44,King
+base.county_us_1544,base.state_us_48,King
+base.county_us_1545,base.state_us_47,King and Queen
+base.county_us_1546,base.state_us_47,King George
+base.county_us_1547,base.state_us_47,King William
+base.county_us_1548,base.state_us_31,Kingfisher
+base.county_us_1549,base.state_us_17,Kingman
+base.county_us_1550,base.state_us_27,Kings
+base.county_us_1551,base.state_us_5,Kings
+base.county_us_1552,base.state_us_42,Kingsbury
+base.county_us_1553,base.state_us_44,Kinney
+base.county_us_1554,base.state_us_17,Kiowa
+base.county_us_1555,base.state_us_31,Kiowa
+base.county_us_1556,base.state_us_6,Kiowa
+base.county_us_1557,base.state_us_6,Kit Carson
+base.county_us_1558,base.state_us_48,Kitsap
+base.county_us_1559,base.state_us_48,Kittitas
+base.county_us_1560,base.state_us_36,Kittson
+base.county_us_1561,base.state_us_32,Klamath
+base.county_us_1562,base.state_us_44,Kleberg
+base.county_us_1563,base.state_us_48,Klickitat
+base.county_us_1564,base.state_us_18,Knott
+base.county_us_1565,base.state_us_14,Knox
+base.county_us_1566,base.state_us_15,Knox
+base.county_us_1567,base.state_us_18,Knox
+base.county_us_1568,base.state_us_20,Knox
+base.county_us_1569,base.state_us_22,Knox
+base.county_us_1570,base.state_us_30,Knox
+base.county_us_1571,base.state_us_38,Knox
+base.county_us_1572,base.state_us_43,Knox
+base.county_us_1573,base.state_us_44,Knox
+base.county_us_1574,base.state_us_2,Kodiak Island Borough
+base.county_us_1575,base.state_us_36,Koochiching
+base.county_us_1576,base.state_us_13,Kootenai
+base.county_us_1577,base.state_us_15,Kosciusko
+base.county_us_1578,base.state_us_16,Kossuth
+base.county_us_1579,base.state_us_50,La Crosse
+base.county_us_1580,base.state_us_3,La Paz
+base.county_us_1581,base.state_us_6,La Plata
+base.county_us_1582,base.state_us_44,La Salle
+base.county_us_1583,base.state_us_17,Labette
+base.county_us_1584,base.state_us_36,Lac qui Parle
+base.county_us_1585,base.state_us_39,Lackawanna
+base.county_us_1586,base.state_us_38,Laclede
+base.county_us_1587,base.state_us_10,Lafayette
+base.county_us_1588,base.state_us_37,Lafayette
+base.county_us_1589,base.state_us_38,Lafayette
+base.county_us_1590,base.state_us_4,Lafayette
+base.county_us_1591,base.state_us_50,Lafayette
+base.county_us_1592,base.state_us_19,Lafayette Parish
+base.county_us_1593,base.state_us_19,Lafourche Parish
+base.county_us_1594,base.state_us_15,LaGrange
+base.county_us_1595,base.state_us_39,Lajas Municipio
+base.county_us_1596,base.state_us_10,Lake
+base.county_us_1597,base.state_us_14,Lake
+base.county_us_1598,base.state_us_15,Lake
+base.county_us_1599,base.state_us_21,Lake
+base.county_us_1600,base.state_us_30,Lake
+base.county_us_1601,base.state_us_32,Lake
+base.county_us_1602,base.state_us_35,Lake
+base.county_us_1603,base.state_us_36,Lake
+base.county_us_1604,base.state_us_42,Lake
+base.county_us_1605,base.state_us_43,Lake
+base.county_us_1606,base.state_us_5,Lake
+base.county_us_1607,base.state_us_6,Lake
+base.county_us_1608,base.state_us_2,Lake and Peninsula Borough
+base.county_us_1609,base.state_us_36,Lake of the Woods
+base.county_us_1610,base.state_us_1,Lamar
+base.county_us_1611,base.state_us_11,Lamar
+base.county_us_1612,base.state_us_37,Lamar
+base.county_us_1613,base.state_us_44,Lamar
+base.county_us_1614,base.state_us_44,Lamb
+base.county_us_1615,base.state_us_46,Lamoille
+base.county_us_1616,base.state_us_29,LaMoure
+base.county_us_1617,base.state_us_44,Lampasas
+base.county_us_1618,base.state_us_22,Lancaster
+base.county_us_1619,base.state_us_39,Lancaster
+base.county_us_1620,base.state_us_41,Lancaster
+base.county_us_1621,base.state_us_47,Lancaster
+base.county_us_1622,base.state_us_23,Lander
+base.county_us_1623,base.state_us_17,Lane
+base.county_us_1624,base.state_us_32,Lane
+base.county_us_1625,base.state_us_50,Langlade
+base.county_us_1626,base.state_us_11,Lanier
+base.county_us_1627,base.state_us_35,Lapeer
+base.county_us_1628,base.state_us_15,LaPorte
+base.county_us_1629,base.state_us_51,Laramie
+base.county_us_1630,base.state_us_39,Lares Municipio
+base.county_us_1631,base.state_us_6,Larimer
+base.county_us_1632,base.state_us_18,Larue
+base.county_us_1633,base.state_us_6,Las Animas
+base.county_us_1634,base.state_us_39,Las Marías Municipio
+base.county_us_1635,base.state_us_39,Las Piedras Municipio
+base.county_us_1636,base.state_us_14,LaSalle
+base.county_us_1637,base.state_us_19,LaSalle Parish
+base.county_us_1638,base.state_us_5,Lassen
+base.county_us_1639,base.state_us_13,Latah
+base.county_us_1640,base.state_us_31,Latimer
+base.county_us_1641,base.state_us_1,Lauderdale
+base.county_us_1642,base.state_us_37,Lauderdale
+base.county_us_1643,base.state_us_43,Lauderdale
+base.county_us_1644,base.state_us_18,Laurel
+base.county_us_1645,base.state_us_11,Laurens
+base.county_us_1646,base.state_us_41,Laurens
+base.county_us_1647,base.state_us_44,Lavaca
+base.county_us_1648,base.state_us_1,Lawrence
+base.county_us_1649,base.state_us_14,Lawrence
+base.county_us_1650,base.state_us_15,Lawrence
+base.county_us_1651,base.state_us_18,Lawrence
+base.county_us_1652,base.state_us_30,Lawrence
+base.county_us_1653,base.state_us_37,Lawrence
+base.county_us_1654,base.state_us_38,Lawrence
+base.county_us_1655,base.state_us_39,Lawrence
+base.county_us_1656,base.state_us_4,Lawrence
+base.county_us_1657,base.state_us_42,Lawrence
+base.county_us_1658,base.state_us_43,Lawrence
+base.county_us_1659,base.state_us_31,Le Flore
+base.county_us_1660,base.state_us_36,Le Sueur
+base.county_us_1661,base.state_us_26,Lea
+base.county_us_1662,base.state_us_37,Leake
+base.county_us_1663,base.state_us_17,Leavenworth
+base.county_us_1664,base.state_us_39,Lebanon
+base.county_us_1665,base.state_us_1,Lee
+base.county_us_1666,base.state_us_10,Lee
+base.county_us_1667,base.state_us_11,Lee
+base.county_us_1668,base.state_us_14,Lee
+base.county_us_1669,base.state_us_16,Lee
+base.county_us_1670,base.state_us_18,Lee
+base.county_us_1671,base.state_us_28,Lee
+base.county_us_1672,base.state_us_37,Lee
+base.county_us_1673,base.state_us_4,Lee
+base.county_us_1674,base.state_us_41,Lee
+base.county_us_1675,base.state_us_44,Lee
+base.county_us_1676,base.state_us_47,Lee
+base.county_us_1677,base.state_us_35,Leelanau
+base.county_us_1678,base.state_us_37,Leflore
+base.county_us_1679,base.state_us_39,Lehigh
+base.county_us_1680,base.state_us_13,Lemhi
+base.county_us_1681,base.state_us_35,Lenawee
+base.county_us_1682,base.state_us_28,Lenoir
+base.county_us_1683,base.state_us_10,Leon
+base.county_us_1684,base.state_us_44,Leon
+base.county_us_1685,base.state_us_18,Leslie
+base.county_us_1686,base.state_us_18,Letcher
+base.county_us_1687,base.state_us_10,Levy
+base.county_us_1688,base.state_us_13,Lewis
+base.county_us_1689,base.state_us_18,Lewis
+base.county_us_1690,base.state_us_27,Lewis
+base.county_us_1691,base.state_us_38,Lewis
+base.county_us_1692,base.state_us_43,Lewis
+base.county_us_1693,base.state_us_48,Lewis
+base.county_us_1694,base.state_us_49,Lewis
+base.county_us_1695,base.state_us_21,Lewis and Clark
+base.county_us_1696,base.state_us_41,Lexington
+base.county_us_1697,base.state_us_47,Lexington City
+base.county_us_1698,base.state_us_10,Liberty
+base.county_us_1699,base.state_us_11,Liberty
+base.county_us_1700,base.state_us_21,Liberty
+base.county_us_1701,base.state_us_44,Liberty
+base.county_us_1702,base.state_us_30,Licking
+base.county_us_1703,base.state_us_1,Limestone
+base.county_us_1704,base.state_us_44,Limestone
+base.county_us_1705,base.state_us_11,Lincoln
+base.county_us_1706,base.state_us_13,Lincoln
+base.county_us_1707,base.state_us_17,Lincoln
+base.county_us_1708,base.state_us_18,Lincoln
+base.county_us_1709,base.state_us_20,Lincoln
+base.county_us_1710,base.state_us_21,Lincoln
+base.county_us_1711,base.state_us_22,Lincoln
+base.county_us_1712,base.state_us_23,Lincoln
+base.county_us_1713,base.state_us_26,Lincoln
+base.county_us_1714,base.state_us_28,Lincoln
+base.county_us_1715,base.state_us_31,Lincoln
+base.county_us_1716,base.state_us_32,Lincoln
+base.county_us_1717,base.state_us_36,Lincoln
+base.county_us_1718,base.state_us_37,Lincoln
+base.county_us_1719,base.state_us_38,Lincoln
+base.county_us_1720,base.state_us_4,Lincoln
+base.county_us_1721,base.state_us_42,Lincoln
+base.county_us_1722,base.state_us_43,Lincoln
+base.county_us_1723,base.state_us_48,Lincoln
+base.county_us_1724,base.state_us_49,Lincoln
+base.county_us_1725,base.state_us_50,Lincoln
+base.county_us_1726,base.state_us_51,Lincoln
+base.county_us_1727,base.state_us_6,Lincoln
+base.county_us_1728,base.state_us_19,Lincoln Parish
+base.county_us_1729,base.state_us_16,Linn
+base.county_us_1730,base.state_us_17,Linn
+base.county_us_1731,base.state_us_32,Linn
+base.county_us_1732,base.state_us_38,Linn
+base.county_us_1733,base.state_us_44,Lipscomb
+base.county_us_1734,base.state_us_7,Litchfield
+base.county_us_1735,base.state_us_4,Little River
+base.county_us_1736,base.state_us_44,Live Oak
+base.county_us_1737,base.state_us_14,Livingston
+base.county_us_1738,base.state_us_18,Livingston
+base.county_us_1739,base.state_us_27,Livingston
+base.county_us_1740,base.state_us_35,Livingston
+base.county_us_1741,base.state_us_38,Livingston
+base.county_us_1742,base.state_us_19,Livingston Parish
+base.county_us_1743,base.state_us_44,Llano
+base.county_us_1744,base.state_us_14,Logan
+base.county_us_1745,base.state_us_17,Logan
+base.county_us_1746,base.state_us_18,Logan
+base.county_us_1747,base.state_us_22,Logan
+base.county_us_1748,base.state_us_29,Logan
+base.county_us_1749,base.state_us_30,Logan
+base.county_us_1750,base.state_us_31,Logan
+base.county_us_1751,base.state_us_4,Logan
+base.county_us_1752,base.state_us_49,Logan
+base.county_us_1753,base.state_us_6,Logan
+base.county_us_1754,base.state_us_39,Loíza Municipio
+base.county_us_1755,base.state_us_11,Long
+base.county_us_1756,base.state_us_4,Lonoke
+base.county_us_1757,base.state_us_30,Lorain
+base.county_us_1758,base.state_us_26,Los Alamos
+base.county_us_1759,base.state_us_5,Los Angeles
+base.county_us_1760,base.state_us_43,Loudon
+base.county_us_1761,base.state_us_47,Loudoun
+base.county_us_1762,base.state_us_16,Louisa
+base.county_us_1763,base.state_us_47,Louisa
+base.county_us_1764,base.state_us_22,Loup
+base.county_us_1765,base.state_us_31,Love
+base.county_us_1766,base.state_us_44,Loving
+base.county_us_1767,base.state_us_1,Lowndes
+base.county_us_1768,base.state_us_11,Lowndes
+base.county_us_1769,base.state_us_37,Lowndes
+base.county_us_1770,base.state_us_44,Lubbock
+base.county_us_1771,base.state_us_16,Lucas
+base.county_us_1772,base.state_us_30,Lucas
+base.county_us_1773,base.state_us_35,Luce
+base.county_us_1774,base.state_us_11,Lumpkin
+base.county_us_1775,base.state_us_26,Luna
+base.county_us_1776,base.state_us_47,Lunenburg
+base.county_us_1777,base.state_us_39,Luquillo Municipio
+base.county_us_1778,base.state_us_39,Luzerne
+base.county_us_1779,base.state_us_39,Lycoming
+base.county_us_1780,base.state_us_42,Lyman
+base.county_us_1781,base.state_us_47,Lynchburg City
+base.county_us_1782,base.state_us_44,Lynn
+base.county_us_1783,base.state_us_16,Lyon
+base.county_us_1784,base.state_us_17,Lyon
+base.county_us_1785,base.state_us_18,Lyon
+base.county_us_1786,base.state_us_23,Lyon
+base.county_us_1787,base.state_us_36,Lyon
+base.county_us_1788,base.state_us_35,Mackinac
+base.county_us_1789,base.state_us_35,Macomb
+base.county_us_1790,base.state_us_1,Macon
+base.county_us_1791,base.state_us_11,Macon
+base.county_us_1792,base.state_us_14,Macon
+base.county_us_1793,base.state_us_28,Macon
+base.county_us_1794,base.state_us_38,Macon
+base.county_us_1795,base.state_us_43,Macon
+base.county_us_1796,base.state_us_14,Macoupin
+base.county_us_1797,base.state_us_5,Madera
+base.county_us_1798,base.state_us_1,Madison
+base.county_us_1799,base.state_us_10,Madison
+base.county_us_1800,base.state_us_11,Madison
+base.county_us_1801,base.state_us_13,Madison
+base.county_us_1802,base.state_us_14,Madison
+base.county_us_1803,base.state_us_15,Madison
+base.county_us_1804,base.state_us_16,Madison
+base.county_us_1805,base.state_us_18,Madison
+base.county_us_1806,base.state_us_21,Madison
+base.county_us_1807,base.state_us_22,Madison
+base.county_us_1808,base.state_us_27,Madison
+base.county_us_1809,base.state_us_28,Madison
+base.county_us_1810,base.state_us_30,Madison
+base.county_us_1811,base.state_us_37,Madison
+base.county_us_1812,base.state_us_38,Madison
+base.county_us_1813,base.state_us_4,Madison
+base.county_us_1814,base.state_us_43,Madison
+base.county_us_1815,base.state_us_44,Madison
+base.county_us_1816,base.state_us_47,Madison
+base.county_us_1817,base.state_us_19,Madison Parish
+base.county_us_1818,base.state_us_18,Magoffin
+base.county_us_1819,base.state_us_16,Mahaska
+base.county_us_1820,base.state_us_36,Mahnomen
+base.county_us_1821,base.state_us_30,Mahoning
+base.county_us_1822,base.state_us_31,Major
+base.county_us_1823,base.state_us_32,Malheur
+base.county_us_1824,base.state_us_47,Manassas City
+base.county_us_1825,base.state_us_47,Manassas Park City
+base.county_us_1826,base.state_us_10,Manatee
+base.county_us_1827,base.state_us_39,Manatí Municipio
+base.county_us_1828,base.state_us_35,Manistee
+base.county_us_1829,base.state_us_50,Manitowoc
+base.county_us_1830,base.state_us_50,Marathon
+base.county_us_1831,base.state_us_1,Marengo
+base.county_us_1832,base.state_us_39,Maricao Municipio
+base.county_us_1833,base.state_us_3,Maricopa
+base.county_us_1834,base.state_us_38,Maries
+base.county_us_1835,base.state_us_5,Marin
+base.county_us_1836,base.state_us_50,Marinette
+base.county_us_1837,base.state_us_1,Marion
+base.county_us_1838,base.state_us_10,Marion
+base.county_us_1839,base.state_us_11,Marion
+base.county_us_1840,base.state_us_14,Marion
+base.county_us_1841,base.state_us_15,Marion
+base.county_us_1842,base.state_us_16,Marion
+base.county_us_1843,base.state_us_17,Marion
+base.county_us_1844,base.state_us_18,Marion
+base.county_us_1845,base.state_us_30,Marion
+base.county_us_1846,base.state_us_32,Marion
+base.county_us_1847,base.state_us_37,Marion
+base.county_us_1848,base.state_us_38,Marion
+base.county_us_1849,base.state_us_4,Marion
+base.county_us_1850,base.state_us_41,Marion
+base.county_us_1851,base.state_us_43,Marion
+base.county_us_1852,base.state_us_44,Marion
+base.county_us_1853,base.state_us_49,Marion
+base.county_us_1854,base.state_us_5,Mariposa
+base.county_us_1855,base.state_us_41,Marlboro
+base.county_us_1856,base.state_us_35,Marquette
+base.county_us_1857,base.state_us_50,Marquette
+base.county_us_1858,base.state_us_1,Marshall
+base.county_us_1859,base.state_us_14,Marshall
+base.county_us_1860,base.state_us_15,Marshall
+base.county_us_1861,base.state_us_16,Marshall
+base.county_us_1862,base.state_us_17,Marshall
+base.county_us_1863,base.state_us_18,Marshall
+base.county_us_1864,base.state_us_31,Marshall
+base.county_us_1865,base.state_us_36,Marshall
+base.county_us_1866,base.state_us_37,Marshall
+base.county_us_1867,base.state_us_42,Marshall
+base.county_us_1868,base.state_us_43,Marshall
+base.county_us_1869,base.state_us_49,Marshall
+base.county_us_1870,base.state_us_10,Martin
+base.county_us_1871,base.state_us_15,Martin
+base.county_us_1872,base.state_us_18,Martin
+base.county_us_1873,base.state_us_28,Martin
+base.county_us_1874,base.state_us_36,Martin
+base.county_us_1875,base.state_us_44,Martin
+base.county_us_1876,base.state_us_47,Martinsville City
+base.county_us_1877,base.state_us_14,Mason
+base.county_us_1878,base.state_us_18,Mason
+base.county_us_1879,base.state_us_35,Mason
+base.county_us_1880,base.state_us_44,Mason
+base.county_us_1881,base.state_us_48,Mason
+base.county_us_1882,base.state_us_49,Mason
+base.county_us_1883,base.state_us_14,Massac
+base.county_us_1884,base.state_us_44,Matagorda
+base.county_us_1885,base.state_us_2,Matanuska-Susitna Borough
+base.county_us_1886,base.state_us_47,Mathews
+base.county_us_1887,base.state_us_12,Maui
+base.county_us_1888,base.state_us_39,Maunabo Municipio
+base.county_us_1889,base.state_us_43,Maury
+base.county_us_1890,base.state_us_44,Maverick
+base.county_us_1891,base.state_us_39,Mayagüez Municipio
+base.county_us_1892,base.state_us_31,Mayes
+base.county_us_1893,base.state_us_31,McClain
+base.county_us_1894,base.state_us_21,McCone
+base.county_us_1895,base.state_us_42,McCook
+base.county_us_1896,base.state_us_41,McCormick
+base.county_us_1897,base.state_us_18,McCracken
+base.county_us_1898,base.state_us_18,McCreary
+base.county_us_1899,base.state_us_44,McCulloch
+base.county_us_1900,base.state_us_31,McCurtain
+base.county_us_1901,base.state_us_38,McDonald
+base.county_us_1902,base.state_us_14,McDonough
+base.county_us_1903,base.state_us_28,McDowell
+base.county_us_1904,base.state_us_49,McDowell
+base.county_us_1905,base.state_us_11,McDuffie
+base.county_us_1906,base.state_us_14,McHenry
+base.county_us_1907,base.state_us_29,McHenry
+base.county_us_1908,base.state_us_11,McIntosh
+base.county_us_1909,base.state_us_29,McIntosh
+base.county_us_1910,base.state_us_31,McIntosh
+base.county_us_1911,base.state_us_39,McKean
+base.county_us_1912,base.state_us_29,McKenzie
+base.county_us_1913,base.state_us_26,McKinley
+base.county_us_1914,base.state_us_14,McLean
+base.county_us_1915,base.state_us_18,McLean
+base.county_us_1916,base.state_us_29,McLean
+base.county_us_1917,base.state_us_44,McLennan
+base.county_us_1918,base.state_us_36,McLeod
+base.county_us_1919,base.state_us_43,McMinn
+base.county_us_1920,base.state_us_44,McMullen
+base.county_us_1921,base.state_us_43,McNairy
+base.county_us_1922,base.state_us_17,McPherson
+base.county_us_1923,base.state_us_22,McPherson
+base.county_us_1924,base.state_us_42,McPherson
+base.county_us_1925,base.state_us_17,Meade
+base.county_us_1926,base.state_us_18,Meade
+base.county_us_1927,base.state_us_42,Meade
+base.county_us_1928,base.state_us_21,Meagher
+base.county_us_1929,base.state_us_28,Mecklenburg
+base.county_us_1930,base.state_us_47,Mecklenburg
+base.county_us_1931,base.state_us_35,Mecosta
+base.county_us_1932,base.state_us_30,Medina
+base.county_us_1933,base.state_us_44,Medina
+base.county_us_1934,base.state_us_36,Meeker
+base.county_us_1935,base.state_us_30,Meigs
+base.county_us_1936,base.state_us_43,Meigs
+base.county_us_1937,base.state_us_42,Mellette
+base.county_us_1938,base.state_us_14,Menard
+base.county_us_1939,base.state_us_44,Menard
+base.county_us_1940,base.state_us_5,Mendocino
+base.county_us_1941,base.state_us_18,Menifee
+base.county_us_1942,base.state_us_35,Menominee
+base.county_us_1943,base.state_us_50,Menominee
+base.county_us_1944,base.state_us_5,Merced
+base.county_us_1945,base.state_us_14,Mercer
+base.county_us_1946,base.state_us_18,Mercer
+base.county_us_1947,base.state_us_25,Mercer
+base.county_us_1948,base.state_us_29,Mercer
+base.county_us_1949,base.state_us_30,Mercer
+base.county_us_1950,base.state_us_38,Mercer
+base.county_us_1951,base.state_us_39,Mercer
+base.county_us_1952,base.state_us_49,Mercer
+base.county_us_1953,base.state_us_11,Meriwether
+base.county_us_1954,base.state_us_22,Merrick
+base.county_us_1955,base.state_us_24,Merrimack
+base.county_us_1956,base.state_us_6,Mesa
+base.county_us_1957,base.state_us_18,Metcalfe
+base.county_us_1958,base.state_us_15,Miami
+base.county_us_1959,base.state_us_17,Miami
+base.county_us_1960,base.state_us_30,Miami
+base.county_us_1961,base.state_us_10,Miami-Dade
+base.county_us_1962,base.state_us_25,Middlesex
+base.county_us_1963,base.state_us_34,Middlesex
+base.county_us_1964,base.state_us_47,Middlesex
+base.county_us_1965,base.state_us_7,Middlesex
+base.county_us_1966,base.state_us_35,Midland
+base.county_us_1967,base.state_us_44,Midland
+base.county_us_1968,base.state_us_39,Mifflin
+base.county_us_1969,base.state_us_44,Milam
+base.county_us_1970,base.state_us_45,Millard
+base.county_us_1971,base.state_us_36,Mille Lacs
+base.county_us_1972,base.state_us_11,Miller
+base.county_us_1973,base.state_us_38,Miller
+base.county_us_1974,base.state_us_4,Miller
+base.county_us_1975,base.state_us_16,Mills
+base.county_us_1976,base.state_us_44,Mills
+base.county_us_1977,base.state_us_50,Milwaukee
+base.county_us_1978,base.state_us_42,Miner
+base.county_us_1979,base.state_us_21,Mineral
+base.county_us_1980,base.state_us_23,Mineral
+base.county_us_1981,base.state_us_49,Mineral
+base.county_us_1982,base.state_us_6,Mineral
+base.county_us_1983,base.state_us_49,Mingo
+base.county_us_1984,base.state_us_13,Minidoka
+base.county_us_1985,base.state_us_42,Minnehaha
+base.county_us_1986,base.state_us_35,Missaukee
+base.county_us_1987,base.state_us_38,Mississippi
+base.county_us_1988,base.state_us_4,Mississippi
+base.county_us_1989,base.state_us_21,Missoula
+base.county_us_1990,base.state_us_11,Mitchell
+base.county_us_1991,base.state_us_16,Mitchell
+base.county_us_1992,base.state_us_17,Mitchell
+base.county_us_1993,base.state_us_28,Mitchell
+base.county_us_1994,base.state_us_44,Mitchell
+base.county_us_1995,base.state_us_1,Mobile
+base.county_us_1996,base.state_us_39,Moca Municipio
+base.county_us_1997,base.state_us_5,Modoc
+base.county_us_1998,base.state_us_6,Moffat
+base.county_us_1999,base.state_us_3,Mohave
+base.county_us_2000,base.state_us_38,Moniteau
+base.county_us_2001,base.state_us_25,Monmouth
+base.county_us_2002,base.state_us_5,Mono
+base.county_us_2003,base.state_us_16,Monona
+base.county_us_2004,base.state_us_49,Monongalia
+base.county_us_2005,base.state_us_1,Monroe
+base.county_us_2006,base.state_us_10,Monroe
+base.county_us_2007,base.state_us_11,Monroe
+base.county_us_2008,base.state_us_14,Monroe
+base.county_us_2009,base.state_us_15,Monroe
+base.county_us_2010,base.state_us_16,Monroe
+base.county_us_2011,base.state_us_18,Monroe
+base.county_us_2012,base.state_us_27,Monroe
+base.county_us_2013,base.state_us_30,Monroe
+base.county_us_2014,base.state_us_35,Monroe
+base.county_us_2015,base.state_us_37,Monroe
+base.county_us_2016,base.state_us_38,Monroe
+base.county_us_2017,base.state_us_39,Monroe
+base.county_us_2018,base.state_us_4,Monroe
+base.county_us_2019,base.state_us_43,Monroe
+base.county_us_2020,base.state_us_49,Monroe
+base.county_us_2021,base.state_us_50,Monroe
+base.county_us_2022,base.state_us_44,Montague
+base.county_us_2023,base.state_us_35,Montcalm
+base.county_us_2024,base.state_us_5,Monterey
+base.county_us_2025,base.state_us_6,Montezuma
+base.county_us_2026,base.state_us_1,Montgomery
+base.county_us_2027,base.state_us_11,Montgomery
+base.county_us_2028,base.state_us_14,Montgomery
+base.county_us_2029,base.state_us_15,Montgomery
+base.county_us_2030,base.state_us_16,Montgomery
+base.county_us_2031,base.state_us_17,Montgomery
+base.county_us_2032,base.state_us_18,Montgomery
+base.county_us_2033,base.state_us_27,Montgomery
+base.county_us_2034,base.state_us_28,Montgomery
+base.county_us_2035,base.state_us_30,Montgomery
+base.county_us_2036,base.state_us_33,Montgomery
+base.county_us_2037,base.state_us_37,Montgomery
+base.county_us_2038,base.state_us_38,Montgomery
+base.county_us_2039,base.state_us_39,Montgomery
+base.county_us_2040,base.state_us_4,Montgomery
+base.county_us_2041,base.state_us_43,Montgomery
+base.county_us_2042,base.state_us_44,Montgomery
+base.county_us_2043,base.state_us_47,Montgomery
+base.county_us_2044,base.state_us_35,Montmorency
+base.county_us_2045,base.state_us_39,Montour
+base.county_us_2046,base.state_us_6,Montrose
+base.county_us_2047,base.state_us_42,Moody
+base.county_us_2048,base.state_us_28,Moore
+base.county_us_2049,base.state_us_43,Moore
+base.county_us_2050,base.state_us_44,Moore
+base.county_us_2051,base.state_us_26,Mora
+base.county_us_2052,base.state_us_19,Morehouse Parish
+base.county_us_2053,base.state_us_1,Morgan
+base.county_us_2054,base.state_us_11,Morgan
+base.county_us_2055,base.state_us_14,Morgan
+base.county_us_2056,base.state_us_15,Morgan
+base.county_us_2057,base.state_us_18,Morgan
+base.county_us_2058,base.state_us_30,Morgan
+base.county_us_2059,base.state_us_38,Morgan
+base.county_us_2060,base.state_us_43,Morgan
+base.county_us_2061,base.state_us_45,Morgan
+base.county_us_2062,base.state_us_49,Morgan
+base.county_us_2063,base.state_us_6,Morgan
+base.county_us_2064,base.state_us_39,Morovis Municipio
+base.county_us_2065,base.state_us_22,Morrill
+base.county_us_2066,base.state_us_17,Morris
+base.county_us_2067,base.state_us_25,Morris
+base.county_us_2068,base.state_us_44,Morris
+base.county_us_2069,base.state_us_36,Morrison
+base.county_us_2070,base.state_us_30,Morrow
+base.county_us_2071,base.state_us_32,Morrow
+base.county_us_2072,base.state_us_17,Morton
+base.county_us_2073,base.state_us_29,Morton
+base.county_us_2074,base.state_us_44,Motley
+base.county_us_2075,base.state_us_14,Moultrie
+base.county_us_2076,base.state_us_29,Mountrail
+base.county_us_2077,base.state_us_36,Mower
+base.county_us_2078,base.state_us_18,Muhlenberg
+base.county_us_2079,base.state_us_32,Multnomah
+base.county_us_2080,base.state_us_11,Murray
+base.county_us_2081,base.state_us_31,Murray
+base.county_us_2082,base.state_us_36,Murray
+base.county_us_2083,base.state_us_16,Muscatine
+base.county_us_2084,base.state_us_11,Muscogee
+base.county_us_2085,base.state_us_35,Muskegon
+base.county_us_2086,base.state_us_30,Muskingum
+base.county_us_2087,base.state_us_31,Muskogee
+base.county_us_2088,base.state_us_21,Musselshell
+base.county_us_2089,base.state_us_44,Nacogdoches
+base.county_us_2090,base.state_us_39,Naguabo Municipio
+base.county_us_2091,base.state_us_22,Nance
+base.county_us_2092,base.state_us_34,Nantucket
+base.county_us_2093,base.state_us_5,Napa
+base.county_us_2094,base.state_us_39,Naranjito Municipio
+base.county_us_2095,base.state_us_28,Nash
+base.county_us_2096,base.state_us_10,Nassau
+base.county_us_2097,base.state_us_27,Nassau
+base.county_us_2098,base.state_us_19,Natchitoches Parish
+base.county_us_2099,base.state_us_51,Natrona
+base.county_us_2100,base.state_us_3,Navajo
+base.county_us_2101,base.state_us_44,Navarro
+base.county_us_2102,base.state_us_18,Nelson
+base.county_us_2103,base.state_us_29,Nelson
+base.county_us_2104,base.state_us_47,Nelson
+base.county_us_2105,base.state_us_17,Nemaha
+base.county_us_2106,base.state_us_22,Nemaha
+base.county_us_2107,base.state_us_17,Neosho
+base.county_us_2108,base.state_us_37,Neshoba
+base.county_us_2109,base.state_us_17,Ness
+base.county_us_2110,base.state_us_4,Nevada
+base.county_us_2111,base.state_us_5,Nevada
+base.county_us_2112,base.state_us_8,New Castle
+base.county_us_2113,base.state_us_28,New Hanover
+base.county_us_2114,base.state_us_7,New Haven
+base.county_us_2115,base.state_us_47,New Kent
+base.county_us_2116,base.state_us_7,New London
+base.county_us_2117,base.state_us_38,New Madrid
+base.county_us_2118,base.state_us_27,New York
+base.county_us_2119,base.state_us_35,Newaygo
+base.county_us_2120,base.state_us_41,Newberry
+base.county_us_2121,base.state_us_40,Newport
+base.county_us_2122,base.state_us_47,Newport News City
+base.county_us_2123,base.state_us_11,Newton
+base.county_us_2124,base.state_us_15,Newton
+base.county_us_2125,base.state_us_37,Newton
+base.county_us_2126,base.state_us_38,Newton
+base.county_us_2127,base.state_us_4,Newton
+base.county_us_2128,base.state_us_44,Newton
+base.county_us_2129,base.state_us_13,Nez Perce
+base.county_us_2130,base.state_us_27,Niagara
+base.county_us_2131,base.state_us_18,Nicholas
+base.county_us_2132,base.state_us_49,Nicholas
+base.county_us_2133,base.state_us_36,Nicollet
+base.county_us_2134,base.state_us_51,Niobrara
+base.county_us_2135,base.state_us_15,Noble
+base.county_us_2136,base.state_us_30,Noble
+base.county_us_2137,base.state_us_31,Noble
+base.county_us_2138,base.state_us_36,Nobles
+base.county_us_2139,base.state_us_38,Nodaway
+base.county_us_2140,base.state_us_44,Nolan
+base.county_us_2141,base.state_us_2,Nome
+base.county_us_2142,base.state_us_34,Norfolk
+base.county_us_2143,base.state_us_47,Norfolk City
+base.county_us_2144,base.state_us_36,Norman
+base.county_us_2145,base.state_us_2,North Slope Borough
+base.county_us_2146,base.state_us_28,Northampton
+base.county_us_2147,base.state_us_39,Northampton
+base.county_us_2148,base.state_us_47,Northampton
+base.county_us_2149,base.state_us_39,Northumberland
+base.county_us_2150,base.state_us_47,Northumberland
+base.county_us_2151,base.state_us_2,Northwest Arctic Borough
+base.county_us_2152,base.state_us_17,Norton
+base.county_us_2153,base.state_us_47,Norton City
+base.county_us_2154,base.state_us_47,Nottoway
+base.county_us_2155,base.state_us_31,Nowata
+base.county_us_2156,base.state_us_37,Noxubee
+base.county_us_2157,base.state_us_22,Nuckolls
+base.county_us_2158,base.state_us_44,Nueces
+base.county_us_2159,base.state_us_23,Nye
+base.county_us_2160,base.state_us_35,Oakland
+base.county_us_2161,base.state_us_43,Obion
+base.county_us_2162,base.state_us_16,O'Brien
+base.county_us_2163,base.state_us_25,Ocean
+base.county_us_2164,base.state_us_35,Oceana
+base.county_us_2165,base.state_us_44,Ochiltree
+base.county_us_2166,base.state_us_11,Oconee
+base.county_us_2167,base.state_us_41,Oconee
+base.county_us_2168,base.state_us_50,Oconto
+base.county_us_2169,base.state_us_35,Ogemaw
+base.county_us_2170,base.state_us_14,Ogle
+base.county_us_2171,base.state_us_11,Oglethorpe
+base.county_us_2172,base.state_us_15,Ohio
+base.county_us_2173,base.state_us_18,Ohio
+base.county_us_2174,base.state_us_49,Ohio
+base.county_us_2175,base.state_us_10,Okaloosa
+base.county_us_2176,base.state_us_48,Okanogan
+base.county_us_2177,base.state_us_10,Okeechobee
+base.county_us_2178,base.state_us_31,Okfuskee
+base.county_us_2179,base.state_us_31,Oklahoma
+base.county_us_2180,base.state_us_31,Okmulgee
+base.county_us_2181,base.state_us_37,Oktibbeha
+base.county_us_2182,base.state_us_18,Oldham
+base.county_us_2183,base.state_us_44,Oldham
+base.county_us_2184,base.state_us_29,Oliver
+base.county_us_2185,base.state_us_36,Olmsted
+base.county_us_2186,base.state_us_13,Oneida
+base.county_us_2187,base.state_us_27,Oneida
+base.county_us_2188,base.state_us_50,Oneida
+base.county_us_2189,base.state_us_27,Onondaga
+base.county_us_2190,base.state_us_28,Onslow
+base.county_us_2191,base.state_us_27,Ontario
+base.county_us_2192,base.state_us_35,Ontonagon
+base.county_us_2193,base.state_us_10,Orange
+base.county_us_2194,base.state_us_15,Orange
+base.county_us_2195,base.state_us_27,Orange
+base.county_us_2196,base.state_us_28,Orange
+base.county_us_2197,base.state_us_44,Orange
+base.county_us_2198,base.state_us_46,Orange
+base.county_us_2199,base.state_us_47,Orange
+base.county_us_2200,base.state_us_5,Orange
+base.county_us_2201,base.state_us_41,Orangeburg
+base.county_us_2202,base.state_us_38,Oregon
+base.county_us_2203,base.state_us_27,Orleans
+base.county_us_2204,base.state_us_46,Orleans
+base.county_us_2205,base.state_us_19,Orleans Parish
+base.county_us_2206,base.state_us_39,Orocovis Municipio
+base.county_us_2207,base.state_us_17,Osage
+base.county_us_2208,base.state_us_31,Osage
+base.county_us_2209,base.state_us_38,Osage
+base.county_us_2210,base.state_us_17,Osborne
+base.county_us_2211,base.state_us_10,Osceola
+base.county_us_2212,base.state_us_16,Osceola
+base.county_us_2213,base.state_us_35,Osceola
+base.county_us_2214,base.state_us_35,Oscoda
+base.county_us_2215,base.state_us_27,Oswego
+base.county_us_2216,base.state_us_26,Otero
+base.county_us_2217,base.state_us_6,Otero
+base.county_us_2218,base.state_us_22,Otoe
+base.county_us_2219,base.state_us_27,Otsego
+base.county_us_2220,base.state_us_35,Otsego
+base.county_us_2221,base.state_us_17,Ottawa
+base.county_us_2222,base.state_us_30,Ottawa
+base.county_us_2223,base.state_us_31,Ottawa
+base.county_us_2224,base.state_us_35,Ottawa
+base.county_us_2225,base.state_us_36,Otter Tail
+base.county_us_2226,base.state_us_4,Ouachita
+base.county_us_2227,base.state_us_19,Ouachita Parish
+base.county_us_2228,base.state_us_6,Ouray
+base.county_us_2229,base.state_us_50,Outagamie
+base.county_us_2230,base.state_us_43,Overton
+base.county_us_2231,base.state_us_15,Owen
+base.county_us_2232,base.state_us_18,Owen
+base.county_us_2233,base.state_us_18,Owsley
+base.county_us_2234,base.state_us_13,Owyhee
+base.county_us_2235,base.state_us_20,Oxford
+base.county_us_2236,base.state_us_38,Ozark
+base.county_us_2237,base.state_us_50,Ozaukee
+base.county_us_2238,base.state_us_48,Pacific
+base.county_us_2239,base.state_us_16,Page
+base.county_us_2240,base.state_us_47,Page
+base.county_us_2241,base.state_us_10,Palm Beach
+base.county_us_2242,base.state_us_16,Palo Alto
+base.county_us_2243,base.state_us_44,Palo Pinto
+base.county_us_2244,base.state_us_28,Pamlico
+base.county_us_2245,base.state_us_37,Panola
+base.county_us_2246,base.state_us_44,Panola
+base.county_us_2247,base.state_us_21,Park
+base.county_us_2248,base.state_us_51,Park
+base.county_us_2249,base.state_us_6,Park
+base.county_us_2250,base.state_us_15,Parke
+base.county_us_2251,base.state_us_44,Parker
+base.county_us_2252,base.state_us_44,Parmer
+base.county_us_2253,base.state_us_10,Pasco
+base.county_us_2254,base.state_us_28,Pasquotank
+base.county_us_2255,base.state_us_25,Passaic
+base.county_us_2256,base.state_us_39,Patillas Municipio
+base.county_us_2257,base.state_us_47,Patrick
+base.county_us_2258,base.state_us_11,Paulding
+base.county_us_2259,base.state_us_30,Paulding
+base.county_us_2260,base.state_us_17,Pawnee
+base.county_us_2261,base.state_us_22,Pawnee
+base.county_us_2262,base.state_us_31,Pawnee
+base.county_us_2263,base.state_us_13,Payette
+base.county_us_2264,base.state_us_31,Payne
+base.county_us_2265,base.state_us_11,Peach
+base.county_us_2266,base.state_us_37,Pearl River
+base.county_us_2267,base.state_us_44,Pecos
+base.county_us_2268,base.state_us_29,Pembina
+base.county_us_2269,base.state_us_38,Pemiscot
+base.county_us_2270,base.state_us_48,Pend Oreille
+base.county_us_2271,base.state_us_28,Pender
+base.county_us_2272,base.state_us_18,Pendleton
+base.county_us_2273,base.state_us_49,Pendleton
+base.county_us_2274,base.state_us_36,Pennington
+base.county_us_2275,base.state_us_42,Pennington
+base.county_us_2276,base.state_us_20,Penobscot
+base.county_us_2277,base.state_us_39,Peñuelas Municipio
+base.county_us_2278,base.state_us_14,Peoria
+base.county_us_2279,base.state_us_50,Pepin
+base.county_us_2280,base.state_us_22,Perkins
+base.county_us_2281,base.state_us_42,Perkins
+base.county_us_2282,base.state_us_28,Perquimans
+base.county_us_2283,base.state_us_1,Perry
+base.county_us_2284,base.state_us_14,Perry
+base.county_us_2285,base.state_us_15,Perry
+base.county_us_2286,base.state_us_18,Perry
+base.county_us_2287,base.state_us_30,Perry
+base.county_us_2288,base.state_us_37,Perry
+base.county_us_2289,base.state_us_38,Perry
+base.county_us_2290,base.state_us_39,Perry
+base.county_us_2291,base.state_us_4,Perry
+base.county_us_2292,base.state_us_43,Perry
+base.county_us_2293,base.state_us_23,Pershing
+base.county_us_2294,base.state_us_28,Person
+base.county_us_2295,base.state_us_2,Petersburg
+base.county_us_2296,base.state_us_47,Petersburg City
+base.county_us_2297,base.state_us_21,Petroleum
+base.county_us_2298,base.state_us_38,Pettis
+base.county_us_2299,base.state_us_22,Phelps
+base.county_us_2300,base.state_us_38,Phelps
+base.county_us_2301,base.state_us_39,Philadelphia
+base.county_us_2302,base.state_us_17,Phillips
+base.county_us_2303,base.state_us_21,Phillips
+base.county_us_2304,base.state_us_4,Phillips
+base.county_us_2305,base.state_us_6,Phillips
+base.county_us_2306,base.state_us_14,Piatt
+base.county_us_2307,base.state_us_30,Pickaway
+base.county_us_2308,base.state_us_1,Pickens
+base.county_us_2309,base.state_us_11,Pickens
+base.county_us_2310,base.state_us_41,Pickens
+base.county_us_2311,base.state_us_43,Pickett
+base.county_us_2312,base.state_us_11,Pierce
+base.county_us_2313,base.state_us_22,Pierce
+base.county_us_2314,base.state_us_29,Pierce
+base.county_us_2315,base.state_us_48,Pierce
+base.county_us_2316,base.state_us_50,Pierce
+base.county_us_2317,base.state_us_1,Pike
+base.county_us_2318,base.state_us_11,Pike
+base.county_us_2319,base.state_us_14,Pike
+base.county_us_2320,base.state_us_15,Pike
+base.county_us_2321,base.state_us_18,Pike
+base.county_us_2322,base.state_us_30,Pike
+base.county_us_2323,base.state_us_37,Pike
+base.county_us_2324,base.state_us_38,Pike
+base.county_us_2325,base.state_us_39,Pike
+base.county_us_2326,base.state_us_4,Pike
+base.county_us_2327,base.state_us_3,Pima
+base.county_us_2328,base.state_us_3,Pinal
+base.county_us_2329,base.state_us_36,Pine
+base.county_us_2330,base.state_us_10,Pinellas
+base.county_us_2331,base.state_us_36,Pipestone
+base.county_us_2332,base.state_us_20,Piscataquis
+base.county_us_2333,base.state_us_6,Pitkin
+base.county_us_2334,base.state_us_28,Pitt
+base.county_us_2335,base.state_us_31,Pittsburg
+base.county_us_2336,base.state_us_47,Pittsylvania
+base.county_us_2337,base.state_us_45,Piute
+base.county_us_2338,base.state_us_5,Placer
+base.county_us_2339,base.state_us_19,Plaquemines Parish
+base.county_us_2340,base.state_us_22,Platte
+base.county_us_2341,base.state_us_38,Platte
+base.county_us_2342,base.state_us_51,Platte
+base.county_us_2343,base.state_us_49,Pleasants
+base.county_us_2344,base.state_us_5,Plumas
+base.county_us_2345,base.state_us_16,Plymouth
+base.county_us_2346,base.state_us_34,Plymouth
+base.county_us_2347,base.state_us_16,Pocahontas
+base.county_us_2348,base.state_us_49,Pocahontas
+base.county_us_2349,base.state_us_4,Poinsett
+base.county_us_2350,base.state_us_19,Pointe Coupee Parish
+base.county_us_2351,base.state_us_10,Polk
+base.county_us_2352,base.state_us_11,Polk
+base.county_us_2353,base.state_us_16,Polk
+base.county_us_2354,base.state_us_22,Polk
+base.county_us_2355,base.state_us_28,Polk
+base.county_us_2356,base.state_us_32,Polk
+base.county_us_2357,base.state_us_36,Polk
+base.county_us_2358,base.state_us_38,Polk
+base.county_us_2359,base.state_us_4,Polk
+base.county_us_2360,base.state_us_43,Polk
+base.county_us_2361,base.state_us_44,Polk
+base.county_us_2362,base.state_us_50,Polk
+base.county_us_2363,base.state_us_39,Ponce Municipio
+base.county_us_2364,base.state_us_21,Pondera
+base.county_us_2365,base.state_us_31,Pontotoc
+base.county_us_2366,base.state_us_37,Pontotoc
+base.county_us_2367,base.state_us_14,Pope
+base.county_us_2368,base.state_us_36,Pope
+base.county_us_2369,base.state_us_4,Pope
+base.county_us_2370,base.state_us_47,Poquoson City
+base.county_us_2371,base.state_us_30,Portage
+base.county_us_2372,base.state_us_50,Portage
+base.county_us_2373,base.state_us_15,Porter
+base.county_us_2374,base.state_us_47,Portsmouth City
+base.county_us_2375,base.state_us_15,Posey
+base.county_us_2376,base.state_us_17,Pottawatomie
+base.county_us_2377,base.state_us_31,Pottawatomie
+base.county_us_2378,base.state_us_16,Pottawattamie
+base.county_us_2379,base.state_us_39,Potter
+base.county_us_2380,base.state_us_42,Potter
+base.county_us_2381,base.state_us_44,Potter
+base.county_us_2382,base.state_us_21,Powder River
+base.county_us_2383,base.state_us_18,Powell
+base.county_us_2384,base.state_us_21,Powell
+base.county_us_2385,base.state_us_13,Power
+base.county_us_2386,base.state_us_16,Poweshiek
+base.county_us_2387,base.state_us_47,Powhatan
+base.county_us_2388,base.state_us_21,Prairie
+base.county_us_2389,base.state_us_4,Prairie
+base.county_us_2390,base.state_us_17,Pratt
+base.county_us_2391,base.state_us_30,Preble
+base.county_us_2392,base.state_us_37,Prentiss
+base.county_us_2393,base.state_us_44,Presidio
+base.county_us_2394,base.state_us_35,Presque Isle
+base.county_us_2395,base.state_us_49,Preston
+base.county_us_2396,base.state_us_50,Price
+base.county_us_2397,base.state_us_47,Prince Edward
+base.county_us_2398,base.state_us_47,Prince George
+base.county_us_2399,base.state_us_33,Prince George's
+base.county_us_2400,base.state_us_2,Prince of Wales-Hyder
+base.county_us_2401,base.state_us_47,Prince William
+base.county_us_2402,base.state_us_40,Providence
+base.county_us_2403,base.state_us_6,Prowers
+base.county_us_2404,base.state_us_6,Pueblo
+base.county_us_2405,base.state_us_11,Pulaski
+base.county_us_2406,base.state_us_14,Pulaski
+base.county_us_2407,base.state_us_15,Pulaski
+base.county_us_2408,base.state_us_18,Pulaski
+base.county_us_2409,base.state_us_38,Pulaski
+base.county_us_2410,base.state_us_4,Pulaski
+base.county_us_2411,base.state_us_47,Pulaski
+base.county_us_2412,base.state_us_31,Pushmataha
+base.county_us_2413,base.state_us_10,Putnam
+base.county_us_2414,base.state_us_11,Putnam
+base.county_us_2415,base.state_us_14,Putnam
+base.county_us_2416,base.state_us_15,Putnam
+base.county_us_2417,base.state_us_27,Putnam
+base.county_us_2418,base.state_us_30,Putnam
+base.county_us_2419,base.state_us_38,Putnam
+base.county_us_2420,base.state_us_43,Putnam
+base.county_us_2421,base.state_us_49,Putnam
+base.county_us_2422,base.state_us_26,Quay
+base.county_us_2423,base.state_us_39,Quebradillas Municipio
+base.county_us_2424,base.state_us_33,Queen Anne's
+base.county_us_2425,base.state_us_27,Queens
+base.county_us_2426,base.state_us_11,Quitman
+base.county_us_2427,base.state_us_37,Quitman
+base.county_us_2428,base.state_us_11,Rabun
+base.county_us_2429,base.state_us_50,Racine
+base.county_us_2430,base.state_us_47,Radford City
+base.county_us_2431,base.state_us_44,Rains
+base.county_us_2432,base.state_us_49,Raleigh
+base.county_us_2433,base.state_us_38,Ralls
+base.county_us_2434,base.state_us_29,Ramsey
+base.county_us_2435,base.state_us_36,Ramsey
+base.county_us_2436,base.state_us_44,Randall
+base.county_us_2437,base.state_us_1,Randolph
+base.county_us_2438,base.state_us_11,Randolph
+base.county_us_2439,base.state_us_14,Randolph
+base.county_us_2440,base.state_us_15,Randolph
+base.county_us_2441,base.state_us_28,Randolph
+base.county_us_2442,base.state_us_38,Randolph
+base.county_us_2443,base.state_us_4,Randolph
+base.county_us_2444,base.state_us_49,Randolph
+base.county_us_2445,base.state_us_37,Rankin
+base.county_us_2446,base.state_us_29,Ransom
+base.county_us_2447,base.state_us_19,Rapides Parish
+base.county_us_2448,base.state_us_47,Rappahannock
+base.county_us_2449,base.state_us_21,Ravalli
+base.county_us_2450,base.state_us_17,Rawlins
+base.county_us_2451,base.state_us_38,Ray
+base.county_us_2452,base.state_us_44,Reagan
+base.county_us_2453,base.state_us_44,Real
+base.county_us_2454,base.state_us_36,Red Lake
+base.county_us_2455,base.state_us_44,Red River
+base.county_us_2456,base.state_us_19,Red River Parish
+base.county_us_2457,base.state_us_22,Red Willow
+base.county_us_2458,base.state_us_36,Redwood
+base.county_us_2459,base.state_us_44,Reeves
+base.county_us_2460,base.state_us_44,Refugio
+base.county_us_2461,base.state_us_17,Reno
+base.county_us_2462,base.state_us_27,Rensselaer
+base.county_us_2463,base.state_us_29,Renville
+base.county_us_2464,base.state_us_36,Renville
+base.county_us_2465,base.state_us_17,Republic
+base.county_us_2466,base.state_us_38,Reynolds
+base.county_us_2467,base.state_us_43,Rhea
+base.county_us_2468,base.state_us_17,Rice
+base.county_us_2469,base.state_us_36,Rice
+base.county_us_2470,base.state_us_45,Rich
+base.county_us_2471,base.state_us_22,Richardson
+base.county_us_2472,base.state_us_14,Richland
+base.county_us_2473,base.state_us_21,Richland
+base.county_us_2474,base.state_us_29,Richland
+base.county_us_2475,base.state_us_30,Richland
+base.county_us_2476,base.state_us_41,Richland
+base.county_us_2477,base.state_us_50,Richland
+base.county_us_2478,base.state_us_19,Richland Parish
+base.county_us_2479,base.state_us_11,Richmond
+base.county_us_2480,base.state_us_27,Richmond
+base.county_us_2481,base.state_us_28,Richmond
+base.county_us_2482,base.state_us_47,Richmond
+base.county_us_2483,base.state_us_47,Richmond City
+base.county_us_2484,base.state_us_17,Riley
+base.county_us_2485,base.state_us_39,Rincón Municipio
+base.county_us_2486,base.state_us_16,Ringgold
+base.county_us_2487,base.state_us_26,Rio Arriba
+base.county_us_2488,base.state_us_6,Rio Blanco
+base.county_us_2489,base.state_us_6,Rio Grande
+base.county_us_2490,base.state_us_39,Río Grande Municipio
+base.county_us_2491,base.state_us_15,Ripley
+base.county_us_2492,base.state_us_38,Ripley
+base.county_us_2493,base.state_us_49,Ritchie
+base.county_us_2494,base.state_us_5,Riverside
+base.county_us_2495,base.state_us_43,Roane
+base.county_us_2496,base.state_us_49,Roane
+base.county_us_2497,base.state_us_47,Roanoke
+base.county_us_2498,base.state_us_47,Roanoke City
+base.county_us_2499,base.state_us_42,Roberts
+base.county_us_2500,base.state_us_44,Roberts
+base.county_us_2501,base.state_us_18,Robertson
+base.county_us_2502,base.state_us_43,Robertson
+base.county_us_2503,base.state_us_44,Robertson
+base.county_us_2504,base.state_us_28,Robeson
+base.county_us_2505,base.state_us_22,Rock
+base.county_us_2506,base.state_us_36,Rock
+base.county_us_2507,base.state_us_50,Rock
+base.county_us_2508,base.state_us_14,Rock Island
+base.county_us_2509,base.state_us_47,Rockbridge
+base.county_us_2510,base.state_us_18,Rockcastle
+base.county_us_2511,base.state_us_11,Rockdale
+base.county_us_2512,base.state_us_24,Rockingham
+base.county_us_2513,base.state_us_28,Rockingham
+base.county_us_2514,base.state_us_47,Rockingham
+base.county_us_2515,base.state_us_27,Rockland
+base.county_us_2516,base.state_us_44,Rockwall
+base.county_us_2517,base.state_us_31,Roger Mills
+base.county_us_2518,base.state_us_31,Rogers
+base.county_us_2519,base.state_us_29,Rolette
+base.county_us_2520,base.state_us_17,Rooks
+base.county_us_2521,base.state_us_21,Roosevelt
+base.county_us_2522,base.state_us_26,Roosevelt
+base.county_us_2523,base.state_us_35,Roscommon
+base.county_us_2524,base.state_us_36,Roseau
+base.county_us_2525,base.state_us_21,Rosebud
+base.county_us_2526,base.state_us_30,Ross
+base.county_us_2527,base.state_us_6,Routt
+base.county_us_2528,base.state_us_18,Rowan
+base.county_us_2529,base.state_us_28,Rowan
+base.county_us_2530,base.state_us_44,Runnels
+base.county_us_2531,base.state_us_15,Rush
+base.county_us_2532,base.state_us_17,Rush
+base.county_us_2533,base.state_us_44,Rusk
+base.county_us_2534,base.state_us_50,Rusk
+base.county_us_2535,base.state_us_1,Russell
+base.county_us_2536,base.state_us_17,Russell
+base.county_us_2537,base.state_us_18,Russell
+base.county_us_2538,base.state_us_47,Russell
+base.county_us_2539,base.state_us_28,Rutherford
+base.county_us_2540,base.state_us_43,Rutherford
+base.county_us_2541,base.state_us_46,Rutland
+base.county_us_2542,base.state_us_39,Sabana Grande Municipio
+base.county_us_2543,base.state_us_44,Sabine
+base.county_us_2544,base.state_us_19,Sabine Parish
+base.county_us_2545,base.state_us_16,Sac
+base.county_us_2546,base.state_us_5,Sacramento
+base.county_us_2547,base.state_us_20,Sagadahoc
+base.county_us_2548,base.state_us_35,Saginaw
+base.county_us_2549,base.state_us_6,Saguache
+base.county_us_2550,base.state_us_25,Salem
+base.county_us_2551,base.state_us_47,Salem City
+base.county_us_2552,base.state_us_39,Salinas Municipio
+base.county_us_2553,base.state_us_14,Saline
+base.county_us_2554,base.state_us_17,Saline
+base.county_us_2555,base.state_us_22,Saline
+base.county_us_2556,base.state_us_38,Saline
+base.county_us_2557,base.state_us_4,Saline
+base.county_us_2558,base.state_us_45,Salt Lake
+base.county_us_2559,base.state_us_41,Saluda
+base.county_us_2560,base.state_us_28,Sampson
+base.county_us_2561,base.state_us_44,San Augustine
+base.county_us_2562,base.state_us_5,San Benito
+base.county_us_2563,base.state_us_5,San Bernardino
+base.county_us_2564,base.state_us_5,San Diego
+base.county_us_2565,base.state_us_5,San Francisco
+base.county_us_2566,base.state_us_39,San Germán Municipio
+base.county_us_2567,base.state_us_44,San Jacinto
+base.county_us_2568,base.state_us_5,San Joaquin
+base.county_us_2569,base.state_us_26,San Juan
+base.county_us_2570,base.state_us_45,San Juan
+base.county_us_2571,base.state_us_48,San Juan
+base.county_us_2572,base.state_us_6,San Juan
+base.county_us_2573,base.state_us_39,San Juan Municipio
+base.county_us_2574,base.state_us_39,San Lorenzo Municipio
+base.county_us_2575,base.state_us_5,San Luis Obispo
+base.county_us_2576,base.state_us_5,San Mateo
+base.county_us_2577,base.state_us_26,San Miguel
+base.county_us_2578,base.state_us_6,San Miguel
+base.county_us_2579,base.state_us_44,San Patricio
+base.county_us_2580,base.state_us_44,San Saba
+base.county_us_2581,base.state_us_39,San Sebastián Municipio
+base.county_us_2582,base.state_us_42,Sanborn
+base.county_us_2583,base.state_us_21,Sanders
+base.county_us_2584,base.state_us_26,Sandoval
+base.county_us_2585,base.state_us_30,Sandusky
+base.county_us_2586,base.state_us_14,Sangamon
+base.county_us_2587,base.state_us_35,Sanilac
+base.county_us_2588,base.state_us_45,Sanpete
+base.county_us_2589,base.state_us_5,Santa Barbara
+base.county_us_2590,base.state_us_5,Santa Clara
+base.county_us_2591,base.state_us_3,Santa Cruz
+base.county_us_2592,base.state_us_5,Santa Cruz
+base.county_us_2593,base.state_us_26,Santa Fe
+base.county_us_2594,base.state_us_39,Santa Isabel Municipio
+base.county_us_2595,base.state_us_10,Santa Rosa
+base.county_us_2596,base.state_us_10,Sarasota
+base.county_us_2597,base.state_us_27,Saratoga
+base.county_us_2598,base.state_us_29,Sargent
+base.county_us_2599,base.state_us_22,Sarpy
+base.county_us_2600,base.state_us_50,Sauk
+base.county_us_2601,base.state_us_22,Saunders
+base.county_us_2602,base.state_us_50,Sawyer
+base.county_us_2603,base.state_us_27,Schenectady
+base.county_us_2604,base.state_us_44,Schleicher
+base.county_us_2605,base.state_us_11,Schley
+base.county_us_2606,base.state_us_27,Schoharie
+base.county_us_2607,base.state_us_35,Schoolcraft
+base.county_us_2608,base.state_us_14,Schuyler
+base.county_us_2609,base.state_us_27,Schuyler
+base.county_us_2610,base.state_us_38,Schuyler
+base.county_us_2611,base.state_us_39,Schuylkill
+base.county_us_2612,base.state_us_30,Scioto
+base.county_us_2613,base.state_us_28,Scotland
+base.county_us_2614,base.state_us_38,Scotland
+base.county_us_2615,base.state_us_14,Scott
+base.county_us_2616,base.state_us_15,Scott
+base.county_us_2617,base.state_us_16,Scott
+base.county_us_2618,base.state_us_17,Scott
+base.county_us_2619,base.state_us_18,Scott
+base.county_us_2620,base.state_us_36,Scott
+base.county_us_2621,base.state_us_37,Scott
+base.county_us_2622,base.state_us_38,Scott
+base.county_us_2623,base.state_us_4,Scott
+base.county_us_2624,base.state_us_43,Scott
+base.county_us_2625,base.state_us_47,Scott
+base.county_us_2626,base.state_us_22,Scotts Bluff
+base.county_us_2627,base.state_us_11,Screven
+base.county_us_2628,base.state_us_44,Scurry
+base.county_us_2629,base.state_us_4,Searcy
+base.county_us_2630,base.state_us_4,Sebastian
+base.county_us_2631,base.state_us_17,Sedgwick
+base.county_us_2632,base.state_us_6,Sedgwick
+base.county_us_2633,base.state_us_10,Seminole
+base.county_us_2634,base.state_us_11,Seminole
+base.county_us_2635,base.state_us_31,Seminole
+base.county_us_2636,base.state_us_27,Seneca
+base.county_us_2637,base.state_us_30,Seneca
+base.county_us_2638,base.state_us_43,Sequatchie
+base.county_us_2639,base.state_us_31,Sequoyah
+base.county_us_2640,base.state_us_4,Sevier
+base.county_us_2641,base.state_us_43,Sevier
+base.county_us_2642,base.state_us_45,Sevier
+base.county_us_2643,base.state_us_17,Seward
+base.county_us_2644,base.state_us_22,Seward
+base.county_us_2645,base.state_us_44,Shackelford
+base.county_us_2646,base.state_us_38,Shannon
+base.county_us_2647,base.state_us_42,Shannon
+base.county_us_2648,base.state_us_37,Sharkey
+base.county_us_2649,base.state_us_4,Sharp
+base.county_us_2650,base.state_us_5,Shasta
+base.county_us_2651,base.state_us_50,Shawano
+base.county_us_2652,base.state_us_17,Shawnee
+base.county_us_2653,base.state_us_50,Sheboygan
+base.county_us_2654,base.state_us_1,Shelby
+base.county_us_2655,base.state_us_14,Shelby
+base.county_us_2656,base.state_us_15,Shelby
+base.county_us_2657,base.state_us_16,Shelby
+base.county_us_2658,base.state_us_18,Shelby
+base.county_us_2659,base.state_us_30,Shelby
+base.county_us_2660,base.state_us_38,Shelby
+base.county_us_2661,base.state_us_43,Shelby
+base.county_us_2662,base.state_us_44,Shelby
+base.county_us_2663,base.state_us_47,Shenandoah
+base.county_us_2664,base.state_us_36,Sherburne
+base.county_us_2665,base.state_us_17,Sheridan
+base.county_us_2666,base.state_us_21,Sheridan
+base.county_us_2667,base.state_us_22,Sheridan
+base.county_us_2668,base.state_us_29,Sheridan
+base.county_us_2669,base.state_us_51,Sheridan
+base.county_us_2670,base.state_us_17,Sherman
+base.county_us_2671,base.state_us_22,Sherman
+base.county_us_2672,base.state_us_32,Sherman
+base.county_us_2673,base.state_us_44,Sherman
+base.county_us_2674,base.state_us_35,Shiawassee
+base.county_us_2675,base.state_us_13,Shoshone
+base.county_us_2676,base.state_us_36,Sibley
+base.county_us_2677,base.state_us_26,Sierra
+base.county_us_2678,base.state_us_5,Sierra
+base.county_us_2679,base.state_us_21,Silver Bow
+base.county_us_2680,base.state_us_18,Simpson
+base.county_us_2681,base.state_us_37,Simpson
+base.county_us_2682,base.state_us_16,Sioux
+base.county_us_2683,base.state_us_22,Sioux
+base.county_us_2684,base.state_us_29,Sioux
+base.county_us_2685,base.state_us_5,Siskiyou
+base.county_us_2686,base.state_us_2,Sitka City and Borough
+base.county_us_2687,base.state_us_48,Skagit
+base.county_us_2688,base.state_us_2,Skagway Municipality
+base.county_us_2689,base.state_us_48,Skamania
+base.county_us_2690,base.state_us_29,Slope
+base.county_us_2691,base.state_us_17,Smith
+base.county_us_2692,base.state_us_37,Smith
+base.county_us_2693,base.state_us_43,Smith
+base.county_us_2694,base.state_us_44,Smith
+base.county_us_2695,base.state_us_47,Smyth
+base.county_us_2696,base.state_us_48,Snohomish
+base.county_us_2697,base.state_us_39,Snyder
+base.county_us_2698,base.state_us_26,Socorro
+base.county_us_2699,base.state_us_5,Solano
+base.county_us_2700,base.state_us_20,Somerset
+base.county_us_2701,base.state_us_25,Somerset
+base.county_us_2702,base.state_us_33,Somerset
+base.county_us_2703,base.state_us_39,Somerset
+base.county_us_2704,base.state_us_44,Somervell
+base.county_us_2705,base.state_us_5,Sonoma
+base.county_us_2706,base.state_us_47,Southampton
+base.county_us_2707,base.state_us_2,Southeast Fairbanks
+base.county_us_2708,base.state_us_11,Spalding
+base.county_us_2709,base.state_us_41,Spartanburg
+base.county_us_2710,base.state_us_15,Spencer
+base.county_us_2711,base.state_us_18,Spencer
+base.county_us_2712,base.state_us_42,Spink
+base.county_us_2713,base.state_us_48,Spokane
+base.county_us_2714,base.state_us_47,Spotsylvania
+base.county_us_2715,base.state_us_19,St. Bernard Parish
+base.county_us_2716,base.state_us_38,St. Charles
+base.county_us_2717,base.state_us_19,St. Charles Parish
+base.county_us_2718,base.state_us_1,St. Clair
+base.county_us_2719,base.state_us_14,St. Clair
+base.county_us_2720,base.state_us_35,St. Clair
+base.county_us_2721,base.state_us_38,St. Clair
+base.county_us_2722,base.state_us_50,St. Croix
+base.county_us_2723,base.state_us_4,St. Francis
+base.county_us_2724,base.state_us_38,St. Francois
+base.county_us_2725,base.state_us_19,St. Helena Parish
+base.county_us_2726,base.state_us_19,St. James Parish
+base.county_us_2727,base.state_us_19,St. John the Baptist Parish
+base.county_us_2728,base.state_us_10,St. Johns
+base.county_us_2729,base.state_us_15,St. Joseph
+base.county_us_2730,base.state_us_35,St. Joseph
+base.county_us_2731,base.state_us_19,St. Landry Parish
+base.county_us_2732,base.state_us_27,St. Lawrence
+base.county_us_2733,base.state_us_36,St. Louis
+base.county_us_2734,base.state_us_38,St. Louis
+base.county_us_2735,base.state_us_38,St. Louis City
+base.county_us_2736,base.state_us_10,St. Lucie
+base.county_us_2737,base.state_us_19,St. Martin Parish
+base.county_us_2738,base.state_us_19,St. Mary Parish
+base.county_us_2739,base.state_us_33,St. Mary's
+base.county_us_2740,base.state_us_19,St. Tammany Parish
+base.county_us_2741,base.state_us_17,Stafford
+base.county_us_2742,base.state_us_47,Stafford
+base.county_us_2743,base.state_us_5,Stanislaus
+base.county_us_2744,base.state_us_42,Stanley
+base.county_us_2745,base.state_us_28,Stanly
+base.county_us_2746,base.state_us_17,Stanton
+base.county_us_2747,base.state_us_22,Stanton
+base.county_us_2748,base.state_us_14,Stark
+base.county_us_2749,base.state_us_29,Stark
+base.county_us_2750,base.state_us_30,Stark
+base.county_us_2751,base.state_us_15,Starke
+base.county_us_2752,base.state_us_44,Starr
+base.county_us_2753,base.state_us_47,Staunton City
+base.county_us_2754,base.state_us_38,Ste. Genevieve
+base.county_us_2755,base.state_us_36,Stearns
+base.county_us_2756,base.state_us_29,Steele
+base.county_us_2757,base.state_us_36,Steele
+base.county_us_2758,base.state_us_11,Stephens
+base.county_us_2759,base.state_us_31,Stephens
+base.county_us_2760,base.state_us_44,Stephens
+base.county_us_2761,base.state_us_14,Stephenson
+base.county_us_2762,base.state_us_44,Sterling
+base.county_us_2763,base.state_us_15,Steuben
+base.county_us_2764,base.state_us_27,Steuben
+base.county_us_2765,base.state_us_17,Stevens
+base.county_us_2766,base.state_us_36,Stevens
+base.county_us_2767,base.state_us_48,Stevens
+base.county_us_2768,base.state_us_11,Stewart
+base.county_us_2769,base.state_us_43,Stewart
+base.county_us_2770,base.state_us_21,Stillwater
+base.county_us_2771,base.state_us_38,Stoddard
+base.county_us_2772,base.state_us_28,Stokes
+base.county_us_2773,base.state_us_37,Stone
+base.county_us_2774,base.state_us_38,Stone
+base.county_us_2775,base.state_us_4,Stone
+base.county_us_2776,base.state_us_44,Stonewall
+base.county_us_2777,base.state_us_23,Storey
+base.county_us_2778,base.state_us_16,Story
+base.county_us_2779,base.state_us_24,Strafford
+base.county_us_2780,base.state_us_29,Stutsman
+base.county_us_2781,base.state_us_51,Sublette
+base.county_us_2782,base.state_us_27,Suffolk
+base.county_us_2783,base.state_us_34,Suffolk
+base.county_us_2784,base.state_us_47,Suffolk City
+base.county_us_2785,base.state_us_15,Sullivan
+base.county_us_2786,base.state_us_24,Sullivan
+base.county_us_2787,base.state_us_27,Sullivan
+base.county_us_2788,base.state_us_38,Sullivan
+base.county_us_2789,base.state_us_39,Sullivan
+base.county_us_2790,base.state_us_43,Sullivan
+base.county_us_2791,base.state_us_42,Sully
+base.county_us_2792,base.state_us_49,Summers
+base.county_us_2793,base.state_us_30,Summit
+base.county_us_2794,base.state_us_45,Summit
+base.county_us_2795,base.state_us_6,Summit
+base.county_us_2796,base.state_us_17,Sumner
+base.county_us_2797,base.state_us_43,Sumner
+base.county_us_2798,base.state_us_1,Sumter
+base.county_us_2799,base.state_us_10,Sumter
+base.county_us_2800,base.state_us_11,Sumter
+base.county_us_2801,base.state_us_41,Sumter
+base.county_us_2802,base.state_us_37,Sunflower
+base.county_us_2803,base.state_us_28,Surry
+base.county_us_2804,base.state_us_47,Surry
+base.county_us_2805,base.state_us_39,Susquehanna
+base.county_us_2806,base.state_us_25,Sussex
+base.county_us_2807,base.state_us_47,Sussex
+base.county_us_2808,base.state_us_8,Sussex
+base.county_us_2809,base.state_us_5,Sutter
+base.county_us_2810,base.state_us_44,Sutton
+base.county_us_2811,base.state_us_10,Suwannee
+base.county_us_2812,base.state_us_28,Swain
+base.county_us_2813,base.state_us_21,Sweet Grass
+base.county_us_2814,base.state_us_51,Sweetwater
+base.county_us_2815,base.state_us_36,Swift
+base.county_us_2816,base.state_us_44,Swisher
+base.county_us_2817,base.state_us_15,Switzerland
+base.county_us_2818,base.state_us_11,Talbot
+base.county_us_2819,base.state_us_33,Talbot
+base.county_us_2820,base.state_us_11,Taliaferro
+base.county_us_2821,base.state_us_1,Talladega
+base.county_us_2822,base.state_us_37,Tallahatchie
+base.county_us_2823,base.state_us_1,Tallapoosa
+base.county_us_2824,base.state_us_16,Tama
+base.county_us_2825,base.state_us_38,Taney
+base.county_us_2826,base.state_us_19,Tangipahoa Parish
+base.county_us_2827,base.state_us_26,Taos
+base.county_us_2828,base.state_us_44,Tarrant
+base.county_us_2829,base.state_us_37,Tate
+base.county_us_2830,base.state_us_11,Tattnall
+base.county_us_2831,base.state_us_10,Taylor
+base.county_us_2832,base.state_us_11,Taylor
+base.county_us_2833,base.state_us_16,Taylor
+base.county_us_2834,base.state_us_18,Taylor
+base.county_us_2835,base.state_us_44,Taylor
+base.county_us_2836,base.state_us_49,Taylor
+base.county_us_2837,base.state_us_50,Taylor
+base.county_us_2838,base.state_us_14,Tazewell
+base.county_us_2839,base.state_us_47,Tazewell
+base.county_us_2840,base.state_us_5,Tehama
+base.county_us_2841,base.state_us_11,Telfair
+base.county_us_2842,base.state_us_6,Teller
+base.county_us_2843,base.state_us_19,Tensas Parish
+base.county_us_2844,base.state_us_19,Terrebonne Parish
+base.county_us_2845,base.state_us_11,Terrell
+base.county_us_2846,base.state_us_44,Terrell
+base.county_us_2847,base.state_us_44,Terry
+base.county_us_2848,base.state_us_13,Teton
+base.county_us_2849,base.state_us_21,Teton
+base.county_us_2850,base.state_us_51,Teton
+base.county_us_2851,base.state_us_31,Texas
+base.county_us_2852,base.state_us_38,Texas
+base.county_us_2853,base.state_us_22,Thayer
+base.county_us_2854,base.state_us_11,Thomas
+base.county_us_2855,base.state_us_17,Thomas
+base.county_us_2856,base.state_us_22,Thomas
+base.county_us_2857,base.state_us_44,Throckmorton
+base.county_us_2858,base.state_us_22,Thurston
+base.county_us_2859,base.state_us_48,Thurston
+base.county_us_2860,base.state_us_11,Tift
+base.county_us_2861,base.state_us_32,Tillamook
+base.county_us_2862,base.state_us_31,Tillman
+base.county_us_2863,base.state_us_27,Tioga
+base.county_us_2864,base.state_us_39,Tioga
+base.county_us_2865,base.state_us_37,Tippah
+base.county_us_2866,base.state_us_15,Tippecanoe
+base.county_us_2867,base.state_us_15,Tipton
+base.county_us_2868,base.state_us_43,Tipton
+base.county_us_2869,base.state_us_37,Tishomingo
+base.county_us_2870,base.state_us_44,Titus
+base.county_us_2871,base.state_us_39,Toa Alta Municipio
+base.county_us_2872,base.state_us_39,Toa Baja Municipio
+base.county_us_2873,base.state_us_18,Todd
+base.county_us_2874,base.state_us_36,Todd
+base.county_us_2875,base.state_us_42,Todd
+base.county_us_2876,base.state_us_7,Tolland
+base.county_us_2877,base.state_us_44,Tom Green
+base.county_us_2878,base.state_us_27,Tompkins
+base.county_us_2879,base.state_us_45,Tooele
+base.county_us_2880,base.state_us_21,Toole
+base.county_us_2881,base.state_us_11,Toombs
+base.county_us_2882,base.state_us_26,Torrance
+base.county_us_2883,base.state_us_29,Towner
+base.county_us_2884,base.state_us_11,Towns
+base.county_us_2885,base.state_us_29,Traill
+base.county_us_2886,base.state_us_28,Transylvania
+base.county_us_2887,base.state_us_36,Traverse
+base.county_us_2888,base.state_us_44,Travis
+base.county_us_2889,base.state_us_21,Treasure
+base.county_us_2890,base.state_us_17,Trego
+base.county_us_2891,base.state_us_50,Trempealeau
+base.county_us_2892,base.state_us_11,Treutlen
+base.county_us_2893,base.state_us_18,Trigg
+base.county_us_2894,base.state_us_18,Trimble
+base.county_us_2895,base.state_us_44,Trinity
+base.county_us_2896,base.state_us_5,Trinity
+base.county_us_2897,base.state_us_42,Tripp
+base.county_us_2898,base.state_us_11,Troup
+base.county_us_2899,base.state_us_43,Trousdale
+base.county_us_2900,base.state_us_39,Trujillo Alto Municipio
+base.county_us_2901,base.state_us_30,Trumbull
+base.county_us_2902,base.state_us_49,Tucker
+base.county_us_2903,base.state_us_5,Tulare
+base.county_us_2904,base.state_us_31,Tulsa
+base.county_us_2905,base.state_us_37,Tunica
+base.county_us_2906,base.state_us_5,Tuolumne
+base.county_us_2907,base.state_us_11,Turner
+base.county_us_2908,base.state_us_42,Turner
+base.county_us_2909,base.state_us_1,Tuscaloosa
+base.county_us_2910,base.state_us_30,Tuscarawas
+base.county_us_2911,base.state_us_35,Tuscola
+base.county_us_2912,base.state_us_11,Twiggs
+base.county_us_2913,base.state_us_13,Twin Falls
+base.county_us_2914,base.state_us_44,Tyler
+base.county_us_2915,base.state_us_49,Tyler
+base.county_us_2916,base.state_us_28,Tyrrell
+base.county_us_2917,base.state_us_51,Uinta
+base.county_us_2918,base.state_us_45,Uintah
+base.county_us_2919,base.state_us_27,Ulster
+base.county_us_2920,base.state_us_32,Umatilla
+base.county_us_2921,base.state_us_43,Unicoi
+base.county_us_2922,base.state_us_10,Union
+base.county_us_2923,base.state_us_11,Union
+base.county_us_2924,base.state_us_14,Union
+base.county_us_2925,base.state_us_15,Union
+base.county_us_2926,base.state_us_16,Union
+base.county_us_2927,base.state_us_18,Union
+base.county_us_2928,base.state_us_25,Union
+base.county_us_2929,base.state_us_26,Union
+base.county_us_2930,base.state_us_28,Union
+base.county_us_2931,base.state_us_30,Union
+base.county_us_2932,base.state_us_32,Union
+base.county_us_2933,base.state_us_37,Union
+base.county_us_2934,base.state_us_39,Union
+base.county_us_2935,base.state_us_4,Union
+base.county_us_2936,base.state_us_41,Union
+base.county_us_2937,base.state_us_42,Union
+base.county_us_2938,base.state_us_43,Union
+base.county_us_2939,base.state_us_19,Union Parish
+base.county_us_2940,base.state_us_44,Upshur
+base.county_us_2941,base.state_us_49,Upshur
+base.county_us_2942,base.state_us_11,Upson
+base.county_us_2943,base.state_us_44,Upton
+base.county_us_2944,base.state_us_45,Utah
+base.county_us_2945,base.state_us_39,Utuado Municipio
+base.county_us_2946,base.state_us_44,Uvalde
+base.county_us_2947,base.state_us_44,Val Verde
+base.county_us_2948,base.state_us_2,Valdez-Cordova
+base.county_us_2949,base.state_us_26,Valencia
+base.county_us_2950,base.state_us_13,Valley
+base.county_us_2951,base.state_us_21,Valley
+base.county_us_2952,base.state_us_22,Valley
+base.county_us_2953,base.state_us_16,Van Buren
+base.county_us_2954,base.state_us_35,Van Buren
+base.county_us_2955,base.state_us_4,Van Buren
+base.county_us_2956,base.state_us_43,Van Buren
+base.county_us_2957,base.state_us_30,Van Wert
+base.county_us_2958,base.state_us_44,Van Zandt
+base.county_us_2959,base.state_us_28,Vance
+base.county_us_2960,base.state_us_15,Vanderburgh
+base.county_us_2961,base.state_us_39,Vega Alta Municipio
+base.county_us_2962,base.state_us_39,Vega Baja Municipio
+base.county_us_2963,base.state_us_39,Venango
+base.county_us_2964,base.state_us_5,Ventura
+base.county_us_2965,base.state_us_14,Vermilion
+base.county_us_2966,base.state_us_19,Vermilion Parish
+base.county_us_2967,base.state_us_15,Vermillion
+base.county_us_2968,base.state_us_38,Vernon
+base.county_us_2969,base.state_us_50,Vernon
+base.county_us_2970,base.state_us_19,Vernon Parish
+base.county_us_2971,base.state_us_44,Victoria
+base.county_us_2972,base.state_us_39,Vieques Municipio
+base.county_us_2973,base.state_us_15,Vigo
+base.county_us_2974,base.state_us_50,Vilas
+base.county_us_2975,base.state_us_39,Villalba Municipio
+base.county_us_2976,base.state_us_30,Vinton
+base.county_us_2977,base.state_us_47,Virginia Beach City
+base.county_us_2978,base.state_us_10,Volusia
+base.county_us_2979,base.state_us_14,Wabash
+base.county_us_2980,base.state_us_15,Wabash
+base.county_us_2981,base.state_us_36,Wabasha
+base.county_us_2982,base.state_us_17,Wabaunsee
+base.county_us_2983,base.state_us_2,Wade Hampton
+base.county_us_2984,base.state_us_36,Wadena
+base.county_us_2985,base.state_us_31,Wagoner
+base.county_us_2986,base.state_us_48,Wahkiakum
+base.county_us_2987,base.state_us_28,Wake
+base.county_us_2988,base.state_us_10,Wakulla
+base.county_us_2989,base.state_us_20,Waldo
+base.county_us_2990,base.state_us_1,Walker
+base.county_us_2991,base.state_us_11,Walker
+base.county_us_2992,base.state_us_44,Walker
+base.county_us_2993,base.state_us_48,Walla Walla
+base.county_us_2994,base.state_us_17,Wallace
+base.county_us_2995,base.state_us_44,Waller
+base.county_us_2996,base.state_us_32,Wallowa
+base.county_us_2997,base.state_us_29,Walsh
+base.county_us_2998,base.state_us_37,Walthall
+base.county_us_2999,base.state_us_10,Walton
+base.county_us_3000,base.state_us_11,Walton
+base.county_us_3001,base.state_us_42,Walworth
+base.county_us_3002,base.state_us_50,Walworth
+base.county_us_3003,base.state_us_16,Wapello
+base.county_us_3004,base.state_us_29,Ward
+base.county_us_3005,base.state_us_44,Ward
+base.county_us_3006,base.state_us_11,Ware
+base.county_us_3007,base.state_us_11,Warren
+base.county_us_3008,base.state_us_14,Warren
+base.county_us_3009,base.state_us_15,Warren
+base.county_us_3010,base.state_us_16,Warren
+base.county_us_3011,base.state_us_18,Warren
+base.county_us_3012,base.state_us_25,Warren
+base.county_us_3013,base.state_us_27,Warren
+base.county_us_3014,base.state_us_28,Warren
+base.county_us_3015,base.state_us_30,Warren
+base.county_us_3016,base.state_us_37,Warren
+base.county_us_3017,base.state_us_38,Warren
+base.county_us_3018,base.state_us_39,Warren
+base.county_us_3019,base.state_us_43,Warren
+base.county_us_3020,base.state_us_47,Warren
+base.county_us_3021,base.state_us_15,Warrick
+base.county_us_3022,base.state_us_45,Wasatch
+base.county_us_3023,base.state_us_32,Wasco
+base.county_us_3024,base.state_us_36,Waseca
+base.county_us_3025,base.state_us_51,Washakie
+base.county_us_3026,base.state_us_50,Washburn
+base.county_us_3027,base.state_us_1,Washington
+base.county_us_3028,base.state_us_10,Washington
+base.county_us_3029,base.state_us_11,Washington
+base.county_us_3030,base.state_us_13,Washington
+base.county_us_3031,base.state_us_14,Washington
+base.county_us_3032,base.state_us_15,Washington
+base.county_us_3033,base.state_us_16,Washington
+base.county_us_3034,base.state_us_17,Washington
+base.county_us_3035,base.state_us_18,Washington
+base.county_us_3036,base.state_us_20,Washington
+base.county_us_3037,base.state_us_22,Washington
+base.county_us_3038,base.state_us_27,Washington
+base.county_us_3039,base.state_us_28,Washington
+base.county_us_3040,base.state_us_30,Washington
+base.county_us_3041,base.state_us_31,Washington
+base.county_us_3042,base.state_us_32,Washington
+base.county_us_3043,base.state_us_33,Washington
+base.county_us_3044,base.state_us_36,Washington
+base.county_us_3045,base.state_us_37,Washington
+base.county_us_3046,base.state_us_38,Washington
+base.county_us_3047,base.state_us_39,Washington
+base.county_us_3048,base.state_us_4,Washington
+base.county_us_3049,base.state_us_40,Washington
+base.county_us_3050,base.state_us_43,Washington
+base.county_us_3051,base.state_us_44,Washington
+base.county_us_3052,base.state_us_45,Washington
+base.county_us_3053,base.state_us_46,Washington
+base.county_us_3054,base.state_us_47,Washington
+base.county_us_3055,base.state_us_50,Washington
+base.county_us_3056,base.state_us_6,Washington
+base.county_us_3057,base.state_us_19,Washington Parish
+base.county_us_3058,base.state_us_31,Washita
+base.county_us_3059,base.state_us_23,Washoe
+base.county_us_3060,base.state_us_35,Washtenaw
+base.county_us_3061,base.state_us_28,Watauga
+base.county_us_3062,base.state_us_36,Watonwan
+base.county_us_3063,base.state_us_50,Waukesha
+base.county_us_3064,base.state_us_50,Waupaca
+base.county_us_3065,base.state_us_50,Waushara
+base.county_us_3066,base.state_us_11,Wayne
+base.county_us_3067,base.state_us_14,Wayne
+base.county_us_3068,base.state_us_15,Wayne
+base.county_us_3069,base.state_us_16,Wayne
+base.county_us_3070,base.state_us_18,Wayne
+base.county_us_3071,base.state_us_22,Wayne
+base.county_us_3072,base.state_us_27,Wayne
+base.county_us_3073,base.state_us_28,Wayne
+base.county_us_3074,base.state_us_30,Wayne
+base.county_us_3075,base.state_us_35,Wayne
+base.county_us_3076,base.state_us_37,Wayne
+base.county_us_3077,base.state_us_38,Wayne
+base.county_us_3078,base.state_us_39,Wayne
+base.county_us_3079,base.state_us_43,Wayne
+base.county_us_3080,base.state_us_45,Wayne
+base.county_us_3081,base.state_us_49,Wayne
+base.county_us_3082,base.state_us_47,Waynesboro City
+base.county_us_3083,base.state_us_43,Weakley
+base.county_us_3084,base.state_us_44,Webb
+base.county_us_3085,base.state_us_45,Weber
+base.county_us_3086,base.state_us_11,Webster
+base.county_us_3087,base.state_us_16,Webster
+base.county_us_3088,base.state_us_18,Webster
+base.county_us_3089,base.state_us_22,Webster
+base.county_us_3090,base.state_us_37,Webster
+base.county_us_3091,base.state_us_38,Webster
+base.county_us_3092,base.state_us_49,Webster
+base.county_us_3093,base.state_us_19,Webster Parish
+base.county_us_3094,base.state_us_6,Weld
+base.county_us_3095,base.state_us_15,Wells
+base.county_us_3096,base.state_us_29,Wells
+base.county_us_3097,base.state_us_19,West Baton Rouge Parish
+base.county_us_3098,base.state_us_19,West Carroll Parish
+base.county_us_3099,base.state_us_19,West Feliciana Parish
+base.county_us_3100,base.state_us_27,Westchester
+base.county_us_3101,base.state_us_39,Westmoreland
+base.county_us_3102,base.state_us_47,Westmoreland
+base.county_us_3103,base.state_us_51,Weston
+base.county_us_3104,base.state_us_49,Wetzel
+base.county_us_3105,base.state_us_35,Wexford
+base.county_us_3106,base.state_us_44,Wharton
+base.county_us_3107,base.state_us_48,Whatcom
+base.county_us_3108,base.state_us_21,Wheatland
+base.county_us_3109,base.state_us_11,Wheeler
+base.county_us_3110,base.state_us_22,Wheeler
+base.county_us_3111,base.state_us_32,Wheeler
+base.county_us_3112,base.state_us_44,Wheeler
+base.county_us_3113,base.state_us_11,White
+base.county_us_3114,base.state_us_14,White
+base.county_us_3115,base.state_us_15,White
+base.county_us_3116,base.state_us_4,White
+base.county_us_3117,base.state_us_43,White
+base.county_us_3118,base.state_us_23,White Pine
+base.county_us_3119,base.state_us_14,Whiteside
+base.county_us_3120,base.state_us_11,Whitfield
+base.county_us_3121,base.state_us_15,Whitley
+base.county_us_3122,base.state_us_18,Whitley
+base.county_us_3123,base.state_us_48,Whitman
+base.county_us_3124,base.state_us_21,Wibaux
+base.county_us_3125,base.state_us_17,Wichita
+base.county_us_3126,base.state_us_44,Wichita
+base.county_us_3127,base.state_us_33,Wicomico
+base.county_us_3128,base.state_us_44,Wilbarger
+base.county_us_3129,base.state_us_1,Wilcox
+base.county_us_3130,base.state_us_11,Wilcox
+base.county_us_3131,base.state_us_11,Wilkes
+base.county_us_3132,base.state_us_28,Wilkes
+base.county_us_3133,base.state_us_36,Wilkin
+base.county_us_3134,base.state_us_11,Wilkinson
+base.county_us_3135,base.state_us_37,Wilkinson
+base.county_us_3136,base.state_us_14,Will
+base.county_us_3137,base.state_us_44,Willacy
+base.county_us_3138,base.state_us_29,Williams
+base.county_us_3139,base.state_us_30,Williams
+base.county_us_3140,base.state_us_41,Williamsburg
+base.county_us_3141,base.state_us_47,Williamsburg City
+base.county_us_3142,base.state_us_14,Williamson
+base.county_us_3143,base.state_us_43,Williamson
+base.county_us_3144,base.state_us_44,Williamson
+base.county_us_3145,base.state_us_17,Wilson
+base.county_us_3146,base.state_us_28,Wilson
+base.county_us_3147,base.state_us_43,Wilson
+base.county_us_3148,base.state_us_44,Wilson
+base.county_us_3149,base.state_us_47,Winchester City
+base.county_us_3150,base.state_us_46,Windham
+base.county_us_3151,base.state_us_7,Windham
+base.county_us_3152,base.state_us_46,Windsor
+base.county_us_3153,base.state_us_44,Winkler
+base.county_us_3154,base.state_us_19,Winn Parish
+base.county_us_3155,base.state_us_14,Winnebago
+base.county_us_3156,base.state_us_16,Winnebago
+base.county_us_3157,base.state_us_50,Winnebago
+base.county_us_3158,base.state_us_16,Winneshiek
+base.county_us_3159,base.state_us_36,Winona
+base.county_us_3160,base.state_us_1,Winston
+base.county_us_3161,base.state_us_37,Winston
+base.county_us_3162,base.state_us_49,Wirt
+base.county_us_3163,base.state_us_44,Wise
+base.county_us_3164,base.state_us_47,Wise
+base.county_us_3165,base.state_us_18,Wolfe
+base.county_us_3166,base.state_us_30,Wood
+base.county_us_3167,base.state_us_44,Wood
+base.county_us_3168,base.state_us_49,Wood
+base.county_us_3169,base.state_us_50,Wood
+base.county_us_3170,base.state_us_16,Woodbury
+base.county_us_3171,base.state_us_14,Woodford
+base.county_us_3172,base.state_us_18,Woodford
+base.county_us_3173,base.state_us_4,Woodruff
+base.county_us_3174,base.state_us_31,Woods
+base.county_us_3175,base.state_us_17,Woodson
+base.county_us_3176,base.state_us_31,Woodward
+base.county_us_3177,base.state_us_33,Worcester
+base.county_us_3178,base.state_us_34,Worcester
+base.county_us_3179,base.state_us_11,Worth
+base.county_us_3180,base.state_us_16,Worth
+base.county_us_3181,base.state_us_38,Worth
+base.county_us_3182,base.state_us_2,Wrangell City and Borough
+base.county_us_3183,base.state_us_16,Wright
+base.county_us_3184,base.state_us_36,Wright
+base.county_us_3185,base.state_us_38,Wright
+base.county_us_3186,base.state_us_30,Wyandot
+base.county_us_3187,base.state_us_17,Wyandotte
+base.county_us_3188,base.state_us_27,Wyoming
+base.county_us_3189,base.state_us_39,Wyoming
+base.county_us_3190,base.state_us_49,Wyoming
+base.county_us_3191,base.state_us_47,Wythe
+base.county_us_3192,base.state_us_39,Yabucoa Municipio
+base.county_us_3193,base.state_us_28,Yadkin
+base.county_us_3194,base.state_us_48,Yakima
+base.county_us_3195,base.state_us_2,Yakutat City and Borough
+base.county_us_3196,base.state_us_37,Yalobusha
+base.county_us_3197,base.state_us_32,Yamhill
+base.county_us_3198,base.state_us_28,Yancey
+base.county_us_3199,base.state_us_42,Yankton
+base.county_us_3200,base.state_us_27,Yates
+base.county_us_3201,base.state_us_39,Yauco Municipio
+base.county_us_3202,base.state_us_3,Yavapai
+base.county_us_3203,base.state_us_37,Yazoo
+base.county_us_3204,base.state_us_4,Yell
+base.county_us_3205,base.state_us_36,Yellow Medicine
+base.county_us_3206,base.state_us_21,Yellowstone
+base.county_us_3207,base.state_us_44,Yoakum
+base.county_us_3208,base.state_us_5,Yolo
+base.county_us_3209,base.state_us_20,York
+base.county_us_3210,base.state_us_22,York
+base.county_us_3211,base.state_us_39,York
+base.county_us_3212,base.state_us_41,York
+base.county_us_3213,base.state_us_47,York
+base.county_us_3214,base.state_us_44,Young
+base.county_us_3215,base.state_us_5,Yuba
+base.county_us_3216,base.state_us_2,Yukon-Koyukuk
+base.county_us_3217,base.state_us_3,Yuma
+base.county_us_3218,base.state_us_6,Yuma
+base.county_us_3219,base.state_us_44,Zapata
+base.county_us_3220,base.state_us_44,Zavala
+base.county_us_3221,base.state_us_42,Ziebach
