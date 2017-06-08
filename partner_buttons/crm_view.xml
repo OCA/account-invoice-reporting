@@ -1,0 +1,67 @@
+﻿<?xml version="1.0"?>
+
+<openerp>
+    <data>
+        <record id="action_picking_tree_single_partner_deliveries" model="ir.actions.act_window">
+            <field name="name">Delivery Orders</field>
+            <field name="res_model">stock.picking.out</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,calendar</field>
+            <field name="domain">[('type','=','out')]</field>
+            <field name="context">{'search_default_partner_id': active_id}</field>
+            <field name="search_view_id" ref="stock.view_picking_out_search"/>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to view the customer's delivery orders. 
+              </p><p>
+                This is the list of all delivery orders that have to be
+                prepared, according to your different sales orders and your
+                logistics rules.
+              </p>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="res_partner_view_buttons2">
+            <field name="name">res.partner.view.buttons2</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form" />
+            <field name="priority" eval="10"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@name='buttons']" position="inside">
+                    <button type="action" string="Delivery Orders" attrs="{'invisible': [('customer', '=', False)]}" 
+                   name="%(partner_buttons.action_picking_tree_single_partner_deliveries)d" context="{'search_default_partner_id': active_id}"/> 
+                </xpath>
+            </field>
+        </record>
+        <record id="action_picking_tree_single_partner_invoices" model="ir.actions.act_window">
+            <field name="name">Invoices</field>
+            <field name="res_model">account.invoice</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,calendar</field>
+            <field name="domain">[('type','=','out_invoice')]</field>
+            <field name="context">{'search_default_partner_id': active_id}</field>
+            <field name="search_view_id" ref="account.view_account_invoice_filter"/>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to view this customer's invoices. 
+              </p><p>
+                This is the list of all invoices that have to be
+                prepared, according to your different sales orders.
+              </p>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="res_partner_view_buttons3">
+            <field name="name">res.partner.view.buttons3</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form" />
+            <field name="priority" eval="10"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@name='buttons']" position="inside">
+                    <button type="action" string="Invoices" attrs="{'invisible': [('customer', '=', False)]}" 
+                   name="%(partner_buttons.action_picking_tree_single_partner_invoices)d" context="{'search_default_partner_id': active_id}"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>
