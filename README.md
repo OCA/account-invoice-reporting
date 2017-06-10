@@ -13,6 +13,7 @@ Available addons
 addon | version | summary
 --- | --- | ---
 [account_draft_invoice_print](account_draft_invoice_print/) | 9.0.1.0.0 | Account Draft Invoice Print
+[account_invoice_line_report](account_invoice_line_report/) | 9.0.1.0.0 | New view to manage invoice lines information
 [account_reporting_weight](account_reporting_weight/) | 9.0.1.0.0 | Weights in the invoices analysis view
 [base_comment_template](base_comment_template/) | 9.0.1.0.0 | Comments templates on documents
 [invoice_comment_template](invoice_comment_template/) | 9.0.1.0.0 | Comments templates on invoice documents
