@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<openerp>
-  <data>
+<odoo>
+
     <template id="report_invoice_document_comments"
       inherit_id="account.report_invoice_document" >
       <xpath expr="//div[contains(@class, 'page')]/table[1]" position="before">
@@ -14,5 +14,5 @@
         </p>
       </xpath>
     </template>
-  </data>
-</openerp>
+
+</odoo>
