@@ -55,13 +55,11 @@ class ResPartner(models.Model):
                 total_days_to_pay_ytd += days_to_pay_invoice
 
         try:
-            d2x_ytd = total_days_to_pay_ytd / \
-                      total_number_of_invoices_ytd
+            d2x_ytd = total_days_to_pay_ytd / total_number_of_invoices_ytd
         except ZeroDivisionError:
             d2x_ytd = 0
         try:
-            d2x_life = total_days_to_pay_life / \
-                       total_number_of_invoices_life
+            d2x_life = total_days_to_pay_life / total_number_of_invoices_life
         except ZeroDivisionError:
             d2x_life = 0
 
