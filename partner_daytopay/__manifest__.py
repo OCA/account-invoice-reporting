@@ -5,7 +5,7 @@
 {
     'name': 'Partner Days to Pay',
     'summary': 'Adds receivables and payables statistics to partners',
-    'version': '10.0.1.0.0',
+    'version': '10.0.1.0.1',
     'license': 'AGPL-3',
     'author': 'Ursa Information Systems, Odoo Community Association (OCA)',
     'category': 'Accounting & Finance',
