@@ -53,17 +53,17 @@ class ResPartner(models.Model):
             if invoice_year == this_year:
                 total_number_of_invoices_ytd += 1
                 total_days_to_pay_ytd += days_to_pay_invoice
-                try:
-                    d2x_ytd = total_days_to_pay_ytd / \
-                              total_number_of_invoices_ytd
-                except ZeroDivisionError:
-                    d2x_ytd = 0
 
-            try:
-                d2x_life = total_days_to_pay_life / \
-                           total_number_of_invoices_life
-            except ZeroDivisionError:
-                d2x_life = 0
+        try:
+            d2x_ytd = total_days_to_pay_ytd / \
+                      total_number_of_invoices_ytd
+        except ZeroDivisionError:
+            d2x_ytd = 0
+        try:
+            d2x_life = total_days_to_pay_life / \
+                       total_number_of_invoices_life
+        except ZeroDivisionError:
+            d2x_life = 0
 
         return d2x_ytd, d2x_life
 
