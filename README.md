@@ -8,6 +8,13 @@ This project aim to deal with modules related to manage invoicing related report
 
 [//]: # (addons)
 
+Available addons
+----------------
+addon | version | summary
+--- | --- | ---
+[partner_daytopay](partner_daytopay/) | 10.0.1.0.0 | Adds receivables and payables statistics to partners
+
+
 Unported addons
 ---------------
 addon | version | summary
