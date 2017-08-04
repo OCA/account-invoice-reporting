@@ -1,0 +1,40 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * partner_daytopay
+# 
+# Translators:
+# Quentin THEURET <odoo@kerpeo.com>, 2017
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-06-30 23:33+0000\n"
+"PO-Revision-Date: 2017-06-30 23:33+0000\n"
+"Last-Translator: Quentin THEURET <odoo@kerpeo.com>, 2017\n"
+"Language-Team: French (https://www.transifex.com/oca/teams/23907/fr/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: fr\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#. module: partner_daytopay
+#: model:ir.model.fields,field_description:partner_daytopay.field_res_partner_d2p_ytd
+#: model:ir.model.fields,field_description:partner_daytopay.field_res_partner_d2r_ytd
+#: model:ir.model.fields,field_description:partner_daytopay.field_res_users_d2p_ytd
+#: model:ir.model.fields,field_description:partner_daytopay.field_res_users_d2r_ytd
+msgid "AVG Days to Pay (YTD)"
+msgstr "Moy. Jours pour payer (YTD)"
+
+#. module: partner_daytopay
+#: model:ir.model.fields,field_description:partner_daytopay.field_res_partner_d2p_life
+#: model:ir.model.fields,field_description:partner_daytopay.field_res_partner_d2r_life
+#: model:ir.model.fields,field_description:partner_daytopay.field_res_users_d2p_life
+#: model:ir.model.fields,field_description:partner_daytopay.field_res_users_d2r_life
+msgid "AVG Days to Pay (lifetime)"
+msgstr "Moy. Jours pour payer (durée)"
+
+#. module: partner_daytopay
+#: model:ir.model,name:partner_daytopay.model_res_partner
+msgid "Partner"
+msgstr "Partenaire"
