@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: account-invoice-reporting (7.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-17 01:37+0000\n"
+"POT-Creation-Date: 2017-08-04 23:24+0000\n"
 "PO-Revision-Date: 2016-01-05 17:43+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: Greek (Greece) (http://www.transifex.com/oca/OCA-account-invoice-reporting-7-0/language/el_GR/)\n"
@@ -148,7 +148,7 @@ msgstr ""
 #: field:partner.aging.customer,partner_name:0
 #: field:partner.aging.supplier,partner_name:0
 msgid "Name"
-msgstr ""
+msgstr "Ονομασία"
 
 #. module: partner_aging
 #: field:partner.aging.customer,date:0 field:partner.aging.supplier,date_due:0
