@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: account-invoice-reporting (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-19 23:13+0000\n"
-"PO-Revision-Date: 2017-06-30 08:53+0000\n"
+"POT-Creation-Date: 2017-08-25 23:30+0000\n"
+"PO-Revision-Date: 2017-08-29 08:01+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
 "Language-Team: Dutch (Netherlands) (http://www.transifex.com/oca/OCA-account-invoice-reporting-8-0/language/nl_NL/)\n"
 "MIME-Version: 1.0\n"
@@ -53,12 +53,12 @@ msgstr ""
 #. module: base_comment_template
 #: field:base.comment.template,create_uid:0
 msgid "Created by"
-msgstr ""
+msgstr "Aangemaakt door"
 
 #. module: base_comment_template
 #: field:base.comment.template,create_date:0
 msgid "Created on"
-msgstr ""
+msgstr "Aangemaakt op"
 
 #. module: base_comment_template
 #: field:base.comment.template,display_name:0
@@ -78,12 +78,12 @@ msgstr "Laatst gewijzigd op"
 #. module: base_comment_template
 #: field:base.comment.template,write_uid:0
 msgid "Last Updated by"
-msgstr ""
+msgstr "Laatst bijgewerkt door"
 
 #. module: base_comment_template
 #: field:base.comment.template,write_date:0
 msgid "Last Updated on"
-msgstr ""
+msgstr "Laatst bijgewerkt op"
 
 #. module: base_comment_template
 #: field:base.comment.template,position:0
