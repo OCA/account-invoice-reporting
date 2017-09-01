@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: account-invoice-reporting (7.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-15 17:30+0000\n"
+"POT-Creation-Date: 2017-08-25 23:28+0000\n"
 "PO-Revision-Date: 2016-01-05 17:43+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: Dutch (Netherlands) (http://www.transifex.com/oca/OCA-account-invoice-reporting-7-0/language/nl_NL/)\n"
@@ -70,7 +70,7 @@ msgstr ""
 #. module: invoice_print_report_balance_payment
 #: report:account.invoice.balance_payment:0
 msgid "Description"
-msgstr ""
+msgstr "Omschrijving"
 
 #. module: invoice_print_report_balance_payment
 #: field:account.invoice,payment_total:0
@@ -173,7 +173,7 @@ msgstr ""
 #: report:account.invoice.balance_payment:0
 #: model:ir.model,name:invoice_print_report_balance_payment.model_account_invoice
 msgid "Invoice"
-msgstr ""
+msgstr "Factuur"
 
 #. module: invoice_print_report_balance_payment
 #: model:ir.model,name:invoice_print_report_balance_payment.model_res_partner

@@ -10,12 +10,12 @@ msgstr ""
 "POT-Creation-Date: 2017-08-25 23:28+0000\n"
 "PO-Revision-Date: 2016-01-05 17:43+0000\n"
 "Last-Translator: <>\n"
-"Language-Team: Romanian (http://www.transifex.com/oca/OCA-account-invoice-reporting-7-0/language/ro/)\n"
+"Language-Team: Vietnamese (Viet Nam) (http://www.transifex.com/oca/OCA-account-invoice-reporting-7-0/language/vi_VN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: ro\n"
-"Plural-Forms: nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?2:1));\n"
+"Language: vi_VN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #. module: invoice_webkit
 #: field:account.condition_text,name:0
@@ -25,7 +25,7 @@ msgstr ""
 #. module: invoice_webkit
 #: report:addons/invoice_webkit/report/account_invoice.mako:248
 msgid "Invoice Date"
-msgstr "Data facturii"
+msgstr ""
 
 #. module: invoice_webkit
 #: report:addons/invoice_webkit/report/account_invoice.mako:231
@@ -176,7 +176,7 @@ msgstr ""
 #. module: invoice_webkit
 #: report:addons/invoice_webkit/report/account_invoice.mako:249
 msgid "Due Date"
-msgstr "Data scadenței"
+msgstr ""
 
 #. module: invoice_webkit
 #: field:account.invoice,note2:0
@@ -207,7 +207,7 @@ msgstr ""
 #. module: invoice_webkit
 #: model:ir.model,name:invoice_webkit.model_product_template
 msgid "Product Template"
-msgstr "Produs șablon"
+msgstr "Mẫu sản phẩm"
 
 #. module: invoice_webkit
 #: report:addons/invoice_webkit/report/account_invoice.mako:229
@@ -279,7 +279,7 @@ msgstr ""
 #: report:addons/invoice_webkit/report/account_invoice.mako:233
 #: model:ir.model,name:invoice_webkit.model_account_invoice
 msgid "Invoice"
-msgstr "Factura"
+msgstr ""
 
 #. module: invoice_webkit
 #: report:addons/invoice_webkit/report/account_invoice.mako:239
