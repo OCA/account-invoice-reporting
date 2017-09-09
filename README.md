@@ -12,6 +12,7 @@ Available addons
 ----------------
 addon | version | summary
 --- | --- | ---
+[account_invoice_report_by_partner](account_invoice_report_by_partner/) | 10.0.1.0.0 | Invoice Report by Partner
 [partner_daytopay](partner_daytopay/) | 10.0.1.0.1 | Adds receivables and payables statistics to partners
 
 
