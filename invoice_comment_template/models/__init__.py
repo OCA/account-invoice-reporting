@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
+##############################################################################
 #
-#
-#    Author: Nicolas Bessi
-#    Copyright 2013-2014 Camptocamp SA
+#    Author: Guewen Baconnier
+#    Copyright 2014 Camptocamp SA
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -17,16 +17,6 @@
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
-#
-{"name": "Base Comments Templates",
- "summary": "Comments templates on documents",
- "version": "10.0.1.0.0",
- "depends": ["base"],
- "author": "Camptocamp,Odoo Community Association (OCA)",
- "license": "AGPL-3",
- "data": ["views/comment_view.xml",
-          'security/ir.model.access.csv',
-          ],
- "category": "Sale",
- 'installable': True,
- }
+##############################################################################
+
+from . import account_invoice

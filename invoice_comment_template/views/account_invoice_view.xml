@@ -1,14 +1,14 @@
-<openerp>
-  <data>
+<odoo>
+
     <record model="ir.ui.view" id="invoice_form_add_comment">
       <field name="name">account.invoice.form.comment</field>
       <field name="model">account.invoice</field>
       <field name="inherit_id" ref="account.invoice_form"/>
       <field name="arch" type="xml">
 
-        <xpath expr="/form/sheet/notebook/page[3]" position="after">
+        <xpath expr="/form/sheet/notebook" position="inside">
           <page string="Comments" name="comments">
-            <label string="The comments will be displayed on the printed document. You can load a predefined template, write your own text or load a template and then modify it only for this document." colspan="2"/>
+            <p style="margin-top: 10px;">The comments will be displayed on the printed document. You can load a predefined template, write your own text or load a template and then modify it only for this document.</p>
             <group string="Top Comments">
               <field name="comment_template1_id"
                 string="Load a template"
@@ -28,5 +28,5 @@
 
       </field>
     </record>
-  </data>
-</openerp>
+
+</odoo>
