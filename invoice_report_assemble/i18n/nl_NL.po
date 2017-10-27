@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: account-invoice-reporting (7.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-08-25 23:28+0000\n"
+"POT-Creation-Date: 2017-09-01 23:38+0000\n"
 "PO-Revision-Date: 2016-01-05 17:43+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: Dutch (Netherlands) (http://www.transifex.com/oca/OCA-account-invoice-reporting-7-0/language/nl_NL/)\n"
@@ -30,7 +30,7 @@ msgstr ""
 #. module: invoice_report_assemble
 #: model:ir.model,name:invoice_report_assemble.model_res_company
 msgid "Companies"
-msgstr ""
+msgstr "Bedrijven"
 
 #. module: invoice_report_assemble
 #: model:ir.actions.report.xml,name:invoice_report_assemble.invoice_report_assemblage
