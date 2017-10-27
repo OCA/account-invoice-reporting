@@ -10,6 +10,24 @@ This module adds the button print when customer invoice's state is draft.
 This make the user more comfortable because he doesn't have to click on dropdown menu "Print".
 If this module is not installed, you don't have the button in the form view when customer invoice's state is draft.
 
+Installation
+============
+
+* No specific installation step required.
+
+Configuration
+=============
+
+* No specific configuration step required.
+
+Usage
+=====
+
+To use this module
+
+* Go to Accounting => Sales => Customer Invoices.
+* Create customer invoice and save it. Print button will be visible.
+
 Bug Tracker
 ===========
 
@@ -27,6 +45,7 @@ Contributors
 
 * Romain Deheele
 * Damien Crier <damien.crier@camptocamp.com>
+* Bhavesh Odedra <bodedra@ursainfosystems.com>
 
 Maintainer
 ----------
