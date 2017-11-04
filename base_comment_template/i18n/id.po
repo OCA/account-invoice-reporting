@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: account-invoice-reporting (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-23 23:37+0000\n"
-"PO-Revision-Date: 2016-12-27 08:22+0000\n"
+"POT-Creation-Date: 2017-09-01 23:52+0000\n"
+"PO-Revision-Date: 2017-11-03 12:14+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
 "Language-Team: Indonesian (http://www.transifex.com/oca/OCA-account-invoice-reporting-8-0/language/id/)\n"
 "MIME-Version: 1.0\n"
@@ -35,7 +35,7 @@ msgstr ""
 #. module: base_comment_template
 #: field:base.comment.template,text:0
 msgid "Comment"
-msgstr ""
+msgstr "Komentar"
 
 #. module: base_comment_template
 #: view:base.comment.template:base_comment_template.view_base_comment_template_form
