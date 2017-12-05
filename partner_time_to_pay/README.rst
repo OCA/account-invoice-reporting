@@ -1,9 +1,9 @@
-.. image:: https://img.shields.io/badge/licence-AGPL--3-blue.svg
+.. image:: https://img.shields.io/badge/licence-AGPL--3-blue.png
    :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
    :alt: License: AGPL-3
 
 ===================
-Partner Days to Pay
+Partner Time to Pay
 ===================
 
 This module displays statistics related to the receivables and payables behavior of a partner on the Accounting tab of the partner form view.
@@ -17,7 +17,7 @@ Usage
 
 .. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
    :alt: Try me on Runbot
-   :target: https://runbot.odoo-community.org/runbot/94/10.0
+   :target: https://runbot.odoo-community.org/runbot/94/11.0
 
 Bug Tracker
 ===========
@@ -39,16 +39,16 @@ Contributors
 ------------
 
 * Ray Carnes <rcarnes@ursainfosystems.com>
-* Maxime Chambreuil <mchambreuil@ursainfosystems.com>
-* Bhavesh Odedra <bodedra@ursainfosystems.com>
-* Sandip Mangukiya <smangukiya@ursainfosystems.com>
+* Maxime Chambreuil <mchambreuil@opensourceintegrators.com>
+* Bhavesh Odedra <bodedra@opensourceintegrators.com>
+* Sandip Mangukiya <smangukiya@opensourceintegrators.com>
 
 Funders
 -------
 
 The development of this module has been financially supported by:
 
-* Ursa Information Systems <http://www.ursainfosystems.com>
+* Open Source Integrators <http://www.opensourceintegrators.com>
 
 Maintainer
 ----------
