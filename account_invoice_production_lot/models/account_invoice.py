@@ -21,8 +21,6 @@ class AccountInvoiceLine(models.Model):
 
     prod_lot_ids = fields.Many2many(
         comodel_name='stock.production.lot',
-        relation='stock_prod_lot_invoice_rel',
-        column1='invoice_id',
         compute='_compute_prod_lots',
         string="Production Lots",
     )
