@@ -1,0 +1,97 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * base_comment_template
+# 
+# Translators:
+# Carlos Hormigo, 2018
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-11-11 00:14+0000\n"
+"PO-Revision-Date: 2017-11-11 00:14+0000\n"
+"Last-Translator: Carlos Hormigo, 2018\n"
+"Language-Team: Catalan (Spain) (https://www.transifex.com/oca/teams/23907/ca_ES/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: ca_ES\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: base_comment_template
+#: selection:base.comment.template,position:0
+msgid "After lines"
+msgstr ""
+
+#. module: base_comment_template
+#: model:ir.model,name:base_comment_template.model_base_comment_template
+msgid "Base comment template"
+msgstr ""
+
+#. module: base_comment_template
+#: selection:base.comment.template,position:0
+msgid "Before lines"
+msgstr ""
+
+#. module: base_comment_template
+#: model:ir.model.fields,field_description:base_comment_template.field_base_comment_template_text
+msgid "Comment"
+msgstr ""
+
+#. module: base_comment_template
+#: model:ir.actions.act_window,name:base_comment_template.action_base_comment_template
+#: model:ir.ui.view,arch_db:base_comment_template.view_base_comment_template_form
+#: model:ir.ui.view,arch_db:base_comment_template.view_base_comment_template_search
+#: model:ir.ui.view,arch_db:base_comment_template.view_base_comment_template_tree
+msgid "Comment Templates"
+msgstr ""
+
+#. module: base_comment_template
+#: model:ir.model.fields,field_description:base_comment_template.field_base_comment_template_name
+msgid "Comment summary"
+msgstr ""
+
+#. module: base_comment_template
+#: model:ir.model.fields,field_description:base_comment_template.field_base_comment_template_create_uid
+msgid "Created by"
+msgstr "Creat per"
+
+#. module: base_comment_template
+#: model:ir.model.fields,field_description:base_comment_template.field_base_comment_template_create_date
+msgid "Created on"
+msgstr "Creat a"
+
+#. module: base_comment_template
+#: model:ir.model.fields,field_description:base_comment_template.field_base_comment_template_display_name
+msgid "Display Name"
+msgstr "Nom visible"
+
+#. module: base_comment_template
+#: model:ir.model.fields,field_description:base_comment_template.field_base_comment_template_id
+msgid "ID"
+msgstr ""
+
+#. module: base_comment_template
+#: model:ir.model.fields,field_description:base_comment_template.field_base_comment_template___last_update
+msgid "Last Modified on"
+msgstr "Darrera modificació en"
+
+#. module: base_comment_template
+#: model:ir.model.fields,field_description:base_comment_template.field_base_comment_template_write_uid
+msgid "Last Updated by"
+msgstr "Darrera actualització per"
+
+#. module: base_comment_template
+#: model:ir.model.fields,field_description:base_comment_template.field_base_comment_template_write_date
+msgid "Last Updated on"
+msgstr "Darrera actualització el"
+
+#. module: base_comment_template
+#: model:ir.model.fields,field_description:base_comment_template.field_base_comment_template_position
+msgid "Position"
+msgstr ""
+
+#. module: base_comment_template
+#: model:ir.model.fields,help:base_comment_template.field_base_comment_template_position
+msgid "Position on document"
+msgstr ""
