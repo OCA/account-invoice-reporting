@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: account-invoice-reporting (7.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-08-11 23:22+0000\n"
+"POT-Creation-Date: 2017-11-25 00:19+0000\n"
 "PO-Revision-Date: 2016-01-05 17:43+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: Catalan (Spain) (http://www.transifex.com/oca/OCA-account-invoice-reporting-7-0/language/ca_ES/)\n"
@@ -70,7 +70,7 @@ msgstr ""
 #. module: invoice_print_report_balance_payment
 #: report:account.invoice.balance_payment:0
 msgid "Description"
-msgstr ""
+msgstr "Descripció"
 
 #. module: invoice_print_report_balance_payment
 #: field:account.invoice,payment_total:0
