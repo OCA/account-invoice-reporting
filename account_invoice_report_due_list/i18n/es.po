@@ -1,0 +1,33 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* account_invoice_report_due_list
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-03-16 14:39+0100\n"
+"PO-Revision-Date: 2018-03-16 14:40+0100\n"
+"Last-Translator: Carlos Dauden <carlos.dauden@tecnativa.com>\n"
+"Language-Team: \n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"X-Generator: Poedit 1.8.7.1\n"
+
+#. module: account_invoice_report_due_list
+#: model:ir.model.fields,field_description:account_invoice_report_due_list.field_account_invoice_multi_date_due
+msgid "Due Dates"
+msgstr "Fechas vencimiento"
+
+#. module: account_invoice_report_due_list
+#: model:ir.model,name:account_invoice_report_due_list.model_account_invoice
+msgid "Invoice"
+msgstr "Factura"
+
+#. module: account_invoice_report_due_list
+#: model:ir.model.fields,field_description:account_invoice_report_due_list.field_account_invoice_multi_due
+msgid "Multiple date due"
+msgstr "Fecha vencimiento múlitiple"
