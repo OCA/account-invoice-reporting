@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+    <record id="view_account_invoice_report_tree" model="ir.ui.view">
+        <field name="name">account.invoice.report.tree</field>
+        <field name="model">account.invoice.report</field>
+        <field name="inherit_id"
+               ref="account.view_account_invoice_report_tree"/>
+        <field name="arch" type="xml">
+            <field name="account_id" position="after">
+                <field name="internal_number" invisible="1"/>
+                <field name="supplier_invoice_number" invisible="1"/>
+                <field name="number" invisible="1"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="view_account_invoice_report_search" model="ir.ui.view">
+        <field name="name">account.invoice.report.search</field>
+        <field name="model">account.invoice.report</field>
+        <field name="inherit_id"
+               ref="account.view_account_invoice_report_search"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='categ_id']" position="after">
+                <field name="internal_number"/>
+                <field name="supplier_invoice_number"/>
+                <field name="number"/>
+            </xpath>
+            <xpath expr="//filter[@string='Account']" position="after">
+                <filter string="Invoice number" icon="terp-folder-orange"
+                        context="{'group_by':'internal_number'}"/>
+                <filter string="Supplier Invoice number"
+                        icon="terp-folder-orange"
+                        context="{'group_by':'supplier_invoice_number'}"/>
+                <filter string="Journal Entry"
+                        icon="terp-folder-orange"
+                        context="{'group_by':'number'}"/>
+            </xpath>
+        </field>
+    </record>
+</data>
+</openerp>
