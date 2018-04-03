@@ -24,7 +24,7 @@
 
 {
     "name": "Invoice Production Lots",
-    "version": "8.0.1.1.0",
+    "version": "9.0.1.1.0",
     'category': 'Generic Modules/Accounting',
     "depends": [
         "account_accountant",
@@ -42,6 +42,6 @@
     'demo': [
         'demo/sale.xml',
         ],
-    'installable': False,
+    'installable': True,
     'active': False,
 }
