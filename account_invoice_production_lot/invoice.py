@@ -27,21 +27,6 @@ from openerp import models, fields, api
 class AccountInvoiceLine(models.Model):
     _inherit = "account.invoice.line"
 
-    @api.one
-    def _get_prod_lots(self):
-        if not self.move_line_ids and not self.order_lines:
-            return
-        if self.move_line_ids:
-            self.prod_lot_ids = self.mapped(
-                'move_line_ids.lot_ids')
-        else:
-            self.prod_lot_ids = self.mapped(
-                'order_lines.procurement_ids.move_ids.lot_ids')
-
-    order_lines = fields.Many2many(
-        'sale.order.line', 'sale_order_line_invoice_rel', 'invoice_id',
-        'order_line_id', 'Order Lines', readonly=True)
-
     prod_lot_ids = fields.Many2many(
         'stock.production.lot',  'stock_prod_lot_invoice_rel', 'invoice_id',
         compute='_get_prod_lots', string="Production Lots")
@@ -49,13 +34,23 @@ class AccountInvoiceLine(models.Model):
     lot_formatted_note = fields.Html(
         'Formatted Note', compute='load_line_lots')
 
-    @api.one
+    @api.multi
+    @api.depends("sale_line_ids")
+    def _get_prod_lots(self):
+        for invoice_line in self:
+            if invoice_line.sale_line_ids:
+                invoice_line.prod_lot_ids = invoice_line.mapped(
+                    'sale_line_ids.procurement_ids.move_ids.lot_ids')
+
+    @api.multi
+    @api.depends("prod_lot_ids")
     def load_line_lots(self):
-        if self.prod_lot_ids:
-            note = u'<ul>'
-            note += u' '.join([
-                u'<li>S/N {0}</li>'.format(lot.name)
-                for lot in self.prod_lot_ids
-            ])
-            note += u'</ul>'
-            self.lot_formatted_note = note
+        for invoice_line in self:
+            if invoice_line.prod_lot_ids:
+                note = u'<ul>'
+                note += u' '.join([
+                    u'<li>S/N {0}</li>'.format(lot.name)
+                    for lot in invoice_line.prod_lot_ids
+                ])
+                note += u'</ul>'
+                invoice_line.lot_formatted_note = note
