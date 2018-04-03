@@ -40,7 +40,7 @@
         'view/report_invoice.xml',
         ],
     'demo': [
-        'demo/sale.yml',
+        'demo/sale.xml',
         ],
     'installable': False,
     'active': False,
