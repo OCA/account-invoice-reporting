@@ -17,6 +17,7 @@ addon | version | summary
 [account_reporting_weight](account_reporting_weight/) | 9.0.1.0.0 | Weights in the invoices analysis view
 [base_comment_template](base_comment_template/) | 9.0.1.0.0 | Comments templates on documents
 [invoice_comment_template](invoice_comment_template/) | 9.0.1.0.0 | Comments templates on invoice documents
+[product_brand_invoice_report](product_brand_invoice_report/) | 9.0.1.0.0 | Product Brand in Invoices Analysis
 
 
 Unported addons
