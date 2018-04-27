@@ -7,7 +7,7 @@
 
 {
     "name": "Invoice Production Lots",
-    "version": "10.0.1.1.0",
+    "version": "10.0.1.2.0",
     "author": "Agile Business Group,"
               "Tecnativa,"
               "Odoo Community Association (OCA)",
@@ -18,6 +18,7 @@
     "depends": [
         "account_accountant",
         "sale_stock",
+        "stock_picking_invoice_link",
     ],
     'data': [
         'views/account_invoice_views.xml',
