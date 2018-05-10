@@ -37,7 +37,4 @@ class AccountInvoice(models.Model):
             self.comment_template1_id = comment_template
         elif comment_template.position == 'after_lines':
             self.comment_template2_id = comment_template
-        else:
-            self.comment_template1_id = False
-            self.comment_template2_id = False
         return res
