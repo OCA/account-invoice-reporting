@@ -18,9 +18,11 @@
     "depends": [
         "account_accountant",
         "sale_stock",
+        "product_expiry"
     ],
     'data': [
         'views/account_invoice_views.xml',
+        'views/company_view.xml',
         'report/report_invoice.xml',
     ],
     'demo': [

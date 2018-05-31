@@ -26,6 +26,8 @@ Usage
 * Create the invoice, and the serial numbers are displayed in the "Production
   Lots" on invoice line form (if visible) and in "formatted note" field on
   invoice report.
+* In order to add production lot's use date you have to set true the field
+  Adds Use Date for Production Lot on Invoice Line Report on Accounting Configuration
 
 .. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
    :alt: Try me on Runbot
