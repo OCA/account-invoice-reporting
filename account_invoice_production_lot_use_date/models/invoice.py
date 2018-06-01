@@ -12,7 +12,7 @@ class AccountInvoiceLine(models.Model):
 
     @api.multi
     def _compute_line_lots(self):
-        res = super(AccountInvoice, self)._compute_line_lots()
+        res = super(AccountInvoiceLine, self)._compute_line_lots()
         lang = self.env['res.lang']._lang_get(self.env.lang)
         date_format = lang.date_format
         for line in self:
