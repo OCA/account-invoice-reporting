@@ -4,7 +4,7 @@
 
 {
     "name": "Invoice Production Lot Use Date",
-    "version": "10.0.1.1.0",
+    "version": "10.0.1.1.1",
     "author": "Agile Business Group,"
               "Odoo Community Association (OCA)",
     "summary": "Display delivered end date for lots in invoice report",
