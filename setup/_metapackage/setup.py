@@ -9,6 +9,7 @@ setuptools.setup(
     version=version,
     install_requires=[
         'odoo11-addon-account_invoice_line_report',
+        'odoo11-addon-account_invoice_report_grouped_by_picking',
     ],
     classifiers=[
         'Programming Language :: Python',
