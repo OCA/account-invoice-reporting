@@ -36,7 +36,8 @@ class AccountInvoiceLine(models.Model):
             if not line.order_line_ids:
                 return
             line.prod_lot_ids = self.mapped(
-                'order_line_ids.procurement_ids.move_ids.lot_ids')
+                'order_line_ids.procurement_ids.move_ids').filtered(
+                lambda move: move.state == 'done').lot_ids
 
     @api.multi
     def _compute_line_lots(self):
