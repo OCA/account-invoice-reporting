@@ -123,6 +123,7 @@ class TestProdLot(common.SavepointCase):
         line = invoice.invoice_line_ids
         # We must have only one lot
         self.assertEqual(len(line.prod_lot_ids.ids), 1)
+        self.assertEqual(line.prod_lot_ids.id, self.lot1.id)
         self.assertIn('Lot 1', line.lot_formatted_note)
 
     def test_02_sale_stock_delivery_partial_invoice_product_lot(self):
@@ -158,5 +159,7 @@ class TestProdLot(common.SavepointCase):
         line = invoice.invoice_line_ids
         # We must have two lots
         self.assertEqual(len(line.prod_lot_ids.ids), 2)
+        self.assertIn(self.lot1.id, line.prod_lot_ids.ids)
+        self.assertIn(self.lot2.id, line.prod_lot_ids.ids)
         self.assertIn('Lot 1', line.lot_formatted_note)
         self.assertIn('Lot 2', line.lot_formatted_note)
