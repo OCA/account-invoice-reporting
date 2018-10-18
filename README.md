@@ -14,7 +14,7 @@ addon | version | summary
 --- | --- | ---
 [account_draft_invoice_print](account_draft_invoice_print/) | 10.0.1.0.0 | Account Draft Invoice Print
 [account_invoice_line_report](account_invoice_line_report/) | 10.0.1.0.0 | New views to manage invoice lines information
-[account_invoice_production_lot](account_invoice_production_lot/) | 10.0.1.1.0 | Display delivered serial numbers in invoice
+[account_invoice_production_lot](account_invoice_production_lot/) | 10.0.1.2.0 | Display delivered serial numbers in invoice
 [account_invoice_report_by_partner](account_invoice_report_by_partner/) | 10.0.1.0.0 | Invoice Report by Partner
 [base_comment_template](base_comment_template/) | 10.0.1.0.0 | Comments templates on documents
 [invoice_comment_template](invoice_comment_template/) | 10.0.1.1.0 | Comments templates on invoice documents
