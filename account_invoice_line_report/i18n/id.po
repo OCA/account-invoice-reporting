@@ -1,0 +1,62 @@
+# Header entry was created by Lokalize.
+#
+#. module: account_invoice_line_report
+#: model:ir.actions.act_window,help:account_invoice_line_report.action_account_invoice_line_report
+# , 2018.
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Mime-Version: 1.0"
+"Last-Translator: \n"
+"PO-Revision-Date: 2018-10-21 17:44+0700\n"
+"Project-Id-Version: \n"
+"Language-Team: Indonesian <kde-i18n-doc@kde.org>\n"
+"Language: id\n"
+"MIME-Version: 1.0\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 1.5\n"
+
+#. module: account_invoice_line_report
+#: model:ir.actions.act_window,help:account_invoice_line_report.action_account_invoice_line_report
+msgid ""
+"From this report, you can have an overview of the amount invoiced to your "
+"customers. The search tool can also be used to personalise your Invoices "
+"reports and so, match this analysis to your needs."
+msgstr ""
+"Dari laporan ini, Anda dapat memiliki ikhtisar tentang jumlah yang ditagihkan "
+"kepada Pelanggan Anda. Alat pencarian juga dapat digunakan untuk "
+"mempersonalisasi Faktur laporan Anda dan sebagainya, cocokkan analisis ini "
+"dengan kebutuhan Anda."
+
+#. module: account_invoice_line_report
+#: model:ir.ui.view,arch_db:account_invoice_line_report.view_invoice_report_tree_info
+msgid "Invoice Line"
+msgstr ""
+
+#. module: account_invoice_line_report
+#: model:ir.actions.act_window,name:account_invoice_line_report.action_account_invoice_line_report
+#: model:ir.ui.menu,name:account_invoice_line_report.menu_action_account_invoice_line_report
+msgid "Invoice Lines"
+msgstr ""
+
+#. module: account_invoice_line_report
+#: model:ir.ui.view,arch_db:account_invoice_line_report.view_account_invoice_report_search
+msgid "Partner Tags"
+msgstr ""
+
+#. module: account_invoice_line_report
+#: model:ir.ui.view,arch_db:account_invoice_line_report.view_account_invoice_report_search
+msgid "Vendor contains"
+msgstr ""
+
+#. module: account_invoice_line_report
+#: model:ir.ui.view,arch_db:account_invoice_line_report.view_account_invoice_report_search
+msgid "With Price"
+msgstr "Dengan Harga"
+
+#. module: account_invoice_line_report
+#: model:ir.ui.view,arch_db:account_invoice_line_report.view_account_invoice_report_search
+msgid "Without Price"
+msgstr "Tanpa Harga"
+
