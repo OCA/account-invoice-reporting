@@ -8,14 +8,22 @@ from odoo import api, fields, models
 class ResPartner(models.Model):
     _inherit = 'res.partner'
 
-    d2p_life = fields.Float(compute='_compute_d2x',
-                            string='AVG Days to Pay (lifetime)')
-    d2p_ytd = fields.Float(compute='_compute_d2x',
-                           string='AVG Days to Pay (YTD)')
-    d2r_life = fields.Float(compute='_compute_d2x',
-                            string='AVG Days to Pay (lifetime)')
-    d2r_ytd = fields.Float(compute='_compute_d2x',
-                           string='AVG Days to Pay (YTD)')
+    d2p_life = fields.Float(
+        compute='_compute_d2x',
+        string='AVG Days to Payable (lifetime)'
+    )
+    d2p_ytd = fields.Float(
+        compute='_compute_d2x',
+        string='AVG Days to Payable (YTD)'
+    )
+    d2r_life = fields.Float(
+        compute='_compute_d2x',
+        string='AVG Days to Receivable (lifetime)'
+    )
+    d2r_ytd = fields.Float(
+        compute='_compute_d2x',
+        string='AVG Days to Receivable (YTD)'
+    )
 
     def _compute_d2x(self):
         for partner in self:
@@ -39,9 +47,8 @@ class ResPartner(models.Model):
 
         for invoice in self._get_invoice_ids(partner.id, invoice_type):
 
-            invoice_year = fields.Date.from_string(invoice.date_invoice).year
-
             date_due = fields.Date.from_string(invoice.date_invoice)
+            invoice_year = date_due.year
 
             days_to_pay_invoice = self._get_invoice_payment(
                 invoice.payment_ids, date_due)
@@ -53,23 +60,24 @@ class ResPartner(models.Model):
                 total_number_of_invoices_ytd += 1
                 total_days_to_pay_ytd += days_to_pay_invoice
 
-        try:
+        if total_number_of_invoices_ytd != 0:
             d2x_ytd = total_days_to_pay_ytd / total_number_of_invoices_ytd
-        except ZeroDivisionError:
+        else:
             d2x_ytd = 0
-        try:
+
+        if total_number_of_invoices_life != 0:
             d2x_life = total_days_to_pay_life / total_number_of_invoices_life
-        except ZeroDivisionError:
+        else:
             d2x_life = 0
 
         return d2x_ytd, d2x_life
 
     @api.multi
-    def _get_invoice_ids(self, partner_id, type):
+    def _get_invoice_ids(self, partner_id, invoice_type):
         return self.env['account.invoice'].search([
             ('partner_id', '=', partner_id),
             ('state', '=', 'paid'),
-            ('type', '=', type)
+            ('type', '=', invoice_type)
         ])
 
     @api.multi
