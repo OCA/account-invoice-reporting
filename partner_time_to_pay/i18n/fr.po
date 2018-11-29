@@ -19,19 +19,35 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #. module: partner_time_to_pay
-#: model:ir.model.fields,field_description:partner_time_to_pay.field_res_partner_d2p_ytd
-#: model:ir.model.fields,field_description:partner_time_to_pay.field_res_partner_d2r_ytd
-#: model:ir.model.fields,field_description:partner_time_to_pay.field_res_users_d2p_ytd
-#: model:ir.model.fields,field_description:partner_time_to_pay.field_res_users_d2r_ytd
-msgid "AVG Days to Pay (YTD)"
+#: model:ir.model.fields,field_description:partner_time_to_pay.field_res_partner__d2p_ytd
+#: model:ir.model.fields,field_description:partner_time_to_pay.field_res_users__d2p_ytd
+#, fuzzy
+#| msgid "AVG Days to Pay (YTD)"
+msgid "AVG Days to Payable (YTD)"
 msgstr "Moy. Jours pour payer (YTD)"
 
 #. module: partner_time_to_pay
-#: model:ir.model.fields,field_description:partner_time_to_pay.field_res_partner_d2p_life
-#: model:ir.model.fields,field_description:partner_time_to_pay.field_res_partner_d2r_life
-#: model:ir.model.fields,field_description:partner_time_to_pay.field_res_users_d2p_life
-#: model:ir.model.fields,field_description:partner_time_to_pay.field_res_users_d2r_life
-msgid "AVG Days to Pay (lifetime)"
+#: model:ir.model.fields,field_description:partner_time_to_pay.field_res_partner__d2p_life
+#: model:ir.model.fields,field_description:partner_time_to_pay.field_res_users__d2p_life
+#, fuzzy
+#| msgid "AVG Days to Pay (lifetime)"
+msgid "AVG Days to Payable (lifetime)"
+msgstr "Moy. Jours pour payer (durée)"
+
+#. module: partner_time_to_pay
+#: model:ir.model.fields,field_description:partner_time_to_pay.field_res_partner__d2r_ytd
+#: model:ir.model.fields,field_description:partner_time_to_pay.field_res_users__d2r_ytd
+#, fuzzy
+#| msgid "AVG Days to Pay (YTD)"
+msgid "AVG Days to Receivable (YTD)"
+msgstr "Moy. Jours pour payer (YTD)"
+
+#. module: partner_time_to_pay
+#: model:ir.model.fields,field_description:partner_time_to_pay.field_res_partner__d2r_life
+#: model:ir.model.fields,field_description:partner_time_to_pay.field_res_users__d2r_life
+#, fuzzy
+#| msgid "AVG Days to Pay (lifetime)"
+msgid "AVG Days to Receivable (lifetime)"
 msgstr "Moy. Jours pour payer (durée)"
 
 #. module: partner_time_to_pay
