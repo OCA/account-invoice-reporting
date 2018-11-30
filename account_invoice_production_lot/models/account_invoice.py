@@ -32,9 +32,20 @@ class AccountInvoiceLine(models.Model):
     )
 
     @api.multi
+    def _get_returned_moves(self):
+        self.ensure_one()
+        procurement_ids = self.move_line_ids.mapped('procurement_id').ids
+        moves = self.env['stock.move'].search(
+            [('procurement_id', 'in', procurement_ids),
+             ('state', '=', 'done')])
+        return moves.mapped('origin_returned_move_id')
+
+    @api.multi
     def _compute_prod_lots(self):
         for line in self:
-            line.prod_lot_ids = line.move_line_ids.mapped('lot_ids')
+            # If it's a returned stock move, we don't want to consider its lots
+            move_ids = line.move_line_ids - line._get_returned_moves()
+            line.prod_lot_ids = move_ids.mapped('lot_ids')
 
     @api.multi
     def _compute_line_lots(self):
@@ -51,6 +62,7 @@ class AccountInvoiceLine(models.Model):
                 note += u'</ul>'
                 line.lot_formatted_note = note
 
+    @api.multi
     def quantity_by_lot(self):
         self.ensure_one()
         move_ids = self.move_line_ids
