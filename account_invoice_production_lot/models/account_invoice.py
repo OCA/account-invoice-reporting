@@ -34,7 +34,9 @@ class AccountInvoiceLine(models.Model):
     @api.multi
     def _compute_prod_lots(self):
         for line in self:
-            line.prod_lot_ids = line.move_line_ids.mapped('lot_ids')
+            quant_ids = line.move_line_ids.mapped('quant_ids').filtered(
+                lambda x: x.location_id.usage == 'customer')
+            line.prod_lot_ids = quant_ids.mapped('lot_id')
 
     @api.multi
     def _compute_line_lots(self):
@@ -51,6 +53,7 @@ class AccountInvoiceLine(models.Model):
                 note += u'</ul>'
                 line.lot_formatted_note = note
 
+    @api.multi
     def quantity_by_lot(self):
         self.ensure_one()
         move_ids = self.move_line_ids

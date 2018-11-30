@@ -180,3 +180,71 @@ class TestProdLot(common.SavepointCase):
         self.assertIn(s_qty_lot1, line.lot_formatted_note)
         s_qty_lot2 = "(%s)" % formatLang(self.env, qty_lot2)
         self.assertIn(s_qty_lot2, line.lot_formatted_note)
+
+    def test_03_sale_stock_delivery_returned_invoice_product_lot(self):
+        # update quantities with their related lots
+        self.qty_on_hand(self.product, self.stock_location, 4, self.lot1)
+        self.qty_on_hand(self.product, self.stock_location, 4, self.lot2)
+        # confirm quotation
+        self.sale.action_confirm()
+        picking = self.sale.picking_ids[:1]
+        picking.action_confirm()
+        picking.action_assign()
+        self.assertEqual(len(picking.mapped('pack_operation_ids')), 1)
+        self.assertEqual(len(picking.mapped(
+            'pack_operation_ids.pack_lot_ids')), 1)
+        operation_lot1 = picking.pack_operation_ids.pack_lot_ids[0]
+        self.assertIn('Lot 1', operation_lot1.lot_id.name)
+        self.assertEqual(operation_lot1.qty_todo, 4)
+        # transfer all quantities with Lot 1
+        qty_lot1 = 4.0
+        operation_lot1.action_add_quantity(qty_lot1)
+        picking.do_new_transfer()
+        # return all quantities with Lot 1
+        wiz = self.env['stock.return.picking'].with_context(
+            active_id=picking.id,
+            to_refund_so=True).create({})
+        return_picking_id = wiz.create_returns()['res_id']
+        return_picking = self.env['stock.picking'].browse(
+            return_picking_id)
+        self.assertTrue(return_picking.mapped(
+            'move_lines.origin_returned_move_id'))
+        self.assertEqual(len(return_picking.mapped(
+            'pack_operation_ids.pack_lot_ids')), 1)
+        operation_returned_lot1 = (
+            return_picking.pack_operation_ids.pack_lot_ids[0])
+        operation_returned_lot1.action_add_quantity(qty_lot1)
+        return_picking.do_new_transfer()
+        # return of return, this time with Lot 2
+        qty_lot2 = 4.0
+        wiz = self.env['stock.return.picking'].with_context(
+            active_id=return_picking.id,
+            to_refund_so=True).create({})
+        return_return_picking_id = wiz.create_returns()['res_id']
+        return_return_picking = self.env['stock.picking'].browse(
+            return_return_picking_id)
+        self.assertTrue(return_return_picking.mapped(
+            'move_lines.origin_returned_move_id'))
+        self.assertEqual(len(return_return_picking.mapped(
+            'pack_operation_ids.pack_lot_ids')), 1)
+        operation_lot2 = (
+            return_return_picking.pack_operation_ids.pack_lot_ids[0])
+        # use Lot 2 instead Lot 1
+        operation_lot2.lot_id = self.lot2
+        operation_lot2.action_add_quantity(qty_lot2)
+        return_return_picking.do_new_transfer()
+        # create invoice
+        inv_id = self.sale.action_invoice_create()
+        invoice = self.env['account.invoice'].browse(inv_id)
+        self.assertEqual(len(invoice.invoice_line_ids), 1)
+        line = invoice.invoice_line_ids
+        # We must have only Lot 2
+        self.assertEqual(len(line.prod_lot_ids.ids), 1)
+        self.assertNotIn(self.lot1.id, line.prod_lot_ids.ids)
+        self.assertIn(self.lot2.id, line.prod_lot_ids.ids)
+        self.assertNotIn('Lot 1', line.lot_formatted_note)
+        self.assertIn('Lot 2', line.lot_formatted_note)
+        # check if quantity related to Lot 2 is displayed
+        # in lot_formatted_note
+        s_qty_lot2 = "(%s)" % formatLang(self.env, qty_lot2)
+        self.assertIn(s_qty_lot2, line.lot_formatted_note)
