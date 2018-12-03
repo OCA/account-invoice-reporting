@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # Copyright 2018 Carlos Dauden - Tecnativa <carlos.dauden@tecnativa.com>
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
@@ -35,11 +34,22 @@ class AccountInvoice(models.Model):
         self.ensure_one()
         due_list = []
         if self.move_id:
-            due_move_line_ids = self.move_id.line_ids.filtered(
-                lambda ml: ml.account_id.id == self.account_id.id
-            )
-            due_list = [
-                (ml.date_maturity, ml.balance) for ml in due_move_line_ids]
+            if self.type in ['in_invoice', 'out_refund']:
+                due_move_line_ids = self.move_id.line_ids.filtered(
+                    lambda ml: ml.account_id.internal_type == 'payable'
+                )
+            else:
+                due_move_line_ids = self.move_id.line_ids.filtered(
+                    lambda ml: ml.account_id.internal_type == 'receivable'
+                )
+            if self.currency_id != self.company_id.currency_id:
+                due_list = [
+                    (ml.date_maturity, ml.amount_currency)
+                    for ml in due_move_line_ids]
+            else:
+                due_list = [
+                    (ml.date_maturity, ml.balance)
+                    for ml in due_move_line_ids]
         elif self.payment_term_id:
             date_invoice = (
                 self.date_invoice or fields.Date.context_today(self))
