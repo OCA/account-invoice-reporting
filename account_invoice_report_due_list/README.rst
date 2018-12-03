@@ -23,7 +23,7 @@ Account Invoice Report Due List
     :target: https://runbot.odoo-community.org/runbot/94/11.0
     :alt: Try me on Runbot
 
-|badge1| |badge2| |badge3| |badge4| |badge5|
+|badge1| |badge2| |badge3| |badge4| |badge5| 
 
 This module extends the invoice report for adding information about the
 corresponding due dates and amounts.
@@ -38,10 +38,13 @@ Usage
 
 To use this module, you need to:
 
-#. Go to **Invoicing > Customer Invoices**.
+#. Go to **Invoicing > Configuration > Management > Payment Terms**. You must
+   install **account_invoicing** module and set *Billing* permission to your
+   user in order to be able to access to this menu.
 #. Select or create a payment term with multiple term lines.
+#. Go to **Invoicing > Customer Invoices**.
 #. Select or create an invoice and set payment term to invoice.
-#. Go to Other Info tab and look Due Dates.
+#. You can see now Due Dates.
 #. Print invoice.
 #. Look Due Date.
 

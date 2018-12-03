@@ -1,11 +1,10 @@
-# -*- coding: utf-8 -*-
 # Copyright 2018 Tecnativa - Vicent Cubells <vicent.cubells@tecnativa.com>
 # License AGPL-3 - See http://www.gnu.org/licenses/agpl-3.0.html
 
 from datetime import timedelta
 
 from odoo.tests import common
-from odoo import fields, report
+from odoo import fields
 
 
 class TestInvoiceReportDueList(common.SavepointCase):
@@ -80,8 +79,7 @@ class TestInvoiceReportDueList(common.SavepointCase):
         self.assertEqual(len(invoice.multi_date_due.split()), 2)
         due_date = fields.Date.to_string(
             fields.date.today() + timedelta(days=60))
-        (res, _) = report.render_report(
-            self.env.cr, self.env.uid,
-            [invoice.id], 'account.report_invoice', {})
-        self.assertRegexpMatches(res, due_date)
-        self.assertRegexpMatches(res, '75.0')
+        res = self.env['ir.actions.report']._get_report_from_name(
+            'account.report_invoice').render_qweb_html(invoice.ids)
+        self.assertRegexpMatches(str(res[0]), due_date)
+        self.assertRegexpMatches(str(res[0]), '75.0')
