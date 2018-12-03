@@ -18,25 +18,25 @@ msgstr ""
 #. module: account_invoice_report_due_list
 #: model:ir.ui.view,arch_db:account_invoice_report_due_list.report_invoice_document
 msgid "Amount"
-msgstr "Importe"
+msgstr ""
 
 #. module: account_invoice_report_due_list
 #: model:ir.ui.view,arch_db:account_invoice_report_due_list.report_invoice_document
 msgid "Date Due"
-msgstr "Fecha de vencimiento"
+msgstr ""
 
 #. module: account_invoice_report_due_list
 #: model:ir.model.fields,field_description:account_invoice_report_due_list.field_account_invoice_multi_date_due
 msgid "Due Dates"
-msgstr "Fechas de vencimiento"
+msgstr ""
 
 #. module: account_invoice_report_due_list
 #: model:ir.model,name:account_invoice_report_due_list.model_account_invoice
 msgid "Invoice"
-msgstr "Factura"
+msgstr ""
 
 #. module: account_invoice_report_due_list
 #: model:ir.model.fields,field_description:account_invoice_report_due_list.field_account_invoice_multi_due
 msgid "Multiple date due"
-msgstr "Múltiples fechas de vencimiento"
+msgstr ""
 
