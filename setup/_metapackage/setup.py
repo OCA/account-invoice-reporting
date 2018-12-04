@@ -12,6 +12,7 @@ setuptools.setup(
         'odoo10-addon-account_invoice_line_report',
         'odoo10-addon-account_invoice_production_lot',
         'odoo10-addon-account_invoice_report_by_partner',
+        'odoo10-addon-account_invoice_report_due_list',
         'odoo10-addon-base_comment_template',
         'odoo10-addon-invoice_comment_template',
         'odoo10-addon-partner_daytopay',
