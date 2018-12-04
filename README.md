@@ -16,6 +16,7 @@ addon | version | summary
 [account_invoice_line_report](account_invoice_line_report/) | 10.0.1.0.0 | New views to manage invoice lines information
 [account_invoice_production_lot](account_invoice_production_lot/) | 10.0.1.2.0 | Display delivered serial numbers in invoice
 [account_invoice_report_by_partner](account_invoice_report_by_partner/) | 10.0.1.0.0 | Invoice Report by Partner
+[account_invoice_report_due_list](account_invoice_report_due_list/) | 10.0.1.0.0 | Show multiple due data in invoice
 [base_comment_template](base_comment_template/) | 10.0.1.0.0 | Comments templates on documents
 [invoice_comment_template](invoice_comment_template/) | 10.0.1.1.0 | Comments templates on invoice documents
 [partner_daytopay](partner_daytopay/) | 10.0.1.0.1 | Adds receivables and payables statistics to partners
