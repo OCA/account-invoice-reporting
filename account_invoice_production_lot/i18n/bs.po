@@ -47,14 +47,21 @@ msgid "Invoice Line"
 msgstr "Stavka fakture"
 
 #. module: account_invoice_production_lot
-#: model:ir.model.fields,field_description:account_invoice_production_lot.field_account_invoice_line_order_line_ids
-msgid "Order Lines"
+#: code:addons/account_invoice_production_lot/models/account_invoice.py:44
+#, python-format
+msgid "Lot"
 msgstr ""
 
 #. module: account_invoice_production_lot
 #: model:ir.model.fields,field_description:account_invoice_production_lot.field_account_invoice_line_prod_lot_ids
 #: model:ir.ui.view,arch_db:account_invoice_production_lot.view_invoice_line_form_prod_lots
 msgid "Production Lots"
+msgstr ""
+
+#. module: account_invoice_production_lot
+#: code:addons/account_invoice_production_lot/models/account_invoice.py:40
+#, python-format
+msgid "S/N"
 msgstr ""
 
 #. module: account_invoice_production_lot
