@@ -9,45 +9,46 @@ msgstr ""
 "Project-Id-Version: Odoo Server 9.0c\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-16 11:59+0000\n"
-"PO-Revision-Date: 2017-05-16 11:59+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
+"PO-Revision-Date: 2018-12-24 11:58+0000\n"
+"Last-Translator: Pedro Castro Silva <pedrocs@exo.pt>\n"
 "Language-Team: Portuguese (https://www.transifex.com/oca/teams/23907/pt/)\n"
 "Language: pt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Weblate 3.3\n"
 
 #. module: invoice_comment_template
 #: model:ir.model.fields,field_description:invoice_comment_template.field_account_invoice_note2
 msgid "Bottom Comment"
-msgstr ""
+msgstr "Comentário de Fundo"
 
 #. module: invoice_comment_template
 #: model:ir.model.fields,field_description:invoice_comment_template.field_account_invoice_comment_template2_id
 msgid "Bottom Comment Template"
-msgstr ""
+msgstr "Modelo de Comentário de Fundo"
 
 #. module: invoice_comment_template
 #: model:ir.ui.view,arch_db:invoice_comment_template.invoice_form_add_comment
 msgid "Bottom Comments"
-msgstr ""
+msgstr "Comentários de Fundo"
 
 #. module: invoice_comment_template
 #: model:ir.ui.view,arch_db:invoice_comment_template.invoice_form_add_comment
 msgid "Comments"
-msgstr ""
+msgstr "Comentários"
 
 #. module: invoice_comment_template
 #: model:ir.model.fields,field_description:invoice_comment_template.field_res_partner_comment_template_id
 #: model:ir.model.fields,field_description:invoice_comment_template.field_res_users_comment_template_id
 msgid "Conditions template"
-msgstr ""
+msgstr "Condições do modelo"
 
 #. module: invoice_comment_template
 #: model:ir.ui.menu,name:invoice_comment_template.menu_base_comment_template_invoice
 msgid "Document Comments"
-msgstr ""
+msgstr "Comentários do Documento"
 
 #. module: invoice_comment_template
 #: model:ir.model,name:invoice_comment_template.model_account_invoice
@@ -57,12 +58,12 @@ msgstr "Fatura"
 #. module: invoice_comment_template
 #: model:ir.ui.view,arch_db:invoice_comment_template.invoice_form_add_comment
 msgid "Load a template"
-msgstr ""
+msgstr "Carregar um modelo"
 
 #. module: invoice_comment_template
 #: model:ir.model,name:invoice_comment_template.model_res_partner
 msgid "Partner"
-msgstr ""
+msgstr "Parceiro"
 
 #. module: invoice_comment_template
 #: model:ir.ui.view,arch_db:invoice_comment_template.invoice_form_add_comment
@@ -71,18 +72,21 @@ msgid ""
 "predefined template, write your own text or load a template and then modify "
 "it only for this document."
 msgstr ""
+"Os comentários serão exibidos no documento impresso. Pode carregar um "
+"comentário predefinido, escrever o seu próprio texto ou carregar um modelo e "
+"a seguir modificá-lo apenas para este documento."
 
 #. module: invoice_comment_template
 #: model:ir.model.fields,field_description:invoice_comment_template.field_account_invoice_note1
 msgid "Top Comment"
-msgstr ""
+msgstr "Comentário de Topo"
 
 #. module: invoice_comment_template
 #: model:ir.model.fields,field_description:invoice_comment_template.field_account_invoice_comment_template1_id
 msgid "Top Comment Template"
-msgstr ""
+msgstr "Modelo de Comentário de Topo"
 
 #. module: invoice_comment_template
 #: model:ir.ui.view,arch_db:invoice_comment_template.invoice_form_add_comment
 msgid "Top Comments"
-msgstr ""
+msgstr "Comentários de Topo"
