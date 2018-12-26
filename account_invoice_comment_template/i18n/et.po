@@ -19,28 +19,28 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: account_invoice_comment_template
-#: model:ir.model.fields,field_description:account_invoice_comment_template.field_account_invoice_note2
+#: model:ir.model.fields,field_description:account_invoice_comment_template.field_account_invoice__note2
 msgid "Bottom Comment"
 msgstr ""
 
 #. module: account_invoice_comment_template
-#: model:ir.model.fields,field_description:account_invoice_comment_template.field_account_invoice_comment_template2_id
+#: model:ir.model.fields,field_description:account_invoice_comment_template.field_account_invoice__comment_template2_id
 msgid "Bottom Comment Template"
 msgstr ""
 
 #. module: account_invoice_comment_template
-#: model:ir.ui.view,arch_db:account_invoice_comment_template.invoice_form_add_comment
+#: model_terms:ir.ui.view,arch_db:account_invoice_comment_template.invoice_form_add_comment
 msgid "Bottom Comments"
 msgstr ""
 
 #. module: account_invoice_comment_template
-#: model:ir.ui.view,arch_db:account_invoice_comment_template.invoice_form_add_comment
+#: model_terms:ir.ui.view,arch_db:account_invoice_comment_template.invoice_form_add_comment
 msgid "Comments"
 msgstr ""
 
 #. module: account_invoice_comment_template
-#: model:ir.model.fields,field_description:account_invoice_comment_template.field_res_partner_comment_template_id
-#: model:ir.model.fields,field_description:account_invoice_comment_template.field_res_users_comment_template_id
+#: model:ir.model.fields,field_description:account_invoice_comment_template.field_res_partner__comment_template_id
+#: model:ir.model.fields,field_description:account_invoice_comment_template.field_res_users__comment_template_id
 msgid "Conditions template"
 msgstr ""
 
@@ -60,12 +60,12 @@ msgid "Invoice"
 msgstr "Arve"
 
 #. module: account_invoice_comment_template
-#: model:ir.ui.view,arch_db:account_invoice_comment_template.invoice_form_add_comment
+#: model_terms:ir.ui.view,arch_db:account_invoice_comment_template.invoice_form_add_comment
 msgid "Load a template"
 msgstr ""
 
 #. module: account_invoice_comment_template
-#: model:ir.ui.view,arch_db:account_invoice_comment_template.invoice_form_add_comment
+#: model_terms:ir.ui.view,arch_db:account_invoice_comment_template.invoice_form_add_comment
 msgid ""
 "The comments will be displayed on the printed document. You can load a "
 "predefined template, write your own text or load a template and then modify "
@@ -73,16 +73,16 @@ msgid ""
 msgstr ""
 
 #. module: account_invoice_comment_template
-#: model:ir.model.fields,field_description:account_invoice_comment_template.field_account_invoice_note1
+#: model:ir.model.fields,field_description:account_invoice_comment_template.field_account_invoice__note1
 msgid "Top Comment"
 msgstr ""
 
 #. module: account_invoice_comment_template
-#: model:ir.model.fields,field_description:account_invoice_comment_template.field_account_invoice_comment_template1_id
+#: model:ir.model.fields,field_description:account_invoice_comment_template.field_account_invoice__comment_template1_id
 msgid "Top Comment Template"
 msgstr ""
 
 #. module: account_invoice_comment_template
-#: model:ir.ui.view,arch_db:account_invoice_comment_template.invoice_form_add_comment
+#: model_terms:ir.ui.view,arch_db:account_invoice_comment_template.invoice_form_add_comment
 msgid "Top Comments"
 msgstr ""
