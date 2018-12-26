@@ -5,9 +5,11 @@
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="base.view_partner_form"/>
         <field name="arch" type="xml">
-            <field name="user_id" position="after">
-                <field name="comment_template_id" attrs="{'invisible': ['|', ('customer', '=', False), ('is_company', '=', False)]}"/>
-            </field>
+            <xpath expr="//page[@name='sales_purchases']//field[@name='user_id']"
+                   position="after">
+                <field name="comment_template_id"
+                       attrs="{'invisible': ['|', ('customer', '=', False), ('is_company', '=', False)]}"/>
+            </xpath>
         </field>
     </record>
 
