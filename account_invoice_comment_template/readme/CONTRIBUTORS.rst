@@ -5,5 +5,6 @@
 * `Tecnativa <https://www.tecnativa.com>`_:
 
   * Pedro M. Baeza
+* `DynApps <https://www.dynapps.be>`_:
 
-Do not contact contributors directly about support or help with technical issues.
+  * Raf Ven <raf.ven@dynapps.be>
