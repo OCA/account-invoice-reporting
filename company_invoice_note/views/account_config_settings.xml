@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <record id="account_config_settings_form_view" model="ir.ui.view">
+            <field name="name">account settings</field>
+            <field name="model">account.config.settings</field>
+            <field name="inherit_id" ref="account.view_account_config_settings"/>
+            <field name="priority" eval="250"/>
+            <field name="arch" type="xml">
+                <group name="followup" position="after">
+                    <group name="report_invoice_note" string="Invoice note">
+                        <field name="invoice_note_place"/>
+                    </group>
+                    <group colspan="2" attrs="{'invisible': [('invoice_note_place', 'in', ['no', False])]}">
+                        <field name="invoice_note" nolabel="1" colspan="2"/>
+                    </group>
+                </group>
+            </field>
+        </record>
+</odoo>

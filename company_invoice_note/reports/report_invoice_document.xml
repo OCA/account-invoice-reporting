@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2019 ACSONE SA/NV
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <template id="report_invoice_document" inherit_id="account.report_invoice_document" priority="250">
+        <p t-if="o.comment" position="replace">
+            <p t-if="o.company_id.invoice_note_place in ['before', 'replace'] and o.type == 'out_invoice'">
+                <span t-field="o.company_id.invoice_note"/>
+            </p>
+            <p t-if="o.comment and (o.company_id.invoice_note_place != 'replace' or o.type != 'out_invoice')">
+                <strong>Comment:</strong>
+                <span t-field="o.comment"/>
+            </p>
+        </p>
+        <p t-if="o.fiscal_position_id.note" position="after">
+            <p t-if="o.company_id.invoice_note_place == 'after' and o.type == 'out_invoice'">
+                <span t-field="o.company_id.invoice_note"/>
+            </p>
+        </p>
+    </template>
+</odoo>
