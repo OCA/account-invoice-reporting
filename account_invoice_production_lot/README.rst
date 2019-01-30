@@ -25,8 +25,9 @@ Invoice Production Lots
 
 |badge1| |badge2| |badge3| |badge4| |badge5| 
 
-This module shows, for each (customer) invoice line, the delivered production lots that will also be displayed
-on the invoice report with their corresponding delivered quantities in case the **Tracking** has been set to **By Lots**.
+This module shows, for each (customer) invoice line, the delivered production
+lots that will be also displayed on the invoice report with their corresponding
+delivered quantities in case the **Tracking** has been set to **By Lots**.
 
 **Table of contents**
 
