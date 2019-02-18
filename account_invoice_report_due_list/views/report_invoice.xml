@@ -9,7 +9,7 @@
         </xpath>
         <xpath expr="//span[@t-field='o.payment_term_id.note']" position="after">
             <div class="row" t-if="o.multi_due">
-                <div class="col-xs-6">
+                <div class="col-4">
                     <table class="table table-striped">
                         <thead>
                             <tr>
@@ -24,7 +24,7 @@
                                 </td>
                                 <td class="text-right">
                                     <span t-esc="due_tuple[1]"
-                                          t-esc-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
+                                          t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
                                 </td>
                             </tr>
                         </tbody>
