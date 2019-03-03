@@ -44,9 +44,10 @@ msgid "Invoice Line"
 msgstr "Linea de factura"
 
 #. module: account_invoice_production_lot
-#: model:ir.model.fields,field_description:account_invoice_production_lot.field_account_invoice_line_order_line_ids
-msgid "Order Lines"
-msgstr "Lineas de pedido"
+#: code:addons/account_invoice_production_lot/models/account_invoice.py:44
+#, python-format
+msgid "Lot"
+msgstr ""
 
 #. module: account_invoice_production_lot
 #: model:ir.model.fields,field_description:account_invoice_production_lot.field_account_invoice_line_prod_lot_ids
@@ -55,6 +56,15 @@ msgid "Production Lots"
 msgstr "Lotes/Nº de serie"
 
 #. module: account_invoice_production_lot
+#: code:addons/account_invoice_production_lot/models/account_invoice.py:40
+#, python-format
+msgid "S/N"
+msgstr ""
+
+#. module: account_invoice_production_lot
 #: model:stock.location,name:account_invoice_production_lot.location_opening
 msgid "opening"
 msgstr ""
+
+#~ msgid "Order Lines"
+#~ msgstr "Lineas de pedido"
