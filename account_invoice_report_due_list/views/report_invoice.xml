@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2018 Carlos Dauden - Tecnativa <carlos.dauden@tecnativa.com>
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+
+    <template id="report_invoice_document" inherit_id="account.report_invoice_document">
+        <xpath expr="//p[@t-field='o.date_due']/.." position="attributes">
+            <attribute name="t-att-class">'hidden' if o.multi_due else 'col-xs-2'</attribute>
+        </xpath>
+        <xpath expr="//span[@t-field='o.payment_term_id.note']" position="after">
+            <div class="row" t-if="o.multi_due">
+                <div class="col-4">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Date Due</th>
+                                <th class="text-right">Amount</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr t-foreach="o.get_multi_due_list()" t-as="due_tuple">
+                                <td>
+                                    <span t-esc="due_tuple[0]" t-esc-options="{'widget': 'date'}"/>
+                                </td>
+                                <td class="text-right">
+                                    <span t-esc="due_tuple[1]"
+                                          t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </xpath>
+    </template>
+
+</odoo>
