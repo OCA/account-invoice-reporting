@@ -66,13 +66,18 @@ class TestProdLot(common.SavepointCase):
 
     def qty_on_hand(self, product, location, quantity, lot):
         """Update Product quantity."""
-        wiz = self.env['stock.change.product.qty'].create({
-            'location_id': location.id,
+        wiz = self.env['stock.inventory'].create({
+            'name': 'Stock Inventory',
+            'filter': 'product',
             'product_id': product.id,
-            'new_quantity': quantity,
-            'lot_id': lot.id,
-        })
-        wiz.change_product_qty()
+            'line_ids': [
+                (0, 0, {
+                    'product_id': product.id,
+                    'product_uom_id': product.uom_id.id,
+                    'product_qty': quantity, 'prod_lot_id': lot.id,
+                    'location_id': location.id}),
+            ]})
+        wiz.action_validate()
 
     def test_00_sale_stock_invoice_product_lot(self):
         # update quantities with their related lots
