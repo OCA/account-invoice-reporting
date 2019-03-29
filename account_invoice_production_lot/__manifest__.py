@@ -6,7 +6,7 @@
 
 {
     "name": "Invoice Production Lots",
-    "version": "11.0.1.0.0",
+    "version": "12.0.1.0.0",
     "author": "Agile Business Group,"
               "Tecnativa,"
               "Odoo Community Association (OCA)",
@@ -15,8 +15,7 @@
     'license': 'AGPL-3',
     'category': 'Accounting & Finance',
     "depends": [
-        "account_invoicing",
-        "sale_stock",
+        "account",
         "stock_picking_invoice_link",
     ],
     'data': [
