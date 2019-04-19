@@ -7,7 +7,7 @@
 {
     "name": "Account Invoice Comments",
     "summary": "Comments templates on invoice documents",
-    "version": "12.0.1.0.0",
+    "version": "12.0.2.0.0",
     "category": "Sale",
     "author": "Camptocamp, "
               "Tecnativa, "
@@ -23,6 +23,5 @@
         "views/base_comment_template_view.xml",
         "security/ir.model.access.csv",
         "views/report_invoice.xml",
-        "views/res_partner_views.xml",
     ],
 }
