@@ -7,3 +7,4 @@
 * `DynApps <https://www.dynapps.be>`_:
 
   * Raf Ven <raf.ven@dynapps.be>
+* Iván Todorovich <ivan.todorovich@druidoo.io>
