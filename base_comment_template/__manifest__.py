@@ -17,5 +17,6 @@
         "security/ir.model.access.csv",
         "security/security.xml",
         "views/comment_view.xml",
+        "views/res_partner.xml",
     ],
 }
