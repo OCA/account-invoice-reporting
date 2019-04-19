@@ -74,7 +74,11 @@ Contributors
 * `DynApps <https://www.dynapps.be>`_:
 
   * Raf Ven <raf.ven@dynapps.be>
-* Iván Todorovich <ivan.todorovich@druidoo.io>
+
+* `Druidoo <https://www.druidoo.io>`_:
+
+  * Iván Todorovich <ivan.todorovich@druidoo.io>
+
 
 Maintainers
 ~~~~~~~~~~~
