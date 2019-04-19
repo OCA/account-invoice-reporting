@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-    <menuitem name="Document Comments"
+    <menuitem name="Document comments"
       id="menu_base_comment_template_invoice"
       action="base_comment_template.action_base_comment_template"
       parent="account.account_management_menu"/>

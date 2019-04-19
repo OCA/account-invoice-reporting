@@ -7,14 +7,15 @@ from odoo import api, fields, models
 class ResPartner(models.Model):
     _inherit = "res.partner"
 
-    invoice_comment_template_id = fields.Many2one(
+    property_invoice_comment_template_id = fields.Many2one(
         comodel_name='base.comment.template',
-        string='Conditions template',
+        string='Invoice comment template',
         oldname='comment_template_id',
+        company_dependant=True,
     )
 
     @api.model
     def _commercial_fields(self):
         res = super(ResPartner, self)._commercial_fields()
-        res += ['comment_template_id']
+        res += ['property_invoice_comment_template_id']
         return res
