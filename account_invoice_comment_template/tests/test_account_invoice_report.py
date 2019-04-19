@@ -42,12 +42,12 @@ class TestAccountInvoiceReport(TransactionCase):
         self.assertRegexpMatches(str(res[0]), self.after_comment.text)
 
     def test_onchange_partner_id(self):
-        self.partner.comment_template_id = self.after_comment.id
+        self.partner.property_comment_template_id = self.after_comment.id
         new_invoice = self.env['account.invoice'].new({
             'partner_id': self.partner.id,
         })
         new_invoice._onchange_partner_id()
         self.assertEqual(new_invoice.comment_template2_id, self.after_comment)
-        self.partner.comment_template_id = self.before_comment.id
+        self.partner.property_comment_template_id = self.before_comment.id
         new_invoice._onchange_partner_id()
         self.assertEqual(new_invoice.comment_template1_id, self.before_comment)
