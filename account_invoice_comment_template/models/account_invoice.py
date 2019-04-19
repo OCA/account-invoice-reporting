@@ -9,10 +9,16 @@ from odoo import api, fields, models
 class AccountInvoice(models.Model):
     _inherit = 'account.invoice'
 
-    comment_template1_id = fields.Many2one('base.comment.template',
-                                           string='Top Comment Template')
-    comment_template2_id = fields.Many2one('base.comment.template',
-                                           string='Bottom Comment Template')
+    comment_template1_id = fields.Many2one(
+        'base.comment.template',
+        string='Top Comment Template',
+    )
+
+    comment_template2_id = fields.Many2one(
+        'base.comment.template',
+        string='Bottom Comment Template',
+    )
+
     note1 = fields.Html('Top Comment')
     note2 = fields.Html('Bottom Comment')
 
@@ -31,7 +37,7 @@ class AccountInvoice(models.Model):
     @api.onchange('partner_id', 'company_id')
     def _onchange_partner_id(self):
         res = super(AccountInvoice, self)._onchange_partner_id()
-        comment_template = self.partner_id.comment_template_id
+        comment_template = self.partner_id.invoice_comment_template_id
         if comment_template.position == 'before_lines':
             self.comment_template1_id = comment_template
         elif comment_template.position == 'after_lines':

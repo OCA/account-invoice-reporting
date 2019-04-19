@@ -6,7 +6,7 @@
         <field name="arch" type="xml">
             <xpath expr="//page[@name='accounting']/group[1]" position="inside">
                 <group name="accounting_comment_templates" string="Comment templates">
-                    <field name="comment_template_id" attrs="{'invisible': [('customer', '=', False)]}"/>
+                    <field name="invoice_comment_template_id" attrs="{'invisible': [('customer', '=', False)]}"/>
                 </group>
             </xpath>
         </field>

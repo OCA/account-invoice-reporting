@@ -7,9 +7,10 @@ from odoo import api, fields, models
 class ResPartner(models.Model):
     _inherit = "res.partner"
 
-    comment_template_id = fields.Many2one(
+    invoice_comment_template_id = fields.Many2one(
         comodel_name='base.comment.template',
         string='Conditions template',
+        oldname='comment_template_id',
     )
 
     @api.model
