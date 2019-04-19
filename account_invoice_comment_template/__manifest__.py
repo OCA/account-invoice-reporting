@@ -23,6 +23,5 @@
         "views/base_comment_template_view.xml",
         "security/ir.model.access.csv",
         "views/report_invoice.xml",
-        "views/res_partner_views.xml",
     ],
 }
