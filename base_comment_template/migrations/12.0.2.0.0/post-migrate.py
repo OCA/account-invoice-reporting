@@ -1,3 +1,5 @@
+from odoo import tools
+
 import logging
 _logger = logging.getLogger(__name__)
 
@@ -5,6 +7,9 @@ _logger = logging.getLogger(__name__)
 def migrate(cr, version):
 
     _logger.debug('Migrating res.partner comment_template_id')
+
+    if not tools.column_exists(cr, 'res_partner', 'comment_template_id'):
+        return
 
     cr.execute("SELECT id FROM res_company")
     company_ids = [d[0] for d in cr.fetchall()]
