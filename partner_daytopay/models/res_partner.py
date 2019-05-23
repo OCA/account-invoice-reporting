@@ -69,7 +69,7 @@ class ResPartner(models.Model):
     def _get_invoice_ids(self, partner_id, type):
         return self.env['account.invoice'].search([
             '|'
-            ('partner_id', '=', partner_id),            
+            ('partner_id', '=', partner_id),
             ('partner_id.parent_id', '=', partner_id),
             ('state', '=', 'paid'),
             ('type', '=', type)
