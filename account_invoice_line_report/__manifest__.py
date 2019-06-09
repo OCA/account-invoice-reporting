@@ -5,7 +5,7 @@
 {
     'name': 'Account Invoice Line Report',
     'summary': 'New view to manage invoice lines information',
-    'version': '11.0.1.0.0',
+    'version': '12.0.1.0.0',
     'category': 'Account',
     'website': 'http://www.tecnativa.com',
     'author': 'Tecnativa, '
