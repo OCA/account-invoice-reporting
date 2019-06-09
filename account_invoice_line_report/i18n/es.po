@@ -17,7 +17,7 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: account_invoice_line_report
-#: model:ir.actions.act_window,help:account_invoice_line_report.action_account_invoice_line_report
+#: model_terms:ir.actions.act_window,help:account_invoice_line_report.action_account_invoice_line_report
 msgid ""
 "From this report, you can have an overview of the amount invoiced to your "
 "customers. The search tool can also be used to personalise your Invoices "
@@ -28,7 +28,7 @@ msgstr ""
 "sus Informes de facturas y el resto, ajustando el análisis a sus necesidades."
 
 #. module: account_invoice_line_report
-#: model:ir.ui.view,arch_db:account_invoice_line_report.view_invoice_report_tree_info
+#: model_terms:ir.ui.view,arch_db:account_invoice_line_report.view_invoice_report_tree_info
 msgid "Invoice Line"
 msgstr "Línea factura"
 
@@ -39,21 +39,21 @@ msgid "Invoice Lines"
 msgstr "Líneas de factura"
 
 #. module: account_invoice_line_report
-#: model:ir.ui.view,arch_db:account_invoice_line_report.view_account_invoice_report_search
+#: model_terms:ir.ui.view,arch_db:account_invoice_line_report.view_account_invoice_report_search
 msgid "Partner Tags"
 msgstr "Etiquetas de empresa"
 
 #. module: account_invoice_line_report
-#: model:ir.ui.view,arch_db:account_invoice_line_report.view_account_invoice_report_search
+#: model_terms:ir.ui.view,arch_db:account_invoice_line_report.view_account_invoice_report_search
 msgid "Vendor contains"
 msgstr "Vendedor contiene"
 
 #. module: account_invoice_line_report
-#: model:ir.ui.view,arch_db:account_invoice_line_report.view_account_invoice_report_search
+#: model_terms:ir.ui.view,arch_db:account_invoice_line_report.view_account_invoice_report_search
 msgid "With Price"
 msgstr "Con precio"
 
 #. module: account_invoice_line_report
-#: model:ir.ui.view,arch_db:account_invoice_line_report.view_account_invoice_report_search
+#: model_terms:ir.ui.view,arch_db:account_invoice_line_report.view_account_invoice_report_search
 msgid "Without Price"
 msgstr "Sin precio"

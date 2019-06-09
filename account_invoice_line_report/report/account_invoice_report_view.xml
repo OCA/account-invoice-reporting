@@ -45,6 +45,6 @@
         <field name="help">From this report, you can have an overview of the amount invoiced to your customers. The search tool can also be used to personalise your Invoices reports and so, match this analysis to your needs.</field>
     </record>
 
-    <menuitem action="action_account_invoice_line_report" id="menu_action_account_invoice_line_report" parent="account.account_reports_business_intelligence_menu" sequence="25"/>
+    <menuitem action="action_account_invoice_line_report" id="menu_action_account_invoice_line_report" parent="account.account_reports_management_menu" sequence="25"/>
 
 </odoo>
