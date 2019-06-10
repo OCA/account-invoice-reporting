@@ -19,7 +19,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #. module: account_invoice_line_report
-#: model:ir.actions.act_window,help:account_invoice_line_report.action_account_invoice_line_report
+#: model_terms:ir.actions.act_window,help:account_invoice_line_report.action_account_invoice_line_report
 msgid ""
 "From this report, you can have an overview of the amount invoiced to your "
 "customers. The search tool can also be used to personalise your Invoices "
@@ -27,7 +27,7 @@ msgid ""
 msgstr ""
 
 #. module: account_invoice_line_report
-#: model:ir.ui.view,arch_db:account_invoice_line_report.view_invoice_report_tree_info
+#: model_terms:ir.ui.view,arch_db:account_invoice_line_report.view_invoice_report_tree_info
 msgid "Invoice Line"
 msgstr "Fatura kalemi"
 
@@ -38,21 +38,21 @@ msgid "Invoice Lines"
 msgstr ""
 
 #. module: account_invoice_line_report
-#: model:ir.ui.view,arch_db:account_invoice_line_report.view_account_invoice_report_search
+#: model_terms:ir.ui.view,arch_db:account_invoice_line_report.view_account_invoice_report_search
 msgid "Partner Tags"
 msgstr ""
 
 #. module: account_invoice_line_report
-#: model:ir.ui.view,arch_db:account_invoice_line_report.view_account_invoice_report_search
+#: model_terms:ir.ui.view,arch_db:account_invoice_line_report.view_account_invoice_report_search
 msgid "Vendor contains"
 msgstr ""
 
 #. module: account_invoice_line_report
-#: model:ir.ui.view,arch_db:account_invoice_line_report.view_account_invoice_report_search
+#: model_terms:ir.ui.view,arch_db:account_invoice_line_report.view_account_invoice_report_search
 msgid "With Price"
 msgstr ""
 
 #. module: account_invoice_line_report
-#: model:ir.ui.view,arch_db:account_invoice_line_report.view_account_invoice_report_search
+#: model_terms:ir.ui.view,arch_db:account_invoice_line_report.view_account_invoice_report_search
 msgid "Without Price"
 msgstr ""
