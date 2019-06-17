@@ -34,4 +34,5 @@
  'category': 'Sale',
  'installable': True,
  'active': False,
+ 'license': 'AGPL-3',
  }
