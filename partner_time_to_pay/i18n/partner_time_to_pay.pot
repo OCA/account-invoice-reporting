@@ -4,7 +4,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 11.0\n"
+"Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
@@ -14,19 +14,27 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: partner_time_to_pay
-#: model:ir.model.fields,field_description:partner_time_to_pay.field_res_partner_d2p_ytd
-#: model:ir.model.fields,field_description:partner_time_to_pay.field_res_partner_d2r_ytd
-#: model:ir.model.fields,field_description:partner_time_to_pay.field_res_users_d2p_ytd
-#: model:ir.model.fields,field_description:partner_time_to_pay.field_res_users_d2r_ytd
-msgid "AVG Days to Pay (YTD)"
+#: model:ir.model.fields,field_description:partner_time_to_pay.field_res_partner__d2p_ytd
+#: model:ir.model.fields,field_description:partner_time_to_pay.field_res_users__d2p_ytd
+msgid "AVG Days to Payable (YTD)"
 msgstr ""
 
 #. module: partner_time_to_pay
-#: model:ir.model.fields,field_description:partner_time_to_pay.field_res_partner_d2p_life
-#: model:ir.model.fields,field_description:partner_time_to_pay.field_res_partner_d2r_life
-#: model:ir.model.fields,field_description:partner_time_to_pay.field_res_users_d2p_life
-#: model:ir.model.fields,field_description:partner_time_to_pay.field_res_users_d2r_life
-msgid "AVG Days to Pay (lifetime)"
+#: model:ir.model.fields,field_description:partner_time_to_pay.field_res_partner__d2p_life
+#: model:ir.model.fields,field_description:partner_time_to_pay.field_res_users__d2p_life
+msgid "AVG Days to Payable (lifetime)"
+msgstr ""
+
+#. module: partner_time_to_pay
+#: model:ir.model.fields,field_description:partner_time_to_pay.field_res_partner__d2r_ytd
+#: model:ir.model.fields,field_description:partner_time_to_pay.field_res_users__d2r_ytd
+msgid "AVG Days to Receivable (YTD)"
+msgstr ""
+
+#. module: partner_time_to_pay
+#: model:ir.model.fields,field_description:partner_time_to_pay.field_res_partner__d2r_life
+#: model:ir.model.fields,field_description:partner_time_to_pay.field_res_users__d2r_life
+msgid "AVG Days to Receivable (lifetime)"
 msgstr ""
 
 #. module: partner_time_to_pay
