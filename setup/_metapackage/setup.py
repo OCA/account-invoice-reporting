@@ -11,6 +11,7 @@ setuptools.setup(
         'odoo12-addon-account_invoice_comment_template',
         'odoo12-addon-account_invoice_report_due_list',
         'odoo12-addon-base_comment_template',
+        'odoo12-addon-partner_time_to_pay',
     ],
     classifiers=[
         'Programming Language :: Python',
