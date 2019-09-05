@@ -13,5 +13,7 @@ class AccountInvoiceLine(models.Model):
     def _onchange_price_unit(self):
         if self.price_unit > 0.0:
             self.show_in_report = True
+        elif self.display_type:
+            self.show_in_report = True
         else:
             self.show_in_report = False
