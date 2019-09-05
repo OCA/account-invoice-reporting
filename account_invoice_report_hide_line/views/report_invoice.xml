@@ -1,0 +1,12 @@
+<!-- Copyright 2019 Open Source Integrators
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<odoo>
+
+    <template id="report_invoice_document_show_in_report" inherit_id="account.report_invoice_document">
+      <xpath expr="//t[@t-foreach='o.invoice_line_ids']" position="attributes">
+        <attribute name="t-foreach">o.invoice_line_ids.filtered(lambda x: x.show_in_report)</attribute>
+      </xpath>
+    </template>
+
+</odoo>
