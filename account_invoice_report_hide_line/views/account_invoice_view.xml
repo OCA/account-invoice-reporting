@@ -12,7 +12,7 @@
                 <field name="show_in_report"/>
             </xpath>
             <xpath expr="//div[@groups='base.group_multi_currency']" position="after">
-                <field name="show_special"/>
+                <field name="show_note_section"/>
             </xpath>
         </field>
     </record>
