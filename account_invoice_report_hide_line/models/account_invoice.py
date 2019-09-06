@@ -17,3 +17,15 @@ class AccountInvoiceLine(models.Model):
             self.show_in_report = True
         else:
             self.show_in_report = False
+            
+class AccountInvoice(models.Model):
+    _inherit = 'account.invoice'
+
+    show_special = fields.Boolean("Show Notes and Sections", default=True, 
+        help="When checked, notes and sections will be displayed on the printed invoice.")
+
+    @api.onchange('show_special')
+    def _onchange_show_special(self):
+        for line in self.invoice_line_ids:
+            if line.display_type:
+                line.show_in_report = self.show_special
