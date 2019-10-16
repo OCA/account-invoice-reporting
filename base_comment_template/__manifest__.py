@@ -4,7 +4,7 @@
 {
     "name": "Base Comments Templates",
     "summary": "Comments templates on documents",
-    "version": "12.0.1.0.0",
+    "version": "13.0.1.0.0",
     "category": "Sale",
     "website": "https://github.com/OCA/account-invoice-reporting",
     "author": "Camptocamp, Odoo Community Association (OCA)",
