@@ -7,3 +7,5 @@
 * `DynApps <https://www.dynapps.be>`_:
 
   * Raf Ven <raf.ven@dynapps.be>
+
+* Eduardo Magdalena <emagdalena@c2i.es> (C2i - Change 2 improve http://www.c2i.es)
