@@ -2,7 +2,7 @@
 # Copyright 2013-2014 Nicolas Bessi (Camptocamp SA)
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from odoo import api, fields, models
+from odoo import fields, models
 
 
 class BaseCommentTemplate(models.Model):
@@ -30,7 +30,6 @@ class BaseCommentTemplate(models.Model):
         index=True,
     )
 
-    @api.multi
     def get_value(self, partner_id=False):
         self.ensure_one()
         lang = None
