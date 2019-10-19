@@ -10,9 +10,7 @@
     "author": "Camptocamp, Odoo Community Association (OCA)",
     "license": "AGPL-3",
     "installable": True,
-    "depends": [
-        "base"
-    ],
+    "depends": ["base"],
     "data": [
         "security/ir.model.access.csv",
         "security/security.xml",
