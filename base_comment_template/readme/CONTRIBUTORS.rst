@@ -9,3 +9,6 @@
   * Raf Ven <raf.ven@dynapps.be>
 
 * Eduardo Magdalena <emagdalena@c2i.es> (C2i - Change 2 improve http://www.c2i.es)
+* `Druidoo <https://www.druidoo.io>`_:
+
+  * Iván Todorovich <ivan.todorovich@druidoo.io>

@@ -9,6 +9,8 @@ class BaseCommentTemplate(models.Model):
     _name = "base.comment.template"
     _description = "Base comment template"
 
+    active = fields.Boolean(default=True)
+
     name = fields.Char(string="Comment summary", required=True)
     position = fields.Selection(
         selection=[("before_lines", "Before lines"), ("after_lines", "After lines")],
@@ -17,6 +19,14 @@ class BaseCommentTemplate(models.Model):
         help="Position on document",
     )
     text = fields.Html(string="Comment", translate=True, required=True)
+
+    company_id = fields.Many2one(
+        'res.company',
+        string='Company',
+        help="If set, it'll only be available for this company",
+        ondelete='cascade',
+        index=True,
+    )
 
     def get_value(self, partner_id=False):
         self.ensure_one()

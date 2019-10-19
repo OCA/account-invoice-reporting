@@ -11,5 +11,10 @@
     "license": "AGPL-3",
     "installable": True,
     "depends": ["base"],
-    "data": ["security/ir.model.access.csv", "views/comment_view.xml"],
+    "data": [
+        "security/ir.model.access.csv",
+        "security/security.xml",
+        "views/comment_view.xml"
+        "views/res_partner.xml",
+    ],
 }
