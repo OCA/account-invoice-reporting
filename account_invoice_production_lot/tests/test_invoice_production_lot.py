@@ -4,10 +4,11 @@
 # Copyright 2018 Alex Comba <alex.comba@agilebg.com>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from odoo.tests import common
+from odoo.tests.common import SavepointCase, tagged
 
 
-class TestProdLot(common.SavepointCase):
+@tagged('post_install', '-at_install')
+class TestProdLot(SavepointCase):
     @classmethod
     def setUpClass(cls):
         super(TestProdLot, cls).setUpClass()
@@ -101,14 +102,10 @@ class TestProdLot(common.SavepointCase):
         )
         # We must have two lots
         self.assertEqual(len(line.prod_lot_ids.ids), 2)
-        self.assertIn('Lot 1', line.lot_formatted_note)
-        self.assertIn('Lot 2', line.lot_formatted_note)
-        # check if quantity is displayed in lot_formatted_note
-        self.assertIn("(2.0)", line.lot_formatted_note)
-        # Check S/N
-        line2 = invoice.invoice_line_ids - line
-        self.assertIn("S/N", line2.lot_formatted_note)
-        self.assertIn("Serial 1", line2.lot_formatted_note)
+        self.assertIn('Lot 1', line.lots_grouped_by_quantity())
+        self.assertIn('Lot 2', line.lots_grouped_by_quantity())
+        # check if quantity is displayed in lots_grouped_by_quantity()
+        self.assertEqual(2.0, line.lots_grouped_by_quantity()['Lot 1'])
 
     def test_01_sale_stock_delivery_partial_invoice_product_lot(self):
         # update quantities with their related lots
@@ -133,10 +130,10 @@ class TestProdLot(common.SavepointCase):
         # We must have only one lot
         self.assertEqual(len(line.prod_lot_ids.ids), 1)
         self.assertEqual(line.prod_lot_ids.id, self.lot1.id)
-        self.assertIn('Lot 1', line.lot_formatted_note)
-        self.assertNotIn('Lot 2', line.lot_formatted_note)
-        # check if quantity is displayed in lot_formatted_note
-        self.assertIn("(2.0)", line.lot_formatted_note)
+        self.assertIn('Lot 1', line.lots_grouped_by_quantity())
+        self.assertNotIn('Lot 2', line.lots_grouped_by_quantity())
+        # check if quantity is displayed in lots_grouped_by_quantity()
+        self.assertEqual(2.0, line.lots_grouped_by_quantity()['Lot 1'])
 
     def test_02_sale_stock_delivery_partial_invoice_product_lot(self):
         # update quantities with their related lots
@@ -163,8 +160,8 @@ class TestProdLot(common.SavepointCase):
         self.assertEqual(len(line.prod_lot_ids.ids), 2)
         self.assertIn(self.lot1.id, line.prod_lot_ids.ids)
         self.assertIn(self.lot2.id, line.prod_lot_ids.ids)
-        self.assertIn('Lot 1', line.lot_formatted_note)
-        self.assertIn('Lot 2', line.lot_formatted_note)
-        # check if both quantities are displayed in lot_formatted_note
-        self.assertIn("(1.0)", line.lot_formatted_note)
-        self.assertNotIn("(2.0)", line.lot_formatted_note)
+        self.assertIn('Lot 1', line.lots_grouped_by_quantity())
+        self.assertIn('Lot 2', line.lots_grouped_by_quantity())
+        # check if both quantities are displayed in lots_grouped_by_quantity()
+        self.assertEqual(1.0, line.lots_grouped_by_quantity()['Lot 1'])
+        self.assertNotEqual(2.0, line.lots_grouped_by_quantity()['Lot 2'])

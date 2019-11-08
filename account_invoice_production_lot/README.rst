@@ -37,20 +37,24 @@ delivered quantities in case the **Tracking** has been set to **By Lots**.
 Configuration
 =============
 
-* Go to **Inventory > Configuration > Settings**, and activate option **Track
-  lots or serial numbers** in order to manage lots in your instance
-* Go to **Sales > Sales > Products** and select or create a stockable product: check
-  that the product has **Tracking** set to **By lots** or to **By Unique Serial Number** (in the Inventory tab)
-  and **Invoicing Policy** set to **Delivered quantities** (in the Invoicing tab)
+* Go to **Inventory > Configuration > Settings > Traceability**, and activate
+  option **Lots & Serial Numbers** in order to manage lots in your instance.
+* Go to **Sales > Sales > Products** and select or create a storable product
+  (Product Type): check that the product has **Tracking** set to **By lots**
+  or to **By Unique Serial Number** (in the Inventory tab) and
+  **Invoicing Policy** set to **Delivered quantities** (in the Invoicing tab)
 
 Usage
 =====
 
 * Create and validate a sale order
-* Set *Lots/Serial Numbers* on the delivered lines by clicking on the button *Lot Split*
-* After creating the invoice,  the *Lots/Serial Numbers* are displayed in the *Production
-  Lots* on the invoice line form and in *formatted note* field on
-  the invoice report, and, in case **Tracking** has been selected to **By lots**, their corresponding delivered quantities will be displad as well
+* Set *Lots/Serial Numbers* on the delivered lines by clicking on the button
+  *Register lots, packs, location*
+* After creating the invoice, the *Lots/Serial Numbers* are displayed in the
+  *Production Lots* on the invoice line form and in *formatted note* field on
+  the invoice report, and, in case **Tracking** has been selected
+  to **By lots**, their corresponding delivered quantities will be displad as
+  well.
 
 Bug Tracker
 ===========
@@ -81,6 +85,7 @@ Contributors
 
   * Vicent Cubells
   * Pedro M. Baeza
+  * Sergio Teruel
 
 Maintainers
 ~~~~~~~~~~~
