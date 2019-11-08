@@ -3,8 +3,8 @@
 # Copyright 2017 Vicent Cubells <vicent.cubells@tecnativa.com>
 # Copyright 2018 Tecnativa - Pedro M. Baeza
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
-
-from odoo import _, api, fields, models
+from odoo import fields, models
+from collections import defaultdict
 
 
 class AccountInvoiceLine(models.Model):
@@ -16,38 +16,14 @@ class AccountInvoiceLine(models.Model):
         string="Production Lots",
     )
 
-    lot_formatted_note = fields.Html(
-        string='Formatted Note',
-        compute='_compute_line_lots',
-    )
-
-    @api.multi
     def _compute_prod_lots(self):
         for line in self:
             line.prod_lot_ids = line.mapped(
                 'move_line_ids.move_line_ids.lot_id'
             )
 
-    @api.multi
-    def _compute_line_lots(self):
-        for line in self:
-            note = '<ul>'
-            sn_strings = []
-            lot_dict = {}
-            for sml in line.mapped('move_line_ids.move_line_ids'):
-                if sml.lot_id:
-                    if sml.product_id.tracking == 'serial':
-                        sn_strings.append('<li>%s %s</li>' % (
-                            _('S/N'), sml.lot_id.name,
-                        ))
-                    else:
-                        if lot_dict.get(sml.lot_id.name, False):
-                            lot_dict[sml.lot_id.name] += sml.qty_done
-                        else:
-                            lot_dict[sml.lot_id.name] = sml.qty_done
-            if sn_strings:
-                note += ' '.join(sn_strings)
-            if lot_dict:
-                note += ' '.join(['<li>%s %s (%s)</li>' % (_('Lot'), lot, lot_dict[lot]) for lot in list(lot_dict.keys())])
-            note += '</ul>'
-            line.lot_formatted_note = note
+    def lots_grouped_by_quantity(self):
+        lot_dict = defaultdict(float)
+        for sml in self.mapped('move_line_ids.move_line_ids'):
+            lot_dict[sml.lot_id.name] += sml.qty_done
+        return lot_dict
