@@ -24,6 +24,6 @@ msgid "Invoices Statistics"
 msgstr ""
 
 #. module: account_reporting_weight
-#: model:ir.model.fields,field_description:account_reporting_weight.field_account_invoice_report_weight
+#: model:ir.model.fields,field_description:account_reporting_weight.field_account_invoice_report__weight
 msgid "Weight"
 msgstr "Peso [g]"
