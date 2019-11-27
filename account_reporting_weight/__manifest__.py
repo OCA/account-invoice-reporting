@@ -3,10 +3,11 @@
 
 {
     'name': 'Weights in the invoices analysis view',
-    'version': '11.0.1.0.0',
+    'version': '12.0.1.0.0',
     'author': 'Tecnativa,'
               'Odoo Community Association (OCA)',
     'category': 'Inventory, Logistics, Warehousing',
+    'development_status': 'Production/Stable',
     'license': 'AGPL-3',
     'website': 'https://www.github.com/account_reporting_weight',
     'depends': [
