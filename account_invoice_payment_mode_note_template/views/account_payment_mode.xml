@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="account_payment_mode_form" model="ir.ui.view">
+        <field name="model">account.payment.mode</field>
+        <field name="inherit_id"
+               ref="account_payment_mode.account_payment_mode_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='note']" position="before">
+                <button name="action_update_template_note"
+                        string="Update Note Template"
+                        type="object" icon="fa-edit"/>
+            </xpath>
+
+        </field>
+    </record>
+</odoo>

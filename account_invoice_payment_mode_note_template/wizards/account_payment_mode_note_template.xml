@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2019 ACSONE SA/NV
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<odoo>
+
+    <record model="ir.ui.view"
+            id="account_payment_mode_note_template_form_view">
+        <field name="model">account.payment.mode.note.template</field>
+        <field name="arch" type="xml">
+            <form string="Account Payment Mode Note Template">
+                <group>
+                    <field name="payment_mode_id" invisible="1"/>
+                    <field name="model_object_field"
+                           domain="[('model_id.model','=','account.invoice'),('ttype','!=','one2many'),('ttype','!=','many2many')]"/>
+                    <field name="sub_object" readonly="1"/>
+                    <field name="sub_model_object_field"
+                           domain="[('model_id','=',sub_object),('ttype','!=','one2many'),('ttype','!=','many2many')]"
+                           attrs="{'readonly':[('sub_object','=',False)],'required':[('sub_object','!=',False)]}"/>
+                    <field name="null_value"/>
+                    <field name="copyvalue"/>
+                </group>
+                <field name="note"/>
+                <footer>
+                    <button name="validate"
+                            string="Validate"
+                            class="btn-primary"
+                            type="object"/>
+                    <button string="Cancel"
+                            class="btn-default"
+                            special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+
+</odoo>
