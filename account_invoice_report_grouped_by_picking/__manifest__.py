@@ -1,5 +1,6 @@
 # Copyright 2017-2019 Carlos Dauden <carlos.dauden@tecnativa.com>
 # Copyright 2018 David Vidal <david.vidal@tecnativa.com>
+# Copyright 2018-2019 Tecnativa - Pedro M. Baeza
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 {

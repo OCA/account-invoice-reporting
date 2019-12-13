@@ -2,3 +2,4 @@
 
   * Carlos Dauden
   * David Vidal
+  * Pedro M. Baeza
