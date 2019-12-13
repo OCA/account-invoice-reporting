@@ -9,20 +9,13 @@ python:
   - "3.5"
 
 addons:
+  postgresql: "9.6"
   apt:
-    sources:
-      - pov-wkhtmltopdf
     packages:
       - expect-dev  # provides unbuffer utility
-      - python-lxml # because pip installation is slow
       - python-simplejson
       - python-serial
       - python-yaml
-      - wkhtmltopdf  # only add if needed and check the before_install section below
-
-before_install:
-  - "export DISPLAY=:911.0"
-  - "sh -e /etc/init.d/xvfb start"
 
 env:
   global:
