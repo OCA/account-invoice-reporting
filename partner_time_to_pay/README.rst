@@ -43,7 +43,6 @@ An easy way to install it with all its dependencies is using pip:
 * then restart Odoo, update the addons list in your database, and install
   the Partner Time to Pay application.
 
-
 Usage
 =====
 
@@ -57,7 +56,6 @@ Known issues / Roadmap
 The partner_time_to_pay `roadmap <https://github.com/OCA/account-invoice-reporting/issues?q=is%3Aopen+is%3Aissue+label%3Aenhancement>`_
 and `known issues <https://github.com/OCA/account-invoice-reporting/issues?q=is%3Aopen+is%3Aissue+label%3Abug>`_ can
 be found on GitHub.
-
 
 Bug Tracker
 ===========
