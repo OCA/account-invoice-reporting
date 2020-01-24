@@ -8,7 +8,7 @@ from odoo import api, fields, models
 
 
 class AccountInvoice(models.Model):
-    _inherit = "account.invoice"
+    _inherit = "account.move"
 
     comment_template1_id = fields.Many2one(
         "base.comment.template",

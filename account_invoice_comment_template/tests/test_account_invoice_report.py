@@ -15,7 +15,7 @@ class TestAccountInvoiceReport(TransactionCase):
         self.before_comment = self._create_comment("before_lines")
         self.after_comment = self._create_comment("after_lines")
         self.partner = self.env["res.partner"].create({"name": "Partner Test"})
-        self.invoice_model = self.env["account.invoice"]
+        self.invoice_model = self.env["account.move"]
         self.invoice = self.invoice_model.create(
             {
                 "partner_id": self.partner.id,
@@ -47,7 +47,7 @@ class TestAccountInvoiceReport(TransactionCase):
 
     def test_onchange_partner_id(self):
         self.partner.property_comment_template_id = self.after_comment.id
-        new_invoice = self.env["account.invoice"].new({"partner_id": self.partner.id})
+        new_invoice = self.env["account.move"].new({"partner_id": self.partner.id})
         new_invoice._onchange_partner_id()
         self.assertEqual(new_invoice.comment_template2_id, self.after_comment)
         self.partner.property_comment_template_id = self.before_comment.id
