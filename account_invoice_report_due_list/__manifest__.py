@@ -3,7 +3,7 @@
 {
     'name': 'Account Invoice Report Due List',
     'summary': 'Show multiple due data in invoice',
-    'version': '12.0.1.0.0',
+    'version': '12.0.1.1.0',
     'category': 'Accounting',
     'website': 'https://github.com/OCA/account-invoice-reporting',
     'author': 'Tecnativa, Odoo Community Association (OCA)',
