@@ -5,10 +5,10 @@
 
     <template id="report_invoice_document" inherit_id="account.report_invoice_document">
         <xpath expr="//p[@t-field='o.date_due']/.." position="attributes">
-            <attribute name="t-att-class">'hidden' if o.multi_due else 'col-xs-2'</attribute>
+            <attribute name="t-att-class">'hidden'</attribute>
         </xpath>
         <xpath expr="//span[@t-field='o.payment_term_id.note']" position="after">
-            <div class="row" t-if="o.multi_due">
+            <div class="row">
                 <div class="col-4">
                     <table class="table table-striped">
                         <thead>
