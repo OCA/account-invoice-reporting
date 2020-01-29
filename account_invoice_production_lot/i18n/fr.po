@@ -46,7 +46,7 @@ msgid "Invoice Line"
 msgstr "Ligne de facture"
 
 #. module: account_invoice_production_lot
-#: code:addons/account_invoice_production_lot/models/account_invoice.py:44
+#: code:addons/account_invoice_production_lot/models/account_invoice.py:47
 #, python-format
 msgid "Lot"
 msgstr ""
