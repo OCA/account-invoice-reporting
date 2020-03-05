@@ -6,7 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"Last-Translator: Automatically generated\n"
+"PO-Revision-Date: 2020-03-05 16:13+0000\n"
+"Last-Translator: Bole <bole@dajmi5.com>\n"
 "Language-Team: none\n"
 "Language: hr\n"
 "MIME-Version: 1.0\n"
@@ -14,32 +15,33 @@ msgstr ""
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<="
 "4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 3.10\n"
 
 #. module: partner_time_to_pay
 #: model:ir.model.fields,field_description:partner_time_to_pay.field_res_partner__d2p_ytd
 #: model:ir.model.fields,field_description:partner_time_to_pay.field_res_users__d2p_ytd
 msgid "AVG Days to Payable (YTD)"
-msgstr ""
+msgstr "Prosjek dana do plaćanja (god)"
 
 #. module: partner_time_to_pay
 #: model:ir.model.fields,field_description:partner_time_to_pay.field_res_partner__d2p_life
 #: model:ir.model.fields,field_description:partner_time_to_pay.field_res_users__d2p_life
 msgid "AVG Days to Payable (lifetime)"
-msgstr ""
+msgstr "Prosjek dana do plaćanja (oduvjek)"
 
 #. module: partner_time_to_pay
 #: model:ir.model.fields,field_description:partner_time_to_pay.field_res_partner__d2r_ytd
 #: model:ir.model.fields,field_description:partner_time_to_pay.field_res_users__d2r_ytd
 msgid "AVG Days to Receivable (YTD)"
-msgstr ""
+msgstr "Prosjek dana do naplate (god)"
 
 #. module: partner_time_to_pay
 #: model:ir.model.fields,field_description:partner_time_to_pay.field_res_partner__d2r_life
 #: model:ir.model.fields,field_description:partner_time_to_pay.field_res_users__d2r_life
 msgid "AVG Days to Receivable (lifetime)"
-msgstr ""
+msgstr "Prosjek dana do naplate (oduvjek)"
 
 #. module: partner_time_to_pay
 #: model:ir.model,name:partner_time_to_pay.model_res_partner
 msgid "Contact"
-msgstr ""
+msgstr "Kontakt"
