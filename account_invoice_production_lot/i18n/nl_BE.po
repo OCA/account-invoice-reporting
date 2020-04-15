@@ -20,8 +20,8 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: account_invoice_production_lot
-#: model:ir.model.fields,field_description:account_invoice_production_lot.field_account_invoice_line_lot_formatted_note
-msgid "Formatted Note"
+#: model_terms:ir.ui.view,arch_db:account_invoice_production_lot.account_invoice_production_lot_report
+msgid "<b class=\"font-italic\">Serial numbers</b>"
 msgstr ""
 
 #. module: account_invoice_production_lot
@@ -47,24 +47,24 @@ msgid "Invoice Line"
 msgstr "Factuurlijn"
 
 #. module: account_invoice_production_lot
-#: code:addons/account_invoice_production_lot/models/account_invoice.py:44
-#, python-format
-msgid "Lot"
-msgstr ""
-
-#. module: account_invoice_production_lot
-#: model:ir.model.fields,field_description:account_invoice_production_lot.field_account_invoice_line_prod_lot_ids
-#: model:ir.ui.view,arch_db:account_invoice_production_lot.view_invoice_line_form_prod_lots
+#: model:ir.model.fields,field_description:account_invoice_production_lot.field_account_invoice_line__prod_lot_ids
+#: model_terms:ir.ui.view,arch_db:account_invoice_production_lot.view_invoice_line_form_prod_lots
 msgid "Production Lots"
 msgstr ""
 
 #. module: account_invoice_production_lot
-#: code:addons/account_invoice_production_lot/models/account_invoice.py:40
-#, python-format
-msgid "S/N"
+#: model_terms:ir.ui.view,arch_db:account_invoice_production_lot.account_invoice_production_lot_report
+msgid "S/N:"
 msgstr ""
 
 #. module: account_invoice_production_lot
-#: model:stock.location,name:account_invoice_production_lot.location_opening
-msgid "opening"
+#: model:product.product,uom_name:account_invoice_production_lot.product_icecream_b
+#: model:product.template,uom_name:account_invoice_production_lot.product_icecream_b_product_template
+msgid "Unit(s)"
+msgstr ""
+
+#. module: account_invoice_production_lot
+#: model:product.product,weight_uom_name:account_invoice_production_lot.product_icecream_b
+#: model:product.template,weight_uom_name:account_invoice_production_lot.product_icecream_b_product_template
+msgid "kg"
 msgstr ""
