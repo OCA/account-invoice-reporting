@@ -9,4 +9,12 @@
         </span>
     </template>
 
+    <template id="report_invoice_layouted" inherit_id="sale.report_invoice_layouted">
+        <xpath expr="//t[@t-foreach=&quot;layout_category['lines']&quot;]//span[@t-field='l.name']" position="after">
+            <t t-if="l[:1].lot_formatted_note">
+                <div style="margin-left:25px;" t-field="l[:1].lot_formatted_note"/>
+            </t>
+        </xpath>
+    </template>
+
 </odoo>
