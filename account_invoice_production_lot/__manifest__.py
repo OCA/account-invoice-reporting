@@ -6,7 +6,7 @@
 
 {
     "name": "Invoice Production Lots",
-    "version": "11.0.1.1.1",
+    "version": "11.0.1.2.0",
     "author": "Agile Business Group,"
               "Tecnativa,"
               "Odoo Community Association (OCA)",
