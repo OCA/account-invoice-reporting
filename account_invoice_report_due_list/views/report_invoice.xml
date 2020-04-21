@@ -9,7 +9,7 @@
         </xpath>
         <xpath expr="//span[@t-field='o.payment_term_id.note']" position="after">
             <t t-set="due_list" t-value="o.get_multi_due_list()"/>
-            <div class="row" t-if="due_list">
+            <div class="row" t-if="due_list" style="page-break-inside: avoid;">
                 <div class="col-4">
                     <table class="table table-striped">
                         <thead>
