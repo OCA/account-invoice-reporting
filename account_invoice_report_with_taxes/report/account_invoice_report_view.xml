@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2019 PlanetaTIC - Marc Poch <mpoch@planetatic.com>
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<openerp>
+<data>
+
+    <record id="view_account_invoice_report_pivot" model="ir.ui.view">
+         <field name="name">account.invoice.report.pivot</field>
+         <field name="model">account.invoice.report</field>
+         <field name="inherit_id" ref="account.view_account_invoice_report_pivot" />
+         <field name="arch" type="xml">
+             <field name="price_total" position="after">
+                 <field name="price_total_with_taxes" type="measure"/>
+             </field>
+         </field>
+    </record>
+
+    <record id="view_account_invoice_report_graph" model="ir.ui.view">
+         <field name="name">account.invoice.report.graph</field>
+         <field name="model">account.invoice.report</field>
+         <field name="inherit_id" ref="account.view_account_invoice_report_graph" />
+         <field name="arch" type="xml">
+            <field name="price_total" position="after">
+                 <field name="price_total_with_taxes" type="measure"/>
+             </field>
+         </field>
+    </record>
+
+</data>
+</openerp>

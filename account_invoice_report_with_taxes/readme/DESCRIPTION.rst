@@ -1,0 +1,1 @@
+Module account_invoice_report_with_taxes shows prices with taxes on account invoice report
