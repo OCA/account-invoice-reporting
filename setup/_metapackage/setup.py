@@ -8,6 +8,7 @@ setuptools.setup(
     description="Meta package for oca-account-invoice-reporting Odoo addons",
     version=version,
     install_requires=[
+        'odoo13-addon-account_reporting_weight',
         'odoo13-addon-partner_time_to_pay',
     ],
     classifiers=[
