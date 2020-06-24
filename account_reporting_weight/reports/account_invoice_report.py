@@ -24,8 +24,3 @@ class AccountInvoiceReport(models.Model):
             AS weight
             """
         return select_str
-
-    def _group_by(self):
-        group_by_str = super()._group_by()
-        group_by_str += ", pr.weight, u.category_id"
-        return group_by_str
