@@ -1,0 +1,20 @@
+<odoo>
+    <record id="view_partner_form" model="ir.ui.view">
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form" />
+        <field name="arch" type="xml">
+            <page name='internal_notes' position="after">
+                <page name='comment_template_ids' string="Comment Templates">
+                    <field
+                        colspan="4"
+                        mode="tree"
+                        name="comment_template_ids"
+                        nolabel="1"
+                        widget="one2many_list"
+                        height="300"
+                    />
+                </page>
+            </page>
+        </field>
+    </record>
+</odoo>

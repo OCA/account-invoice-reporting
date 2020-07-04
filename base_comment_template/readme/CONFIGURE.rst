@@ -1,9 +1,4 @@
-Add a new model to define templates of comments to print on
-documents.
-
-Two positions are available for the comments:
-* above document lines
-* below document lines
+Go to *Settings > Technical > Reporting > Comment Templates* and start designing you comment templates.
 
 The template are general, and can be attached to any Model and based on some domain defined in the template.
 You can define one default template per Model and domain, which can be overwritten for any partner.
