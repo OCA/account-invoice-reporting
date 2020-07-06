@@ -14,3 +14,7 @@
 * `Druidoo <https://www.druidoo.io>`_:
 
   * Iván Todorovich <ivan.todorovich@druidoo.io>
+
+* `NextERP Romania SRL <https://www.nexterp.ro>`_:
+
+  * Mihai Fekete <feketemihai@nexterp.ro>
