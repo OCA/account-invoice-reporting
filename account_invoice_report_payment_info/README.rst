@@ -42,7 +42,22 @@ Configuration
   "account_invoice_report_payment_info.info_pattern"
   or create a new one if not exists.
 * Set a format pattern using the key available in _get_payments_vals method.
-  This module adds move_ref key to all those:
+  This module adds move_ref key to all those odoo core keys:
+
+  * 'name': payment.name
+  * 'journal_name': payment.journal_id.name,
+  * 'amount': amount_to_show,
+  * 'currency': currency_id.symbol,
+  * 'digits': [69, currency_id.decimal_places],
+  * 'position': currency_id.position,
+  * 'date': payment.date,
+  * 'payment_id': payment.id,
+  * 'account_payment_id': payment.payment_id.id,
+  * 'invoice_id': payment.invoice_id.id,
+  * 'invoice_view_id': invoice_view_id,
+  * 'move_id': payment.move_id.id,
+  * 'ref': payment_ref,
+
   https://github.com/odoo/odoo/blob/ceb0c985afbbb41951c6f953648a6d0795d4e537/addons/account/models/account_invoice.py#L185
 
 Usage
@@ -51,8 +66,9 @@ Usage
 To use this module, you need to:
 
 #. Go to **Invoicing > Customer Invoices**.
-#. Select or create an invoice.
-#. Create and validate credit note.
+#. Select or create an validated invoice.
+#. Click on button "Add credit note".
+#. Select Cancel or Modify option and click on button "Add credit note".
 #. Print invoice.
 #. Look payment info referenced to credit note.
 

@@ -386,15 +386,34 @@ payments.</p>
 </div>
 <div class="section" id="configuration">
 <h1><a class="toc-backref" href="#id1">Configuration</a></h1>
-<ul class="simple">
-<li>Activate developer mode.</li>
-<li>Go to <em>Settings &gt; Technical &gt; Parameters &gt; System Parameters</em>.</li>
-<li>Locate the setting with key
+<ul>
+<li><p class="first">Activate developer mode.</p>
+</li>
+<li><p class="first">Go to <em>Settings &gt; Technical &gt; Parameters &gt; System Parameters</em>.</p>
+</li>
+<li><p class="first">Locate the setting with key
 “account_invoice_report_payment_info.info_pattern”
-or create a new one if not exists.</li>
-<li>Set a format pattern using the key available in _get_payments_vals method.
-This module adds move_ref key to all those:
-<a class="reference external" href="https://github.com/odoo/odoo/blob/ceb0c985afbbb41951c6f953648a6d0795d4e537/addons/account/models/account_invoice.py#L185">https://github.com/odoo/odoo/blob/ceb0c985afbbb41951c6f953648a6d0795d4e537/addons/account/models/account_invoice.py#L185</a></li>
+or create a new one if not exists.</p>
+</li>
+<li><p class="first">Set a format pattern using the key available in _get_payments_vals method.
+This module adds move_ref key to all those odoo core keys:</p>
+<ul class="simple">
+<li>‘name’: payment.name</li>
+<li>‘journal_name’: payment.journal_id.name,</li>
+<li>‘amount’: amount_to_show,</li>
+<li>‘currency’: currency_id.symbol,</li>
+<li>‘digits’: [69, currency_id.decimal_places],</li>
+<li>‘position’: currency_id.position,</li>
+<li>‘date’: payment.date,</li>
+<li>‘payment_id’: payment.id,</li>
+<li>‘account_payment_id’: payment.payment_id.id,</li>
+<li>‘invoice_id’: payment.invoice_id.id,</li>
+<li>‘invoice_view_id’: invoice_view_id,</li>
+<li>‘move_id’: payment.move_id.id,</li>
+<li>‘ref’: payment_ref,</li>
+</ul>
+<p><a class="reference external" href="https://github.com/odoo/odoo/blob/ceb0c985afbbb41951c6f953648a6d0795d4e537/addons/account/models/account_invoice.py#L185">https://github.com/odoo/odoo/blob/ceb0c985afbbb41951c6f953648a6d0795d4e537/addons/account/models/account_invoice.py#L185</a></p>
+</li>
 </ul>
 </div>
 <div class="section" id="usage">
@@ -402,8 +421,9 @@ This module adds move_ref key to all those:
 <p>To use this module, you need to:</p>
 <ol class="arabic simple">
 <li>Go to <strong>Invoicing &gt; Customer Invoices</strong>.</li>
-<li>Select or create an invoice.</li>
-<li>Create and validate credit note.</li>
+<li>Select or create an validated invoice.</li>
+<li>Click on button “Add credit note”.</li>
+<li>Select Cancel or Modify option and click on button “Add credit note”.</li>
 <li>Print invoice.</li>
 <li>Look payment info referenced to credit note.</li>
 </ol>
