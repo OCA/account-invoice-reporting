@@ -18,16 +18,12 @@ msgstr ""
 "X-Generator: Poedit 2.0.6\n"
 
 #. module: account_invoice_report_grouped_by_picking_sale_mrp
-#: model:ir.model,name:account_invoice_report_grouped_by_picking_sale_mrp.model_mrp_bom
-msgid "Bill of Material"
-msgstr "Lista de materiales"
-
-#. module: account_invoice_report_grouped_by_picking_sale_mrp
-#: model:ir.model.fields,field_description:account_invoice_report_grouped_by_picking_sale_mrp.field_mrp_bom__components_total_qty
-msgid "Components Total Qty"
-msgstr "Cantidad total de componentes"
-
-#. module: account_invoice_report_grouped_by_picking_sale_mrp
 #: model:ir.model,name:account_invoice_report_grouped_by_picking_sale_mrp.model_account_invoice
 msgid "Invoice"
 msgstr "Factura"
+
+#~ msgid "Bill of Material"
+#~ msgstr "Lista de materiales"
+
+#~ msgid "Components Total Qty"
+#~ msgstr "Cantidad total de componentes"
