@@ -22,7 +22,6 @@ msgstr ""
 #: model:ir.model.fields,field_description:partner_time_to_pay.field_res_partner__d2p_ytd
 #: model:ir.model.fields,field_description:partner_time_to_pay.field_res_users__d2p_ytd
 #, fuzzy
-#| msgid "AVG Days to Pay (YTD)"
 msgid "AVG Days to Payable (YTD)"
 msgstr "Moy. Jours pour payer (YTD)"
 
@@ -30,7 +29,6 @@ msgstr "Moy. Jours pour payer (YTD)"
 #: model:ir.model.fields,field_description:partner_time_to_pay.field_res_partner__d2p_life
 #: model:ir.model.fields,field_description:partner_time_to_pay.field_res_users__d2p_life
 #, fuzzy
-#| msgid "AVG Days to Pay (lifetime)"
 msgid "AVG Days to Payable (lifetime)"
 msgstr "Moy. Jours pour payer (durée)"
 
@@ -38,7 +36,6 @@ msgstr "Moy. Jours pour payer (durée)"
 #: model:ir.model.fields,field_description:partner_time_to_pay.field_res_partner__d2r_ytd
 #: model:ir.model.fields,field_description:partner_time_to_pay.field_res_users__d2r_ytd
 #, fuzzy
-#| msgid "AVG Days to Pay (YTD)"
 msgid "AVG Days to Receivable (YTD)"
 msgstr "Moy. Jours pour payer (YTD)"
 
@@ -46,7 +43,6 @@ msgstr "Moy. Jours pour payer (YTD)"
 #: model:ir.model.fields,field_description:partner_time_to_pay.field_res_partner__d2r_life
 #: model:ir.model.fields,field_description:partner_time_to_pay.field_res_users__d2r_life
 #, fuzzy
-#| msgid "AVG Days to Pay (lifetime)"
 msgid "AVG Days to Receivable (lifetime)"
 msgstr "Moy. Jours pour payer (durée)"
 

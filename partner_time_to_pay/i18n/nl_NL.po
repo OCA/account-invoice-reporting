@@ -23,7 +23,6 @@ msgstr ""
 #: model:ir.model.fields,field_description:partner_time_to_pay.field_res_partner__d2p_ytd
 #: model:ir.model.fields,field_description:partner_time_to_pay.field_res_users__d2p_ytd
 #, fuzzy
-#| msgid "AVG Days to Pay (YTD)"
 msgid "AVG Days to Payable (YTD)"
 msgstr "Gem. Dagen tot Betalen (dit jaar)"
 
@@ -31,7 +30,6 @@ msgstr "Gem. Dagen tot Betalen (dit jaar)"
 #: model:ir.model.fields,field_description:partner_time_to_pay.field_res_partner__d2p_life
 #: model:ir.model.fields,field_description:partner_time_to_pay.field_res_users__d2p_life
 #, fuzzy
-#| msgid "AVG Days to Pay (lifetime)"
 msgid "AVG Days to Payable (lifetime)"
 msgstr "Gem. Dagen tot Betalen (alle)"
 
@@ -39,7 +37,6 @@ msgstr "Gem. Dagen tot Betalen (alle)"
 #: model:ir.model.fields,field_description:partner_time_to_pay.field_res_partner__d2r_ytd
 #: model:ir.model.fields,field_description:partner_time_to_pay.field_res_users__d2r_ytd
 #, fuzzy
-#| msgid "AVG Days to Pay (YTD)"
 msgid "AVG Days to Receivable (YTD)"
 msgstr "Gem. Dagen tot Betalen (dit jaar)"
 
@@ -47,7 +44,6 @@ msgstr "Gem. Dagen tot Betalen (dit jaar)"
 #: model:ir.model.fields,field_description:partner_time_to_pay.field_res_partner__d2r_life
 #: model:ir.model.fields,field_description:partner_time_to_pay.field_res_users__d2r_life
 #, fuzzy
-#| msgid "AVG Days to Pay (lifetime)"
 msgid "AVG Days to Receivable (lifetime)"
 msgstr "Gem. Dagen tot Betalen (alle)"
 
