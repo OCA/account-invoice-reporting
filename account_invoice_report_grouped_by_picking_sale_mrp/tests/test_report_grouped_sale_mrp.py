@@ -64,6 +64,9 @@ class TestReportGroupedSaleMrp(SavepointCase):
             line_form.product_id = cls.product_kit_2
             line_form.product_uom_qty = 2
         cls.sale_order = sale_form.save()
+        # Avoid problems when `delivery` module is installed
+        if "carrier_id" in cls.sale_order._fields:
+            cls.sale_order["carrier_id"] = False
 
     def test_account_invoice_group_picking(self):
         # confirm quotation
