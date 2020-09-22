@@ -7,23 +7,13 @@
 {
     "name": "Invoice Production Lots",
     "version": "12.0.1.0.0",
-    "author": "Agile Business Group,"
-              "Tecnativa,"
-              "Odoo Community Association (OCA)",
+    "author": "Agile Business Group," "Tecnativa," "Odoo Community Association (OCA)",
     "summary": "Display delivered serial numbers in invoice",
-    'website': 'https://github.com/OCA/account-invoice-reporting',
-    'license': 'AGPL-3',
-    'category': 'Accounting & Finance',
-    "depends": [
-        "account",
-        "stock_picking_invoice_link",
-    ],
-    'data': [
-        'views/account_invoice_views.xml',
-        'report/report_invoice.xml',
-    ],
-    'demo': [
-        'demo/sale.xml',
-    ],
-    'installable': True,
+    "website": "https://github.com/OCA/account-invoice-reporting",
+    "license": "AGPL-3",
+    "category": "Accounting & Finance",
+    "depends": ["account", "stock_picking_invoice_link",],
+    "data": ["views/account_invoice_views.xml", "report/report_invoice.xml",],
+    "demo": ["demo/sale.xml",],
+    "installable": True,
 }
