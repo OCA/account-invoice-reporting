@@ -2,6 +2,7 @@
 # Copyright 2013 Lorenzo Battistini <lorenzo.battistini@agilebg.com>
 # Copyright 2017 Vicent Cubells <vicent.cubells@tecnativa.com>
 # Copyright 2018 Alex Comba <alex.comba@agilebg.com>
+# Copyright 2020 Tecnativa - João Marques
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 from odoo.tests.common import SavepointCase, tagged
@@ -12,8 +13,9 @@ class TestProdLot(SavepointCase):
     @classmethod
     def setUpClass(cls):
         super(TestProdLot, cls).setUpClass()
+        cls.user_company = cls.env.user.company_id
         cls.partner = cls.env["res.partner"].create(
-            {"name": "Test partner", "lang": "en_US",}
+            {"name": "Test partner", "lang": "en_US"}
         )
         cls.product = cls.env["product.product"].create(
             {
@@ -63,13 +65,25 @@ class TestProdLot(SavepointCase):
             }
         )
         cls.lot1 = cls.env["stock.production.lot"].create(
-            {"name": "Lot 1", "product_id": cls.product.id,}
+            {
+                "name": "Lot 1",
+                "product_id": cls.product.id,
+                "company_id": cls.user_company.id,
+            }
         )
         cls.lot2 = cls.env["stock.production.lot"].create(
-            {"name": "Lot 2", "product_id": cls.product.id,}
+            {
+                "name": "Lot 2",
+                "product_id": cls.product.id,
+                "company_id": cls.user_company.id,
+            }
         )
         cls.serial = cls.env["stock.production.lot"].create(
-            {"name": "Serial 1", "product_id": cls.product2.id,}
+            {
+                "name": "Serial 1",
+                "product_id": cls.product2.id,
+                "company_id": cls.user_company.id,
+            }
         )
         cls.stock_location = cls.env.ref("stock.stock_location_stock")
         cls.customer_location = cls.env.ref("stock.stock_location_customers")
@@ -80,8 +94,7 @@ class TestProdLot(SavepointCase):
         wiz = self.env["stock.inventory"].create(
             {
                 "name": "Stock Inventory",
-                "filter": "product",
-                "product_id": product.id,
+                "product_ids": [(4, product.id, 0)],
                 "line_ids": [
                     (
                         0,
@@ -97,6 +110,7 @@ class TestProdLot(SavepointCase):
                 ],
             }
         )
+        wiz.action_start()
         wiz.action_validate()
 
     def test_00_sale_stock_invoice_product_lot(self):
@@ -113,10 +127,11 @@ class TestProdLot(SavepointCase):
             sml.qty_done = sml.product_qty
         picking.action_done()
         # create invoice
-        inv_id = self.sale.action_invoice_create()
-        invoice = self.env["account.invoice"].browse(inv_id)
+        invoice = self.sale._create_invoices()
         self.assertEqual(len(invoice.invoice_line_ids), 2)
-        line = invoice.invoice_line_ids.filtered(lambda x: x.product_id == self.product)
+        line = invoice.invoice_line_ids.filtered(
+            lambda x: x.product_id.id == self.product.id
+        )
         # We must have two lots
         self.assertEqual(len(line.prod_lot_ids.ids), 2)
         self.assertIn("Lot 1", line.lots_grouped_by_quantity())
@@ -141,8 +156,7 @@ class TestProdLot(SavepointCase):
         )
         backorder_wiz.process()
         # create invoice
-        inv_id = self.sale.action_invoice_create()
-        invoice = self.env["account.invoice"].browse(inv_id)
+        invoice = self.sale._create_invoices()
         self.assertEqual(len(invoice.invoice_line_ids), 1)
         line = invoice.invoice_line_ids
         # We must have only one lot
@@ -171,8 +185,7 @@ class TestProdLot(SavepointCase):
         )
         backorder_wiz.process()
         # create invoice
-        inv_id = self.sale.action_invoice_create()
-        invoice = self.env["account.invoice"].browse(inv_id)
+        invoice = self.sale._create_invoices()
         self.assertEqual(len(invoice.invoice_line_ids), 1)
         line = invoice.invoice_line_ids
         # We must have two lots
