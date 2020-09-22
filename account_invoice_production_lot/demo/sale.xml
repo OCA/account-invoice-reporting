@@ -21,10 +21,12 @@
     <record id="lot_icecream_0" model="stock.production.lot">
         <field name="name">Lot0 for Ice cream</field>
         <field name="product_id" ref="product_icecream_b" />
+        <field name="company_id" ref="base.main_company" />
     </record>
     <record id="lot_icecream_1" model="stock.production.lot">
         <field name="name">Lot1 for Ice cream</field>
         <field name="product_id" ref="product_icecream_b" />
+        <field name="company_id" ref="base.main_company" />
     </record>
     <record id="sale_order_0" model="sale.order">
         <field name="partner_id" ref="base.res_partner_2" />
