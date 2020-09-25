@@ -5,7 +5,7 @@
 
     <template id="report_invoice_document_show_in_report" inherit_id="account.report_invoice_document">
       <xpath expr="//t[@t-foreach='o.invoice_line_ids']" position="attributes">
-        <attribute name="t-foreach">o.invoice_line_ids.filtered(lambda x: x.show_in_report)</attribute>
+        <attribute name="t-foreach">o.invoice_line_ids.filtered(lambda x: (x.show_in_report or x.price_unit>0))</attribute>
       </xpath>
     </template>
 
