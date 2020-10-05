@@ -40,16 +40,6 @@ msgstr "Líneas de factura"
 
 #. module: account_invoice_line_report
 #: model_terms:ir.ui.view,arch_db:account_invoice_line_report.view_account_invoice_report_search
-msgid "Partner Tags"
-msgstr "Etiquetas de empresa"
-
-#. module: account_invoice_line_report
-#: model_terms:ir.ui.view,arch_db:account_invoice_line_report.view_account_invoice_report_search
-msgid "Vendor contains"
-msgstr "Vendedor contiene"
-
-#. module: account_invoice_line_report
-#: model_terms:ir.ui.view,arch_db:account_invoice_line_report.view_account_invoice_report_search
 msgid "With Price"
 msgstr "Con precio"
 
@@ -57,3 +47,9 @@ msgstr "Con precio"
 #: model_terms:ir.ui.view,arch_db:account_invoice_line_report.view_account_invoice_report_search
 msgid "Without Price"
 msgstr "Sin precio"
+
+#~ msgid "Partner Tags"
+#~ msgstr "Etiquetas de empresa"
+
+#~ msgid "Vendor contains"
+#~ msgstr "Vendedor contiene"
