@@ -1,6 +1,7 @@
 * `Tecnativa <https://www.tecnativa.com>`_:
 
-  * Carlos Dauden <carlos.dauden@tecnativa.com>
-  * Vicent Cubells <vicent.cubells@tecnativa.com>
+  * Carlos Dauden
+  * Vicent Cubells
+  * João Marques
 
 * Kitti U. <kittiu@ecosoft.co.th>
