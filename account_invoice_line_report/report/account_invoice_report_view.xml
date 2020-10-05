@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<!-- Copyright 2017 Carlos Dauden - Tecnativa <carlos.dauden@tecnativa.com>
+<!-- Copyright 2017 Tecnativa - Carlos Dauden
+     Copyright 2017 Tecnativa - João Marques
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
 <odoo>
     <record id="view_invoice_report_tree_info" model="ir.ui.view">
@@ -8,11 +9,11 @@
         <field name="arch" type="xml">
             <tree string="Invoice Line">
                 <field name="partner_id" />
-                <field name="categ_id" />
+                <field name="product_categ_id" />
                 <field name="product_id" />
-                <field name="product_qty" />
+                <field name="quantity" />
                 <field name="price_average" />
-                <field name="price_total" />
+                <field name="price_subtotal" />
                 <field name="currency_id" invisible="1" />
             </tree>
         </field>
@@ -21,20 +22,7 @@
         <field name="model">account.invoice.report</field>
         <field name="inherit_id" ref="account.view_account_invoice_report_search" />
         <field name="arch" type="xml">
-            <field name="date" position="before">
-                <field
-                    name="uom_name"
-                    string="Partner Tags"
-                    filter_domain="[('partner_id.commercial_partner_id.category_id', '=', self)]"
-                />
-                <field
-                    name="uom_name"
-                    string="Vendor contains"
-                    filter_domain="[('product_id.seller_ids.name', 'like', self)]"
-                />
-                <separator />
-            </field>
-            <field name="categ_id" position="after">
+            <field name="product_categ_id" position="after">
                 <separator />
                 <filter
                     name="without_price"
@@ -52,7 +40,6 @@
     <record id="action_account_invoice_line_report" model="ir.actions.act_window">
         <field name="name">Invoice Lines</field>
         <field name="res_model">account.invoice.report</field>
-        <field name="view_type">form</field>
         <field name="view_mode">tree,pivot,graph</field>
         <field name="search_view_id" ref="view_account_invoice_report_search" />
         <field
