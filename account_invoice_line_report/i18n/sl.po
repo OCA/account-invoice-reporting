@@ -41,16 +41,6 @@ msgstr "Postavke računa"
 
 #. module: account_invoice_line_report
 #: model_terms:ir.ui.view,arch_db:account_invoice_line_report.view_account_invoice_report_search
-msgid "Partner Tags"
-msgstr "Oznake partnerja"
-
-#. module: account_invoice_line_report
-#: model_terms:ir.ui.view,arch_db:account_invoice_line_report.view_account_invoice_report_search
-msgid "Vendor contains"
-msgstr ""
-
-#. module: account_invoice_line_report
-#: model_terms:ir.ui.view,arch_db:account_invoice_line_report.view_account_invoice_report_search
 msgid "With Price"
 msgstr ""
 
@@ -58,3 +48,6 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:account_invoice_line_report.view_account_invoice_report_search
 msgid "Without Price"
 msgstr ""
+
+#~ msgid "Partner Tags"
+#~ msgstr "Oznake partnerja"
