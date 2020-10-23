@@ -73,8 +73,8 @@ class ResPartner(models.Model):
         return self.env["account.move"].search(
             [
                 ("partner_id", "=", partner_id),
-                ("invoice_payment_state", "=", "paid"),
-                ("type", "=", invoice_type),
+                ("payment_state", "=", "paid"),
+                ("move_type", "=", invoice_type),
             ]
         )
 
