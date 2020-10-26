@@ -33,7 +33,7 @@ class TestPartnerTimeToPay(TransactionCase):
         self.invoice_id = self.account_move_model.create(
             {
                 "partner_id": self.partner_id.id,
-                "type": "out_invoice",
+                "move_type": "out_invoice",
                 "invoice_date": self.today,
                 "invoice_line_ids": [
                     (
