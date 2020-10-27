@@ -43,8 +43,9 @@ class ResPartner(models.Model):
 
         for invoice in self._get_invoice_ids(partner.id, invoice_type):
             payment_ids = self.env["account.payment"].search(
-                [("invoice_ids", "in", [invoice.id])]
+                [("reconciled_invoice_ids", "in", [invoice.id])]
             )
+
             date_due = fields.Date.from_string(invoice.invoice_date)
             invoice_year = date_due.year
 
@@ -78,12 +79,13 @@ class ResPartner(models.Model):
             ]
         )
 
+    # payment is a model of account.move
     def _get_invoice_payment(self, payment_time_ids, date_due):
         days_for_latest_payment = 0
         for payment in payment_time_ids:
             if payment.state == "posted":
                 days_for_this_payment = (
-                    fields.Date.from_string(payment.payment_date) - date_due
+                    fields.Date.from_string(payment.date) - date_due
                 ).days
                 if days_for_this_payment < 0:
                     days_for_this_payment = 0
