@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2017 Tecnativa - Carlos Dauden
+     Copyright 2017 Tecnativa - João Marques
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record id="view_invoice_report_tree_info" model="ir.ui.view">
+        <field name="name">account.invoice.report.tree.info</field>
+        <field name="model">account.invoice.report</field>
+        <field name="arch" type="xml">
+            <tree string="Invoice Line">
+                <field name="partner_id" />
+                <field name="product_categ_id" />
+                <field name="product_id" />
+                <field name="quantity" />
+                <field name="price_average" />
+                <field name="price_subtotal" />
+                <field name="currency_id" invisible="1" />
+            </tree>
+        </field>
+    </record>
+    <record id="view_account_invoice_report_search" model="ir.ui.view">
+        <field name="model">account.invoice.report</field>
+        <field name="inherit_id" ref="account.view_account_invoice_report_search" />
+        <field name="arch" type="xml">
+            <field name="product_categ_id" position="after">
+                <separator />
+                <filter
+                    name="without_price"
+                    string="Without Price"
+                    domain="[('price_average','=', 0.0)]"
+                />
+                <filter
+                    name="with_price"
+                    string="With Price"
+                    domain="[('price_average','!=', 0.0)]"
+                />
+            </field>
+        </field>
+    </record>
+    <record id="action_account_invoice_line_report" model="ir.actions.act_window">
+        <field name="name">Invoice Lines</field>
+        <field name="res_model">account.invoice.report</field>
+        <field name="view_mode">tree,pivot,graph</field>
+        <field name="search_view_id" ref="view_account_invoice_report_search" />
+        <field
+            name="help"
+        >From this report, you can have an overview of the amount invoiced to your customers. The search tool can also be used to personalise your Invoices reports and so, match this analysis to your needs.</field>
+    </record>
+    <menuitem
+        action="action_account_invoice_line_report"
+        id="menu_action_account_invoice_line_report"
+        parent="account.account_reports_management_menu"
+        sequence="25"
+    />
+</odoo>
