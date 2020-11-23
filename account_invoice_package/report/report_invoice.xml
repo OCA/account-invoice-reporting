@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="account_invoice_packages_report" inherit_id="account.report_invoice_document">
+
+        <xpath expr="//span[@t-field='line.name']" position="after">
+            <t groups="stock.group_production_lot">
+                <t t-set="packages" t-value="line.packages_grouped_by_quantity().items()"/>
+            </t>
+        </xpath>
+
+        <xpath expr="//t[@name='account_invoice_line_accountable']/.." position="after">
+            <t t-if="not line.display_type and packages" name="account_invoice_line_package" groups="stock.group_production_lot">
+                <tr>
+                    <td colspan="99">
+                        <div class="row ml-1">
+                            <div class="col">
+                                <b class="font-italic">Packages</b>
+                            </div>
+                        </div>
+                        <t t-foreach="packages" t-as="package">
+                            <div class="row ml-1 mt-1">
+                                <div class="col">
+                                    <span t-esc="package[0]"/> (<span t-esc="package[1]"/>)
+                                </div>
+                            </div>
+                        </t>
+                    </td>
+                </tr>
+            </t>
+        </xpath>
+    </template>
+
+</odoo>

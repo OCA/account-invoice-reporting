@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record model="ir.ui.view" id="view_invoice_line_form_packages">
+        <field name="name">view_invoice_line_form_packages</field>
+        <field name="model">account.invoice.line</field>
+        <field name="inherit_id" ref="account.view_invoice_line_form"/>
+        <field name="arch" type="xml">
+             <field name="name" position="after">
+                <separator colspan="4" string="Destination Packages"/>
+                <field colspan="4" name="dest_package_ids" nolabel="1"/>
+            </field>
+        </field>
+    </record>
+
+</odoo>
