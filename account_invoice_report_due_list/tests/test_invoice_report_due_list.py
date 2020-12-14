@@ -1,10 +1,12 @@
 # Copyright 2018 Tecnativa - Vicent Cubells <vicent.cubells@tecnativa.com>
 # License AGPL-3 - See http://www.gnu.org/licenses/agpl-3.0.html
 
+import babel
 from datetime import timedelta
 
 from odoo.tests import common
 from odoo import fields
+from odoo.tools import posix_to_ldml, pycompat
 
 
 class TestInvoiceReportDueList(common.SavepointCase):
@@ -77,9 +79,21 @@ class TestInvoiceReportDueList(common.SavepointCase):
         invoice.action_invoice_open()
         self.assertTrue(invoice.multi_due)
         self.assertEqual(len(invoice.multi_date_due.split()), 2)
-        due_date = fields.Date.to_string(
-            fields.date.today() + timedelta(days=60))
+        due_date = fields.date.today() + timedelta(days=60)
+        lg = self.env['res.lang']._lang_get(self.env.user.lang)
+        locale = babel.Locale.parse(lg.code)
+        babel_format = posix_to_ldml(
+            lg.date_format,
+            locale=locale
+        )
+        date_due_format = pycompat.to_text(
+            babel.dates.format_date(
+                due_date,
+                format=babel_format,
+                locale=locale
+            )
+        )
         res = self.env['ir.actions.report']._get_report_from_name(
             'account.report_invoice').render_qweb_html(invoice.ids)
-        self.assertRegexpMatches(str(res[0]), due_date)
+        self.assertRegexpMatches(str(res[0]), date_due_format)
         self.assertRegexpMatches(str(res[0]), '75.0')
