@@ -21,7 +21,7 @@
                         <tbody>
                             <tr t-foreach="due_list" t-as="due_tuple">
                                 <td>
-                                    <span t-esc="due_tuple[0]" t-esc-options="{'widget': 'date'}"/>
+                                    <span t-esc="due_tuple[0]" t-options="{'widget': 'date'}"/>
                                 </td>
                                 <td class="text-right">
                                     <span t-esc="due_tuple[1]"
