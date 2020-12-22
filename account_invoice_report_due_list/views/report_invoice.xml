@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<!-- Copyright 2018 Carlos Dauden - Tecnativa <carlos.dauden@tecnativa.com>
+<!-- Copyright 2018 Tecnativa - Carlos Dauden
+     Copyright 2020 Tecnativa - Víctor Martínez
      License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
 <odoo>
     <template id="report_invoice_document" inherit_id="account.report_invoice_document">
-        <xpath expr="//p[@t-field='o.date_due']/.." position="attributes">
+        <xpath expr="//p[@t-field='o.invoice_date_due']/.." position="attributes">
             <attribute name="t-att-class">'hidden'</attribute>
         </xpath>
-        <xpath expr="//span[@t-field='o.payment_term_id.note']" position="after">
+        <xpath
+            expr="//span[@t-field='o.invoice_payment_term_id.note']"
+            position="after"
+        >
             <t t-set="due_list" t-value="o.get_multi_due_list()" />
             <div class="row" t-if="due_list" style="page-break-inside: avoid;">
                 <div class="col-4">
