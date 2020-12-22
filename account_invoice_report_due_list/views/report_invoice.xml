@@ -1,14 +1,13 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!-- Copyright 2018 Carlos Dauden - Tecnativa <carlos.dauden@tecnativa.com>
      License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
 <odoo>
-
     <template id="report_invoice_document" inherit_id="account.report_invoice_document">
         <xpath expr="//p[@t-field='o.date_due']/.." position="attributes">
             <attribute name="t-att-class">'hidden'</attribute>
         </xpath>
         <xpath expr="//span[@t-field='o.payment_term_id.note']" position="after">
-            <t t-set="due_list" t-value="o.get_multi_due_list()"/>
+            <t t-set="due_list" t-value="o.get_multi_due_list()" />
             <div class="row" t-if="due_list" style="page-break-inside: avoid;">
                 <div class="col-4">
                     <table class="table table-striped">
@@ -21,11 +20,16 @@
                         <tbody>
                             <tr t-foreach="due_list" t-as="due_tuple">
                                 <td>
-                                    <span t-esc="due_tuple[0]" t-options="{'widget': 'date'}"/>
+                                    <span
+                                        t-esc="due_tuple[0]"
+                                        t-options="{'widget': 'date'}"
+                                    />
                                 </td>
                                 <td class="text-right">
-                                    <span t-esc="due_tuple[1]"
-                                          t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
+                                    <span
+                                        t-esc="due_tuple[1]"
+                                        t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"
+                                    />
                                 </td>
                             </tr>
                         </tbody>
@@ -34,5 +38,4 @@
             </div>
         </xpath>
     </template>
-
 </odoo>
