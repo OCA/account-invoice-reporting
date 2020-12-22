@@ -1,4 +1,5 @@
-# Copyright 2018 Tecnativa - Vicent Cubells <vicent.cubells@tecnativa.com>
+# Copyright 2018 Tecnativa - Vicent Cubells
+# Copyright 2020 Tecnativa - Víctor Martínez
 # License AGPL-3 - See http://www.gnu.org/licenses/agpl-3.0.html
 
 from datetime import timedelta
@@ -7,18 +8,21 @@ import babel
 
 from odoo import fields
 from odoo.tests import common
+from odoo.tests.common import Form
 from odoo.tools import posix_to_ldml, pycompat
 
 
 class TestInvoiceReportDueList(common.SavepointCase):
     @classmethod
     def setUpClass(cls):
-        super(TestInvoiceReportDueList, cls).setUpClass()
-
+        super().setUpClass()
+        cls.account_tax = cls.env["account.tax"].create(
+            {"name": "0%", "amount_type": "fixed", "type_tax_use": "sale", "amount": 0}
+        )
         cls.payment_term_normal = cls.env["account.payment.term"].create(
             {
                 "name": "One Time Payment Term",
-                "line_ids": [(0, 0, {"value": "balance", "days": 30,})],
+                "line_ids": [(0, 0, {"value": "balance", "days": 30})],
             }
         )
         cls.payment_term_multi = cls.env["account.payment.term"].create(
@@ -35,12 +39,14 @@ class TestInvoiceReportDueList(common.SavepointCase):
                             "sequence": 10,
                         },
                     ),
-                    (0, 0, {"value": "balance", "days": 60, "sequence": 20,}),
+                    (0, 0, {"value": "balance", "days": 60, "sequence": 20}),
                 ],
             }
         )
-        cls.partner = cls.env["res.partner"].create({"name": "Partner test",})
-        cls.product_id = cls.env["product.product"].create({"name": "Product Test",})
+        cls.partner = cls.env["res.partner"].create({"name": "Partner test"})
+        cls.product_id = cls.env["product.product"].create(
+            {"name": "Product Test", "taxes_id": [(6, 0, [cls.account_tax.id])]}
+        )
         cls.account = cls.env["account.account"].create(
             {
                 "name": "Test Account",
@@ -60,31 +66,17 @@ class TestInvoiceReportDueList(common.SavepointCase):
             }
         )
 
-    def test_due_list(self):
-        invoice = self.env["account.invoice"].create(
-            {
-                "partner_id": self.partner.id,
-                "payment_term_id": self.payment_term_normal.id,
-                "type": "out_invoice",
-                "account_id": self.account.id,
-                "invoice_line_ids": [
-                    (
-                        0,
-                        0,
-                        {
-                            "product_id": self.product_id.id,
-                            "price_unit": 100.0,
-                            "account_id": self.other_account.id,
-                            "name": self.product_id.name,
-                        },
-                    )
-                ],
-            }
-        )
+    def test_due_list(self, move_type="out_invoice"):
+        move_form = Form(self.env["account.move"].with_context(default_type=move_type))
+        move_form.partner_id = self.partner
+        move_form.invoice_payment_term_id = self.payment_term_normal
+        with move_form.invoice_line_ids.new() as line_form:
+            line_form.product_id = self.product_id
+            line_form.price_unit = 100.0
+        invoice = move_form.save()
         self.assertFalse(invoice.multi_due)
-        invoice.payment_term_id = self.payment_term_multi.id
-        invoice._onchange_payment_term_date_invoice()
-        invoice.action_invoice_open()
+        invoice.invoice_payment_term_id = self.payment_term_multi
+        invoice.action_post()
         self.assertTrue(invoice.multi_due)
         self.assertEqual(len(invoice.multi_date_due.split()), 2)
         due_date = fields.date.today() + timedelta(days=60)
