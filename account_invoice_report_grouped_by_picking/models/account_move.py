@@ -29,6 +29,7 @@ class AccountMove(models.Model):
         so_dict = {x.sale_id: x for x in self.picking_ids if x.sale_id}
         # Now group by picking by direct link or via same SO as picking's one
         for line in self.invoice_line_ids:
+            has_returned_qty = False
             remaining_qty = line.quantity
             for move in line.move_line_ids:
                 key = (move.picking_id, line)
@@ -36,6 +37,7 @@ class AccountMove(models.Model):
                 qty = 0
                 if move.location_id.usage == "customer":
                     qty = -move.quantity_done * sign
+                    has_returned_qty = True
                 elif move.location_dest_id.usage == "customer":
                     qty = move.quantity_done * sign
                 picking_dict[key] += qty
@@ -48,6 +50,12 @@ class AccountMove(models.Model):
                         qty = so_line.product_uom_qty
                         picking_dict[key] += qty
                         remaining_qty -= qty
+            # To avoid to print duplicate lines because the invoice is a refund
+            # without returned goods to refund.
+            if self.type == "out_refund" and not has_returned_qty:
+                remaining_qty = 0.0
+                for key in picking_dict:
+                    picking_dict[key] = abs(picking_dict[key])
             if not float_is_zero(
                 remaining_qty,
                 precision_rounding=line.product_id.uom_id.rounding or 0.01,
