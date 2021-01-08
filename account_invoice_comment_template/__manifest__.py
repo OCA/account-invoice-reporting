@@ -9,9 +9,7 @@
     "summary": "Comments templates on invoice documents",
     "version": "12.0.2.0.0",
     "category": "Sale",
-    "author": "Camptocamp, "
-              "Tecnativa, "
-              "Odoo Community Association (OCA)",
+    "author": "Camptocamp, " "Tecnativa, " "Odoo Community Association (OCA)",
     "license": "AGPL-3",
     "installable": True,
     "depends": [
