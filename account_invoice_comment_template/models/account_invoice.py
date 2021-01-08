@@ -8,7 +8,7 @@ from odoo import api, fields, models
 
 
 class AccountInvoice(models.Model):
-    _inherit = "account.invoice"
+    _inherit = "account.move"
 
     comment_template1_id = fields.Many2one(
         "base.comment.template",
@@ -38,8 +38,7 @@ class AccountInvoice(models.Model):
             self.note2 = comment.get_value(self.partner_id.id)
 
     @api.onchange("partner_id", "company_id")
-    def _onchange_partner_id(self):
-        res = super(AccountInvoice, self)._onchange_partner_id()
+    def _onchange_partner_id_set_templates_and_notes(self):
         comment_template = self.partner_id.property_comment_template_id
         if comment_template.position == "before_lines":
             self.comment_template1_id = comment_template
@@ -51,4 +50,3 @@ class AccountInvoice(models.Model):
             self._set_note1()
         if self.comment_template2_id:
             self._set_note2()
-        return res

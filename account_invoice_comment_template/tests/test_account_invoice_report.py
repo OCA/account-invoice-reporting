@@ -15,9 +15,11 @@ class TestAccountInvoiceReport(TransactionCase):
         self.before_comment = self._create_comment("before_lines")
         self.after_comment = self._create_comment("after_lines")
         self.partner = self.env["res.partner"].create({"name": "Partner Test"})
-        self.invoice_model = self.env["account.invoice"]
+        self.invoice_model = self.env["account.move"]
         self.invoice = self.invoice_model.create(
             {
+                # "move_type": "out_invoice",
+                # "journal_id":
                 "partner_id": self.partner.id,
                 "comment_template1_id": self.before_comment.id,
                 "comment_template2_id": self.after_comment.id,
@@ -40,20 +42,20 @@ class TestAccountInvoiceReport(TransactionCase):
         res = (
             self.env["ir.actions.report"]
             ._get_report_from_name("account.report_invoice")
-            .render_qweb_html(self.invoice.ids)
+            ._render_qweb_html(self.invoice.ids)
         )
         self.assertRegexpMatches(str(res[0]), self.before_comment.text)
         self.assertRegexpMatches(str(res[0]), self.after_comment.text)
 
-    def test_onchange_partner_id(self):
+    def test__onchange_partner_id_set_templates_and_notes(self):
         self.partner.property_comment_template_id = self.after_comment.id
-        new_invoice = self.env["account.invoice"].new(
+        new_invoice = self.env["account.move"].new(
             {
                 "partner_id": self.partner.id,
             }
         )
-        new_invoice._onchange_partner_id()
+        new_invoice._onchange_partner_id_set_templates_and_notes()
         self.assertEqual(new_invoice.comment_template2_id, self.after_comment)
         self.partner.property_comment_template_id = self.before_comment.id
-        new_invoice._onchange_partner_id()
+        new_invoice._onchange_partner_id_set_templates_and_notes()
         self.assertEqual(new_invoice.comment_template1_id, self.before_comment)
