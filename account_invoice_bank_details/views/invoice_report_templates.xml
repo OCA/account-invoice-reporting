@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <template id="report_invoice_document_hide_detail" inherit_id="account.report_invoice_document">
+    <xpath expr="//p[@t-if='o.fiscal_position_id.note']" position="after">
+  <div>
+    <strong>Payment information:</strong>
+  </div>
+  <div>
+    <strong>Bank:</strong>
+    <span t-field="o.invoice_partner_bank_id.bank_id.display_name"/>
+  </div>
+  <div>
+    <strong>BIC / SWIFT:</strong>
+    <span t-field="o.invoice_partner_bank_id.bank_id.bic"/>
+  </div>
+  <div>
+    <strong>IBAN:</strong>
+    <span t-field="o.invoice_partner_bank_id.acc_number"/>
+  </div>
+
+
+    </xpath>
+  </template>
+</odoo>
+
