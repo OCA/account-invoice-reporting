@@ -30,11 +30,12 @@ class AccountMove(models.Model):
         due_list = []
         if self.type in ["in_invoice", "out_refund"]:
             due_move_line_ids = self.line_ids.filtered(
-                lambda ml: ml.account_id.internal_type == "payable"
+                lambda ml: ml.account_id.internal_type == "payable" and ml.date_maturity
             )
         else:
             due_move_line_ids = self.line_ids.filtered(
                 lambda ml: ml.account_id.internal_type == "receivable"
+                and ml.date_maturity
             )
         if self.currency_id != self.company_id.currency_id:
             due_list = [
