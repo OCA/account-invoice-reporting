@@ -44,8 +44,8 @@ class TestAccountInvoiceReport(TransactionCase):
             ._get_report_from_name("account.report_invoice")
             ._render_qweb_html(self.invoice.ids)
         )
-        self.assertRegexpMatches(str(res[0]), self.before_comment.text)
-        self.assertRegexpMatches(str(res[0]), self.after_comment.text)
+        self.assertRegex(str(res[0]), self.before_comment.text)
+        self.assertRegex(str(res[0]), self.after_comment.text)
 
     def test__onchange_partner_id_set_templates_and_notes(self):
         self.partner.property_comment_template_id = self.after_comment.id
