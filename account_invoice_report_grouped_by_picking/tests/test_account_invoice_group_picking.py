@@ -130,9 +130,9 @@ class TestAccountInvoiceGroupPicking(SavepointCase):
         picking = self.sale.picking_ids[:1]
         picking.action_confirm()
         picking.move_line_ids.write({"qty_done": 1})
-        picking.action_done()
+        picking._action_done()
         invoice = self.sale._create_invoices()
-        invoice.post()
+        invoice.action_post()
         # Refund invoice without return picking
         move_reversal = (
             self.env["account.move.reversal"]
