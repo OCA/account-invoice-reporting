@@ -5,7 +5,7 @@
 
 from collections import OrderedDict
 
-from odoo import api, models
+from odoo import api, fields, models
 from odoo.tools import float_is_zero
 
 
@@ -15,7 +15,11 @@ class AccountMove(models.Model):
     @api.model
     def _sort_grouped_lines(self, lines_dic):
         return sorted(
-            lines_dic, key=lambda x: (x["picking"].date, x["picking"].date_done)
+            lines_dic,
+            key=lambda x: (
+                x["picking"].date or fields.Datetime.now(),
+                x["picking"].date_done or fields.Datetime.now(),
+            ),
         )
 
     def lines_grouped_by_picking(self):
@@ -50,6 +54,12 @@ class AccountMove(models.Model):
                         qty = so_line.product_uom_qty
                         picking_dict[key] += qty
                         remaining_qty -= qty
+            elif not line.move_line_ids and not line.sale_line_ids:
+                key = (self.env["stock.picking"], line)
+                picking_dict.setdefault(key, 0)
+                qty = line.quantity
+                picking_dict[key] += qty
+                remaining_qty -= qty
             # To avoid to print duplicate lines because the invoice is a refund
             # without returned goods to refund.
             if self.move_type == "out_refund" and not has_returned_qty:

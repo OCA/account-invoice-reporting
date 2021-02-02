@@ -5,8 +5,8 @@
 
 from lxml import html
 
-from odoo.tests.common import Form, SavepointCase
 from odoo import fields
+from odoo.tests.common import Form, SavepointCase
 
 
 class TestAccountInvoiceGroupPicking(SavepointCase):
