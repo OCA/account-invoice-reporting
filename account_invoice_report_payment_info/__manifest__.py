@@ -3,12 +3,12 @@
 {
     "name": "Account Invoice Report Payment Extended Info",
     "summary": "Show payment extended info in invoice",
-    "version": "12.0.1.0.0",
+    "version": "13.0.1.0.0",
     "category": "Accounting",
     "website": "https://github.com/OCA/account-invoice-reporting",
     "author": "Tecnativa, Odoo Community Association (OCA)",
     "license": "AGPL-3",
     "installable": True,
-    "depends": ["account",],
-    "data": ["data/payment_info_data.xml", "views/report_invoice.xml",],
+    "depends": ["account"],
+    "data": ["data/payment_info_data.xml", "views/report_invoice.xml"],
 }
