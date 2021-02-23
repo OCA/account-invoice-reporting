@@ -67,7 +67,9 @@ class TestInvoiceReportDueList(common.SavepointCase):
         )
 
     def test_due_list(self, move_type="out_invoice"):
-        move_form = Form(self.env["account.move"].with_context(default_type=move_type))
+        move_form = Form(
+            self.env["account.move"].with_context(default_move_type=move_type)
+        )
         move_form.partner_id = self.partner
         move_form.invoice_payment_term_id = self.payment_term_normal
         with move_form.invoice_line_ids.new() as line_form:
@@ -89,7 +91,7 @@ class TestInvoiceReportDueList(common.SavepointCase):
         res = (
             self.env["ir.actions.report"]
             ._get_report_from_name("account.report_invoice")
-            .render_qweb_html(invoice.ids)
+            ._render_qweb_html(invoice.ids)
         )
-        self.assertRegexpMatches(str(res[0]), date_due_format)
-        self.assertRegexpMatches(str(res[0]), "75.0")
+        self.assertRegex(str(res[0]), date_due_format)
+        self.assertRegex(str(res[0]), "75.0")
