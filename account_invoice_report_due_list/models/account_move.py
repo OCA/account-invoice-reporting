@@ -28,7 +28,7 @@ class AccountMove(models.Model):
     def get_multi_due_list(self):
         self.ensure_one()
         due_list = []
-        if self.type in ["in_invoice", "out_refund"]:
+        if self.move_type in ["in_invoice", "out_refund"]:
             due_move_line_ids = self.line_ids.filtered(
                 lambda ml: ml.account_id.internal_type == "payable"
             )
