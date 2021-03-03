@@ -14,7 +14,7 @@ class TestReportGroupedSaleMrp(SavepointCase):
         # create a kit (kit_1) with 2 components
         cls.product_kit_1 = cls.env['product.product'].create({
             'name': 'Product Kit 1',
-            'type': 'product',
+            'type': 'consu',
         })
         cls.component_1_kit_1 = cls.env['product.product'].create({
             'name': 'Component 1 Kit 1',
@@ -36,7 +36,7 @@ class TestReportGroupedSaleMrp(SavepointCase):
         # create another kit (kit_2) with: 2 components + kit_1
         cls.product_kit_2 = cls.env['product.product'].create({
             'name': 'Product Kit 2',
-            'type': 'product',
+            'type': 'consu',
         })
         cls.component_1_kit_2 = cls.env['product.product'].create({
             'name': 'Component 1 Kit 2',
