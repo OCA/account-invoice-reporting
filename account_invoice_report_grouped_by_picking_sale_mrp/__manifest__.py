@@ -5,7 +5,7 @@
     "name": "Account Invoice Grouped by Picking - Sale MRP",
     "summary": "Take into account BoM kits in invoice report "
                "grouped by picking",
-    "version": "12.0.1.0.1",
+    "version": "12.0.1.0.2",
     "category": "Accounting & Finance",
     "website": "https://github.com/OCA/account-invoice-reporting",
     "author": "Tecnativa, "
