@@ -19,6 +19,7 @@ Available addons
 ----------------
 addon | version | summary
 --- | --- | ---
+[account_invoice_report_due_list](account_invoice_report_due_list/) | 14.0.1.0.0 | Show multiple due data in invoice
 [account_invoice_report_grouped_by_picking](account_invoice_report_grouped_by_picking/) | 14.0.1.0.1 | Print invoice lines grouped by picking
 
 [//]: # (end addons)
