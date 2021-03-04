@@ -8,6 +8,7 @@ setuptools.setup(
     description="Meta package for oca-account-invoice-reporting Odoo addons",
     version=version,
     install_requires=[
+        'odoo14-addon-account_invoice_report_due_list',
         'odoo14-addon-account_invoice_report_grouped_by_picking',
     ],
     classifiers=[
