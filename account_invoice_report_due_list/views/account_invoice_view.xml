@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<!-- Copyright 2018 Tecnativa - Carlos Dauden
+<!-- Copyright 2018-2021 Tecnativa - Carlos Dauden
      Copyright 2018 Tecnativa - Pedro M. Baeza
      Copyright 2020 Tecnativa - Víctor Martínez
      License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
@@ -9,13 +9,20 @@
         <field name="inherit_id" ref="account.view_move_form" />
         <field name="groups_id" eval="[(4, ref('account.group_account_invoice'))]" />
         <field name="arch" type="xml">
-            <field name="invoice_payment_term_id" position="after">
+            <xpath expr="//field[@name='invoice_payment_term_id']/.." position="after">
                 <field name="multi_due" invisible="1" />
-                <field
-                    name="multi_date_due"
-                    attrs="{'invisible': [('multi_due', '=', False)]}"
+                <label
+                    for="multi_date_due"
+                    string="Due Dates"
+                    attrs="{'invisible': ['|', ('move_type', 'not in', ('out_invoice', 'out_refund', 'in_invoice', 'in_refund', 'out_receipt', 'in_receipt')), ('multi_due', '=', False)]}"
                 />
-            </field>
+                <div
+                    class="d-flex"
+                    attrs="{'invisible': ['|', ('move_type', 'not in', ('out_invoice', 'out_refund', 'in_invoice', 'in_refund', 'out_receipt', 'in_receipt')), ('multi_due', '=', False)]}"
+                >
+                    <field name="multi_date_due" />
+                </div>
+            </xpath>
         </field>
     </record>
 </odoo>
