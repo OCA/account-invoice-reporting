@@ -36,6 +36,7 @@ msgstr "Nombre mostrado"
 #: model:ir.model.fields,field_description:account_invoice_report_due_list.field_account_bank_statement_line__multi_date_due
 #: model:ir.model.fields,field_description:account_invoice_report_due_list.field_account_move__multi_date_due
 #: model:ir.model.fields,field_description:account_invoice_report_due_list.field_account_payment__multi_date_due
+#: model_terms:ir.ui.view,arch_db:account_invoice_report_due_list.view_move_form
 msgid "Due Dates"
 msgstr "Fechas de vencimiento"
 
