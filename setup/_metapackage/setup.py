@@ -12,6 +12,7 @@ setuptools.setup(
         'odoo13-addon-account_invoice_production_lot',
         'odoo13-addon-account_invoice_report_due_list',
         'odoo13-addon-account_invoice_report_grouped_by_picking',
+        'odoo13-addon-account_invoice_report_payment_info',
         'odoo13-addon-account_reporting_weight',
         'odoo13-addon-partner_time_to_pay',
     ],
