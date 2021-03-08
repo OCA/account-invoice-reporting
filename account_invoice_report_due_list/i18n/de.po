@@ -1,6 +1,6 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* account_invoice_report_due_list
+# 	* account_invoice_report_due_list
 #
 msgid ""
 msgstr ""
@@ -27,16 +27,39 @@ msgid "Date Due"
 msgstr "Fälligkeitsdatum"
 
 #. module: account_invoice_report_due_list
-#: model:ir.model.fields,field_description:account_invoice_report_due_list.field_account_invoice__multi_date_due
+#: model:ir.model.fields,field_description:account_invoice_report_due_list.field_account_move__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: account_invoice_report_due_list
+#: model:ir.model.fields,field_description:account_invoice_report_due_list.field_account_bank_statement_line__multi_date_due
+#: model:ir.model.fields,field_description:account_invoice_report_due_list.field_account_move__multi_date_due
+#: model:ir.model.fields,field_description:account_invoice_report_due_list.field_account_payment__multi_date_due
+#: model_terms:ir.ui.view,arch_db:account_invoice_report_due_list.view_move_form
 msgid "Due Dates"
 msgstr "Fälligkeiten"
 
 #. module: account_invoice_report_due_list
-#: model:ir.model,name:account_invoice_report_due_list.model_account_invoice
-msgid "Invoice"
-msgstr "Rechnung"
+#: model:ir.model.fields,field_description:account_invoice_report_due_list.field_account_move__id
+msgid "ID"
+msgstr ""
 
 #. module: account_invoice_report_due_list
-#: model:ir.model.fields,field_description:account_invoice_report_due_list.field_account_invoice__multi_due
+#: model:ir.model,name:account_invoice_report_due_list.model_account_move
+msgid "Journal Entry"
+msgstr ""
+
+#. module: account_invoice_report_due_list
+#: model:ir.model.fields,field_description:account_invoice_report_due_list.field_account_move____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: account_invoice_report_due_list
+#: model:ir.model.fields,field_description:account_invoice_report_due_list.field_account_bank_statement_line__multi_due
+#: model:ir.model.fields,field_description:account_invoice_report_due_list.field_account_move__multi_due
+#: model:ir.model.fields,field_description:account_invoice_report_due_list.field_account_payment__multi_due
 msgid "Multiple date due"
 msgstr "Mehrere Fälligkeiten"
+
+#~ msgid "Invoice"
+#~ msgstr "Rechnung"
