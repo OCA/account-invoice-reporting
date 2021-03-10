@@ -8,13 +8,14 @@
         <field name="model">account.invoice.report</field>
         <field name="arch" type="xml">
             <tree string="Invoice Line">
+                <field name="move_id" />
                 <field name="partner_id" />
                 <field name="product_categ_id" />
                 <field name="product_id" />
                 <field name="quantity" />
                 <field name="price_average" />
                 <field name="price_subtotal" />
-                <field name="currency_id" invisible="1" />
+                <field name="company_currency_id" invisible="1" />
             </tree>
         </field>
     </record>
