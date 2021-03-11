@@ -4,8 +4,8 @@
 from odoo import api, fields, models
 
 
-class AccountInvoiceLine(models.Model):
-    _inherit = "account.invoice.line"
+class AccountMoveLine(models.Model):
+    _inherit = "account.move.line"
 
     show_in_report = fields.Boolean(default=True)
 
