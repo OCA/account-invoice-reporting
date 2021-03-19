@@ -7,12 +7,12 @@
         <field name="inherit_id" ref="account.view_partner_property_form" />
         <field name="arch" type="xml">
             <field name="property_payment_term_id" position="after">
-                <field name="d2p_ytd" />
-                <field name="d2p_life" />
-            </field>
-            <field name="property_supplier_payment_term_id" position="after">
                 <field name="d2r_ytd" />
                 <field name="d2r_life" />
+            </field>
+            <field name="property_supplier_payment_term_id" position="after">
+                <field name="d2p_ytd" />
+                <field name="d2p_life" />
             </field>
         </field>
     </record>

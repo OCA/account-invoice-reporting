@@ -22,14 +22,15 @@ class ResPartner(models.Model):
 
     def _compute_d2x(self):
         for partner in self:
-            partner.d2p_ytd, partner.d2p_life = self._compute_d2x_per_invoice_type(
+            partner.d2r_ytd, partner.d2r_life = self._compute_d2x_per_invoice_type(
                 partner, "out_invoice"
             )
-            partner.d2r_ytd, partner.d2r_life = self._compute_d2x_per_invoice_type(
+            partner.d2p_ytd, partner.d2p_life = self._compute_d2x_per_invoice_type(
                 partner, "in_invoice"
             )
 
     def _compute_d2x_per_invoice_type(self, partner, invoice_type):
+
         this_year = datetime.now().year
 
         total_number_of_invoices_life = 0
@@ -73,7 +74,7 @@ class ResPartner(models.Model):
         return self.env["account.move"].search(
             [
                 ("partner_id", "=", partner_id),
-                ("invoice_payment_state", "=", "paid"),
+                ("invoice_payment_state", "in", ["paid", "in_payment"]),
                 ("type", "=", invoice_type),
             ]
         )
@@ -81,7 +82,7 @@ class ResPartner(models.Model):
     def _get_invoice_payment(self, payment_time_ids, date_due):
         days_for_latest_payment = 0
         for payment in payment_time_ids:
-            if payment.state == "posted":
+            if payment.state in ["posted", "send", "reconciled"]:
                 days_for_this_payment = (
                     fields.Date.from_string(payment.payment_date) - date_due
                 ).days
