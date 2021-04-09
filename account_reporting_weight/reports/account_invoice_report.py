@@ -1,4 +1,5 @@
-# Copyright 2017 Pedro M. Baeza <pedro.baeza@tecnativa.com>
+# Copyright 2017 Tecnativa - Pedro M. Baeza
+# Copyright 2021 Tecnativa - Víctor Martínez
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 from odoo import fields, models
@@ -20,7 +21,9 @@ class AccountInvoiceReport(models.Model):
     def _sub_select(self):
         select_str = super()._sub_select()
         select_str += """
-            , SUM(pr.weight * ail.quantity / u.factor * u2.factor)
+            , SUM(
+                (pr.weight * invoice_type.sign) * ail.quantity / u.factor * u2.factor
+            )
             AS weight
             """
         return select_str
