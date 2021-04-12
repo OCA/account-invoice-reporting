@@ -4,11 +4,11 @@
 from odoo.tests import tagged
 from odoo.tests.common import Form
 
-from odoo.addons.account.tests.account_test_users import AccountTestUsers
+from odoo.addons.account.tests.test_account_move_entry import TestAccountMove
 
 
 @tagged("post_install", "-at_install")
-class TestAccountCustomerInvoice(AccountTestUsers):
+class TestAccountCustomerInvoice(TestAccountMove):
     def test_customer_invoice_show_in_report(self):
         move_form = Form(self.env["account.move"])
         self.account_invoice_line_obj = self.env["account.move.line"]
@@ -25,7 +25,8 @@ class TestAccountCustomerInvoice(AccountTestUsers):
                         "user_type_id",
                         "=",
                         self.env.ref("account.data_account_type_revenue").id,
-                    )
+                    ),
+                    ("company_id", "=", move_form.company_id.id),
                 ],
                 limit=1,
             )
