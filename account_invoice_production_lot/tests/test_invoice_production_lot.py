@@ -5,6 +5,7 @@
 # Copyright 2020 Tecnativa - João Marques
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
+from odoo.tests import Form
 from odoo.tests.common import SavepointCase, tagged
 
 
@@ -125,7 +126,7 @@ class TestProdLot(SavepointCase):
         picking.action_assign()
         for sml in picking.move_lines.mapped("move_line_ids"):
             sml.qty_done = sml.product_qty
-        picking.action_done()
+        picking._action_done()
         # create invoice
         invoice = self.sale._create_invoices()
         self.assertEqual(len(invoice.invoice_line_ids), 2)
@@ -150,10 +151,12 @@ class TestProdLot(SavepointCase):
         picking.action_assign()
         # deliver partially only one lot
         picking.move_lines[0].move_line_ids[0].write({"qty_done": 2.0})
-        backorder_wiz_id = picking.button_validate()["res_id"]
-        backorder_wiz = self.env["stock.backorder.confirmation"].browse(
-            backorder_wiz_id
-        )
+        backorder_wizard_dict = picking.button_validate()
+        backorder_wiz = Form(
+            self.env[backorder_wizard_dict["res_model"]].with_context(
+                backorder_wizard_dict["context"]
+            )
+        ).save()
         backorder_wiz.process()
         # create invoice
         invoice = self.sale._create_invoices()
@@ -179,10 +182,12 @@ class TestProdLot(SavepointCase):
         # deliver partially both lots
         picking.move_lines[0].move_line_ids[0].write({"qty_done": 1.0})
         picking.move_lines[0].move_line_ids[1].write({"qty_done": 1.0})
-        backorder_wiz_id = picking.button_validate()["res_id"]
-        backorder_wiz = self.env["stock.backorder.confirmation"].browse(
-            [backorder_wiz_id]
-        )
+        backorder_wizard_dict = picking.button_validate()
+        backorder_wiz = Form(
+            self.env[backorder_wizard_dict["res_model"]].with_context(
+                backorder_wizard_dict["context"]
+            )
+        ).save()
         backorder_wiz.process()
         # create invoice
         invoice = self.sale._create_invoices()
