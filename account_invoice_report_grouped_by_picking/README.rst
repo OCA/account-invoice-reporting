@@ -82,6 +82,10 @@ Contributors
 
   * Ioan Galan <ioan@studio73.es>
 
+* `Open Source Integrators <https://opensourceintegrators.com>`__:
+
+  * Ammar Officewala <aofficewala@opensourceintegrators.com>
+
 Maintainers
 ~~~~~~~~~~~
 
