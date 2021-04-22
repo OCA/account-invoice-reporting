@@ -21,9 +21,3 @@ msgstr ""
 #: model:ir.model,name:account_invoice_report_grouped_by_picking_sale_mrp.model_account_invoice
 msgid "Invoice"
 msgstr "Factura"
-
-#~ msgid "Bill of Material"
-#~ msgstr "Lista de materiales"
-
-#~ msgid "Components Total Qty"
-#~ msgstr "Cantidad total de componentes"
