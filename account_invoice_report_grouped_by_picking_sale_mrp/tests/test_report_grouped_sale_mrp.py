@@ -87,17 +87,15 @@ class TestReportGroupedSaleMrp(SavepointCase):
         picking_2.action_confirm()
         picking_2.mapped("move_lines").write({"quantity_done": 1})
         picking_2.action_done()
-        # invoice the sales order
-        invoice_id = self.sale_order.action_invoice_create()
         # Test directly grouping method
-        invoice = self.env["account.invoice"].browse(invoice_id)
-        groups = invoice.lines_grouped_by_picking()
+        move = self.sale_order._create_invoices()
+        groups = move.lines_grouped_by_picking()
         self.assertEqual(len(groups), 2)
         self.assertDictEqual(
             groups[0],
-            {"line": invoice.invoice_line_ids, "picking": picking_1, "quantity": 2.0},
+            {"line": move.invoice_line_ids, "picking": picking_1, "quantity": 2.0},
         )
         self.assertDictEqual(
             groups[1],
-            {"line": invoice.invoice_line_ids, "picking": picking_2, "quantity": 1.0},
+            {"line": move.invoice_line_ids, "picking": picking_2, "quantity": 1.0},
         )
