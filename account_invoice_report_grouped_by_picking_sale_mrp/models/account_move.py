@@ -5,7 +5,7 @@ from odoo import models
 
 
 class AccountInvoice(models.Model):
-    _inherit = "account.invoice"
+    _inherit = "account.move"
 
     def _get_signed_quantity_done(self, invoice_line, move, sign):
         res = super()._get_signed_quantity_done(invoice_line, move, sign)
