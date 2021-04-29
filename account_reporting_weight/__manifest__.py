@@ -3,7 +3,7 @@
 
 {
     'name': 'Weights in the invoices analysis view',
-    'version': '12.0.1.0.1',
+    'version': '12.0.1.0.2',
     'author': 'Tecnativa,'
               'Odoo Community Association (OCA)',
     'category': 'Inventory, Logistics, Warehousing',
