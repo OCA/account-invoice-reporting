@@ -22,7 +22,7 @@ class AccountInvoiceReport(models.Model):
         select_str = super()._sub_select()
         select_str += """
             , SUM(
-                (pr.weight * invoice_type.sign) * ail.quantity / u.factor * u2.factor
+                pr.weight * invoice_type.sign_qty * ail.quantity / u.factor * u2.factor
             )
             AS weight
             """
