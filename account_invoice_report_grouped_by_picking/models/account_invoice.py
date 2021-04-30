@@ -38,7 +38,9 @@ class AccountInvoice(models.Model):
         pickings = self.mapped('invoice_line_ids.move_line_ids.picking_id')
         so_dict = {x.sale_id: x for x in pickings if x.sale_id}
         # Now group by picking by direct link or via same SO as picking's one
-        for line in self.invoice_line_ids:
+        for line in self.invoice_line_ids.filtered(
+            lambda x: not x.display_type
+        ):
             remaining_qty = line.quantity
             for move in line.move_line_ids:
                 key = (move.picking_id, line)
