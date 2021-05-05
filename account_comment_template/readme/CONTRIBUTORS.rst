@@ -6,6 +6,7 @@
 * `Tecnativa <https://www.tecnativa.com>`_:
 
   * Pedro M. Baeza
+  * Víctor Martínez
 
 * `DynApps <https://www.dynapps.be>`_:
 
