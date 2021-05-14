@@ -10,10 +10,10 @@ def migrate(env, version):
         """
         INSERT INTO account_move_base_comment_template_rel
         (base_comment_template_id, account_move_id)
-        SELECT bct.id AS base_comment_template_id, am.id AS account_move_id
-        FROM account_move am
-        JOIN base_comment_template bct ON bct.id = am.old_comment_template1_id
-        WHERE am.old_comment_template1_id IS NOT NULL
+        SELECT ai.comment_template1_id, am.id
+        FROM account_invoice ai
+        JOIN account_move am ON ai.id = am.old_invoice_id
+        WHERE ai.comment_template1_id IS NOT NULL
         ON CONFLICT DO NOTHING
         """,
     )
@@ -22,10 +22,10 @@ def migrate(env, version):
         """
         INSERT INTO account_move_base_comment_template_rel
         (base_comment_template_id, account_move_id)
-        SELECT bct.id AS base_comment_template_id, am.id AS account_move_id
-        FROM account_move am
-        JOIN base_comment_template bct ON bct.id = am.old_comment_template2_id
-        WHERE am.old_comment_template2_id IS NOT NULL
+        SELECT ai.comment_template2_id, am.id
+        FROM account_invoice ai
+        JOIN account_move am ON ai.id = am.old_invoice_id
+        WHERE ai.comment_template2_id IS NOT NULL
         ON CONFLICT DO NOTHING
         """,
     )
