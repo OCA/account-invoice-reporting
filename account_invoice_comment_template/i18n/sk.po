@@ -1,0 +1,75 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* account_invoice_comment_template
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2020-07-04 17:19+0000\n"
+"Last-Translator: Jan Prokop <jprokop@jackie.sk>\n"
+"Language-Team: none\n"
+"Language: sk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Weblate 3.10\n"
+
+#. module: account_invoice_comment_template
+#: model:ir.model.fields,field_description:account_invoice_comment_template.field_account_invoice__note2
+msgid "Bottom Comment"
+msgstr "Komentár za položkami"
+
+#. module: account_invoice_comment_template
+#: model:ir.model.fields,field_description:account_invoice_comment_template.field_account_invoice__comment_template2_id
+msgid "Bottom Comment Template"
+msgstr "Šablóna pre spodný komentár"
+
+#. module: account_invoice_comment_template
+#: model_terms:ir.ui.view,arch_db:account_invoice_comment_template.invoice_form_add_comment
+msgid "Bottom Comments"
+msgstr "Komentáre za položkami"
+
+#. module: account_invoice_comment_template
+#: model_terms:ir.ui.view,arch_db:account_invoice_comment_template.invoice_form_add_comment
+msgid "Comments"
+msgstr "Komentáre"
+
+#. module: account_invoice_comment_template
+#: model:ir.ui.menu,name:account_invoice_comment_template.menu_base_comment_template_invoice
+msgid "Document Comments"
+msgstr "Šablóny komentárov"
+
+#. module: account_invoice_comment_template
+#: model:ir.model,name:account_invoice_comment_template.model_account_invoice
+msgid "Invoice"
+msgstr "Faktúra"
+
+#. module: account_invoice_comment_template
+#: model_terms:ir.ui.view,arch_db:account_invoice_comment_template.invoice_form_add_comment
+msgid "Load a template"
+msgstr "Načítať šablónu"
+
+#. module: account_invoice_comment_template
+#: model_terms:ir.ui.view,arch_db:account_invoice_comment_template.invoice_form_add_comment
+msgid "The comments will be displayed on the printed document. You can load a predefined template, write your own text or load a template and then modify it only for this document."
+msgstr ""
+"Komentáre sa zobrazia na výtlačku dokumentu. Môžete načítať predvolenú "
+"šablónu, napísať svoj vlastný text alebo načítať šablónu a potom ju upraviť "
+"iba pre tento dokument."
+
+#. module: account_invoice_comment_template
+#: model:ir.model.fields,field_description:account_invoice_comment_template.field_account_invoice__note1
+msgid "Top Comment"
+msgstr "Komentár pred položkami"
+
+#. module: account_invoice_comment_template
+#: model:ir.model.fields,field_description:account_invoice_comment_template.field_account_invoice__comment_template1_id
+msgid "Top Comment Template"
+msgstr "Šablóna horného komentára"
+
+#. module: account_invoice_comment_template
+#: model_terms:ir.ui.view,arch_db:account_invoice_comment_template.invoice_form_add_comment
+msgid "Top Comments"
+msgstr "Komentáre pred položkami"

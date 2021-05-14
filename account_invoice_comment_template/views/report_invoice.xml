@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template
+        id="report_invoice_document_comments"
+        inherit_id="account.report_invoice_document"
+    >
+        <xpath expr="//table[@name='invoice_line_table']" position="before">
+            <p
+                t-foreach="o.comment_template_ids.filtered(lambda x: x.position == 'before_lines')"
+                t-as="comment_template_id"
+            >
+                <span t-raw="comment_template_id.text" />
+            </p>
+        </xpath>
+        <xpath expr="//div[@id='qrcode']" position="before">
+            <p
+                t-foreach="o.comment_template_ids.filtered(lambda x: x.position == 'after_lines')"
+                t-as="comment_template_id"
+            >
+                <span t-raw="comment_template_id.text" />
+            </p>
+        </xpath>
+    </template>
+</odoo>

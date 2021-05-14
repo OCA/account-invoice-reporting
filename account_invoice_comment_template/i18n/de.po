@@ -1,0 +1,87 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * account_invoice_comment_template
+#
+# Translators:
+# Rudolf Schnapka <rs@techno-flex.de>, 2017
+# OCA Transbot <transbot@odoo-community.org>, 2017
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-05-16 11:59+0000\n"
+"PO-Revision-Date: 2020-03-23 17:13+0000\n"
+"Last-Translator: Maria Sparenberg <maria.sparenberg@gmx.net>\n"
+"Language-Team: German (https://www.transifex.com/oca/teams/23907/de/)\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 3.10\n"
+
+#. module: account_invoice_comment_template
+#: model:ir.model.fields,field_description:account_invoice_comment_template.field_account_invoice__note2
+msgid "Bottom Comment"
+msgstr "Suffix-Textbaustein"
+
+#. module: account_invoice_comment_template
+#: model:ir.model.fields,field_description:account_invoice_comment_template.field_account_invoice__comment_template2_id
+msgid "Bottom Comment Template"
+msgstr "Suffix-Textbausteinvorlage"
+
+#. module: account_invoice_comment_template
+#: model_terms:ir.ui.view,arch_db:account_invoice_comment_template.invoice_form_add_comment
+msgid "Bottom Comments"
+msgstr "Suffix-Textbausteine"
+
+#. module: account_invoice_comment_template
+#: model_terms:ir.ui.view,arch_db:account_invoice_comment_template.invoice_form_add_comment
+msgid "Comments"
+msgstr "Textbausteine"
+
+#. module: account_invoice_comment_template
+#: model:ir.ui.menu,name:account_invoice_comment_template.menu_base_comment_template_invoice
+msgid "Document Comments"
+msgstr "Textbausteine"
+
+#. module: account_invoice_comment_template
+#: model:ir.model,name:account_invoice_comment_template.model_account_invoice
+msgid "Invoice"
+msgstr "Rechnung"
+
+#. module: account_invoice_comment_template
+#: model_terms:ir.ui.view,arch_db:account_invoice_comment_template.invoice_form_add_comment
+msgid "Load a template"
+msgstr "Textbausteinvorlage laden"
+
+#. module: account_invoice_comment_template
+#: model_terms:ir.ui.view,arch_db:account_invoice_comment_template.invoice_form_add_comment
+msgid ""
+"The comments will be displayed on the printed document. You can load a "
+"predefined template, write your own text or load a template and then modify "
+"it only for this document."
+msgstr ""
+"Diese Textbausteine werden auf Dokumentbelegen gedruckt. Es kann eine "
+"bereits existierende Vorlage geladen, ein neuer eigenständiger Text "
+"geschrieben oder eine Vorlage nach dem Laden nur für dieses Dokument "
+"angepasst werden."
+
+#. module: account_invoice_comment_template
+#: model:ir.model.fields,field_description:account_invoice_comment_template.field_account_invoice__note1
+msgid "Top Comment"
+msgstr "Präfix-Textbaustein"
+
+#. module: account_invoice_comment_template
+#: model:ir.model.fields,field_description:account_invoice_comment_template.field_account_invoice__comment_template1_id
+msgid "Top Comment Template"
+msgstr "Präfix-Textbausteinvorlage"
+
+#. module: account_invoice_comment_template
+#: model_terms:ir.ui.view,arch_db:account_invoice_comment_template.invoice_form_add_comment
+msgid "Top Comments"
+msgstr "Präfix-Textbausteine"
+
+#, fuzzy
+#~ msgid "Conditions template"
+#~ msgstr "Vorlage öffnen"
