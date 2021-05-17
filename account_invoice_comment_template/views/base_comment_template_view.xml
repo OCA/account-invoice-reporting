@@ -5,6 +5,7 @@
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">base.comment.template</field>
         <field name="view_mode">tree,form</field>
+        <field name="domain">[('model_ids.model', '=', 'account.move')]</field>
         <field
             name="context"
             eval="{'default_model_ids': [(4, ref('account.model_account_move'))]}"
