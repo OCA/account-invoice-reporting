@@ -58,7 +58,6 @@ class TestAccountInvoiceReport(TransactionCase):
         )
 
     def test_comments_in_invoice_report(self):
-        self.invoice._compute_comment_template_ids()
         res = (
             self.env["ir.actions.report"]
             ._get_report_from_name("account.report_invoice")
@@ -68,7 +67,6 @@ class TestAccountInvoiceReport(TransactionCase):
         self.assertRegexpMatches(str(res[0]), self.after_comment.text)
 
     def test_comments_in_invoice(self):
-        self.partner.property_comment_template_id = self.after_comment.id
         move_form = self._create_invoice()
         new_invoice = move_form.save()
         new_invoice._compute_comment_template_ids()
