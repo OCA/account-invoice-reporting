@@ -8,7 +8,7 @@
 {
     "name": "Account Invoice Comments Template",
     "summary": "Comments templates on invoice documents",
-    "version": "13.0.1.1.0",
+    "version": "13.0.1.1.1",
     "category": "Accounting & Finance",
     "author": "Camptocamp, Tecnativa, Odoo Community Association (OCA)",
     "development_status": "Mature",
