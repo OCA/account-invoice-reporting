@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-    <template
-        id="report_invoice_document"
-        inherit_id="account.report_invoice_document"
-        priority="99"
-    >
-        <xpath expr="//t[contains(@t-foreach, 'lines')]/t[3]" position="replace">
-
-    </xpath>
+    <template id="report_invoice_document" inherit_id="account.report_invoice_document">
+        <xpath expr="//t[contains(@t-foreach, 'lines')]/t[3]" position="attributes">
+            <attribute name="t-if">False</attribute>
+        </xpath>
         <xpath expr="//tbody[hasclass('invoice_tbody')]" position="inside">
             <t t-set="subtotal" t-value="0.0" />
             <t t-set="lines_grouped" t-value="o.lines_grouped_by_picking()" />
