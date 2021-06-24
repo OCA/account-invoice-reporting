@@ -84,7 +84,7 @@ class ResPartner(models.Model):
     def _get_invoice_payment(self, payment_ids, date_due):
         days_for_latest_payment = 0
         for payment in payment_ids:
-            if payment.state == 'posted':
+            if payment.state in ['posted', 'reconciled']:
                 days_for_this_payment = (
                     fields.Date.from_string(payment.payment_date) -
                     date_due).days
