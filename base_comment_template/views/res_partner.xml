@@ -7,6 +7,7 @@
         <field name="arch" type="xml">
             <group name="sale" position="inside">
                 <field name="property_comment_template_id" attrs="{'invisible': ['|',('customer', '=', False), ('is_company', '=', False), ('parent_id', '!=', False)]}"/>
+                <field name="property_comment_after_template_id" string="After Lines Comment Template" context="{'default_position': 'after_lines'}" domain="[('position', '=', 'after_lines')]" attrs="{'invisible': ['|',('customer', '=', False), ('is_company', '=', False), ('parent_id', '!=', False)]}"/>
             </group>
         </field>
     </record>

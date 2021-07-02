@@ -11,9 +11,14 @@ class ResPartner(models.Model):
         string='Conditions template',
         company_dependent=True,
     )
+    property_comment_after_template_id = fields.Many2one(
+        comodel_name="base.comment.template",
+        string="After Lines Comment template",
+        company_dependent=True,
+    )
 
     @api.model
     def _commercial_fields(self):
         res = super(ResPartner, self)._commercial_fields()
-        res += ['property_comment_template_id']
+        res += ['property_comment_template_id', 'property_comment_after_template_id']
         return res
