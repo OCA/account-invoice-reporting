@@ -34,7 +34,7 @@ class AccountInvoice(models.Model):
         self.ensure_one()
         due_list = []
         if self.move_id:
-            if self.type in ['in_invoice', 'out_refund']:
+            if self.type in ['in_invoice', 'in_refund']:
                 due_move_line_ids = self.move_id.line_ids.filtered(
                     lambda ml: ml.account_id.internal_type == 'payable'
                 )
