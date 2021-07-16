@@ -5,7 +5,7 @@
 <odoo>
     <template id="report_invoice_document" inherit_id="account.report_invoice_document">
         <xpath expr="//p[@t-field='o.invoice_date_due']/.." position="attributes">
-            <attribute name="t-att-class">'hidden'</attribute>
+            <attribute name="class" add="d-none" separator=" " />
         </xpath>
         <xpath
             expr="//span[@t-field='o.invoice_payment_term_id.note']"
