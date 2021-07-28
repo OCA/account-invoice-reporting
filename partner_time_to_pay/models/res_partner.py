@@ -28,9 +28,9 @@ class ResPartner(models.Model):
     def _compute_d2x(self):
         for partner in self:
             partner.d2p_ytd, partner.d2p_life = \
-                self._compute_d2x_per_invoice_type(partner, 'out_invoice')
-            partner.d2r_ytd, partner.d2r_life = \
                 self._compute_d2x_per_invoice_type(partner, 'in_invoice')
+            partner.d2r_ytd, partner.d2r_life = \
+                self._compute_d2x_per_invoice_type(partner, 'out_invoice')
 
     def _compute_d2x_per_invoice_type(self, partner, invoice_type):
 
