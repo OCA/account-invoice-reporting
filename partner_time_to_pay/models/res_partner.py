@@ -74,11 +74,27 @@ class ResPartner(models.Model):
 
     @api.multi
     def _get_invoice_ids(self, partner_id, invoice_type):
-        return self.env['account.invoice'].search([
-            ('partner_id', '=', partner_id),
-            ('state', '=', 'paid'),
-            ('type', '=', invoice_type)
-        ])
+        child_ids = []
+        for partner_id in self:
+            child_ids = (
+                self.with_context(active_test=False)
+                .search(
+                    [
+                        ("id", "child_of", partner_id.id),
+                        ("id", "!=", partner_id.id),
+                    ]
+                )
+                .ids
+            )
+            child_ids.append(partner_id.id)
+        inv_ids = self.env["account.invoice"].search(
+            [
+                ("partner_id", "in", child_ids),
+                ("state", "=", "paid"),
+                ("type", "=", invoice_type),
+            ]
+        )
+        return inv_ids
 
     @api.multi
     def _get_invoice_payment(self, payment_ids, date_due):
