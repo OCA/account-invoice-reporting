@@ -17,12 +17,12 @@ TODO: add repo description.
 
 Available addons
 ----------------
-addon | version | summary
---- | --- | ---
-[account_comment_template](account_comment_template/) | 14.0.2.0.0 | Comments templates on invoice documents
-[account_invoice_line_report](account_invoice_line_report/) | 14.0.1.0.0 | New view to manage invoice lines information
-[account_invoice_report_due_list](account_invoice_report_due_list/) | 14.0.1.1.0 | Show multiple due data in invoice
-[account_invoice_report_grouped_by_picking](account_invoice_report_grouped_by_picking/) | 14.0.1.1.0 | Print invoice lines grouped by picking
+addon | version | maintainers | summary
+--- | --- | --- | ---
+[account_comment_template](account_comment_template/) | 14.0.2.0.0 |  | Comments templates on invoice documents
+[account_invoice_line_report](account_invoice_line_report/) | 14.0.1.0.0 |  | New view to manage invoice lines information
+[account_invoice_report_due_list](account_invoice_report_due_list/) | 14.0.1.1.0 |  | Show multiple due data in invoice
+[account_invoice_report_grouped_by_picking](account_invoice_report_grouped_by_picking/) | 14.0.1.1.0 |  | Print invoice lines grouped by picking
 
 [//]: # (end addons)
 
