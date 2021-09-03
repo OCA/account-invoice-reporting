@@ -5,7 +5,7 @@
 
 from lxml import html
 
-from odoo.tests.common import SavepointCase
+from odoo.tests.common import Form, SavepointCase
 
 
 class TestAccountInvoiceGroupPicking(SavepointCase):
@@ -57,6 +57,16 @@ class TestAccountInvoiceGroupPicking(SavepointCase):
             }
         )
 
+    def get_return_picking_wizard(self, picking):
+        stock_return_picking_form = Form(
+            self.env["stock.return.picking"].with_context(
+                active_ids=picking.ids,
+                active_id=picking.ids[0],
+                active_model="stock.picking",
+            )
+        )
+        return stock_return_picking_form.save()
+
     def test_account_invoice_group_picking(self):
         # confirm quotation
         self.sale.action_confirm()
@@ -105,15 +115,7 @@ class TestAccountInvoiceGroupPicking(SavepointCase):
         picking._action_done()
         self.sale._create_invoices()
         # Return one picking from sale1
-        wiz_return = (
-            self.env["stock.return.picking"]
-            .with_context(
-                active_model="stock.picking",
-                active_id=picking.id,
-            )
-            .create({})
-        )
-        wiz_return._onchange_picking_id()
+        wiz_return = self.get_return_picking_wizard(picking)
         res = wiz_return.create_returns()
         picking_return = self.env["stock.picking"].browse(res["res_id"])
         picking_return.move_line_ids.write({"qty_done": 1})
