@@ -6,6 +6,11 @@ from openupgradelib import openupgrade
 @openupgrade.migrate()
 def migrate(env, version):
     openupgrade.logged_query(
+        env.cr, "DROP TABLE account_move_base_comment_template_rel"
+    )
+    Move = env["account.move"]
+    Move._fields["comment_template_ids"].update_db(Move, False)
+    openupgrade.logged_query(
         env.cr,
         """
         INSERT INTO account_move_base_comment_template_rel
