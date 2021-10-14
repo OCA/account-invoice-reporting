@@ -10,6 +10,7 @@ setuptools.setup(
     install_requires=[
         'odoo14-addon-account_comment_template',
         'odoo14-addon-account_invoice_line_report',
+        'odoo14-addon-account_invoice_line_sale_line_position',
         'odoo14-addon-account_invoice_report_due_list',
         'odoo14-addon-account_invoice_report_grouped_by_picking',
     ],
