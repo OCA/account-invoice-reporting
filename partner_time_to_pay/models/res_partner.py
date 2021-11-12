@@ -42,10 +42,7 @@ class ResPartner(models.Model):
         d2x_life = 0
 
         for invoice in self._get_invoice_ids(partner.id, invoice_type):
-            payment_ids = self.env["account.payment"].search(
-                [("reconciled_invoice_ids", "in", [invoice.id])]
-            )
-
+            payment_ids = move._get_reconciled_payments()
             date_due = fields.Date.from_string(invoice.invoice_date)
             invoice_year = date_due.year
 
