@@ -61,10 +61,10 @@ class TestAccountInvoiceReport(TransactionCase):
         res = (
             self.env["ir.actions.report"]
             ._get_report_from_name("account.report_invoice")
-            .render_qweb_html(self.invoice.ids)
+            ._render_qweb_html(self.invoice.ids)
         )
-        self.assertRegexpMatches(str(res[0]), self.before_comment.text)
-        self.assertRegexpMatches(str(res[0]), self.after_comment.text)
+        self.assertRegex(str(res[0]), self.before_comment.text)
+        self.assertRegex(str(res[0]), self.after_comment.text)
 
     def test_comments_in_invoice(self):
         move_form = self._create_invoice()
