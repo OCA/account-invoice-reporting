@@ -15,6 +15,7 @@
     "license": "AGPL-3",
     "installable": True,
     "depends": ["account", "base_comment_template"],
+    "website": "https://github.com/OCA/account-invoice-reporting",
     "data": [
         "views/account_move_view.xml",
         "views/base_comment_template_view.xml",
