@@ -29,7 +29,7 @@ class AccountMove(models.Model):
         so_dict = {x.sale_id: x for x in self.picking_ids if x.sale_id}
         # Now group by picking by direct link or via same SO as picking's one
         for line in self.invoice_line_ids.filtered(lambda x: not x.display_type):
-            remaining_qty = line.quantity
+            remaining_qty = line.quantity * sign
             for move in line.move_line_ids:
                 key = (move.picking_id, line)
                 picking_dict.setdefault(key, 0)
