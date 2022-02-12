@@ -5,6 +5,7 @@
 
 from lxml import html
 
+from odoo import fields
 from odoo.tests.common import Form, SavepointCase
 
 
@@ -125,3 +126,28 @@ class TestAccountInvoiceGroupPicking(SavepointCase):
         groups = invoice.lines_grouped_by_picking()
         self.assertEqual(len(groups), 1)
         self.assertEqual(groups[0]["picking"], picking_return)
+
+    def test_account_invoice_return_without_returned_good(self):
+        self.sale.action_confirm()
+        picking = self.sale.picking_ids[:1]
+        picking.action_confirm()
+        picking.move_line_ids.write({"qty_done": 1})
+        picking._action_done()
+        invoice = self.sale._create_invoices()
+        invoice.action_post()
+        # Refund invoice without return picking
+        move_reversal = (
+            self.env["account.move.reversal"]
+            .with_context(active_model="account.move", active_ids=invoice.ids)
+            .create(
+                {
+                    "date": fields.Date.today(),
+                    "reason": "no reason",
+                    "refund_method": "refund",
+                }
+            )
+        )
+        reversal = move_reversal.reverse_moves()
+        refund_invoice = self.env["account.move"].browse(reversal["res_id"])
+        groups = refund_invoice.lines_grouped_by_picking()
+        self.assertEqual(len(groups), 2)
