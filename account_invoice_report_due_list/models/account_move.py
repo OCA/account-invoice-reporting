@@ -9,7 +9,9 @@ class AccountMove(models.Model):
     _inherit = "account.move"
 
     multi_due = fields.Boolean(string="Multiple date due", compute="_compute_multi_due")
-    multi_date_due = fields.Char(string="Due Dates", compute="_compute_multi_date_due")
+    multi_date_due = fields.Char(
+        string="Due Dates", compute="_compute_multi_date_due", compute_sudo=True
+    )
 
     @api.depends("invoice_payment_term_id")
     def _compute_multi_due(self):
