@@ -14,6 +14,7 @@ setuptools.setup(
         'odoo14-addon-account_invoice_production_lot',
         'odoo14-addon-account_invoice_report_due_list',
         'odoo14-addon-account_invoice_report_grouped_by_picking',
+        'odoo14-addon-account_invoice_report_hide_line',
     ],
     classifiers=[
         'Programming Language :: Python',
