@@ -7,7 +7,7 @@
 
 {
     "name": "Invoice Production Lots",
-    "version": "13.0.1.0.0",
+    "version": "13.0.1.0.1",
     "author": "Agile Business Group," "Tecnativa," "Odoo Community Association (OCA)",
     "summary": "Display delivered serial numbers in invoice",
     "website": "https://github.com/OCA/account-invoice-reporting",

@@ -26,5 +26,6 @@ class AccountMoveLine(models.Model):
     def lots_grouped_by_quantity(self):
         lot_dict = defaultdict(float)
         for sml in self.mapped("move_line_ids.move_line_ids"):
-            lot_dict[sml.lot_id.name] += sml.qty_done
+            if sml.lot_id:
+                lot_dict[sml.lot_id.name] += sml.qty_done
         return lot_dict
