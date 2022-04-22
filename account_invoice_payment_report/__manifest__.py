@@ -4,7 +4,7 @@
 {
     "name": "Account Invoice Payments Report",
     "summary": "Display existing payment on invoice report",
-    "version": "10.0.1.0.0",
+    "version": "10.0.1.0.1",
     "category": "Accounting & Finance",
     "website": "https://github.com/OCA/account-invoicing",
     "author": "Camptocamp, Odoo Community Association (OCA)",
