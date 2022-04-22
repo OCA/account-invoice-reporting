@@ -14,7 +14,7 @@ addon | version | maintainers | summary
 --- | --- | --- | ---
 [account_draft_invoice_print](account_draft_invoice_print/) | 10.0.1.0.0 |  | Account Draft Invoice Print
 [account_invoice_line_report](account_invoice_line_report/) | 10.0.1.0.0 |  | New views to manage invoice lines information
-[account_invoice_payment_report](account_invoice_payment_report/) | 10.0.1.0.0 |  | Display existing payment on invoice report
+[account_invoice_payment_report](account_invoice_payment_report/) | 10.0.1.0.1 |  | Display existing payment on invoice report
 [account_invoice_production_lot](account_invoice_production_lot/) | 10.0.1.2.0 |  | Display delivered serial numbers in invoice
 [account_invoice_report_by_partner](account_invoice_report_by_partner/) | 10.0.1.0.0 |  | Invoice Report by Partner
 [account_invoice_report_due_list](account_invoice_report_due_list/) | 10.0.1.0.0 |  | Show multiple due data in invoice
