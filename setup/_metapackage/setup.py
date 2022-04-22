@@ -10,6 +10,7 @@ setuptools.setup(
     install_requires=[
         'odoo10-addon-account_draft_invoice_print',
         'odoo10-addon-account_invoice_line_report',
+        'odoo10-addon-account_invoice_payment_report',
         'odoo10-addon-account_invoice_production_lot',
         'odoo10-addon-account_invoice_report_by_partner',
         'odoo10-addon-account_invoice_report_due_list',
