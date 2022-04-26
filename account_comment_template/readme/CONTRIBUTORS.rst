@@ -15,3 +15,7 @@
 * `Druidoo <https://www.druidoo.io>`_:
 
   * Iván Todorovich <ivan.todorovich@druidoo.io>
+
+* `Jarsa <https://www.jarsa.com>`_:
+
+  * Alan Ramos <alan.ramos@jarsa.com>
