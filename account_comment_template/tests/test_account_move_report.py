@@ -39,7 +39,7 @@ class TestAccountInvoiceReport(TransactionCase):
 
     def _create_invoice(self):
         move_form = Form(
-            self.env["account.move"].with_context(default_type="out_invoice")
+            self.env["account.move"].with_context(default_move_type="out_invoice")
         )
         move_form.partner_id = self.partner
         move_form.journal_id = self.journal_sale
