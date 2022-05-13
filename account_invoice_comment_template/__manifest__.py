@@ -14,6 +14,7 @@
     "development_status": "Mature",
     "license": "AGPL-3",
     "installable": True,
+    "website": "https://github.com/OCA/account-invoice-reporting",
     "depends": ["account", "base_comment_template"],
     "data": [
         "views/account_move_view.xml",
