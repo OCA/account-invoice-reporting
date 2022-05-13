@@ -17,7 +17,20 @@ This project aim to deal with modules related to manage invoicing related report
 
 [//]: # (addons)
 
-This part will be replaced when running the oca-gen-addons-table script from OCA/maintainer-tools.
+Available addons
+----------------
+addon | version | maintainers | summary
+--- | --- | --- | ---
+[account_invoice_comment_template](account_invoice_comment_template/) | 13.0.1.1.1 |  | Comments templates on invoice documents
+[account_invoice_line_report](account_invoice_line_report/) | 13.0.1.0.0 |  | New view to manage invoice lines information
+[account_invoice_line_sale_line_position](account_invoice_line_sale_line_position/) | 13.0.1.0.0 |  | Adds the related sale line position on invoice line.
+[account_invoice_production_lot](account_invoice_production_lot/) | 13.0.1.0.1 |  | Display delivered serial numbers in invoice
+[account_invoice_report_due_list](account_invoice_report_due_list/) | 13.0.1.1.0 |  | Show multiple due data in invoice
+[account_invoice_report_grouped_by_picking](account_invoice_report_grouped_by_picking/) | 13.0.1.0.6 |  | Print invoice lines grouped by picking
+[account_invoice_report_grouped_by_picking_sale_mrp](account_invoice_report_grouped_by_picking_sale_mrp/) | 13.0.1.0.0 |  | Take into account BoM kits in invoice report grouped by picking
+[account_invoice_report_payment_info](account_invoice_report_payment_info/) | 13.0.1.0.1 |  | Show payment extended info in invoice
+[account_reporting_weight](account_reporting_weight/) | 13.0.1.0.1 |  | Weights in the invoices analysis view
+[partner_time_to_pay](partner_time_to_pay/) | 13.0.1.0.0 | [![max3903](https://github.com/max3903.png?size=30px)](https://github.com/max3903) | Add receivables and payables statistics to partners
 
 [//]: # (end addons)
 
