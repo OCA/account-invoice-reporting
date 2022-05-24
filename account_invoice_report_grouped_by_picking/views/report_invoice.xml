@@ -46,6 +46,12 @@
                                 t-options="{'widget': 'date'}"
                             />
                             <span t-field="picking.name" />
+                            <t t-if="len(lines_grouped) &gt; 1">
+                                <span>&amp;nbsp;</span>
+                                <t t-if="picking.partner_id.parent_id">
+                                    <span t-field="picking.partner_id.name"/>
+                                </t>
+                            </t>                            
                         </strong>
                     </td>
                 </tr>
