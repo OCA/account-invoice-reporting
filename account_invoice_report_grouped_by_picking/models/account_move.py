@@ -22,6 +22,17 @@ class AccountMove(models.Model):
             ),
         )
 
+    def _get_signed_quantity_done(self, invoice_line, move, sign):
+        """Hook method. Usage example:
+        account_invoice_report_grouped_by_picking_sale_mrp module
+        """
+        qty = 0
+        if move.location_id.usage == "customer":
+            qty = -move.quantity_done * sign
+        elif move.location_dest_id.usage == "customer":
+            qty = move.quantity_done * sign
+        return qty
+
     def lines_grouped_by_picking(self):
         """This prepares a data structure for printing the invoice report
         grouped by pickings."""
@@ -38,12 +49,7 @@ class AccountMove(models.Model):
             for move in line.move_line_ids:
                 key = (move.picking_id, line)
                 picking_dict.setdefault(key, 0)
-                qty = 0
-                if move.location_id.usage == "customer":
-                    qty = -move.quantity_done * sign
-                    has_returned_qty = True
-                elif move.location_dest_id.usage == "customer":
-                    qty = move.quantity_done * sign
+                qty = self._get_signed_quantity_done(line, move, sign)
                 picking_dict[key] += qty
                 remaining_qty -= qty
             if not line.move_line_ids and line.sale_line_ids:
