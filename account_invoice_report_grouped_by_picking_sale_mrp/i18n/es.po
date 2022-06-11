@@ -18,6 +18,24 @@ msgstr ""
 "X-Generator: Poedit 2.0.6\n"
 
 #. module: account_invoice_report_grouped_by_picking_sale_mrp
-#: model:ir.model,name:account_invoice_report_grouped_by_picking_sale_mrp.model_account_invoice
-msgid "Invoice"
-msgstr "Factura"
+#: model:ir.model.fields,field_description:account_invoice_report_grouped_by_picking_sale_mrp.field_account_move__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: account_invoice_report_grouped_by_picking_sale_mrp
+#: model:ir.model.fields,field_description:account_invoice_report_grouped_by_picking_sale_mrp.field_account_move__id
+msgid "ID"
+msgstr ""
+
+#. module: account_invoice_report_grouped_by_picking_sale_mrp
+#: model:ir.model,name:account_invoice_report_grouped_by_picking_sale_mrp.model_account_move
+msgid "Journal Entry"
+msgstr ""
+
+#. module: account_invoice_report_grouped_by_picking_sale_mrp
+#: model:ir.model.fields,field_description:account_invoice_report_grouped_by_picking_sale_mrp.field_account_move____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#~ msgid "Invoice"
+#~ msgstr "Factura"

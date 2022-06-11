@@ -71,7 +71,7 @@ class TestReportGroupedSaleMrp(SavepointCase):
         # deliver the sold kit_2 components
         picking_1.action_confirm()
         picking_1.mapped("move_lines").write({"quantity_done": 2})
-        picking_1.action_done()
+        picking_1._action_done()
         # Change the existing order line qty from 2 to 3 and deliver
         # the new kit_2
         with Form(self.sale_order) as sale_form:
@@ -86,7 +86,7 @@ class TestReportGroupedSaleMrp(SavepointCase):
         )
         picking_2.action_confirm()
         picking_2.mapped("move_lines").write({"quantity_done": 1})
-        picking_2.action_done()
+        picking_2._action_done()
         # Test directly grouping method
         move = self.sale_order._create_invoices()
         groups = move.lines_grouped_by_picking()
