@@ -21,9 +21,8 @@ class AccountInvoiceReport(models.Model):
     def _sub_select(self):
         select_str = super()._sub_select()
         select_str += """
-            , SUM(
-                pr.weight * invoice_type.sign_qty * ail.quantity / u.factor * u2.factor
-            )
-            AS weight
+            , SUM (
+                (invoice_type.sign_qty * ail.quantity * pr.weight) /
+                COALESCE(u.factor,1) * COALESCE(u2.factor,1)) AS weight
             """
         return select_str
