@@ -58,8 +58,9 @@ class TestPartnerTimeToPay(TransactionCase):
             {"name": "Bank", "type": "bank", "code": "BNK67"}
         )
 
-        ctx = {"active_model": "account.invoice", "active_ids": [self.invoice_id.id]}
-        self.register_payments = self.register_payments_model.with_context(ctx).create(
+        self.register_payments = self.register_payments_model.with_context(
+            active_model="account.move", active_ids=[self.invoice_id.id]
+        ).create(
             {
                 "payment_date": self.today + relativedelta(days=10),
                 "journal_id": self.bank_journal_euro.id,
