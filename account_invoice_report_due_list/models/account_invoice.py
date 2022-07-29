@@ -53,8 +53,11 @@ class AccountInvoice(models.Model):
         elif self.payment_term_id:
             date_invoice = (
                 self.date_invoice or fields.Date.context_today(self))
+            # add default_partner_id for compatibility with
+            # account_payment_term_partner_holiday
             due_list = self.payment_term_id.with_context(
-                currency_id=self.company_id.currency_id.id).compute(
+                currency_id=self.company_id.currency_id.id,
+                default_partner_id=self.partner_id.id).compute(
                 value=self.amount_total, date_ref=date_invoice)[0]
         due_list.sort()
         return due_list
