@@ -10,7 +10,8 @@ class ResPartner(models.Model):
     _inherit = "res.partner"
 
     d2p_life = fields.Float(
-        compute="_compute_d2x", string="AVG Days to Payable (lifetime)"
+        compute="_compute_d2x",
+        string="AVG Days to Payable (lifetime)",
     )
     d2p_ytd = fields.Float(compute="_compute_d2x", string="AVG Days to Payable (YTD)")
     d2r_life = fields.Float(

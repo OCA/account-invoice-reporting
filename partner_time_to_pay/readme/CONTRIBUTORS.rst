@@ -4,3 +4,4 @@
 * Sandip Mangukiya <smangukiya@opensourceintegrators.com>
 * Serpent Consulting Services Pvt. Ltd. <support@serpentcs.com>
 * Jevin Dement <jdement@opensourceintegrators.com>
+* Murtaza Mithaiwala <mmithaiwala@opensourceintegrators.com>
