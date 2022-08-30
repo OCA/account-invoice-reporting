@@ -6,10 +6,10 @@
 from lxml import html
 
 from odoo import fields
-from odoo.tests.common import Form, SavepointCase
+from odoo.tests.common import Form, TransactionCase
 
 
-class TestAccountInvoiceGroupPicking(SavepointCase):
+class TestAccountInvoiceGroupPicking(TransactionCase):
     @classmethod
     def setUpClass(cls):
         super(TestAccountInvoiceGroupPicking, cls).setUpClass()
@@ -144,6 +144,7 @@ class TestAccountInvoiceGroupPicking(SavepointCase):
                     "date": fields.Date.today(),
                     "reason": "no reason",
                     "refund_method": "refund",
+                    "journal_id": 1,
                 }
             )
         )
