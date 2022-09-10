@@ -65,6 +65,11 @@ class TestInvoiceReportDueList(common.SavepointCase):
                 "reconcile": True,
             }
         )
+        usd = cls.env.ref("base.USD")
+        eur = cls.env.ref("base.EUR")
+        cls.currency = cls.env.ref("base.main_company").currency_id
+        cls.currency_extra = eur if cls.currency == usd else usd
+        cls.currency_extra.active = True
 
     def test_due_list(self, move_type="out_invoice"):
         move_form = Form(
@@ -95,3 +100,17 @@ class TestInvoiceReportDueList(common.SavepointCase):
         )
         self.assertRegex(str(res[0]), date_due_format)
         self.assertRegex(str(res[0]), "75.0")
+
+    def test_due_list_currency_extra(self, move_type="out_invoice"):
+        move_form2 = Form(
+            self.env["account.move"].with_context(default_move_type=move_type)
+        )
+        move_form2.partner_id = self.partner
+        move_form2.invoice_payment_term_id = self.payment_term_multi
+        move_form2.currency_id = self.currency_extra
+        with move_form2.invoice_line_ids.new() as line_form2:
+            line_form2.product_id = self.product_id
+            line_form2.price_unit = 200.0
+        invoice2 = move_form2.save()
+        invoice2.action_post()
+        self.assertEqual(invoice2.get_multi_due_list()[0][2], 50.0)
