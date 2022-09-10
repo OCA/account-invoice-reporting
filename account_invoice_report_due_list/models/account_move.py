@@ -38,10 +38,13 @@ class AccountMove(models.Model):
         )
         if self.currency_id == self.company_id.currency_id:
             amount_field = "balance"
+            outstanding_field = "amount_residual"
         else:
             amount_field = "amount_currency"
+            outstanding_field = "amount_residual_currency"
         due_list = [
-            (ml.date_maturity or ml.date, ml[amount_field]) for ml in due_move_line_ids
+            (ml.date_maturity or ml.date, ml[amount_field], ml[outstanding_field])
+            for ml in due_move_line_ids
         ]
         due_list.sort()
         return due_list
