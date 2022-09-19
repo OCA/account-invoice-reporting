@@ -60,3 +60,8 @@ msgstr "Ultima modifica il"
 #: model:ir.model.fields,field_description:account_invoice_report_due_list.field_account_payment__multi_due
 msgid "Multiple date due"
 msgstr "Scadenze multiple"
+
+#. module: account_invoice_report_due_list
+#: model_terms:ir.ui.view,arch_db:account_invoice_report_due_list.report_invoice_document
+msgid "Outstanding"
+msgstr ""

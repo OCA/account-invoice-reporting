@@ -61,5 +61,10 @@ msgstr ""
 msgid "Multiple date due"
 msgstr "Datas de vencimento múltiplas"
 
+#. module: account_invoice_report_due_list
+#: model_terms:ir.ui.view,arch_db:account_invoice_report_due_list.report_invoice_document
+msgid "Outstanding"
+msgstr ""
+
 #~ msgid "Invoice"
 #~ msgstr "Fatura"

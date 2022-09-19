@@ -61,5 +61,10 @@ msgstr "Zuletzt geändert am"
 msgid "Multiple date due"
 msgstr "Mehrere Fälligkeiten"
 
+#. module: account_invoice_report_due_list
+#: model_terms:ir.ui.view,arch_db:account_invoice_report_due_list.report_invoice_document
+msgid "Outstanding"
+msgstr ""
+
 #~ msgid "Invoice"
 #~ msgstr "Rechnung"
