@@ -21,7 +21,7 @@ Available addons
 ----------------
 addon | version | maintainers | summary
 --- | --- | --- | ---
-[account_invoice_report_due_list](account_invoice_report_due_list/) | 15.0.1.0.0 |  | Show multiple due data in invoice
+[account_invoice_report_due_list](account_invoice_report_due_list/) | 15.0.2.0.0 |  | Show multiple due data in invoice
 [account_reporting_weight](account_reporting_weight/) | 15.0.1.0.0 |  | Weights in the invoices analysis view
 
 [//]: # (end addons)
