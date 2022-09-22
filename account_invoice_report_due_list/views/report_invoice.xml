@@ -19,6 +19,7 @@
                             <tr>
                                 <th>Date Due</th>
                                 <th class="text-right">Amount</th>
+                                <th class="text-right">Outstanding</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -32,6 +33,12 @@
                                 <td class="text-right">
                                     <span
                                         t-esc="due_tuple[1]"
+                                        t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"
+                                    />
+                                </td>
+                                <td class="text-right">
+                                    <span
+                                        t-esc="due_tuple[2]"
                                         t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"
                                     />
                                 </td>
