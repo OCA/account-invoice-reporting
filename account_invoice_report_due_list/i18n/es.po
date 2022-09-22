@@ -28,11 +28,6 @@ msgid "Date Due"
 msgstr "Fecha de vencimiento"
 
 #. module: account_invoice_report_due_list
-#: model:ir.model.fields,field_description:account_invoice_report_due_list.field_account_move__display_name
-msgid "Display Name"
-msgstr "Nombre mostrado"
-
-#. module: account_invoice_report_due_list
 #: model:ir.model.fields,field_description:account_invoice_report_due_list.field_account_bank_statement_line__multi_date_due
 #: model:ir.model.fields,field_description:account_invoice_report_due_list.field_account_move__multi_date_due
 #: model:ir.model.fields,field_description:account_invoice_report_due_list.field_account_payment__multi_date_due
@@ -41,19 +36,9 @@ msgid "Due Dates"
 msgstr "Fechas de vencimiento"
 
 #. module: account_invoice_report_due_list
-#: model:ir.model.fields,field_description:account_invoice_report_due_list.field_account_move__id
-msgid "ID"
-msgstr "ID"
-
-#. module: account_invoice_report_due_list
 #: model:ir.model,name:account_invoice_report_due_list.model_account_move
 msgid "Journal Entry"
 msgstr "Asiento contable"
-
-#. module: account_invoice_report_due_list
-#: model:ir.model.fields,field_description:account_invoice_report_due_list.field_account_move____last_update
-msgid "Last Modified on"
-msgstr "Última modificación el"
 
 #. module: account_invoice_report_due_list
 #: model:ir.model.fields,field_description:account_invoice_report_due_list.field_account_bank_statement_line__multi_due
@@ -61,6 +46,20 @@ msgstr "Última modificación el"
 #: model:ir.model.fields,field_description:account_invoice_report_due_list.field_account_payment__multi_due
 msgid "Multiple date due"
 msgstr "Múltiples fechas de vencimiento"
+
+#. module: account_invoice_report_due_list
+#: model_terms:ir.ui.view,arch_db:account_invoice_report_due_list.report_invoice_document
+msgid "Outstanding"
+msgstr ""
+
+#~ msgid "Display Name"
+#~ msgstr "Nombre mostrado"
+
+#~ msgid "ID"
+#~ msgstr "ID"
+
+#~ msgid "Last Modified on"
+#~ msgstr "Última modificación el"
 
 #~ msgid "Invoice"
 #~ msgstr "Factura"
