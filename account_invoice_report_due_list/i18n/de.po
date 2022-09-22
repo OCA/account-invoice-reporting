@@ -27,11 +27,6 @@ msgid "Date Due"
 msgstr "Fälligkeitsdatum"
 
 #. module: account_invoice_report_due_list
-#: model:ir.model.fields,field_description:account_invoice_report_due_list.field_account_move__display_name
-msgid "Display Name"
-msgstr "Anzeigename"
-
-#. module: account_invoice_report_due_list
 #: model:ir.model.fields,field_description:account_invoice_report_due_list.field_account_bank_statement_line__multi_date_due
 #: model:ir.model.fields,field_description:account_invoice_report_due_list.field_account_move__multi_date_due
 #: model:ir.model.fields,field_description:account_invoice_report_due_list.field_account_payment__multi_date_due
@@ -40,19 +35,9 @@ msgid "Due Dates"
 msgstr "Fälligkeiten"
 
 #. module: account_invoice_report_due_list
-#: model:ir.model.fields,field_description:account_invoice_report_due_list.field_account_move__id
-msgid "ID"
-msgstr "ID"
-
-#. module: account_invoice_report_due_list
 #: model:ir.model,name:account_invoice_report_due_list.model_account_move
 msgid "Journal Entry"
 msgstr "Journalbuchung"
-
-#. module: account_invoice_report_due_list
-#: model:ir.model.fields,field_description:account_invoice_report_due_list.field_account_move____last_update
-msgid "Last Modified on"
-msgstr "Zuletzt geändert am"
 
 #. module: account_invoice_report_due_list
 #: model:ir.model.fields,field_description:account_invoice_report_due_list.field_account_bank_statement_line__multi_due
@@ -60,6 +45,20 @@ msgstr "Zuletzt geändert am"
 #: model:ir.model.fields,field_description:account_invoice_report_due_list.field_account_payment__multi_due
 msgid "Multiple date due"
 msgstr "Mehrere Fälligkeiten"
+
+#. module: account_invoice_report_due_list
+#: model_terms:ir.ui.view,arch_db:account_invoice_report_due_list.report_invoice_document
+msgid "Outstanding"
+msgstr ""
+
+#~ msgid "Display Name"
+#~ msgstr "Anzeigename"
+
+#~ msgid "ID"
+#~ msgstr "ID"
+
+#~ msgid "Last Modified on"
+#~ msgstr "Zuletzt geändert am"
 
 #~ msgid "Invoice"
 #~ msgstr "Rechnung"
