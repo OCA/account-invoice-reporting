@@ -7,15 +7,15 @@ msgstr ""
 "Project-Id-Version: Odoo Server 11.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-03-05 17:09+0000\n"
-"PO-Revision-Date: 2021-03-05 18:11+0100\n"
-"Last-Translator: <>\n"
+"PO-Revision-Date: 2022-09-23 09:07+0000\n"
+"Last-Translator: David Alonso (Solvos) <david.alonso@solvos.es>\n"
 "Language-Team: \n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: \n"
-"X-Generator: Poedit 2.3\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.3.2\n"
 
 #. module: account_invoice_report_due_list
 #: model_terms:ir.ui.view,arch_db:account_invoice_report_due_list.report_invoice_document
@@ -50,7 +50,7 @@ msgstr "Múltiples fechas de vencimiento"
 #. module: account_invoice_report_due_list
 #: model_terms:ir.ui.view,arch_db:account_invoice_report_due_list.report_invoice_document
 msgid "Outstanding"
-msgstr ""
+msgstr "Pendiente"
 
 #~ msgid "Display Name"
 #~ msgstr "Nombre mostrado"
