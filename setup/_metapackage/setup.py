@@ -9,6 +9,7 @@ setuptools.setup(
     version=version,
     install_requires=[
         'odoo-addon-account_comment_template>=15.0dev,<15.1dev',
+        'odoo-addon-account_invoice_line_sale_line_position>=15.0dev,<15.1dev',
         'odoo-addon-account_invoice_report_due_list>=15.0dev,<15.1dev',
         'odoo-addon-account_reporting_weight>=15.0dev,<15.1dev',
     ],
