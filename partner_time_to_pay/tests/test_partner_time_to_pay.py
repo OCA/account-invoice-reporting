@@ -64,7 +64,6 @@ class TestPartnerTimeToPay(TransactionCase):
             {
                 "payment_date": self.today + relativedelta(days=10),
                 "journal_id": self.bank_journal_euro.id,
-                "payment_method_id": self.payment_method_manual_in.id,
             }
         )
         self.register_payments.create_payments()
