@@ -152,3 +152,117 @@ class TestAccountInvoiceGroupPicking(SavepointCase):
         refund_invoice = self.env["account.move"].browse(reversal["res_id"])
         groups = refund_invoice.lines_grouped_by_picking()
         self.assertEqual(len(groups), 2)
+
+    def test_account_invoice_group_picking_refund(self):
+        # confirm quotation
+        self.sale.action_confirm()
+        # deliver lines2
+        picking = self.sale.picking_ids[:1]
+        picking.action_confirm()
+        picking.move_line_ids.write({"qty_done": 1})
+        picking.action_done()
+        # invoice sales
+        invoice = self.sale._create_invoices()
+        invoice.post()
+        # Test directly grouping method
+        # invoice = self.env["account.move"].browse(inv_id)
+        groups = invoice.lines_grouped_by_picking()
+        self.assertEqual(len(groups), 2)
+        self.assertEqual(groups[0]["picking"], groups[1]["picking"])
+        # Test report
+        content = html.document_fromstring(
+            self.env.ref("account.account_invoices").render_qweb_html(invoice.id)[0]
+        )
+        tbody = content.xpath("//tbody[@class='invoice_tbody']")
+        tbody = [html.tostring(line, encoding="utf-8").strip() for line in tbody][
+            0
+        ].decode()
+        # information about sales is printed
+        self.assertEqual(tbody.count(self.sale.name), 1)
+        # information about pickings is printed
+        self.assertTrue(picking.name in tbody)
+        # Return picking
+        wiz_return = self.get_return_picking_wizard(picking)
+        res = wiz_return.create_returns()
+        picking_return = self.env["stock.picking"].browse(res["res_id"])
+        picking_return.move_line_ids.write({"qty_done": 1})
+        picking_return.action_done()
+        # Refund invoice
+        wiz_invoice_refund = (
+            self.env["account.move.reversal"]
+            .with_context(active_model="account.move", active_ids=invoice.ids)
+            .create({"refund_method": "cancel", "reason": "test"})
+        )
+        wiz_invoice_refund.reverse_moves()
+        new_invoice = self.sale.invoice_ids.filtered(lambda i: i.type == "out_refund")
+        # Test directly grouping method
+        # invoice = self.env["account.move"].browse(inv_id)
+        groups = new_invoice.lines_grouped_by_picking()
+        self.assertEqual(len(groups), 2)
+        self.assertEqual(groups[0]["picking"], groups[1]["picking"])
+        # Test report
+        content = html.document_fromstring(
+            self.env.ref("account.account_invoices").render_qweb_html(new_invoice.id)[0]
+        )
+        tbody = content.xpath("//tbody[@class='invoice_tbody']")
+        tbody = [html.tostring(line, encoding="utf-8").strip() for line in tbody][
+            0
+        ].decode()
+        # information about sales is printed
+        self.assertEqual(tbody.count(self.sale.name), 1)
+        # information about pickings is printed
+        self.assertTrue(picking_return.name in tbody)
+
+    def test_account_invoice_group_picking_refund_without_return(self):
+        # confirm quotation
+        self.sale.action_confirm()
+        # deliver lines2
+        picking = self.sale.picking_ids[:1]
+        picking.action_confirm()
+        picking.move_line_ids.write({"qty_done": 1})
+        picking.action_done()
+        # invoice sales
+        invoice = self.sale._create_invoices()
+        invoice.post()
+        # Test directly grouping method
+        # invoice = self.env["account.move"].browse(inv_id)
+        groups = invoice.lines_grouped_by_picking()
+        self.assertEqual(len(groups), 2)
+        self.assertEqual(groups[0]["picking"], groups[1]["picking"])
+        # Test report
+        content = html.document_fromstring(
+            self.env.ref("account.account_invoices").render_qweb_html(invoice.id)[0]
+        )
+        tbody = content.xpath("//tbody[@class='invoice_tbody']")
+        tbody = [html.tostring(line, encoding="utf-8").strip() for line in tbody][
+            0
+        ].decode()
+        # information about sales is printed
+        self.assertEqual(tbody.count(self.sale.name), 1)
+        # information about pickings is printed
+        self.assertTrue(picking.name in tbody)
+        # Refund invoice
+        wiz_invoice_refund = (
+            self.env["account.move.reversal"]
+            .with_context(active_model="account.move", active_ids=invoice.ids)
+            .create({"refund_method": "cancel", "reason": "test"})
+        )
+        wiz_invoice_refund.reverse_moves()
+        new_invoice = self.sale.invoice_ids.filtered(lambda i: i.type == "out_refund")
+        # Test directly grouping method
+        # invoice = self.env["account.move"].browse(inv_id)
+        groups = new_invoice.lines_grouped_by_picking()
+        self.assertEqual(len(groups), 2)
+        self.assertEqual(groups[0]["picking"], groups[1]["picking"])
+        # Test report
+        content = html.document_fromstring(
+            self.env.ref("account.account_invoices").render_qweb_html(new_invoice.id)[0]
+        )
+        tbody = content.xpath("//tbody[@class='invoice_tbody']")
+        tbody = [html.tostring(line, encoding="utf-8").strip() for line in tbody][
+            0
+        ].decode()
+        # information about sales is printed
+        self.assertEqual(tbody.count(self.sale.name), 1)
+        # information about pickings is printed
+        self.assertTrue(picking.name in tbody)
