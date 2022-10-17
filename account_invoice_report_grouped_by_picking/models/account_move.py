@@ -39,8 +39,19 @@ class AccountMove(models.Model):
         self.ensure_one()
         picking_dict = OrderedDict()
         lines_dict = OrderedDict()
-        sign = -1.0 if self.move_type == "out_refund" else 1.0
-        # Let's get first a correspondence between pickings and sales order
+        # Not change sign if the credit note has been created from reverse move option
+        # and it has the same pickings related than the reversed invoice instead of sale
+        # order invoicing process after picking reverse transfer
+        sign = (
+            -1.0
+            if self.move_type == "out_refund"
+            and (
+                not self.reversed_entry_id
+                or self.reversed_entry_id.picking_ids != self.picking_ids
+            )
+            else 1.0
+        )
+        # Let's get first a correspondance between pickings and sales order
         so_dict = {x.sale_id: x for x in self.picking_ids if x.sale_id}
         # Now group by picking by direct link or via same SO as picking's one
         for line in self.invoice_line_ids.filtered(lambda x: not x.display_type):
