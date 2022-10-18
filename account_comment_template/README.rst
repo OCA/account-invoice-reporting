@@ -23,7 +23,7 @@ Account Comments
     :target: https://runbot.odoo-community.org/runbot/94/15.0
     :alt: Try me on Runbot
 
-|badge1| |badge2| |badge3| |badge4| |badge5| 
+|badge1| |badge2| |badge3| |badge4| |badge5|
 
 Adds comments on invoices.
 The comments can be edited directly on the invoices or loaded from
@@ -82,6 +82,10 @@ Contributors
 * `Jarsa <https://www.jarsa.com>`_:
 
   * Alan Ramos <alan.ramos@jarsa.com>
+
+* `Bloopark systems <https://www.bloopark.de/>`_:
+
+  * Achraf Mhadhbi <machraf@bloopark.de>
 
 Maintainers
 ~~~~~~~~~~~

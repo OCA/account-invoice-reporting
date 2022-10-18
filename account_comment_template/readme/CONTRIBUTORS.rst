@@ -19,3 +19,7 @@
 * `Jarsa <https://www.jarsa.com>`_:
 
   * Alan Ramos <alan.ramos@jarsa.com>
+
+* `Bloopark systems <https://www.bloopark.de/>`_:
+
+  * Achraf Mhadhbi <machraf@bloopark.de>

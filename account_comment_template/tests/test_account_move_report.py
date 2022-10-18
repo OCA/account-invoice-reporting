@@ -1,60 +1,36 @@
 # Copyright 2017 Simone Rubino - Agile Business Group
 # Copyright 2018 Tecnativa - Pedro M. Baeza
 # Copyright 2021 Tecnativa - Víctor Martínez
+# Copyright 2022 Bloopark systems - Achraf Mhadhbi
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
-from odoo.tests.common import Form, TransactionCase
+from odoo.tests import tagged
+
+from odoo.addons.account.tests.common import AccountTestInvoicingCommon
 
 
-class TestAccountInvoiceReport(TransactionCase):
-    def setUp(self):
-        super().setUp()
-        self.company = self.env.ref("base.main_company")
-        self.base_comment_model = self.env["base.comment.template"]
-        self.move_obj = self.env.ref("account.model_account_move")
-        self.before_comment = self._create_comment("before_lines")
-        self.after_comment = self._create_comment("after_lines")
-        self.partner = self.env["res.partner"].create({"name": "Partner Test"})
-        self.partner.base_comment_template_ids = [
-            (4, self.before_comment.id),
-            (4, self.after_comment.id),
+@tagged("post_install", "-at_install")
+class TestAccountInvoiceReport(AccountTestInvoicingCommon):
+    @classmethod
+    def setUpClass(cls, chart_template_ref=None):
+        super().setUpClass(chart_template_ref=chart_template_ref)
+        cls.base_comment_model = cls.env["base.comment.template"]
+        cls.move_obj = cls.env.ref("account.model_account_move")
+        cls.before_comment = cls._create_comment(cls, position="before_lines")
+        cls.after_comment = cls._create_comment(cls, position="after_lines")
+        cls.partner_a.base_comment_template_ids = [
+            (4, cls.before_comment.id),
+            (4, cls.after_comment.id),
         ]
-        self.income_account = self.env["account.account"].search(
-            [
-                ("user_type_id.name", "=", "Income"),
-                ("company_id", "=", self.company.id),
-            ],
-            limit=1,
+        cls.invoice = cls.init_invoice(
+            "out_invoice", products=cls.product_a + cls.product_b
         )
-        self.journal_sale = self.env["account.journal"].create(
-            {
-                "name": "Test journal sale",
-                "code": "TST-JRNL-S",
-                "type": "sale",
-                "company_id": self.company.id,
-            }
-        )
-        move_form = self._create_invoice()
-        self.invoice = move_form.save()
-
-    def _create_invoice(self):
-        move_form = Form(
-            self.env["account.move"].with_context(default_move_type="out_invoice")
-        )
-        move_form.partner_id = self.partner
-        move_form.journal_id = self.journal_sale
-        with move_form.invoice_line_ids.new() as line_form:
-            line_form.name = "test"
-            line_form.quantity = 1.0
-            line_form.price_unit = 100
-            line_form.account_id = self.income_account
-        return move_form
 
     def _create_comment(self, position):
         return self.base_comment_model.create(
             {
                 "name": "Comment " + position,
-                "company_id": self.company.id,
+                "company_id": self.company_data["company"].id,
                 "position": position,
                 "text": "Text " + position,
                 "model_ids": [(6, 0, self.move_obj.ids)],
@@ -62,17 +38,16 @@ class TestAccountInvoiceReport(TransactionCase):
         )
 
     def test_comments_in_invoice_report(self):
-        res = (
-            self.env["ir.actions.report"]
-            ._get_report_from_name("account.report_invoice")
-            ._render_qweb_html(self.invoice.ids)
+        res = self.env["ir.actions.report"]._render_qweb_html(
+            "account.report_invoice", self.invoice.ids
         )
         self.assertRegex(str(res[0]), self.before_comment.text)
         self.assertRegex(str(res[0]), self.after_comment.text)
 
     def test_comments_in_invoice(self):
-        move_form = self._create_invoice()
-        new_invoice = move_form.save()
+        new_invoice = self.init_invoice(
+            "out_invoice", products=self.product_a + self.product_b
+        )
         new_invoice._compute_comment_template_ids()
         self.assertTrue(self.after_comment in new_invoice.comment_template_ids)
         self.assertTrue(self.before_comment in new_invoice.comment_template_ids)
