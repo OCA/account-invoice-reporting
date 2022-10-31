@@ -58,7 +58,7 @@ class TestPartnerTimeToPay(TransactionCase):
             {"name": "Bank", "type": "bank", "code": "BNK67"}
         )
 
-        ctx = {"active_model": "account.invoice", "active_ids": [self.invoice_id.id]}
+        ctx = {"active_model": "account.move", "active_ids": [self.invoice_id.id]}
         self.register_payments = self.register_payments_model.with_context(ctx).create(
             {
                 "payment_date": self.today + relativedelta(days=10),
@@ -66,7 +66,7 @@ class TestPartnerTimeToPay(TransactionCase):
                 "payment_method_id": self.payment_method_manual_in.id,
             }
         )
-        self.register_payments.create_payments()
+        self.register_payments._create_payments()
         self.payment = self.payment_model.search([], order="id desc", limit=1)
 
     def test_partner_compute_d2x(self):

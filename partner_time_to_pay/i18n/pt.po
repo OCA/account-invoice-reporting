@@ -1,6 +1,6 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* partner_time_to_pay
+# 	* partner_time_to_pay
 #
 msgid ""
 msgstr ""
@@ -44,3 +44,18 @@ msgstr "MED Dias até Recebível (sempre)"
 #: model:ir.model,name:partner_time_to_pay.model_res_partner
 msgid "Contact"
 msgstr "Contacto"
+
+#. module: partner_time_to_pay
+#: model:ir.model.fields,field_description:partner_time_to_pay.field_res_partner__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: partner_time_to_pay
+#: model:ir.model.fields,field_description:partner_time_to_pay.field_res_partner__id
+msgid "ID"
+msgstr ""
+
+#. module: partner_time_to_pay
+#: model:ir.model.fields,field_description:partner_time_to_pay.field_res_partner____last_update
+msgid "Last Modified on"
+msgstr ""
