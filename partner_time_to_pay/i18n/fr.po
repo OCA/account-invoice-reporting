@@ -51,5 +51,20 @@ msgstr "Moy. Jours pour payer (durée)"
 msgid "Contact"
 msgstr ""
 
+#. module: partner_time_to_pay
+#: model:ir.model.fields,field_description:partner_time_to_pay.field_res_partner__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: partner_time_to_pay
+#: model:ir.model.fields,field_description:partner_time_to_pay.field_res_partner__id
+msgid "ID"
+msgstr ""
+
+#. module: partner_time_to_pay
+#: model:ir.model.fields,field_description:partner_time_to_pay.field_res_partner____last_update
+msgid "Last Modified on"
+msgstr ""
+
 #~ msgid "Partner"
 #~ msgstr "Partenaire"
