@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template
+        id="report_invoice_document_with_payments"
+        inherit_id="account.report_invoice_document"
+    >
+        <xpath expr="//t[@t-foreach='payments_vals']/tr/td" position="inside">
+            <small t-esc="payment_vals.get('extra_info')" />
+        </xpath>
+    </template>
+</odoo>
