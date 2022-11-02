@@ -28,7 +28,7 @@ addon | version | maintainers | summary
 [account_invoice_report_grouped_by_picking](account_invoice_report_grouped_by_picking/) | 14.0.1.1.4 |  | Print invoice lines grouped by picking
 [account_invoice_report_grouped_by_picking_sale_mrp](account_invoice_report_grouped_by_picking_sale_mrp/) | 14.0.1.0.0 |  | Take into account BoM kits in invoice report grouped by picking
 [account_invoice_report_hide_line](account_invoice_report_hide_line/) | 14.0.1.0.0 | [![bodedra](https://github.com/bodedra.png?size=30px)](https://github.com/bodedra) [![max3903](https://github.com/max3903.png?size=30px)](https://github.com/max3903) | Hide invoice lines from the PDF report if the unit price is 0
-[partner_time_to_pay](partner_time_to_pay/) | 14.0.1.0.0 | [![max3903](https://github.com/max3903.png?size=30px)](https://github.com/max3903) | Add receivables and payables statistics to partners
+[partner_time_to_pay](partner_time_to_pay/) | 14.0.1.0.1 | [![max3903](https://github.com/max3903.png?size=30px)](https://github.com/max3903) | Add receivables and payables statistics to partners
 
 [//]: # (end addons)
 
