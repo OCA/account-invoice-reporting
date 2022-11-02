@@ -1,0 +1,43 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* partner_time_to_pay
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: partner_time_to_pay
+#: model:ir.model.fields,field_description:partner_time_to_pay.field_res_partner__d2p_ytd
+#: model:ir.model.fields,field_description:partner_time_to_pay.field_res_users__d2p_ytd
+msgid "AVG Days to Payable (YTD)"
+msgstr ""
+
+#. module: partner_time_to_pay
+#: model:ir.model.fields,field_description:partner_time_to_pay.field_res_partner__d2p_life
+#: model:ir.model.fields,field_description:partner_time_to_pay.field_res_users__d2p_life
+msgid "AVG Days to Payable (lifetime)"
+msgstr ""
+
+#. module: partner_time_to_pay
+#: model:ir.model.fields,field_description:partner_time_to_pay.field_res_partner__d2r_ytd
+#: model:ir.model.fields,field_description:partner_time_to_pay.field_res_users__d2r_ytd
+msgid "AVG Days to Receivable (YTD)"
+msgstr ""
+
+#. module: partner_time_to_pay
+#: model:ir.model.fields,field_description:partner_time_to_pay.field_res_partner__d2r_life
+#: model:ir.model.fields,field_description:partner_time_to_pay.field_res_users__d2r_life
+msgid "AVG Days to Receivable (lifetime)"
+msgstr ""
+
+#. module: partner_time_to_pay
+#: model:ir.model,name:partner_time_to_pay.model_res_partner
+msgid "Contact"
+msgstr ""

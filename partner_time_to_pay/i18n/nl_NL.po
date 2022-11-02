@@ -1,0 +1,56 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * partner_time_to_pay
+#
+# Translators:
+# Peter Hageman <hageman.p@gmail.com>, 2017
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-06-28 00:42+0000\n"
+"PO-Revision-Date: 2017-06-28 00:42+0000\n"
+"Last-Translator: Peter Hageman <hageman.p@gmail.com>, 2017\n"
+"Language-Team: Dutch (Netherlands) (https://www.transifex.com/oca/"
+"teams/23907/nl_NL/)\n"
+"Language: nl_NL\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: partner_time_to_pay
+#: model:ir.model.fields,field_description:partner_time_to_pay.field_res_partner__d2p_ytd
+#: model:ir.model.fields,field_description:partner_time_to_pay.field_res_users__d2p_ytd
+#, fuzzy
+msgid "AVG Days to Payable (YTD)"
+msgstr "Gem. Dagen tot Betalen (dit jaar)"
+
+#. module: partner_time_to_pay
+#: model:ir.model.fields,field_description:partner_time_to_pay.field_res_partner__d2p_life
+#: model:ir.model.fields,field_description:partner_time_to_pay.field_res_users__d2p_life
+#, fuzzy
+msgid "AVG Days to Payable (lifetime)"
+msgstr "Gem. Dagen tot Betalen (alle)"
+
+#. module: partner_time_to_pay
+#: model:ir.model.fields,field_description:partner_time_to_pay.field_res_partner__d2r_ytd
+#: model:ir.model.fields,field_description:partner_time_to_pay.field_res_users__d2r_ytd
+#, fuzzy
+msgid "AVG Days to Receivable (YTD)"
+msgstr "Gem. Dagen tot Betalen (dit jaar)"
+
+#. module: partner_time_to_pay
+#: model:ir.model.fields,field_description:partner_time_to_pay.field_res_partner__d2r_life
+#: model:ir.model.fields,field_description:partner_time_to_pay.field_res_users__d2r_life
+#, fuzzy
+msgid "AVG Days to Receivable (lifetime)"
+msgstr "Gem. Dagen tot Betalen (alle)"
+
+#. module: partner_time_to_pay
+#: model:ir.model,name:partner_time_to_pay.model_res_partner
+msgid "Contact"
+msgstr ""
+
+#~ msgid "Partner"
+#~ msgstr "Relatie"
