@@ -5,7 +5,7 @@
 
 from collections import OrderedDict
 
-from odoo import api, fields, models
+from odoo import api, models
 from odoo.tools import float_is_zero
 
 
@@ -17,8 +17,7 @@ class AccountMove(models.Model):
         return sorted(
             lines_dic,
             key=lambda x: (
-                x["picking"].date or fields.Datetime.now(),
-                x["picking"].date_done or fields.Datetime.now(),
+                (x["picking"].date, x["picking"].date_done or x["picking"].date)
             ),
         )
 
