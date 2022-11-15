@@ -12,7 +12,7 @@ from odoo.tests.common import Form
 from odoo.tools import posix_to_ldml, pycompat
 
 
-class TestInvoiceReportDueList(common.SavepointCase):
+class TestInvoiceReportDueList(common.TransactionCase):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
