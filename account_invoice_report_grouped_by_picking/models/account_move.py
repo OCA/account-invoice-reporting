@@ -15,7 +15,10 @@ class AccountMove(models.Model):
     @api.model
     def _sort_grouped_lines(self, lines_dic):
         return sorted(
-            lines_dic, key=lambda x: (x["picking"].date, x["picking"].date_done)
+            lines_dic,
+            key=lambda x: (
+                (x["picking"].date, x["picking"].date_done or x["picking"].date)
+            ),
         )
 
     def _get_signed_quantity_done(self, invoice_line, move, sign):
