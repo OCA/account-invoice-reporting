@@ -48,6 +48,3 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:account_invoice_line_report.view_account_invoice_report_search
 msgid "Without Price"
 msgstr ""
-
-#~ msgid "Partner Tags"
-#~ msgstr "Oznake partnerja"
