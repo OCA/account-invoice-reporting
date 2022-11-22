@@ -28,11 +28,6 @@ msgid ""
 msgstr ""
 
 #. module: account_invoice_line_report
-#: model_terms:ir.ui.view,arch_db:account_invoice_line_report.view_invoice_report_tree_info
-msgid "Invoice Line"
-msgstr "Linie factura"
-
-#. module: account_invoice_line_report
 #: model:ir.actions.act_window,name:account_invoice_line_report.action_account_invoice_line_report
 #: model:ir.ui.menu,name:account_invoice_line_report.menu_action_account_invoice_line_report
 msgid "Invoice Lines"
@@ -47,3 +42,6 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:account_invoice_line_report.view_account_invoice_report_search
 msgid "Without Price"
 msgstr ""
+
+#~ msgid "Invoice Line"
+#~ msgstr "Linie factura"
