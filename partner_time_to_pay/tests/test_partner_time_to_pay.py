@@ -46,5 +46,5 @@ class TestPartnerTimeToPay(TransactionCase):
         ).action_create_payments()
 
     def test_partner_compute_d2x(self):
-        self.assertEqual(self.partner.d2p_ytd, self.time_to_pay_days)
-        self.assertEqual(self.partner.d2p_life, self.time_to_pay_days)
+        self.assertEqual(self.partner.d2r_ytd, self.time_to_pay_days)
+        self.assertEqual(self.partner.d2r_life, self.time_to_pay_days)
