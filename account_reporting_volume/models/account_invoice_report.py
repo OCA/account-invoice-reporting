@@ -12,12 +12,13 @@ class AccountInvoiceReport(models.Model):
     def _select(self):
         select_str = super()._select()
         select_str += """
-            , SUM(product.volume * (
-                CASE
-                WHEN move.type IN ('in_invoice','out_refund','in_receipt') THEN -1
-                ELSE 1 END
-            ) * line.quantity
-            / uom_line.factor * uom_template.factor)
-            as volume
+            , COALESCE(
+                (product.volume * (
+                    CASE
+                    WHEN move.move_type IN ('in_invoice','out_refund','in_receipt') THEN -1
+                    ELSE 1 END
+                ) * line.quantity
+                / uom_line.factor * uom_template.factor
+            ), 0.0) as volume
             """
         return select_str
