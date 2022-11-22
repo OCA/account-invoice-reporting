@@ -7,7 +7,7 @@
         <field name="name">account.invoice.report.tree.info</field>
         <field name="model">account.invoice.report</field>
         <field name="arch" type="xml">
-            <tree string="Invoice Line">
+            <tree>
                 <field name="move_id" />
                 <field name="partner_id" />
                 <field name="product_categ_id" />
