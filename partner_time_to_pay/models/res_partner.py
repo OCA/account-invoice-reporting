@@ -8,42 +8,44 @@ from odoo import api, fields, models
 class ResPartner(models.Model):
     _inherit = "res.partner"
 
+    # Suppliers
     d2p_life = fields.Float(
         compute="_compute_d2x",
         string="AVG Days to Payable (lifetime)",
         store=True,
-        help="Average days of payment for outgoing invoices.",
+        help="Average days of payment for incoming invoices.",
     )
     d2p_ytd = fields.Float(
         compute="_compute_d2x",
         string="AVG Days to Payable (YTD)",
         store=True,
-        help="Average days of payment for outgoing invoices this year.",
+        help="Average days of payment for incoming invoices this year.",
     )
+    # Customers
     d2r_life = fields.Float(
         compute="_compute_d2x",
         string="AVG Days to Receivable (lifetime)",
         store=True,
-        help="Average days of payment for incoming invoices.",
+        help="Average days of payment for outgoing invoices.",
     )
     d2r_ytd = fields.Float(
         compute="_compute_d2x",
         string="AVG Days to Receivable (YTD)",
         store=True,
-        help="Average days of payment for incoming invoices this year.",
+        help="Average days of payment for outgoing invoices this year.",
     )
 
     @api.depends("invoice_ids.full_reconcile_payment_date")
     def _compute_d2x(self):
         for partner in self:
-            partner.d2p_ytd, partner.d2p_life = partner._compute_d2x_per_invoice_type(
-                partner.invoice_ids, "out_invoice"
-            )
             partner.d2r_ytd, partner.d2r_life = partner._compute_d2x_per_invoice_type(
-                partner.invoice_ids, "in_invoice"
+                partner.invoice_ids, {"out_invoice"}
+            )
+            partner.d2p_ytd, partner.d2p_life = partner._compute_d2x_per_invoice_type(
+                partner.invoice_ids, {"in_invoice"}
             )
 
-    def _compute_d2x_per_invoice_type(self, invoices, invoice_type):
+    def _compute_d2x_per_invoice_type(self, invoices, invoice_types):
         self.ensure_one()
         this_year = fields.Date.today().year
 
@@ -52,7 +54,7 @@ class ResPartner(models.Model):
         d2x_ytd, d2x_life = 0, 0
 
         selected_invoices = invoices.filtered(
-            lambda inv: inv.move_type == invoice_type
+            lambda inv: inv.move_type in invoice_types
             and inv.full_reconcile_payment_date
             and inv.state == "posted"
         )
