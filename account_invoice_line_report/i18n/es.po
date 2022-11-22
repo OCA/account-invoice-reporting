@@ -28,11 +28,6 @@ msgstr ""
 "sus Informes de facturas y el resto, ajustando el análisis a sus necesidades."
 
 #. module: account_invoice_line_report
-#: model_terms:ir.ui.view,arch_db:account_invoice_line_report.view_invoice_report_tree_info
-msgid "Invoice Line"
-msgstr "Línea factura"
-
-#. module: account_invoice_line_report
 #: model:ir.actions.act_window,name:account_invoice_line_report.action_account_invoice_line_report
 #: model:ir.ui.menu,name:account_invoice_line_report.menu_action_account_invoice_line_report
 msgid "Invoice Lines"
@@ -48,8 +43,5 @@ msgstr "Con precio"
 msgid "Without Price"
 msgstr "Sin precio"
 
-#~ msgid "Partner Tags"
-#~ msgstr "Etiquetas de empresa"
-
-#~ msgid "Vendor contains"
-#~ msgstr "Vendedor contiene"
+#~ msgid "Invoice Line"
+#~ msgstr "Línea factura"
