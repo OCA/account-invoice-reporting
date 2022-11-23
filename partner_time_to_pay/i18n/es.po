@@ -42,26 +42,26 @@ msgid "AVG Days to Receivable (lifetime)"
 msgstr "Promedio de días de cobro (siempre)"
 
 #. module: partner_time_to_pay
-#: model:ir.model.fields,help:partner_time_to_pay.field_res_partner__d2r_ytd
-#: model:ir.model.fields,help:partner_time_to_pay.field_res_users__d2r_ytd
+#: model:ir.model.fields,help:partner_time_to_pay.field_res_partner__d2p_ytd
+#: model:ir.model.fields,help:partner_time_to_pay.field_res_users__d2p_ytd
 msgid "Average days of payment for incoming invoices this year."
 msgstr "Promedio de días de pago para las facturas entrantes éste año."
 
 #. module: partner_time_to_pay
-#: model:ir.model.fields,help:partner_time_to_pay.field_res_partner__d2r_life
-#: model:ir.model.fields,help:partner_time_to_pay.field_res_users__d2r_life
+#: model:ir.model.fields,help:partner_time_to_pay.field_res_partner__d2p_life
+#: model:ir.model.fields,help:partner_time_to_pay.field_res_users__d2p_life
 msgid "Average days of payment for incoming invoices."
 msgstr "Promedio de días de pago para las facturas entrantes."
 
 #. module: partner_time_to_pay
-#: model:ir.model.fields,help:partner_time_to_pay.field_res_partner__d2p_ytd
-#: model:ir.model.fields,help:partner_time_to_pay.field_res_users__d2p_ytd
+#: model:ir.model.fields,help:partner_time_to_pay.field_res_partner__d2r_ytd
+#: model:ir.model.fields,help:partner_time_to_pay.field_res_users__d2r_ytd
 msgid "Average days of payment for outgoing invoices this year."
 msgstr "Promedio de días de pago para las facturas salientes éste año."
 
 #. module: partner_time_to_pay
-#: model:ir.model.fields,help:partner_time_to_pay.field_res_partner__d2p_life
-#: model:ir.model.fields,help:partner_time_to_pay.field_res_users__d2p_life
+#: model:ir.model.fields,help:partner_time_to_pay.field_res_partner__d2r_life
+#: model:ir.model.fields,help:partner_time_to_pay.field_res_users__d2r_life
 msgid "Average days of payment for outgoing invoices."
 msgstr "Promedio de días de pago para las facturas salientes."
 
