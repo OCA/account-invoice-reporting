@@ -48,23 +48,51 @@ msgid "AVG Days to Receivable (lifetime)"
 msgstr "Gem. Dagen tot Betalen (alle)"
 
 #. module: partner_time_to_pay
+#: model:ir.model.fields,help:partner_time_to_pay.field_res_partner__d2p_ytd
+#: model:ir.model.fields,help:partner_time_to_pay.field_res_users__d2p_ytd
+msgid "Average days of payment for incoming invoices this year."
+msgstr ""
+
+#. module: partner_time_to_pay
+#: model:ir.model.fields,help:partner_time_to_pay.field_res_partner__d2p_life
+#: model:ir.model.fields,help:partner_time_to_pay.field_res_users__d2p_life
+msgid "Average days of payment for incoming invoices."
+msgstr ""
+
+#. module: partner_time_to_pay
+#: model:ir.model.fields,help:partner_time_to_pay.field_res_partner__d2r_ytd
+#: model:ir.model.fields,help:partner_time_to_pay.field_res_users__d2r_ytd
+msgid "Average days of payment for outgoing invoices this year."
+msgstr ""
+
+#. module: partner_time_to_pay
+#: model:ir.model.fields,help:partner_time_to_pay.field_res_partner__d2r_life
+#: model:ir.model.fields,help:partner_time_to_pay.field_res_users__d2r_life
+msgid "Average days of payment for outgoing invoices."
+msgstr ""
+
+#. module: partner_time_to_pay
 #: model:ir.model,name:partner_time_to_pay.model_res_partner
 msgid "Contact"
 msgstr ""
 
 #. module: partner_time_to_pay
-#: model:ir.model.fields,field_description:partner_time_to_pay.field_res_partner__display_name
-msgid "Display Name"
+#: model:ir.model.fields,help:partner_time_to_pay.field_account_bank_statement_line__full_reconcile_payment_date
+#: model:ir.model.fields,help:partner_time_to_pay.field_account_move__full_reconcile_payment_date
+#: model:ir.model.fields,help:partner_time_to_pay.field_account_payment__full_reconcile_payment_date
+msgid "Date when the complete reconciliation of this invoice occurred."
 msgstr ""
 
 #. module: partner_time_to_pay
-#: model:ir.model.fields,field_description:partner_time_to_pay.field_res_partner__id
-msgid "ID"
+#: model:ir.model,name:partner_time_to_pay.model_account_move
+msgid "Journal Entry"
 msgstr ""
 
 #. module: partner_time_to_pay
-#: model:ir.model.fields,field_description:partner_time_to_pay.field_res_partner____last_update
-msgid "Last Modified on"
+#: model:ir.model.fields,field_description:partner_time_to_pay.field_account_bank_statement_line__full_reconcile_payment_date
+#: model:ir.model.fields,field_description:partner_time_to_pay.field_account_move__full_reconcile_payment_date
+#: model:ir.model.fields,field_description:partner_time_to_pay.field_account_payment__full_reconcile_payment_date
+msgid "Payment Date"
 msgstr ""
 
 #~ msgid "Partner"
