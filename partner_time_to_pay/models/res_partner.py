@@ -70,11 +70,9 @@ class ResPartner(models.Model):
                 total_number_of_invoices_ytd += 1
                 total_days_to_pay_ytd += days_until_invoice_is_paid
 
-        d2x_ytd = 0
         if total_number_of_invoices_ytd:
             d2x_ytd = total_days_to_pay_ytd / total_number_of_invoices_ytd
 
-        d2x_life = 0
         if total_number_of_invoices_life:
             d2x_life = total_days_to_pay_life / total_number_of_invoices_life
 
