@@ -16,15 +16,35 @@ class AccountMove(models.Model):
 
     @api.depends("payment_state")
     def _compute_full_reconcile_payment_date(self):
+        aml_model = self.env["account.move.line"]
         in_payment_states = {"paid", self._get_invoice_in_payment_state()}
         for move in self:
             if move.payment_state in in_payment_states:
                 if not move.full_reconcile_payment_date:
-                    payments = move._get_reconciled_payments().sorted(
-                        "date", reverse=True
+                    valid_accounts = move.line_ids.filtered(
+                        lambda ml: ml.account_id.user_type_id.type
+                        in {"receivable", "payable"}
+                    ).mapped("account_id")
+                    reconciled_moves = (
+                        aml_model.search(
+                            [
+                                ("account_id", "in", valid_accounts.ids),
+                                ("parent_state", "=", "posted"),
+                                ("partner_id", "=", move.commercial_partner_id.id),
+                                ("reconciled", "=", True),
+                                ("id", "not in", move.line_ids.ids),
+                                (
+                                    "full_reconcile_id.reconciled_line_ids",
+                                    "in",
+                                    move.line_ids.ids,
+                                ),
+                            ]
+                        )
+                        .mapped("move_id")
+                        .sorted("date")
                     )
                     move.full_reconcile_payment_date = (
-                        payments[:1].date or fields.Date.today()
+                        reconciled_moves[-1:].date or fields.Date.today()
                     )
                 continue
             move.full_reconcile_payment_date = None
