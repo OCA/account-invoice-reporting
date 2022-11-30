@@ -1,6 +1,6 @@
 # Copyright 2017 Simone Rubino - Agile Business Group
 # Copyright 2018 Tecnativa - Pedro M. Baeza
-# Copyright 2021 Tecnativa - Víctor Martínez
+# Copyright 2021-2022 Tecnativa - Víctor Martínez
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
 from odoo.tests.common import Form, TransactionCase
@@ -11,7 +11,6 @@ class TestAccountInvoiceReport(TransactionCase):
         super().setUp()
         self.company = self.env.ref("base.main_company")
         self.base_comment_model = self.env["base.comment.template"]
-        self.move_obj = self.env.ref("account.model_account_move")
         self.before_comment = self._create_comment("before_lines")
         self.after_comment = self._create_comment("after_lines")
         self.partner = self.env["res.partner"].create({"name": "Partner Test"})
@@ -57,7 +56,7 @@ class TestAccountInvoiceReport(TransactionCase):
                 "company_id": self.company.id,
                 "position": position,
                 "text": "Text " + position,
-                "model_ids": [(6, 0, self.move_obj.ids)],
+                "models": "account.move",
             }
         )
 
