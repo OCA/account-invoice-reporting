@@ -5,6 +5,7 @@
   * Pedro M. Baeza
   * Sergio Teruel
   * João Marques
+  * Carlos Roca
 
 * `Studio73 <https://www.studio73.es>`__:
 
