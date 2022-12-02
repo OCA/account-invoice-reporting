@@ -6,10 +6,10 @@
 from lxml import html
 
 from odoo import fields
-from odoo.tests.common import Form, SavepointCase
+from odoo.tests.common import Form, TransactionCase
 
 
-class TestAccountInvoiceGroupPicking(SavepointCase):
+class TestAccountInvoiceGroupPicking(TransactionCase):
     @classmethod
     def setUpClass(cls):
         super(TestAccountInvoiceGroupPicking, cls).setUpClass()
@@ -144,6 +144,7 @@ class TestAccountInvoiceGroupPicking(SavepointCase):
                     "date": fields.Date.today(),
                     "reason": "no reason",
                     "refund_method": "refund",
+                    "journal_id": invoice.journal_id.id,
                 }
             )
         )
@@ -190,7 +191,13 @@ class TestAccountInvoiceGroupPicking(SavepointCase):
         wiz_invoice_refund = (
             self.env["account.move.reversal"]
             .with_context(active_model="account.move", active_ids=invoice.ids)
-            .create({"refund_method": "cancel", "reason": "test"})
+            .create(
+                {
+                    "refund_method": "cancel",
+                    "reason": "test",
+                    "journal_id": invoice.journal_id.id,
+                }
+            )
         )
         wiz_invoice_refund.reverse_moves()
         new_invoice = self.sale.invoice_ids.filtered(
@@ -248,7 +255,13 @@ class TestAccountInvoiceGroupPicking(SavepointCase):
         wiz_invoice_refund = (
             self.env["account.move.reversal"]
             .with_context(active_model="account.move", active_ids=invoice.ids)
-            .create({"refund_method": "cancel", "reason": "test"})
+            .create(
+                {
+                    "refund_method": "cancel",
+                    "reason": "test",
+                    "journal_id": invoice.journal_id.id,
+                }
+            )
         )
         wiz_invoice_refund.reverse_moves()
         new_invoice = self.sale.invoice_ids.filtered(
