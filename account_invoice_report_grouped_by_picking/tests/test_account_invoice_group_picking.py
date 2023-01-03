@@ -94,7 +94,9 @@ class TestAccountInvoiceGroupPicking(TransactionCase):
         self.assertEqual(groups[2]["picking"], groups[3]["picking"])
         # Test report
         content = html.document_fromstring(
-            self.env.ref("account.account_invoices")._render_qweb_html(invoice.id)[0]
+            self.env["ir.actions.report"]._render_qweb_html(
+                "account.account_invoices", invoice.id
+            )[0]
         )
         tbody = content.xpath("//tbody[@class='invoice_tbody']")
         tbody = [html.tostring(line, encoding="utf-8").strip() for line in tbody][
@@ -171,7 +173,9 @@ class TestAccountInvoiceGroupPicking(TransactionCase):
         self.assertEqual(groups[0]["picking"], groups[1]["picking"])
         # Test report
         content = html.document_fromstring(
-            self.env.ref("account.account_invoices")._render_qweb_html(invoice.id)[0]
+            self.env["ir.actions.report"]._render_qweb_html(
+                "account.account_invoices", invoice.id
+            )[0]
         )
         tbody = content.xpath("//tbody[@class='invoice_tbody']")
         tbody = [html.tostring(line, encoding="utf-8").strip() for line in tbody][
@@ -210,9 +214,9 @@ class TestAccountInvoiceGroupPicking(TransactionCase):
         self.assertEqual(groups[0]["picking"], groups[1]["picking"])
         # Test report
         content = html.document_fromstring(
-            self.env.ref("account.account_invoices")._render_qweb_html(new_invoice.id)[
-                0
-            ]
+            self.env["ir.actions.report"]._render_qweb_html(
+                "account.account_invoices", new_invoice.id
+            )[0]
         )
         tbody = content.xpath("//tbody[@class='invoice_tbody']")
         tbody = [html.tostring(line, encoding="utf-8").strip() for line in tbody][
@@ -241,7 +245,9 @@ class TestAccountInvoiceGroupPicking(TransactionCase):
         self.assertEqual(groups[0]["picking"], groups[1]["picking"])
         # Test report
         content = html.document_fromstring(
-            self.env.ref("account.account_invoices")._render_qweb_html(invoice.id)[0]
+            self.env["ir.actions.report"]._render_qweb_html(
+                "account.account_invoices", invoice.id
+            )[0]
         )
         tbody = content.xpath("//tbody[@class='invoice_tbody']")
         tbody = [html.tostring(line, encoding="utf-8").strip() for line in tbody][
@@ -274,9 +280,9 @@ class TestAccountInvoiceGroupPicking(TransactionCase):
         self.assertEqual(groups[0]["picking"], groups[1]["picking"])
         # Test report
         content = html.document_fromstring(
-            self.env.ref("account.account_invoices")._render_qweb_html(new_invoice.id)[
-                0
-            ]
+            self.env["ir.actions.report"]._render_qweb_html(
+                "account.account_invoices", new_invoice.id
+            )[0]
         )
         tbody = content.xpath("//tbody[@class='invoice_tbody']")
         tbody = [html.tostring(line, encoding="utf-8").strip() for line in tbody][
