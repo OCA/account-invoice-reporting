@@ -53,7 +53,9 @@ class AccountMove(models.Model):
         # Let's get first a correspondance between pickings and sales order
         so_dict = {x.sale_id: x for x in self.picking_ids if x.sale_id}
         # Now group by picking by direct link or via same SO as picking's one
-        for line in self.invoice_line_ids.filtered(lambda x: not x.display_type):
+        for line in self.invoice_line_ids:
+            if line.display_type != "product":
+                continue
             has_returned_qty = False
             remaining_qty = line.quantity
             for move in line.move_line_ids:
