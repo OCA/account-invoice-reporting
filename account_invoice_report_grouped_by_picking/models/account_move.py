@@ -59,6 +59,8 @@ class AccountMove(models.Model):
             for move in line.move_line_ids:
                 key = (move.picking_id, line)
                 picking_dict.setdefault(key, 0)
+                if move.location_id.usage == "customer":
+                    has_returned_qty = True
                 qty = self._get_signed_quantity_done(line, move, sign)
                 picking_dict[key] += qty
                 remaining_qty -= qty
