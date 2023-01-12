@@ -26,6 +26,7 @@
                 t-value="[lines_grouped[i + 1]['picking'] for i, x in enumerate(lines_grouped) if x == lines_group and i &lt; len(lines_grouped) - 1] or [False]"
             />
             <t t-if="picking != last_picking">
+                <t t-set="last_picking" t-value="picking" />
                 <tr t-if="picking">
                     <td colspan="10">
                         <strong>
@@ -106,7 +107,6 @@
                 </td>
                 <t t-set="subtotal" t-value="0.0" />
             </tr>
-            <t t-set="last_picking" t-value="picking" />
         </xpath>
         <!-- Replicate logic if B2C prices-->
         <xpath expr="//td/span[@t-field='line.price_total']" position="before">
