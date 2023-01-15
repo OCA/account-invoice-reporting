@@ -35,7 +35,7 @@ class AccountMove(models.Model):
     def _process_section_note_lines_grouped(
         self, previous_section, previous_note, lines_dic, pick_order=None
     ):
-        key_section = (pick_order, previous_note) if pick_order else previous_note
+        key_section = (pick_order, previous_section) if pick_order else previous_section
         if previous_section and key_section not in lines_dic:
             lines_dic[key_section] = 0.0
         key_note = (pick_order, previous_note) if pick_order else previous_note
@@ -74,6 +74,7 @@ class AccountMove(models.Model):
             if line.display_type == "line_note":
                 previous_note = line
                 continue
+            has_returned_qty = False
             remaining_qty = line.quantity
             for move in line.move_line_ids:
                 key = (move.picking_id, line)
@@ -81,6 +82,8 @@ class AccountMove(models.Model):
                     previous_section, previous_note, picking_dict, move.picking_id
                 )
                 picking_dict.setdefault(key, 0)
+                if move.location_id.usage == "customer":
+                    has_returned_qty = True
                 qty = self._get_signed_quantity_done(line, move, sign)
                 picking_dict[key] += qty
                 remaining_qty -= qty
@@ -99,14 +102,14 @@ class AccountMove(models.Model):
                         picking_dict[key] += qty
                         remaining_qty -= qty
             elif not line.move_line_ids and not line.sale_line_ids:
-                key = (self.env["stock.picking"], line)
+                key = (picking_obj, line)
                 picking_dict.setdefault(key, 0)
                 qty = line.quantity
                 picking_dict[key] += qty
                 remaining_qty -= qty
             # To avoid to print duplicate lines because the invoice is a refund
             # without returned goods to refund.
-            if self.move_type == "out_refund" and not has_returned_qty:
+            if self.type == "out_refund" and not has_returned_qty:
                 remaining_qty = 0.0
                 for key in picking_dict:
                     picking_dict[key] = abs(picking_dict[key])
