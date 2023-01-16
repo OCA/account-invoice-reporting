@@ -14,10 +14,16 @@ class AccountMove(models.Model):
 
     @api.model
     def _sort_grouped_lines(self, lines_dic):
+        DTF = "%Y-%m-%d %H:%M:%S"
         return sorted(
             lines_dic,
             key=lambda x: (
-                (x["picking"].date, x["picking"].date_done or x["picking"].date)
+                x["picking"]
+                and (
+                    x["picking"].date and x["picking"].date.strftime(DTF),
+                    (x["picking"].date_done or x["picking"].date).strftime(DTF),
+                )
+                or ("", "")
             ),
         )
 
