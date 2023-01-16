@@ -92,6 +92,17 @@ class TestAccountInvoiceGroupPicking(TransactionCase):
         self.assertEqual(len(groups), 4)
         self.assertEqual(groups[0]["picking"], groups[1]["picking"])
         self.assertEqual(groups[2]["picking"], groups[3]["picking"])
+        # mix with invoice line that doesn't have neither move_line_ids
+        # nor sale_line_ids
+        vals = [
+            {
+                "name": "test invoice line",
+                "move_id": invoice.id,
+                "price_unit": 10.0,
+                "account_id": invoice.invoice_line_ids[0].account_id.id,
+            }
+        ]
+        invoice.invoice_line_ids.create(vals)
         # Test report
         content = html.document_fromstring(
             self.env["ir.actions.report"]._render_qweb_html(
