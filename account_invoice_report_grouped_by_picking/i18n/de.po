@@ -43,21 +43,15 @@ msgid "<strong>Subtotal: </strong>"
 msgstr "<strong>Zwischensumme: </strong>"
 
 #. module: account_invoice_report_grouped_by_picking
-#: model:ir.model.fields,field_description:account_invoice_report_grouped_by_picking.field_account_move__display_name
-msgid "Display Name"
-msgstr "Anzeigename"
-
-#. module: account_invoice_report_grouped_by_picking
-#: model:ir.model.fields,field_description:account_invoice_report_grouped_by_picking.field_account_move__id
-msgid "ID"
-msgstr "ID"
-
-#. module: account_invoice_report_grouped_by_picking
 #: model:ir.model,name:account_invoice_report_grouped_by_picking.model_account_move
 msgid "Journal Entry"
 msgstr "Journalbuchung"
 
-#. module: account_invoice_report_grouped_by_picking
-#: model:ir.model.fields,field_description:account_invoice_report_grouped_by_picking.field_account_move____last_update
-msgid "Last Modified on"
-msgstr "Zuletzt geändert am"
+#~ msgid "Display Name"
+#~ msgstr "Anzeigename"
+
+#~ msgid "ID"
+#~ msgstr "ID"
+
+#~ msgid "Last Modified on"
+#~ msgstr "Zuletzt geändert am"
