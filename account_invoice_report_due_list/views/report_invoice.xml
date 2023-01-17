@@ -7,10 +7,7 @@
         <xpath expr="//p[@t-field='o.invoice_date_due']/.." position="attributes">
             <attribute name="class" add="d-none" separator=" " />
         </xpath>
-        <xpath
-            expr="//span[@t-field='o.invoice_payment_term_id.note']"
-            position="after"
-        >
+        <xpath expr="//div[@t-field='o.invoice_payment_term_id.note']" position="after">
             <t t-set="due_list" t-value="o.get_multi_due_list()" />
             <div class="row" t-if="due_list" style="page-break-inside: avoid;">
                 <div class="col-4">

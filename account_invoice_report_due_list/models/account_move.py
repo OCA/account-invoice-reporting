@@ -18,8 +18,7 @@ class AccountMove(models.Model):
 
     @api.depends("invoice_payment_term_id", "invoice_date")
     def _compute_multi_date_due(self):
-        lang = self.env.context.get("lang") or "en_US"
-        date_format = self.env["res.lang"]._lang_get(lang).date_format
+        date_format = self.env["res.lang"]._lang_get(self.env.user.lang).date_format
         for record in self:
             record.multi_date_due = " ".join(
                 due[0].strftime(date_format) for due in record.get_multi_due_list()
@@ -28,13 +27,13 @@ class AccountMove(models.Model):
     def get_multi_due_list(self):
         self.ensure_one()
         if "in_" in self.move_type:
-            internal_type = "payable"
+            account_type = "liability_payable"
         elif "out_" in self.move_type:
-            internal_type = "receivable"
+            account_type = "asset_receivable"
         else:
             return []
         due_move_line_ids = self.line_ids.filtered(
-            lambda ml: ml.account_id.internal_type == internal_type
+            lambda ml: ml.account_id.account_type == account_type
         )
         if self.currency_id == self.company_id.currency_id:
             amount_field = "balance"
