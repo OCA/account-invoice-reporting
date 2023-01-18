@@ -72,9 +72,3 @@ msgstr "Unidad(es)"
 #: model:product.template,weight_uom_name:account_invoice_production_lot.product_icecream_b_product_template
 msgid "kg"
 msgstr "kg"
-
-#~ msgid "Formatted Note"
-#~ msgstr "Nota"
-
-#~ msgid "Order Lines"
-#~ msgstr "Lineas de pedido"
