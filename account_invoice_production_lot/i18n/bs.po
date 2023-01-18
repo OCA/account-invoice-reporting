@@ -62,6 +62,3 @@ msgstr ""
 #: model:product.template,uom_name:account_invoice_production_lot.product_icecream_b_product_template
 msgid "Units"
 msgstr ""
-
-#~ msgid "Invoice Line"
-#~ msgstr "Stavka fakture"
