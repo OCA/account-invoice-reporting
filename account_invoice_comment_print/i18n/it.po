@@ -1,0 +1,42 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* account_invoice_comment_print
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-01-23 13:41+0000\n"
+"PO-Revision-Date: 2023-01-23 13:41+0000\n"
+"Last-Translator: Simone Rubino <sir@takobi.online>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: account_invoice_comment_print
+#: model:ir.model.fields,field_description:account_invoice_comment_print.field_account_invoice__print_comment
+msgid "Comment to be printed"
+msgstr "Commento da stampare"
+
+#. module: account_invoice_comment_print
+#: model:ir.model.fields,field_description:account_invoice_comment_print.field_res_partner__invoice_print_comment
+#: model:ir.model.fields,field_description:account_invoice_comment_print.field_res_users__invoice_print_comment
+msgid "Comment to be printed in invoices"
+msgstr "Commento da stampare nelle fatture"
+
+#. module: account_invoice_comment_print
+#: model:ir.model,name:account_invoice_comment_print.model_res_partner
+msgid "Contact"
+msgstr "Contatto"
+
+#. module: account_invoice_comment_print
+#: model:ir.model,name:account_invoice_comment_print.model_account_invoice
+msgid "Invoice"
+msgstr "Fattura"
+
+#. module: account_invoice_comment_print
+#: model_terms:ir.ui.view,arch_db:account_invoice_comment_print.view_partner_property_form
+msgid "Invoices"
+msgstr "Fatture"

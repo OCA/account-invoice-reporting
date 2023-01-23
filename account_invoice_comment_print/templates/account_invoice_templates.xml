@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+  ~ Copyright 2023 Simone Rubino - TAKOBI
+  ~ License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
+  -->
+<odoo>
+    <template
+        id="report_invoice_document"
+        inherit_id="account.report_invoice_document"
+        name="Add print comment to invoice report"
+    >
+        <p name="comment" position="after">
+            <div t-if="o.print_comment" t-raw="o.print_comment"/>
+        </p>
+    </template>
+</odoo>
