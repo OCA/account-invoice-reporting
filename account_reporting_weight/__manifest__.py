@@ -9,7 +9,8 @@
     'category': 'Inventory, Logistics, Warehousing',
     'development_status': 'Production/Stable',
     'license': 'AGPL-3',
-    'website': 'https://www.github.com/account_reporting_weight',
+    "website": "https://github.com/OCA/account-invoice-reporting"
+               "/tree/12.0/account_reporting_weight",
     'depends': [
         'sale',
     ],
