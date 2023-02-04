@@ -16,6 +16,7 @@ setuptools.setup(
         'odoo12-addon-account_invoice_report_grouped_by_picking_sale_mrp',
         'odoo12-addon-account_invoice_report_hide_line',
         'odoo12-addon-account_invoice_report_payment_info',
+        'odoo12-addon-account_reporting_net_weight',
         'odoo12-addon-account_reporting_weight',
         'odoo12-addon-base_comment_template',
         'odoo12-addon-partner_time_to_pay',
