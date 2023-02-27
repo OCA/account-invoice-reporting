@@ -4,7 +4,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 14.0\n"
+"Project-Id-Version: Odoo Server 15.0\n"
 "Report-Msgid-Bugs-To: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -19,24 +19,14 @@ msgid "<b class=\"font-italic\">Serial numbers</b>"
 msgstr ""
 
 #. module: account_invoice_production_lot
-#: model:ir.model.fields,field_description:account_invoice_production_lot.field_account_move_line__display_name
-msgid "Display Name"
-msgstr ""
-
-#. module: account_invoice_production_lot
-#: model:ir.model.fields,field_description:account_invoice_production_lot.field_account_move_line__id
-msgid "ID"
-msgstr ""
-
-#. module: account_invoice_production_lot
 #: model:product.product,name:account_invoice_production_lot.product_icecream_b
 #: model:product.template,name:account_invoice_production_lot.product_icecream_b_product_template
 msgid "Ice Cream B"
 msgstr ""
 
 #. module: account_invoice_production_lot
-#: model:product.product,description:account_invoice_production_lot.product_icecream_b
-#: model:product.template,description:account_invoice_production_lot.product_icecream_b_product_template
+#: model_terms:product.product,description:account_invoice_production_lot.product_icecream_b
+#: model_terms:product.template,description:account_invoice_production_lot.product_icecream_b_product_template
 msgid ""
 "Ice cream can be mass-produced and thus is widely available in developed "
 "parts of the world. Ice cream can be purchased in large cartons (vats and "
@@ -48,11 +38,6 @@ msgstr ""
 #. module: account_invoice_production_lot
 #: model:ir.model,name:account_invoice_production_lot.model_account_move_line
 msgid "Journal Item"
-msgstr ""
-
-#. module: account_invoice_production_lot
-#: model:ir.model.fields,field_description:account_invoice_production_lot.field_account_move_line____last_update
-msgid "Last Modified on"
 msgstr ""
 
 #. module: account_invoice_production_lot
