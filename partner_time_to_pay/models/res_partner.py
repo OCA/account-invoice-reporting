@@ -39,10 +39,10 @@ class ResPartner(models.Model):
     def _compute_d2x(self):
         for partner in self:
             partner.d2r_ytd, partner.d2r_life = partner._compute_d2x_per_invoice_type(
-                partner.invoice_ids, {"out_invoice"}
+                (partner + partner.child_ids).invoice_ids, {"out_invoice"}
             )
             partner.d2p_ytd, partner.d2p_life = partner._compute_d2x_per_invoice_type(
-                partner.invoice_ids, {"in_invoice"}
+                (partner + partner.child_ids).invoice_ids, {"in_invoice"}
             )
 
     def _compute_d2x_per_invoice_type(self, invoices, invoice_types):

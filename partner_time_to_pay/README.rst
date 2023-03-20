@@ -26,7 +26,8 @@ Partner Time to Pay
 |badge1| |badge2| |badge3| |badge4| |badge5| 
 
 This module displays statistics related to the receivables and payables behavior of a partner on the *Sales & Purchases* tab of the partner form view.
-Also displays the full reconcile payment date on invoices
+Also displays the full reconcile payment date on invoices.
+Statistics on each contact corresponds to the partner and its child contacts.
 
 **Table of contents**
 
