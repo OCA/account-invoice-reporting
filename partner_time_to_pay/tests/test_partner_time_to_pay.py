@@ -20,13 +20,14 @@ class TestPartnerTimeToPay(TransactionCase):
             {
                 "name": "Test Time to Pay Partner",
                 "is_company": True,
+                "child_ids": [(0, 0, {"name": "TTPP Contact", "type": "invoice"})],
             }
         )
         self.time_to_pay_days = 10
         product = self.env.ref("product.product_product_4")
         # Create invoice
         move_form = Form(am_model.with_context(default_move_type="out_invoice"))
-        move_form.partner_id = self.partner
+        move_form.partner_id = self.partner.child_ids[0]
         move_form.invoice_date = today
         with move_form.invoice_line_ids.new() as line_form:
             line_form.product_id = product
@@ -46,5 +47,7 @@ class TestPartnerTimeToPay(TransactionCase):
         ).action_create_payments()
 
     def test_partner_compute_d2x(self):
+        self.assertEqual(self.partner.child_ids[0].d2r_ytd, self.time_to_pay_days)
+        self.assertEqual(self.partner.child_ids[0].d2r_life, self.time_to_pay_days)
         self.assertEqual(self.partner.d2r_ytd, self.time_to_pay_days)
         self.assertEqual(self.partner.d2r_life, self.time_to_pay_days)
