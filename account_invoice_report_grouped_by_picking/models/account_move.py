@@ -1,11 +1,11 @@
-# Copyright 2017 Tecnativa - Carlos Dauden
+# Copyright 2017-2023 Tecnativa - Carlos Dauden
 # Copyright 2018 Tecnativa - David Vidal
 # Copyright 2018-2019 Tecnativa - Pedro M. Baeza
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
-
+import datetime
 from collections import OrderedDict
 
-from odoo import api, fields, models
+from odoo import api, models
 from odoo.tools import float_is_zero
 
 
@@ -14,11 +14,14 @@ class AccountMove(models.Model):
 
     @api.model
     def _sort_grouped_lines(self, lines_dic):
+        min_date = datetime.datetime.min
         return sorted(
             lines_dic,
             key=lambda x: (
-                x["picking"].date or fields.Datetime.now(),
-                x["picking"].date_done or fields.Datetime.now(),
+                (
+                    x["picking"].date or min_date,
+                    x["picking"].date_done or x["picking"].date or min_date,
+                )
             ),
         )
 
