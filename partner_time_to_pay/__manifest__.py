@@ -4,7 +4,7 @@
 {
     "name": "Partner Time to Pay",
     "summary": "Add receivables and payables statistics to partners",
-    "version": "15.0.1.0.3",
+    "version": "15.0.1.1.0",
     "license": "AGPL-3",
     "development_status": "Beta",
     "author": "Open Source Integrators, Odoo Community Association (OCA), Moduon",
