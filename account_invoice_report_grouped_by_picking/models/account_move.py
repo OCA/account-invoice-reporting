@@ -2,7 +2,7 @@
 # Copyright 2018 Tecnativa - David Vidal
 # Copyright 2018-2019 Tecnativa - Pedro M. Baeza
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
-
+import datetime
 from collections import OrderedDict
 
 from odoo import api, models
@@ -14,10 +14,14 @@ class AccountMove(models.Model):
 
     @api.model
     def _sort_grouped_lines(self, lines_dic):
+        min_date = datetime.datetime.min
         return sorted(
             lines_dic,
             key=lambda x: (
-                (x["picking"].date, x["picking"].date_done or x["picking"].date)
+                (
+                    x["picking"].date or min_date,
+                    x["picking"].date_done or x["picking"].date or min_date,
+                )
             ),
         )
 
