@@ -3,3 +3,4 @@
 stock-logistics-workflow
 reporting-engine
 sale-reporting
+product-attribute
