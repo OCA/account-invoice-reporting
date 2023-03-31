@@ -16,6 +16,7 @@ setuptools.setup(
         'odoo13-addon-account_invoice_report_grouped_by_picking',
         'odoo13-addon-account_invoice_report_grouped_by_picking_sale_mrp',
         'odoo13-addon-account_invoice_report_payment_info',
+        'odoo13-addon-account_reporting_net_weight',
         'odoo13-addon-account_reporting_volume',
         'odoo13-addon-account_reporting_weight',
         'odoo13-addon-partner_time_to_pay',
