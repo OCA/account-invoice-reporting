@@ -10,7 +10,7 @@
     "author": "Open Source Integrators, Odoo Community Association (OCA), Moduon",
     "category": "Accounting & Finance",
     "website": "https://github.com/OCA/account-invoice-reporting",
-    "maintainers": ["max3903", "rafaelbn"],
+    "maintainers": ["max3903", "rafaelbn", "Shide"],
     "depends": ["account"],
     "data": [
         "views/account_move_view.xml",
