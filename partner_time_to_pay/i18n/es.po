@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 15.0\n"
+"Project-Id-Version: Odoo Server 15.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-22 17:16+0000\n"
-"PO-Revision-Date: 2022-11-22 18:18+0100\n"
+"POT-Creation-Date: 2023-04-12 06:27+0000\n"
+"PO-Revision-Date: 2023-04-12 08:29+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es\n"
@@ -16,6 +16,12 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: \n"
 "X-Generator: Poedit 3.1.1\n"
+
+#. module: partner_time_to_pay
+#: model:ir.model.fields,field_description:partner_time_to_pay.field_res_partner__d2p_ly
+#: model:ir.model.fields,field_description:partner_time_to_pay.field_res_users__d2p_ly
+msgid "AVG Days to Payable (LY)"
+msgstr "Promedio de días de pago (año anterior)"
 
 #. module: partner_time_to_pay
 #: model:ir.model.fields,field_description:partner_time_to_pay.field_res_partner__d2p_ytd
@@ -30,6 +36,12 @@ msgid "AVG Days to Payable (lifetime)"
 msgstr "Promedio de días de pago (siempre)"
 
 #. module: partner_time_to_pay
+#: model:ir.model.fields,field_description:partner_time_to_pay.field_res_partner__d2r_ly
+#: model:ir.model.fields,field_description:partner_time_to_pay.field_res_users__d2r_ly
+msgid "AVG Days to Receivable (LY)"
+msgstr "Promedio de días de cobro (año anterior)"
+
+#. module: partner_time_to_pay
 #: model:ir.model.fields,field_description:partner_time_to_pay.field_res_partner__d2r_ytd
 #: model:ir.model.fields,field_description:partner_time_to_pay.field_res_users__d2r_ytd
 msgid "AVG Days to Receivable (YTD)"
@@ -42,6 +54,12 @@ msgid "AVG Days to Receivable (lifetime)"
 msgstr "Promedio de días de cobro (siempre)"
 
 #. module: partner_time_to_pay
+#: model:ir.model.fields,help:partner_time_to_pay.field_res_partner__d2p_ly
+#: model:ir.model.fields,help:partner_time_to_pay.field_res_users__d2p_ly
+msgid "Average days of payment for incoming invoices last year."
+msgstr "Promedio de días de pago para las facturas entrantes el año anterior."
+
+#. module: partner_time_to_pay
 #: model:ir.model.fields,help:partner_time_to_pay.field_res_partner__d2p_ytd
 #: model:ir.model.fields,help:partner_time_to_pay.field_res_users__d2p_ytd
 msgid "Average days of payment for incoming invoices this year."
@@ -52,6 +70,12 @@ msgstr "Promedio de días de pago para las facturas entrantes éste año."
 #: model:ir.model.fields,help:partner_time_to_pay.field_res_users__d2p_life
 msgid "Average days of payment for incoming invoices."
 msgstr "Promedio de días de pago para las facturas entrantes."
+
+#. module: partner_time_to_pay
+#: model:ir.model.fields,help:partner_time_to_pay.field_res_partner__d2r_ly
+#: model:ir.model.fields,help:partner_time_to_pay.field_res_users__d2r_ly
+msgid "Average days of payment for outgoing invoices last year."
+msgstr "Promedio de días de pago para las facturas salientes el año anterior."
 
 #. module: partner_time_to_pay
 #: model:ir.model.fields,help:partner_time_to_pay.field_res_partner__d2r_ytd
