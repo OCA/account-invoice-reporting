@@ -17,6 +17,12 @@ msgstr ""
 "X-Generator: Weblate 3.7.1\n"
 
 #. module: partner_time_to_pay
+#: model:ir.model.fields,field_description:partner_time_to_pay.field_res_partner__d2p_ly
+#: model:ir.model.fields,field_description:partner_time_to_pay.field_res_users__d2p_ly
+msgid "AVG Days to Payable (LY)"
+msgstr ""
+
+#. module: partner_time_to_pay
 #: model:ir.model.fields,field_description:partner_time_to_pay.field_res_partner__d2p_ytd
 #: model:ir.model.fields,field_description:partner_time_to_pay.field_res_users__d2p_ytd
 msgid "AVG Days to Payable (YTD)"
@@ -27,6 +33,12 @@ msgstr "MED Dias até Pagável (YTD)"
 #: model:ir.model.fields,field_description:partner_time_to_pay.field_res_users__d2p_life
 msgid "AVG Days to Payable (lifetime)"
 msgstr "MED Dias até Pagável (sempre)"
+
+#. module: partner_time_to_pay
+#: model:ir.model.fields,field_description:partner_time_to_pay.field_res_partner__d2r_ly
+#: model:ir.model.fields,field_description:partner_time_to_pay.field_res_users__d2r_ly
+msgid "AVG Days to Receivable (LY)"
+msgstr ""
 
 #. module: partner_time_to_pay
 #: model:ir.model.fields,field_description:partner_time_to_pay.field_res_partner__d2r_ytd
@@ -41,6 +53,12 @@ msgid "AVG Days to Receivable (lifetime)"
 msgstr "MED Dias até Recebível (sempre)"
 
 #. module: partner_time_to_pay
+#: model:ir.model.fields,help:partner_time_to_pay.field_res_partner__d2p_ly
+#: model:ir.model.fields,help:partner_time_to_pay.field_res_users__d2p_ly
+msgid "Average days of payment for incoming invoices last year."
+msgstr ""
+
+#. module: partner_time_to_pay
 #: model:ir.model.fields,help:partner_time_to_pay.field_res_partner__d2p_ytd
 #: model:ir.model.fields,help:partner_time_to_pay.field_res_users__d2p_ytd
 msgid "Average days of payment for incoming invoices this year."
@@ -50,6 +68,12 @@ msgstr ""
 #: model:ir.model.fields,help:partner_time_to_pay.field_res_partner__d2p_life
 #: model:ir.model.fields,help:partner_time_to_pay.field_res_users__d2p_life
 msgid "Average days of payment for incoming invoices."
+msgstr ""
+
+#. module: partner_time_to_pay
+#: model:ir.model.fields,help:partner_time_to_pay.field_res_partner__d2r_ly
+#: model:ir.model.fields,help:partner_time_to_pay.field_res_users__d2r_ly
+msgid "Average days of payment for outgoing invoices last year."
 msgstr ""
 
 #. module: partner_time_to_pay
