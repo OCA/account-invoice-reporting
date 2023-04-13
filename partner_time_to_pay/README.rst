@@ -49,7 +49,8 @@ Usage
 =====
 
 * Go to the *Sales & Purchases* tab of a partner
-* There are 4 new fields. These fields represent the average days to pay for
+* There are 6 new fields named *AVG Days to Payable/Receivable*.
+  These fields represent the average days to pay/receive for last year (LY),
   this year (YTD) and since the first invoice (lifetime).
 * Adds a new field in the tree and form invoices views to check the
   Full Reconcile Payment Date
@@ -119,10 +120,13 @@ promote its widespread use.
 .. |maintainer-rafaelbn| image:: https://github.com/rafaelbn.png?size=40px
     :target: https://github.com/rafaelbn
     :alt: rafaelbn
+.. |maintainer-Shide| image:: https://github.com/Shide.png?size=40px
+    :target: https://github.com/Shide
+    :alt: Shide
 
 Current `maintainers <https://odoo-community.org/page/maintainer-role>`__:
 
-|maintainer-max3903| |maintainer-rafaelbn| 
+|maintainer-max3903| |maintainer-rafaelbn| |maintainer-Shide| 
 
 This module is part of the `OCA/account-invoice-reporting <https://github.com/OCA/account-invoice-reporting/tree/15.0/partner_time_to_pay>`_ project on GitHub.
 
