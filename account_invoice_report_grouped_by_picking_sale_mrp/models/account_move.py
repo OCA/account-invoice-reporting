@@ -10,8 +10,8 @@ class AccountInvoice(models.Model):
     def _get_signed_quantity_done(self, invoice_line, move, sign):
         res = super()._get_signed_quantity_done(invoice_line, move, sign)
         bom = self.env["mrp.bom"]._bom_find(
-            product=invoice_line.product_id, company_id=self.company_id.id
-        )
+            products=invoice_line.product_id, company_id=self.company_id.id
+        )[invoice_line.product_id]
         if bom and bom.type == "phantom":
             bom_line_data = bom.explode(invoice_line.product_id, 1)[1]
             res /= sum(map(lambda r: r[1]["qty"], bom_line_data))
