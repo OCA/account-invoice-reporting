@@ -1,13 +1,13 @@
 # Copyright 2020 Tecnativa - Ernesto Tejeda
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
-from odoo.tests import Form, SavepointCase
+from odoo.tests import Form, TransactionCase
 
 
-class TestReportGroupedSaleMrp(SavepointCase):
+class TestReportGroupedSaleMrp(TransactionCase):
     @classmethod
     def setUpClass(cls):
-        super(TestReportGroupedSaleMrp, cls).setUpClass()
+        super().setUpClass()
         cls.mrp_bom = cls.env["mrp.bom"]
         cls.partner = cls.env["res.partner"].create({"name": "Customer test"})
         # create a kit (kit_1) with 2 components
