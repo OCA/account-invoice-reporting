@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
     <template id="report_invoice_document" inherit_id="account.report_invoice_document">
+        <xpath expr="//t[contains(@t-set, 'o')]" position="after">
+            <t t-set="lines_grouped" t-value="o.lines_grouped_by_picking()" />
+        </xpath>
         <xpath expr="//t[contains(@t-foreach, 'lines')]/t[3]" position="attributes">
             <attribute name="t-if">False</attribute>
         </xpath>
         <xpath expr="//tbody[hasclass('invoice_tbody')]" position="inside">
             <t t-set="subtotal" t-value="0.0" />
-            <t t-set="lines_grouped" t-value="o.lines_grouped_by_picking()" />
         </xpath>
         <xpath expr="//t[contains(@t-foreach, 'lines')]" position="attributes">
-            <attribute name="t-foreach">o.lines_grouped_by_picking()</attribute>
+            <attribute name="t-foreach">lines_grouped</attribute>
             <attribute name="t-as">lines_group</attribute>
         </xpath>
         <!-- Appends before 'current_subtotal' compute -->
@@ -20,7 +22,6 @@
             <t t-set="l" t-value="lines_group['line']" />
             <t t-set="line" t-value="lines_group['line']" />
             <t t-set="picking" t-value="lines_group['picking']" />
-            <t t-set="lines_grouped" t-value="o.lines_grouped_by_picking()" />
             <t
                 t-set="next_picking"
                 t-value="[lines_grouped[i + 1]['picking'] for i, x in enumerate(lines_grouped) if x == lines_group and i &lt; len(lines_grouped) - 1] or [False]"
@@ -104,7 +105,7 @@
         </xpath>
         <!-- Append subtotal row after invoice line row-->
         <xpath
-            expr="//t[@t-foreach='o.lines_grouped_by_picking()']//td[hasclass('o_price_total')]"
+            expr="//t[@t-foreach='lines_grouped']//td[hasclass('o_price_total')]"
             position="after"
         >
             <tr t-if="picking != next_picking[0]">
