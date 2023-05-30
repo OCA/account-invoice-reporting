@@ -25,7 +25,7 @@ class AccountMoveLine(models.Model):
     @api.depends("sale_line_ids.position")
     def _compute_position_formatted(self):
         for record in self:
-            if record.display_type:
+            if record.display_type in ["line_section", "line_note"]:
                 record.position_formatted = ""
                 continue
             values = [
