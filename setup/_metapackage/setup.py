@@ -8,6 +8,7 @@ setuptools.setup(
     description="Meta package for oca-account-invoice-reporting Odoo addons",
     version=version,
     install_requires=[
+        'odoo-addon-account_comment_template>=16.0dev,<16.1dev',
         'odoo-addon-account_invoice_report_grouped_by_picking>=16.0dev,<16.1dev',
         'odoo-addon-account_invoice_report_payment_info>=16.0dev,<16.1dev',
         'odoo-addon-account_reporting_weight>=16.0dev,<16.1dev',
