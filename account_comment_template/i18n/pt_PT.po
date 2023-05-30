@@ -1,0 +1,89 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * account_comment_template
+#
+# Translators:
+# OCA Transbot <transbot@odoo-community.org>, 2017
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-05-16 11:59+0000\n"
+"PO-Revision-Date: 2020-03-23 17:13+0000\n"
+"Last-Translator: Pedro Castro Silva <pedrocs@exo.pt>\n"
+"Language-Team: Portuguese (Portugal) (https://www.transifex.com/oca/"
+"teams/23907/pt_PT/)\n"
+"Language: pt_PT\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Weblate 3.10\n"
+
+#. module: account_comment_template
+#: model:ir.model.fields,field_description:account_comment_template.field_account_move__comment_template_ids
+msgid "Comment Template"
+msgstr ""
+
+#. module: account_comment_template
+#: model_terms:ir.ui.view,arch_db:account_comment_template.move_form_add_comment
+msgid "Comments"
+msgstr "Comentários"
+
+#. module: account_comment_template
+#: model:ir.model.fields,field_description:account_comment_template.field_account_move__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: account_comment_template
+#: model:ir.ui.menu,name:account_comment_template.menu_base_comment_template_invoice
+msgid "Document Comments"
+msgstr "Comentários do Documento"
+
+#. module: account_comment_template
+#: model:ir.model.fields,field_description:account_comment_template.field_account_move__id
+msgid "ID"
+msgstr ""
+
+#. module: account_comment_template
+#: model:ir.model,name:account_comment_template.model_account_move
+msgid "Journal Entry"
+msgstr ""
+
+#. module: account_comment_template
+#: model:ir.model.fields,field_description:account_comment_template.field_account_move____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#~ msgid "Bottom Comment"
+#~ msgstr "Comentário de fundo"
+
+#~ msgid "Bottom Comment Template"
+#~ msgstr "Modelo de Comentários de Fundo"
+
+#~ msgid "Bottom Comments"
+#~ msgstr "Comentários de Fundo"
+
+#~ msgid "Invoice"
+#~ msgstr "Fatura"
+
+#~ msgid "Load a template"
+#~ msgstr "Carregar um modelo"
+
+#~ msgid ""
+#~ "The comments will be displayed on the printed document. You can load a "
+#~ "predefined template, write your own text or load a template and then "
+#~ "modify it only for this document."
+#~ msgstr ""
+#~ "Os comentários serão exibidos no documento impresso. Pode carregar um "
+#~ "modelo predefinido, escrever o seu próprio texto ou carregar um modelo e "
+#~ "depois modificá-lo apenas para este documento."
+
+#~ msgid "Top Comment"
+#~ msgstr "Comentário de Topo"
+
+#~ msgid "Top Comment Template"
+#~ msgstr "Modelo de Comentário de Topo"
+
+#~ msgid "Top Comments"
+#~ msgstr "Comentários de Topo"
