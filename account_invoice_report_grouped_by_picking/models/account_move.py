@@ -107,13 +107,21 @@ class AccountMove(models.Model):
                         remaining_qty -= qty
             elif not line.move_line_ids and not line.sale_line_ids:
                 key = (picking_obj, line)
+                self._process_section_note_lines_grouped(
+                    previous_section, previous_note, lines_dict
+                )
                 picking_dict.setdefault(key, 0)
                 qty = line.quantity
                 picking_dict[key] += qty
                 remaining_qty -= qty
             # To avoid to print duplicate lines because the invoice is a refund
             # without returned goods to refund.
-            if self.type == "out_refund" and not has_returned_qty and remaining_qty:
+            if (
+                self.type == "out_refund"
+                and not has_returned_qty
+                and remaining_qty
+                and line.product_id.type != "service"
+            ):
                 remaining_qty = 0.0
                 for key in picking_dict:
                     picking_dict[key] = abs(picking_dict[key])
@@ -121,9 +129,6 @@ class AccountMove(models.Model):
                 remaining_qty,
                 precision_rounding=line.product_id.uom_id.rounding or 0.01,
             ):
-                self._process_section_note_lines_grouped(
-                    previous_section, previous_note, lines_dict
-                )
                 lines_dict[line] = remaining_qty
         no_picking = [
             {"picking": picking_obj, "line": key, "quantity": value}
