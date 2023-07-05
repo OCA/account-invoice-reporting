@@ -37,14 +37,12 @@ class AccountMove(models.Model):
         return qty
 
     def _process_section_note_lines_grouped(
-        self, previous_section, previous_note, lines_dic, pick_order=None
+        self, previous_sections_notes, lines_dic, pick_order=None
     ):
-        key_section = (pick_order, previous_section) if pick_order else previous_section
-        if previous_section and key_section not in lines_dic:
-            lines_dic[key_section] = 0.0
-        key_note = (pick_order, previous_note) if pick_order else previous_note
-        if previous_note and key_note not in lines_dic:
-            lines_dic[key_note] = 0.0
+        for previous_section_note in previous_sections_notes:
+            key_note = (pick_order, previous_section_note) if pick_order else previous_section_note
+            if previous_section_note and key_note not in lines_dic:
+                lines_dic[key_note] = 0.0
 
     def lines_grouped_by_picking(self):
         """This prepares a data structure for printing the invoice report
@@ -68,22 +66,22 @@ class AccountMove(models.Model):
         # Let's get first a correspondance between pickings and sales order
         so_dict = {x.sale_id: x for x in self.picking_ids if x.sale_id}
         # Now group by picking by direct link or via same SO as picking's one
-        previous_section = previous_note = False
+        previous_sections_notes = []
         for line in self.invoice_line_ids.sorted(
             lambda ln: (-ln.sequence, ln.date, ln.move_name, -ln.id), reverse=True
         ):
-            if line.display_type == "line_section":
-                previous_section = line
-                continue
-            if line.display_type == "line_note":
-                previous_note = line
+            if line.display_type == "line_section" or line.display_type == "line_note":
+                if previous_sections_notes:
+                    previous_sections_notes.append(line)
+                else:
+                    previous_sections_notes = [line]
                 continue
             has_returned_qty = False
             remaining_qty = line.quantity
             for move in line.move_line_ids:
                 key = (move.picking_id, line)
                 self._process_section_note_lines_grouped(
-                    previous_section, previous_note, picking_dict, move.picking_id
+                    previous_sections_notes, picking_dict, move.picking_id
                 )
                 picking_dict.setdefault(key, 0)
                 if move.location_id.usage == "customer":
@@ -96,8 +94,7 @@ class AccountMove(models.Model):
                     if so_dict.get(so_line.order_id):
                         key = (so_dict[so_line.order_id], line)
                         self._process_section_note_lines_grouped(
-                            previous_section,
-                            previous_note,
+                            previous_sections_notes,
                             picking_dict,
                             so_dict[so_line.order_id],
                         )
@@ -122,9 +119,14 @@ class AccountMove(models.Model):
                 precision_rounding=line.product_id.uom_id.rounding or 0.01,
             ):
                 self._process_section_note_lines_grouped(
-                    previous_section, previous_note, lines_dict
+                    previous_sections_notes, lines_dict
                 )
                 lines_dict[line] = remaining_qty
+            previous_sections_notes = []
+        if previous_sections_notes:
+            self._process_section_note_lines_grouped(
+                previous_sections_notes, picking_dict or lines_dict, move.picking_id
+            )
         no_picking = [
             {"picking": picking_obj, "line": key, "quantity": value}
             for key, value in lines_dict.items()
