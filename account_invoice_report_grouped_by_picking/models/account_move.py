@@ -40,7 +40,11 @@ class AccountMove(models.Model):
         self, previous_sections_notes, lines_dic, pick_order=None
     ):
         for previous_section_note in previous_sections_notes:
-            key_note = (pick_order, previous_section_note) if pick_order else previous_section_note
+            key_note = (
+                (pick_order, previous_section_note)
+                if pick_order
+                else previous_section_note
+            )
             if previous_section_note and key_note not in lines_dic:
                 lines_dic[key_note] = 0.0
 
@@ -110,7 +114,11 @@ class AccountMove(models.Model):
                 remaining_qty -= qty
             # To avoid to print duplicate lines because the invoice is a refund
             # without returned goods to refund.
-            if self.move_type == "out_refund" and not has_returned_qty and remaining_qty:
+            if (
+                self.move_type == "out_refund"
+                and not has_returned_qty
+                and remaining_qty
+            ):
                 remaining_qty = 0.0
                 for key in picking_dict:
                     picking_dict[key] = abs(picking_dict[key])
