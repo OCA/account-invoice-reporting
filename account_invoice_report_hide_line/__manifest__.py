@@ -3,7 +3,7 @@
 
 {
     "name": "Hide invoice lines from the PDF report if the unit price is 0",
-    "version": "14.0.1.0.0",
+    "version": "15.0.1.0.0",
     "category": "Accounting",
     "author": "Open Source Integrators, " "Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/account-invoice-reporting",
