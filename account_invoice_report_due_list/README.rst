@@ -78,6 +78,8 @@ Contributors
 
   * David Alonso
 
+* Dhara Solanki <dhara.solanki@initos.com>
+
 Maintainers
 ~~~~~~~~~~~
 

@@ -36,10 +36,9 @@ class TestInvoiceReportDueList(common.TransactionCase):
                             "value": "percent",
                             "value_amount": 25.0,
                             "days": 30,
-                            "sequence": 10,
                         },
                     ),
-                    (0, 0, {"value": "balance", "days": 60, "sequence": 20}),
+                    (0, 0, {"value": "balance", "days": 60}),
                 ],
             }
         )
@@ -51,7 +50,7 @@ class TestInvoiceReportDueList(common.TransactionCase):
             {
                 "name": "Test Account",
                 "code": "TEST",
-                "user_type_id": cls.env.ref("account.data_account_type_receivable").id,
+                "account_type": "asset_receivable",
                 "reconcile": True,
             }
         )
@@ -59,9 +58,7 @@ class TestInvoiceReportDueList(common.TransactionCase):
             {
                 "name": "Test Account",
                 "code": "ACC",
-                "user_type_id": cls.env.ref(
-                    "account.data_account_type_other_income"
-                ).id,
+                "account_type": "liability_payable",
                 "reconcile": True,
             }
         )
@@ -96,7 +93,7 @@ class TestInvoiceReportDueList(common.TransactionCase):
         res = (
             self.env["ir.actions.report"]
             ._get_report_from_name("account.report_invoice")
-            ._render_qweb_html(invoice.ids)
+            ._render_qweb_html("account.report_invoice", invoice.ids)
         )
         self.assertRegex(str(res[0]), date_due_format)
         self.assertRegex(str(res[0]), "75.0")

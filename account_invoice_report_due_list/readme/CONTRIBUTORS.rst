@@ -6,3 +6,5 @@
 * `Solvos <https://www.solvos.es>`_:
 
   * David Alonso
+
+* Dhara Solanki <dhara.solanki@initos.com>

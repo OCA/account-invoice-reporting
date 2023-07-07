@@ -28,13 +28,13 @@ class AccountMove(models.Model):
     def get_multi_due_list(self):
         self.ensure_one()
         if "in_" in self.move_type:
-            internal_type = "payable"
+            account_type = "liability_payable"
         elif "out_" in self.move_type:
-            internal_type = "receivable"
+            account_type = "asset_receivable"
         else:
             return []
         due_move_line_ids = self.line_ids.filtered(
-            lambda ml: ml.account_id.internal_type == internal_type
+            lambda ml: ml.account_id.account_type == account_type
         )
         if self.currency_id == self.company_id.currency_id:
             amount_field = "balance"
