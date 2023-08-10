@@ -27,6 +27,7 @@ addon | version | maintainers | summary
 [account_invoice_production_lot](account_invoice_production_lot/) | 15.0.1.0.0 |  | Display delivered serial numbers in invoice
 [account_invoice_report_due_list](account_invoice_report_due_list/) | 15.0.2.0.1 |  | Show multiple due data in invoice
 [account_invoice_report_grouped_by_picking](account_invoice_report_grouped_by_picking/) | 15.0.1.2.1 |  | Print invoice lines grouped by picking
+[account_invoice_report_grouped_by_picking_sale_mrp](account_invoice_report_grouped_by_picking_sale_mrp/) | 15.0.1.0.0 |  | Take into account BoM kits in invoice report grouped by picking
 [account_invoice_report_payment_info](account_invoice_report_payment_info/) | 15.0.1.0.0 |  | Show payment extended info in invoice
 [account_reporting_volume](account_reporting_volume/) | 15.0.1.0.0 |  | Volume in the invoices analysis view
 [account_reporting_weight](account_reporting_weight/) | 15.0.1.0.0 |  | Weights in the invoices analysis view
