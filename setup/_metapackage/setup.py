@@ -14,6 +14,7 @@ setuptools.setup(
         'odoo-addon-account_invoice_production_lot>=15.0dev,<15.1dev',
         'odoo-addon-account_invoice_report_due_list>=15.0dev,<15.1dev',
         'odoo-addon-account_invoice_report_grouped_by_picking>=15.0dev,<15.1dev',
+        'odoo-addon-account_invoice_report_grouped_by_picking_sale_mrp>=15.0dev,<15.1dev',
         'odoo-addon-account_invoice_report_payment_info>=15.0dev,<15.1dev',
         'odoo-addon-account_reporting_volume>=15.0dev,<15.1dev',
         'odoo-addon-account_reporting_weight>=15.0dev,<15.1dev',
