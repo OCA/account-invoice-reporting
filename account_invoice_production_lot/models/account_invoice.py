@@ -13,9 +13,7 @@ class AccountMoveLine(models.Model):
     _inherit = "account.move.line"
 
     prod_lot_ids = fields.Many2many(
-        comodel_name="stock.production.lot",
-        compute="_compute_prod_lots",
-        string="Production Lots",
+        comodel_name="stock.lot", compute="_compute_prod_lots", string="Production Lots"
     )
 
     @api.depends("move_line_ids")

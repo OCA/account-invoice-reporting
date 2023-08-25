@@ -45,21 +45,21 @@ class TestProdLot(TransactionCase):
             line_form.product_id = cls.product2
             line_form.product_uom_qty = 1
         cls.sale = order_form.save()
-        cls.lot1 = cls.env["stock.production.lot"].create(
+        cls.lot1 = cls.env["stock.lot"].create(
             {
                 "name": "Lot 1",
                 "product_id": cls.product.id,
                 "company_id": cls.user_company.id,
             }
         )
-        cls.lot2 = cls.env["stock.production.lot"].create(
+        cls.lot2 = cls.env["stock.lot"].create(
             {
                 "name": "Lot 2",
                 "product_id": cls.product.id,
                 "company_id": cls.user_company.id,
             }
         )
-        cls.serial = cls.env["stock.production.lot"].create(
+        cls.serial = cls.env["stock.lot"].create(
             {
                 "name": "Serial 1",
                 "product_id": cls.product2.id,
@@ -89,8 +89,8 @@ class TestProdLot(TransactionCase):
         picking = self.sale.picking_ids[:1]
         picking.action_confirm()
         picking.action_assign()
-        for sml in picking.move_lines.mapped("move_line_ids"):
-            sml.qty_done = sml.product_qty
+        for sml in picking.move_ids.mapped("move_line_ids"):
+            sml.qty_done = sml.reserved_qty
         picking._action_done()
         # create invoice
         invoice = self.sale._create_invoices()
@@ -115,7 +115,7 @@ class TestProdLot(TransactionCase):
         picking.action_confirm()
         picking.action_assign()
         # deliver partially only one lot
-        picking.move_lines[0].move_line_ids[0].write({"qty_done": 2.0})
+        picking.move_ids[0].move_line_ids[0].write({"qty_done": 2.0})
         backorder_wizard_dict = picking.button_validate()
         backorder_wiz = Form(
             self.env[backorder_wizard_dict["res_model"]].with_context(
@@ -145,8 +145,8 @@ class TestProdLot(TransactionCase):
         picking.action_confirm()
         picking.action_assign()
         # deliver partially both lots
-        picking.move_lines[0].move_line_ids[0].write({"qty_done": 1.0})
-        picking.move_lines[0].move_line_ids[1].write({"qty_done": 1.0})
+        picking.move_ids[0].move_line_ids[0].write({"qty_done": 1.0})
+        picking.move_ids[0].move_line_ids[1].write({"qty_done": 1.0})
         backorder_wizard_dict = picking.button_validate()
         backorder_wiz = Form(
             self.env[backorder_wizard_dict["res_model"]].with_context(
