@@ -18,12 +18,12 @@
         >Ice cream can be mass-produced and thus is widely available in developed parts of the world. Ice cream can be purchased in large cartons (vats and squrounds) from supermarkets and grocery stores, in smaller quantities from ice cream shops, convenience stores, and milk bars, and in individual servings from small carts or vans at public events.</field>
         <field name="default_code">001</field>
     </record>
-    <record id="lot_icecream_0" model="stock.production.lot">
+    <record id="lot_icecream_0" model="stock.lot">
         <field name="name">Lot0 for Ice cream</field>
         <field name="product_id" ref="product_icecream_b" />
         <field name="company_id" ref="base.main_company" />
     </record>
-    <record id="lot_icecream_1" model="stock.production.lot">
+    <record id="lot_icecream_1" model="stock.lot">
         <field name="name">Lot1 for Ice cream</field>
         <field name="product_id" ref="product_icecream_b" />
         <field name="company_id" ref="base.main_company" />
