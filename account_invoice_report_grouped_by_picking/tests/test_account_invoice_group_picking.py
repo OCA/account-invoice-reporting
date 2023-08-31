@@ -13,6 +13,15 @@ class TestAccountInvoiceGroupPicking(TransactionCase):
     @classmethod
     def setUpClass(cls):
         super(TestAccountInvoiceGroupPicking, cls).setUpClass()
+        cls.currency_usd = cls.env.ref("base.USD")
+        cls.currency_usd.active = True
+        # Make sure the currency of the company is USD, as this not always happens
+        # To be removed in V17: https://github.com/odoo/odoo/pull/107113
+        cls.company = cls.env.company
+        cls.env.cr.execute(
+            "UPDATE res_company SET currency_id = %s WHERE id = %s",
+            [cls.env.ref("base.USD").id, cls.company.id],
+        )
         cls.product = cls.env["product.product"].create(
             {
                 "name": "Product for test",
