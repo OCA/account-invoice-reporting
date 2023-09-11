@@ -11,7 +11,7 @@
                 t-value="o.comment_template_ids.filtered(lambda x: x.position == 'before_lines')"
             />
             <t t-foreach="before_comment_template_ids" t-as="comment_template_id">
-                <div t-esc="comment_template_id.text" />
+                <div t-out="o.render_comment(comment_template_id)" />
             </t>
         </xpath>
 
@@ -21,7 +21,7 @@
                 t-value="o.comment_template_ids.filtered(lambda x: x.position == 'after_lines')"
             />
             <t t-foreach="after_comment_template_ids" t-as="comment_template_id">
-                <div t-esc="comment_template_id.text" />
+                <div t-out="o.render_comment(comment_template_id)" />
             </t>
         </xpath>
 
