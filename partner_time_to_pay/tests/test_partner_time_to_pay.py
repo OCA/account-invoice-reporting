@@ -24,13 +24,12 @@ class TestPartnerTimeToPay(TransactionCase):
             }
         )
         self.time_to_pay_days = 10
-        product = self.env.ref("product.product_product_4")
         # Create invoice for last year
         move_form_ly = Form(am_model.with_context(default_move_type="out_invoice"))
         move_form_ly.partner_id = self.partner.child_ids[0]
         move_form_ly.invoice_date = today - timedelta(days=365)
         with move_form_ly.invoice_line_ids.new() as line_form_ly:
-            line_form_ly.product_id = product
+            line_form_ly.name = "Inv Line Partner Time To Pay LY"
             line_form_ly.price_unit = 100.0
             line_form_ly.quantity = 10.0
         invoice_ly = move_form_ly.save()
@@ -50,7 +49,7 @@ class TestPartnerTimeToPay(TransactionCase):
         move_form_ty.partner_id = self.partner.child_ids[0]
         move_form_ty.invoice_date = today
         with move_form_ty.invoice_line_ids.new() as line_form_ty:
-            line_form_ty.product_id = product
+            line_form_ly.name = "Inv Line Partner Time To Pay TY"
             line_form_ty.price_unit = 100.0
             line_form_ty.quantity = 10.0
         invoice_ty = move_form_ty.save()
