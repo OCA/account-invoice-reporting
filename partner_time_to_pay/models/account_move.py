@@ -22,8 +22,8 @@ class AccountMove(models.Model):
             if move.payment_state in in_payment_states:
                 if not move.full_reconcile_payment_date:
                     valid_accounts = move.line_ids.filtered(
-                        lambda ml: ml.account_id.user_type_id.type
-                        in {"receivable", "payable"}
+                        lambda ml: ml.account_id.account_type
+                        in {"asset_receivable", "liability_payable"}
                     ).mapped("account_id")
                     reconciled_moves = (
                         aml_model.search(
