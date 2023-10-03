@@ -1,0 +1,21 @@
+<odoo>
+    <!-- Copyright 2019 Open Source Integrators
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+    <record id="view_res_partner_form_dtp" model="ir.ui.view">
+        <field name="name">res.partner.form.dtp</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="account.view_partner_property_form" />
+        <field name="arch" type="xml">
+            <field name="property_payment_term_id" position="after">
+                <field name="d2r_ly" groups="account.group_account_invoice" />
+                <field name="d2r_ytd" groups="account.group_account_invoice" />
+                <field name="d2r_life" groups="account.group_account_invoice" />
+            </field>
+            <field name="property_supplier_payment_term_id" position="after">
+                <field name="d2p_ly" groups="account.group_account_invoice" />
+                <field name="d2p_ytd" groups="account.group_account_invoice" />
+                <field name="d2p_life" groups="account.group_account_invoice" />
+            </field>
+        </field>
+    </record>
+</odoo>
