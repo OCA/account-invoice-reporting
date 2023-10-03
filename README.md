@@ -26,6 +26,7 @@ addon | version | maintainers | summary
 [account_invoice_report_payment_info](account_invoice_report_payment_info/) | 16.0.1.0.0 |  | Show payment extended info in invoice
 [account_reporting_volume](account_reporting_volume/) | 16.0.1.0.0 |  | Volume in the invoices analysis view
 [account_reporting_weight](account_reporting_weight/) | 16.0.1.0.0 |  | Weights in the invoices analysis view
+[partner_time_to_pay](partner_time_to_pay/) | 16.0.1.0.0 | [![max3903](https://github.com/max3903.png?size=30px)](https://github.com/max3903) [![rafaelbn](https://github.com/rafaelbn.png?size=30px)](https://github.com/rafaelbn) [![Shide](https://github.com/Shide.png?size=30px)](https://github.com/Shide) | Add receivables and payables statistics to partners
 
 [//]: # (end addons)
 

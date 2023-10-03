@@ -13,6 +13,7 @@ setuptools.setup(
         'odoo-addon-account_invoice_report_payment_info>=16.0dev,<16.1dev',
         'odoo-addon-account_reporting_volume>=16.0dev,<16.1dev',
         'odoo-addon-account_reporting_weight>=16.0dev,<16.1dev',
+        'odoo-addon-partner_time_to_pay>=16.0dev,<16.1dev',
     ],
     classifiers=[
         'Programming Language :: Python',
