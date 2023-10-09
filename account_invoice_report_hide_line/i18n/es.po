@@ -1,6 +1,6 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* account_invoice_report_hide_line
+# 	* account_invoice_report_hide_line
 #
 msgid ""
 msgstr ""
