@@ -18,6 +18,9 @@ msgstr ""
 "X-Generator: Poedit 2.0.6\n"
 
 #. module: account_invoice_report_grouped_by_picking_sale_mrp
-#: model:ir.model,name:account_invoice_report_grouped_by_picking_sale_mrp.model_account_invoice
-msgid "Invoice"
-msgstr "Factura"
+#: model:ir.model,name:account_invoice_report_grouped_by_picking_sale_mrp.model_account_move
+msgid "Journal Entries"
+msgstr ""
+
+#~ msgid "Invoice"
+#~ msgstr "Factura"
