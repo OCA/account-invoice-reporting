@@ -1,6 +1,6 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* account_invoice_report_grouped_by_picking
+# 	* account_invoice_report_grouped_by_picking
 #
 msgid ""
 msgstr ""
