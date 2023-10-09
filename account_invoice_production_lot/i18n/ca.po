@@ -41,19 +41,19 @@ msgid ""
 "servings from small carts or vans at public events."
 msgstr ""
 "El gelat es pot produir en massa i, per tant, està àmpliament disponible a "
-"les parts desenvolupades del món. El gelat es pot comprar en grans cartrons ("
-"tines i esculls) als supermercats i botigues de queviures, en quantitats més "
-"petites a les gelateries, botigues de conveniència i bars de llet, i en "
+"les parts desenvolupades del món. El gelat es pot comprar en grans cartrons "
+"(tines i esculls) als supermercats i botigues de queviures, en quantitats "
+"més petites a les gelateries, botigues de conveniència i bars de llet, i en "
 "porcions individuals de carros o furgonetes petites en esdeveniments públics."
 
 #. module: account_invoice_production_lot
-#: model:ir.model,name:account_invoice_production_lot.model_account_invoice_line
-msgid "Invoice Line"
-msgstr "Línia factura"
+#: model:ir.model,name:account_invoice_production_lot.model_account_move_line
+msgid "Journal Item"
+msgstr ""
 
 #. module: account_invoice_production_lot
-#: model:ir.model.fields,field_description:account_invoice_production_lot.field_account_invoice_line__prod_lot_ids
-#: model_terms:ir.ui.view,arch_db:account_invoice_production_lot.view_invoice_line_form_prod_lots
+#: model:ir.model.fields,field_description:account_invoice_production_lot.field_account_move_line__prod_lot_ids
+#: model_terms:ir.ui.view,arch_db:account_invoice_production_lot.view_move_form
 msgid "Production Lots"
 msgstr "Lots de producció"
 
@@ -65,11 +65,14 @@ msgstr "S/N:"
 #. module: account_invoice_production_lot
 #: model:product.product,uom_name:account_invoice_production_lot.product_icecream_b
 #: model:product.template,uom_name:account_invoice_production_lot.product_icecream_b_product_template
-msgid "Unit(s)"
-msgstr "Unitat(s)"
+msgid "Units"
+msgstr ""
 
-#. module: account_invoice_production_lot
-#: model:product.product,weight_uom_name:account_invoice_production_lot.product_icecream_b
-#: model:product.template,weight_uom_name:account_invoice_production_lot.product_icecream_b_product_template
-msgid "kg"
-msgstr "kg"
+#~ msgid "Invoice Line"
+#~ msgstr "Línia factura"
+
+#~ msgid "Unit(s)"
+#~ msgstr "Unitat(s)"
+
+#~ msgid "kg"
+#~ msgstr "kg"
