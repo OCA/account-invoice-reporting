@@ -31,29 +31,23 @@ msgid "Comments"
 msgstr "Comentaris"
 
 #. module: account_comment_template
-#: model:ir.model.fields,field_description:account_comment_template.field_account_move__display_name
-msgid "Display Name"
-msgstr "Nom Mostrat"
-
-#. module: account_comment_template
 #: model:ir.ui.menu,name:account_comment_template.menu_base_comment_template_invoice
 msgid "Document Comments"
 msgstr "Comentaris del Document"
-
-#. module: account_comment_template
-#: model:ir.model.fields,field_description:account_comment_template.field_account_move__id
-msgid "ID"
-msgstr "ID(identificació)"
 
 #. module: account_comment_template
 #: model:ir.model,name:account_comment_template.model_account_move
 msgid "Journal Entry"
 msgstr "Assentament Comptable"
 
-#. module: account_comment_template
-#: model:ir.model.fields,field_description:account_comment_template.field_account_move____last_update
-msgid "Last Modified on"
-msgstr "Darrera Modificació en"
+#~ msgid "Display Name"
+#~ msgstr "Nom Mostrat"
+
+#~ msgid "ID"
+#~ msgstr "ID(identificació)"
+
+#~ msgid "Last Modified on"
+#~ msgstr "Darrera Modificació en"
 
 #~ msgid "Invoice"
 #~ msgstr "Factura"

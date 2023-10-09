@@ -30,29 +30,23 @@ msgid "Comments"
 msgstr "Comentarios"
 
 #. module: account_comment_template
-#: model:ir.model.fields,field_description:account_comment_template.field_account_move__display_name
-msgid "Display Name"
-msgstr "Nombre a Mostrar"
-
-#. module: account_comment_template
 #: model:ir.ui.menu,name:account_comment_template.menu_base_comment_template_invoice
 msgid "Document Comments"
 msgstr "Comentarios del documento"
-
-#. module: account_comment_template
-#: model:ir.model.fields,field_description:account_comment_template.field_account_move__id
-msgid "ID"
-msgstr "ID (identificación)"
 
 #. module: account_comment_template
 #: model:ir.model,name:account_comment_template.model_account_move
 msgid "Journal Entry"
 msgstr "Entrada diaria"
 
-#. module: account_comment_template
-#: model:ir.model.fields,field_description:account_comment_template.field_account_move____last_update
-msgid "Last Modified on"
-msgstr "Última modificación el"
+#~ msgid "Display Name"
+#~ msgstr "Nombre a Mostrar"
+
+#~ msgid "ID"
+#~ msgstr "ID (identificación)"
+
+#~ msgid "Last Modified on"
+#~ msgstr "Última modificación el"
 
 #~ msgid "Bottom Comment"
 #~ msgstr "Comentario inferior"
