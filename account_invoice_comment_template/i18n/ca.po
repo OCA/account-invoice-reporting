@@ -21,62 +21,53 @@ msgstr ""
 "X-Generator: Weblate 4.3.2\n"
 
 #. module: account_invoice_comment_template
-#: model:ir.model.fields,field_description:account_invoice_comment_template.field_account_invoice__note2
-msgid "Bottom Comment"
-msgstr "Comentari inferior"
+#: model:ir.actions.act_window,name:account_invoice_comment_template.action_account_invoice_comment_template
+#: model:ir.ui.menu,name:account_invoice_comment_template.menu_base_comment_template_invoice
+msgid "Account Invoice Comments"
+msgstr ""
 
 #. module: account_invoice_comment_template
-#: model:ir.model.fields,field_description:account_invoice_comment_template.field_account_invoice__comment_template2_id
-msgid "Bottom Comment Template"
-msgstr "Plantilla de comentari inferior"
-
-#. module: account_invoice_comment_template
-#: model_terms:ir.ui.view,arch_db:account_invoice_comment_template.invoice_form_add_comment
-msgid "Bottom Comments"
-msgstr "Comentaris inferiors"
-
-#. module: account_invoice_comment_template
-#: model_terms:ir.ui.view,arch_db:account_invoice_comment_template.invoice_form_add_comment
+#: model_terms:ir.ui.view,arch_db:account_invoice_comment_template.move_form_add_comment
 msgid "Comments"
 msgstr "Comentaris"
 
 #. module: account_invoice_comment_template
-#: model:ir.ui.menu,name:account_invoice_comment_template.menu_base_comment_template_invoice
-msgid "Document Comments"
-msgstr "Comentaris del document"
-
-#. module: account_invoice_comment_template
-#: model:ir.model,name:account_invoice_comment_template.model_account_invoice
-msgid "Invoice"
-msgstr "Factura"
-
-#. module: account_invoice_comment_template
-#: model_terms:ir.ui.view,arch_db:account_invoice_comment_template.invoice_form_add_comment
-msgid "Load a template"
-msgstr "Carrega una plantilla"
-
-#. module: account_invoice_comment_template
-#: model_terms:ir.ui.view,arch_db:account_invoice_comment_template.invoice_form_add_comment
-msgid ""
-"The comments will be displayed on the printed document. You can load a "
-"predefined template, write your own text or load a template and then modify "
-"it only for this document."
+#: model:ir.model,name:account_invoice_comment_template.model_account_move
+msgid "Journal Entries"
 msgstr ""
-"Els comentaris es mostraran al document imprès. Podeu carregar una plantilla "
-"predefinida, escriure el vostre propi text o carregar una plantilla i "
-"després modificar-la només per a aquest document."
 
-#. module: account_invoice_comment_template
-#: model:ir.model.fields,field_description:account_invoice_comment_template.field_account_invoice__note1
-msgid "Top Comment"
-msgstr "Comentari superior"
+#~ msgid "Bottom Comment"
+#~ msgstr "Comentari inferior"
 
-#. module: account_invoice_comment_template
-#: model:ir.model.fields,field_description:account_invoice_comment_template.field_account_invoice__comment_template1_id
-msgid "Top Comment Template"
-msgstr "Plantilla de comentari superior"
+#~ msgid "Bottom Comment Template"
+#~ msgstr "Plantilla de comentari inferior"
 
-#. module: account_invoice_comment_template
-#: model_terms:ir.ui.view,arch_db:account_invoice_comment_template.invoice_form_add_comment
-msgid "Top Comments"
-msgstr "Comentaris superiors"
+#~ msgid "Bottom Comments"
+#~ msgstr "Comentaris inferiors"
+
+#~ msgid "Document Comments"
+#~ msgstr "Comentaris del document"
+
+#~ msgid "Invoice"
+#~ msgstr "Factura"
+
+#~ msgid "Load a template"
+#~ msgstr "Carrega una plantilla"
+
+#~ msgid ""
+#~ "The comments will be displayed on the printed document. You can load a "
+#~ "predefined template, write your own text or load a template and then "
+#~ "modify it only for this document."
+#~ msgstr ""
+#~ "Els comentaris es mostraran al document imprès. Podeu carregar una "
+#~ "plantilla predefinida, escriure el vostre propi text o carregar una "
+#~ "plantilla i després modificar-la només per a aquest document."
+
+#~ msgid "Top Comment"
+#~ msgstr "Comentari superior"
+
+#~ msgid "Top Comment Template"
+#~ msgstr "Plantilla de comentari superior"
+
+#~ msgid "Top Comments"
+#~ msgstr "Comentaris superiors"

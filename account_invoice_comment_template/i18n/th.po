@@ -19,59 +19,20 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #. module: account_invoice_comment_template
-#: model:ir.model.fields,field_description:account_invoice_comment_template.field_account_invoice__note2
-msgid "Bottom Comment"
+#: model:ir.actions.act_window,name:account_invoice_comment_template.action_account_invoice_comment_template
+#: model:ir.ui.menu,name:account_invoice_comment_template.menu_base_comment_template_invoice
+msgid "Account Invoice Comments"
 msgstr ""
 
 #. module: account_invoice_comment_template
-#: model:ir.model.fields,field_description:account_invoice_comment_template.field_account_invoice__comment_template2_id
-msgid "Bottom Comment Template"
-msgstr ""
-
-#. module: account_invoice_comment_template
-#: model_terms:ir.ui.view,arch_db:account_invoice_comment_template.invoice_form_add_comment
-msgid "Bottom Comments"
-msgstr ""
-
-#. module: account_invoice_comment_template
-#: model_terms:ir.ui.view,arch_db:account_invoice_comment_template.invoice_form_add_comment
+#: model_terms:ir.ui.view,arch_db:account_invoice_comment_template.move_form_add_comment
 msgid "Comments"
 msgstr ""
 
 #. module: account_invoice_comment_template
-#: model:ir.ui.menu,name:account_invoice_comment_template.menu_base_comment_template_invoice
-msgid "Document Comments"
+#: model:ir.model,name:account_invoice_comment_template.model_account_move
+msgid "Journal Entries"
 msgstr ""
 
-#. module: account_invoice_comment_template
-#: model:ir.model,name:account_invoice_comment_template.model_account_invoice
-msgid "Invoice"
-msgstr "ใบแจ้งหนี้"
-
-#. module: account_invoice_comment_template
-#: model_terms:ir.ui.view,arch_db:account_invoice_comment_template.invoice_form_add_comment
-msgid "Load a template"
-msgstr ""
-
-#. module: account_invoice_comment_template
-#: model_terms:ir.ui.view,arch_db:account_invoice_comment_template.invoice_form_add_comment
-msgid ""
-"The comments will be displayed on the printed document. You can load a "
-"predefined template, write your own text or load a template and then modify "
-"it only for this document."
-msgstr ""
-
-#. module: account_invoice_comment_template
-#: model:ir.model.fields,field_description:account_invoice_comment_template.field_account_invoice__note1
-msgid "Top Comment"
-msgstr ""
-
-#. module: account_invoice_comment_template
-#: model:ir.model.fields,field_description:account_invoice_comment_template.field_account_invoice__comment_template1_id
-msgid "Top Comment Template"
-msgstr ""
-
-#. module: account_invoice_comment_template
-#: model_terms:ir.ui.view,arch_db:account_invoice_comment_template.invoice_form_add_comment
-msgid "Top Comments"
-msgstr ""
+#~ msgid "Invoice"
+#~ msgstr "ใบแจ้งหนี้"

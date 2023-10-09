@@ -1,6 +1,6 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* account_invoice_comment_template
+# 	* account_invoice_comment_template
 #
 msgid ""
 msgstr ""
@@ -17,59 +17,53 @@ msgstr ""
 "X-Generator: Weblate 3.10\n"
 
 #. module: account_invoice_comment_template
-#: model:ir.model.fields,field_description:account_invoice_comment_template.field_account_invoice__note2
-msgid "Bottom Comment"
-msgstr "Komentár za položkami"
+#: model:ir.actions.act_window,name:account_invoice_comment_template.action_account_invoice_comment_template
+#: model:ir.ui.menu,name:account_invoice_comment_template.menu_base_comment_template_invoice
+msgid "Account Invoice Comments"
+msgstr ""
 
 #. module: account_invoice_comment_template
-#: model:ir.model.fields,field_description:account_invoice_comment_template.field_account_invoice__comment_template2_id
-msgid "Bottom Comment Template"
-msgstr "Šablóna pre spodný komentár"
-
-#. module: account_invoice_comment_template
-#: model_terms:ir.ui.view,arch_db:account_invoice_comment_template.invoice_form_add_comment
-msgid "Bottom Comments"
-msgstr "Komentáre za položkami"
-
-#. module: account_invoice_comment_template
-#: model_terms:ir.ui.view,arch_db:account_invoice_comment_template.invoice_form_add_comment
+#: model_terms:ir.ui.view,arch_db:account_invoice_comment_template.move_form_add_comment
 msgid "Comments"
 msgstr "Komentáre"
 
 #. module: account_invoice_comment_template
-#: model:ir.ui.menu,name:account_invoice_comment_template.menu_base_comment_template_invoice
-msgid "Document Comments"
-msgstr "Šablóny komentárov"
-
-#. module: account_invoice_comment_template
-#: model:ir.model,name:account_invoice_comment_template.model_account_invoice
-msgid "Invoice"
-msgstr "Faktúra"
-
-#. module: account_invoice_comment_template
-#: model_terms:ir.ui.view,arch_db:account_invoice_comment_template.invoice_form_add_comment
-msgid "Load a template"
-msgstr "Načítať šablónu"
-
-#. module: account_invoice_comment_template
-#: model_terms:ir.ui.view,arch_db:account_invoice_comment_template.invoice_form_add_comment
-msgid "The comments will be displayed on the printed document. You can load a predefined template, write your own text or load a template and then modify it only for this document."
+#: model:ir.model,name:account_invoice_comment_template.model_account_move
+msgid "Journal Entries"
 msgstr ""
-"Komentáre sa zobrazia na výtlačku dokumentu. Môžete načítať predvolenú "
-"šablónu, napísať svoj vlastný text alebo načítať šablónu a potom ju upraviť "
-"iba pre tento dokument."
 
-#. module: account_invoice_comment_template
-#: model:ir.model.fields,field_description:account_invoice_comment_template.field_account_invoice__note1
-msgid "Top Comment"
-msgstr "Komentár pred položkami"
+#~ msgid "Bottom Comment"
+#~ msgstr "Komentár za položkami"
 
-#. module: account_invoice_comment_template
-#: model:ir.model.fields,field_description:account_invoice_comment_template.field_account_invoice__comment_template1_id
-msgid "Top Comment Template"
-msgstr "Šablóna horného komentára"
+#~ msgid "Bottom Comment Template"
+#~ msgstr "Šablóna pre spodný komentár"
 
-#. module: account_invoice_comment_template
-#: model_terms:ir.ui.view,arch_db:account_invoice_comment_template.invoice_form_add_comment
-msgid "Top Comments"
-msgstr "Komentáre pred položkami"
+#~ msgid "Bottom Comments"
+#~ msgstr "Komentáre za položkami"
+
+#~ msgid "Document Comments"
+#~ msgstr "Šablóny komentárov"
+
+#~ msgid "Invoice"
+#~ msgstr "Faktúra"
+
+#~ msgid "Load a template"
+#~ msgstr "Načítať šablónu"
+
+#~ msgid ""
+#~ "The comments will be displayed on the printed document. You can load a "
+#~ "predefined template, write your own text or load a template and then "
+#~ "modify it only for this document."
+#~ msgstr ""
+#~ "Komentáre sa zobrazia na výtlačku dokumentu. Môžete načítať predvolenú "
+#~ "šablónu, napísať svoj vlastný text alebo načítať šablónu a potom ju "
+#~ "upraviť iba pre tento dokument."
+
+#~ msgid "Top Comment"
+#~ msgstr "Komentár pred položkami"
+
+#~ msgid "Top Comment Template"
+#~ msgstr "Šablóna horného komentára"
+
+#~ msgid "Top Comments"
+#~ msgstr "Komentáre pred položkami"
