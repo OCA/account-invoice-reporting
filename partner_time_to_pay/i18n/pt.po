@@ -1,6 +1,6 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* partner_time_to_pay
+# 	* partner_time_to_pay
 #
 msgid ""
 msgstr ""
