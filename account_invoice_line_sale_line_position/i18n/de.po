@@ -17,23 +17,11 @@ msgstr ""
 "X-Generator: Weblate 4.3.2\n"
 
 #. module: account_invoice_line_sale_line_position
-#: model:ir.model.fields,field_description:account_invoice_line_sale_line_position.field_account_move__display_name
-#: model:ir.model.fields,field_description:account_invoice_line_sale_line_position.field_account_move_line__display_name
-msgid "Display Name"
-msgstr "Anzeigename"
-
-#. module: account_invoice_line_sale_line_position
 #: model:ir.model.fields,field_description:account_invoice_line_sale_line_position.field_account_bank_statement_line__has_order_position
 #: model:ir.model.fields,field_description:account_invoice_line_sale_line_position.field_account_move__has_order_position
 #: model:ir.model.fields,field_description:account_invoice_line_sale_line_position.field_account_payment__has_order_position
 msgid "Has Order Position"
 msgstr "Hat Auftragsposition"
-
-#. module: account_invoice_line_sale_line_position
-#: model:ir.model.fields,field_description:account_invoice_line_sale_line_position.field_account_move__id
-#: model:ir.model.fields,field_description:account_invoice_line_sale_line_position.field_account_move_line__id
-msgid "ID"
-msgstr "ID"
 
 #. module: account_invoice_line_sale_line_position
 #: model:ir.model,name:account_invoice_line_sale_line_position.model_account_move
@@ -46,12 +34,6 @@ msgid "Journal Item"
 msgstr "Journal-Item"
 
 #. module: account_invoice_line_sale_line_position
-#: model:ir.model.fields,field_description:account_invoice_line_sale_line_position.field_account_move____last_update
-#: model:ir.model.fields,field_description:account_invoice_line_sale_line_position.field_account_move_line____last_update
-msgid "Last Modified on"
-msgstr "Zuletzt geändert am"
-
-#. module: account_invoice_line_sale_line_position
 #: model_terms:ir.ui.view,arch_db:account_invoice_line_sale_line_position.report_invoice_document
 #: model_terms:ir.ui.view,arch_db:account_invoice_line_sale_line_position.view_move_form
 msgid "Pos"
@@ -61,3 +43,12 @@ msgstr "Pos"
 #: model:ir.model.fields,field_description:account_invoice_line_sale_line_position.field_account_move_line__position_formatted
 msgid "Position Formatted"
 msgstr ""
+
+#~ msgid "Display Name"
+#~ msgstr "Anzeigename"
+
+#~ msgid "ID"
+#~ msgstr "ID"
+
+#~ msgid "Last Modified on"
+#~ msgstr "Zuletzt geändert am"
