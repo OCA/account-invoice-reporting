@@ -24,6 +24,16 @@ msgid "<b class=\"font-italic\">Serial numbers</b>"
 msgstr ""
 
 #. module: account_invoice_production_lot
+#: model:ir.model.fields,field_description:account_invoice_production_lot.field_account_move_line__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: account_invoice_production_lot
+#: model:ir.model.fields,field_description:account_invoice_production_lot.field_account_move_line__id
+msgid "ID"
+msgstr ""
+
+#. module: account_invoice_production_lot
 #: model:product.product,name:account_invoice_production_lot.product_icecream_b
 #: model:product.template,name:account_invoice_production_lot.product_icecream_b_product_template
 msgid "Ice Cream B"
@@ -41,13 +51,18 @@ msgid ""
 msgstr ""
 
 #. module: account_invoice_production_lot
-#: model:ir.model,name:account_invoice_production_lot.model_account_invoice_line
-msgid "Invoice Line"
-msgstr "Línia factura"
+#: model:ir.model,name:account_invoice_production_lot.model_account_move_line
+msgid "Journal Item"
+msgstr ""
 
 #. module: account_invoice_production_lot
-#: model:ir.model.fields,field_description:account_invoice_production_lot.field_account_invoice_line__prod_lot_ids
-#: model_terms:ir.ui.view,arch_db:account_invoice_production_lot.view_invoice_line_form_prod_lots
+#: model:ir.model.fields,field_description:account_invoice_production_lot.field_account_move_line____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: account_invoice_production_lot
+#: model:ir.model.fields,field_description:account_invoice_production_lot.field_account_move_line__prod_lot_ids
+#: model_terms:ir.ui.view,arch_db:account_invoice_production_lot.view_move_form
 msgid "Production Lots"
 msgstr ""
 
@@ -59,11 +74,8 @@ msgstr ""
 #. module: account_invoice_production_lot
 #: model:product.product,uom_name:account_invoice_production_lot.product_icecream_b
 #: model:product.template,uom_name:account_invoice_production_lot.product_icecream_b_product_template
-msgid "Unit(s)"
+msgid "Units"
 msgstr ""
 
-#. module: account_invoice_production_lot
-#: model:product.product,weight_uom_name:account_invoice_production_lot.product_icecream_b
-#: model:product.template,weight_uom_name:account_invoice_production_lot.product_icecream_b_product_template
-msgid "kg"
-msgstr ""
+#~ msgid "Invoice Line"
+#~ msgstr "Línia factura"
