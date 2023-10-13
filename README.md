@@ -23,7 +23,7 @@ addon | version | maintainers | summary
 --- | --- | --- | ---
 [account_comment_template](account_comment_template/) | 16.0.1.0.1 |  | Comments templates on invoice documents
 [account_invoice_line_report](account_invoice_line_report/) | 16.0.1.0.0 |  | New view to manage invoice lines information
-[account_invoice_report_grouped_by_picking](account_invoice_report_grouped_by_picking/) | 16.0.1.1.0 |  | Print invoice lines grouped by picking
+[account_invoice_report_grouped_by_picking](account_invoice_report_grouped_by_picking/) | 16.0.1.1.1 |  | Print invoice lines grouped by picking
 [account_invoice_report_payment_info](account_invoice_report_payment_info/) | 16.0.1.0.0 |  | Show payment extended info in invoice
 [account_reporting_volume](account_reporting_volume/) | 16.0.1.0.0 |  | Volume in the invoices analysis view
 [account_reporting_weight](account_reporting_weight/) | 16.0.1.0.0 |  | Weights in the invoices analysis view
