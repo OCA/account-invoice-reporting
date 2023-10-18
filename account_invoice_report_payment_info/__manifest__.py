@@ -3,7 +3,7 @@
 {
     "name": "Account Invoice Report Payment Extended Info",
     "summary": "Show payment extended info in invoice",
-    "version": "16.0.1.0.0",
+    "version": "16.0.1.0.1",
     "category": "Accounting",
     "website": "https://github.com/OCA/account-invoice-reporting",
     "author": "Tecnativa, Odoo Community Association (OCA)",
