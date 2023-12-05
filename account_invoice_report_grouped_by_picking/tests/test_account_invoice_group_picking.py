@@ -83,8 +83,12 @@ class TestAccountInvoiceGroupPicking(TransactionCase):
         self.sale.action_confirm()
         # deliver lines2
         self.sale.picking_ids[:1].action_confirm()
-        self.sale.picking_ids[:1].move_line_ids.write({"qty_done": 1})
-        self.sale.picking_ids[:1]._action_done()
+        self.sale.picking_ids[:1].move_line_ids.write({"quantity": 1})
+        wiz_act = self.sale.picking_ids[:1].button_validate()
+        wiz = Form(
+            self.env[wiz_act["res_model"]].with_context(wiz_act["context"])
+        ).save()
+        wiz.process()
         # create another sale
         self.sale2 = self.sale.copy()
         self.sale2.order_line[:1].product_uom_qty = 4
@@ -92,8 +96,12 @@ class TestAccountInvoiceGroupPicking(TransactionCase):
         # confirm new quotation
         self.sale2.action_confirm()
         self.sale2.picking_ids[:1].action_confirm()
-        self.sale2.picking_ids[:1].move_line_ids.write({"qty_done": 1})
-        self.sale2.picking_ids[:1]._action_done()
+        self.sale2.picking_ids[:1].move_line_ids.write({"quantity": 1})
+        wiz_act = self.sale2.picking_ids[:1].button_validate()
+        wiz = Form(
+            self.env[wiz_act["res_model"]].with_context(wiz_act["context"])
+        ).save()
+        wiz.process()
         sales = self.sale | self.sale2
         # invoice sales
         invoice = sales._create_invoices()
@@ -135,15 +143,19 @@ class TestAccountInvoiceGroupPicking(TransactionCase):
         # deliver lines2
         picking = self.sale.picking_ids[:1]
         picking.action_confirm()
-        picking.move_line_ids.write({"qty_done": 1})
-        picking._action_done()
+        picking.move_line_ids.write({"quantity": 1})
+        wiz_act = picking.button_validate()
+        wiz = Form(
+            self.env[wiz_act["res_model"]].with_context(wiz_act["context"])
+        ).save()
+        wiz.process()
         self.sale._create_invoices()
         # Return one picking from sale1
         wiz_return = self.get_return_picking_wizard(picking)
         res = wiz_return.create_returns()
         picking_return = self.env["stock.picking"].browse(res["res_id"])
-        picking_return.move_line_ids.write({"qty_done": 1})
-        picking_return._action_done()
+        picking_return.move_line_ids.write({"quantity": 1})
+        picking_return.button_validate()
         # Test directly grouping method
         invoice = self.sale._create_invoices(final=True)
         groups = invoice.lines_grouped_by_picking()
@@ -154,8 +166,12 @@ class TestAccountInvoiceGroupPicking(TransactionCase):
         self.sale.action_confirm()
         picking = self.sale.picking_ids[:1]
         picking.action_confirm()
-        picking.move_line_ids.write({"qty_done": 1})
-        picking._action_done()
+        picking.move_line_ids.write({"quantity": 1})
+        wiz_act = picking.button_validate()
+        wiz = Form(
+            self.env[wiz_act["res_model"]].with_context(wiz_act["context"])
+        ).save()
+        wiz.process()
         invoice = self.sale._create_invoices()
         invoice.action_post()
         # Refund invoice without return picking
@@ -166,12 +182,11 @@ class TestAccountInvoiceGroupPicking(TransactionCase):
                 {
                     "date": fields.Date.today(),
                     "reason": "no reason",
-                    "refund_method": "refund",
                     "journal_id": invoice.journal_id.id,
                 }
             )
         )
-        reversal = move_reversal.reverse_moves()
+        reversal = move_reversal.refund_moves()
         refund_invoice = self.env["account.move"].browse(reversal["res_id"])
         groups = refund_invoice.lines_grouped_by_picking()
         self.assertEqual(len(groups), 2)
@@ -182,8 +197,12 @@ class TestAccountInvoiceGroupPicking(TransactionCase):
         # deliver lines2
         picking = self.sale.picking_ids[:1]
         picking.action_confirm()
-        picking.move_line_ids.write({"qty_done": 1})
-        picking._action_done()
+        picking.move_line_ids.write({"quantity": 1})
+        wiz_act = picking.button_validate()
+        wiz = Form(
+            self.env[wiz_act["res_model"]].with_context(wiz_act["context"])
+        ).save()
+        wiz.process()
         # invoice sales
         invoice = self.sale._create_invoices()
         invoice._post()
@@ -210,21 +229,20 @@ class TestAccountInvoiceGroupPicking(TransactionCase):
         wiz_return = self.get_return_picking_wizard(picking)
         res = wiz_return.create_returns()
         picking_return = self.env["stock.picking"].browse(res["res_id"])
-        picking_return.move_line_ids.write({"qty_done": 1})
-        picking_return._action_done()
+        picking_return.move_line_ids.write({"quantity": 1})
+        picking_return.button_validate()
         # Refund invoice
         wiz_invoice_refund = (
             self.env["account.move.reversal"]
             .with_context(active_model="account.move", active_ids=invoice.ids)
             .create(
                 {
-                    "refund_method": "cancel",
                     "reason": "test",
                     "journal_id": invoice.journal_id.id,
                 }
             )
         )
-        wiz_invoice_refund.reverse_moves()
+        wiz_invoice_refund.refund_moves()
         new_invoice = self.sale.invoice_ids.filtered(
             lambda i: i.move_type == "out_refund"
         )
@@ -254,8 +272,12 @@ class TestAccountInvoiceGroupPicking(TransactionCase):
         # deliver lines2
         picking = self.sale.picking_ids[:1]
         picking.action_confirm()
-        picking.move_line_ids.write({"qty_done": 1})
-        picking._action_done()
+        picking.move_line_ids.write({"quantity": 1})
+        wiz_act = picking.button_validate()
+        wiz = Form(
+            self.env[wiz_act["res_model"]].with_context(wiz_act["context"])
+        ).save()
+        wiz.process()
         # invoice sales
         invoice = self.sale._create_invoices()
         invoice._post()
@@ -284,13 +306,12 @@ class TestAccountInvoiceGroupPicking(TransactionCase):
             .with_context(active_model="account.move", active_ids=invoice.ids)
             .create(
                 {
-                    "refund_method": "cancel",
                     "reason": "test",
                     "journal_id": invoice.journal_id.id,
                 }
             )
         )
-        wiz_invoice_refund.reverse_moves()
+        wiz_invoice_refund.refund_moves()
         new_invoice = self.sale.invoice_ids.filtered(
             lambda i: i.move_type == "out_refund"
         )
