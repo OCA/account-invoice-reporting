@@ -36,9 +36,9 @@ class AccountMove(models.Model):
         """
         qty = 0
         if move.location_id.usage == "customer":
-            qty = -move.quantity_done * sign
+            qty = -move.quantity * sign
         elif move.location_dest_id.usage == "customer":
-            qty = move.quantity_done * sign
+            qty = move.quantity * sign
         return qty
 
     def _process_section_note_lines_grouped(
