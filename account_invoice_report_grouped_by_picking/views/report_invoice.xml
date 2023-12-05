@@ -16,7 +16,7 @@
         </xpath>
         <!-- Appends before 'current_subtotal' compute -->
         <xpath
-            expr="//t[@groups='account.group_show_line_subtotals_tax_excluded']"
+            expr="//t[@t-value='current_subtotal + line.price_subtotal']"
             position="before"
         >
             <t t-set="l" t-value="lines_group['line']" />
@@ -68,16 +68,8 @@
             >{'widget': 'float', 'decimal_precision': 'Product Unit of Measure'}</attribute>
         </xpath>
         <xpath expr="//td/span[@t-field='line.price_subtotal']" position="before">
-            <t
-                t-set="line_subtotal"
-                t-value="l.price_subtotal"
-                groups="account.group_show_line_subtotals_tax_excluded"
-            />
-            <t
-                t-set="line_subtotal"
-                t-value="l.price_total"
-                groups="account.group_show_line_subtotals_tax_included"
-            />
+            <t t-set="line_subtotal" t-value="l.price_subtotal" />
+            <t t-set="line_subtotal" t-value="l.price_total" />
             <t t-if="lines_group['quantity'] != l.quantity" id="picking_subtotal">
                 <!-- Compute subtotal for that picking with discounts -->
                 <t
@@ -100,9 +92,6 @@
         <xpath expr="//td/span[@t-field='line.price_subtotal']" position="attributes">
             <attribute name="t-if">lines_group['quantity'] == l.quantity</attribute>
         </xpath>
-        <xpath expr="//td/span[@t-field='line.price_total']" position="attributes">
-            <attribute name="t-if">lines_group['quantity'] == l.quantity</attribute>
-        </xpath>
         <!-- Append subtotal row after invoice line row-->
         <xpath
             expr="//t[@t-foreach='lines_grouped']//td[hasclass('o_price_total')]"
@@ -118,9 +107,6 @@
                 </td>
                 <t t-set="subtotal" t-value="0.0" />
             </tr>
-        </xpath>
-        <xpath expr="//td/span[@t-field='line.price_total']" position="attributes">
-            <attribute name="t-if">lines_group['quantity'] == l.quantity</attribute>
         </xpath>
     </template>
 </odoo>
