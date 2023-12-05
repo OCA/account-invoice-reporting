@@ -12,7 +12,7 @@ from odoo.tests.common import Form, TransactionCase
 class TestAccountInvoiceGroupPicking(TransactionCase):
     @classmethod
     def setUpClass(cls):
-        super(TestAccountInvoiceGroupPicking, cls).setUpClass()
+        super().setUpClass()
         cls.env = cls.env(
             context=dict(
                 cls.env.context,
