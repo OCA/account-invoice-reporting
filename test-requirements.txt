@@ -1,0 +1,1 @@
+odoo14-addon-report-qweb-table-pagebreak @ git+https://github.com/OCA/reporting-engine.git@refs/pull/826/head#subdirectory=setup/report_qweb_table_pagebreak
