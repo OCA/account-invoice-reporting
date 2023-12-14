@@ -9,7 +9,7 @@
 
 # account-invoice-reporting
 
-TODO: add repo description.
+Account invoice reports and dashboards
 
 <!-- /!\ do not modify below this line -->
 
