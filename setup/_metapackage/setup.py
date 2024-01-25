@@ -10,6 +10,7 @@ setuptools.setup(
     install_requires=[
         'odoo-addon-account_comment_template>=16.0dev,<16.1dev',
         'odoo-addon-account_invoice_line_report>=16.0dev,<16.1dev',
+        'odoo-addon-account_invoice_production_lot>=16.0dev,<16.1dev',
         'odoo-addon-account_invoice_report_grouped_by_picking>=16.0dev,<16.1dev',
         'odoo-addon-account_invoice_report_payment_info>=16.0dev,<16.1dev',
         'odoo-addon-account_reporting_volume>=16.0dev,<16.1dev',
