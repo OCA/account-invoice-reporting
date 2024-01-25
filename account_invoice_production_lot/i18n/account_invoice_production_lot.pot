@@ -4,7 +4,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 15.0\n"
+"Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -19,13 +19,11 @@ msgid "<b class=\"font-italic\">Serial numbers</b>"
 msgstr ""
 
 #. module: account_invoice_production_lot
-#: model:product.product,name:account_invoice_production_lot.product_icecream_b
 #: model:product.template,name:account_invoice_production_lot.product_icecream_b_product_template
 msgid "Ice Cream B"
 msgstr ""
 
 #. module: account_invoice_production_lot
-#: model_terms:product.product,description:account_invoice_production_lot.product_icecream_b
 #: model_terms:product.template,description:account_invoice_production_lot.product_icecream_b_product_template
 msgid ""
 "Ice cream can be mass-produced and thus is widely available in developed "
@@ -49,10 +47,4 @@ msgstr ""
 #. module: account_invoice_production_lot
 #: model_terms:ir.ui.view,arch_db:account_invoice_production_lot.account_invoice_production_lot_report
 msgid "S/N:"
-msgstr ""
-
-#. module: account_invoice_production_lot
-#: model:product.product,uom_name:account_invoice_production_lot.product_icecream_b
-#: model:product.template,uom_name:account_invoice_production_lot.product_icecream_b_product_template
-msgid "Units"
 msgstr ""
