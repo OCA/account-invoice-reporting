@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 9.0c\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-06-09 02:58+0000\n"
-"PO-Revision-Date: 2024-02-08 10:42+0000\n"
+"PO-Revision-Date: 2024-02-22 09:38+0000\n"
 "Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: Italian (https://www.transifex.com/oca/teams/23907/it/)\n"
 "Language: it\n"
@@ -27,6 +27,9 @@ msgid ""
 "customers. The search tool can also be used to personalise your Invoices "
 "reports and so, match this analysis to your needs."
 msgstr ""
+"Da questo resoconto si può avere una panoramica del valore fatturato ai "
+"clienti. Lo strumento di ricerca può essere usanto anche per personalizzare "
+"i resoconti fatture e quindi adattare l'analisi alle proprie esigenze."
 
 #. module: account_invoice_line_report
 #: model:ir.actions.act_window,name:account_invoice_line_report.action_account_invoice_line_report
@@ -37,12 +40,12 @@ msgstr "Righe fattura"
 #. module: account_invoice_line_report
 #: model_terms:ir.ui.view,arch_db:account_invoice_line_report.view_account_invoice_report_search
 msgid "With Price"
-msgstr ""
+msgstr "Con prezzo"
 
 #. module: account_invoice_line_report
 #: model_terms:ir.ui.view,arch_db:account_invoice_line_report.view_account_invoice_report_search
 msgid "Without Price"
-msgstr ""
+msgstr "Senza prezzo"
 
 #~ msgid "Invoice Line"
 #~ msgstr "Riga Fattura"
