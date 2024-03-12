@@ -46,6 +46,11 @@ class AccountMove(models.Model):
         if previous_note and key_note not in lines_dic:
             lines_dic[key_note] = 0.0
 
+    def _get_grouped_by_picking_sorted_lines(self):
+        return self.invoice_line_ids.sorted(
+            lambda ln: (-ln.sequence, ln.date, ln.move_name, -ln.id), reverse=True
+        )
+
     def lines_grouped_by_picking(self):
         """This prepares a data structure for printing the invoice report
         grouped by pickings."""
@@ -69,9 +74,8 @@ class AccountMove(models.Model):
         so_dict = {x.sale_id: x for x in self.picking_ids if x.sale_id}
         # Now group by picking by direct link or via same SO as picking's one
         previous_section = previous_note = False
-        for line in self.invoice_line_ids.sorted(
-            lambda ln: (-ln.sequence, ln.date, ln.move_name, -ln.id), reverse=True
-        ):
+        sorted_lines = self._get_grouped_by_picking_sorted_lines()
+        for line in sorted_lines:
             if line.display_type == "line_section":
                 previous_section = line
                 continue
