@@ -107,7 +107,7 @@ class AccountMove(models.Model):
                             so_dict[so_line.order_id],
                         )
                         picking_dict.setdefault(key, 0)
-                        qty = so_line.product_uom_qty
+                        qty = min(so_line.product_uom_qty, remaining_qty)
                         picking_dict[key] += qty
                         remaining_qty -= qty
             elif not line.move_line_ids and not line.sale_line_ids:

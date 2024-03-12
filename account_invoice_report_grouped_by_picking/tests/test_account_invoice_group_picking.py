@@ -1,6 +1,7 @@
 # Copyright 2017 Carlos Dauden <carlos.dauden@tecnativa.com>
 # Copyright 2018 David Vidal <david.vidal@tecnativa.com>
 # Copyright 2019 Tecnativa - Pedro M. Baeza
+# Copyright 2024 Manuel Regidor <manuel.regidor@sygel.es>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 from lxml import html
@@ -313,3 +314,51 @@ class TestAccountInvoiceGroupPicking(TransactionCase):
         self.assertEqual(tbody.count(self.sale.name), 1)
         # information about pickings is printed
         self.assertTrue(picking.name in tbody)
+
+    def test_service_less_than_ordered(self):
+        self.sale.action_confirm()
+        picking = self.sale.picking_ids[:1]
+        picking.action_confirm()
+        picking.move_line_ids.write({"qty_done": 2})
+        picking._action_done()
+        invoice = self.sale._create_invoices()
+        invoice_service_line = invoice.invoice_line_ids.filtered(
+            lambda a: a.product_id.type == "service"
+        )
+        invoice_service_line.write({"quantity": 1})
+        grouped_lines = invoice.lines_grouped_by_picking()
+        service_dict = list(
+            filter(lambda e: e.get("line") == invoice_service_line, grouped_lines)
+        )
+        self.assertEqual(len(service_dict), 1)
+        self.assertEqual(service_dict[0].get("quantity"), 1)
+
+    def test_service_greater_than_ordered(self):
+        self.sale.action_confirm()
+        picking = self.sale.picking_ids[:1]
+        picking.action_confirm()
+        picking.move_line_ids.write({"qty_done": 2})
+        picking._action_done()
+        invoice = self.sale._create_invoices()
+        invoice_service_line = invoice.invoice_line_ids.filtered(
+            lambda a: a.product_id.type == "service"
+        )
+        invoice_service_line.write({"quantity": 5})
+        grouped_lines = invoice.lines_grouped_by_picking()
+        service_with_picking_dict = list(
+            filter(
+                lambda e: e.get("line") == invoice_service_line and e.get("picking"),
+                grouped_lines,
+            )
+        )
+        service_without_picking_dict = list(
+            filter(
+                lambda e: e.get("line") == invoice_service_line
+                and not e.get("picking"),
+                grouped_lines,
+            )
+        )
+        self.assertEqual(len(service_with_picking_dict), 1)
+        self.assertEqual(service_with_picking_dict[0].get("quantity"), 3)
+        self.assertEqual(len(service_without_picking_dict), 1)
+        self.assertEqual(service_without_picking_dict[0].get("quantity"), 2)

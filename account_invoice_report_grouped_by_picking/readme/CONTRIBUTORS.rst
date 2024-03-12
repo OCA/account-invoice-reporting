@@ -10,3 +10,7 @@
 * `Studio73 <https://www.studio73.es>`__:
 
   * Ioan Galan <ioan@studio73.es>
+
+* `Sygel <https://www.sygel.es>`__:
+
+  * Manuel Regidor <manuelregidor@sygel.es>
