@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2024-02-22 09:38+0000\n"
+"PO-Revision-Date: 2024-04-04 11:39+0000\n"
 "Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: none\n"
 "Language: it\n"
@@ -98,7 +98,7 @@ msgstr "Contatto"
 #: model:ir.model.fields,help:partner_time_to_pay.field_account_move__full_reconcile_payment_date
 #: model:ir.model.fields,help:partner_time_to_pay.field_account_payment__full_reconcile_payment_date
 msgid "Date when the complete reconciliation of this invoice occurred."
-msgstr "Data di riconciliazine completa di questa fattura."
+msgstr "Data di riconciliazione completa di questa fattura."
 
 #. module: partner_time_to_pay
 #: model:ir.model,name:partner_time_to_pay.model_account_move
