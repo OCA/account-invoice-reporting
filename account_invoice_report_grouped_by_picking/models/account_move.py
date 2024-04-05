@@ -33,7 +33,7 @@ class AccountMove(models.Model):
                 (
                     x["picking"].date or min_date,
                     x["picking"].date_done or x["picking"].date or min_date,
-                    x.get("is_last_section_notes", False),
+                    # x.get("is_last_section_notes", False),
                 )
             ),
         )
