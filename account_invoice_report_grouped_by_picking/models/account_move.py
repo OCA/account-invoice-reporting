@@ -4,6 +4,7 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 import datetime
+import logging
 from collections import OrderedDict
 
 from odoo import api, models
@@ -15,7 +16,17 @@ class AccountMove(models.Model):
 
     @api.model
     def _sort_grouped_lines(self, lines_dic):
+        logging.warning("_sort_grouped_lines")
         min_date = datetime.datetime.min
+        logging.warning(lines_dic)
+        for line in lines_dic:
+            logging.warning("------")
+            logging.warning(line["picking"].date)
+            logging.warning(min_date)
+            logging.warning(line["picking"].date_done)
+            logging.warning(line["picking"].date)
+            logging.warning(line.get("is_last_section_notes", False))
+            logging.warning("------")
         dictionary = sorted(
             lines_dic,
             key=lambda x: (
@@ -26,6 +37,7 @@ class AccountMove(models.Model):
                 )
             ),
         )
+        logging.warning(dictionary)
         return dictionary
 
     def _get_signed_quantity_done(self, invoice_line, move, sign):
