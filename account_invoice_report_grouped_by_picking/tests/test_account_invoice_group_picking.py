@@ -273,3 +273,62 @@ class TestAccountInvoiceGroupPicking(SavepointCase):
         self.assertEqual(tbody.count(self.sale.name), 1)
         # information about pickings is printed
         self.assertTrue(picking.name in tbody)
+
+    def test_account_invoice_group_picking_note_section_end(self):
+        # confirm quotation
+        self.sale.action_confirm()
+        # deliver lines2
+        picking = self.sale.picking_ids[:1]
+        picking.action_confirm()
+        picking.move_line_ids.write({"qty_done": 1})
+        picking._action_done()
+        # invoice sales
+        invoice = self.sale._create_invoices()
+        groups = invoice.lines_grouped_by_picking()
+        self.assertEqual(len(groups), 2)
+        invoice.write(
+            {
+                "invoice_line_ids": [
+                    (
+                        0,
+                        0,
+                        {
+                            "name": "Note",
+                            "display_type": "line_note",
+                        },
+                    ),
+                    (
+                        0,
+                        0,
+                        {
+                            "name": "Section",
+                            "display_type": "line_section",
+                        },
+                    ),
+                ],
+            }
+        )
+        groups = invoice.lines_grouped_by_picking()
+        self.assertEqual(len(groups), 4)
+        self.assertTrue(groups[0].get("is_last_section_notes", False))
+        self.assertTrue(groups[1].get("is_last_section_notes", False))
+        self.assertFalse(groups[2].get("is_last_section_notes", False))
+        self.assertFalse(groups[3].get("is_last_section_notes", False))
+        invoice.invoice_line_ids.filtered(
+            lambda a: a.product_id == self.product
+        ).with_context(check_move_validity=False).write({"quantity": 3})
+        invoice.invoice_line_ids.filtered(
+            lambda a: a.product_id == self.service
+        ).with_context(check_move_validity=False).write({"quantity": 4})
+        groups = invoice.lines_grouped_by_picking()
+        self.assertEqual(len(groups), 6)
+        self.assertFalse(groups[0].get("is_last_section_notes", False))
+        self.assertFalse(groups[0]["picking"])
+        self.assertFalse(groups[1].get("is_last_section_notes", False))
+        self.assertFalse(groups[1]["picking"])
+        self.assertTrue(groups[2].get("is_last_section_notes", False))
+        self.assertTrue(groups[3].get("is_last_section_notes", False))
+        self.assertFalse(groups[4].get("is_last_section_notes", False))
+        self.assertTrue(groups[4]["picking"])
+        self.assertFalse(groups[5].get("is_last_section_notes", False))
+        self.assertTrue(groups[5]["picking"])
