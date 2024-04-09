@@ -1,6 +1,10 @@
 # Copyright 2020 Tecnativa - Ernesto Tejeda
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
+from datetime import datetime, timedelta
+
+from freezegun import freeze_time
+
 from odoo.tests import Form, SavepointCase
 
 
@@ -63,15 +67,19 @@ class TestReportGroupedSaleMrp(SavepointCase):
 
     def test_account_invoice_group_picking(self):
         # confirm quotation
-        self.sale_order.action_confirm()
-        self.assertEqual(len(self.sale_order.picking_ids), 1)
-        picking_1 = self.sale_order.picking_ids
-        self.assertEqual(len(picking_1.move_lines), 4)
-        self.assertEqual(self.sale_order.order_line.move_ids, picking_1.move_lines)
-        # deliver the sold kit_2 components
-        picking_1.action_confirm()
-        picking_1.mapped("move_lines").write({"quantity_done": 2})
-        picking_1._action_done()
+        # with freeze_time is used so the account.move lines_grouped_by_picking
+        # method sorts lines as expected
+        with freeze_time(datetime.now() - timedelta(seconds=5)):
+            self.sale_order.action_confirm()
+            self.assertEqual(len(self.sale_order.picking_ids), 1)
+            picking_1 = self.sale_order.picking_ids
+            self.assertEqual(len(picking_1.move_lines), 4)
+            self.assertEqual(self.sale_order.order_line.move_ids, picking_1.move_lines)
+            # deliver the sold kit_2 components
+            picking_1.action_confirm()
+            picking_1.mapped("move_lines").write({"quantity_done": 2})
+            picking_1._action_done()
+
         # Change the existing order line qty from 2 to 3 and deliver
         # the new kit_2
         with Form(self.sale_order) as sale_form:
