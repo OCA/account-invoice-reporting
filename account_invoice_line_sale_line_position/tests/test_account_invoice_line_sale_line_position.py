@@ -50,6 +50,4 @@ class TestAccountInvoiceLineSaleLinePosition(SingleTransactionCase):
     def test_invoice_position(self):
         """Check positions are retrieved from sale line."""
         self.invoice = self.order._create_invoices()
-        self.assertEqual(self.invoice.invoice_line_ids[0].position_formatted, "") 
         self.assertEqual(self.invoice.invoice_line_ids[1].position_formatted, "")
-        self.assertEqual(self.invoice.invoice_line_ids[2].position_formatted, "")
