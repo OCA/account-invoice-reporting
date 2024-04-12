@@ -15,15 +15,17 @@ class AccountMove(models.Model):
     @api.model
     def _sort_grouped_lines(self, lines_dic):
         min_date = datetime.datetime.min
-        return sorted(
+        dictionary = sorted(
             lines_dic,
             key=lambda x: (
                 (
                     x["picking"].date or min_date,
                     x["picking"].date_done or x["picking"].date or min_date,
+                    x.get("is_last_section_notes", False),
                 )
             ),
         )
+        return dictionary
 
     def _get_signed_quantity_done(self, invoice_line, move, sign):
         """Hook method. Usage example:
@@ -74,14 +76,32 @@ class AccountMove(models.Model):
         so_dict = {x.sale_id: x for x in self.picking_ids if x.sale_id}
         # Now group by picking by direct link or via same SO as picking's one
         previous_section = previous_note = False
+        last_section_notes = []
         sorted_lines = self._get_grouped_by_picking_sorted_lines()
         for line in sorted_lines:
             if line.display_type == "line_section":
                 previous_section = line
+                last_section_notes.append(
+                    {
+                        "picking": picking_obj,
+                        "line": line,
+                        "qty": 0.0,
+                        "is_last_section_notes": True,
+                    }
+                )
                 continue
             if line.display_type == "line_note":
                 previous_note = line
+                last_section_notes.append(
+                    {
+                        "picking": picking_obj,
+                        "line": line,
+                        "qty": 0.0,
+                        "is_last_section_notes": True,
+                    }
+                )
                 continue
+            last_section_notes = []
             has_returned_qty = False
             remaining_qty = line.quantity
             for move in line.move_line_ids:
@@ -142,4 +162,7 @@ class AccountMove(models.Model):
             {"picking": key[0], "line": key[1], "quantity": value}
             for key, value in picking_dict.items()
         ]
-        return no_picking + self._sort_grouped_lines(with_picking)
+        lines_to_sort = with_picking
+        if last_section_notes:
+            lines_to_sort += last_section_notes
+        return no_picking + self._sort_grouped_lines(lines_to_sort)
