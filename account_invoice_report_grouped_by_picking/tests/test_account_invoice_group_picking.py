@@ -6,7 +6,7 @@
 
 from lxml import html
 
-from odoo import fields
+from odoo import Command, fields
 from odoo.tests.common import Form, TransactionCase
 
 
@@ -362,3 +362,25 @@ class TestAccountInvoiceGroupPicking(TransactionCase):
         self.assertEqual(service_with_picking_dict[0].get("quantity"), 3)
         self.assertEqual(len(service_without_picking_dict), 1)
         self.assertEqual(service_without_picking_dict[0].get("quantity"), 2)
+
+    def test_section_manually_created_invocie_line(self):
+        self.sale.action_confirm()
+        invoice = self.sale._create_invoices()
+        grouped_lines = invoice.lines_grouped_by_picking()
+        self.assertEqual(len(grouped_lines), 1)
+        invoice.write(
+            {
+                "invoice_line_ids": [
+                    Command.create({"display_type": "line_section", "name": "Section"}),
+                    Command.create({"display_type": "line_note", "name": "Note"}),
+                    Command.create(
+                        {
+                            "product_id": self.service.id,
+                            "price_unit": 200.0,
+                        }
+                    ),
+                ],
+            }
+        )
+        grouped_lines = invoice.lines_grouped_by_picking()
+        self.assertEqual(len(grouped_lines), 4)

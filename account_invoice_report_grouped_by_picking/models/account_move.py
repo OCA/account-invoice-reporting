@@ -112,6 +112,9 @@ class AccountMove(models.Model):
                         remaining_qty -= qty
             elif not line.move_line_ids and not line.sale_line_ids:
                 key = (picking_obj, line)
+                self._process_section_note_lines_grouped(
+                    previous_section, previous_note, lines_dict
+                )
                 picking_dict.setdefault(key, 0)
                 qty = line.quantity
                 picking_dict[key] += qty
