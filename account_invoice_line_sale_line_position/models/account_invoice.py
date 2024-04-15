@@ -28,7 +28,8 @@ class AccountMoveLine(models.Model):
             if record.display_type:
                 record.position_formatted = ""
                 continue
-            values = [
-                val for val in record.sale_line_ids.mapped("position_formatted") if val
-            ]
-            record.position_formatted = "/".join(values)
+        values = [
+            val for val in record.sale_line_ids.mapped("position_formatted") if val
+        ]
+
+        record.position_formatted = "/".join(values)
