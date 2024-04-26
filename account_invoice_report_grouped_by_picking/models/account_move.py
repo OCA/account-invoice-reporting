@@ -145,6 +145,7 @@ class AccountMove(models.Model):
                 and not has_returned_qty
                 and remaining_qty
                 and line.product_id.type != "service"
+                and picking_dict
             ):
                 remaining_qty = 0.0
                 for key in picking_dict:
