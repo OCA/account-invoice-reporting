@@ -118,7 +118,7 @@ class AccountMove(models.Model):
                 remaining_qty -= qty
             # To avoid to print duplicate lines because the invoice is a refund
             # without returned goods to refund.
-            if self.move_type == "out_refund" and not has_returned_qty:
+            if self.move_type == "out_refund" and not has_returned_qty and picking_dict:
                 remaining_qty = 0.0
                 for key in picking_dict:
                     picking_dict[key] = abs(picking_dict[key])
