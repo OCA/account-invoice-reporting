@@ -86,7 +86,7 @@ class TestAccountInvoiceGroupPicking(TransactionCase):
         self.sale.picking_ids[:1].move_line_ids.write({"quantity": 1})
         wiz_act = self.sale.picking_ids[:1].button_validate()
         wiz = Form(
-            self.env[wiz_act["res_model"]].with_context(wiz_act["context"])
+            self.env[wiz_act["res_model"]].with_context(**wiz_act["context"])
         ).save()
         wiz.process()
         # create another sale
@@ -99,7 +99,7 @@ class TestAccountInvoiceGroupPicking(TransactionCase):
         self.sale2.picking_ids[:1].move_line_ids.write({"quantity": 1})
         wiz_act = self.sale2.picking_ids[:1].button_validate()
         wiz = Form(
-            self.env[wiz_act["res_model"]].with_context(wiz_act["context"])
+            self.env[wiz_act["res_model"]].with_context(**wiz_act["context"])
         ).save()
         wiz.process()
         sales = self.sale | self.sale2
@@ -146,7 +146,7 @@ class TestAccountInvoiceGroupPicking(TransactionCase):
         picking.move_line_ids.write({"quantity": 1})
         wiz_act = picking.button_validate()
         wiz = Form(
-            self.env[wiz_act["res_model"]].with_context(wiz_act["context"])
+            self.env[wiz_act["res_model"]].with_context(**wiz_act["context"])
         ).save()
         wiz.process()
         self.sale._create_invoices()
@@ -169,7 +169,7 @@ class TestAccountInvoiceGroupPicking(TransactionCase):
         picking.move_line_ids.write({"quantity": 1})
         wiz_act = picking.button_validate()
         wiz = Form(
-            self.env[wiz_act["res_model"]].with_context(wiz_act["context"])
+            self.env[wiz_act["res_model"]].with_context(**wiz_act["context"])
         ).save()
         wiz.process()
         invoice = self.sale._create_invoices()
@@ -200,7 +200,7 @@ class TestAccountInvoiceGroupPicking(TransactionCase):
         picking.move_line_ids.write({"quantity": 1})
         wiz_act = picking.button_validate()
         wiz = Form(
-            self.env[wiz_act["res_model"]].with_context(wiz_act["context"])
+            self.env[wiz_act["res_model"]].with_context(**wiz_act["context"])
         ).save()
         wiz.process()
         # invoice sales
@@ -275,7 +275,7 @@ class TestAccountInvoiceGroupPicking(TransactionCase):
         picking.move_line_ids.write({"quantity": 1})
         wiz_act = picking.button_validate()
         wiz = Form(
-            self.env[wiz_act["res_model"]].with_context(wiz_act["context"])
+            self.env[wiz_act["res_model"]].with_context(**wiz_act["context"])
         ).save()
         wiz.process()
         # invoice sales
