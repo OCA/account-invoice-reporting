@@ -26,7 +26,8 @@ class AccountMove(models.Model):
                         DTF
                     ),
                 )
-                or ("", "")
+                or ("", ""),
+                x.get("is_last_section_notes", False),
             ),
         )
 
@@ -74,15 +75,33 @@ class AccountMove(models.Model):
         so_dict = {x.sale_id: x for x in self.picking_ids if x.sale_id}
         # Now group by picking by direct link or via same SO as picking's one
         previous_section = previous_note = False
+        last_section_notes = []
         for line in self.invoice_line_ids.sorted(
             lambda ln: (-ln.sequence, ln.date, ln.move_name, -ln.id), reverse=True
         ):
             if line.display_type == "line_section":
                 previous_section = line
+                last_section_notes.append(
+                    {
+                        "picking": picking_obj,
+                        "line": line,
+                        "qty": 0.0,
+                        "is_last_section_notes": True,
+                    }
+                )
                 continue
             if line.display_type == "line_note":
                 previous_note = line
+                last_section_notes.append(
+                    {
+                        "picking": picking_obj,
+                        "line": line,
+                        "qty": 0.0,
+                        "is_last_section_notes": True,
+                    }
+                )
                 continue
+            last_section_notes = []
             has_returned_qty = False
             remaining_qty = line.quantity
             for move in line.move_line_ids:
@@ -112,6 +131,9 @@ class AccountMove(models.Model):
                         remaining_qty -= qty
             elif not line.move_line_ids and not line.sale_line_ids:
                 key = (picking_obj, line)
+                self._process_section_note_lines_grouped(
+                    previous_section, previous_note, lines_dict
+                )
                 picking_dict.setdefault(key, 0)
                 qty = line.quantity
                 picking_dict[key] += qty
@@ -138,4 +160,7 @@ class AccountMove(models.Model):
             {"picking": key[0], "line": key[1], "quantity": value}
             for key, value in picking_dict.items()
         ]
-        return no_picking + self._sort_grouped_lines(with_picking)
+        lines_to_sort = with_picking
+        if last_section_notes:
+            lines_to_sort += last_section_notes
+        return no_picking + self._sort_grouped_lines(lines_to_sort)

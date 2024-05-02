@@ -6,7 +6,7 @@
 
 from lxml import html
 
-from odoo import fields
+from odoo import Command, fields
 from odoo.tests.common import Form, TransactionCase
 
 
@@ -362,3 +362,84 @@ class TestAccountInvoiceGroupPicking(TransactionCase):
         self.assertEqual(service_with_picking_dict[0].get("quantity"), 3)
         self.assertEqual(len(service_without_picking_dict), 1)
         self.assertEqual(service_without_picking_dict[0].get("quantity"), 2)
+
+    def test_section_manually_created_invocie_line(self):
+        self.sale.action_confirm()
+        invoice = self.sale._create_invoices()
+        grouped_lines = invoice.lines_grouped_by_picking()
+        self.assertEqual(len(grouped_lines), 1)
+        invoice.write(
+            {
+                "invoice_line_ids": [
+                    Command.create({"display_type": "line_section", "name": "Section"}),
+                    Command.create({"display_type": "line_note", "name": "Note"}),
+                    Command.create(
+                        {
+                            "product_id": self.service.id,
+                            "price_unit": 200.0,
+                        }
+                    ),
+                ],
+            }
+        )
+        grouped_lines = invoice.lines_grouped_by_picking()
+        self.assertEqual(len(grouped_lines), 4)
+
+    def test_account_invoice_group_picking_note_section_end(self):
+        # confirm quotation
+        self.sale.action_confirm()
+        # deliver lines2
+        picking = self.sale.picking_ids[:1]
+        picking.action_confirm()
+        picking.move_line_ids.write({"qty_done": 1})
+        picking._action_done()
+        # invoice sales
+        invoice = self.sale._create_invoices()
+        groups = invoice.lines_grouped_by_picking()
+        self.assertEqual(len(groups), 2)
+        invoice.write(
+            {
+                "invoice_line_ids": [
+                    (
+                        0,
+                        0,
+                        {
+                            "name": "Note",
+                            "display_type": "line_note",
+                        },
+                    ),
+                    (
+                        0,
+                        0,
+                        {
+                            "name": "Section",
+                            "display_type": "line_section",
+                        },
+                    ),
+                ],
+            }
+        )
+        groups = invoice.lines_grouped_by_picking()
+        self.assertEqual(len(groups), 4)
+        self.assertTrue(groups[0].get("is_last_section_notes", False))
+        self.assertTrue(groups[1].get("is_last_section_notes", False))
+        self.assertFalse(groups[2].get("is_last_section_notes", False))
+        self.assertFalse(groups[3].get("is_last_section_notes", False))
+        invoice.invoice_line_ids.filtered(
+            lambda a: a.product_id == self.product
+        ).with_context(check_move_validity=False).write({"quantity": 3})
+        invoice.invoice_line_ids.filtered(
+            lambda a: a.product_id == self.service
+        ).with_context(check_move_validity=False).write({"quantity": 4})
+        groups = invoice.lines_grouped_by_picking()
+        self.assertEqual(len(groups), 6)
+        self.assertFalse(groups[0].get("is_last_section_notes", False))
+        self.assertFalse(groups[0]["picking"])
+        self.assertFalse(groups[1].get("is_last_section_notes", False))
+        self.assertFalse(groups[1]["picking"])
+        self.assertTrue(groups[2].get("is_last_section_notes", False))
+        self.assertTrue(groups[3].get("is_last_section_notes", False))
+        self.assertFalse(groups[4].get("is_last_section_notes", False))
+        self.assertTrue(groups[4]["picking"])
+        self.assertFalse(groups[5].get("is_last_section_notes", False))
+        self.assertTrue(groups[5]["picking"])
