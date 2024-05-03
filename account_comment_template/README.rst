@@ -17,25 +17,24 @@ Account Comments
     :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
     :alt: License: AGPL-3
 .. |badge3| image:: https://img.shields.io/badge/github-OCA%2Faccount--invoice--reporting-lightgray.png?logo=github
-    :target: https://github.com/OCA/account-invoice-reporting/tree/16.0/account_comment_template
+    :target: https://github.com/OCA/account-invoice-reporting/tree/17.0/account_comment_template
     :alt: OCA/account-invoice-reporting
 .. |badge4| image:: https://img.shields.io/badge/weblate-Translate%20me-F47D42.png
-    :target: https://translation.odoo-community.org/projects/account-invoice-reporting-16-0/account-invoice-reporting-16-0-account_comment_template
+    :target: https://translation.odoo-community.org/projects/account-invoice-reporting-17-0/account-invoice-reporting-17-0-account_comment_template
     :alt: Translate me on Weblate
 .. |badge5| image:: https://img.shields.io/badge/runboat-Try%20me-875A7B.png
-    :target: https://runboat.odoo-community.org/builds?repo=OCA/account-invoice-reporting&target_branch=16.0
+    :target: https://runboat.odoo-community.org/builds?repo=OCA/account-invoice-reporting&target_branch=17.0
     :alt: Try me on Runboat
 
 |badge1| |badge2| |badge3| |badge4| |badge5|
 
-Adds comments on invoices.
-The comments can be edited directly on the invoices or loaded from
-templates.
+Adds comments on invoices. The comments can be edited directly on the
+invoices or loaded from templates.
 
 Two positions are available for the comments:
 
-- before invoice lines
-- after invoice lines
+-  before invoice lines
+-  after invoice lines
 
 **Table of contents**
 
@@ -48,7 +47,7 @@ Bug Tracker
 Bugs are tracked on `GitHub Issues <https://github.com/OCA/account-invoice-reporting/issues>`_.
 In case of trouble, please check there if your issue has already been reported.
 If you spotted it first, help us to smash it by providing a detailed and welcomed
-`feedback <https://github.com/OCA/account-invoice-reporting/issues/new?body=module:%20account_comment_template%0Aversion:%2016.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
+`feedback <https://github.com/OCA/account-invoice-reporting/issues/new?body=module:%20account_comment_template%0Aversion:%2017.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
 
 Do not contact contributors directly about support or help with technical issues.
 
@@ -56,38 +55,37 @@ Credits
 =======
 
 Authors
-~~~~~~~
+-------
 
 * Camptocamp
 * Tecnativa
 
 Contributors
-~~~~~~~~~~~~
+------------
 
-* Xavier Jimenez <xavier.jimenez@qubiq.es>
-* Nicolas Bessi <nicolas.bessi@camptocamp.com>
-* Yannick Vaucher <yannick.vaucher@camptocamp.com>
-* Simone Rubino <simone.rubino@agilebg.com>
+-  Xavier Jimenez <xavier.jimenez@qubiq.es>
+-  Nicolas Bessi <nicolas.bessi@camptocamp.com>
+-  Yannick Vaucher <yannick.vaucher@camptocamp.com>
+-  Simone Rubino <simone.rubino@agilebg.com>
+-  `Tecnativa <https://www.tecnativa.com>`__:
 
-* `Tecnativa <https://www.tecnativa.com>`_:
+   -  Pedro M. Baeza
+   -  Víctor Martínez
 
-  * Pedro M. Baeza
-  * Víctor Martínez
+-  `DynApps <https://www.dynapps.be>`__:
 
-* `DynApps <https://www.dynapps.be>`_:
+   -  Raf Ven <raf.ven@dynapps.be>
 
-  * Raf Ven <raf.ven@dynapps.be>
+-  `Druidoo <https://www.druidoo.io>`__:
 
-* `Druidoo <https://www.druidoo.io>`_:
+   -  Iván Todorovich <ivan.todorovich@druidoo.io>
 
-  * Iván Todorovich <ivan.todorovich@druidoo.io>
+-  `Jarsa <https://www.jarsa.com>`__:
 
-* `Jarsa <https://www.jarsa.com>`_:
-
-  * Alan Ramos <alan.ramos@jarsa.com>
+   -  Alan Ramos <alan.ramos@jarsa.com>
 
 Maintainers
-~~~~~~~~~~~
+-----------
 
 This module is maintained by the OCA.
 
@@ -99,6 +97,6 @@ OCA, or the Odoo Community Association, is a nonprofit organization whose
 mission is to support the collaborative development of Odoo features and
 promote its widespread use.
 
-This module is part of the `OCA/account-invoice-reporting <https://github.com/OCA/account-invoice-reporting/tree/16.0/account_comment_template>`_ project on GitHub.
+This module is part of the `OCA/account-invoice-reporting <https://github.com/OCA/account-invoice-reporting/tree/17.0/account_comment_template>`_ project on GitHub.
 
 You are welcome to contribute. To learn how please visit https://odoo-community.org/page/Contribute.
