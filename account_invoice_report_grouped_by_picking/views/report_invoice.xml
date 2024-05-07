@@ -126,7 +126,7 @@
         <!-- Append subtotal after notes and sections at the end of the invoice-->
         <xpath expr="//t[@name='account_invoice_line_accountable']/.." position="after">
             <tr
-                t-if="lines_group.get('is_last_section_notes') and (not next_line or not next_line[0].get('is_last_section_notes')) and subtotal"
+                t-if="lines_group.get('is_last_section_notes') and (not next_line or (next_line[0] and not next_line[0].get('is_last_section_notes'))) and subtotal"
             >
                 <td colspan="10" class="text-right">
                     <strong>Subtotal: </strong>
