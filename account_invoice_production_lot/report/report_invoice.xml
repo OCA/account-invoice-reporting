@@ -12,29 +12,21 @@
                 </t>
             </t>
         </xpath>
-        <xpath expr="//t[@name='account_invoice_line_accountable']/.." position="after">
-            <t
-                t-if="not line.display_type and lots and line.product_id.tracking == 'lot'"
+        <xpath expr="//td[@name='account_invoice_line_name']" position="inside">
+            <div
+                t-if="line.display_type == 'product' and lots and line.product_id.tracking == 'lot'"
                 name="account_invoice_line_lot"
                 groups="stock.group_production_lot"
             >
-                <tr>
-                    <td colspan="99">
-                        <div class="row ml-1">
-                            <div class="col">
-                                <b class="font-italic">Serial numbers</b>
-                            </div>
+                <b class="font-italic">Serial numbers</b>
+                <t t-foreach="lots" t-as="lot">
+                    <div class="row ml-1 mt-1">
+                        <div class="col">
+                            <span t-esc="lot[0]" /> (<span t-esc="lot[1]" />)
                         </div>
-                        <t t-foreach="lots" t-as="lot">
-                            <div class="row ml-1 mt-1">
-                                <div class="col">
-                                    <span t-esc="lot[0]" /> (<span t-esc="lot[1]" />)
-                                </div>
-                            </div>
-                        </t>
-                    </td>
-                </tr>
-            </t>
+                    </div>
+                </t>
+            </div>
         </xpath>
     </template>
 </odoo>
