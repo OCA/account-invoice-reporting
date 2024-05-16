@@ -24,7 +24,7 @@
             <t t-set="picking" t-value="lines_group['picking']" />
             <t
                 t-set="next_line"
-                t-value="[lines_grouped[i + 1] for i, x in enumerate(lines_grouped) if x == lines_group and i &lt; len(lines_grouped) - 1] or [False]"
+                t-value="[lines_grouped[i + 1] for i, x in enumerate(lines_grouped) if x == lines_group and i &lt; len(lines_grouped) - 1] or []"
             />
             <t
                 t-set="next_picking"

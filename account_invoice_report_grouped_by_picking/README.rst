@@ -90,6 +90,8 @@ Contributors
 
   * Manuel Regidor <manuelregidor@sygel.es>
 
+- Eduardo de Miguel ([Moduon](https://www.moduon.team/))
+
 Maintainers
 ~~~~~~~~~~~
 
