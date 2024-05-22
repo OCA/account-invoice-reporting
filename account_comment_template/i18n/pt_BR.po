@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 9.0c\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-16 11:59+0000\n"
-"PO-Revision-Date: 2024-05-22 06:33+0000\n"
+"PO-Revision-Date: 2024-05-22 13:39+0000\n"
 "Last-Translator: Rodrigo Macedo <sottomaiormacedotec@users.noreply."
 "translation.odoo-community.org>\n"
 "Language-Team: Portuguese (Brazil) (https://www.transifex.com/oca/teams/"
@@ -34,12 +34,12 @@ msgstr "Comentários"
 #. module: account_comment_template
 #: model:ir.ui.menu,name:account_comment_template.menu_base_comment_template_invoice
 msgid "Document Comments"
-msgstr ""
+msgstr "Comentários do Documento"
 
 #. module: account_comment_template
 #: model:ir.model,name:account_comment_template.model_account_move
 msgid "Journal Entry"
-msgstr ""
+msgstr "Entrada Diária"
 
 #~ msgid "Invoice"
 #~ msgstr "Fatura"
