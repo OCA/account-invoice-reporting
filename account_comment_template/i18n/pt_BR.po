@@ -9,25 +9,27 @@ msgstr ""
 "Project-Id-Version: Odoo Server 9.0c\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-16 11:59+0000\n"
-"PO-Revision-Date: 2017-05-16 11:59+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
-"Language-Team: Portuguese (Brazil) (https://www.transifex.com/oca/"
-"teams/23907/pt_BR/)\n"
+"PO-Revision-Date: 2024-05-22 06:33+0000\n"
+"Last-Translator: Rodrigo Macedo <sottomaiormacedotec@users.noreply."
+"translation.odoo-community.org>\n"
+"Language-Team: Portuguese (Brazil) (https://www.transifex.com/oca/teams/"
+"23907/pt_BR/)\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 4.17\n"
 
 #. module: account_comment_template
 #: model:ir.model.fields,field_description:account_comment_template.field_account_move__comment_template_ids
 msgid "Comment Template"
-msgstr ""
+msgstr "Modelo de comentário"
 
 #. module: account_comment_template
 #: model_terms:ir.ui.view,arch_db:account_comment_template.move_form_add_comment
 msgid "Comments"
-msgstr "Comentarios"
+msgstr "Comentários"
 
 #. module: account_comment_template
 #: model:ir.ui.menu,name:account_comment_template.menu_base_comment_template_invoice
