@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <template
+        id="report_invoice_document"
+        inherit_id="account.report_invoice_document"
+        priority="999"
+    >
+
+        <xpath expr="//div[hasclass('page')]" position="inside">
+            <style type="text/css">
+.margin_repeat {
+    margin-left: 10px;
+}
+#informations div {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+#informations p {
+    color: black;
+}
+#informations strong {
+    white-space: nowrap;
+}
+            </style>
+        </xpath>
+
+        <!--
+        Prepare container element to move data from standard header to table header
+        -->
+        <xpath expr="//div[hasclass('page')]//table/thead/tr" position="before">
+            <tr class="table-borderless pre_header_info">
+                <td colspan="45" name="pre_header_info">
+                </td>
+            </tr>
+            <tr class="table-borderless header_info">
+                <td colspan="45" name="header_info">
+                </td>
+            </tr>
+        </xpath>
+
+        <!--
+        Remove col-auto to allow repeat data for all pages.
+        -->
+        <xpath expr="//div[@name='invoice_date']" position="attributes">
+            <attribute name="style">position: initial;</attribute>
+        </xpath>
+        <xpath expr="//div[@name='due_date']" position="attributes">
+            <attribute name="style">position: initial;</attribute>
+        </xpath>
+        <xpath expr="//div[@name='origin']" position="attributes">
+            <attribute name="style">position: initial;</attribute>
+        </xpath>
+        <xpath expr="//div[@name='customer_code']" position="attributes">
+            <attribute name="style">position: initial;</attribute>
+        </xpath>
+        <xpath expr="//div[@name='reference']" position="attributes">
+            <attribute name="style">position: initial;</attribute>
+        </xpath>
+        <!-- Move blocks inside table header report -->
+        <xpath expr="//td[@name='pre_header_info']" position="inside">
+            <xpath expr="//div[hasclass('page')]/h2" position="move" />
+        </xpath>
+        <xpath expr="//td[@name='header_info']" position="inside">
+            <xpath expr="//div[@id='informations']" position="move" />
+        </xpath>
+
+    </template>
+
+</odoo>
