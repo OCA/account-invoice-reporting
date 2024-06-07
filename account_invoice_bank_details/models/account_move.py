@@ -7,20 +7,26 @@ from odoo import api, models
 class AccountMove(models.Model):
     _inherit = "account.move"
 
-    @api.onchange("currency_id")
-    def _onchange_currency_id(self):
-        # try to find bank account by currency
-        bank = self.env["res.partner.bank"].search(
-            [
-                ("currency_id", "=", self.currency_id.id),
-                ("partner_id", "=", self.company_id.partner_id.id),
-            ],
-            limit=1,
-        )
-        # if not found take first bank account of the company
-        if not bank:
-            bank = self.env["res.partner.bank"].search(
-                [("partner_id", "=", self.company_id.partner_id.id)], limit=1
-            )
+    @api.depends("currency_id", "company_id.partner_id")
+    def _compute_partner_bank_id(self):
+        for record in self:
+            if record.currency_id:
+                # try to find bank account by currency
+                partner_bank = self.env["res.partner.bank"].search(
+                    [
+                        ("currency_id", "=", self.currency_id.id),
+                        ("partner_id", "=", self.company_id.partner_id.id),
+                    ],
+                    limit=1,
+                )
 
-        self.invoice_partner_bank_id = bank.id
+                # if not found take first bank account of the company
+                if not partner_bank:
+                    partner_bank = self.env["res.partner.bank"].search(
+                        [("partner_id", "=", self.company_id.partner_id.id)], limit=1
+                    )
+
+                record.partner_bank_id = partner_bank.id
+
+            else:
+                return super()._compute_partner_bank_id
