@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <template
+        id="report_invoice_document_bank_details"
+        inherit_id="account.report_invoice_document"
+    >
+
+        <xpath expr="//span[@id='payment_terms_note_id']" position="after">
+            <p class="mb-auto text-left">
+                <strong>Payment information:</strong>
+            </p>
+            <p class="mb-auto justify-text">
+                <strong>Bank:</strong> <span t-field="o.partner_bank_id.bank_name" />
+            </p>
+            <p class="mb-auto justify-text">
+                <strong>BIC / SWIFT:</strong> <span
+                    t-field="o.partner_bank_id.bank_bic"
+                />
+            </p>
+            <p>
+                <strong>IBAN:</strong> <span t-field="o.partner_bank_id.acc_number" />
+            </p>
+        </xpath>
+
+    </template>
+
+</odoo>

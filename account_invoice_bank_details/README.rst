@@ -1,5 +1,5 @@
 ============================
-Invoice bank account details
+Invoice Bank Account Details
 ============================
 
 .. 
@@ -37,16 +37,6 @@ invoice
 .. contents::
    :local:
 
-Usage
-=====
-
-
-
-Known issues / Roadmap
-======================
-
-
-
 Bug Tracker
 ===========
 
@@ -68,9 +58,16 @@ Authors
 Contributors
 ------------
 
--  `Camptocamp <https://www.camptocamp.com>`__:
+-  `camptocamp <https://camptocamp.com>`__:
+-  Vincent Renaville <https://www.camptocamp.com>
+-  `Trobz <https://trobz.com>`__:
+-  Do Anh Duy <duyda@trobz.com>
 
-   -  Vincent Renaville
+Other credits
+-------------
+
+The migration of this module from 13.0 to 17.0 was financially supported
+by Camptocamp
 
 Maintainers
 -----------
