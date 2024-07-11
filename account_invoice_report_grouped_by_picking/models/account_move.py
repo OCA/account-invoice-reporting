@@ -147,9 +147,13 @@ class AccountMove(models.Model):
                 and line.product_id.type != "service"
                 and picking_dict
             ):
-                remaining_qty = 0.0
                 for key in picking_dict:
-                    picking_dict[key] = abs(picking_dict[key])
+                    # If remaining_qty is not zero, it means the quantity
+                    # refunded is more or less than the quantity delivered
+                    # so we need to add the difference to the total otherwise
+                    # the report will display an incorrect quantity.
+                    picking_dict[key] = abs(picking_dict[key]) + remaining_qty
+                remaining_qty = 0.0
             if not float_is_zero(
                 remaining_qty,
                 precision_rounding=line.product_id.uom_id.rounding or 0.01,
