@@ -99,6 +99,9 @@ Contributors
 -  Jevin Dement <jdement@opensourceintegrators.com>
 -  Rafael Blasco (https://www.moduon.team/)
 -  Eduardo de Miguel (https://www.moduon.team/)
+-  `APSL-Nagarro <https://apsl.tech>`__:
+
+   -  Bernat Obrador <bobrador@apsl.net>
 
 Other credits
 -------------
