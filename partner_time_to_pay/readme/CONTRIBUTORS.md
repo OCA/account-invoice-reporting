@@ -6,3 +6,6 @@
 - Jevin Dement \<<jdement@opensourceintegrators.com>\>
 - Rafael Blasco (<https://www.moduon.team/>)
 - Eduardo de Miguel (<https://www.moduon.team/>)
+- [APSL-Nagarro](<https://apsl.tech>):
+  - Bernat Obrador \<<bobrador@apsl.net>\>
+  
