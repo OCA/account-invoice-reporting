@@ -15,7 +15,7 @@
             </t>
         </xpath>
 
-        <xpath expr="//div[@id='qrcode']" position="before">
+        <xpath expr="//div[@name='comment']" position="before">
             <t
                 t-set="after_comment_template_ids"
                 t-value="o.comment_template_ids.filtered(lambda x: x.position == 'after_lines')"
