@@ -7,8 +7,8 @@
 {
     "name": "Account Comments",
     "summary": "Comments templates on invoice documents",
-    "version": "16.0.1.0.1",
-    "category": "Sale",
+    "version": "17.0.1.0.0",
+    "category": "Accounting",
     "author": "Camptocamp, Tecnativa, Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/account-invoice-reporting",
     "license": "AGPL-3",
