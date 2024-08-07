@@ -1,10 +1,11 @@
 [project]
 name = "odoo-addons-oca-account-invoice-reporting"
-version = "17.0.20240725.0"
+version = "17.0.20240807.0"
 dependencies = [
     "odoo-addon-account_comment_template>=17.0dev,<17.1dev",
     "odoo-addon-account_invoice_line_report>=17.0dev,<17.1dev",
     "odoo-addon-account_invoice_report_grouped_by_picking>=17.0dev,<17.1dev",
+    "odoo-addon-partner_time_to_pay>=17.0dev,<17.1dev",
 ]
 classifiers=[
     "Programming Language :: Python",
