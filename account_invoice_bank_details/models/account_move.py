@@ -9,8 +9,10 @@ class AccountMove(models.Model):
 
     @api.depends("currency_id", "company_id.partner_id")
     def _compute_partner_bank_id(self):
+        # Override the method to set the first matching bank account in currency of
+        # the company. It is done only for customer invoices and refunds.
         for record in self:
-            if record.currency_id:
+            if record.currency_id and record.move_type in ["out_invoice", "out_refund"]:
                 # try to find bank account by currency
                 partner_bank = self.env["res.partner.bank"].search(
                     [
@@ -27,6 +29,5 @@ class AccountMove(models.Model):
                     )
 
                 record.partner_bank_id = partner_bank.id
-
             else:
-                return super()._compute_partner_bank_id
+                return super()._compute_partner_bank_id()
