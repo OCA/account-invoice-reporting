@@ -1,4 +1,4 @@
-# Copyright 2017 Tecnativa - Carlos Dauden
+# Copyright 2017-2023 Tecnativa - Carlos Dauden
 # Copyright 2018 Tecnativa - David Vidal
 # Copyright 2018-2019 Tecnativa - Pedro M. Baeza
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
@@ -140,7 +140,13 @@ class AccountMove(models.Model):
                 remaining_qty -= qty
             # To avoid to print duplicate lines because the invoice is a refund
             # without returned goods to refund.
-            if self.move_type == "out_refund" and not has_returned_qty and picking_dict:
+            if (
+                self.move_type == "out_refund"
+                and not has_returned_qty
+                and picking_dict
+                and remaining_qty
+                and line.product_id.type != "service"
+            ):
                 remaining_qty = 0.0
                 for key in picking_dict:
                     picking_dict[key] = abs(picking_dict[key])
