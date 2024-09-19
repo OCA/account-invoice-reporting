@@ -10,6 +10,7 @@
     "category": "Accounting & Finance",
     "website": "https://github.com/OCA/account-invoice-reporting",
     "author": "Akretion, Odoo Community Association (OCA)",
+    "maintainers": ["nayatec"],
     "license": "AGPL-3",
     "installable": True,
     "depends": [
