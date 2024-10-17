@@ -2,8 +2,7 @@
 # Copyright 2018 Tecnativa - David Vidal
 # Copyright 2018-2019 Tecnativa - Pedro M. Baeza
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
-import datetime
-from collections import OrderedDict
+from datetime import datetime
 
 from odoo import api, models
 from odoo.tools import float_round
@@ -15,7 +14,7 @@ class AccountMove(models.Model):
     @api.model
     def _sort_grouped_lines(self, lines_dic):
         DTF = "%Y-%m-%d %H:%M:%S"
-        min_date = datetime.datetime.min
+        min_date = datetime.min
         return sorted(
             lines_dic,
             key=lambda x: (
@@ -35,24 +34,23 @@ class AccountMove(models.Model):
         """Hook method. Usage example:
         account_invoice_report_grouped_by_picking_sale_mrp module
         """
-        qty = 0
         if move.location_id.usage == "customer":
-            qty = -move.quantity * sign
-        elif move.location_dest_id.usage == "customer":
-            qty = move.quantity * sign
-        return qty
+            return -move.quantity * sign
+        if move.location_dest_id.usage == "customer":
+            return move.quantity * sign
+        return 0
 
     def _process_section_note_lines_grouped(
         self, previous_section, previous_note, lines_dic, pick_order=None
     ):
-        key_section = (pick_order, previous_section) if pick_order else previous_section
-        if previous_section and key_section not in lines_dic:
-            lines_dic[key_section] = 0.0
-        key_note = (pick_order, previous_note) if pick_order else previous_note
-        if previous_note and key_note not in lines_dic:
-            lines_dic[key_note] = 0.0
+        """Processes section and note lines, grouping them by order."""
+        for line in [previous_section, previous_note]:
+            if line:
+                key = (pick_order, line) if pick_order else line
+                lines_dic.setdefault(key, 0.0)
 
     def _get_grouped_by_picking_sorted_lines(self):
+        """Sorts the invoice lines to be grouped by picking."""
         return self.invoice_line_ids.sorted(
             lambda ln: (-ln.sequence, ln.date, ln.move_name, -ln.id), reverse=True
         )
@@ -61,9 +59,10 @@ class AccountMove(models.Model):
         """This prepares a data structure for printing the invoice report
         grouped by pickings."""
         self.ensure_one()
-        picking_dict = OrderedDict()
-        lines_dict = OrderedDict()
+        picking_dict = {}
+        lines_dict = {}
         picking_obj = self.env["stock.picking"]
+        # Determine the sign based on the move type
         # Not change sign if the credit note has been created from reverse move option
         # and it has the same pickings related than the reversed invoice instead of sale
         # order invoicing process after picking reverse transfer
@@ -77,14 +76,18 @@ class AccountMove(models.Model):
             else 1.0
         )
         # Let's get first a correspondance between pickings and sales order
-        so_dict = {x.sale_id: x for x in self.picking_ids if x.sale_id}
+        so_dict = {p.sale_id: p for p in self.picking_ids if p.sale_id}
         # Now group by picking by direct link or via same SO as picking's one
         previous_section = previous_note = False
         last_section_notes = []
         sorted_lines = self._get_grouped_by_picking_sorted_lines()
         for line in sorted_lines:
-            if line.display_type == "line_section":
-                previous_section = line
+            # Process section or note lines
+            if line.display_type in ["line_section", "line_note"]:
+                if line.display_type == "line_section":
+                    previous_section = line
+                else:
+                    previous_note = line
                 last_section_notes.append(
                     {
                         "picking": picking_obj,
@@ -94,53 +97,41 @@ class AccountMove(models.Model):
                     }
                 )
                 continue
-            if line.display_type == "line_note":
-                previous_note = line
-                last_section_notes.append(
-                    {
-                        "picking": picking_obj,
-                        "line": line,
-                        "qty": 0.0,
-                        "is_last_section_notes": True,
-                    }
-                )
-                continue
+            # Reset sections and notes when encountering a regular line
             last_section_notes = []
             has_returned_qty = False
             remaining_qty = line.quantity
+            # Process moves related to the line
             for move in line.move_line_ids:
                 key = (move.picking_id, line)
                 self._process_section_note_lines_grouped(
                     previous_section, previous_note, picking_dict, move.picking_id
                 )
-                picking_dict.setdefault(key, 0)
+                qty = self._get_signed_quantity_done(line, move, sign)
+                picking_dict[key] = picking_dict.get(key, 0.0) + qty
+                remaining_qty -= qty
                 if move.location_id.usage == "customer":
                     has_returned_qty = True
-                qty = self._get_signed_quantity_done(line, move, sign)
-                picking_dict[key] += qty
-                remaining_qty -= qty
+            # Process sale order lines without moves
             if not line.move_line_ids and line.sale_line_ids:
                 for so_line in line.sale_line_ids:
-                    if so_dict.get(so_line.order_id):
-                        key = (so_dict[so_line.order_id], line)
+                    picking = so_dict.get(so_line.order_id)
+                    if picking:
+                        key = (picking, line)
                         self._process_section_note_lines_grouped(
-                            previous_section,
-                            previous_note,
-                            picking_dict,
-                            so_dict[so_line.order_id],
+                            previous_section, previous_note, picking_dict, picking
                         )
-                        picking_dict.setdefault(key, 0)
                         qty = min(so_line.product_uom_qty, remaining_qty)
-                        picking_dict[key] += qty
+                        picking_dict[key] = picking_dict.get(key, 0.0) + qty
                         remaining_qty -= qty
+            # Process lines without moves or sale orders
             elif not line.move_line_ids and not line.sale_line_ids:
                 key = (picking_obj, line)
                 self._process_section_note_lines_grouped(
                     previous_section, previous_note, lines_dict
                 )
-                picking_dict.setdefault(key, 0)
                 qty = line.quantity
-                picking_dict[key] += qty
+                picking_dict[key] = picking_dict.get(key, 0.0) + qty
                 remaining_qty -= qty
             # To avoid to print duplicate lines because the invoice is a refund
             # without returned goods to refund.
@@ -171,7 +162,4 @@ class AccountMove(models.Model):
             {"picking": key[0], "line": key[1], "quantity": value}
             for key, value in picking_dict.items()
         ]
-        lines_to_sort = with_picking
-        if last_section_notes:
-            lines_to_sort += last_section_notes
-        return no_picking + self._sort_grouped_lines(lines_to_sort)
+        return no_picking + self._sort_grouped_lines(with_picking + last_section_notes)
