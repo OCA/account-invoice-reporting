@@ -1,4 +1,4 @@
-# Copyright 2017-2023 Tecnativa - Carlos Dauden
+# Copyright 2017-2024 Tecnativa - Carlos Dauden
 # Copyright 2018 Tecnativa - David Vidal
 # Copyright 2018-2019 Tecnativa - Pedro M. Baeza
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
@@ -6,7 +6,7 @@ import datetime
 from collections import OrderedDict
 
 from odoo import api, models
-from odoo.tools import float_is_zero
+from odoo.tools import float_round
 
 
 class AccountMove(models.Model):
@@ -140,6 +140,9 @@ class AccountMove(models.Model):
                 remaining_qty -= qty
             # To avoid to print duplicate lines because the invoice is a refund
             # without returned goods to refund.
+            remaining_qty = float_round(
+                remaining_qty, precision_rounding=line.product_id.uom_id.rounding
+            )
             if (
                 self.move_type == "out_refund"
                 and not has_returned_qty
@@ -150,10 +153,7 @@ class AccountMove(models.Model):
                 remaining_qty = 0.0
                 for key in picking_dict:
                     picking_dict[key] = abs(picking_dict[key])
-            if not float_is_zero(
-                remaining_qty,
-                precision_rounding=line.product_id.uom_id.rounding or 0.01,
-            ):
+            if remaining_qty:
                 lines_dict[line] = remaining_qty
         no_picking = [
             {"picking": picking_obj, "line": key, "quantity": value}
