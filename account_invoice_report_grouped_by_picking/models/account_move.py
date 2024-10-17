@@ -1,4 +1,4 @@
-# Copyright 2017-2023 Tecnativa - Carlos Dauden
+# Copyright 2017-2024 Tecnativa - Carlos Dauden
 # Copyright 2018 Tecnativa - David Vidal
 # Copyright 2018-2019 Tecnativa - Pedro M. Baeza
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
@@ -6,7 +6,7 @@ import datetime
 from collections import OrderedDict
 
 from odoo import api, models
-from odoo.tools import float_is_zero
+from odoo.tools import float_round
 
 
 class AccountMove(models.Model):
@@ -52,6 +52,11 @@ class AccountMove(models.Model):
         if previous_note and key_note not in lines_dic:
             lines_dic[key_note] = 0.0
 
+    def _get_grouped_by_picking_sorted_lines(self):
+        return self.invoice_line_ids.sorted(
+            lambda ln: (-ln.sequence, ln.date, ln.move_name, -ln.id), reverse=True
+        )
+
     def lines_grouped_by_picking(self):
         """This prepares a data structure for printing the invoice report
         grouped by pickings."""
@@ -76,9 +81,8 @@ class AccountMove(models.Model):
         # Now group by picking by direct link or via same SO as picking's one
         previous_section = previous_note = False
         last_section_notes = []
-        for line in self.invoice_line_ids.sorted(
-            lambda ln: (-ln.sequence, ln.date, ln.move_name, -ln.id), reverse=True
-        ):
+        sorted_lines = self._get_grouped_by_picking_sorted_lines()
+        for line in sorted_lines:
             if line.display_type == "line_section":
                 previous_section = line
                 last_section_notes.append(
@@ -140,20 +144,21 @@ class AccountMove(models.Model):
                 remaining_qty -= qty
             # To avoid to print duplicate lines because the invoice is a refund
             # without returned goods to refund.
+            remaining_qty = float_round(
+                remaining_qty,
+                precision_rounding=line.product_id.uom_id.rounding or 0.01,
+            )
             if (
                 self.move_type == "out_refund"
                 and not has_returned_qty
-                and picking_dict
                 and remaining_qty
                 and line.product_id.type != "service"
+                and picking_dict
             ):
                 remaining_qty = 0.0
                 for key in picking_dict:
                     picking_dict[key] = abs(picking_dict[key])
-            if not float_is_zero(
-                remaining_qty,
-                precision_rounding=line.product_id.uom_id.rounding or 0.01,
-            ):
+            if remaining_qty:
                 self._process_section_note_lines_grouped(
                     previous_section, previous_note, lines_dict
                 )
