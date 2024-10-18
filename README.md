@@ -24,7 +24,7 @@ addon | version | maintainers | summary
 [account_comment_template](account_comment_template/) | 17.0.1.0.0 |  | Comments templates on invoice documents
 [account_invoice_bank_details](account_invoice_bank_details/) | 17.0.1.0.1 |  | Select bank account base on currency + print bank details on reportreports and customer portal
 [account_invoice_line_report](account_invoice_line_report/) | 17.0.1.0.0 |  | New view to manage invoice lines information
-[account_invoice_report_grouped_by_picking](account_invoice_report_grouped_by_picking/) | 17.0.1.0.2 |  | Print invoice lines grouped by picking
+[account_invoice_report_grouped_by_picking](account_invoice_report_grouped_by_picking/) | 17.0.1.0.3 |  | Print invoice lines grouped by picking
 [partner_time_to_pay](partner_time_to_pay/) | 17.0.1.0.0 | [![max3903](https://github.com/max3903.png?size=30px)](https://github.com/max3903) [![rafaelbn](https://github.com/rafaelbn.png?size=30px)](https://github.com/rafaelbn) [![Shide](https://github.com/Shide.png?size=30px)](https://github.com/Shide) | Add receivables and payables statistics to partners
 
 [//]: # (end addons)
