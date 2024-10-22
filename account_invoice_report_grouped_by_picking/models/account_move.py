@@ -129,7 +129,8 @@ class AccountMove(models.Model):
             # To avoid to print duplicate lines because the invoice is a refund
             # without returned goods to refund.
             remaining_qty = float_round(
-                remaining_qty, precision_rounding=line.product_id.uom_id.rounding
+                remaining_qty,
+                precision_rounding=line.product_id.uom_id.rounding or 0.01,
             )
             if (
                 self.move_type == "out_refund"
