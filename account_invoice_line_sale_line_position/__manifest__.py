@@ -4,7 +4,7 @@
 {
     "name": "Account Invoice Line Sale Line Position",
     "summary": "Adds the related sale line position on invoice line.",
-    "version": "16.0.1.0.0",
+    "version": "18.0.1.0.0",
     "category": "Sale",
     "author": "Camptocamp, Odoo Community Association (OCA)",
     "license": "AGPL-3",
