@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template
+        id="stock_account_report_invoice_document"
+        inherit_id="stock_account.stock_account_report_invoice_document"
+    >
+        <xpath expr="//table[@name='invoice_snln_table']" position="attributes">
+            <attribute name="style">width:70%;</attribute>
+        </xpath>
+        <xpath expr="//table[@name='invoice_snln_table']//thead//tr" position="inside">
+            <th class="text-end">
+                <span>Expiration date</span>
+            </th>
+        </xpath>
+        <xpath expr="//table[@name='invoice_snln_table']//tbody//tr" position="inside">
+            <td class="text-end">
+                <t t-esc="snln_line['expiration_date']" />
+            </td>
+        </xpath>
+    </template>
+</odoo>
