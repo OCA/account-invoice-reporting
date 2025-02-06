@@ -69,7 +69,6 @@
         </xpath>
         <xpath expr="//td/span[@t-field='line.price_subtotal']" position="before">
             <t t-set="line_subtotal" t-value="l.price_subtotal" />
-            <t t-set="line_subtotal" t-value="l.price_total" />
             <t t-if="lines_group['quantity'] != l.quantity" id="picking_subtotal">
                 <!-- Compute subtotal for that picking with discounts -->
                 <t
