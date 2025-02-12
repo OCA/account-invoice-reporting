@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2025 Moduon Team S.L.
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl-3.0) -->
+<odoo>
+    <template
+        id="report_invoice_document_product_sticker"
+        inherit_id="account.report_invoice_document"
+    >
+        <xpath expr="//div[hasclass('page')]" position="inside">
+            <div
+                t-if="o.show_product_stickers == 'bottom_left'"
+                name="sticker_section_bottom_left"
+                class="mt-5"
+            >
+                <t
+                    t-call="account_invoice_report_product_sticker.invoice_report_stickers"
+                />
+            </div>
+        </xpath>
+        <xpath expr="//div[hasclass('page')]/h2" position="before">
+            <div
+                t-if="o.show_product_stickers == 'top_right'"
+                name="sticker_section_top_right"
+                class="col-12 mt-1 mb-1 text-end"
+            >
+                <t
+                    t-call="account_invoice_report_product_sticker.invoice_report_stickers"
+                />
+            </div>
+        </xpath>
+    </template>
+
+    <template id="invoice_report_stickers">
+        <t t-foreach="o.sticker_ids" t-as="sticker">
+            <div class="col-1 d-inline-block text-center align-top p-0 mt-3 mr-1">
+                <img
+                    t-att-src="image_data_uri(sticker.image_64)"
+                    t-att-alt="sticker.name"
+                    class="m-auto d-block"
+                />
+                <span
+                    t-if="sticker.show_sticker_note and sticker.note"
+                    t-esc="sticker.note"
+                    class="text-muted small"
+                    style="white-space: pre;"
+                />
+            </div>
+        </t>
+    </template>
+</odoo>
