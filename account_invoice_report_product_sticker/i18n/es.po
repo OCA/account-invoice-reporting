@@ -39,7 +39,8 @@ msgstr "Ajustes de configuración"
 #: model:ir.model.fields,help:account_invoice_report_product_sticker.field_account_payment__show_product_stickers
 #: model:ir.model.fields,help:account_invoice_report_product_sticker.field_res_config_settings__show_product_stickers
 msgid "Display Product Stickers on chosen position inside the report."
-msgstr "Mostrar Pegatinas de Producto en la posición elegida dentro del informe."
+msgstr ""
+"Mostrar Pegatinas de Producto en la posición elegida dentro del informe."
 
 #. module: account_invoice_report_product_sticker
 #: model:ir.model,name:account_invoice_report_product_sticker.model_account_move
