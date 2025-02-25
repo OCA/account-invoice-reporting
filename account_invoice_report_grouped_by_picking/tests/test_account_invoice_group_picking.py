@@ -7,9 +7,10 @@
 from lxml import html
 
 from odoo import Command, fields
-from odoo.tests.common import Form, TransactionCase
+from odoo.tests.common import Form, TransactionCase, tagged
 
 
+@tagged("post_install", "-at_install")
 class TestAccountInvoiceGroupPicking(TransactionCase):
     @classmethod
     def setUpClass(cls):
@@ -24,6 +25,15 @@ class TestAccountInvoiceGroupPicking(TransactionCase):
                 tracking_disable=True,
             )
         )
+        if not cls.env.company.chart_template_id:
+            # Load a CoA if there's none in current company
+            coa = cls.env.ref("l10n_generic_coa.configurable_chart_template", False)
+            if not coa:
+                # Load the first available CoA
+                coa = cls.env["account.chart.template"].search(
+                    [("visible", "=", True)], limit=1
+                )
+            coa.try_loading(company=cls.env.company, install_demo=False)
         cls.product = cls.env["product.product"].create(
             {
                 "name": "Product for test",
