@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template id="report_invoice_document" inherit_id="account.report_invoice_document">
+        <xpath expr="//table/thead/tr/th[@name='th_description']" position="before">
+            <th t-if="o.has_order_position" class="text-left">Pos</th>
+        </xpath>
+        <xpath
+            expr="//table/tbody[hasclass('invoice_tbody')]//td[@name='account_invoice_line_name']"
+            position="before"
+        >
+            <td t-if="o.has_order_position">
+                <span t-field="line.position_formatted" />
+            </td>
+        </xpath>
+    </template>
+</odoo>
