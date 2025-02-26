@@ -9,7 +9,7 @@ import babel
 from odoo import fields
 from odoo.tests import common, tagged
 from odoo.tests.common import Form
-from odoo.tools import posix_to_ldml, pycompat
+from odoo.tools import mute_logger, posix_to_ldml, pycompat
 
 
 @tagged("post_install", "-at_install")
@@ -108,7 +108,19 @@ class TestInvoiceReportDueList(common.TransactionCase):
         self.assertRegex(str(res[0]), date_due_format)
         self.assertRegex(str(res[0]), "75.0")
 
+    @mute_logger("odoo.models.unlink")
     def test_due_list_currency_extra(self, move_type="out_invoice"):
+        # We leave the rate of the extra currency at 1 so that the amounts to be
+        # checked are as expected.
+        self.env["res.currency.rate"].search(
+            [("currency_id", "=", self.currency_extra.id)]
+        ).unlink()
+        self.env["res.currency.rate"].create(
+            {
+                "currency_id": self.currency_extra.id,
+                "rate": 2,
+            }
+        )
         move_form2 = Form(
             self.env["account.move"].with_context(default_move_type=move_type)
         )
@@ -120,4 +132,4 @@ class TestInvoiceReportDueList(common.TransactionCase):
             line_form2.price_unit = 200.0
         invoice2 = move_form2.save()
         invoice2.action_post()
-        self.assertEqual(invoice2.get_multi_due_list()[0][2], 50.0)
+        self.assertEqual(invoice2.get_multi_due_list()[0][2], 25.0)
