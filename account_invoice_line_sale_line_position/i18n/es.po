@@ -19,7 +19,6 @@ msgstr ""
 #. module: account_invoice_line_sale_line_position
 #: model:ir.model.fields,field_description:account_invoice_line_sale_line_position.field_account_bank_statement_line__has_order_position
 #: model:ir.model.fields,field_description:account_invoice_line_sale_line_position.field_account_move__has_order_position
-#: model:ir.model.fields,field_description:account_invoice_line_sale_line_position.field_account_payment__has_order_position
 msgid "Has Order Position"
 msgstr "Tiene posición de pedido"
 
