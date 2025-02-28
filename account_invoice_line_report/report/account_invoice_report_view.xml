@@ -7,7 +7,7 @@
         <field name="name">account.invoice.report.tree.info</field>
         <field name="model">account.invoice.report</field>
         <field name="arch" type="xml">
-            <tree>
+            <list>
                 <field name="move_id" />
                 <field name="partner_id" />
                 <field name="product_categ_id" />
@@ -16,7 +16,7 @@
                 <field name="price_average" />
                 <field name="price_subtotal" />
                 <field name="company_currency_id" invisible="1" />
-            </tree>
+            </list>
         </field>
     </record>
     <record id="view_account_invoice_report_search" model="ir.ui.view">
@@ -41,8 +41,8 @@
     <record id="action_account_invoice_line_report" model="ir.actions.act_window">
         <field name="name">Invoice Lines</field>
         <field name="res_model">account.invoice.report</field>
-        <field name="view_mode">tree,pivot,graph</field>
-        <field name="search_view_id" ref="view_account_invoice_report_search" />
+        <field name="view_mode">list,pivot,graph</field>
+        <field name="groups_id" eval="[(4, ref('account.group_account_user'))]" />
         <field
             name="help"
         >From this report, you can have an overview of the amount invoiced to your customers. The search tool can also be used to personalise your Invoices reports and so, match this analysis to your needs.</field>
