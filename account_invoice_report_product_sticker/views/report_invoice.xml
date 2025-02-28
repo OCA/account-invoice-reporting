@@ -7,44 +7,28 @@
         inherit_id="account.report_invoice_document"
     >
         <xpath expr="//div[hasclass('page')]" position="inside">
-            <div
+            <t
                 t-if="o.show_product_stickers == 'bottom_left'"
                 name="sticker_section_bottom_left"
-                class="mt-5"
             >
-                <t
-                    t-call="account_invoice_report_product_sticker.invoice_report_stickers"
-                />
-            </div>
+                <t t-call="product_sticker.report_sticker_template">
+                    <t t-set="stickers" t-value="o.sticker_ids" />
+                    <t t-set="position" t-value="o.show_product_stickers" />
+                    <t t-set="extra_classes" t-value="'text-start mt-5 mb-1'" />
+                </t>
+            </t>
         </xpath>
         <xpath expr="//div[hasclass('page')]/h2" position="before">
-            <div
+            <t
                 t-if="o.show_product_stickers == 'top_right'"
                 name="sticker_section_top_right"
-                class="col-12 mt-1 mb-1 text-end"
             >
-                <t
-                    t-call="account_invoice_report_product_sticker.invoice_report_stickers"
-                />
-            </div>
+                <t t-call="product_sticker.report_sticker_template">
+                    <t t-set="stickers" t-value="o.sticker_ids" />
+                    <t t-set="position" t-value="o.show_product_stickers" />
+                    <t t-set="extra_classes" t-value="'text-end mt-1 mb-1'" />
+                </t>
+            </t>
         </xpath>
-    </template>
-
-    <template id="invoice_report_stickers">
-        <t t-foreach="o.sticker_ids" t-as="sticker">
-            <div class="col-1 d-inline-block text-center align-top p-0 mt-3 mr-1">
-                <img
-                    t-att-src="image_data_uri(sticker.image_64)"
-                    t-att-alt="sticker.name"
-                    class="m-auto d-block"
-                />
-                <span
-                    t-if="sticker.show_sticker_note and sticker.note"
-                    t-esc="sticker.note"
-                    class="text-muted small"
-                    style="white-space: pre;"
-                />
-            </div>
-        </t>
     </template>
 </odoo>
