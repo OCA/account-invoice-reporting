@@ -6,7 +6,8 @@
 from lxml import html
 
 from odoo import fields
-from odoo.tests.common import Form, TransactionCase
+from odoo.tests import Form
+from odoo.tests.common import TransactionCase
 
 
 class TestAccountInvoiceGroupPicking(TransactionCase):
@@ -152,7 +153,8 @@ class TestAccountInvoiceGroupPicking(TransactionCase):
         self.sale._create_invoices()
         # Return one picking from sale1
         wiz_return = self.get_return_picking_wizard(picking)
-        res = wiz_return.create_returns()
+        wiz_return.product_return_moves.quantity = 1
+        res = wiz_return.action_create_returns()
         picking_return = self.env["stock.picking"].browse(res["res_id"])
         picking_return.move_line_ids.write({"quantity": 1})
         picking_return.button_validate()
@@ -227,7 +229,8 @@ class TestAccountInvoiceGroupPicking(TransactionCase):
         self.assertTrue(picking.name in tbody)
         # Return picking
         wiz_return = self.get_return_picking_wizard(picking)
-        res = wiz_return.create_returns()
+        wiz_return.product_return_moves.quantity = 1
+        res = wiz_return.action_create_returns()
         picking_return = self.env["stock.picking"].browse(res["res_id"])
         picking_return.move_line_ids.write({"quantity": 1})
         picking_return.button_validate()
