@@ -20,6 +20,7 @@ class AccountMove(models.Model):
         comodel_name="product.sticker",
         string="Stickers",
         compute="_compute_sticker_ids",
+        compute_sudo=True,
         store=False,
     )
 

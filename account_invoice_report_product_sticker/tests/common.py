@@ -1,7 +1,7 @@
 # Copyright 2025 Moduon Team S.L.
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl-3.0)
 
-from odoo.tests import tagged
+from odoo.tests import new_test_user, tagged
 
 from odoo.addons.product_sticker.tests.common import ProductStickerCommon
 
@@ -18,6 +18,11 @@ class ProductStickerInvoiceReportCommon(ProductStickerCommon):
         cls.env["ir.config_parameter"].sudo().set_param(
             "account_invoice_report_product_sticker.show_product_stickers",
             cls.default_sticker_position,
+        )
+        cls.env = cls.env(
+            user=new_test_user(
+                cls.env, "test_accountant", groups="account.group_account_invoice"
+            )
         )
 
     def _create_invoice(self, move_type, products):
