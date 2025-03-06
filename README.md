@@ -23,7 +23,7 @@ addon | version | maintainers | summary
 --- | --- | --- | ---
 [account_comment_template](account_comment_template/) | 16.0.1.0.1 |  | Comments templates on invoice documents
 [account_invoice_line_report](account_invoice_line_report/) | 16.0.1.0.0 |  | New view to manage invoice lines information
-[account_invoice_production_lot](account_invoice_production_lot/) | 16.0.1.0.0 |  | Display delivered serial numbers in invoice
+[account_invoice_production_lot](account_invoice_production_lot/) | 16.0.1.0.1 |  | Display delivered serial numbers in invoice
 [account_invoice_report_due_list](account_invoice_report_due_list/) | 16.0.1.0.1 |  | Show multiple due data in invoice
 [account_invoice_report_grouped_by_picking](account_invoice_report_grouped_by_picking/) | 16.0.1.1.9 |  | Print invoice lines grouped by picking
 [account_invoice_report_header_repeater](account_invoice_report_header_repeater/) | 16.0.1.0.0 | [![CarlosRoca13](https://github.com/CarlosRoca13.png?size=30px)](https://github.com/CarlosRoca13) [![sergio-teruel](https://github.com/sergio-teruel.png?size=30px)](https://github.com/sergio-teruel) | Account Invoice Report Header Repeater
