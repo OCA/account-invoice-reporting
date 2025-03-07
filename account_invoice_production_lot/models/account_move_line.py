@@ -25,5 +25,5 @@ class AccountMoveLine(models.Model):
         lot_dict = defaultdict(float)
         for sml in self.mapped("move_line_ids.move_line_ids"):
             if sml.lot_id:
-                lot_dict[sml.lot_id.name] += sml.qty_done
+                lot_dict[sml.lot_id.name] += sml.quantity
         return lot_dict
