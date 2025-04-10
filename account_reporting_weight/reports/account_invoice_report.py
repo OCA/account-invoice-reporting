@@ -3,6 +3,7 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 from odoo import fields, models
+from odoo.tools import SQL
 
 
 class AccountInvoiceReport(models.Model):
@@ -10,16 +11,17 @@ class AccountInvoiceReport(models.Model):
 
     weight = fields.Float(digits="Stock Weight")
 
-    def _select(self):
-        select_str = super()._select()
-        select_str += """
-            , COALESCE(
-                (product.weight * (
-                    CASE
-                    WHEN move.move_type IN ('in_invoice','out_refund','in_receipt') THEN -1
-                    ELSE 1 END
-                ) * line.quantity
-                / uom_line.factor * uom_template.factor
-            ), 0.0) as weight
+    def _select(self) -> SQL:
+        return SQL(
             """
-        return select_str
+                %s,
+                COALESCE(
+                    (product.weight *
+                    (CASE WHEN move.move_type IN
+                    ('in_invoice','out_refund','in_receipt') THEN -1 ELSE 1 END)
+                    * line.quantity / uom_line.factor * uom_template.factor),
+                    0.0
+                ) as weight
+            """,
+            super()._select(),
+        )
