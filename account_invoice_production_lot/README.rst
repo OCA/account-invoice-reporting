@@ -51,26 +51,26 @@ extra field in each line with that information.
 Configuration
 =============
 
-- Go to **Inventory > Configuration > Settings > Traceability**, and
-  activate option **Lots & Serial Numbers** in order to manage lots in
-  your instance.
-- Go to **Sales > Sales > Products** and select or create a storable
-  product (Product Type): check that the product has **Tracking** set to
-  **By lots** or to **By Unique Serial Number** (in the Inventory tab)
-  and **Invoicing Policy** set to **Delivered quantities** (in the Sales
-  tab)
+-  Go to **Inventory > Configuration > Settings > Traceability**, and
+   activate option **Lots & Serial Numbers** in order to manage lots in
+   your instance.
+-  Go to **Sales > Sales > Products** and select or create a storable
+   product (Product Type): check that the product has **Tracking** set
+   to **By lots** or to **By Unique Serial Number** (in the Inventory
+   tab) and **Invoicing Policy** set to **Delivered quantities** (in the
+   Sales tab)
 
 Usage
 =====
 
-- Create and validate a sale order
-- Set *Lots/Serial Numbers* on the delivered lines by clicking on the
-  button *Register lots, packs, location*
-- After creating the invoice, the *Lots/Serial Numbers* are displayed in
-  the *Production Lots* on the invoice line form and in *formatted note*
-  field on the invoice report, and, in case **Tracking** has been
-  selected to **By lots**, their corresponding delivered quantities will
-  be displad as well.
+-  Create and validate a sale order
+-  Set *Lots/Serial Numbers* on the delivered lines by clicking on the
+   button *Register lots, packs, location*
+-  After creating the invoice, the *Lots/Serial Numbers* are displayed
+   in the *Production Lots* on the invoice line form and in *formatted
+   note* field on the invoice report, and, in case **Tracking** has been
+   selected to **By lots**, their corresponding delivered quantities
+   will be displad as well.
 
 Bug Tracker
 ===========
@@ -94,14 +94,15 @@ Authors
 Contributors
 ------------
 
-- Lorenzo Battistini <lorenzo.battistini@agilebg.com>
-- Alessio Gerace <alessio.gerace@agilebg.com>
-- Alex Comba <alex.comba@agilebg.com>
-- `Tecnativa <https://www.tecnativa.com>`__:
+-  Lorenzo Battistini <lorenzo.battistini@agilebg.com>
+-  Alessio Gerace <alessio.gerace@agilebg.com>
+-  Alex Comba <alex.comba@agilebg.com>
+-  `Tecnativa <https://www.tecnativa.com>`__:
 
-  - Vicent Cubells
-  - Pedro M. Baeza
-  - Sergio Teruel
+   -  Vicent Cubells
+   -  Pedro M. Baeza
+   -  Sergio Teruel
+   -  Pilar Vargas
 
 Maintainers
 -----------
