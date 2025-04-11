@@ -19,6 +19,13 @@ msgid "<b class=\"font-italic\">Serial numbers</b>"
 msgstr ""
 
 #. module: account_invoice_production_lot
+#: model_terms:ir.ui.view,arch_db:account_invoice_production_lot.account_invoice_production_lot_report
+msgid ""
+"<br/>\n"
+"                    <span>S/N:</span>"
+msgstr ""
+
+#. module: account_invoice_production_lot
 #: model:product.template,name:account_invoice_production_lot.product_icecream_b_product_template
 msgid "Ice Cream B"
 msgstr ""
@@ -42,9 +49,4 @@ msgstr ""
 #: model:ir.model.fields,field_description:account_invoice_production_lot.field_account_move_line__prod_lot_ids
 #: model_terms:ir.ui.view,arch_db:account_invoice_production_lot.view_move_form
 msgid "Production Lots"
-msgstr ""
-
-#. module: account_invoice_production_lot
-#: model_terms:ir.ui.view,arch_db:account_invoice_production_lot.account_invoice_production_lot_report
-msgid "S/N:"
 msgstr ""
