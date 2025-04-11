@@ -8,7 +8,8 @@
             <t groups="stock.group_production_lot">
                 <t t-set="lots" t-value="line.lots_grouped_by_quantity().items()" />
                 <t t-if="lots and line.product_id.tracking == 'serial'">
-                     S/N: <span t-esc="', '.join([x[0] for x in lots])" />
+                    <br />
+                    <span>S/N:</span> <span t-esc="', '.join([x[0] for x in lots])" />
                 </t>
             </t>
         </xpath>
