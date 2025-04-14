@@ -2,7 +2,7 @@
 # Copyright 2018 Tecnativa - Pedro M. Baeza
 # Copyright 2021-2022 Tecnativa - Víctor Martínez
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
-
+from odoo import Command
 from odoo.tests import tagged
 
 from odoo.addons.account.tests.common import AccountTestInvoicingCommon
@@ -11,8 +11,10 @@ from odoo.addons.account.tests.common import AccountTestInvoicingCommon
 @tagged("post_install", "-at_install")
 class TestAccountInvoiceReport(AccountTestInvoicingCommon):
     @classmethod
-    def setUpClass(cls, chart_template_ref=None):
-        super().setUpClass(chart_template_ref=chart_template_ref)
+    def setUpClass(
+        cls,
+    ):
+        super().setUpClass()
         cls.env = cls.env(
             context=dict(
                 cls.env.context,
@@ -31,8 +33,8 @@ class TestAccountInvoiceReport(AccountTestInvoicingCommon):
             {
                 "name": "Partner Test",
                 "base_comment_template_ids": [
-                    (4, cls.before_comment.id),
-                    (4, cls.after_comment.id),
+                    Command.link(cls.before_comment.id),
+                    Command.link(cls.after_comment.id),
                 ],
             }
         )
@@ -48,7 +50,7 @@ class TestAccountInvoiceReport(AccountTestInvoicingCommon):
                 "position": position,
                 "text": "Text " + position,
                 "models": "account.move",
-                "model_ids": [(6, 0, self.res_model_id.ids)],
+                "model_ids": [Command.set(self.res_model_id.ids)],
             }
         )
 
