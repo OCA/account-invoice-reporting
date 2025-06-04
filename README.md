@@ -27,12 +27,12 @@ addon | version | maintainers | summary
 [account_invoice_report_due_list](account_invoice_report_due_list/) | 12.0.1.4.1 |  | Show multiple due data in invoice
 [account_invoice_report_grouped_by_picking](account_invoice_report_grouped_by_picking/) | 12.0.1.1.1 |  | Print invoice lines grouped by picking
 [account_invoice_report_grouped_by_picking_sale_mrp](account_invoice_report_grouped_by_picking_sale_mrp/) | 12.0.1.0.2 |  | Take into account BoM kits in invoice report grouped by picking
-[account_invoice_report_hide_line](account_invoice_report_hide_line/) | 12.0.1.0.0 | [![bodedra](https://github.com/bodedra.png?size=30px)](https://github.com/bodedra) [![max3903](https://github.com/max3903.png?size=30px)](https://github.com/max3903) | Hide invoice lines from the PDF report if the unit price is 0
+[account_invoice_report_hide_line](account_invoice_report_hide_line/) | 12.0.1.0.0 | <a href='https://github.com/bodedra'><img src='https://github.com/bodedra.png' width='32' height='32' style='border-radius:50%;' alt='bodedra'/></a> <a href='https://github.com/max3903'><img src='https://github.com/max3903.png' width='32' height='32' style='border-radius:50%;' alt='max3903'/></a> | Hide invoice lines from the PDF report if the unit price is 0
 [account_invoice_report_payment_info](account_invoice_report_payment_info/) | 12.0.1.0.0 |  | Show payment extended info in invoice
-[account_reporting_net_weight](account_reporting_net_weight/) | 12.0.1.0.0 | [![cubells](https://github.com/cubells.png?size=30px)](https://github.com/cubells) | Net Weights in the invoices analysis view
+[account_reporting_net_weight](account_reporting_net_weight/) | 12.0.1.0.0 | <a href='https://github.com/cubells'><img src='https://github.com/cubells.png' width='32' height='32' style='border-radius:50%;' alt='cubells'/></a> | Net Weights in the invoices analysis view
 [account_reporting_weight](account_reporting_weight/) | 12.0.1.0.2 |  | Weights in the invoices analysis view
 [base_comment_template](base_comment_template/) | 12.0.3.0.0 |  | Comments templates on documents
-[partner_time_to_pay](partner_time_to_pay/) | 12.0.1.0.0 | [![max3903](https://github.com/max3903.png?size=30px)](https://github.com/max3903) | Add receivables and payables statistics to partners
+[partner_time_to_pay](partner_time_to_pay/) | 12.0.1.0.0 | <a href='https://github.com/max3903'><img src='https://github.com/max3903.png' width='32' height='32' style='border-radius:50%;' alt='max3903'/></a> | Add receivables and payables statistics to partners
 
 [//]: # (end addons)
 
