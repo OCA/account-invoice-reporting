@@ -28,9 +28,9 @@ addon | version | maintainers | summary
 [account_invoice_report_due_list](account_invoice_report_due_list/) | 14.0.2.0.0 |  | Show multiple due data in invoice
 [account_invoice_report_grouped_by_picking](account_invoice_report_grouped_by_picking/) | 14.0.1.2.0 |  | Print invoice lines grouped by picking
 [account_invoice_report_grouped_by_picking_sale_mrp](account_invoice_report_grouped_by_picking_sale_mrp/) | 14.0.1.0.1 |  | Take into account BoM kits in invoice report grouped by picking
-[account_invoice_report_hide_line](account_invoice_report_hide_line/) | 14.0.1.0.0 | [![bodedra](https://github.com/bodedra.png?size=30px)](https://github.com/bodedra) [![max3903](https://github.com/max3903.png?size=30px)](https://github.com/max3903) | Hide invoice lines from the PDF report if the unit price is 0
-[account_invoice_report_utm_campaign](account_invoice_report_utm_campaign/) | 14.0.1.0.0 | [![nayatec](https://github.com/nayatec.png?size=30px)](https://github.com/nayatec) | Add the Campaign, Medium, and Source fields to the Invoice Analysis report.
-[partner_time_to_pay](partner_time_to_pay/) | 14.0.1.0.1 | [![max3903](https://github.com/max3903.png?size=30px)](https://github.com/max3903) | Add receivables and payables statistics to partners
+[account_invoice_report_hide_line](account_invoice_report_hide_line/) | 14.0.1.0.0 | <a href='https://github.com/bodedra'><img src='https://github.com/bodedra.png' width='32' height='32' style='border-radius:50%;' alt='bodedra'/></a> <a href='https://github.com/max3903'><img src='https://github.com/max3903.png' width='32' height='32' style='border-radius:50%;' alt='max3903'/></a> | Hide invoice lines from the PDF report if the unit price is 0
+[account_invoice_report_utm_campaign](account_invoice_report_utm_campaign/) | 14.0.1.0.0 | <a href='https://github.com/nayatec'><img src='https://github.com/nayatec.png' width='32' height='32' style='border-radius:50%;' alt='nayatec'/></a> | Add the Campaign, Medium, and Source fields to the Invoice Analysis report.
+[partner_time_to_pay](partner_time_to_pay/) | 14.0.1.0.1 | <a href='https://github.com/max3903'><img src='https://github.com/max3903.png' width='32' height='32' style='border-radius:50%;' alt='max3903'/></a> | Add receivables and payables statistics to partners
 
 [//]: # (end addons)
 
