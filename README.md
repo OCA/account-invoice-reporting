@@ -29,10 +29,10 @@ addon | version | maintainers | summary
 [account_invoice_report_grouped_by_picking](account_invoice_report_grouped_by_picking/) | 13.0.1.1.1 |  | Print invoice lines grouped by picking
 [account_invoice_report_grouped_by_picking_sale_mrp](account_invoice_report_grouped_by_picking_sale_mrp/) | 13.0.1.0.0 |  | Take into account BoM kits in invoice report grouped by picking
 [account_invoice_report_payment_info](account_invoice_report_payment_info/) | 13.0.1.0.1 |  | Show payment extended info in invoice
-[account_reporting_net_weight](account_reporting_net_weight/) | 13.0.1.0.0 | [![cubells](https://github.com/cubells.png?size=30px)](https://github.com/cubells) | Net Weights in the invoices analysis view
+[account_reporting_net_weight](account_reporting_net_weight/) | 13.0.1.0.0 | <a href='https://github.com/cubells'><img src='https://github.com/cubells.png' width='32' height='32' style='border-radius:50%;' alt='cubells'/></a> | Net Weights in the invoices analysis view
 [account_reporting_volume](account_reporting_volume/) | 13.0.1.0.0 |  | Volume in the invoices analysis view
 [account_reporting_weight](account_reporting_weight/) | 13.0.1.0.1 |  | Weights in the invoices analysis view
-[partner_time_to_pay](partner_time_to_pay/) | 13.0.1.0.0 | [![max3903](https://github.com/max3903.png?size=30px)](https://github.com/max3903) | Add receivables and payables statistics to partners
+[partner_time_to_pay](partner_time_to_pay/) | 13.0.1.0.0 | <a href='https://github.com/max3903'><img src='https://github.com/max3903.png' width='32' height='32' style='border-radius:50%;' alt='max3903'/></a> | Add receivables and payables statistics to partners
 
 [//]: # (end addons)
 
