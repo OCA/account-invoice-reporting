@@ -29,10 +29,10 @@ addon | version | maintainers | summary
 [account_invoice_report_grouped_by_picking](account_invoice_report_grouped_by_picking/) | 15.0.1.3.2 |  | Print invoice lines grouped by picking
 [account_invoice_report_grouped_by_picking_sale_mrp](account_invoice_report_grouped_by_picking_sale_mrp/) | 15.0.1.0.1 |  | Take into account BoM kits in invoice report grouped by picking
 [account_invoice_report_payment_info](account_invoice_report_payment_info/) | 15.0.1.0.0 |  | Show payment extended info in invoice
-[account_invoice_report_utm](account_invoice_report_utm/) | 15.0.1.0.0 | [![nayatec](https://github.com/nayatec.png?size=30px)](https://github.com/nayatec) | Add the Campaign, Medium, and Source fields to the Invoice Analysis report.
+[account_invoice_report_utm](account_invoice_report_utm/) | 15.0.1.0.0 | <a href='https://github.com/nayatec'><img src='https://github.com/nayatec.png' width='32' height='32' style='border-radius:50%;' alt='nayatec'/></a> | Add the Campaign, Medium, and Source fields to the Invoice Analysis report.
 [account_reporting_volume](account_reporting_volume/) | 15.0.1.0.0 |  | Volume in the invoices analysis view
 [account_reporting_weight](account_reporting_weight/) | 15.0.1.0.0 |  | Weights in the invoices analysis view
-[partner_time_to_pay](partner_time_to_pay/) | 15.0.1.2.0 | [![max3903](https://github.com/max3903.png?size=30px)](https://github.com/max3903) [![rafaelbn](https://github.com/rafaelbn.png?size=30px)](https://github.com/rafaelbn) [![Shide](https://github.com/Shide.png?size=30px)](https://github.com/Shide) | Add receivables and payables statistics to partners
+[partner_time_to_pay](partner_time_to_pay/) | 15.0.1.2.0 | <a href='https://github.com/max3903'><img src='https://github.com/max3903.png' width='32' height='32' style='border-radius:50%;' alt='max3903'/></a> <a href='https://github.com/rafaelbn'><img src='https://github.com/rafaelbn.png' width='32' height='32' style='border-radius:50%;' alt='rafaelbn'/></a> <a href='https://github.com/Shide'><img src='https://github.com/Shide.png' width='32' height='32' style='border-radius:50%;' alt='Shide'/></a> | Add receivables and payables statistics to partners
 
 [//]: # (end addons)
 
