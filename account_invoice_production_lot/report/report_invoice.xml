@@ -14,7 +14,7 @@
         </xpath>
         <xpath expr="//t[@name='account_invoice_line_accountable']/.." position="after">
             <t
-                t-if="not line.display_type and lots and line.product_id.tracking == 'lot'"
+                t-if="(line.display_type == 'product' or not line.display_type) and lots and line.product_id.tracking == 'lot'"
                 name="account_invoice_line_lot"
                 groups="stock.group_production_lot"
             >
