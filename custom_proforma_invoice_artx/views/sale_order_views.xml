@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--#mohammad changes add stage wise button-->
+<odoo>
+    <data>
+        <record id="view_order_form_inherite" model="ir.ui.view">
+            <field name="name">sale.order.form.inherite</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <!-- Move the down payment field inside the sale_shipping group -->
+                <xpath expr="//group[@name='sale_shipping']" position="inside">
+                    <field name="down_payment"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

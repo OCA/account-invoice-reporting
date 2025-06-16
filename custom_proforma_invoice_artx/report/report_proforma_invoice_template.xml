@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+        <template id="report_saleorder_document_inherited" inherit_id="sale.report_saleorder_document">
+            <!-- Change XPath to a simpler element if the target is not found -->
+            <!--            <xpath expr="//table[@class='table table-sm']" position="after">-->
+            <xpath expr="//t[@t-call='sale.document_tax_totals']" position="after">
+                <t t-if="env.context.get('proforma', False) or is_pro_forma">
+                    <tr>
+                        <t t-set="doc" t-value="doc.with_context(lang=doc.partner_id.lang)"/>
+                        <td style="color:#184A8B;">Down Payment</td>
+                        <td>
+                            <p class="m-0" style="float:right;" t-esc="'(-' + str(doc.down_payment)+')'"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <t t-set="remain_total" t-value="doc.amount_total - doc.down_payment"/>
+                        <td style="">Remaining Amount</td>
+                        <td>
+                            <span style="float:right;" t-esc="remain_total"
+                                  t-options='{"widget": "monetary", "display_currency": doc.currency_id}'/>
+                        </td>
+                    </tr>
+                </t>
+            </xpath>
+        </template>
+    </data>
+</odoo>
