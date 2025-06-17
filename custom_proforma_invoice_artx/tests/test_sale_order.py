@@ -40,4 +40,4 @@ class TestSaleOrder(TransactionCase):
 
         # Invalid down payment (should raise error)
         with self.assertRaises(ValidationError):
-            sale_order.write({'down_payment': 150.0})
+            sale_order.write({"down_payment": 150.0})
