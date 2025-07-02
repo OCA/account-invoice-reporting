@@ -26,6 +26,7 @@ addon | version | maintainers | summary
 [account_invoice_production_lot](account_invoice_production_lot/) | 18.0.1.0.0 |  | Display delivered serial numbers in invoice
 [account_invoice_report_grouped_by_picking](account_invoice_report_grouped_by_picking/) | 18.0.1.0.0 |  | Print invoice lines grouped by picking
 [account_invoice_report_payment_info](account_invoice_report_payment_info/) | 18.0.1.0.0 |  | Show payment extended info in invoice
+[account_reporting_volume](account_reporting_volume/) | 18.0.1.0.0 |  | Volume in the invoices analysis view
 [account_reporting_weight](account_reporting_weight/) | 18.0.1.0.0 |  | Weights in the invoices analysis view
 
 [//]: # (end addons)
