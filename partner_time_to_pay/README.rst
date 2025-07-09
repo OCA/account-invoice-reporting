@@ -17,13 +17,13 @@ Partner Time to Pay
     :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
     :alt: License: AGPL-3
 .. |badge3| image:: https://img.shields.io/badge/github-OCA%2Faccount--invoice--reporting-lightgray.png?logo=github
-    :target: https://github.com/OCA/account-invoice-reporting/tree/17.0/partner_time_to_pay
+    :target: https://github.com/OCA/account-invoice-reporting/tree/18.0/partner_time_to_pay
     :alt: OCA/account-invoice-reporting
 .. |badge4| image:: https://img.shields.io/badge/weblate-Translate%20me-F47D42.png
-    :target: https://translation.odoo-community.org/projects/account-invoice-reporting-17-0/account-invoice-reporting-17-0-partner_time_to_pay
+    :target: https://translation.odoo-community.org/projects/account-invoice-reporting-18-0/account-invoice-reporting-18-0-partner_time_to_pay
     :alt: Translate me on Weblate
 .. |badge5| image:: https://img.shields.io/badge/runboat-Try%20me-875A7B.png
-    :target: https://runboat.odoo-community.org/builds?repo=OCA/account-invoice-reporting&target_branch=17.0
+    :target: https://runboat.odoo-community.org/builds?repo=OCA/account-invoice-reporting&target_branch=18.0
     :alt: Try me on Runboat
 
 |badge1| |badge2| |badge3| |badge4| |badge5|
@@ -46,19 +46,19 @@ Your preferred way to install addons will work with Partner Time to Pay.
 
 An easy way to install it with all its dependencies is using pip:
 
--  ``pip install --pre odoo11-addon-partner_time_to_pay odoo-autodiscover``
--  then restart Odoo, update the addons list in your database, and
-   install the Partner Time to Pay application.
+- ``pip install --pre odoo11-addon-partner_time_to_pay odoo-autodiscover``
+- then restart Odoo, update the addons list in your database, and
+  install the Partner Time to Pay application.
 
 Usage
 =====
 
--  Go to the *Sales & Purchases* tab of a partner
--  There are 6 new fields named *AVG Days to Payable/Receivable*. These
-   fields represent the average days to pay/receive for last year (LY),
-   this year (YTD) and since the first invoice (lifetime).
--  Adds a new field in the tree and form invoices views to check the
-   Full Reconcile Payment Date
+- Go to the *Sales & Purchases* tab of a partner
+- There are 6 new fields named *AVG Days to Payable/Receivable*. These
+  fields represent the average days to pay/receive for last year (LY),
+  this year (YTD) and since the first invoice (lifetime).
+- Adds a new field in the tree and form invoices views to check the Full
+  Reconcile Payment Date
 
 Known issues / Roadmap
 ======================
@@ -75,7 +75,7 @@ Bug Tracker
 Bugs are tracked on `GitHub Issues <https://github.com/OCA/account-invoice-reporting/issues>`_.
 In case of trouble, please check there if your issue has already been reported.
 If you spotted it first, help us to smash it by providing a detailed and welcomed
-`feedback <https://github.com/OCA/account-invoice-reporting/issues/new?body=module:%20partner_time_to_pay%0Aversion:%2017.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
+`feedback <https://github.com/OCA/account-invoice-reporting/issues/new?body=module:%20partner_time_to_pay%0Aversion:%2018.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
 
 Do not contact contributors directly about support or help with technical issues.
 
@@ -91,25 +91,25 @@ Authors
 Contributors
 ------------
 
--  Ray Carnes <rcarnes@ursainfosystems.com>
--  Maxime Chambreuil <mchambreuil@opensourceintegrators.com>
--  Bhavesh Odedra <bodedra@opensourceintegrators.com>
--  Sandip Mangukiya <smangukiya@opensourceintegrators.com>
--  Serpent Consulting Services Pvt. Ltd. <support@serpentcs.com>
--  Jevin Dement <jdement@opensourceintegrators.com>
--  Rafael Blasco (https://www.moduon.team/)
--  Eduardo de Miguel (https://www.moduon.team/)
--  `APSL-Nagarro <https://apsl.tech>`__:
+- Ray Carnes <rcarnes@ursainfosystems.com>
+- Maxime Chambreuil <mchambreuil@opensourceintegrators.com>
+- Bhavesh Odedra <bodedra@opensourceintegrators.com>
+- Sandip Mangukiya <smangukiya@opensourceintegrators.com>
+- Serpent Consulting Services Pvt. Ltd. <support@serpentcs.com>
+- Jevin Dement <jdement@opensourceintegrators.com>
+- Rafael Blasco (https://www.moduon.team/)
+- Eduardo de Miguel (https://www.moduon.team/)
+- `APSL-Nagarro <https://apsl.tech>`__:
 
-   -  Bernat Obrador <bobrador@apsl.net>
+  - Bernat Obrador <bobrador@apsl.net>
 
 Other credits
 -------------
 
 The development of this module has been financially supported by:
 
--  Open Source Integrators <https://www.opensourceintegrators.com>
--  Moduon Team <https://www.moduon.team>
+- Open Source Integrators <https://www.opensourceintegrators.com>
+- Moduon Team <https://www.moduon.team>
 
 Maintainers
 -----------
@@ -138,6 +138,6 @@ Current `maintainers <https://odoo-community.org/page/maintainer-role>`__:
 
 |maintainer-max3903| |maintainer-rafaelbn| |maintainer-Shide| 
 
-This module is part of the `OCA/account-invoice-reporting <https://github.com/OCA/account-invoice-reporting/tree/17.0/partner_time_to_pay>`_ project on GitHub.
+This module is part of the `OCA/account-invoice-reporting <https://github.com/OCA/account-invoice-reporting/tree/18.0/partner_time_to_pay>`_ project on GitHub.
 
 You are welcome to contribute. To learn how please visit https://odoo-community.org/page/Contribute.
