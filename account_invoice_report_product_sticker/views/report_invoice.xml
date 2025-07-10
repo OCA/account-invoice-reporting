@@ -18,7 +18,10 @@
                 </t>
             </t>
         </xpath>
-        <xpath expr="//div[hasclass('page')]/h2" position="before">
+        <xpath
+            expr="//div[hasclass('page')]/t[@t-set='layout_document_title']/span[@t-if='not proforma']"
+            position="before"
+        >
             <t
                 t-if="o.show_product_stickers == 'top_right'"
                 name="sticker_section_top_right"
