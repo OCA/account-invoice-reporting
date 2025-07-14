@@ -73,22 +73,22 @@ Authors
 Contributors
 ------------
 
-- `Tecnativa <https://www.tecnativa.com>`__:
+-  `Tecnativa <https://www.tecnativa.com>`__:
 
-  - Carlos Dauden
-  - David Vidal
-  - Pedro M. Baeza
-  - Sergio Teruel
-  - João Marques
-  - Carlos Roca
+   -  Carlos Dauden
+   -  David Vidal
+   -  Pedro M. Baeza
+   -  Sergio Teruel
+   -  João Marques
+   -  Carlos Roca
 
-- `Studio73 <https://www.studio73.es>`__:
+-  `Studio73 <https://www.studio73.es>`__:
 
-  - Ioan Galan <ioan@studio73.es>
+   -  Ioan Galan <ioan@studio73.es>
 
-- `Trobz <https://trobz.com>`__:
+-  `Trobz <https://trobz.com>`__:
 
-  - Thao Le <thaolt@trobz.com>
+   -  Thao Le <thaolt@trobz.com>
 
 Other credits
 -------------

@@ -1,73 +1,44 @@
-# Copyright 2017 Carlos Dauden <carlos.dauden@tecnativa.com>
-# Copyright 2018 David Vidal <david.vidal@tecnativa.com>
+# Copyright 2017 Tecnativa - Carlos Dauden
+# Copyright 2018 Tecnativa - David Vidal
 # Copyright 2019 Tecnativa - Pedro M. Baeza
+# Copyright 2025 Tecnativa - Víctor Martínez
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 from lxml import html
 
 from odoo import fields
-from odoo.tests import Form
-from odoo.tests.common import TransactionCase
+from odoo.tests import Form, tagged
+from odoo.tools import mute_logger
+
+from odoo.addons.account.tests.common import AccountTestInvoicingCommon
 
 
-class TestAccountInvoiceGroupPicking(TransactionCase):
+@tagged("post_install", "-at_install")
+class TestAccountInvoiceGroupPicking(AccountTestInvoicingCommon):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
-        cls.env = cls.env(
-            context=dict(
-                cls.env.context,
-                mail_create_nolog=True,
-                mail_create_nosubscribe=True,
-                mail_notrack=True,
-                no_reset_password=True,
-                tracking_disable=True,
-            )
+        cls.product = cls._create_product(
+            name="Product for test",
+            type="consu",
+            invoice_policy="delivery",
+            lst_price=100,
         )
-        cls.product = cls.env["product.product"].create(
-            {
-                "name": "Product for test",
-                "default_code": "TESTPROD01",
-                "invoice_policy": "delivery",
-            }
+        cls.service = cls._create_product(
+            name="Test service product",
+            type="service",
+            invoice_policy="order",
+            lst_price=50,
         )
-        cls.service = cls.env["product.product"].create(
-            {
-                "name": "Test service product",
-                "type": "service",
-                "invoice_policy": "order",
-            }
-        )
-        cls.partner = cls.env["res.partner"].create({"name": "Partner for test"})
-        cls.sale = cls.env["sale.order"].create(
-            {
-                "partner_id": cls.partner.id,
-                "order_line": [
-                    (
-                        0,
-                        0,
-                        {
-                            "name": cls.product.name,
-                            "product_id": cls.product.id,
-                            "product_uom_qty": 2,
-                            "product_uom": cls.product.uom_id.id,
-                            "price_unit": 100.0,
-                        },
-                    ),
-                    (
-                        0,
-                        0,
-                        {
-                            "name": cls.service.name,
-                            "product_id": cls.service.id,
-                            "product_uom_qty": 3,
-                            "product_uom": cls.service.uom_id.id,
-                            "price_unit": 50.0,
-                        },
-                    ),
-                ],
-            }
-        )
+        order_form = Form(cls.env["sale.order"])
+        order_form.partner_id = cls.partner_a
+        with order_form.order_line.new() as line_form:
+            line_form.product_id = cls.product
+            line_form.product_uom_qty = 2
+        with order_form.order_line.new() as line_form:
+            line_form.product_id = cls.service
+            line_form.product_uom_qty = 3
+        cls.sale = order_form.save()
 
     def get_return_picking_wizard(self, picking):
         stock_return_picking_form = Form(
@@ -139,6 +110,7 @@ class TestAccountInvoiceGroupPicking(TransactionCase):
         self.assertTrue(self.sale.invoice_ids.picking_ids[:1].name in tbody)
         self.assertTrue(self.sale2.invoice_ids.picking_ids[:1].name in tbody)
 
+    @mute_logger("odoo.models.unlink")
     def test_account_invoice_group_picking_return(self):
         self.sale.action_confirm()
         # deliver lines2
@@ -164,6 +136,7 @@ class TestAccountInvoiceGroupPicking(TransactionCase):
         self.assertEqual(len(groups), 1)
         self.assertEqual(groups[0]["picking"], picking_return)
 
+    @mute_logger("odoo.models.unlink")
     def test_account_invoice_return_without_returned_good(self):
         self.sale.action_confirm()
         picking = self.sale.picking_ids[:1]
@@ -193,6 +166,7 @@ class TestAccountInvoiceGroupPicking(TransactionCase):
         groups = refund_invoice.lines_grouped_by_picking()
         self.assertEqual(len(groups), 2)
 
+    @mute_logger("odoo.models.unlink")
     def test_account_invoice_group_picking_refund(self):
         # confirm quotation
         self.sale.action_confirm()
@@ -269,6 +243,7 @@ class TestAccountInvoiceGroupPicking(TransactionCase):
         # information about pickings is printed
         self.assertTrue(picking_return.name in tbody)
 
+    @mute_logger("odoo.models.unlink")
     def test_account_invoice_group_picking_refund_without_return(self):
         # confirm quotation
         self.sale.action_confirm()

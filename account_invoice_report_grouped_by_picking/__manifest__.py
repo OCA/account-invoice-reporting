@@ -12,7 +12,7 @@
     "website": "https://github.com/OCA/account-invoice-reporting",
     "author": "Tecnativa, Odoo Community Association (OCA)",
     "license": "AGPL-3",
-    "depends": ["stock_picking_invoice_link"],
+    "depends": ["sale_stock_picking_invoice_link"],
     "data": ["views/report_invoice.xml"],
     "installable": True,
 }
