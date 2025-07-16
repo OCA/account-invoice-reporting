@@ -1,0 +1,78 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* account_invoice_report_product_sticker
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-11 09:18+0000\n"
+"PO-Revision-Date: 2025-02-11 10:20+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.4.4\n"
+
+#. module: account_invoice_report_product_sticker
+#: model_terms:ir.ui.view,arch_db:account_invoice_report_product_sticker.res_config_settings_view_form
+msgid "<span class=\"o_form_label\">Product Stickers</span>"
+msgstr "<span class=\"o_form_label\">Pegatinas de producto</span>"
+
+#. module: account_invoice_report_product_sticker
+#: model:ir.model.fields.selection,name:account_invoice_report_product_sticker.selection__account_move__show_product_stickers__bottom_left
+#: model:ir.model.fields.selection,name:account_invoice_report_product_sticker.selection__res_config_settings__show_product_stickers__bottom_left
+msgid "Bottom (left)"
+msgstr "Abajo (izquierda)"
+
+#. module: account_invoice_report_product_sticker
+#: model:ir.model,name:account_invoice_report_product_sticker.model_res_config_settings
+msgid "Config Settings"
+msgstr "Ajustes de configuración"
+
+#. module: account_invoice_report_product_sticker
+#: model:ir.model.fields,help:account_invoice_report_product_sticker.field_account_bank_statement_line__show_product_stickers
+#: model:ir.model.fields,help:account_invoice_report_product_sticker.field_account_move__show_product_stickers
+#: model:ir.model.fields,help:account_invoice_report_product_sticker.field_account_payment__show_product_stickers
+#: model:ir.model.fields,help:account_invoice_report_product_sticker.field_res_config_settings__show_product_stickers
+msgid "Display Product Stickers on chosen position inside the report."
+msgstr ""
+"Mostrar Pegatinas de Producto en la posición elegida dentro del informe."
+
+#. module: account_invoice_report_product_sticker
+#: model:ir.model,name:account_invoice_report_product_sticker.model_account_move
+msgid "Journal Entry"
+msgstr "Asiento contable"
+
+#. module: account_invoice_report_product_sticker
+#: model:ir.model.fields,field_description:account_invoice_report_product_sticker.field_res_config_settings__show_product_stickers
+msgid "Product Stickers"
+msgstr "Pegatinas de producto"
+
+#. module: account_invoice_report_product_sticker
+#: model:ir.model.fields,field_description:account_invoice_report_product_sticker.field_account_bank_statement_line__show_product_stickers
+#: model:ir.model.fields,field_description:account_invoice_report_product_sticker.field_account_move__show_product_stickers
+#: model:ir.model.fields,field_description:account_invoice_report_product_sticker.field_account_payment__show_product_stickers
+msgid "Show Product Stickers"
+msgstr "Mostrar pegatinas de productos"
+
+#. module: account_invoice_report_product_sticker
+#: model_terms:ir.ui.view,arch_db:account_invoice_report_product_sticker.res_config_settings_view_form
+msgid "Show Product Stickers on your Reports on:"
+msgstr "Mostrar Pegatinas de Producto en los Informes en:"
+
+#. module: account_invoice_report_product_sticker
+#: model:ir.model.fields,field_description:account_invoice_report_product_sticker.field_account_bank_statement_line__sticker_ids
+#: model:ir.model.fields,field_description:account_invoice_report_product_sticker.field_account_move__sticker_ids
+#: model:ir.model.fields,field_description:account_invoice_report_product_sticker.field_account_payment__sticker_ids
+msgid "Stickers"
+msgstr "Pegatinas"
+
+#. module: account_invoice_report_product_sticker
+#: model:ir.model.fields.selection,name:account_invoice_report_product_sticker.selection__account_move__show_product_stickers__top_right
+#: model:ir.model.fields.selection,name:account_invoice_report_product_sticker.selection__res_config_settings__show_product_stickers__top_right
+msgid "Top (right)"
+msgstr "Arriba (derecha)"
