@@ -1,6 +1,6 @@
 [project]
 name = "odoo-addons-oca-account-invoice-reporting"
-version = "18.0.20250716.0"
+version = "18.0.20250718.0"
 dependencies = [
     "odoo-addon-account_invoice_line_report==18.0.*",
     "odoo-addon-account_invoice_line_sale_line_position==18.0.*",
@@ -10,6 +10,7 @@ dependencies = [
     "odoo-addon-account_invoice_report_product_sticker==18.0.*",
     "odoo-addon-account_reporting_volume==18.0.*",
     "odoo-addon-account_reporting_weight==18.0.*",
+    "odoo-addon-partner_time_to_pay==18.0.*",
 ]
 classifiers=[
     "Programming Language :: Python",
