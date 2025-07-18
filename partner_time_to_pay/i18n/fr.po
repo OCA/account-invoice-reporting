@@ -1,0 +1,122 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * partner_time_to_pay
+#
+# Translators:
+# Quentin THEURET <odoo@kerpeo.com>, 2017
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-06-30 23:33+0000\n"
+"PO-Revision-Date: 2017-06-30 23:33+0000\n"
+"Last-Translator: Quentin THEURET <odoo@kerpeo.com>, 2017\n"
+"Language-Team: French (https://www.transifex.com/oca/teams/23907/fr/)\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#. module: partner_time_to_pay
+#: model:ir.model.fields,field_description:partner_time_to_pay.field_res_partner__d2p_ly
+#: model:ir.model.fields,field_description:partner_time_to_pay.field_res_users__d2p_ly
+msgid "AVG Days to Payable (LY)"
+msgstr ""
+
+#. module: partner_time_to_pay
+#: model:ir.model.fields,field_description:partner_time_to_pay.field_res_partner__d2p_ytd
+#: model:ir.model.fields,field_description:partner_time_to_pay.field_res_users__d2p_ytd
+#, fuzzy
+msgid "AVG Days to Payable (YTD)"
+msgstr "Moy. Jours pour payer (YTD)"
+
+#. module: partner_time_to_pay
+#: model:ir.model.fields,field_description:partner_time_to_pay.field_res_partner__d2p_life
+#: model:ir.model.fields,field_description:partner_time_to_pay.field_res_users__d2p_life
+#, fuzzy
+msgid "AVG Days to Payable (lifetime)"
+msgstr "Moy. Jours pour payer (durée)"
+
+#. module: partner_time_to_pay
+#: model:ir.model.fields,field_description:partner_time_to_pay.field_res_partner__d2r_ly
+#: model:ir.model.fields,field_description:partner_time_to_pay.field_res_users__d2r_ly
+msgid "AVG Days to Receivable (LY)"
+msgstr ""
+
+#. module: partner_time_to_pay
+#: model:ir.model.fields,field_description:partner_time_to_pay.field_res_partner__d2r_ytd
+#: model:ir.model.fields,field_description:partner_time_to_pay.field_res_users__d2r_ytd
+#, fuzzy
+msgid "AVG Days to Receivable (YTD)"
+msgstr "Moy. Jours pour payer (YTD)"
+
+#. module: partner_time_to_pay
+#: model:ir.model.fields,field_description:partner_time_to_pay.field_res_partner__d2r_life
+#: model:ir.model.fields,field_description:partner_time_to_pay.field_res_users__d2r_life
+#, fuzzy
+msgid "AVG Days to Receivable (lifetime)"
+msgstr "Moy. Jours pour payer (durée)"
+
+#. module: partner_time_to_pay
+#: model:ir.model.fields,help:partner_time_to_pay.field_res_partner__d2p_ly
+#: model:ir.model.fields,help:partner_time_to_pay.field_res_users__d2p_ly
+msgid "Average days of payment for incoming invoices last year."
+msgstr ""
+
+#. module: partner_time_to_pay
+#: model:ir.model.fields,help:partner_time_to_pay.field_res_partner__d2p_ytd
+#: model:ir.model.fields,help:partner_time_to_pay.field_res_users__d2p_ytd
+msgid "Average days of payment for incoming invoices this year."
+msgstr ""
+
+#. module: partner_time_to_pay
+#: model:ir.model.fields,help:partner_time_to_pay.field_res_partner__d2p_life
+#: model:ir.model.fields,help:partner_time_to_pay.field_res_users__d2p_life
+msgid "Average days of payment for incoming invoices."
+msgstr ""
+
+#. module: partner_time_to_pay
+#: model:ir.model.fields,help:partner_time_to_pay.field_res_partner__d2r_ly
+#: model:ir.model.fields,help:partner_time_to_pay.field_res_users__d2r_ly
+msgid "Average days of payment for outgoing invoices last year."
+msgstr ""
+
+#. module: partner_time_to_pay
+#: model:ir.model.fields,help:partner_time_to_pay.field_res_partner__d2r_ytd
+#: model:ir.model.fields,help:partner_time_to_pay.field_res_users__d2r_ytd
+msgid "Average days of payment for outgoing invoices this year."
+msgstr ""
+
+#. module: partner_time_to_pay
+#: model:ir.model.fields,help:partner_time_to_pay.field_res_partner__d2r_life
+#: model:ir.model.fields,help:partner_time_to_pay.field_res_users__d2r_life
+msgid "Average days of payment for outgoing invoices."
+msgstr ""
+
+#. module: partner_time_to_pay
+#: model:ir.model,name:partner_time_to_pay.model_res_partner
+msgid "Contact"
+msgstr ""
+
+#. module: partner_time_to_pay
+#: model:ir.model.fields,help:partner_time_to_pay.field_account_bank_statement_line__full_reconcile_payment_date
+#: model:ir.model.fields,help:partner_time_to_pay.field_account_move__full_reconcile_payment_date
+#: model:ir.model.fields,help:partner_time_to_pay.field_account_payment__full_reconcile_payment_date
+msgid "Date when the complete reconciliation of this invoice occurred."
+msgstr ""
+
+#. module: partner_time_to_pay
+#: model:ir.model,name:partner_time_to_pay.model_account_move
+msgid "Journal Entry"
+msgstr ""
+
+#. module: partner_time_to_pay
+#: model:ir.model.fields,field_description:partner_time_to_pay.field_account_bank_statement_line__full_reconcile_payment_date
+#: model:ir.model.fields,field_description:partner_time_to_pay.field_account_move__full_reconcile_payment_date
+#: model:ir.model.fields,field_description:partner_time_to_pay.field_account_payment__full_reconcile_payment_date
+msgid "Payment Date"
+msgstr ""
+
+#~ msgid "Partner"
+#~ msgstr "Partenaire"
