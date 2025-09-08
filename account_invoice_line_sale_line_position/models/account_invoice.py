@@ -25,11 +25,10 @@ class AccountMoveLine(models.Model):
     @api.depends("sale_line_ids.position")
     def _compute_position_formatted(self):
         for record in self:
-            if record.display_type:
+            if record.display_type != "product":
                 record.position_formatted = ""
                 continue
-        values = [
-            val for val in record.sale_line_ids.mapped("position_formatted") if val
-        ]
-
-        record.position_formatted = "/".join(values)
+            values = [
+                val for val in record.sale_line_ids.mapped("position_formatted") if val
+            ]
+            record.position_formatted = "/".join(values)
