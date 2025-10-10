@@ -15,10 +15,7 @@
             <attribute name="t-as">lines_group</attribute>
         </xpath>
         <!-- Appends before 'current_subtotal' compute -->
-        <xpath
-            expr="//t[@t-value='current_subtotal + line.price_subtotal']"
-            position="before"
-        >
+        <xpath expr="//t[@t-set='is_note']" position="before">
             <t t-set="l" t-value="lines_group['line']" />
             <t t-set="line" t-value="lines_group['line']" />
             <t t-set="picking" t-value="lines_group['picking']" />

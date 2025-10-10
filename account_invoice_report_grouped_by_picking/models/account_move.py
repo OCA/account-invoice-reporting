@@ -20,10 +20,8 @@ class AccountMove(models.Model):
             key=lambda x: (
                 x["picking"]
                 and (
-                    (x["picking"].date or min_date).strftime(DTF),
-                    (x["picking"].date_done or x["picking"].date or min_date).strftime(
-                        DTF
-                    ),
+                    min_date.strftime(DTF),
+                    (x["picking"].date_done or min_date).strftime(DTF),
                 )
                 or ("", ""),
                 x.get("is_last_section_notes", False),
