@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2025 Moduon Team S.L. <info@moduon.team>
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <template
+        id="report_invoice_document_customer_note"
+        inherit_id="account.report_invoice_document"
+    >
+        <xpath expr="//p[@name='incoterm']" position="after">
+            <t t-if="o.sale_order_count == 1">
+               <t
+                    t-set="picking_customer_note"
+                    t-value="o.invoice_line_ids.sale_line_ids.order_id.picking_customer_note"
+                />
+            </t>
+            <!-- Just show the customer's default note so we don't have that multiple notes from several orders (or no order) -->
+            <t t-else="">
+                <t
+                    t-set="picking_customer_note"
+                    t-value="o.partner_shipping_id.picking_customer_note"
+                />
+            </t>
+            <p t-if="picking_customer_note">
+                <strong>Customer Comments:</strong>
+                <br />
+                <span t-out="picking_customer_note" />
+            </p>
+        </xpath>
+    </template>
+</odoo>
