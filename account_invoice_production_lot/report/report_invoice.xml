@@ -19,7 +19,7 @@
                 name="account_invoice_line_lot"
                 groups="stock.group_production_lot"
             >
-                <b class="font-italic">Serial numbers</b>
+                <b class="font-italic">Lots</b>
                 <t t-foreach="lots" t-as="lot">
                     <div class="row ml-1 mt-1">
                         <div class="col">
