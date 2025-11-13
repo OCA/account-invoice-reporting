@@ -19,11 +19,22 @@ class AccountMoveLine(models.Model):
     @api.depends("move_line_ids")
     def _compute_prod_lots(self):
         for line in self:
-            line.prod_lot_ids = line.mapped("move_line_ids.move_line_ids.lot_id")
+            move_lines = line.mapped("sale_line_ids.move_ids.move_line_ids")
+            delivered_lines = move_lines.filtered(lambda ml: ml.move_id.state == "done")
+            delivered_qty_by_lot = defaultdict(float)
+            for ml in delivered_lines:
+                if ml.lot_id:
+                    delivered_qty_by_lot[ml.lot_id.id] += ml.quantity
+            line.prod_lot_ids = self.env["stock.lot"].browse(
+                delivered_qty_by_lot.keys()
+            )
 
     def lots_grouped_by_quantity(self):
         lot_dict = defaultdict(float)
-        for sml in self.mapped("move_line_ids.move_line_ids"):
-            if sml.lot_id:
-                lot_dict[sml.lot_id.name] += sml.quantity
+        move_lines = self.mapped("sale_line_ids.move_ids.move_line_ids").filtered(
+            lambda ml: ml.move_id.state == "done"
+        )
+        for ml in move_lines:
+            if ml.lot_id:
+                lot_dict[ml.lot_id.name] += ml.quantity
         return lot_dict
