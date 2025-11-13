@@ -16,6 +16,7 @@ setuptools.setup(
         'odoo-addon-account_invoice_report_header_repeater>=16.0dev,<16.1dev',
         'odoo-addon-account_invoice_report_lot_expiration_date>=16.0dev,<16.1dev',
         'odoo-addon-account_invoice_report_payment_info>=16.0dev,<16.1dev',
+        'odoo-addon-account_invoice_report_picking_customer_note>=16.0dev,<16.1dev',
         'odoo-addon-account_invoice_report_product_sticker>=16.0dev,<16.1dev',
         'odoo-addon-account_invoice_report_salesperson>=16.0dev,<16.1dev',
         'odoo-addon-account_reporting_volume>=16.0dev,<16.1dev',
