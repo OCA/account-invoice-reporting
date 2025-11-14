@@ -1,6 +1,6 @@
-==================================
-Account Invoice Report Salesperson
-==================================
+=======================================
+Account Invoice Report Salesperson Info
+=======================================
 
 .. 
    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -17,21 +17,21 @@ Account Invoice Report Salesperson
     :target: http://www.gnu.org/licenses/lgpl-3.0-standalone.html
     :alt: License: LGPL-3
 .. |badge3| image:: https://img.shields.io/badge/github-OCA%2Faccount--invoice--reporting-lightgray.png?logo=github
-    :target: https://github.com/OCA/account-invoice-reporting/tree/16.0/account_invoice_report_salesperson
+    :target: https://github.com/OCA/account-invoice-reporting/tree/18.0/account_invoice_report_salesperson
     :alt: OCA/account-invoice-reporting
 .. |badge4| image:: https://img.shields.io/badge/weblate-Translate%20me-F47D42.png
-    :target: https://translation.odoo-community.org/projects/account-invoice-reporting-16-0/account-invoice-reporting-16-0-account_invoice_report_salesperson
+    :target: https://translation.odoo-community.org/projects/account-invoice-reporting-18-0/account-invoice-reporting-18-0-account_invoice_report_salesperson
     :alt: Translate me on Weblate
 .. |badge5| image:: https://img.shields.io/badge/runboat-Try%20me-875A7B.png
-    :target: https://runboat.odoo-community.org/builds?repo=OCA/account-invoice-reporting&target_branch=16.0
+    :target: https://runboat.odoo-community.org/builds?repo=OCA/account-invoice-reporting&target_branch=18.0
     :alt: Try me on Runboat
 
 |badge1| |badge2| |badge3| |badge4| |badge5|
 
 This module displays salesperson info (name, phone OR mobile) in:
 
--  Invoices report.
--  Invoices without Payment report.
+- Invoices report.
+- Invoices without Payment report.
 
 .. IMPORTANT::
    This is an alpha version, the data model and design can change at any time without warning.
@@ -48,8 +48,9 @@ Usage
 
 To print Invoice reports:
 
-#. Go to *Accounting > Customers > Invoices* and pick or create one with
-Salesperson. #. Print it.
+| #. Go to *Accounting > Customers > Invoices* and pick or create one
+  with Salesperson.
+| #. Print it.
 
 Bug Tracker
 ===========
@@ -57,7 +58,7 @@ Bug Tracker
 Bugs are tracked on `GitHub Issues <https://github.com/OCA/account-invoice-reporting/issues>`_.
 In case of trouble, please check there if your issue has already been reported.
 If you spotted it first, help us to smash it by providing a detailed and welcomed
-`feedback <https://github.com/OCA/account-invoice-reporting/issues/new?body=module:%20account_invoice_report_salesperson%0Aversion:%2016.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
+`feedback <https://github.com/OCA/account-invoice-reporting/issues/new?body=module:%20account_invoice_report_salesperson%0Aversion:%2018.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
 
 Do not contact contributors directly about support or help with technical issues.
 
@@ -72,7 +73,7 @@ Authors
 Contributors
 ------------
 
--  Eduardo de Miguel (``Moduon <https://www.moduon.team/>``\ \_\_)
+- Eduardo de Miguel (``Moduon <https://www.moduon.team/>``\ \_\_)
 
 Maintainers
 -----------
@@ -90,11 +91,14 @@ promote its widespread use.
 .. |maintainer-Shide| image:: https://github.com/Shide.png?size=40px
     :target: https://github.com/Shide
     :alt: Shide
+.. |maintainer-rafaelbn| image:: https://github.com/rafaelbn.png?size=40px
+    :target: https://github.com/rafaelbn
+    :alt: rafaelbn
 
-Current `maintainer <https://odoo-community.org/page/maintainer-role>`__:
+Current `maintainers <https://odoo-community.org/page/maintainer-role>`__:
 
-|maintainer-Shide| 
+|maintainer-Shide| |maintainer-rafaelbn| 
 
-This module is part of the `OCA/account-invoice-reporting <https://github.com/OCA/account-invoice-reporting/tree/16.0/account_invoice_report_salesperson>`_ project on GitHub.
+This module is part of the `OCA/account-invoice-reporting <https://github.com/OCA/account-invoice-reporting/tree/18.0/account_invoice_report_salesperson>`_ project on GitHub.
 
 You are welcome to contribute. To learn how please visit https://odoo-community.org/page/Contribute.
