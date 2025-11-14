@@ -2,14 +2,14 @@
 # License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl-3.0)
 
 {
-    "name": "Account Invoice Report Salesperson",
+    "name": "Account Invoice Report Salesperson Info",
     "summary": "Salesperson info in Invoice report",
-    "version": "16.0.1.0.1",
+    "version": "18.0.1.0.0",
     "development_status": "Alpha",
     "category": "Account",
     "website": "https://github.com/OCA/account-invoice-reporting",
     "author": "Moduon, Odoo Community Association (OCA)",
-    "maintainers": ["Shide"],
+    "maintainers": ["Shide", "rafaelbn"],
     "license": "LGPL-3",
     "application": False,
     "installable": True,
