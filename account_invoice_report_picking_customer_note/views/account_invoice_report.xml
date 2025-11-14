@@ -6,7 +6,7 @@
         id="report_invoice_document_customer_note"
         inherit_id="account.report_invoice_document"
     >
-        <xpath expr="//p[@name='incoterm']" position="after">
+        <xpath expr="//div[@id='qrcode']" position="before">
             <t t-if="o.sale_order_count == 1">
                 <t
                     t-set="picking_customer_note"
