@@ -49,7 +49,7 @@ class TestSaleStockPickingNote(TransactionCase):
         product = self.env["product.product"].create(
             {
                 "name": "test_product",
-                "type": "product",
+                "type": "consu",
                 "standard_price": 1.0,
                 "list_price": 1.0,
             }
@@ -88,7 +88,7 @@ class TestSaleStockPickingNote(TransactionCase):
         product = self.env["product.product"].create(
             {
                 "name": "test_product",
-                "type": "product",
+                "type": "consu",
                 "standard_price": 1.0,
                 "list_price": 1.0,
             }
