@@ -9,3 +9,5 @@
   - Ioan Galan \<<ioan@studio73.es>\>
 - [Trobz](https://trobz.com):  
   - Thao Le \<<thaolt@trobz.com>\>
+- [Apik](https://apik.cloud):  
+  - Thomas HERBIN

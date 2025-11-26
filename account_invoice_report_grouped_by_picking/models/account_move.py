@@ -30,14 +30,15 @@ class AccountMove(models.Model):
             ),
         )
 
-    def _get_signed_quantity_done(self, invoice_line, move, sign):
+    def _get_signed_quantity_done(self, invoice_line, move, sign, get_line_qty=False):
         """Hook method. Usage example:
         account_invoice_report_grouped_by_picking_sale_mrp module
         """
+        qty = invoice_line.quantity if get_line_qty else move.quantity
         if move.location_id.usage == "customer":
-            return -move.quantity * sign
+            return -qty * sign
         if move.location_dest_id.usage == "customer":
-            return move.quantity * sign
+            return qty * sign
         return 0
 
     def _process_section_note_lines_grouped(
@@ -102,16 +103,22 @@ class AccountMove(models.Model):
             has_returned_qty = False
             remaining_qty = line.quantity
             # Process moves related to the line
+            # If line is a bom, picking will have only components, and we don't want to
+            # count X times the product. So if it's a bom, we gonna loop one time
+            # through move lines to get section and note grouped, and picking name
+            line_is_bom = any([move.bom_line_id for move in line.move_line_ids])
             for move in line.move_line_ids:
                 key = (move.picking_id, line)
                 self._process_section_note_lines_grouped(
                     previous_section, previous_note, picking_dict, move.picking_id
                 )
-                qty = self._get_signed_quantity_done(line, move, sign)
+                qty = self._get_signed_quantity_done(line, move, sign, line_is_bom)
                 picking_dict[key] = picking_dict.get(key, 0.0) + qty
                 remaining_qty -= qty
                 if move.location_id.usage == "customer":
                     has_returned_qty = True
+                if line_is_bom:
+                    break
             # Process sale order lines without moves
             if not line.move_line_ids and line.sale_line_ids:
                 for so_line in line.sale_line_ids:

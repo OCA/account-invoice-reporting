@@ -90,6 +90,10 @@ Contributors
 
   - Thao Le <thaolt@trobz.com>
 
+- `Apik <https://apik.cloud>`__:
+
+  - Thomas HERBIN
+
 Other credits
 -------------
 
