@@ -4,7 +4,7 @@
 {
     "name": "Account Invoice Report Picking Customer Note",
     "summary": "Print picking customer note in Invoice",
-    "version": "18.0.1.0.1",
+    "version": "18.0.1.0.2",
     "category": "Account",
     "website": "https://github.com/OCA/account-invoice-reporting",
     "author": "Moduon, Odoo Community Association (OCA)",
