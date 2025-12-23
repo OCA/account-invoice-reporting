@@ -1,4 +1,4 @@
-1.  Go to *Manufacturing -\> Master Data -\> Bills of Materials* and
+1.  Go to *Manufacturing -\> Products -\> Bills of Materials* and
     create a new BoM selecting the product, 'Kit' in 'BoM Type' field
     and filling the components list.
 2.  Go to *Sales -\> Orders -\> Quotations* and create a new quotation

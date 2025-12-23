@@ -19,10 +19,10 @@ class TestReportGroupedSaleMrp(TransactionCase):
             {"name": "Product Kit 1", "type": "consu"}
         )
         cls.component_1_kit_1 = cls.env["product.product"].create(
-            {"name": "Component 1 Kit 1", "type": "product"}
+            {"name": "Component 1 Kit 1", "type": "consu"}
         )
         cls.component_2_kit_1 = cls.env["product.product"].create(
-            {"name": "Component 2 Kit 1", "type": "product"}
+            {"name": "Component 2 Kit 1", "type": "consu"}
         )
         bom_form = Form(cls.mrp_bom)
         bom_form.product_tmpl_id = cls.product_kit_1.product_tmpl_id
@@ -38,10 +38,10 @@ class TestReportGroupedSaleMrp(TransactionCase):
             {"name": "Product Kit 2", "type": "consu"}
         )
         cls.component_1_kit_2 = cls.env["product.product"].create(
-            {"name": "Component 1 Kit 2", "type": "product"}
+            {"name": "Component 1 Kit 2", "type": "consu"}
         )
         cls.component_2_kit_2 = cls.env["product.product"].create(
-            {"name": "Component 2 Kit 2", "type": "product"}
+            {"name": "Component 2 Kit 2", "type": "consu"}
         )
         bom_form = Form(cls.mrp_bom)
         bom_form.product_tmpl_id = cls.product_kit_2.product_tmpl_id
@@ -73,12 +73,12 @@ class TestReportGroupedSaleMrp(TransactionCase):
             self.sale_order.action_confirm()
             self.assertEqual(len(self.sale_order.picking_ids), 1)
             picking_1 = self.sale_order.picking_ids
-            self.assertEqual(len(picking_1.move_lines), 4)
-            self.assertEqual(self.sale_order.order_line.move_ids, picking_1.move_lines)
+            self.assertEqual(len(picking_1.move_ids), 4)
+            self.assertEqual(self.sale_order.order_line.move_ids, picking_1.move_ids)
             # deliver the sold kit_2 components
             picking_1.action_confirm()
-            picking_1.mapped("move_lines").write({"quantity_done": 2})
-            picking_1._action_done()
+            picking_1.mapped("move_ids").write({"quantity": 2})
+            picking_1.button_validate()
 
         # Change the existing order line qty from 2 to 3 and deliver
         # the new kit_2
@@ -87,14 +87,14 @@ class TestReportGroupedSaleMrp(TransactionCase):
                 line_form.product_uom_qty = 3
         self.assertEqual(len(self.sale_order.picking_ids), 2)
         picking_2 = self.sale_order.picking_ids - picking_1
-        self.assertEqual(len(picking_2.move_lines), 4)
+        self.assertEqual(len(picking_2.move_ids), 4)
         self.assertEqual(
             self.sale_order.order_line.move_ids,
-            picking_1.move_lines + picking_2.move_lines,
+            picking_1.move_ids + picking_2.move_ids,
         )
         picking_2.action_confirm()
-        picking_2.mapped("move_lines").write({"quantity_done": 1})
-        picking_2._action_done()
+        picking_2.mapped("move_ids").write({"quantity": 1})
+        picking_2.button_validate()
         # Test directly grouping method
         move = self.sale_order._create_invoices()
         groups = move.lines_grouped_by_picking()
