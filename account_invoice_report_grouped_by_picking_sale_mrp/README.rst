@@ -17,20 +17,20 @@ Account Invoice Grouped by Picking - Sale MRP
     :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
     :alt: License: AGPL-3
 .. |badge3| image:: https://img.shields.io/badge/github-OCA%2Faccount--invoice--reporting-lightgray.png?logo=github
-    :target: https://github.com/OCA/account-invoice-reporting/tree/15.0/account_invoice_report_grouped_by_picking_sale_mrp
+    :target: https://github.com/OCA/account-invoice-reporting/tree/18.0/account_invoice_report_grouped_by_picking_sale_mrp
     :alt: OCA/account-invoice-reporting
 .. |badge4| image:: https://img.shields.io/badge/weblate-Translate%20me-F47D42.png
-    :target: https://translation.odoo-community.org/projects/account-invoice-reporting-15-0/account-invoice-reporting-15-0-account_invoice_report_grouped_by_picking_sale_mrp
+    :target: https://translation.odoo-community.org/projects/account-invoice-reporting-18-0/account-invoice-reporting-18-0-account_invoice_report_grouped_by_picking_sale_mrp
     :alt: Translate me on Weblate
 .. |badge5| image:: https://img.shields.io/badge/runboat-Try%20me-875A7B.png
-    :target: https://runboat.odoo-community.org/builds?repo=OCA/account-invoice-reporting&target_branch=15.0
+    :target: https://runboat.odoo-community.org/builds?repo=OCA/account-invoice-reporting&target_branch=18.0
     :alt: Try me on Runboat
 
 |badge1| |badge2| |badge3| |badge4| |badge5|
 
-This module extends the functionality of 'Account Invoice Grouped by Picking'
-module to allow you to to print correctly invoices with picking info
-when there are mrp kits in them.
+This module extends the functionality of 'Account Invoice Grouped by
+Picking' module to allow you to to print correctly invoices with picking
+info when there are mrp kits in them.
 
 **Table of contents**
 
@@ -40,20 +40,20 @@ when there are mrp kits in them.
 Usage
 =====
 
-#. Go to *Manufacturing -> Master Data -> Bills of Materials* and create a
-   new BoM selecting the product, 'Kit' in 'BoM Type' field and filling
-   the components list.
-#. Go to *Sales -> Orders -> Quotations* and create a new quotation
-   with the 'Kit' previously created and qty 1.
-#. Confirm the sale order and you will see one delivery (accessible
-   via smart-button) with the components of the kit.
-#. Validate the delivery.
-#. Go back to the sale order and create an invoice by clicking on
-   Create Invoice button in the status bar.
-#. Print the invoice and the generated report will have 1 group with
-   the name of the sales order and the name of the delivery. Inside
-   there will be a line with the name of the product and quantity 1,
-   despite the delivery operation has the components of the kit.
+1. Go to *Manufacturing -> Master Data -> Bills of Materials* and create
+   a new BoM selecting the product, 'Kit' in 'BoM Type' field and
+   filling the components list.
+2. Go to *Sales -> Orders -> Quotations* and create a new quotation with
+   the 'Kit' previously created and qty 1.
+3. Confirm the sale order and you will see one delivery (accessible via
+   smart-button) with the components of the kit.
+4. Validate the delivery.
+5. Go back to the sale order and create an invoice by clicking on Create
+   Invoice button in the status bar.
+6. Print the invoice and the generated report will have 1 group with the
+   name of the sales order and the name of the delivery. Inside there
+   will be a line with the name of the product and quantity 1, despite
+   the delivery operation has the components of the kit.
 
 Bug Tracker
 ===========
@@ -61,7 +61,7 @@ Bug Tracker
 Bugs are tracked on `GitHub Issues <https://github.com/OCA/account-invoice-reporting/issues>`_.
 In case of trouble, please check there if your issue has already been reported.
 If you spotted it first, help us to smash it by providing a detailed and welcomed
-`feedback <https://github.com/OCA/account-invoice-reporting/issues/new?body=module:%20account_invoice_report_grouped_by_picking_sale_mrp%0Aversion:%2015.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
+`feedback <https://github.com/OCA/account-invoice-reporting/issues/new?body=module:%20account_invoice_report_grouped_by_picking_sale_mrp%0Aversion:%2018.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
 
 Do not contact contributors directly about support or help with technical issues.
 
@@ -69,20 +69,20 @@ Credits
 =======
 
 Authors
-~~~~~~~
+-------
 
 * Tecnativa
 
 Contributors
-~~~~~~~~~~~~
+------------
 
-* `Tecnativa <https://www.tecnativa.com>`__:
+- `Tecnativa <https://www.tecnativa.com>`__:
 
-  * Ernesto Tejeda
-  * David Vidal
+  - Ernesto Tejeda
+  - David Vidal
 
 Maintainers
-~~~~~~~~~~~
+-----------
 
 This module is maintained by the OCA.
 
@@ -94,6 +94,6 @@ OCA, or the Odoo Community Association, is a nonprofit organization whose
 mission is to support the collaborative development of Odoo features and
 promote its widespread use.
 
-This module is part of the `OCA/account-invoice-reporting <https://github.com/OCA/account-invoice-reporting/tree/15.0/account_invoice_report_grouped_by_picking_sale_mrp>`_ project on GitHub.
+This module is part of the `OCA/account-invoice-reporting <https://github.com/OCA/account-invoice-reporting/tree/18.0/account_invoice_report_grouped_by_picking_sale_mrp>`_ project on GitHub.
 
 You are welcome to contribute. To learn how please visit https://odoo-community.org/page/Contribute.
