@@ -40,9 +40,9 @@ info when there are mrp kits in them.
 Usage
 =====
 
-1. Go to *Manufacturing -> Master Data -> Bills of Materials* and create
-   a new BoM selecting the product, 'Kit' in 'BoM Type' field and
-   filling the components list.
+1. Go to *Manufacturing -> Products -> Bills of Materials* and create a
+   new BoM selecting the product, 'Kit' in 'BoM Type' field and filling
+   the components list.
 2. Go to *Sales -> Orders -> Quotations* and create a new quotation with
    the 'Kit' previously created and qty 1.
 3. Confirm the sale order and you will see one delivery (accessible via
