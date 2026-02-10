@@ -18,3 +18,9 @@ class AccountInvoiceReport(models.Model):
             ", move.medium_id AS medium_id"
             ", move.source_id AS source_id"
         )
+
+    @api.model
+    def _group_by(self):
+        return super()._group_by() + (
+            ", move.campaign_id" ", move.medium_id" ", move.source_id"
+        )
