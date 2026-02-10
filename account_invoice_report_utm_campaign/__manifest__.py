@@ -13,8 +13,5 @@
     "maintainers": ["nayatec"],
     "license": "AGPL-3",
     "installable": True,
-    "depends": [
-        "account",
-        "sale",
-    ],
+    "depends": ["account", "sale",],
 }
