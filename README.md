@@ -29,6 +29,7 @@ addon | version | maintainers | summary
 [account_invoice_report_grouped_by_picking](account_invoice_report_grouped_by_picking/) | 13.0.1.1.1 |  | Print invoice lines grouped by picking
 [account_invoice_report_grouped_by_picking_sale_mrp](account_invoice_report_grouped_by_picking_sale_mrp/) | 13.0.1.0.0 |  | Take into account BoM kits in invoice report grouped by picking
 [account_invoice_report_payment_info](account_invoice_report_payment_info/) | 13.0.1.0.1 |  | Show payment extended info in invoice
+[account_invoice_report_utm_campaign](account_invoice_report_utm_campaign/) | 13.0.1.0.0 | <a href='https://github.com/nayatec'><img src='https://github.com/nayatec.png' width='32' height='32' style='border-radius:50%;' alt='nayatec'/></a> | Add the Campaign, Medium, and Source fields to the Invoice Analysis report.
 [account_reporting_net_weight](account_reporting_net_weight/) | 13.0.1.0.0 | <a href='https://github.com/cubells'><img src='https://github.com/cubells.png' width='32' height='32' style='border-radius:50%;' alt='cubells'/></a> | Net Weights in the invoices analysis view
 [account_reporting_volume](account_reporting_volume/) | 13.0.1.0.0 |  | Volume in the invoices analysis view
 [account_reporting_weight](account_reporting_weight/) | 13.0.1.0.1 |  | Weights in the invoices analysis view
