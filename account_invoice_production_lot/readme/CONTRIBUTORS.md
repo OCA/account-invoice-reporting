@@ -5,3 +5,5 @@
   - Vicent Cubells
   - Pedro M. Baeza
   - Sergio Teruel
+- [Studio73](https://www.studio73.es/):
+    - Vicent Castells

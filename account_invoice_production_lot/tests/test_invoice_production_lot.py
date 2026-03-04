@@ -6,11 +6,13 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 from odoo.tests import Form
-from odoo.tests.common import TransactionCase, tagged
+from odoo.tests.common import tagged
+
+from odoo.addons.base.tests.common import BaseCommon
 
 
 @tagged("post_install", "-at_install")
-class TestProdLot(TransactionCase):
+class TestProdLot(BaseCommon):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
