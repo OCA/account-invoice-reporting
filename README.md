@@ -17,7 +17,11 @@ account-invoice-reporting
 
 [//]: # (addons)
 
-This part will be replaced when running the oca-gen-addons-table script from OCA/maintainer-tools.
+Available addons
+----------------
+addon | version | maintainers | summary
+--- | --- | --- | ---
+[account_invoice_report_grouped_by_picking](account_invoice_report_grouped_by_picking/) | 19.0.1.0.0 |  | Print invoice lines grouped by picking
 
 [//]: # (end addons)
 

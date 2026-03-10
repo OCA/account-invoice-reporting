@@ -1,0 +1,11 @@
+[project]
+name = "odoo-addons-oca-account-invoice-reporting"
+version = "19.0.20260310.0"
+dependencies = [
+    "odoo-addon-account_invoice_report_grouped_by_picking==19.0.*",
+]
+classifiers=[
+    "Programming Language :: Python",
+    "Framework :: Odoo",
+    "Framework :: Odoo :: 19.0",
+]
