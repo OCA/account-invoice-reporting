@@ -50,6 +50,14 @@ class TestAccountInvoiceGroupPicking(AccountTestInvoicingCommon):
         )
         return stock_return_picking_form.save()
 
+    def _count_sale_in_picking_header(self, content, sale_name):
+        """Count occurrences of sale name only in picking header rows."""
+        return len(
+            content.xpath(
+                f"//tbody[@class='invoice_tbody']//strong/span[text()='{sale_name}']"
+            )
+        )
+
     def test_account_invoice_group_picking(self):
         # confirm quotation
         self.sale.action_confirm()
@@ -104,8 +112,8 @@ class TestAccountInvoiceGroupPicking(AccountTestInvoicingCommon):
             0
         ].decode()
         # information about sales is printed
-        self.assertEqual(tbody.count(self.sale.name), 1)
-        self.assertEqual(tbody.count(self.sale2.name), 1)
+        for sale in [self.sale, self.sale2]:
+            self.assertEqual(self._count_sale_in_picking_header(content, sale.name), 1)
         # information about pickings is printed
         self.assertTrue(self.sale.invoice_ids.picking_ids[:1].name in tbody)
         self.assertTrue(self.sale2.invoice_ids.picking_ids[:1].name in tbody)
@@ -198,7 +206,7 @@ class TestAccountInvoiceGroupPicking(AccountTestInvoicingCommon):
             0
         ].decode()
         # information about sales is printed
-        self.assertEqual(tbody.count(self.sale.name), 1)
+        self.assertEqual(self._count_sale_in_picking_header(content, self.sale.name), 1)
         # information about pickings is printed
         self.assertTrue(picking.name in tbody)
         # Return picking
@@ -239,7 +247,7 @@ class TestAccountInvoiceGroupPicking(AccountTestInvoicingCommon):
             0
         ].decode()
         # information about sales is printed
-        self.assertEqual(tbody.count(self.sale.name), 1)
+        self.assertEqual(self._count_sale_in_picking_header(content, self.sale.name), 1)
         # information about pickings is printed
         self.assertTrue(picking_return.name in tbody)
 
@@ -275,7 +283,7 @@ class TestAccountInvoiceGroupPicking(AccountTestInvoicingCommon):
             0
         ].decode()
         # information about sales is printed
-        self.assertEqual(tbody.count(self.sale.name), 1)
+        self.assertEqual(self._count_sale_in_picking_header(content, self.sale.name), 1)
         # information about pickings is printed
         self.assertTrue(picking.name in tbody)
         # Refund invoice
@@ -309,6 +317,6 @@ class TestAccountInvoiceGroupPicking(AccountTestInvoicingCommon):
             0
         ].decode()
         # information about sales is printed
-        self.assertEqual(tbody.count(self.sale.name), 1)
+        self.assertEqual(self._count_sale_in_picking_header(content, self.sale.name), 1)
         # information about pickings is printed
         self.assertTrue(picking.name in tbody)
