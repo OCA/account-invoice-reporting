@@ -6,6 +6,7 @@
 from lxml import html
 
 from odoo import fields
+from odoo.fields import Command
 from odoo.tests.common import Form, TransactionCase
 
 
@@ -42,27 +43,23 @@ class TestAccountInvoiceGroupPicking(TransactionCase):
             {
                 "partner_id": cls.partner.id,
                 "order_line": [
-                    (
-                        0,
-                        0,
+                    Command.create(
                         {
                             "name": cls.product.name,
                             "product_id": cls.product.id,
                             "product_uom_qty": 2,
                             "product_uom": cls.product.uom_id.id,
                             "price_unit": 100.0,
-                        },
+                        }
                     ),
-                    (
-                        0,
-                        0,
+                    Command.create(
                         {
                             "name": cls.service.name,
                             "product_id": cls.service.id,
                             "product_uom_qty": 3,
                             "product_uom": cls.service.uom_id.id,
                             "price_unit": 50.0,
-                        },
+                        }
                     ),
                 ],
             }
@@ -132,8 +129,22 @@ class TestAccountInvoiceGroupPicking(TransactionCase):
             0
         ].decode()
         # information about sales is printed
-        self.assertEqual(tbody.count(self.sale.name), 1)
-        self.assertEqual(tbody.count(self.sale2.name), 1)
+        self.assertEqual(
+            len(
+                content.xpath(
+                    f"//tbody[@class='invoice_tbody']//strong/span[text()='{self.sale.name}']"
+                )
+            ),
+            1,
+        )
+        self.assertEqual(
+            len(
+                content.xpath(
+                    f"//tbody[@class='invoice_tbody']//strong/span[text()='{self.sale2.name}']"
+                )
+            ),
+            1,
+        )
         # information about pickings is printed
         self.assertTrue(self.sale.invoice_ids.picking_ids[:1].name in tbody)
         self.assertTrue(self.sale2.invoice_ids.picking_ids[:1].name in tbody)
@@ -222,7 +233,14 @@ class TestAccountInvoiceGroupPicking(TransactionCase):
             0
         ].decode()
         # information about sales is printed
-        self.assertEqual(tbody.count(self.sale.name), 1)
+        self.assertEqual(
+            len(
+                content.xpath(
+                    f"//tbody[@class='invoice_tbody']//strong/span[text()='{self.sale.name}']"
+                )
+            ),
+            1,
+        )
         # information about pickings is printed
         self.assertTrue(picking.name in tbody)
         # Return picking
@@ -262,7 +280,14 @@ class TestAccountInvoiceGroupPicking(TransactionCase):
             0
         ].decode()
         # information about sales is printed
-        self.assertEqual(tbody.count(self.sale.name), 1)
+        self.assertEqual(
+            len(
+                content.xpath(
+                    f"//tbody[@class='invoice_tbody']//strong/span[text()='{self.sale.name}']"
+                )
+            ),
+            1,
+        )
         # information about pickings is printed
         self.assertTrue(picking_return.name in tbody)
 
@@ -297,7 +322,14 @@ class TestAccountInvoiceGroupPicking(TransactionCase):
             0
         ].decode()
         # information about sales is printed
-        self.assertEqual(tbody.count(self.sale.name), 1)
+        self.assertEqual(
+            len(
+                content.xpath(
+                    f"//tbody[@class='invoice_tbody']//strong/span[text()='{self.sale.name}']"
+                )
+            ),
+            1,
+        )
         # information about pickings is printed
         self.assertTrue(picking.name in tbody)
         # Refund invoice
@@ -331,6 +363,13 @@ class TestAccountInvoiceGroupPicking(TransactionCase):
             0
         ].decode()
         # information about sales is printed
-        self.assertEqual(tbody.count(self.sale.name), 1)
+        self.assertEqual(
+            len(
+                content.xpath(
+                    f"//tbody[@class='invoice_tbody']//strong/span[text()='{self.sale.name}']"
+                )
+            ),
+            1,
+        )
         # information about pickings is printed
         self.assertTrue(picking.name in tbody)
