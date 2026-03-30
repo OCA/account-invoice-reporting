@@ -1,0 +1,2 @@
+- Souheil Bejaoui \<souheil.bejaoui@acsone.eu\>
+- Bilel Jouini \<bilel.jouini@acsone.eu\>
