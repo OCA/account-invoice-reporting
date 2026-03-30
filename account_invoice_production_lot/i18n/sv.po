@@ -1,0 +1,64 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * account_invoice_production_lot
+#
+# Translators:
+# OCA Transbot <transbot@odoo-community.org>, 2018
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-05-10 14:32+0000\n"
+"PO-Revision-Date: 2024-06-18 16:39+0000\n"
+"Last-Translator: jakobkrabbe <jakob@syscare.se>\n"
+"Language-Team: Swedish (https://www.transifex.com/oca/teams/23907/sv/)\n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.17\n"
+
+#. module: account_invoice_production_lot
+#: model_terms:ir.ui.view,arch_db:account_invoice_production_lot.account_invoice_production_lot_report
+msgid "<b class=\"font-italic\">Serial numbers</b>"
+msgstr "<b class=\"font-italic\">Serienummer</b>"
+
+#. module: account_invoice_production_lot
+#: model:product.template,name:account_invoice_production_lot.product_icecream_b_product_template
+msgid "Ice Cream B"
+msgstr "Glass B"
+
+#. module: account_invoice_production_lot
+#: model_terms:product.template,description:account_invoice_production_lot.product_icecream_b_product_template
+msgid ""
+"Ice cream can be mass-produced and thus is widely available in developed "
+"parts of the world. Ice cream can be purchased in large cartons (vats and "
+"squrounds) from supermarkets and grocery stores, in smaller quantities from "
+"ice cream shops, convenience stores, and milk bars, and in individual "
+"servings from small carts or vans at public events."
+msgstr ""
+"Glass kan massproduceras och är därför allmänt tillgänglig i utvecklade "
+"delar av världen. Glass kan köpas i stora kartonger (vats och squrounds) "
+"från stormarknader och livsmedelsbutiker, i mindre mängder från "
+"glassbutiker, närbutiker och mjölkbarer och i enskilda portioner från små "
+"vagnar eller skåpbilar vid offentliga evenemang."
+
+#. module: account_invoice_production_lot
+#: model:ir.model,name:account_invoice_production_lot.model_account_move_line
+msgid "Journal Item"
+msgstr "Verifikat"
+
+#. module: account_invoice_production_lot
+#: model:ir.model.fields,field_description:account_invoice_production_lot.field_account_move_line__prod_lot_ids
+#: model_terms:ir.ui.view,arch_db:account_invoice_production_lot.view_move_form
+msgid "Production Lots"
+msgstr "Produktionspartier"
+
+#. module: account_invoice_production_lot
+#: model_terms:ir.ui.view,arch_db:account_invoice_production_lot.account_invoice_production_lot_report
+msgid "S/N:"
+msgstr "S/N:"
+
+#~ msgid "Invoice Line"
+#~ msgstr "Fakturarad"
