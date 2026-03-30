@@ -24,6 +24,7 @@ addon | version | maintainers | summary
 [account_comment_template](account_comment_template/) | 18.0.1.0.0 |  | Comments templates on invoice documents
 [account_invoice_line_report](account_invoice_line_report/) | 18.0.1.0.1 |  | New view to manage invoice lines information
 [account_invoice_line_sale_line_position](account_invoice_line_sale_line_position/) | 18.0.1.0.1 |  | Adds the related sale line position on invoice line.
+[account_invoice_payment_mode_note_template](account_invoice_payment_mode_note_template/) | 18.0.1.0.0 |  | This addon allow user to customize the payment mode note using jinja2 templates
 [account_invoice_production_lot](account_invoice_production_lot/) | 18.0.1.0.1 |  | Display delivered serial numbers in invoice
 [account_invoice_report_grouped_by_picking](account_invoice_report_grouped_by_picking/) | 18.0.1.0.2 |  | Print invoice lines grouped by picking
 [account_invoice_report_grouped_by_picking_sale_mrp](account_invoice_report_grouped_by_picking_sale_mrp/) | 18.0.1.0.0 |  | Take into account BoM kits in invoice report grouped by picking
