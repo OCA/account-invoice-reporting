@@ -1,0 +1,150 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* account_invoice_payment_mode_note_template
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#. module: account_invoice_payment_mode_note_template
+#: model_terms:ir.ui.view,arch_db:account_invoice_payment_mode_note_template.account_payment_mode_note_template_form_view
+msgid "Account Payment Mode Note Template"
+msgstr ""
+
+#. module: account_invoice_payment_mode_note_template
+#: model_terms:ir.ui.view,arch_db:account_invoice_payment_mode_note_template.account_payment_mode_note_template_form_view
+msgid "Cancel"
+msgstr ""
+
+#. module: account_invoice_payment_mode_note_template
+#: model:ir.model.fields,field_description:account_invoice_payment_mode_note_template.field_account_payment_mode_note_template__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: account_invoice_payment_mode_note_template
+#: model:ir.model.fields,field_description:account_invoice_payment_mode_note_template.field_account_payment_mode_note_template__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: account_invoice_payment_mode_note_template
+#: model:ir.model.fields,field_description:account_invoice_payment_mode_note_template.field_account_payment_mode_note_template__null_value
+msgid "Default Value"
+msgstr ""
+
+#. module: account_invoice_payment_mode_note_template
+#: model:ir.model.fields,field_description:account_invoice_payment_mode_note_template.field_account_payment_mode_note_template__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: account_invoice_payment_mode_note_template
+#. odoo-python
+#: code:addons/account_invoice_payment_mode_note_template/models/account_payment_mode.py:0
+msgid "Failed to render payment note template."
+msgstr ""
+
+#. module: account_invoice_payment_mode_note_template
+#: model:ir.model.fields,field_description:account_invoice_payment_mode_note_template.field_account_payment_mode_note_template__model_object_field
+msgid "Field"
+msgstr ""
+
+#. module: account_invoice_payment_mode_note_template
+#: model:ir.model.fields,help:account_invoice_payment_mode_note_template.field_account_payment_mode_note_template__copyvalue
+msgid ""
+"Final placeholder expression, to be copy-pasted in the desired template "
+"field."
+msgstr ""
+
+#. module: account_invoice_payment_mode_note_template
+#: model:ir.model.fields,field_description:account_invoice_payment_mode_note_template.field_account_payment_mode_note_template__id
+msgid "ID"
+msgstr ""
+
+#. module: account_invoice_payment_mode_note_template
+#: model:ir.model.fields,field_description:account_invoice_payment_mode_note_template.field_account_payment_mode_note_template__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: account_invoice_payment_mode_note_template
+#: model:ir.model.fields,field_description:account_invoice_payment_mode_note_template.field_account_payment_mode_note_template__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: account_invoice_payment_mode_note_template
+#: model:ir.model.fields,field_description:account_invoice_payment_mode_note_template.field_account_payment_mode__note
+#: model:ir.model.fields,field_description:account_invoice_payment_mode_note_template.field_account_payment_mode_note_template__note
+msgid "Note"
+msgstr ""
+
+#. module: account_invoice_payment_mode_note_template
+#: model:ir.model.fields,help:account_invoice_payment_mode_note_template.field_account_payment_mode_note_template__null_value
+msgid "Optional value to use if the target field is empty"
+msgstr ""
+
+#. module: account_invoice_payment_mode_note_template
+#: model:ir.model.fields,field_description:account_invoice_payment_mode_note_template.field_account_payment_mode_note_template__payment_mode_id
+msgid "Payment Mode"
+msgstr ""
+
+#. module: account_invoice_payment_mode_note_template
+#: model:ir.model,name:account_invoice_payment_mode_note_template.model_account_payment_mode_note_template
+msgid "Payment Mode Note Template"
+msgstr ""
+
+#. module: account_invoice_payment_mode_note_template
+#: model:ir.model,name:account_invoice_payment_mode_note_template.model_account_payment_mode
+msgid "Payment Modes"
+msgstr ""
+
+#. module: account_invoice_payment_mode_note_template
+#: model:ir.model.fields,field_description:account_invoice_payment_mode_note_template.field_account_payment_mode_note_template__copyvalue
+msgid "Placeholder Expression"
+msgstr ""
+
+#. module: account_invoice_payment_mode_note_template
+#: model:ir.model.fields,help:account_invoice_payment_mode_note_template.field_account_payment_mode_note_template__model_object_field
+msgid ""
+"Select target field from the related document model.\n"
+"If it is a relationship field you will be able to select a target field at the destination of the relationship."
+msgstr ""
+
+#. module: account_invoice_payment_mode_note_template
+#: model:ir.model.fields,field_description:account_invoice_payment_mode_note_template.field_account_payment_mode_note_template__sub_model_object_field
+msgid "Sub-field"
+msgstr ""
+
+#. module: account_invoice_payment_mode_note_template
+#: model:ir.model.fields,field_description:account_invoice_payment_mode_note_template.field_account_payment_mode_note_template__sub_object
+msgid "Sub-model"
+msgstr ""
+
+#. module: account_invoice_payment_mode_note_template
+#: model_terms:ir.ui.view,arch_db:account_invoice_payment_mode_note_template.account_payment_mode_form
+msgid "Update Note Template"
+msgstr ""
+
+#. module: account_invoice_payment_mode_note_template
+#: model_terms:ir.ui.view,arch_db:account_invoice_payment_mode_note_template.account_payment_mode_note_template_form_view
+msgid "Validate"
+msgstr ""
+
+#. module: account_invoice_payment_mode_note_template
+#: model:ir.model.fields,help:account_invoice_payment_mode_note_template.field_account_payment_mode_note_template__sub_model_object_field
+msgid ""
+"When a relationship field is selected as first field, this field lets you "
+"select the target field within the destination document model (sub-model)."
+msgstr ""
+
+#. module: account_invoice_payment_mode_note_template
+#: model:ir.model.fields,help:account_invoice_payment_mode_note_template.field_account_payment_mode_note_template__sub_object
+msgid ""
+"When a relationship field is selected as first field, this field shows the "
+"document model the relationship goes to."
+msgstr ""
