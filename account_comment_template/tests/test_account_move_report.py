@@ -55,6 +55,7 @@ class TestAccountInvoiceReport(AccountTestInvoicingCommon):
         )
 
     def test_comments_in_invoice_report(self):
+        self.invoice._compute_comment_template_ids()
         res = self.env["ir.actions.report"]._render_qweb_html(
             "account.report_invoice", self.invoice.ids
         )
