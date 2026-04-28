@@ -21,7 +21,7 @@ Available addons
 ----------------
 addon | version | maintainers | summary
 --- | --- | --- | ---
-[account_invoice_production_lot](account_invoice_production_lot/) | 19.0.1.0.0 |  | Display delivered serial numbers in invoice
+[account_invoice_production_lot](account_invoice_production_lot/) | 19.0.1.0.1 |  | Display delivered serial numbers in invoice
 [account_invoice_report_grouped_by_picking](account_invoice_report_grouped_by_picking/) | 19.0.1.0.0 |  | Print invoice lines grouped by picking
 
 [//]: # (end addons)
