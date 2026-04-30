@@ -1,22 +1,22 @@
 # Copyright 2021 Camptocamp SA
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl)
-from odoo.tests import SingleTransactionCase
+from odoo import Command
+
+from odoo.addons.base.tests.common import BaseCommon
 
 
-class TestAccountInvoiceLineSaleLinePosition(SingleTransactionCase):
+class TestAccountInvoiceLineSaleLinePosition(BaseCommon):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
-        cls.env = cls.env(context=dict(cls.env.context, tracking_disable=True))
-        cls.partner = cls.env.ref("base.res_partner_12")
-        cls.product = cls.env.ref("product.product_product_9")
+        cls.product = cls.env["product.product"].create(
+            {"name": "Test Product", "type": "consu"}
+        )
         cls.order = cls.env["sale.order"].create(
             {
                 "partner_id": cls.partner.id,
                 "order_line": [
-                    (
-                        0,
-                        0,
+                    Command.create(
                         {
                             "product_id": cls.product.id,
                             "name": cls.product.name,
@@ -25,14 +25,10 @@ class TestAccountInvoiceLineSaleLinePosition(SingleTransactionCase):
                             "qty_delivered": 4.0,
                         },
                     ),
-                    (
-                        0,
-                        0,
+                    Command.create(
                         {"name": "section", "display_type": "line_section"},
                     ),
-                    (
-                        0,
-                        0,
+                    Command.create(
                         {
                             "product_id": cls.product.id,
                             "name": cls.product.name,
