@@ -6,7 +6,7 @@
 {
     "name": "Account Invoice Line Report",
     "summary": "New view to manage invoice lines information",
-    "version": "18.0.1.0.1",
+    "version": "19.0.1.0.0",
     "category": "Account",
     "website": "https://github.com/OCA/account-invoice-reporting",
     "author": "Tecnativa, Odoo Community Association (OCA)",
