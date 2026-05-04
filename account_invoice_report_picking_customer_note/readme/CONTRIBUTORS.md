@@ -2,3 +2,5 @@
   - Rafael Blasco
   - David Vidal
   - Andrii Kompaniiets
+- [Heliconia Solutions Pvt. Ltd.](https://www.heliconia.io)
+  - Bhavesh Heliconia
