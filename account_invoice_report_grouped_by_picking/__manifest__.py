@@ -13,6 +13,6 @@
     "author": "Tecnativa, Odoo Community Association (OCA)",
     "license": "AGPL-3",
     "depends": ["sale_stock_picking_invoice_link"],
-    "data": ["views/report_invoice.xml"],
+    "data": ["views/report_invoice.xml", "views/account_journal_views.xml"],
     "installable": True,
 }
