@@ -97,7 +97,7 @@
             position="after"
         >
             <tr t-if="picking != next_picking[0]">
-                <td colspan="10" class="text-right">
+                <td colspan="10" class="text-end">
                     <strong>Subtotal: </strong>
                     <strong
                         t-esc="subtotal"
