@@ -8,20 +8,21 @@ from lxml import html
 
 from odoo import fields
 from odoo.tests import Form
-from odoo.tests.common import TransactionCase
 from odoo.tools import format_date
 
+from odoo.addons.base.tests.common import BaseCommon
 
-class TestReportInvoice(TransactionCase):
+
+class TestReportInvoice(BaseCommon):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
         cls.env.user.groups_id |= cls.env.ref("stock_account.group_lot_on_invoice")
-        cls.partner = cls.env["res.partner"].create({"name": "Test partner"})
         cls.product = cls.env["product.product"].create(
             {
                 "name": "Test product",
-                "detailed_type": "product",
+                "type": "consu",
+                "is_storable": True,
                 "tracking": "lot",
             }
         )

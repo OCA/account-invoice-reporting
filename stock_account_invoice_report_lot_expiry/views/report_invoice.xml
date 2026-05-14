@@ -8,7 +8,10 @@
         <xpath expr="//table[@name='invoice_snln_table']/thead/tr" position="inside">
             <th class="text-end">Expiration Date</th>
         </xpath>
-        <xpath expr="//t[@t-foreach='lot_values']/tr" position="inside">
+        <xpath
+            expr="//table[@name='invoice_snln_table']//tr[@t-foreach='lot_values']"
+            position="inside"
+        >
             <t
                 t-set="lot"
                 t-value="o.env['stock.lot'].browse(snln_line.get('lot_id', 0))"
