@@ -6,13 +6,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 15.0\n"
 "Report-Msgid-Bugs-To: \n"
-"Last-Translator: Automatically generated\n"
+"PO-Revision-Date: 2026-05-23 07:44+0000\n"
+"Last-Translator: Pablo Castelo <pablocv@gmx.es>\n"
 "Language-Team: none\n"
 "Language: gl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.15.2\n"
 
 #. module: account_invoice_line_report
 #: model_terms:ir.actions.act_window,help:account_invoice_line_report.action_account_invoice_line_report
@@ -21,19 +23,22 @@ msgid ""
 "customers. The search tool can also be used to personalise your Invoices "
 "reports and so, match this analysis to your needs."
 msgstr ""
+"Con este informe pode obter unha vista xeral da cantidade facturada aos seus "
+"clientes. Pode utilizar a ferramenta de procura para personalizar os seus "
+"Informes de facturas e o resto, axustando a análise ás súas necesidades."
 
 #. module: account_invoice_line_report
 #: model:ir.actions.act_window,name:account_invoice_line_report.action_account_invoice_line_report
 #: model:ir.ui.menu,name:account_invoice_line_report.menu_action_account_invoice_line_report
 msgid "Invoice Lines"
-msgstr ""
+msgstr "Liñas de factura"
 
 #. module: account_invoice_line_report
 #: model_terms:ir.ui.view,arch_db:account_invoice_line_report.view_account_invoice_report_search
 msgid "With Price"
-msgstr ""
+msgstr "Con prezo"
 
 #. module: account_invoice_line_report
 #: model_terms:ir.ui.view,arch_db:account_invoice_line_report.view_account_invoice_report_search
 msgid "Without Price"
-msgstr ""
+msgstr "Sen prezo"
