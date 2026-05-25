@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 Moduon Team S.L.
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl-3.0) -->
+<data>
+    <template id="report_invoice_document" inherit_id="account.report_invoice_document">
+        <xpath
+            expr="//table[@name='invoice_line_table']//td[@name='td_quantity']"
+            position="inside"
+        >
+            <t t-set="packaging_info" t-value="line._get_packaging_info()" />
+            <span t-if="packaging_info" class="ms-1">(<t
+                t-out="packaging_info"
+            />)</span>
+        </xpath>
+    </template>
+</data>
