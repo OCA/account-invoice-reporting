@@ -3,7 +3,7 @@
 {
     "name": "Account Invoice Report Lot Expiry Date",
     "summary": "Display expiry date in the lots table of the invoice report",
-    "version": "18.0.1.0.0",
+    "version": "18.0.1.0.1",
     "development_status": "Alpha",
     "category": "Accounting/Accounting",
     "website": "https://github.com/OCA/account-invoice-reporting",
