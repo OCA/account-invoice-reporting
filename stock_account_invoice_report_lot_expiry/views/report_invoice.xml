@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template
+        id="stock_account_report_invoice_document"
+        inherit_id="stock_account.stock_account_report_invoice_document"
+        priority="9999"
+    >
+        <xpath expr="//table[@name='invoice_snln_table']/thead/tr" position="inside">
+            <th class="text-end">Expiration Date</th>
+        </xpath>
+        <xpath
+            expr="//table[@name='invoice_snln_table']//tr[@t-foreach='lot_values']"
+            position="inside"
+        >
+            <t
+                t-set="lot"
+                t-value="o.env['stock.lot'].browse(snln_line.get('lot_id', 0))"
+            />
+            <td class="text-end">
+                <t
+                    t-if="lot.expiration_date"
+                    t-out="lot.expiration_date"
+                    t-options='{"widget": "date"}'
+                />
+            </td>
+        </xpath>
+    </template>
+</odoo>
