@@ -162,4 +162,11 @@ class AccountMove(models.Model):
             {"picking": key[0], "line": key[1], "quantity": value}
             for key, value in picking_dict.items()
         ]
-        return no_picking + self._sort_grouped_lines(with_picking + last_section_notes)
+        result = no_picking + self._sort_grouped_lines(
+            with_picking + last_section_notes
+        )
+        return [
+            lg
+            for lg in result
+            if lg["line"].display_type not in ("line_section", "line_note")
+        ]
