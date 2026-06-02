@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 Ecosoft Co., Ltd (https://ecosoft.co.th/)
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html) -->
+<odoo>
+    <record id="action_invoice_product_report_wizard" model="ir.actions.act_window">
+        <field name="name">Invoice Product Report</field>
+        <field name="res_model">invoice.product.report.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <record id="view_invoice_product_report_wizard_form" model="ir.ui.view">
+        <field name="name">invoice.product.report.wizard.form</field>
+        <field name="model">invoice.product.report.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Invoice Product Report">
+                <sheet>
+                    <group>
+                        <group name="date_range_group">
+                            <field name="date_from" />
+                            <field name="date_to" />
+                        </group>
+                        <group name="customer_group">
+                            <field name="customer_ids" widget="many2many_tags" />
+                            <field
+                                name="company_ids"
+                                widget="many2many_tags"
+                                domain="[('id', 'in', allowed_company_ids)]"
+                            />
+                        </group>
+                    </group>
+                </sheet>
+                <footer>
+                    <button
+                        string="Export to Excel"
+                        name="action_export_excel"
+                        type="object"
+                        class="btn-primary"
+                    />
+                    <button
+                        string="Cancel"
+                        class="btn-secondary"
+                        special="cancel"
+                        data-hotkey="z"
+                    />
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>
