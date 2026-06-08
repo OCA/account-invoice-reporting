@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template id="report_invoice_document" inherit_id="account.report_invoice_document">
+        <!--
+            Replace the currency-rounded subtotal with the unrounded value only
+            for tax-excluded lines. For a price-included tax the per-line
+            tax-excluded base cannot reconcile with the document untaxed amount
+            (Odoo derives it as total - tax under Round Globally, not as the
+            rounding of the summed bases), so the standard rounded subtotal is
+            kept on those lines.
+        -->
+        <xpath
+            expr="//td[@name='td_subtotal']/span[@t-field='line.price_subtotal']"
+            position="attributes"
+        >
+            <attribute name="t-if">line.tax_ids.filtered("price_include")</attribute>
+        </xpath>
+        <!--
+            For tax-excluded lines, disclose the unrounded line subtotal,
+            formatted with the company's untaxed-unrounded digits, so the printed
+            subtotals reflect the decimals that currency rounding would otherwise
+            hide.
+
+            The monetary widget can't be reused here: it rounds to the currency's
+            decimal_places, which would erase the very digits this module exists
+            to show. We therefore emit the currency symbol manually following
+            currency_id.position (note: spacing / no-symbol locale nuances handled
+            by the monetary widget are not reproduced).
+        -->
+        <xpath
+            expr="//td[@name='td_subtotal']/span[@t-field='line.price_subtotal']"
+            position="after"
+        >
+            <span t-if="not line.tax_ids.filtered('price_include')" class="text-nowrap">
+                <t t-if="o.currency_id.position == 'before'"><t
+                    t-out="o.currency_id.symbol"
+                />&amp;nbsp;</t>
+                <t
+                    t-out="line.price_subtotal_unrounded"
+                    t-options-widget="'float'"
+                    t-options-precision="o.company_id.untaxed_unrounded_digits"
+                />
+                <t t-if="o.currency_id.position == 'after'">&amp;nbsp;<t
+                    t-out="o.currency_id.symbol"
+                /></t>
+            </span>
+        </xpath>
+    </template>
+</odoo>
