@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 Quartile (https://www.quartile.co)
+     License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl-3.0) -->
+<odoo>
+    <template
+        id="report_invoice_document"
+        inherit_id="account.report_invoice_document"
+    >
+        <xpath
+            expr="//td[@name='td_subtotal']/span[@t-field='line.price_subtotal']"
+            position="replace"
+        >
+            <span
+                class="text-nowrap"
+                t-if="not line.is_price_subtotal_rounded"
+                t-field="line.price_subtotal"
+            >27.00</span>
+            <span class="text-nowrap" t-else="">
+                <t t-if="o.currency_id.position == 'before'"><t
+                        t-out="o.currency_id.symbol"
+                    />&amp;nbsp;</t>
+                <t
+                    t-out="line.price_subtotal_unrounded"
+                    t-options='{"widget": "float", "decimal_precision": "Product Price"}'
+                />
+                <t
+                    t-if="o.currency_id.position == 'after'"
+                >&amp;nbsp;<t t-out="o.currency_id.symbol" /></t>
+            </span>
+        </xpath>
+    </template>
+</odoo>
