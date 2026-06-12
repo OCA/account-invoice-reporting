@@ -3,6 +3,11 @@
     <template id="report_invoice_document" inherit_id="account.report_invoice_document">
         <xpath expr="//t[contains(@t-set, 'o')]" position="after">
             <t t-set="lines_grouped" t-value="o.lines_grouped_by_picking()" />
+            <!-- Save if there are pickings in lines_grouped -->
+            <t
+                t-set="has_pickings"
+                t-value="bool(list(filter(lambda l: l['picking'], lines_grouped)))"
+            />
         </xpath>
         <xpath expr="//t[contains(@t-foreach, 'lines')]/t[3]" position="attributes">
             <attribute name="t-if">False</attribute>
@@ -30,7 +35,7 @@
             <t t-set="line_last" t-value="False" />
             <t t-set="line_index" t-value="0" />
 
-            <t t-if="picking != last_picking">
+            <t t-if="has_pickings and picking != last_picking">
                 <t t-set="last_picking" t-value="picking" />
                 <tr t-if="picking">
                     <td colspan="10">
