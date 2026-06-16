@@ -201,6 +201,19 @@ class TestAccountInvoiceGroupPicking(TransactionCase):
         refund_invoice = self.env["account.move"].browse(reversal["res_id"])
         groups = refund_invoice.lines_grouped_by_picking()
         self.assertEqual(len(groups), 2)
+        # Product lines should not have a picking when no return picking exists
+        product_groups = [
+            g
+            for g in groups
+            if g["line"].display_type not in ("line_section", "line_note")
+            and g["line"].product_id.type != "service"
+        ]
+        for group in product_groups:
+            self.assertFalse(
+                group["picking"],
+                "Product line should not be grouped under a picking "
+                "when there is no return picking",
+            )
 
     def test_account_invoice_group_picking_refund(self):
         # confirm quotation
@@ -351,7 +364,19 @@ class TestAccountInvoiceGroupPicking(TransactionCase):
         # invoice = self.env["account.move"].browse(inv_id)
         groups = new_invoice.lines_grouped_by_picking()
         self.assertEqual(len(groups), 2)
-        self.assertEqual(groups[0]["picking"], groups[1]["picking"])
+        # Product lines should not have a picking when no return picking exists
+        product_groups = [
+            g
+            for g in groups
+            if g["line"].display_type not in ("line_section", "line_note")
+            and g["line"].product_id.type != "service"
+        ]
+        for group in product_groups:
+            self.assertFalse(
+                group["picking"],
+                "Product line should not be grouped under a picking "
+                "when there is no return picking",
+            )
         # Test report
         content = html.document_fromstring(
             self.env["ir.actions.report"]._render_qweb_html(
@@ -373,6 +398,13 @@ class TestAccountInvoiceGroupPicking(TransactionCase):
         )
         # information about pickings is printed
         self.assertTrue(picking.name in tbody)
+        # "Without reference" header appears for lines without picking
+        self.assertIn(
+            "Without reference",
+            tbody,
+            "Report should show 'Without reference' for credit note "
+            "lines with no return picking",
+        )
 
     def test_account_invoice_refund_with_section_line(self):
         """Credit note with section/note lines should not raise KeyError.
