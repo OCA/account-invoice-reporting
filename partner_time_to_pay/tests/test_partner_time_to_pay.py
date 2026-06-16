@@ -6,10 +6,12 @@
 from datetime import timedelta
 
 from odoo import fields
-from odoo.tests import Form, TransactionCase
+from odoo.tests import Form
+
+from odoo.addons.base.tests.common import BaseCommon
 
 
-class TestPartnerTimeToPay(TransactionCase):
+class TestPartnerTimeToPay(BaseCommon):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
@@ -50,7 +52,7 @@ class TestPartnerTimeToPay(TransactionCase):
         move_form_ty.partner_id = cls.partner.child_ids[0]
         move_form_ty.invoice_date = today
         with move_form_ty.invoice_line_ids.new() as line_form_ty:
-            line_form_ly.name = "Inv Line Partner Time To Pay TY"
+            line_form_ty.name = "Inv Line Partner Time To Pay TY"
             line_form_ty.price_unit = 100.0
             line_form_ty.quantity = 10.0
         invoice_ty = move_form_ty.save()
