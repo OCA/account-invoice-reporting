@@ -92,7 +92,7 @@ class AccountMove(models.Model):
                     {
                         "picking": picking_obj,
                         "line": line,
-                        "qty": 0.0,
+                        "quantity": 0.0,
                         "is_last_section_notes": True,
                     }
                 )

@@ -373,3 +373,62 @@ class TestAccountInvoiceGroupPicking(TransactionCase):
         )
         # information about pickings is printed
         self.assertTrue(picking.name in tbody)
+
+    def test_account_invoice_refund_with_section_line(self):
+        """Credit note with section/note lines should not raise KeyError.
+
+        Before the fix, section/note line dicts used 'qty' key instead of
+        'quantity'. The QWeb report template accesses group['quantity'],
+        causing KeyError on credit notes with section/note lines.
+        """
+        self.sale.action_confirm()
+        picking = self.sale.picking_ids[:1]
+        picking.action_confirm()
+        picking.move_line_ids.write({"quantity": 1})
+        wiz_act = picking.button_validate()
+        wiz = Form(
+            self.env[wiz_act["res_model"]].with_context(**wiz_act["context"])
+        ).save()
+        wiz.process()
+        invoice = self.sale._create_invoices()
+        # Add section line to invoice
+        self.env["account.move.line"].create(
+            {
+                "name": "Test Section",
+                "move_id": invoice.id,
+                "display_type": "line_section",
+                "account_id": invoice.invoice_line_ids[0].account_id.id,
+            }
+        )
+        invoice.action_post()
+        # Create refund without return picking
+        move_reversal = (
+            self.env["account.move.reversal"]
+            .with_context(active_model="account.move", active_ids=invoice.ids)
+            .create(
+                {
+                    "date": fields.Date.today(),
+                    "reason": "test section line",
+                    "journal_id": invoice.journal_id.id,
+                }
+            )
+        )
+        reversal = move_reversal.refund_moves()
+        refund_invoice = self.env["account.move"].browse(reversal["res_id"])
+        # This should NOT raise KeyError: 'quantity'
+        groups = refund_invoice.lines_grouped_by_picking()
+        self.assertTrue(groups)
+        # Every group must have 'quantity' key (section/note dicts had 'qty')
+        for group in groups:
+            self.assertIn(
+                "quantity",
+                group,
+                "All groups must have 'quantity' key for QWeb template",
+            )
+        # Render the report — this would crash with KeyError without the fix
+        content = html.document_fromstring(
+            self.env["ir.actions.report"]._render_qweb_html(
+                "account.account_invoices", refund_invoice.id
+            )[0]
+        )
+        self.assertIsNotNone(content)
