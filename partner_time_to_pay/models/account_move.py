@@ -1,6 +1,7 @@
 # Copyright 2022 - Moduon
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 from odoo import api, fields, models
+from odoo.fields import Domain
 
 
 class AccountMove(models.Model):
@@ -27,18 +28,20 @@ class AccountMove(models.Model):
                     ).mapped("account_id")
                     reconciled_moves = (
                         aml_model.search(
-                            [
-                                ("account_id", "in", valid_accounts.ids),
-                                ("parent_state", "=", "posted"),
-                                ("partner_id", "=", move.commercial_partner_id.id),
-                                ("reconciled", "=", True),
-                                ("id", "not in", move.line_ids.ids),
-                                (
-                                    "full_reconcile_id.reconciled_line_ids",
-                                    "in",
-                                    move.line_ids.ids,
-                                ),
-                            ]
+                            Domain(
+                                [
+                                    ("account_id", "in", valid_accounts.ids),
+                                    ("parent_state", "=", "posted"),
+                                    ("partner_id", "=", move.commercial_partner_id.id),
+                                    ("reconciled", "=", True),
+                                    ("id", "not in", move.line_ids.ids),
+                                    (
+                                        "full_reconcile_id.reconciled_line_ids",
+                                        "in",
+                                        move.line_ids.ids,
+                                    ),
+                                ]
+                            )
                         )
                         .mapped("move_id")
                         .sorted("date")
