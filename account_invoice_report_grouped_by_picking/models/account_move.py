@@ -92,7 +92,7 @@ class AccountMove(models.Model):
                     {
                         "picking": picking_obj,
                         "line": line,
-                        "qty": 0.0,
+                        "quantity": 0.0,
                         "is_last_section_notes": True,
                     }
                 )
@@ -103,6 +103,15 @@ class AccountMove(models.Model):
             remaining_qty = line.quantity
             # Process moves related to the line
             for move in line.move_line_ids:
+                # For credit notes without return, move_line_ids
+                # contain delivery moves from the original invoice.
+                # These must be skipped so lines fall through to
+                # lines_dict -> "Without reference" in the report.
+                if (
+                    self.move_type == "out_refund"
+                    and move.location_id.usage != "customer"
+                ):
+                    continue
                 key = (move.picking_id, line)
                 self._process_section_note_lines_grouped(
                     previous_section, previous_note, picking_dict, move.picking_id
