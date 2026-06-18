@@ -7,7 +7,7 @@
 {
     "name": "Account Invoice Grouped by Picking",
     "summary": "Print invoice lines grouped by picking",
-    "version": "18.0.1.0.2",
+    "version": "18.0.1.0.3",
     "category": "Accounting & Finance",
     "website": "https://github.com/OCA/account-invoice-reporting",
     "author": "Tecnativa, Odoo Community Association (OCA)",
