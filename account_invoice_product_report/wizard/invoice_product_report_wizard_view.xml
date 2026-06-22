@@ -1,6 +1,3 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<!-- Copyright 2026 Ecosoft Co., Ltd (https://ecosoft.co.th/)
-     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html) -->
 <odoo>
     <record id="action_invoice_product_report_wizard" model="ir.actions.act_window">
         <field name="name">Invoice Product Report</field>
@@ -22,27 +19,36 @@
                         </group>
                         <group name="customer_group">
                             <field name="customer_ids" widget="many2many_tags" />
-                            <field
-                                name="company_ids"
-                                widget="many2many_tags"
-                                domain="[('id', 'in', allowed_company_ids)]"
-                            />
+                            <field name="company_ids" widget="many2many_tags" />
                         </group>
                     </group>
                 </sheet>
                 <footer>
                     <button
-                        string="Export to Excel"
-                        name="action_export_excel"
-                        type="object"
-                        class="btn-primary"
-                    />
+                    string="View"
+                    name="action_export_html"
+                    type="object"
+                    class="btn-primary"
+                    default_focus="1"
+                /> or
                     <button
-                        string="Cancel"
-                        class="btn-secondary"
-                        special="cancel"
-                        data-hotkey="z"
-                    />
+                    string="Export PDF"
+                    name="action_export_pdf"
+                    type="object"
+                    class="btn-secondary"
+                /> or
+                    <button
+                    string="Export Excel"
+                    name="action_export_excel"
+                    type="object"
+                    class="btn-secondary"
+                /> or
+                    <button
+                    string="Cancel"
+                    class="btn-secondary"
+                    special="cancel"
+                    data-hotkey="z"
+                />
                 </footer>
             </form>
         </field>

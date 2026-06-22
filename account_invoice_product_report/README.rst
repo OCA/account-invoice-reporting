@@ -28,14 +28,14 @@ Account Invoice Product Report
 
 |badge1| |badge2| |badge3| |badge4| |badge5|
 
-This module provides an invoice product report that exports revenue data
-to Excel. Accounting staff can filter posted customer invoices and
-credit notes by date range, customer, and company, then download a
-structured ``.xlsx`` file that summarises the net amount per customer
-per product for the selected period.
+This module adds an **Invoice Product Report**: a customer × product
+matrix of the net amount invoiced over a period, kept separate per
+company.
 
-The Excel output groups rows by customer (ref + name) and columns by
-product. Credit notes are automatically deducted from invoice amounts.
+For the selected date range it gathers **posted** customer invoices and
+credit notes and reports, per company and per customer, the net amount
+billed for each product (credit notes are subtracted). The same data can
+be viewed on screen, exported to PDF, or exported to Excel.
 
 **Table of contents**
 
@@ -47,30 +47,31 @@ Usage
 
 Go to *Accounting → Reporting → Invoice Product Report*.
 
-A wizard will open with the following filter options:
+A wizard opens with the following filters:
 
-- **Date From** – Start date of the billing period (required).
-- **Date To** – End date of the billing period (required).
-- **Customers** – Limit the report to selected customers. Leave blank
-  for all.
-- **Companies** – Filter by company (defaults to the current company).
+- **Date From** / **Date To** – Billing period (required).
+- **Customers** – Limit to selected customers. Leave empty for all.
+- **Companies** – Limit to selected companies. Leave empty for all
+  allowed companies.
 
-Click **Export to Excel** to download the ``.xlsx`` file.
+Then pick an output:
 
-**Excel format**
+- **View** – Show the report on screen (HTML).
+- **Export PDF** – Download a PDF.
+- **Export Excel** – Download an ``.xlsx`` file.
 
-=== ===================================================================
-Row Content
-=== ===================================================================
-1   Report title: *Invoice Product Report*
-2   From Date label + date formatted as ``01-JAN-2026``
-3   To Date label + date formatted as ``31-JAN-2026``
-5   Column headers: *ref*, *Customer Name*, then one column per product
-6+  One row per customer — net amount per product, or ``-`` if none
-=== ===================================================================
+**Report content**
 
-Net amount = sum of all customer invoices minus any credit notes for the
-same product within the selected period.
+The header recalls the selected period, customers and companies (*All*
+when a filter is left empty). The table has one row per company and
+customer, and one column per product:
+
+- *Company*, *Customer Code*, *Customer Name*, then one column per
+  product.
+
+Each cell is the **net amount** for that company / customer / product =
+posted customer invoices minus credit notes within the period; an empty
+cell shows ``-``. Figures are never aggregated across companies.
 
 Bug Tracker
 ===========

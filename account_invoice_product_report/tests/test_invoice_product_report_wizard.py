@@ -2,8 +2,10 @@
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html)
 
 from odoo import Command, fields
-from odoo.exceptions import UserError
+from odoo.tests import Form, tagged
 from odoo.tests.common import TransactionCase
+
+from odoo.addons.account.tests.common import AccountTestInvoicingCommon
 
 
 class TestInvoiceProductReportWizard(TransactionCase):
@@ -12,6 +14,11 @@ class TestInvoiceProductReportWizard(TransactionCase):
         super().setUpClass()
         cls.wizard_model = cls.env["invoice.product.report.wizard"]
         cls.move_model = cls.env["account.move"]
+        # Configure a document layout so the View / PDF report actions return
+        # the report directly instead of the "Configure Layout" act_window.
+        cls.env.company.external_report_layout_id = cls.env.ref(
+            "web.external_layout_standard"
+        )
 
         cls.account_revenue = cls.env["account.account"].search(
             [
@@ -72,14 +79,27 @@ class TestInvoiceProductReportWizard(TransactionCase):
 
     # ── Tests ────────────────────────────────────────────────────────────────────
 
-    def test_1_no_invoices_raises_user_error(self):
-        """UserError when no posted invoices match the criteria."""
-        wizard = self._make_wizard(
-            date_from=fields.Date.from_string("2020-01-01"),
-            date_to=fields.Date.from_string("2020-01-31"),
-        )
-        with self.assertRaises(UserError):
-            wizard.action_export_excel()
+    def test_1_export_actions_return_report_actions(self):
+        """The View / PDF / Excel buttons each return an ir.actions.report."""
+        wizard = self._make_wizard()
+        cases = [
+            (
+                wizard.action_export_html,
+                "account_invoice_product_report.invoice_product",
+            ),
+            (
+                wizard.action_export_pdf,
+                "account_invoice_product_report.invoice_product",
+            ),
+            (
+                wizard.action_export_excel,
+                "account_invoice_product_report.invoice_product_xlsx",
+            ),
+        ]
+        for method, report_name in cases:
+            action = method()
+            self.assertEqual(action.get("type"), "ir.actions.report")
+            self.assertEqual(action.get("report_name"), report_name)
 
     def test_2_get_invoices_respects_date_range(self):
         """Only invoices within date_from–date_to are returned."""
@@ -155,10 +175,84 @@ class TestInvoiceProductReportWizard(TransactionCase):
         invoices = wizard._get_invoices()
         self.assertTrue(all(inv.partner_id == self.partner_a for inv in invoices))
 
-    def test_8_action_export_excel_returns_act_url(self):
-        """action_export_excel returns an ir.actions.act_url action."""
+    def test_8_reports_render(self):
+        """The XLSX and HTML outputs render to valid content for the data."""
         self._create_invoice(self.partner_a, [(self.product_1, 100)])
+        self._create_invoice(self.partner_b, [(self.product_2, 200)])
         wizard = self._make_wizard()
-        result = wizard.action_export_excel()
-        self.assertEqual(result.get("type"), "ir.actions.act_url")
-        self.assertIn(".xlsx", result.get("url", ""))
+        data = {"wizard_id": wizard.id}
+        report = self.env["ir.actions.report"]
+
+        xlsx = report._render_xlsx(
+            "account_invoice_product_report.action_invoice_product_report_xlsx",
+            wizard.ids,
+            data,
+        )[0]
+        self.assertEqual(xlsx[:2], b"PK")  # valid .xlsx (zip) magic
+
+        html = report._render_qweb_html(
+            "account_invoice_product_report.action_invoice_product_report_html",
+            wizard.ids,
+            data,
+        )[0]
+        self.assertIn(b"Product Alpha", html)  # product column header present
+
+
+@tagged("post_install", "-at_install")
+class TestInvoiceProductReportMultiCompany(AccountTestInvoicingCommon):
+    """Multi-company: same customer + product across companies must not merge."""
+
+    @classmethod
+    def setUpClass(cls):
+        super().setUpClass()
+        cls.company_a = cls.company_data["company"]
+        cls.company_data_2 = cls.setup_other_company()
+        cls.company_b = cls.company_data_2["company"]
+
+    def _make_wizard(self):
+        return (
+            self.env["invoice.product.report.wizard"]
+            .with_context(allowed_company_ids=[self.company_a.id, self.company_b.id])
+            .create(
+                {
+                    "date_from": "2026-01-01",
+                    "date_to": "2026-01-31",
+                    "company_ids": [
+                        Command.set([self.company_a.id, self.company_b.id])
+                    ],
+                }
+            )
+        )
+
+    def _post_invoice(self, company, partner, product, price):
+        """Post a 1-line customer invoice in ``company`` (Form derives accounts)."""
+        move_form = Form(
+            self.env["account.move"]
+            .with_company(company)
+            .with_context(default_move_type="out_invoice")
+        )
+        move_form.invoice_date = fields.Date.from_string("2026-01-15")
+        move_form.partner_id = partner
+        with move_form.invoice_line_ids.new() as line:
+            line.product_id = product
+            line.price_unit = price
+        move = move_form.save()
+        move.action_post()
+        return move
+
+    def test_same_customer_product_split_by_company(self):
+        # Same partner + product invoiced in both companies, different amounts.
+        self._post_invoice(self.company_a, self.partner_a, self.product_a, 100)
+        self._post_invoice(self.company_b, self.partner_a, self.product_a, 250)
+        wizard = self._make_wizard()
+        rows = wizard._get_report_data(
+            wizard._get_invoice_lines(wizard._get_invoices())
+        )
+
+        rows_a = [r for r in rows if r["company"] == self.company_a]
+        rows_b = [r for r in rows if r["company"] == self.company_b]
+        # One row per company — NOT merged into a single 350 row.
+        self.assertEqual(len(rows_a), 1)
+        self.assertEqual(len(rows_b), 1)
+        self.assertAlmostEqual(rows_a[0]["amounts"][self.product_a.id], 100)
+        self.assertAlmostEqual(rows_b[0]["amounts"][self.product_a.id], 250)

@@ -1,8 +1,7 @@
-This module provides an invoice product report that exports revenue data
-to Excel. Accounting staff can filter posted customer invoices and credit
-notes by date range, customer, and company, then download a structured
-`.xlsx` file that summarises the net amount per customer per product for
-the selected period.
+This module adds an **Invoice Product Report**: a customer × product matrix of
+the net amount invoiced over a period, kept separate per company.
 
-The Excel output groups rows by customer (ref + name) and columns by
-product. Credit notes are automatically deducted from invoice amounts.
+For the selected date range it gathers **posted** customer invoices and credit
+notes and reports, per company and per customer, the net amount billed for each
+product (credit notes are subtracted). The same data can be viewed on screen,
+exported to PDF, or exported to Excel.

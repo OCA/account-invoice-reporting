@@ -1,15 +1,9 @@
 # Copyright 2026 Ecosoft Co., Ltd (https://ecosoft.co.th/)
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html)
 
-import base64
 from collections import defaultdict
-from io import BytesIO
 
-import openpyxl
-from openpyxl.styles import Alignment, Border, Font, PatternFill, Side
-
-from odoo import _, fields, models
-from odoo.exceptions import UserError
+from odoo import fields, models
 
 
 class InvoiceProductReportWizard(models.TransientModel):
@@ -21,15 +15,13 @@ class InvoiceProductReportWizard(models.TransientModel):
     customer_ids = fields.Many2many(
         comodel_name="res.partner",
         string="Customers",
+        help="Leave empty to include all customers.",
     )
     company_ids = fields.Many2many(
         comodel_name="res.company",
         string="Companies",
-        default=lambda self: self.env.company,
-        required=True,
+        help="Leave empty to include all allowed companies.",
     )
-
-    # ── Data helpers ────────────────────────────────────────────────────────────
 
     def _get_domain(self):
         """Build account.move search domain from wizard fields."""
@@ -66,161 +58,64 @@ class InvoiceProductReportWizard(models.TransientModel):
         return lines.mapped("product_id").sorted(key=lambda p: p.name or "")
 
     def _get_report_data(self, lines):
-        """
-        Build customer × product amount matrix.
+        """Net amount matrix keyed by ``(company, partner)``.
 
-        Returns a list of dicts (sorted by partner name):
-            [{"partner": res.partner, "amounts": {product_id: float}}, ...]
-
-        Credit notes (out_refund) are subtracted from totals.
+        Splitting by company keeps each company's figures separate (no
+        cross-company aggregation). Credit notes (out_refund) are subtracted
+        from the totals.
         """
         data = {}
         for line in lines:
-            partner = line.move_id.partner_id
-            if partner.id not in data:
-                data[partner.id] = {
+            move = line.move_id
+            company = move.company_id
+            partner = move.partner_id
+            key = (company.id, partner.id)
+            if key not in data:
+                data[key] = {
+                    "company": company,
                     "partner": partner,
                     "amounts": defaultdict(float),
                 }
-            sign = -1 if line.move_id.move_type == "out_refund" else 1
-            data[partner.id]["amounts"][line.product_id.id] += (
-                sign * line.price_subtotal
-            )
-        return sorted(data.values(), key=lambda r: r["partner"].name or "")
+            sign = -1 if move.move_type == "out_refund" else 1
+            data[key]["amounts"][line.product_id.id] += sign * line.price_subtotal
+        return sorted(
+            data.values(),
+            key=lambda r: (r["company"].name or "", r["partner"].name or ""),
+        )
 
-    # ── Style helpers ────────────────────────────────────────────────────────────
+    def _get_report_matrix(self):
+        """Return ``(products, rows)`` for the customer × product pivot."""
+        self.ensure_one()
+        lines = self._get_invoice_lines(self._get_invoices())
+        return self._get_products(lines), self._get_report_data(lines)
 
-    def _get_styles(self):
-        """Return a dict of reusable openpyxl style objects."""
-        thin = Side(style="thin")
-        return {
-            "title": Font(bold=True, size=14),
-            "label": Font(bold=True, size=11),
-            "header": Font(bold=True, size=11),
-            "header_fill": PatternFill("solid", fgColor="D9E1F2"),
-            "border": Border(left=thin, right=thin, top=thin, bottom=thin),
-            "center": Alignment(horizontal="center", vertical="center"),
-            "left": Alignment(horizontal="left", vertical="center"),
-            "right": Alignment(horizontal="right", vertical="center"),
-        }
-
-    # ── Sheet writers ────────────────────────────────────────────────────────────
-
-    def _write_title_section(self, ws, styles):
-        """
-        Write rows 1–3:
-            1A  Invoice Product Report
-            2A  From Date   2B  01-MAR-2026
-            3A  To Date     3B  31-MAR-2026
-        """
+    def _get_filters(self):
+        """(label, value) pairs shown at the top of every output."""
+        self.ensure_one()
         fmt = "%d-%b-%Y"
-        ws["A1"] = "Invoice Product Report"
-        ws["A1"].font = styles["title"]
+        return [
+            (
+                "From Date",
+                self.date_from.strftime(fmt).upper() if self.date_from else "",
+            ),
+            ("To Date", self.date_to.strftime(fmt).upper() if self.date_to else ""),
+            ("Customers", ", ".join(self.customer_ids.mapped("name")) or "All"),
+            ("Companies", ", ".join(self.company_ids.mapped("name")) or "All"),
+        ]
 
-        ws["A2"] = "From Date"
-        ws["A2"].font = styles["label"]
-        ws["B2"] = self.date_from.strftime(fmt).upper()
+    def _report_action_prefix(self):
+        return "account_invoice_product_report.action_invoice_product_report"
 
-        ws["A3"] = "To Date"
-        ws["A3"].font = styles["label"]
-        ws["B3"] = self.date_to.strftime(fmt).upper()
+    def _export(self, suffix, **kwargs):
+        self.ensure_one()
+        action = self.env.ref(f"{self._report_action_prefix()}_{suffix}")
+        return action.report_action(self, data={"wizard_id": self.id}, **kwargs)
 
-    def _write_column_headers(self, ws, products, styles):
-        """
-        Write row 5 headers:
-            A5  Customer Code
-            B5  Customer Name
-            C5+ one column per product
-        """
-        headers = ["Customer Code", "Customer Name"] + [p.name or "" for p in products]
-        for col, text in enumerate(headers, start=1):
-            cell = ws.cell(row=5, column=col, value=text)
-            cell.font = styles["header"]
-            cell.fill = styles["header_fill"]
-            cell.alignment = styles["center"]
-            cell.border = styles["border"]
+    def action_export_html(self):
+        return self._export("html")
 
-    def _write_data_rows(self, ws, report_data, products, styles):
-        """
-        Write rows 6+ — one row per customer.
-        Show amount per product; use '-' when the customer has no amount.
-        """
-        for row_idx, row in enumerate(report_data, start=6):
-            partner = row["partner"]
-
-            code_cell = ws.cell(row=row_idx, column=1, value=partner.ref or "")
-            code_cell.border = styles["border"]
-            code_cell.alignment = styles["left"]
-
-            name_cell = ws.cell(row=row_idx, column=2, value=partner.name or "")
-            name_cell.border = styles["border"]
-            name_cell.alignment = styles["left"]
-
-            for col_idx, product in enumerate(products, start=3):
-                amount = row["amounts"].get(product.id, 0.0)
-                if amount:
-                    cell = ws.cell(row=row_idx, column=col_idx, value=amount)
-                    cell.number_format = "#,##0.00"
-                    cell.alignment = styles["right"]
-                else:
-                    cell = ws.cell(row=row_idx, column=col_idx, value="-")
-                    cell.alignment = styles["center"]
-                cell.border = styles["border"]
-
-    def _auto_fit_columns(self, ws):
-        """Adjust each column width to the longest cell value (capped at 40)."""
-        for col in ws.columns:
-            max_len = max(
-                (len(str(cell.value)) for cell in col if cell.value), default=0
-            )
-            ws.column_dimensions[col[0].column_letter].width = min(max_len + 4, 40)
-
-    # ── Main action ──────────────────────────────────────────────────────────────
+    def action_export_pdf(self):
+        return self._export("pdf")
 
     def action_export_excel(self):
-        """Generate the billing summary Excel file and return a download action."""
-        self.ensure_one()
-
-        invoices = self._get_invoices()
-        if not invoices:
-            raise UserError(_("No posted invoices found for the selected criteria."))
-
-        lines = self._get_invoice_lines(invoices)
-        products = self._get_products(lines)
-        report_data = self._get_report_data(lines)
-
-        wb = openpyxl.Workbook()
-        ws = wb.active
-        ws.title = "Invoice Product Report"
-
-        styles = self._get_styles()
-        self._write_title_section(ws, styles)
-        self._write_column_headers(ws, products, styles)
-        self._write_data_rows(ws, report_data, products, styles)
-        self._auto_fit_columns(ws)
-
-        output = BytesIO()
-        wb.save(output)
-        output.seek(0)
-
-        filename = "invoice_product_report_{}.xlsx".format(
-            self.date_from.strftime("%Y%m")
-        )
-        attachment = self.env["ir.attachment"].create(
-            {
-                "name": filename,
-                "type": "binary",
-                "datas": base64.b64encode(output.read()),
-                "res_model": self._name,
-                "res_id": self.id,
-                "mimetype": (
-                    "application/vnd.openxmlformats-officedocument"
-                    ".spreadsheetml.sheet"
-                ),
-            }
-        )
-        return {
-            "type": "ir.actions.act_url",
-            "url": f"/web/content/{attachment.id}/{filename}?download=true",
-            "target": "new",
-        }
+        return self._export("xlsx", config=False)
