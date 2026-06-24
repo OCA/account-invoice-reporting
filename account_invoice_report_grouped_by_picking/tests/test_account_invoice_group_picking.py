@@ -139,6 +139,61 @@ class TestAccountInvoiceGroupPicking(TransactionCase):
         self.assertTrue(self.sale.invoice_ids.picking_ids[:1].name in tbody)
         self.assertTrue(self.sale2.invoice_ids.picking_ids[:1].name in tbody)
 
+    def test_account_invoice_group_picking_uom_conversion(self):
+        """Grouped quantity is expressed in the invoice line UoM, not the stock
+        move UoM, and no bogus remainder line is produced when they differ."""
+        uom_unit = self.env.ref("uom.product_uom_unit")
+        uom_pack = self.env.ref("uom.product_uom_pack_6")
+        product_pack = self.env["product.product"].create(
+            {
+                "name": "Product sold per pack",
+                "invoice_policy": "delivery",
+                "uom_id": uom_unit.id,
+                "uom_ids": [(4, uom_unit.id), (4, uom_pack.id)],
+            }
+        )
+        sale = self.env["sale.order"].create(
+            {
+                "partner_id": self.partner.id,
+                "order_line": [
+                    (
+                        0,
+                        0,
+                        {
+                            "name": product_pack.name,
+                            "product_id": product_pack.id,
+                            "product_uom_qty": 2,
+                            "product_uom_id": uom_pack.id,
+                            "price_unit": 100.0,
+                        },
+                    )
+                ],
+            }
+        )
+        sale.action_confirm()
+        # The delivery moves are in units (12), the invoice line is in packs (2).
+        picking = sale.picking_ids[:1]
+        picking.action_confirm()
+        picking.move_line_ids.write({"quantity": 12})
+        wiz_act = picking.button_validate()
+        if isinstance(wiz_act, dict) and wiz_act.get("res_model"):
+            wiz = Form(
+                self.env[wiz_act["res_model"]].with_context(**wiz_act["context"])
+            ).save()
+            wiz.process()
+        invoice = sale._create_invoices()
+        product_groups = [
+            group
+            for group in invoice.lines_grouped_by_picking()
+            if group["line"].product_id
+        ]
+        # Exactly one group (one delivery), no phantom remainder line.
+        self.assertEqual(len(product_groups), 1)
+        group = product_groups[0]
+        self.assertEqual(group["picking"], picking)
+        self.assertEqual(group["line"].product_uom_id, uom_pack)
+        self.assertAlmostEqual(group["quantity"], 2.0)
+
     def test_account_invoice_group_picking_return(self):
         self.sale.action_confirm()
         # deliver lines2
