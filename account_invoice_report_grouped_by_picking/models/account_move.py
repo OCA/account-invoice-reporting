@@ -33,10 +33,20 @@ class AccountMove(models.Model):
         account_invoice_report_grouped_by_picking_sale_mrp module
         """
         if move.location_id.usage == "customer":
-            return -move.quantity * sign
-        if move.location_dest_id.usage == "customer":
-            return move.quantity * sign
-        return 0
+            qty = -move.quantity * sign
+        elif move.location_dest_id.usage == "customer":
+            qty = move.quantity * sign
+        else:
+            return 0
+        # move.quantity is in the move's (stock) UoM, but it is summed and
+        # subtracted against the invoice line quantity, which is in the invoice
+        # line UoM. Convert so both are in the same unit; otherwise the printed
+        # quantity is wrong and a bogus remainder line appears when they differ.
+        line_uom = invoice_line.product_uom_id
+        move_uom = move.product_uom
+        if qty and line_uom and move_uom and line_uom != move_uom:
+            qty = move_uom._compute_quantity(qty, line_uom, round=False)
+        return qty
 
     def _process_section_note_lines_grouped(
         self, previous_section, previous_note, lines_dic, pick_order=None
