@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 18.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2026-06-24 05:54+0000\n"
+"PO-Revision-Date: 2026-06-24 08:46+0000\n"
 "Last-Translator: Matjaz Mozetic <matjaz@luxim.si>\n"
 "Language-Team: none\n"
 "Language: sl\n"
@@ -20,7 +20,7 @@ msgstr ""
 #. module: account_invoice_payment_mode_note_template
 #: model_terms:ir.ui.view,arch_db:account_invoice_payment_mode_note_template.account_payment_mode_note_template_form_view
 msgid "Account Payment Mode Note Template"
-msgstr ""
+msgstr "Predloga opombe za način plačila"
 
 #. module: account_invoice_payment_mode_note_template
 #: model_terms:ir.ui.view,arch_db:account_invoice_payment_mode_note_template.account_payment_mode_note_template_form_view
@@ -51,7 +51,7 @@ msgstr "Prikazani naziv"
 #. odoo-python
 #: code:addons/account_invoice_payment_mode_note_template/models/account_payment_mode.py:0
 msgid "Failed to render payment note template."
-msgstr ""
+msgstr "Ni bilo mogoče upodobiti predloge opombe plačila."
 
 #. module: account_invoice_payment_mode_note_template
 #: model:ir.model.fields,field_description:account_invoice_payment_mode_note_template.field_account_payment_mode_note_template__model_object_field
@@ -64,6 +64,8 @@ msgid ""
 "Final placeholder expression, to be copy-pasted in the desired template "
 "field."
 msgstr ""
+"Končni izraz nadomestnega besedila, ki ga kopirate in prilepite v želeno "
+"polje predloge."
 
 #. module: account_invoice_payment_mode_note_template
 #: model:ir.model.fields,field_description:account_invoice_payment_mode_note_template.field_account_payment_mode_note_template__id
@@ -99,7 +101,7 @@ msgstr "Način plačila"
 #. module: account_invoice_payment_mode_note_template
 #: model:ir.model,name:account_invoice_payment_mode_note_template.model_account_payment_mode_note_template
 msgid "Payment Mode Note Template"
-msgstr ""
+msgstr "Predloga opombe za način plačila"
 
 #. module: account_invoice_payment_mode_note_template
 #: model:ir.model,name:account_invoice_payment_mode_note_template.model_account_payment_mode
@@ -109,7 +111,7 @@ msgstr "Načini plačil"
 #. module: account_invoice_payment_mode_note_template
 #: model:ir.model.fields,field_description:account_invoice_payment_mode_note_template.field_account_payment_mode_note_template__copyvalue
 msgid "Placeholder Expression"
-msgstr ""
+msgstr "Izraz nadomestnega besedila"
 
 #. module: account_invoice_payment_mode_note_template
 #: model:ir.model.fields,help:account_invoice_payment_mode_note_template.field_account_payment_mode_note_template__model_object_field
@@ -117,21 +119,24 @@ msgid ""
 "Select target field from the related document model.\n"
 "If it is a relationship field you will be able to select a target field at the destination of the relationship."
 msgstr ""
+"Izberite ciljno polje iz povezanega modela dokumenta.\n"
+"Če gre za relacijsko polje, boste lahko izbrali ciljno polje na cilju "
+"relacije."
 
 #. module: account_invoice_payment_mode_note_template
 #: model:ir.model.fields,field_description:account_invoice_payment_mode_note_template.field_account_payment_mode_note_template__sub_model_object_field
 msgid "Sub-field"
-msgstr ""
+msgstr "Podpolje"
 
 #. module: account_invoice_payment_mode_note_template
 #: model:ir.model.fields,field_description:account_invoice_payment_mode_note_template.field_account_payment_mode_note_template__sub_object
 msgid "Sub-model"
-msgstr ""
+msgstr "Podmodel"
 
 #. module: account_invoice_payment_mode_note_template
 #: model_terms:ir.ui.view,arch_db:account_invoice_payment_mode_note_template.account_payment_mode_form
 msgid "Update Note Template"
-msgstr ""
+msgstr "Posodobi predlogo opombe"
 
 #. module: account_invoice_payment_mode_note_template
 #: model_terms:ir.ui.view,arch_db:account_invoice_payment_mode_note_template.account_payment_mode_note_template_form_view
@@ -144,6 +149,8 @@ msgid ""
 "When a relationship field is selected as first field, this field lets you "
 "select the target field within the destination document model (sub-model)."
 msgstr ""
+"Ko je kot prvo polje izbrano relacijsko polje, to polje omogoča izbiro "
+"ciljnega polja znotraj ciljnega modela dokumenta (podmodel)."
 
 #. module: account_invoice_payment_mode_note_template
 #: model:ir.model.fields,help:account_invoice_payment_mode_note_template.field_account_payment_mode_note_template__sub_object
@@ -151,3 +158,5 @@ msgid ""
 "When a relationship field is selected as first field, this field shows the "
 "document model the relationship goes to."
 msgstr ""
+"Ko je kot prvo polje izbrano relacijsko polje, to polje prikazuje model "
+"dokumenta, na katerega kaže relacija."
