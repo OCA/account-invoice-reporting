@@ -1,8 +1,9 @@
 [project]
 name = "odoo-addons-oca-account-invoice-reporting"
-version = "19.0.20260430.0"
+version = "19.0.20260820.0"
 dependencies = [
     "odoo-addon-account_comment_template==19.0.*",
+    "odoo-addon-account_invoice_line_report==19.0.*",
     "odoo-addon-account_invoice_production_lot==19.0.*",
     "odoo-addon-account_invoice_report_grouped_by_picking==19.0.*",
 ]
