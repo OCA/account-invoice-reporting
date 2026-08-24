@@ -9,6 +9,7 @@
         </xpath>
         <xpath expr="//tbody[hasclass('invoice_tbody')]" position="inside">
             <t t-set="subtotal" t-value="0.0" />
+            <t t-set="last_picking" t-value="None" />
         </xpath>
         <xpath expr="//t[contains(@t-foreach, 'lines')]" position="attributes">
             <attribute name="t-foreach">lines_grouped</attribute>
@@ -30,7 +31,9 @@
             <t t-set="line_last" t-value="False" />
             <t t-set="line_index" t-value="0" />
 
-            <t t-if="picking != last_picking">
+            <t
+                t-if="o.journal_id.show_group_by_picking_report and picking != last_picking"
+            >
                 <t t-set="last_picking" t-value="picking" />
                 <tr t-if="picking">
                     <td colspan="10">
@@ -96,7 +99,9 @@
             expr="//t[@t-foreach='lines_grouped']//td[hasclass('o_price_total')]"
             position="after"
         >
-            <tr t-if="picking != next_picking[0]">
+            <tr
+                t-if="o.journal_id.show_group_by_picking_report and picking != next_picking[0]"
+            >
                 <td colspan="10" class="text-end">
                     <strong>Subtotal: </strong>
                     <strong

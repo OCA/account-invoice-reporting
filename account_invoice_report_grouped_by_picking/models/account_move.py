@@ -59,6 +59,15 @@ class AccountMove(models.Model):
         """This prepares a data structure for printing the invoice report
         grouped by pickings."""
         self.ensure_one()
+        if not self.journal_id.show_group_by_picking_report:
+            return [
+                {
+                    "picking": self.env["stock.picking"],
+                    "line": line,
+                    "quantity": line.quantity,
+                }
+                for line in self.invoice_line_ids
+            ]
         picking_dict = {}
         lines_dict = {}
         picking_obj = self.env["stock.picking"]

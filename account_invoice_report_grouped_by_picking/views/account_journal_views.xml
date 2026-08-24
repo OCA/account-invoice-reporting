@@ -1,0 +1,26 @@
+<odoo>
+    <record
+        id="view_account_journal_form_inherit_grouped_by_picking"
+        model="ir.ui.view"
+    >
+        <field name="name">
+            account.journal.form.grouped.by.picking
+        </field>
+        <field name="model">account.journal</field>
+        <field name="inherit_id" ref="account.view_account_journal_form" />
+        <field name="arch" type="xml">
+            <xpath
+                expr="//notebook/page[@name='advanced_settings']/group"
+                position="after"
+            >
+                <group name="invoice_report" string="Invoice Report">
+                    <field
+                        name="show_group_by_picking_report"
+                        string="Show Grouped by Picking"
+                        widget="boolean_toggle"
+                    />
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>
