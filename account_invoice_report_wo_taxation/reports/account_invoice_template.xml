@@ -1,0 +1,17 @@
+<odoo>
+    <template
+        id="report_invoice_document_without_taxation"
+        inherit_id="account.report_invoice_document"
+    >
+        <xpath expr="//th[@name='th_taxes']" position="attributes">
+            <attribute
+                name="t-if"
+            >not o.company_id.account_move_hidden_report_tax</attribute>
+        </xpath>
+        <xpath expr="//span[@id='line_tax_ids']/parent::td" position="attributes">
+            <attribute
+                name="t-if"
+            >not o.company_id.account_move_hidden_report_tax</attribute>
+        </xpath>
+    </template>
+</odoo>

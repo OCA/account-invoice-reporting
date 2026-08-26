@@ -320,3 +320,30 @@ class TestAccountInvoiceGroupPicking(AccountTestInvoicingCommon):
         self.assertEqual(self._count_sale_in_picking_header(content, self.sale.name), 1)
         # information about pickings is printed
         self.assertTrue(picking.name in tbody)
+
+    def test_account_invoice_group_picking_disabled(self):
+        self.sale.action_confirm()
+        self.sale.picking_ids[:1].action_confirm()
+        self.sale.picking_ids[:1].move_line_ids.write({"quantity": 1})
+        wiz_act = self.sale.picking_ids[:1].button_validate()
+        wiz = Form(
+            self.env[wiz_act["res_model"]].with_context(**wiz_act["context"])
+        ).save()
+        wiz.process()
+        invoice = self.sale._create_invoices()
+        invoice.journal_id.show_group_by_picking_report = False
+        groups = invoice.lines_grouped_by_picking()
+        self.assertEqual(len(groups), len(invoice.invoice_line_ids))
+        for group in groups:
+            self.assertFalse(group["picking"])
+        content = html.document_fromstring(
+            self.env["ir.actions.report"]._render_qweb_html(
+                "account.account_invoices", invoice.id
+            )[0]
+        )
+        tbody = content.xpath("//tbody[@class='invoice_tbody']")
+        tbody = [html.tostring(line, encoding="utf-8").strip() for line in tbody][
+            0
+        ].decode()
+        self.assertEqual(self._count_sale_in_picking_header(content, self.sale.name), 0)
+        self.assertFalse(self.sale.invoice_ids.picking_ids[:1].name in tbody)

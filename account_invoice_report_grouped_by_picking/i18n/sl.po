@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 18.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2026-02-01 08:09+0000\n"
+"PO-Revision-Date: 2026-08-25 03:46+0000\n"
 "Last-Translator: Matjaz Mozetic <matjaz@luxim.si>\n"
 "Language-Team: none\n"
 "Language: sl\n"
@@ -44,6 +44,35 @@ msgid "<strong>Subtotal: </strong>"
 msgstr "<strong>Subtotal: </strong>"
 
 #. module: account_invoice_report_grouped_by_picking
+#: model_terms:ir.ui.view,arch_db:account_invoice_report_grouped_by_picking.view_account_journal_form_inherit_grouped_by_picking
+msgid "Invoice Report"
+msgstr "Poročilo računa"
+
+#. module: account_invoice_report_grouped_by_picking
+#: model:ir.model.fields,field_description:account_invoice_report_grouped_by_picking.field_account_journal__show_group_by_picking_report
+msgid "Invoice Report - Show Grouped by Picking"
+msgstr "Poročilo računa - prikaži združeno po dobavnici"
+
+#. module: account_invoice_report_grouped_by_picking
+#: model:ir.model,name:account_invoice_report_grouped_by_picking.model_account_journal
+msgid "Journal"
+msgstr "Dnevnik"
+
+#. module: account_invoice_report_grouped_by_picking
 #: model:ir.model,name:account_invoice_report_grouped_by_picking.model_account_move
 msgid "Journal Entry"
 msgstr "Temeljnica"
+
+#. module: account_invoice_report_grouped_by_picking
+#: model:ir.model.fields,help:account_invoice_report_grouped_by_picking.field_account_journal__show_group_by_picking_report
+msgid ""
+"Leave unmarked if original Odoo behavior (not grouped is required for "
+"invoices belonging this journal)."
+msgstr ""
+"Pustite prazno, če želite ohraniti standardno obnašanje Odoo (za račune, ki "
+"sodijo v ta dnevnik, je potrebno, da niso združeni)."
+
+#. module: account_invoice_report_grouped_by_picking
+#: model_terms:ir.ui.view,arch_db:account_invoice_report_grouped_by_picking.view_account_journal_form_inherit_grouped_by_picking
+msgid "Show Grouped by Picking"
+msgstr "Prikaz združeno po dobavnicah"

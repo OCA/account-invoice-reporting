@@ -44,9 +44,36 @@ msgid "<strong>Subtotal: </strong>"
 msgstr "<strong>Subtotal: </strong>"
 
 #. module: account_invoice_report_grouped_by_picking
+#: model_terms:ir.ui.view,arch_db:account_invoice_report_grouped_by_picking.view_account_journal_form_inherit_grouped_by_picking
+msgid "Invoice Report"
+msgstr ""
+
+#. module: account_invoice_report_grouped_by_picking
+#: model:ir.model.fields,field_description:account_invoice_report_grouped_by_picking.field_account_journal__show_group_by_picking_report
+msgid "Invoice Report - Show Grouped by Picking"
+msgstr ""
+
+#. module: account_invoice_report_grouped_by_picking
+#: model:ir.model,name:account_invoice_report_grouped_by_picking.model_account_journal
+msgid "Journal"
+msgstr ""
+
+#. module: account_invoice_report_grouped_by_picking
 #: model:ir.model,name:account_invoice_report_grouped_by_picking.model_account_move
 msgid "Journal Entry"
 msgstr "Entrada en Diario"
+
+#. module: account_invoice_report_grouped_by_picking
+#: model:ir.model.fields,help:account_invoice_report_grouped_by_picking.field_account_journal__show_group_by_picking_report
+msgid ""
+"Leave unmarked if original Odoo behavior (not grouped is required for "
+"invoices belonging this journal)."
+msgstr ""
+
+#. module: account_invoice_report_grouped_by_picking
+#: model_terms:ir.ui.view,arch_db:account_invoice_report_grouped_by_picking.view_account_journal_form_inherit_grouped_by_picking
+msgid "Show Grouped by Picking"
+msgstr ""
 
 #~ msgid "Journal Entries"
 #~ msgstr "Asientos contables"
