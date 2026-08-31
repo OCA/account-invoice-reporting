@@ -1,0 +1,17 @@
+<template>
+    <t
+        t-name="account_invoice_product_report.ReportAction"
+        t-inherit="web.ReportAction"
+        t-inherit-mode="extension"
+    >
+        <xpath expr="//button" position="after">
+            <button
+                t-if="isXlsxReport"
+                t-on-click="exportXlsx"
+                type="button"
+                class="btn btn-secondary"
+                title="Export Excel"
+            >Export Excel</button>
+        </xpath>
+    </t>
+</template>

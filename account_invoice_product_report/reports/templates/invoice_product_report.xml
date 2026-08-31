@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template id="invoice_product">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <div class="page">
+                    <t
+                        t-set="cell"
+                        t-value="'border: 1px solid black; padding: 6px 12px;'"
+                    />
+                    <t t-set="head_cell" t-value="cell + ' text-align: center;'" />
+
+                    <h4 class="text-center" t-out="report_title" />
+                    <table class="table table-sm">
+                        <tr>
+                            <t t-foreach="filters" t-as="flt">
+                                <th t-out="flt[0]" />
+                            </t>
+                        </tr>
+                        <tr>
+                            <t t-foreach="filters" t-as="flt">
+                                <td t-out="flt[1]" />
+                            </t>
+                        </tr>
+                    </table>
+                    <table
+                        class="o_ipr_table o_main_table o_ignore_layout_styling mt-3"
+                        style="width: 100%; border-collapse: collapse;"
+                    >
+                        <thead>
+                            <tr>
+                                <th t-att-style="head_cell">Company</th>
+                                <th t-att-style="head_cell">Customer Code</th>
+                                <th t-att-style="head_cell">Customer Name</th>
+                                <th
+                                    t-foreach="products"
+                                    t-as="product"
+                                    t-att-style="head_cell"
+                                    t-out="product.name"
+                                />
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-foreach="rows" t-as="line">
+                                <tr>
+                                    <td
+                                        t-att-style="cell"
+                                        t-out="line['company'].name"
+                                    />
+                                    <td
+                                        t-att-style="cell"
+                                        t-out="line['partner'].ref or ' '"
+                                    />
+                                    <td
+                                        t-att-style="cell"
+                                        t-out="line['partner'].name or ' '"
+                                    />
+                                    <t t-foreach="products" t-as="product">
+                                        <t
+                                            t-set="amount"
+                                            t-value="line['amounts'].get(product.id)"
+                                        />
+                                        <td
+                                            t-att-style="cell + ' text-align: ' + ('right' if amount else 'center') + ';'"
+                                        >
+                                            <span
+                                                t-if="amount"
+                                                t-out="amount"
+                                                t-options="{'widget': 'float', 'precision': 2}"
+                                            />
+                                            <span t-else="">-</span>
+                                        </td>
+                                    </t>
+                                </tr>
+                            </t>
+                        </tbody>
+                    </table>
+                </div>
+            </t>
+        </t>
+    </template>
+</odoo>
