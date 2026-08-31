@@ -1,0 +1,28 @@
+<odoo>
+    <template id="report_invoice_document" inherit_id="account.report_invoice_document">
+        <xpath expr="//th[@name='th_description']" position="after">
+            <t
+                t-set="display_secondary_uom"
+                t-value="any(line.secondary_uom_id and (line.secondary_uom_id.uom_id != line.product_uom_id) for line in o.invoice_line_ids)"
+            />
+            <t t-if="display_secondary_uom">
+                <th name="th_secondary_qty" class="text-end">
+                    <span>Second. Qty</span>
+                </th>
+            </t>
+        </xpath>
+        <xpath expr="//td[@name='td_quantity']" position="before">
+            <t t-if="display_secondary_uom">
+                <td name="td_secondary_qty" class="text-end">
+                    <t
+                        t-if="line.secondary_uom_id and line.secondary_uom_id.uom_id != line.product_uom_id"
+                    >
+                        <span t-field="line.secondary_uom_qty" />
+                        -
+                        <span t-field="line.secondary_uom_id.name" />
+                    </t>
+                </td>
+            </t>
+        </xpath>
+    </template>
+</odoo>
