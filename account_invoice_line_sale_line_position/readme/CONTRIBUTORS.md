@@ -1,0 +1,8 @@
+- Thierry Ducrest \<<thierry.ducrest@camptocamp.com>\>
+- [Trobz](https://trobz.com):
+  - Nguyen Ho \<<nguyenhk@trobz.com>\>
+  - Khoi (Kien Kim) \<<khoikk@trobz.com>\>
+- [Binhex](https://binhex.cloud/):
+- David Luis Mora \<<d.luis@binhex.cloud>\>
+- [Heliconia Solutions Pvt. Ltd.](https://www.heliconia.io)
+  - Bhavesh Heliconia
