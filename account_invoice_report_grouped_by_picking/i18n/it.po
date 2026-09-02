@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 17.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2024-02-04 20:34+0000\n"
+"PO-Revision-Date: 2026-08-26 16:16+0000\n"
 "Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: none\n"
 "Language: it\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.17\n"
+"X-Generator: Weblate 5.15.2\n"
 
 #. module: account_invoice_report_grouped_by_picking
 #: model_terms:ir.ui.view,arch_db:account_invoice_report_grouped_by_picking.report_invoice_document
@@ -45,17 +45,17 @@ msgstr "<strong>Subtotale: </strong>"
 #. module: account_invoice_report_grouped_by_picking
 #: model_terms:ir.ui.view,arch_db:account_invoice_report_grouped_by_picking.view_account_journal_form_inherit_grouped_by_picking
 msgid "Invoice Report"
-msgstr ""
+msgstr "Resoconto fattura"
 
 #. module: account_invoice_report_grouped_by_picking
 #: model:ir.model.fields,field_description:account_invoice_report_grouped_by_picking.field_account_journal__show_group_by_picking_report
 msgid "Invoice Report - Show Grouped by Picking"
-msgstr ""
+msgstr "Resoconto fattura - Visualizza raggruppato per prelievo"
 
 #. module: account_invoice_report_grouped_by_picking
 #: model:ir.model,name:account_invoice_report_grouped_by_picking.model_account_journal
 msgid "Journal"
-msgstr ""
+msgstr "Registro"
 
 #. module: account_invoice_report_grouped_by_picking
 #: model:ir.model,name:account_invoice_report_grouped_by_picking.model_account_move
@@ -68,8 +68,10 @@ msgid ""
 "Leave unmarked if original Odoo behavior (not grouped is required for "
 "invoices belonging this journal)."
 msgstr ""
+"Lasciare deselezionato se comportamento originale di Odoo (questo registro "
+"esclude il raggruppamento per le fatture)."
 
 #. module: account_invoice_report_grouped_by_picking
 #: model_terms:ir.ui.view,arch_db:account_invoice_report_grouped_by_picking.view_account_journal_form_inherit_grouped_by_picking
 msgid "Show Grouped by Picking"
-msgstr ""
+msgstr "Visualizza raggurppato per prelievo"
