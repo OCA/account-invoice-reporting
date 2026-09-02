@@ -76,3 +76,26 @@ class TestAccountInvoiceReport(TransactionCase):
         new_invoice._compute_comment_template_ids()
         self.assertTrue(self.after_comment in new_invoice.comment_template_ids)
         self.assertTrue(self.before_comment in new_invoice.comment_template_ids)
+
+    def test_comment_expression_in_invoice_report(self):
+        """Placeholders must be evaluated, not printed verbatim."""
+        expression_comment = self.base_comment_model.create(
+            {
+                "name": "Comment with expression",
+                "company_id": self.company.id,
+                "position": "after_lines",
+                "text": "Customer: ${object.partner_id.name}",
+                "model_ids": [(6, 0, self.move_obj.ids)],
+            }
+        )
+        self.partner.base_comment_template_ids = [(4, expression_comment.id)]
+        self.invoice._compute_comment_template_ids()
+        self.assertIn(expression_comment, self.invoice.comment_template_ids)
+        res = (
+            self.env["ir.actions.report"]
+            ._get_report_from_name("account.report_invoice")
+            ._render_qweb_html(self.invoice.ids)
+        )
+        report = str(res[0])
+        self.assertIn("Customer: %s" % self.partner.name, report)
+        self.assertNotIn("${object.partner_id.name}", report)

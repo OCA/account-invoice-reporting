@@ -15,3 +15,7 @@
 * `Druidoo <https://www.druidoo.io>`_:
 
   * Iván Todorovich <ivan.todorovich@druidoo.io>
+
+* `PT Solusi Aglis Indonesia <https://solusiaglis.co.id>`_:
+
+  * Panca Putra Pakpahan <ppakpahan@solusiaglis.co.id>
