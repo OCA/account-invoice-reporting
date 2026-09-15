@@ -3,7 +3,7 @@
 
 {
     "name": "Account Invoice Grouped by Picking - Sale MRP",
-    "summary": "Take into account BoM kits in invoice report " "grouped by picking",
+    "summary": "Take into account BoM kits in invoice report grouped by picking",
     "version": "18.0.1.0.0",
     "category": "Accounting & Finance",
     "website": "https://github.com/OCA/account-invoice-reporting",
