@@ -13,6 +13,7 @@ class TestReportGroupedSaleMrp(TransactionCase):
     def setUpClass(cls):
         super().setUpClass()
         cls.mrp_bom = cls.env["mrp.bom"]
+        cls.env.user.group_ids += cls.env.ref("product.group_product_variant")
         cls.partner = cls.env["res.partner"].create({"name": "Customer test"})
         # create a kit (kit_1) with 2 components
         cls.product_kit_1 = cls.env["product.product"].create(
