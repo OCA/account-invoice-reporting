@@ -102,7 +102,7 @@
             position="after"
         >
             <tr
-                t-if="o.journal_id.show_group_by_picking_report and picking != next_picking[0]"
+                t-if="o.journal_id.show_group_by_picking_report and has_pickings and picking != next_picking[0]"
             >
                 <td colspan="10" class="text-end">
                     <strong>Subtotal: </strong>
