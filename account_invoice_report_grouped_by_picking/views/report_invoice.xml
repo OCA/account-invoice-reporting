@@ -62,7 +62,7 @@
             <attribute name="t-field" />
             <attribute
                 name="t-options"
-            >{'widget': 'float', 'decimal_precision': 'Product Unit of Measure'}</attribute>
+            >{'widget': 'float', 'decimal_precision': 'Product Unit'}</attribute>
         </xpath>
         <xpath expr="//td/span[@t-field='line.price_subtotal']" position="before">
             <t t-set="line_subtotal" t-value="l.price_subtotal" />
@@ -94,7 +94,7 @@
             position="after"
         >
             <tr t-if="picking != next_picking[0]">
-                <td colspan="10" class="text-right">
+                <td colspan="10" class="text-end">
                     <strong>Subtotal: </strong>
                     <strong
                         t-esc="subtotal"
