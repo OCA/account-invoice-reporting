@@ -1,0 +1,95 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* account_invoice_report_printed_flag
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-04-01 10:20+0000\n"
+"PO-Revision-Date: 2026-04-01 10:20+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: account_invoice_report_printed_flag
+#: model:ir.model.fields,help:account_invoice_report_printed_flag.field_account_bank_statement_line__printed_report_names
+#: model:ir.model.fields,help:account_invoice_report_printed_flag.field_account_move__printed_report_names
+#: model:ir.model.fields,help:account_invoice_report_printed_flag.field_account_payment__printed_report_names
+msgid ""
+"Comma-separated list of printed report names, computed from related printed "
+"logs. Only active if enabled in configuration."
+msgstr ""
+"Lista de nombres de informes impresos separados por comas, calculada a partir de los registros impresos relacionados."
+" Solo se activa si está habilitada en la configuración."
+
+#. module: account_invoice_report_printed_flag
+#: model:ir.model.fields,help:account_invoice_report_printed_flag.field_account_bank_statement_line__printed
+#: model:ir.model.fields,help:account_invoice_report_printed_flag.field_account_move__printed
+#: model:ir.model.fields,help:account_invoice_report_printed_flag.field_account_payment__printed
+msgid ""
+"Indicates whether at least one configured report has been printed for this "
+"record."
+msgstr ""
+"Indica si se ha impreso al menos un informe configurado para este registro."
+
+#. module: account_invoice_report_printed_flag
+#: model:ir.model,name:account_invoice_report_printed_flag.model_account_move
+msgid "Journal Entry"
+msgstr "Asiento contable"
+
+#. module: account_invoice_report_printed_flag
+#: model_terms:ir.ui.view,arch_db:account_invoice_report_printed_flag.view_in_invoice_tree_printed
+#: model_terms:ir.ui.view,arch_db:account_invoice_report_printed_flag.view_move_tree_printed
+#: model_terms:ir.ui.view,arch_db:account_invoice_report_printed_flag.view_out_invoice_tree_printed
+msgid "Logs"
+msgstr "Registros"
+
+#. module: account_invoice_report_printed_flag
+#: model_terms:ir.ui.view,arch_db:account_invoice_report_printed_flag.view_account_invoice_search_printed
+#: model_terms:ir.ui.view,arch_db:account_invoice_report_printed_flag.view_move_search_printed
+msgid "Not Printed"
+msgstr "No impreso"
+
+#. module: account_invoice_report_printed_flag
+#: model:ir.model.fields,field_description:account_invoice_report_printed_flag.field_account_bank_statement_line__printed
+#: model:ir.model.fields,field_description:account_invoice_report_printed_flag.field_account_move__printed
+#: model:ir.model.fields,field_description:account_invoice_report_printed_flag.field_account_payment__printed
+#: model_terms:ir.ui.view,arch_db:account_invoice_report_printed_flag.view_account_invoice_search_printed
+#: model_terms:ir.ui.view,arch_db:account_invoice_report_printed_flag.view_move_search_printed
+msgid "Printed"
+msgstr "Impreso"
+
+#. module: account_invoice_report_printed_flag
+#: model:ir.model.fields,field_description:account_invoice_report_printed_flag.field_account_bank_statement_line__printed_log_ids
+#: model:ir.model.fields,field_description:account_invoice_report_printed_flag.field_account_move__printed_log_ids
+#: model:ir.model.fields,field_description:account_invoice_report_printed_flag.field_account_payment__printed_log_ids
+msgid "Printed Log"
+msgstr "Registro de impresión"
+
+#. module: account_invoice_report_printed_flag
+#: model_terms:ir.ui.view,arch_db:account_invoice_report_printed_flag.view_account_invoice_search_printed
+#: model_terms:ir.ui.view,arch_db:account_invoice_report_printed_flag.view_move_search_printed
+msgid "Printed Report Names"
+msgstr "Nombres de informes impresos"
+
+#. module: account_invoice_report_printed_flag
+#: model:ir.model.fields,field_description:account_invoice_report_printed_flag.field_account_bank_statement_line__printed_report_names
+#: model:ir.model.fields,field_description:account_invoice_report_printed_flag.field_account_move__printed_report_names
+#: model:ir.model.fields,field_description:account_invoice_report_printed_flag.field_account_payment__printed_report_names
+msgid "Printed Reports Names"
+msgstr "Nombres de informes impresos"
+
+#. module: account_invoice_report_printed_flag
+#: model:ir.model.fields,help:account_invoice_report_printed_flag.field_account_bank_statement_line__printed_log_ids
+#: model:ir.model.fields,help:account_invoice_report_printed_flag.field_account_move__printed_log_ids
+#: model:ir.model.fields,help:account_invoice_report_printed_flag.field_account_payment__printed_log_ids
+msgid ""
+"Technical relation to printed logs using a generic reference pattern "
+"(res_model, res_id). Only logs related to account.move are included."
+msgstr ""
+"Relación técnica con los registros impresos utilizando un patrón de referencia genérico "
+"(res_model, res_id). Solo se incluyen los registros relacionados con account.move."
