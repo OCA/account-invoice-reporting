@@ -1,0 +1,77 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* account_invoice_report_printed_flag
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#. module: account_invoice_report_printed_flag
+#: model:ir.model.fields,help:account_invoice_report_printed_flag.field_account_move__printed_report_names
+msgid ""
+"Comma-separated list of printed report names, computed from related printed "
+"logs. Only active if enabled in configuration."
+msgstr ""
+
+#. module: account_invoice_report_printed_flag
+#: model:ir.model.fields,help:account_invoice_report_printed_flag.field_account_move__printed
+msgid ""
+"Indicates whether at least one configured report has been printed for this "
+"record."
+msgstr ""
+
+#. module: account_invoice_report_printed_flag
+#: model:ir.model,name:account_invoice_report_printed_flag.model_account_move
+msgid "Journal Entry"
+msgstr ""
+
+#. module: account_invoice_report_printed_flag
+#: model_terms:ir.ui.view,arch_db:account_invoice_report_printed_flag.view_in_invoice_tree_printed
+#: model_terms:ir.ui.view,arch_db:account_invoice_report_printed_flag.view_move_tree_printed
+#: model_terms:ir.ui.view,arch_db:account_invoice_report_printed_flag.view_out_invoice_tree_printed
+msgid "Logs"
+msgstr ""
+
+#. module: account_invoice_report_printed_flag
+#: model_terms:ir.ui.view,arch_db:account_invoice_report_printed_flag.view_account_invoice_search_printed
+#: model_terms:ir.ui.view,arch_db:account_invoice_report_printed_flag.view_move_search_printed
+msgid "Not Printed"
+msgstr ""
+
+#. module: account_invoice_report_printed_flag
+#: model:ir.model.fields,field_description:account_invoice_report_printed_flag.field_account_move__printed_log_ids
+msgid "Print Logs"
+msgstr ""
+
+#. module: account_invoice_report_printed_flag
+#: model:ir.model.fields,field_description:account_invoice_report_printed_flag.field_account_move__printed
+#: model_terms:ir.ui.view,arch_db:account_invoice_report_printed_flag.view_account_invoice_search_printed
+#: model_terms:ir.ui.view,arch_db:account_invoice_report_printed_flag.view_move_search_printed
+msgid "Printed"
+msgstr ""
+
+#. module: account_invoice_report_printed_flag
+#: model_terms:ir.ui.view,arch_db:account_invoice_report_printed_flag.view_account_invoice_search_printed
+#: model_terms:ir.ui.view,arch_db:account_invoice_report_printed_flag.view_move_search_printed
+msgid "Printed Report Names"
+msgstr ""
+
+#. module: account_invoice_report_printed_flag
+#: model:ir.model.fields,field_description:account_invoice_report_printed_flag.field_account_move__printed_report_names
+msgid "Printed Reports Names"
+msgstr ""
+
+#. module: account_invoice_report_printed_flag
+#: model:ir.model.fields,help:account_invoice_report_printed_flag.field_account_move__printed_log_ids
+msgid ""
+"Technical relation to printed logs using a generic reference pattern "
+"(res_model, res_id). Only logs related to this model type are included."
+msgstr ""
