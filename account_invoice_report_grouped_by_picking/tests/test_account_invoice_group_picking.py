@@ -5,7 +5,7 @@
 
 from lxml import html
 
-from odoo import fields
+from odoo import Command, fields
 from odoo.tests import Form
 from odoo.tests.common import TransactionCase
 
@@ -247,6 +247,30 @@ class TestAccountInvoiceGroupPicking(TransactionCase):
         refund_invoice = self.env["account.move"].browse(reversal["res_id"])
         groups = refund_invoice.lines_grouped_by_picking()
         self.assertEqual(len(groups), 2)
+
+    def test_account_invoice_group_picking_section_notes_keys(self):
+        """Every group exposes the same keys, trailing section/note rows included."""
+        invoice = self.env["account.move"].create(
+            {
+                "move_type": "out_invoice",
+                "partner_id": self.partner.id,
+                "invoice_line_ids": [
+                    Command.create(
+                        {
+                            "name": self.product.name,
+                            "product_id": self.product.id,
+                            "quantity": 1.0,
+                            "price_unit": 100.0,
+                        }
+                    ),
+                    Command.create({"display_type": "line_section", "name": "Section"}),
+                ],
+            }
+        )
+        groups = invoice.lines_grouped_by_picking()
+        self.assertTrue(groups)
+        for group in groups:
+            self.assertIn("quantity", group)
 
     def test_account_invoice_group_picking_refund(self):
         # confirm quotation
