@@ -101,8 +101,8 @@
             expr="//t[@t-foreach='lines_grouped']//td[hasclass('o_price_total')]"
             position="after"
         >
-            <tr t-if="picking != next_picking[0]">
-                <td colspan="10" class="text-right">
+            <tr t-if="has_pickings and picking != next_picking[0]">
+                <td colspan="10" class="text-end">
                     <strong>Subtotal: </strong>
                     <strong
                         t-esc="subtotal"
