@@ -1,0 +1,1 @@
+odoo-addon-account_invoice_report_due_list @ git+https://github.com/OCA/account-invoice-reporting.git@refs/pull/443/head#subdirectory=setup/account_invoice_report_due_list
