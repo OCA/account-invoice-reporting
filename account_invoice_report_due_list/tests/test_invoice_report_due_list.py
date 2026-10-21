@@ -2,11 +2,10 @@
 # Copyright 2020 Tecnativa - Víctor Martínez
 # License AGPL-3 - See http://www.gnu.org/licenses/agpl-3.0.html
 
-from datetime import timedelta
+from datetime import date
 
 import babel
 
-from odoo import fields
 from odoo.tests import common, tagged
 from odoo.tests.common import Form
 from odoo.tools import posix_to_ldml, pycompat
@@ -83,6 +82,7 @@ class TestInvoiceReportDueList(common.TransactionCase):
             self.env["account.move"].with_context(default_move_type=move_type)
         )
         move_form.partner_id = self.partner
+        move_form.invoice_date = date(2024, 1, 1)
         move_form.invoice_payment_term_id = self.payment_term_normal
         with move_form.invoice_line_ids.new() as line_form:
             line_form.product_id = self.product_id
@@ -93,7 +93,7 @@ class TestInvoiceReportDueList(common.TransactionCase):
         invoice.action_post()
         self.assertTrue(invoice.multi_due)
         self.assertEqual(len(invoice.multi_date_due.split()), 2)
-        due_date = fields.date.today() + timedelta(days=60)
+        due_date = date(2024, 3, 1)
         lg = self.env["res.lang"]._lang_get(self.env.user.lang)
         locale = babel.Locale.parse(lg.code)
         babel_format = posix_to_ldml(lg.date_format, locale=locale)
