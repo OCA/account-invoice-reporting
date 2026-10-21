@@ -5,6 +5,8 @@
 # Copyright 2020 Tecnativa - João Marques
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
+from lxml import html
+
 from odoo.tests import Form
 from odoo.tests.common import TransactionCase, tagged
 
@@ -176,3 +178,32 @@ class TestProdLot(TransactionCase):
         # check if both quantities are displayed in lots_grouped_by_quantity()
         self.assertEqual(1.0, line.lots_grouped_by_quantity()["Lot 1"])
         self.assertNotEqual(2.0, line.lots_grouped_by_quantity()["Lot 2"])
+
+    def test_03_invoice_report_lots(self):
+        self.env.user.groups_id |= self.env.ref("stock.group_production_lot")
+        # update quantities with their related lots
+        self.qty_on_hand(self.product, 3, self.lot1)
+        self.qty_on_hand(self.product, 1, self.lot2)
+        self.qty_on_hand(self.product2, 1, self.serial)
+        # confirm quotation and deliver everything
+        self.sale.action_confirm()
+        picking = self.sale.picking_ids[:1]
+        picking.action_assign()
+        for sml in picking.move_ids.mapped("move_line_ids"):
+            sml.qty_done = sml.reserved_qty
+        picking._action_done()
+        invoice = self.sale._create_invoices()
+        line = invoice.invoice_line_ids.filtered(lambda x: x.product_id == self.product)
+        self.assertEqual(line.display_type, "product")
+        content = html.document_fromstring(
+            self.env["ir.actions.report"]._render_qweb_html(
+                "account.account_invoices", invoice.id
+            )[0]
+        )
+        text = " ".join(content.text_content().split())
+        # lot tracked product: block with every lot and its quantity
+        self.assertEqual(text.count("Serial numbers"), 1)
+        self.assertIn("Lot 1 (3.0)", text)
+        self.assertIn("Lot 2 (1.0)", text)
+        # serial tracked product: serial number next to the line description
+        self.assertIn("S/N: Serial 1", text)
