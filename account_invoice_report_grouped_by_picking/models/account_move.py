@@ -43,11 +43,22 @@ class AccountMove(models.Model):
     def _process_section_note_lines_grouped(
         self, previous_section, previous_note, lines_dic, pick_order=None
     ):
-        """Processes section and note lines, grouping them by order."""
+        """Processes section and note lines, grouping them by order.
+
+        KLO FIX: Prevent section/note lines from being added to multiple
+        pickings when several pickings have product lines after the same
+        section/note.
+        """
         for line in [previous_section, previous_note]:
             if line:
-                key = (pick_order, line) if pick_order else line
-                lines_dic.setdefault(key, 0.0)
+                already_added = any(
+                    (isinstance(k, tuple) and k[1].id == line.id)
+                    or (not isinstance(k, tuple) and k.id == line.id)
+                    for k in lines_dic
+                )
+                if not already_added:
+                    key = (pick_order, line) if pick_order else line
+                    lines_dic.setdefault(key, 0.0)
 
     def _get_grouped_by_picking_sorted_lines(self):
         """Sorts the invoice lines to be grouped by picking."""
