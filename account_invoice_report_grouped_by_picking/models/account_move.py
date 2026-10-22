@@ -63,6 +63,15 @@ class AccountMove(models.Model):
             lambda ln: (-ln.sequence, ln.date, ln.move_name, -ln.id), reverse=True
         )
 
+    @api.model
+    def _prepare_grouped_line(self, picking, line, quantity, **kwargs):
+        """Build one row of the grouped-by-picking report.
+
+        Single place defining the shape of a group, so every row exposes the
+        same keys no matter which branch built it.
+        """
+        return {"picking": picking, "line": line, "quantity": quantity, **kwargs}
+
     def lines_grouped_by_picking(self):
         """This prepares a data structure for printing the invoice report
         grouped by pickings."""
@@ -106,12 +115,9 @@ class AccountMove(models.Model):
                 else:
                     previous_note = line
                 last_section_notes.append(
-                    {
-                        "picking": picking_obj,
-                        "line": line,
-                        "qty": 0.0,
-                        "is_last_section_notes": True,
-                    }
+                    self._prepare_grouped_line(
+                        picking_obj, line, 0.0, is_last_section_notes=True
+                    )
                 )
                 continue
             # Reset sections and notes when encountering a regular line
@@ -172,11 +178,11 @@ class AccountMove(models.Model):
                 )
                 lines_dict[line] = remaining_qty
         no_picking = [
-            {"picking": picking_obj, "line": key, "quantity": value}
+            self._prepare_grouped_line(picking_obj, key, value)
             for key, value in lines_dict.items()
         ]
         with_picking = [
-            {"picking": key[0], "line": key[1], "quantity": value}
+            self._prepare_grouped_line(key[0], key[1], value)
             for key, value in picking_dict.items()
         ]
         return no_picking + self._sort_grouped_lines(with_picking + last_section_notes)
