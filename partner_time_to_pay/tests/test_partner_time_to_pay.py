@@ -22,7 +22,7 @@ class TestPartnerTimeToPay(BaseCommon):
         cls.partner = rp_model.create(
             {
                 "name": "Test Time to Pay Partner",
-                "is_company": True,
+                "vat": "ESA12345674",
                 "child_ids": [(0, 0, {"name": "TTPP Contact", "type": "invoice"})],
             }
         )
