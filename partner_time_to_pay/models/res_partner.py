@@ -76,9 +76,11 @@ class ResPartner(models.Model):
         d2x_ly, d2x_ytd, d2x_life = 0, 0, 0
 
         selected_invoices = invoices.filtered(
-            lambda inv: inv.move_type in invoice_types
-            and inv.full_reconcile_payment_date
-            and inv.state == "posted"
+            lambda inv: (
+                inv.move_type in invoice_types
+                and inv.full_reconcile_payment_date
+                and inv.state == "posted"
+            )
         )
         for invoice in selected_invoices:
             days_until_invoice_is_paid = (
