@@ -1,0 +1,5 @@
+- [Tecnativa](https://www.tecnativa.com):
+  - Ernesto Tejeda
+  - David Vidal
+- [NuoBiT](https://www.nuobit.com):
+  - Deniz Gallo <dgallo@nuobit.com>
