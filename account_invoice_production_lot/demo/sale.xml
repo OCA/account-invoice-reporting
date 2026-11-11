@@ -42,7 +42,7 @@
         <field name="name">Ice Cream B</field>
         <field name="product_id" ref="product_icecream_b" />
         <field name="product_uom_qty">1.0</field>
-        <field name="product_uom" ref="uom.product_uom_unit" />
+        <field name="product_uom_id" ref="uom.product_uom_unit" />
         <field name="price_unit">100.00</field>
     </record>
     <record id="sale_order_1" model="sale.order">
@@ -60,7 +60,7 @@
         <field name="name">Ice Cream B</field>
         <field name="product_id" ref="product_icecream_b" />
         <field name="product_uom_qty">2.0</field>
-        <field name="product_uom" ref="uom.product_uom_unit" />
+        <field name="product_uom_id" ref="uom.product_uom_unit" />
         <field name="price_unit">100.00</field>
     </record>
     <record id="sale_order_2" model="sale.order">
@@ -78,7 +78,7 @@
         <field name="name">Ice Cream B</field>
         <field name="product_id" ref="product_icecream_b" />
         <field name="product_uom_qty">1.0</field>
-        <field name="product_uom" ref="uom.product_uom_unit" />
+        <field name="product_uom_id" ref="uom.product_uom_unit" />
         <field name="price_unit">100.00</field>
     </record>
 </odoo>
