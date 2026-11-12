@@ -1,38 +1,35 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
     <template id="report_invoice_document" inherit_id="account.report_invoice_document">
-        <xpath expr="//t[contains(@t-set, 'o')]" position="after">
+        <xpath expr="//t[@t-set='o']" position="after">
             <t t-set="lines_grouped" t-value="o.lines_grouped_by_picking()" />
-            <!-- Save if there are pickings in lines_grouped -->
             <t
                 t-set="has_pickings"
-                t-value="bool(list(filter(lambda l: l['picking'], lines_grouped)))"
+                t-value="bool(list(filter(lambda line_group: line_group['picking'], lines_grouped)))"
             />
         </xpath>
-        <xpath expr="//t[contains(@t-foreach, 'lines')]/t[3]" position="attributes">
-            <attribute name="t-if">False</attribute>
-        </xpath>
-        <xpath expr="//tbody[hasclass('invoice_tbody')]" position="inside">
+        <xpath
+            expr="//tbody[hasclass('invoice_tbody')]/t[@t-foreach='lines_to_report']"
+            position="before"
+        >
             <t t-set="subtotal" t-value="0.0" />
             <t t-set="last_picking" t-value="None" />
         </xpath>
-        <xpath expr="//t[contains(@t-foreach, 'lines')]" position="attributes">
+        <xpath
+            expr="//tbody[hasclass('invoice_tbody')]/t[@t-foreach='lines_to_report']"
+            position="attributes"
+        >
             <attribute name="t-foreach">lines_grouped</attribute>
             <attribute name="t-as">lines_group</attribute>
         </xpath>
-        <!-- Appends before 'current_subtotal' compute -->
         <xpath expr="//t[@t-set='is_note']" position="before">
             <t t-set="l" t-value="lines_group['line']" />
             <t t-set="line" t-value="lines_group['line']" />
             <t t-set="picking" t-value="lines_group['picking']" />
             <t
                 t-set="next_picking"
-                t-value="[lines_grouped[i + 1]['picking'] for i, x in enumerate(lines_grouped) if x == lines_group and i &lt; len(lines_grouped) - 1] or [False]"
+                t-value="lines_grouped[lines_group_index + 1]['picking'] if lines_group_index &lt; len(lines_grouped) - 1 else False"
             />
-            <!-- Avoid to show original subtotal -->
-            <t t-set="line_last" t-value="False" />
-            <t t-set="line_index" t-value="0" />
-
             <t
                 t-if="o.journal_id.show_group_by_picking_report and has_pickings and picking != last_picking"
             >
@@ -65,20 +62,28 @@
                 </tr>
             </t>
         </xpath>
-        <xpath expr="//td/span[@t-field='line.quantity']" position="attributes">
-            <attribute name="t-esc">lines_group['quantity']</attribute>
+        <xpath
+            expr="//td[@name='td_quantity']/span[@t-field='line.quantity']"
+            position="attributes"
+        >
+            <attribute name="t-out">lines_group['quantity']</attribute>
             <attribute name="t-field" />
             <attribute
                 name="t-options"
             >{'widget': 'float', 'decimal_precision': 'Product Unit'}</attribute>
         </xpath>
-        <xpath expr="//td/span[@t-field='line.price_subtotal']" position="before">
-            <t t-set="line_subtotal" t-value="l.price_subtotal" />
-            <t t-if="lines_group['quantity'] != l.quantity" id="picking_subtotal">
-                <!-- Compute subtotal for that picking with discounts -->
+        <xpath
+            expr="//td[@name='td_subtotal']/span[@t-field='line.price_subtotal']"
+            position="before"
+        >
+            <t
+                t-set="line_amount"
+                t-value="l.price_total if o.document_tax_mode == 'tax_included' else l.price_subtotal"
+            />
+            <t t-if="not hide_prices and lines_group['quantity'] != l.quantity">
                 <t
                     t-set="line_picking_subtotal"
-                    t-value="l.quantity and lines_group['quantity'] * (line_subtotal / l.quantity) or 0.0"
+                    t-value="l.quantity and lines_group['quantity'] * (line_amount / l.quantity) or 0.0"
                 />
                 <t
                     t-set="subtotal"
@@ -89,20 +94,32 @@
                     t-options='{"widget": "monetary", "display_currency": o.currency_id}'
                 />
             </t>
-            <t t-else="">
-                <t t-set="subtotal" t-value="(subtotal or 0.0) + line_subtotal" />
+            <t t-elif="not hide_prices">
+                <t t-set="subtotal" t-value="(subtotal or 0.0) + line_amount" />
             </t>
         </xpath>
-        <xpath expr="//td/span[@t-field='line.price_subtotal']" position="attributes">
-            <attribute name="t-if">lines_group['quantity'] == l.quantity</attribute>
-        </xpath>
-        <!-- Append subtotal row after invoice line row-->
         <xpath
-            expr="//t[@t-foreach='lines_grouped']//td[hasclass('o_price_total')]"
+            expr="//td[@name='td_subtotal']/span[@t-field='line.price_subtotal']"
+            position="attributes"
+        >
+            <attribute
+                name="t-if"
+            >not hide_prices and o.document_tax_mode == 'tax_excluded' and lines_group['quantity'] == l.quantity</attribute>
+        </xpath>
+        <xpath
+            expr="//td[@name='td_subtotal']/span[@t-field='line.price_total']"
+            position="attributes"
+        >
+            <attribute
+                name="t-if"
+            >not hide_prices and o.document_tax_mode == 'tax_included' and lines_group['quantity'] == l.quantity</attribute>
+        </xpath>
+        <xpath
+            expr="//t[@t-if='not hide_details and not hide_prices']/tr"
             position="after"
         >
             <tr
-                t-if="o.journal_id.show_group_by_picking_report and has_pickings and picking != next_picking[0]"
+                t-if="o.journal_id.show_group_by_picking_report and has_pickings and line.display_type == 'product' and not hide_prices and picking != next_picking"
             >
                 <td colspan="10" class="text-end">
                     <strong>Subtotal: </strong>

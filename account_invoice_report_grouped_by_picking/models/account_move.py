@@ -43,23 +43,28 @@ class AccountMove(models.Model):
         # line UoM. Convert so both are in the same unit; otherwise the printed
         # quantity is wrong and a bogus remainder line appears when they differ.
         line_uom = invoice_line.product_uom_id
-        move_uom = move.product_uom
+        move_uom = move.uom_id
         if qty and line_uom and move_uom and line_uom != move_uom:
             qty = move_uom._compute_quantity(qty, line_uom, round=False)
         return qty
 
     def _process_section_note_lines_grouped(
-        self, previous_section, previous_note, lines_dic, pick_order=None
+        self,
+        previous_section,
+        previous_subsection,
+        previous_note,
+        lines_dic,
+        pick_order=None,
     ):
-        """Processes section and note lines, grouping them by order."""
-        for line in [previous_section, previous_note]:
+        """Processes section, subsection, and note lines by order."""
+        for line in [previous_section, previous_subsection, previous_note]:
             if line:
                 key = (pick_order, line) if pick_order else line
                 lines_dic.setdefault(key, 0.0)
 
     def _get_grouped_by_picking_sorted_lines(self):
         """Sorts the invoice lines to be grouped by picking."""
-        return self.invoice_line_ids.sorted(
+        return self._get_move_lines_to_report().sorted(
             lambda ln: (-ln.sequence, ln.date, ln.move_name, -ln.id), reverse=True
         )
 
@@ -74,7 +79,7 @@ class AccountMove(models.Model):
                     "line": line,
                     "quantity": line.quantity,
                 }
-                for line in self.invoice_line_ids
+                for line in self._get_move_lines_to_report()
             ]
         picking_dict = {}
         lines_dict = {}
@@ -95,14 +100,23 @@ class AccountMove(models.Model):
         # Let's get first a correspondance between pickings and sales order
         so_dict = {p.sale_id: p for p in self.picking_ids if p.sale_id}
         # Now group by picking by direct link or via same SO as picking's one
-        previous_section = previous_note = False
+        previous_section = previous_subsection = previous_note = False
         last_section_notes = []
         sorted_lines = self._get_grouped_by_picking_sorted_lines()
         for line in sorted_lines:
             # Process section or note lines
-            if line.display_type in ["line_section", "line_note"]:
+            if line.display_type in [
+                "line_section",
+                "line_subsection",
+                "line_note",
+            ]:
                 if line.display_type == "line_section":
                     previous_section = line
+                    previous_subsection = False
+                    previous_note = False
+                elif line.display_type == "line_subsection":
+                    previous_subsection = line
+                    previous_note = False
                 else:
                     previous_note = line
                 last_section_notes.append(
@@ -118,11 +132,20 @@ class AccountMove(models.Model):
             last_section_notes = []
             has_returned_qty = False
             remaining_qty = line.quantity
+            has_return_moves = sign < 0 and any(
+                move.location_id.usage == "customer" for move in line.move_line_ids
+            )
             # Process moves related to the line
             for move in line.move_line_ids:
+                if has_return_moves and move.location_id.usage != "customer":
+                    continue
                 key = (move.picking_id, line)
                 self._process_section_note_lines_grouped(
-                    previous_section, previous_note, picking_dict, move.picking_id
+                    previous_section,
+                    previous_subsection,
+                    previous_note,
+                    picking_dict,
+                    move.picking_id,
                 )
                 qty = self._get_signed_quantity_done(line, move, sign)
                 picking_dict[key] = picking_dict.get(key, 0.0) + qty
@@ -136,7 +159,11 @@ class AccountMove(models.Model):
                     if picking:
                         key = (picking, line)
                         self._process_section_note_lines_grouped(
-                            previous_section, previous_note, picking_dict, picking
+                            previous_section,
+                            previous_subsection,
+                            previous_note,
+                            picking_dict,
+                            picking,
                         )
                         qty = min(so_line.product_uom_qty, remaining_qty)
                         picking_dict[key] = picking_dict.get(key, 0.0) + qty
@@ -145,7 +172,10 @@ class AccountMove(models.Model):
             elif not line.move_line_ids and not line.sale_line_ids:
                 key = (picking_obj, line)
                 self._process_section_note_lines_grouped(
-                    previous_section, previous_note, lines_dict
+                    previous_section,
+                    previous_subsection,
+                    previous_note,
+                    lines_dict,
                 )
                 qty = line.quantity
                 picking_dict[key] = picking_dict.get(key, 0.0) + qty
@@ -154,7 +184,9 @@ class AccountMove(models.Model):
             # without returned goods to refund.
             remaining_qty = float_round(
                 remaining_qty,
-                precision_rounding=line.product_id.uom_id.rounding or 0.01,
+                precision_digits=self.env["decimal.precision"].precision_get(
+                    "Product Unit"
+                ),
             )
             if (
                 self.move_type == "out_refund"
@@ -168,7 +200,10 @@ class AccountMove(models.Model):
                     picking_dict[key] = abs(value)
             if remaining_qty:
                 self._process_section_note_lines_grouped(
-                    previous_section, previous_note, lines_dict
+                    previous_section,
+                    previous_subsection,
+                    previous_note,
+                    lines_dict,
                 )
                 lines_dict[line] = remaining_qty
         no_picking = [

@@ -69,15 +69,23 @@ class TestAccountInvoiceGroupPicking(TransactionCase):
             }
         )
 
-    def get_return_picking_wizard(self, picking):
-        stock_return_picking_form = Form(
-            self.env["stock.return.picking"].with_context(
-                active_ids=picking.ids,
-                active_id=picking.ids[0],
-                active_model="stock.picking",
-            )
-        )
-        return stock_return_picking_form.save()
+    def validate_picking(self, picking):
+        result = picking.button_validate()
+        if isinstance(result, dict) and result.get("res_model"):
+            wizard = Form(
+                self.env[result["res_model"]].with_context(**result.get("context", {}))
+            ).save()
+            if hasattr(wizard, "process"):
+                wizard.process()
+
+    def create_return_picking(self, picking, quantity):
+        picking_return = picking._create_return()
+        picking_return.move_ids.write({"product_uom_qty": quantity, "to_refund": True})
+        picking_return.action_confirm()
+        picking_return.action_assign()
+        picking_return.move_line_ids.write({"quantity": quantity})
+        self.validate_picking(picking_return)
+        return picking_return
 
     def test_account_invoice_group_picking(self):
         # confirm quotation
@@ -85,11 +93,7 @@ class TestAccountInvoiceGroupPicking(TransactionCase):
         # deliver lines2
         self.sale.picking_ids[:1].action_confirm()
         self.sale.picking_ids[:1].move_line_ids.write({"quantity": 1})
-        wiz_act = self.sale.picking_ids[:1].button_validate()
-        wiz = Form(
-            self.env[wiz_act["res_model"]].with_context(**wiz_act["context"])
-        ).save()
-        wiz.process()
+        self.validate_picking(self.sale.picking_ids[:1])
         # create another sale
         self.sale2 = self.sale.copy()
         self.sale2.order_line[:1].product_uom_qty = 4
@@ -98,11 +102,7 @@ class TestAccountInvoiceGroupPicking(TransactionCase):
         self.sale2.action_confirm()
         self.sale2.picking_ids[:1].action_confirm()
         self.sale2.picking_ids[:1].move_line_ids.write({"quantity": 1})
-        wiz_act = self.sale2.picking_ids[:1].button_validate()
-        wiz = Form(
-            self.env[wiz_act["res_model"]].with_context(**wiz_act["context"])
-        ).save()
-        wiz.process()
+        self.validate_picking(self.sale2.picking_ids[:1])
         sales = self.sale | self.sale2
         # invoice sales
         invoice = sales._create_invoices()
@@ -175,12 +175,7 @@ class TestAccountInvoiceGroupPicking(TransactionCase):
         picking = sale.picking_ids[:1]
         picking.action_confirm()
         picking.move_line_ids.write({"quantity": 12})
-        wiz_act = picking.button_validate()
-        if isinstance(wiz_act, dict) and wiz_act.get("res_model"):
-            wiz = Form(
-                self.env[wiz_act["res_model"]].with_context(**wiz_act["context"])
-            ).save()
-            wiz.process()
+        self.validate_picking(picking)
         invoice = sale._create_invoices()
         product_groups = [
             group
@@ -200,23 +195,18 @@ class TestAccountInvoiceGroupPicking(TransactionCase):
         picking = self.sale.picking_ids[:1]
         picking.action_confirm()
         picking.move_line_ids.write({"quantity": 1})
-        wiz_act = picking.button_validate()
-        wiz = Form(
-            self.env[wiz_act["res_model"]].with_context(**wiz_act["context"])
-        ).save()
-        wiz.process()
+        self.validate_picking(picking)
         self.sale._create_invoices()
         # Return one picking from sale1
-        wiz_return = self.get_return_picking_wizard(picking)
-        wiz_return.product_return_moves.quantity = 1
-        res = wiz_return.action_create_returns()
-        picking_return = self.env["stock.picking"].browse(res["res_id"])
-        picking_return.move_line_ids.write({"quantity": 1})
-        picking_return.button_validate()
+        picking_return = self.create_return_picking(picking, 1)
         # Test directly grouping method
         invoice = self.sale._create_invoices(final=True)
         groups = invoice.lines_grouped_by_picking()
-        self.assertEqual(len(groups), 1)
+        self.assertEqual(
+            len(groups),
+            1,
+            [(g["picking"].name, g["line"].name, g["quantity"]) for g in groups],
+        )
         self.assertEqual(groups[0]["picking"], picking_return)
 
     def test_account_invoice_return_without_returned_good(self):
@@ -224,11 +214,7 @@ class TestAccountInvoiceGroupPicking(TransactionCase):
         picking = self.sale.picking_ids[:1]
         picking.action_confirm()
         picking.move_line_ids.write({"quantity": 1})
-        wiz_act = picking.button_validate()
-        wiz = Form(
-            self.env[wiz_act["res_model"]].with_context(**wiz_act["context"])
-        ).save()
-        wiz.process()
+        self.validate_picking(picking)
         invoice = self.sale._create_invoices()
         invoice.action_post()
         # Refund invoice without return picking
@@ -255,11 +241,7 @@ class TestAccountInvoiceGroupPicking(TransactionCase):
         picking = self.sale.picking_ids[:1]
         picking.action_confirm()
         picking.move_line_ids.write({"quantity": 1})
-        wiz_act = picking.button_validate()
-        wiz = Form(
-            self.env[wiz_act["res_model"]].with_context(**wiz_act["context"])
-        ).save()
-        wiz.process()
+        self.validate_picking(picking)
         # invoice sales
         invoice = self.sale._create_invoices()
         invoice._post()
@@ -283,12 +265,7 @@ class TestAccountInvoiceGroupPicking(TransactionCase):
         # information about pickings is printed
         self.assertTrue(picking.name in tbody)
         # Return picking
-        wiz_return = self.get_return_picking_wizard(picking)
-        wiz_return.product_return_moves.quantity = 1
-        res = wiz_return.action_create_returns()
-        picking_return = self.env["stock.picking"].browse(res["res_id"])
-        picking_return.move_line_ids.write({"quantity": 1})
-        picking_return.button_validate()
+        picking_return = self.create_return_picking(picking, 1)
         # Refund invoice
         wiz_invoice_refund = (
             self.env["account.move.reversal"]
@@ -331,11 +308,7 @@ class TestAccountInvoiceGroupPicking(TransactionCase):
         picking = self.sale.picking_ids[:1]
         picking.action_confirm()
         picking.move_line_ids.write({"quantity": 1})
-        wiz_act = picking.button_validate()
-        wiz = Form(
-            self.env[wiz_act["res_model"]].with_context(**wiz_act["context"])
-        ).save()
-        wiz.process()
+        self.validate_picking(picking)
         # invoice sales
         invoice = self.sale._create_invoices()
         invoice._post()
@@ -397,11 +370,7 @@ class TestAccountInvoiceGroupPicking(TransactionCase):
         self.sale.action_confirm()
         self.sale.picking_ids[:1].action_confirm()
         self.sale.picking_ids[:1].move_line_ids.write({"quantity": 1})
-        wiz_act = self.sale.picking_ids[:1].button_validate()
-        wiz = Form(
-            self.env[wiz_act["res_model"]].with_context(**wiz_act["context"])
-        ).save()
-        wiz.process()
+        self.validate_picking(self.sale.picking_ids[:1])
         invoice = self.sale._create_invoices()
         invoice.journal_id.show_group_by_picking_report = False
         groups = invoice.lines_grouped_by_picking()

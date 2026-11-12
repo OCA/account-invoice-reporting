@@ -21,13 +21,13 @@ Account Invoice Grouped by Picking
     :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
     :alt: License: AGPL-3
 .. |badge3| image:: https://img.shields.io/badge/github-OCA%2Faccount--invoice--reporting-lightgray.png?logo=github
-    :target: https://github.com/OCA/account-invoice-reporting/tree/19.0/account_invoice_report_grouped_by_picking
+    :target: https://github.com/OCA/account-invoice-reporting/tree/20.0/account_invoice_report_grouped_by_picking
     :alt: OCA/account-invoice-reporting
 .. |badge4| image:: https://img.shields.io/badge/weblate-Translate%20me-F47D42.png
-    :target: https://translation.odoo-community.org/projects/account-invoice-reporting-19-0/account-invoice-reporting-19-0-account_invoice_report_grouped_by_picking
+    :target: https://translation.odoo-community.org/projects/account-invoice-reporting-20-0/account-invoice-reporting-20-0-account_invoice_report_grouped_by_picking
     :alt: Translate me on Weblate
 .. |badge5| image:: https://img.shields.io/badge/runboat-Try%20me-875A7B.png
-    :target: https://runboat.odoo-community.org/builds?repo=OCA/account-invoice-reporting&target_branch=19.0
+    :target: https://runboat.odoo-community.org/builds?repo=OCA/account-invoice-reporting&target_branch=20.0
     :alt: Try me on Runboat
 
 |badge1| |badge2| |badge3| |badge4| |badge5|
@@ -77,22 +77,22 @@ Authors
 Contributors
 ------------
 
-- `Tecnativa <https://www.tecnativa.com>`__:
+-  `Tecnativa <https://www.tecnativa.com>`__:
 
-  - Carlos Dauden
-  - David Vidal
-  - Pedro M. Baeza
-  - Sergio Teruel
-  - João Marques
-  - Carlos Roca
+   -  Carlos Dauden
+   -  David Vidal
+   -  Pedro M. Baeza
+   -  Sergio Teruel
+   -  João Marques
+   -  Carlos Roca
 
-- `Studio73 <https://www.studio73.es>`__:
+-  `Studio73 <https://www.studio73.es>`__:
 
-  - Ioan Galan <ioan@studio73.es>
+   -  Ioan Galan <ioan@studio73.es>
 
-- `Trobz <https://trobz.com>`__:
+-  `Trobz <https://trobz.com>`__:
 
-  - Thao Le <thaolt@trobz.com>
+   -  Thao Le <thaolt@trobz.com>
 
 Other credits
 -------------
@@ -113,6 +113,6 @@ OCA, or the Odoo Community Association, is a nonprofit organization whose
 mission is to support the collaborative development of Odoo features and
 promote its widespread use.
 
-This module is part of the `OCA/account-invoice-reporting <https://github.com/OCA/account-invoice-reporting/tree/19.0/account_invoice_report_grouped_by_picking>`_ project on GitHub.
+This module is part of the `OCA/account-invoice-reporting <https://github.com/OCA/account-invoice-reporting/tree/20.0/account_invoice_report_grouped_by_picking>`_ project on GitHub.
 
 You are welcome to contribute. To learn how please visit https://odoo-community.org/page/Contribute.
