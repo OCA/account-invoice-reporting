@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+    Copyright 2026 Camptocamp SA (https://www.camptocamp.com).
+    License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
+-->
+<odoo>
+    <template
+        id="report_invoice_document"
+        inherit_id="account.report_invoice_document"
+        priority="20"
+    >
+        <!-- Print the product HS code under the line description -->
+        <xpath expr="//td[@name='account_invoice_line_name']" position="inside">
+            <div t-if="line.product_id.hs_code" name="hs_code" class="text-muted small">
+                HS Code: <span t-field="line.product_id.hs_code" />
+            </div>
+        </xpath>
+    </template>
+</odoo>
