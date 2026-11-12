@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+    Copyright 2026 Camptocamp SA (https://www.camptocamp.com).
+    License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
+-->
+<odoo>
+    <template
+        id="report_invoice_document"
+        inherit_id="account.report_invoice_document"
+        priority="30"
+    >
+        <!-- Print the product country of origin under the line description -->
+        <xpath expr="//td[@name='account_invoice_line_name']" position="inside">
+            <div
+                t-if="line.product_id.country_of_origin"
+                name="country_of_origin"
+                class="text-muted small"
+            >
+                Origin of Goods: <span t-field="line.product_id.country_of_origin" />
+            </div>
+        </xpath>
+    </template>
+</odoo>
