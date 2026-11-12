@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
     <template id="report_invoice_document" inherit_id="account.report_invoice_document">
         <xpath expr="//t[contains(@t-set, 'o')]" position="after">
@@ -85,7 +85,7 @@
                     t-value="(subtotal or 0.0) + line_picking_subtotal"
                 />
                 <span
-                    t-esc="line_picking_subtotal"
+                    t-out="line_picking_subtotal"
                     t-options='{"widget": "monetary", "display_currency": o.currency_id}'
                 />
             </t>
@@ -107,7 +107,7 @@
                 <td colspan="10" class="text-end">
                     <strong>Subtotal: </strong>
                     <strong
-                        t-esc="subtotal"
+                        t-out="subtotal"
                         t-options='{"widget": "monetary", "display_currency": o.currency_id}'
                     />
                 </td>

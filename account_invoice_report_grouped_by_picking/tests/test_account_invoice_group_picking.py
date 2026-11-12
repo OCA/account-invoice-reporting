@@ -129,9 +129,9 @@ class TestAccountInvoiceGroupPicking(TransactionCase):
             )[0]
         )
         tbody = content.xpath("//tbody[@class='invoice_tbody']")
-        tbody = [html.tostring(line, encoding="utf-8").strip() for line in tbody][
-            0
-        ].decode()
+        tbody = next(
+            html.tostring(line, encoding="utf-8").strip() for line in tbody
+        ).decode()
         # information about sales is printed
         self.assertEqual(tbody.count(self.sale.name), 1)
         self.assertEqual(tbody.count(self.sale2.name), 1)
@@ -275,9 +275,9 @@ class TestAccountInvoiceGroupPicking(TransactionCase):
             )[0]
         )
         tbody = content.xpath("//tbody[@class='invoice_tbody']")
-        tbody = [html.tostring(line, encoding="utf-8").strip() for line in tbody][
-            0
-        ].decode()
+        tbody = next(
+            html.tostring(line, encoding="utf-8").strip() for line in tbody
+        ).decode()
         # information about sales is printed
         self.assertEqual(tbody.count(self.sale.name), 1)
         # information about pickings is printed
@@ -316,9 +316,9 @@ class TestAccountInvoiceGroupPicking(TransactionCase):
             )[0]
         )
         tbody = content.xpath("//tbody[@class='invoice_tbody']")
-        tbody = [html.tostring(line, encoding="utf-8").strip() for line in tbody][
-            0
-        ].decode()
+        tbody = next(
+            html.tostring(line, encoding="utf-8").strip() for line in tbody
+        ).decode()
         # information about sales is printed
         self.assertEqual(tbody.count(self.sale.name), 1)
         # information about pickings is printed
@@ -351,9 +351,9 @@ class TestAccountInvoiceGroupPicking(TransactionCase):
             )[0]
         )
         tbody = content.xpath("//tbody[@class='invoice_tbody']")
-        tbody = [html.tostring(line, encoding="utf-8").strip() for line in tbody][
-            0
-        ].decode()
+        tbody = next(
+            html.tostring(line, encoding="utf-8").strip() for line in tbody
+        ).decode()
         # information about sales is printed
         self.assertEqual(tbody.count(self.sale.name), 1)
         # information about pickings is printed
@@ -385,9 +385,9 @@ class TestAccountInvoiceGroupPicking(TransactionCase):
             )[0]
         )
         tbody = content.xpath("//tbody[@class='invoice_tbody']")
-        tbody = [html.tostring(line, encoding="utf-8").strip() for line in tbody][
-            0
-        ].decode()
+        tbody = next(
+            html.tostring(line, encoding="utf-8").strip() for line in tbody
+        ).decode()
         # information about sales is printed
         self.assertEqual(tbody.count(self.sale.name), 1)
         # information about pickings is printed
@@ -414,8 +414,8 @@ class TestAccountInvoiceGroupPicking(TransactionCase):
             )[0]
         )
         tbody = content.xpath("//tbody[@class='invoice_tbody']")
-        tbody = [html.tostring(line, encoding="utf-8").strip() for line in tbody][
-            0
-        ].decode()
+        tbody = next(
+            html.tostring(line, encoding="utf-8").strip() for line in tbody
+        ).decode()
         self.assertEqual(tbody.count(self.sale.name), 0)
         self.assertFalse(self.sale.invoice_ids.picking_ids[:1].name in tbody)

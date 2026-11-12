@@ -2,7 +2,7 @@
 # Copyright 2018 Tecnativa - David Vidal
 # Copyright 2018-2019 Tecnativa - Pedro M. Baeza
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
-from datetime import datetime
+from datetime import datetime, timezone
 
 from odoo import api, models
 from odoo.tools import float_round
@@ -14,7 +14,7 @@ class AccountMove(models.Model):
     @api.model
     def _sort_grouped_lines(self, lines_dic):
         DTF = "%Y-%m-%d %H:%M:%S"
-        min_date = datetime.min
+        min_date = datetime.min.replace(tzinfo=timezone.utc)
         return sorted(
             lines_dic,
             key=lambda x: (
@@ -164,8 +164,8 @@ class AccountMove(models.Model):
                 and picking_dict
             ):
                 remaining_qty = 0.0
-                for key in picking_dict:
-                    picking_dict[key] = abs(picking_dict[key])
+                for key, value in picking_dict.items():
+                    picking_dict[key] = abs(value)
             if remaining_qty:
                 self._process_section_note_lines_grouped(
                     previous_section, previous_note, lines_dict
