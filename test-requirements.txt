@@ -1,0 +1,1 @@
+odoo-addon-sale_stock_picking_invoice_link @ git+https://github.com/OCA/stock-logistics-workflow.git@refs/pull/2542/head#subdirectory=sale_stock_picking_invoice_link
