@@ -1,0 +1,89 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* account_invoice_report_grouped_by_picking
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2026-10-21 15:46+0000\n"
+"Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
+"Language-Team: none\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.15.2\n"
+
+#. module: account_invoice_report_grouped_by_picking
+#: model_terms:ir.ui.view,arch_db:account_invoice_report_grouped_by_picking.report_invoice_document
+msgid "<span>Order:</span>"
+msgstr "<span>Ordine:</span>"
+
+#. module: account_invoice_report_grouped_by_picking
+#: model_terms:ir.ui.view,arch_db:account_invoice_report_grouped_by_picking.report_invoice_document
+msgid "<span>Picking:</span>"
+msgstr "<span>Prelievo:</span>"
+
+#. module: account_invoice_report_grouped_by_picking
+#: model_terms:ir.ui.view,arch_db:account_invoice_report_grouped_by_picking.report_invoice_document
+msgid ""
+"<strong>\n"
+"                            <span>Without reference</span>\n"
+"                        </strong>"
+msgstr ""
+"<strong>\n"
+"                            <span>Senza riferimento</span>\n"
+"                        </strong>"
+
+#. module: account_invoice_report_grouped_by_picking
+#: model_terms:ir.ui.view,arch_db:account_invoice_report_grouped_by_picking.report_invoice_document
+msgid "<strong>Subtotal: </strong>"
+msgstr "<strong>Subtotale: </strong>"
+
+#. module: account_invoice_report_grouped_by_picking
+#: model:ir.model.fields,field_description:account_invoice_report_grouped_by_picking.field_account_journal__display_name
+#: model:ir.model.fields,field_description:account_invoice_report_grouped_by_picking.field_account_move__display_name
+msgid "Display Name"
+msgstr "Nome visualizzato"
+
+#. module: account_invoice_report_grouped_by_picking
+#: model:ir.model.fields,field_description:account_invoice_report_grouped_by_picking.field_account_journal__id
+#: model:ir.model.fields,field_description:account_invoice_report_grouped_by_picking.field_account_move__id
+msgid "ID"
+msgstr "ID"
+
+#. module: account_invoice_report_grouped_by_picking
+#: model_terms:ir.ui.view,arch_db:account_invoice_report_grouped_by_picking.view_account_journal_form_inherit_grouped_by_picking
+msgid "Invoice Report"
+msgstr "Resoconto fattura"
+
+#. module: account_invoice_report_grouped_by_picking
+#: model:ir.model.fields,field_description:account_invoice_report_grouped_by_picking.field_account_journal__show_group_by_picking_report
+msgid "Invoice Report - Show Grouped by Picking"
+msgstr "Resoconto fattura - Visualizza raggruppato per prelievo"
+
+#. module: account_invoice_report_grouped_by_picking
+#: model:ir.model,name:account_invoice_report_grouped_by_picking.model_account_journal
+msgid "Journal"
+msgstr "Registro"
+
+#. module: account_invoice_report_grouped_by_picking
+#: model:ir.model,name:account_invoice_report_grouped_by_picking.model_account_move
+msgid "Journal Entry"
+msgstr "Registrazione contabile"
+
+#. module: account_invoice_report_grouped_by_picking
+#: model:ir.model.fields,help:account_invoice_report_grouped_by_picking.field_account_journal__show_group_by_picking_report
+msgid ""
+"Leave unmarked if original Odoo behavior (not grouped is required for "
+"invoices belonging this journal)."
+msgstr ""
+"Lasciare deselezionato se comportamento originale di Odoo (questo registro "
+"esclude il raggruppamento per le fatture)."
+
+#. module: account_invoice_report_grouped_by_picking
+#: model_terms:ir.ui.view,arch_db:account_invoice_report_grouped_by_picking.view_account_journal_form_inherit_grouped_by_picking
+msgid "Show Grouped by Picking"
+msgstr "Visualizza raggurppato per prelievo"
