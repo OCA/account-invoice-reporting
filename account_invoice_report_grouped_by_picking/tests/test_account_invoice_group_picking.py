@@ -39,6 +39,38 @@ class TestAccountInvoiceGroupPicking(TransactionCase):
             }
         )
         cls.partner = cls.env["res.partner"].create({"name": "Partner for test"})
+        # No chart of accounts is installed during at-install tests on a
+        # fresh database, so provide the accounts and journal invoicing
+        # needs.
+        cls.account_receivable = cls.env["account.account"].create(
+            {
+                "name": "Test receivable account",
+                "code": "TESTREC",
+                "account_type": "asset_receivable",
+                "reconcile": True,
+            }
+        )
+        cls.account_income = cls.env["account.account"].create(
+            {
+                "name": "Test income account",
+                "code": "TESTINC",
+                "account_type": "income",
+            }
+        )
+        cls.journal = cls.env["account.journal"].search(
+            [("type", "=", "sale")], limit=1
+        )
+        if not cls.journal:
+            cls.journal = cls.env["account.journal"].create(
+                {
+                    "name": "Test journal",
+                    "code": "TESTJ",
+                    "type": "sale",
+                }
+            )
+        cls.journal.default_account_id = cls.account_income
+        cls.env.company.income_account_id = cls.account_income
+        cls.partner.property_account_receivable_id = cls.account_receivable
         cls.sale = cls.env["sale.order"].create(
             {
                 "partner_id": cls.partner.id,
