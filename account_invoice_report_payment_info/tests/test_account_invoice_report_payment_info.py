@@ -37,7 +37,7 @@ class TestAccountInvoiceReportPaymentInfo(AccountTestInvoicingCommon):
         )[0]
         self.assertIn("(PAY-REF-001)", html_report.decode())
 
-        self.env["ir.config_parameter"].sudo().set_param(
+        self.env["ir.config_parameter"].sudo().set_str(
             "account_invoice_report_payment_info.info_pattern", "Ref: {move_ref}"
         )
         self.invoice.invalidate_recordset()
