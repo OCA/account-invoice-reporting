@@ -1,0 +1,6 @@
+- [Tecnativa](https://www.tecnativa.com):
+  - Carlos Dauden
+  - Carlos Roca
+  - Juan Carlos Oñate
+- [Heliconia Solutions Pvt. Ltd.](https://www.heliconia.io)
+  - Bhavesh Heliconia
